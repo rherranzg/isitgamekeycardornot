@@ -13,8 +13,12 @@ class DataReport(BaseModel):
     sku_count: int = Field(..., description="Número de SKUs válidos")
     skus_by_region: dict[str, int] = Field(..., description="SKUs por región")
     skus_by_format: dict[str, int] = Field(..., description="SKUs por formato")
-    fill_rates: dict[str, float] = Field(..., description="% de relleno por campo")
-    low_fill_fields: list[str] = Field(..., description="Campos que no superan el umbral de relleno")
+    fill_rates: dict[str, float | None] = Field(
+        ..., description="% de relleno por campo; condicionales medidos donde aplican (null si en ninguno)"
+    )
+    low_fill_fields: list[str] = Field(
+        ..., description="Campos que no superan el umbral, sin contar los que se conservan por decisión"
+    )
     format_divergences: dict[str, dict[str, str]] = Field(
         ..., description="Juegos cuyo formato cambia entre regiones, por región"
     )

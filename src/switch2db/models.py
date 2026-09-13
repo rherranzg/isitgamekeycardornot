@@ -82,6 +82,9 @@ class Sku(BaseModel):
     download_size_gb: float | None = Field(
         None, ge=0, description="Descarga necesaria en GB; aproximado, cambia con los parches"
     )
+    includes_download_code: bool | None = Field(
+        None, description="True si la caja trae además del juego un código de descarga (DLC, pase...)"
+    )
     ean: str | None = Field(
         None, pattern=GTIN_PATTERN, description="Código de barras EAN-13 o UPC-A, entre comillas en el YAML"
     )

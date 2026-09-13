@@ -11,6 +11,7 @@
 #   format: "full_cart"                     # full_cart | game_key_card | code_in_box | unknown
 #   cart_size_gb: 64                        # solo con full_cart
 #   download_size_gb: null                  # aproximado: cambia con los parches
+#   includes_download_code: null            # true si la caja trae además un código (DLC, pase...); null si no se sabe
 #   ean: null                               # entre comillas: "0045496123456"
 #   evidence: "box_photo"                   # official | box_photo | retailer_listing | press_report | unconfirmed
 #   source_url: "https://example.com/..."   # obligatorio salvo format: unknown
@@ -119,7 +120,7 @@
   verified_at: "2026-09-13"
 
 # Street Fighter 6: la caja es "Years 1-2 Fighters Edition": game-key card con el juego y, además, un código
-# de descarga para el DLC que caduca en junio de 2027. El campo format no puede expresar esa mezcla.
+# de descarga para el DLC válido hasta el 05-06-2027 (includes_download_code: true).
 - sku_id: "eu-street-fighter-6-standard"
   title_id: "street-fighter-6"
   region: "EU"
@@ -129,6 +130,7 @@
   format: "game_key_card"
   cart_size_gb: null
   download_size_gb: null
+  includes_download_code: true  # (listado) EventHubs/GoNintendo: código del Year 1-2 Character Pass en la caja
   ean: null
   evidence: "press_report"  # (leída) VGC: "confirmed that Street Fighter 6 ... will be Game-Key Cards in the West"
   source_url: "https://www.videogameschronicle.com/news/every-physical-third-party-switch-2-game-seen-in-japan-so-far-is-a-game-key-card-requiring-a-download/"
@@ -142,6 +144,7 @@
   format: "game_key_card"
   cart_size_gb: null
   download_size_gb: null
+  includes_download_code: true  # (listado) EventHubs/GoNintendo: código del Year 1-2 Character Pass en la caja
   ean: null
   evidence: "press_report"  # (leída) misma frase de VGC sobre occidente
   source_url: "https://www.videogameschronicle.com/news/every-physical-third-party-switch-2-game-seen-in-japan-so-far-is-a-game-key-card-requiring-a-download/"
@@ -155,6 +158,7 @@
   format: "game_key_card"
   cart_size_gb: null
   download_size_gb: null
+  includes_download_code: null  # sin fuente para la caja japonesa
   ean: null
   evidence: "press_report"  # (leída) VGC lo incluye entre los juegos con logo de Game-Key Card en Japón
   source_url: "https://www.videogameschronicle.com/news/every-physical-third-party-switch-2-game-seen-in-japan-so-far-is-a-game-key-card-requiring-a-download/"
@@ -168,6 +172,7 @@
   format: "game_key_card"
   cart_size_gb: null
   download_size_gb: null
+  includes_download_code: null  # el listado de Play-Asia no lo aclara
   ean: null
   evidence: "retailer_listing"  # (listado) Play-Asia: "Game Key Cart (Cover - Asian)"
   source_url: "https://www.play-asia.com/en/street-fighter-6-years-1-2-fighters-edition-multi-language/13/70ighp"

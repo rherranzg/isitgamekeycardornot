@@ -23,7 +23,8 @@ def test_build_report_success(eu_key_card_sku: Sku, asia_full_cart_sku: Sku) -> 
 
     assert report.sku_count == 2
     assert report.skus_by_format == {"game_key_card": 1, "full_cart": 1}
-    assert report.low_fill_fields == ["cart_size_gb"]
+    assert report.fill_rates["cart_size_gb"] == 100.0
+    assert report.low_fill_fields == ["includes_download_code"]
     assert report.format_divergences == {
         "example-game (standard)": {"EU": "game_key_card", "ASIA": "full_cart"}
     }

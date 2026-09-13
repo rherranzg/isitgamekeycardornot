@@ -39,6 +39,16 @@ def test_sku_model_validate_allows_missing_source_url_when_format_is_unknown(
     assert sku.source_url is None
 
 
+def test_sku_model_validate_accepts_includes_download_code(sku_row: dict[str, object]) -> None:
+    sku = Sku.model_validate({**sku_row, "includes_download_code": True})
+
+    assert sku.includes_download_code is True
+
+
+def test_sku_model_validate_defaults_includes_download_code_to_unknown(sku_row: dict[str, object]) -> None:
+    assert Sku.model_validate(sku_row).includes_download_code is None
+
+
 @pytest.mark.parametrize(
     "overrides",
     [
@@ -50,6 +60,7 @@ def test_sku_model_validate_allows_missing_source_url_when_format_is_unknown(
         {"ean": "12345"},
         {"ean": 45496123456},
         {"cart_size_gb": 0},
+        {"includes_download_code": "maybe"},
         {"unexpected_field": "x"},
     ],
 )
