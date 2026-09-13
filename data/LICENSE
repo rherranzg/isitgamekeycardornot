@@ -1,0 +1,23 @@
+Switch 2 Physical Format DB — licencia de los datos
+===================================================
+
+El código del repositorio se distribuye bajo la licencia MIT (ver LICENSE en la raíz).
+Los datos de este directorio tienen su propia licencia:
+
+This Switch 2 Physical Format DB (data/skus.yaml and data/title_seeds.yaml) is made available under the
+Open Database License: https://opendatacommons.org/licenses/odbl/1-0/. Any rights in individual contents
+of the database are licensed under the Database Contents License: https://opendatacommons.org/licenses/dbcl/1-0/
+
+En resumen (el texto legal es el de los enlaces):
+- Puedes copiar, distribuir y usar la base de datos, también con fines comerciales.
+- Debes atribuir la fuente: "Switch 2 Physical Format DB, ODbL 1.0", con enlace al repositorio.
+- Si publicas una base de datos derivada, debe publicarse también bajo la ODbL.
+- Una web, gráfico o informe hecho a partir de los datos (un "Produced Work") solo exige atribución.
+
+Las contribuciones por pull request se aceptan bajo esta misma licencia.
+
+Excluido de esta licencia
+-------------------------
+data/titles.yaml (y el catálogo local data/igdb_catalog.yaml, que no se versiona) contienen metadatos
+de IGDB: id, nombre, tipo, fecha y publisher. No son datos de este proyecto; se rigen por los términos de
+IGDB y Twitch Developer Services y no se relicencian bajo la ODbL.

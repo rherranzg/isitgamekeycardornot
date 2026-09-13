@@ -1,0 +1,41 @@
+# Generado por scripts/import_titles.py a partir de title_seeds.yaml. No editar a mano.
+- title_id: mario-kart-world
+  igdb_id: 338067
+  name: Mario Kart World
+  publisher: Nintendo
+- title_id: donkey-kong-bananza
+  igdb_id: 338106
+  name: Donkey Kong Bananza
+  publisher: Nintendo
+- title_id: street-fighter-6
+  igdb_id: 343673
+  name: Street Fighter 6
+  publisher: Capcom
+- title_id: yakuza-0-directors-cut
+  igdb_id: 338084
+  name: 'Yakuza 0: Director''s Cut'
+  publisher: Sega
+- title_id: bravely-default-flying-fairy-hd-remaster
+  igdb_id: 338083
+  name: 'Bravely Default: Flying Fairy - HD Remaster'
+  publisher: Square Enix
+- title_id: elden-ring-tarnished-edition
+  igdb_id: 338079
+  name: 'Elden Ring: Tarnished Edition'
+  publisher: Bandai Namco Entertainment
+- title_id: cyberpunk-2077-ultimate-edition
+  igdb_id: 277807
+  name: 'Cyberpunk 2077: Ultimate Edition'
+  publisher: CD Projekt RED
+- title_id: hitman-world-of-assassination-signature-edition
+  igdb_id: 338082
+  name: 'Hitman World of Assassination: Signature Edition'
+  publisher: IO Interactive
+- title_id: split-fiction
+  igdb_id: 325594
+  name: Split Fiction
+  publisher: Electronic Arts
+- title_id: star-wars-outlaws
+  igdb_id: 252827
+  name: Star Wars Outlaws
+  publisher: Ubisoft Entertainment

@@ -1,0 +1,234 @@
+# Un SKU regional por entrada, curado a mano. Si falta un dato se deja null: nunca se inventa.
+# Validar con: uv run python -m scripts.validate_data
+#
+# Formato (ejemplo ficticio, no es un dato real):
+# - sku_id: "asia-example-game-standard"   # {region en minúsculas}-{title_id}-{edition}
+#   title_id: "example-game"                # debe existir en title_seeds.yaml
+#   region: "ASIA"                          # EU | NA | JP | KR | ASIA (HK/TW/SEA)
+#   edition: "standard"                     # standard | deluxe | collectors
+#   distributor: "Example Distributor"      # quien lo saca en ESE mercado; null si no se sabe
+#   release_date: "2026-03-12"              # null si no hay fecha en ese mercado
+#   format: "full_cart"                     # full_cart | game_key_card | code_in_box | unknown
+#   cart_size_gb: 64                        # solo con full_cart
+#   download_size_gb: null                  # aproximado: cambia con los parches
+#   ean: null                               # entre comillas: "0045496123456"
+#   evidence: "box_photo"                   # official | box_photo | retailer_listing | press_report | unconfirmed
+#   source_url: "https://example.com/..."   # obligatorio salvo format: unknown
+#   verified_at: "2026-09-13"
+
+# ---------------------------------------------------------------------------------------------------------
+# PROPUESTOS por Claude el 2026-09-13: PENDIENTES DE REVISIÓN. No darlos por buenos sin abrir la fuente.
+# En cada SKU: (leída) = página abierta y comprobada; (listado) = solo visto el título del listado o el
+# resumen del buscador, porque la tienda devolvió 403.
+# ---------------------------------------------------------------------------------------------------------
+
+# Cyberpunk 2077: Ultimate Edition: cartucho completo en todas las regiones (no hay divergencia de formato).
+# 64 GB y lanzamiento el 5 de junio de 2025 en US/EU/JP/ASIA según el blog de Play-Asia (listado).
+- sku_id: "eu-cyberpunk-2077-ultimate-edition-standard"
+  title_id: "cyberpunk-2077-ultimate-edition"
+  region: "EU"
+  edition: "standard"
+  distributor: null
+  release_date: "2025-06-05"
+  format: "full_cart"
+  cart_size_gb: 64
+  download_size_gb: null
+  ean: null
+  evidence: "press_report"  # (leída) VGC cita a CD Projekt: "contained entirely on the cartridge"
+  source_url: "https://www.videogameschronicle.com/news/every-physical-third-party-switch-2-game-seen-in-japan-so-far-is-a-game-key-card-requiring-a-download/"
+  verified_at: "2026-09-13"
+- sku_id: "na-cyberpunk-2077-ultimate-edition-standard"
+  title_id: "cyberpunk-2077-ultimate-edition"
+  region: "NA"
+  edition: "standard"
+  distributor: null
+  release_date: "2025-06-05"
+  format: "full_cart"
+  cart_size_gb: 64
+  download_size_gb: null
+  ean: null
+  evidence: "press_report"  # (leída) misma cita de CD Projekt en VGC
+  source_url: "https://www.videogameschronicle.com/news/every-physical-third-party-switch-2-game-seen-in-japan-so-far-is-a-game-key-card-requiring-a-download/"
+  verified_at: "2026-09-13"
+- sku_id: "jp-cyberpunk-2077-ultimate-edition-standard"
+  title_id: "cyberpunk-2077-ultimate-edition"
+  region: "JP"
+  edition: "standard"
+  distributor: "Spike Chunsoft"
+  release_date: "2025-06-05"
+  format: "full_cart"
+  cart_size_gb: 64
+  download_size_gb: null
+  ean: "4940261521134"  # JAN que aparece en la URL del listado
+  evidence: "retailer_listing"  # (listado) Japanzon: "Spike Chunsoft Cyberpunk 2077 Ultimate Edition"
+  source_url: "https://www.japanzon.com/en/game-switch-2/46598-spike-chunsoft-cyberpunk-2077-ultimate-edition-nintendo-switch-2-4940261521134.html"
+  verified_at: "2026-09-13"
+- sku_id: "asia-cyberpunk-2077-ultimate-edition-standard"
+  title_id: "cyberpunk-2077-ultimate-edition"
+  region: "ASIA"
+  edition: "standard"
+  distributor: null
+  release_date: "2025-06-05"
+  format: "full_cart"
+  cart_size_gb: 64
+  download_size_gb: null
+  ean: null
+  evidence: "retailer_listing"  # (listado) GameShop Asia, versión "Nintendo Switch 2/Asia"
+  source_url: "https://www.gameshopasia.com/products/cyberpunk-2077-ultimate-edition-nintendo-switch-2-asia"
+  verified_at: "2026-09-13"
+
+# Yakuza 0: Director's Cut: game-key card en NA, JP y ASIA.
+- sku_id: "na-yakuza-0-directors-cut-standard"
+  title_id: "yakuza-0-directors-cut"
+  region: "NA"
+  edition: "standard"
+  distributor: null
+  release_date: null
+  format: "game_key_card"
+  cart_size_gb: null
+  download_size_gb: null
+  ean: null
+  evidence: "retailer_listing"  # (listado) QVC: "Nintendo Switch 2 (Game-Key Card)"
+  source_url: "https://www.qvc.com/yakuza-0:-directors-cut---nintendo-switch-2-(game-key-card).product.E325472.html"
+  verified_at: "2026-09-13"
+- sku_id: "jp-yakuza-0-directors-cut-standard"
+  title_id: "yakuza-0-directors-cut"
+  region: "JP"
+  edition: "standard"
+  distributor: null
+  release_date: null
+  format: "game_key_card"
+  cart_size_gb: null
+  download_size_gb: null
+  ean: "4974365870584"  # JAN que aparece en la URL del listado
+  evidence: "retailer_listing"  # (listado) Tokyo Game Story: "Switch 2 Japan (KEY CARD) [Multi-Language]"
+  source_url: "https://tokyogamestory.com/en/nintendo-switch-2-game-soft-all/12433-yakuza-ryu-ga-gotoku-0-director-s-cut-switch-2-japan-key-card-multi-language-new-4974365870584.html"
+  verified_at: "2026-09-13"
+- sku_id: "asia-yakuza-0-directors-cut-standard"
+  title_id: "yakuza-0-directors-cut"
+  region: "ASIA"
+  edition: "standard"
+  distributor: null
+  release_date: "2025-06-05"
+  format: "game_key_card"
+  cart_size_gb: null
+  download_size_gb: null
+  ean: null
+  evidence: "retailer_listing"  # (listado) PLAYe: "Yakuza 0: Director's Cut (Asia) (Game-Key Card)"
+  source_url: "https://play-e.com/products/pre-order-nintendo-switch-2-yakuza-0-directors-cut-ship-5-june-2025"
+  verified_at: "2026-09-13"
+
+# Street Fighter 6: la caja es "Years 1-2 Fighters Edition": game-key card con el juego y, además, un código
+# de descarga para el DLC que caduca en junio de 2027. El campo format no puede expresar esa mezcla.
+- sku_id: "eu-street-fighter-6-standard"
+  title_id: "street-fighter-6"
+  region: "EU"
+  edition: "standard"
+  distributor: null
+  release_date: null
+  format: "game_key_card"
+  cart_size_gb: null
+  download_size_gb: null
+  ean: null
+  evidence: "press_report"  # (leída) VGC: "confirmed that Street Fighter 6 ... will be Game-Key Cards in the West"
+  source_url: "https://www.videogameschronicle.com/news/every-physical-third-party-switch-2-game-seen-in-japan-so-far-is-a-game-key-card-requiring-a-download/"
+  verified_at: "2026-09-13"
+- sku_id: "na-street-fighter-6-standard"
+  title_id: "street-fighter-6"
+  region: "NA"
+  edition: "standard"
+  distributor: null
+  release_date: null
+  format: "game_key_card"
+  cart_size_gb: null
+  download_size_gb: null
+  ean: null
+  evidence: "press_report"  # (leída) misma frase de VGC sobre occidente
+  source_url: "https://www.videogameschronicle.com/news/every-physical-third-party-switch-2-game-seen-in-japan-so-far-is-a-game-key-card-requiring-a-download/"
+  verified_at: "2026-09-13"
+- sku_id: "jp-street-fighter-6-standard"
+  title_id: "street-fighter-6"
+  region: "JP"
+  edition: "standard"
+  distributor: null
+  release_date: null
+  format: "game_key_card"
+  cart_size_gb: null
+  download_size_gb: null
+  ean: null
+  evidence: "press_report"  # (leída) VGC lo incluye entre los juegos con logo de Game-Key Card en Japón
+  source_url: "https://www.videogameschronicle.com/news/every-physical-third-party-switch-2-game-seen-in-japan-so-far-is-a-game-key-card-requiring-a-download/"
+  verified_at: "2026-09-13"
+- sku_id: "asia-street-fighter-6-standard"
+  title_id: "street-fighter-6"
+  region: "ASIA"
+  edition: "standard"
+  distributor: null
+  release_date: null
+  format: "game_key_card"
+  cart_size_gb: null
+  download_size_gb: null
+  ean: null
+  evidence: "retailer_listing"  # (listado) Play-Asia: "Game Key Cart (Cover - Asian)"
+  source_url: "https://www.play-asia.com/en/street-fighter-6-years-1-2-fighters-edition-multi-language/13/70ighp"
+  verified_at: "2026-09-13"
+
+# Bravely Default: Flying Fairy HD Remaster
+- sku_id: "jp-bravely-default-flying-fairy-hd-remaster-standard"
+  title_id: "bravely-default-flying-fairy-hd-remaster"
+  region: "JP"
+  edition: "standard"
+  distributor: null
+  release_date: "2025-06-05"
+  format: "game_key_card"
+  cart_size_gb: null
+  download_size_gb: 11  # (listado) "11GB以上の空き容量" necesario según Famitsu
+  ean: null
+  evidence: "press_report"  # (listado) Famitsu: la パッケージ版 se vende como キーカード
+  source_url: "https://www.famitsu.com/article/202506/43937"
+  verified_at: "2026-09-13"
+
+# Split Fiction: en NA la caja solo lleva un código, sin cartucho ni game-key card. EU sin confirmar.
+- sku_id: "na-split-fiction-standard"
+  title_id: "split-fiction"
+  region: "NA"
+  edition: "standard"
+  distributor: null
+  release_date: null
+  format: "code_in_box"
+  cart_size_gb: null
+  download_size_gb: null
+  ean: null
+  evidence: "press_report"  # (listado) GoNintendo, basado en el aviso "GAME CARD NOT INCLUDED" de Best Buy
+  source_url: "https://gonintendo.com/contents/47827-split-fiction-s-physical-release-on-switch-2-appears-to-be-code-in-a-box"
+  verified_at: "2026-09-13"
+
+# Elden Ring: Tarnished Edition
+- sku_id: "na-elden-ring-tarnished-edition-standard"
+  title_id: "elden-ring-tarnished-edition"
+  region: "NA"
+  edition: "standard"
+  distributor: null
+  release_date: "2026-08-28"
+  format: "game_key_card"
+  cart_size_gb: null
+  download_size_gb: 50  # (listado) la caja indica 50 GB según GameGeeker
+  ean: null
+  evidence: "press_report"  # (listado) GameSpot: reservas de la edición Game-Key Card a 80 $
+  source_url: "https://www.gamespot.com/articles/elden-ring-tarnished-edition-switch-2-buying-guide/1100-6539306/"
+  verified_at: "2026-09-13"
+
+# Star Wars Outlaws
+- sku_id: "na-star-wars-outlaws-standard"
+  title_id: "star-wars-outlaws"
+  region: "NA"
+  edition: "standard"
+  distributor: null
+  release_date: "2025-09-04"
+  format: "game_key_card"
+  cart_size_gb: null
+  download_size_gb: null
+  ean: null
+  evidence: "press_report"  # (listado) GoNintendo: la edición física de Switch 2 es Game-key card
+  source_url: "https://gonintendo.com/contents/48102-star-wars-outlaws-physical-switch-2-release-is-a-game-key-card"
+  verified_at: "2026-09-13"
