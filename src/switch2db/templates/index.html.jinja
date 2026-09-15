@@ -365,7 +365,6 @@
         <div class="sort-pills" role="group" aria-label="{{ t.sort_by_label.es }}">
           <span class="sort-by-label">{{ i18n(t.sort_by_label) }}</span>
           <button type="button" class="sort-pill" data-sort-key="name" aria-pressed="true">{{ i18n(t.sort_name) }}</button>
-          <button type="button" class="sort-pill" data-sort-key="publisher" aria-pressed="false">{{ i18n(t.sort_publisher) }}</button>
         </div>
       </div>
     </div>
@@ -374,7 +373,7 @@
 
     <div class="titles">
       {% for title in titles %}
-      <div class="title-card" data-name="{{ title.name|lower }}" data-publisher="{{ title.publisher|lower }}">
+      <div class="title-card" data-name="{{ title.name|lower }}">
         <div class="title-head">
           <div>
             <h2>{{ title.name }}</h2>
