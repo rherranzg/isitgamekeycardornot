@@ -110,17 +110,12 @@
     #search-input {
       flex: 1 1 200px;
       min-width: 160px;
-      -webkit-appearance: none;
-      appearance: none;
       background: var(--surface);
       color: var(--text);
       border: 1px solid var(--border);
       border-radius: 6px;
       padding: 7px 10px;
       font-size: 0.88rem;
-    }
-    #search-input::-webkit-search-cancel-button {
-      -webkit-appearance: none;
     }
     .toolbar-controls {
       display: flex;
@@ -295,7 +290,14 @@
         align-items: stretch;
       }
       #search-input {
+        /* .toolbar pasa a flex-direction: column aquí, y en un eje vertical
+           flex-basis controla la altura: sin resetear flex, el "200px" de
+           la regla de escritorio (pensado como ancho) se aplicaba como alto. */
+        flex: none;
         width: 100%;
+        /* >=16px evita que iOS Safari haga zoom automático al enfocar el campo */
+        font-size: 16px;
+        padding: 9px 10px;
       }
       .title-card {
         padding: 14px;
@@ -327,7 +329,9 @@
 
     <div class="toolbar">
       <input
-        type="search"
+        type="text"
+        inputmode="search"
+        autocomplete="off"
         id="search-input"
         data-placeholder-es="Buscar juego..."
         data-placeholder-en="Search game..."
@@ -876,7 +880,7 @@
     <p id="empty-state" hidden><span data-i18n="es">No se encontraron juegos.</span><span data-i18n="en" hidden>No games found.</span></p>
 
     <footer>
-      <span data-i18n="es">Generado el 2026-09-15 18:46 UTC.</span><span data-i18n="en" hidden>Generated on 2026-09-15 18:46 UTC.</span>
+      <span data-i18n="es">Generado el 2026-09-15 18:51 UTC.</span><span data-i18n="en" hidden>Generated on 2026-09-15 18:51 UTC.</span>
     </footer>
   </div>
 
