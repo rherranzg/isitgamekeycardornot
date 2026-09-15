@@ -17,7 +17,8 @@ from switch2db.site import (
 
 DATA_DIR = Path(__file__).resolve().parent.parent / "data"
 TEMPLATES_DIR = Path(__file__).resolve().parent.parent / "src" / "switch2db" / "templates"
-OUTPUT_DIR = Path(__file__).resolve().parent.parent / "site"
+# docs/, no site/: es la carpeta que GitHub Pages puede servir directamente desde main.
+OUTPUT_DIR = Path(__file__).resolve().parent.parent / "docs"
 
 logger = Logger(service="switch2db-build-site")
 
@@ -51,6 +52,7 @@ def main() -> int:
     generated_at = datetime.now(UTC).strftime("%Y-%m-%d %H:%M UTC")
 
     OUTPUT_DIR.mkdir(exist_ok=True)
+    (OUTPUT_DIR / ".nojekyll").touch()
     output_path = OUTPUT_DIR / "index.html"
     output_path.write_text(render_index(title_views, generated_at), encoding="utf-8")
     logger.info("Web generada", extra={"output": str(output_path), "title_count": len(title_views)})

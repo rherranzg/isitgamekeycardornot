@@ -10,8 +10,8 @@ __pycache__/
 .ruff_cache/
 dist/
 
-# Salidas generadas
-site/
+# docs/ SÍ se versiona: es la web estática que sirve GitHub Pages (scripts/build_site.py)
+
 # Catálogo completo de IGDB: solo para elegir semillas, no se republica
 data/igdb_catalog.yaml
 
