@@ -10,6 +10,7 @@ from switch2db.catalog import CatalogEntry
 from switch2db.data_store import (
     CATALOG_HEADER,
     TITLES_HEADER,
+    append_title_seeds,
     describe_row,
     format_validation_error,
     load_skus,
@@ -110,6 +111,31 @@ def test_write_titles_writes_empty_list(tmp_path: Path) -> None:
     write_titles(path, [])
 
     assert load_titles(path) == ([], [])
+
+
+def test_append_title_seeds_preserves_existing_content_and_appends_new_rows(tmp_path: Path) -> None:
+    path = tmp_path / "title_seeds.yaml"
+    original = "# comentario de curación manual\n- title_id: example-game\n  igdb_id: 1\n"
+    path.write_text(original, encoding="utf-8")
+
+    append_title_seeds(path, [TitleSeed(title_id="other-game", igdb_id=2)], "comentario auto")
+
+    content = path.read_text(encoding="utf-8")
+    assert content.startswith(original)
+    assert "# comentario auto" in content
+    seeds, errors = load_title_seeds(path)
+    assert errors == []
+    assert [seed.title_id for seed in seeds] == ["example-game", "other-game"]
+
+
+def test_append_title_seeds_does_nothing_when_no_new_seeds(tmp_path: Path) -> None:
+    path = tmp_path / "title_seeds.yaml"
+    original = "- title_id: example-game\n  igdb_id: 1\n"
+    path.write_text(original, encoding="utf-8")
+
+    append_title_seeds(path, [], "comentario auto")
+
+    assert path.read_text(encoding="utf-8") == original
 
 
 def test_write_catalog_writes_header_and_iso_dates(tmp_path: Path) -> None:

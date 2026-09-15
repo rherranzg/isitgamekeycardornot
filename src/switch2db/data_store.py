@@ -73,6 +73,15 @@ def write_generated_yaml(path: Path, rows: list[dict[str, object]], header: str)
     path.write_text(f"{header}{content}", encoding="utf-8")
 
 
+def append_title_seeds(path: Path, seeds: list[TitleSeed], comment: str) -> None:
+    """Añade semillas nuevas al final de title_seeds.yaml sin tocar el contenido existente."""
+    if not seeds:
+        return
+    block = yaml.safe_dump([seed.model_dump() for seed in seeds], sort_keys=False, allow_unicode=True)
+    with path.open("a", encoding="utf-8") as handle:
+        handle.write(f"\n# {comment}\n{block}")
+
+
 def write_titles(path: Path, titles: list[Title]) -> None:
     """Reescribe el fichero de títulos importados de IGDB."""
     write_generated_yaml(path, [title.model_dump() for title in titles], TITLES_HEADER)

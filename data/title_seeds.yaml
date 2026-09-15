@@ -2,6 +2,8 @@
 # title_id es el slug propio y estable (minúsculas, números y guiones); no cambiarlo una vez usado en skus.yaml.
 # Criterio: el igdb_id apunta a la entrada de IGDB con el nombre del producto en la caja de Switch 2
 # (p. ej. "Ultimate Edition"), no al juego base. Candidatos: data/igdb_catalog.yaml (download_igdb_catalog).
+# Los bloques marcados "sin revisar" los añadió scripts.select_seeds automáticamente: repasar ese criterio
+# antes de darlos por buenos.
 
 # Control first-party
 - title_id: "mario-kart-world"
