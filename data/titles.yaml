@@ -7,6 +7,10 @@
   igdb_id: 338106
   name: Donkey Kong Bananza
   publisher: Nintendo
+- title_id: metroid-prime-4-beyond
+  igdb_id: 37136
+  name: 'Metroid Prime 4: Beyond'
+  publisher: Nintendo
 - title_id: street-fighter-6
   igdb_id: 343673
   name: Street Fighter 6
@@ -39,3 +43,7 @@
   igdb_id: 252827
   name: Star Wars Outlaws
   publisher: Ubisoft Entertainment
+- title_id: kingdom-come-deliverance-ii
+  igdb_id: 298526
+  name: 'Kingdom Come: Deliverance II'
+  publisher: Deep Silver

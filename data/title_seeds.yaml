@@ -8,6 +8,8 @@
   igdb_id: 338067
 - title_id: "donkey-kong-bananza"
   igdb_id: 338106
+- title_id: "metroid-prime-4-beyond"
+  igdb_id: 37136
 
 # Third-party, publisher japonés
 - title_id: "street-fighter-6"
@@ -28,3 +30,5 @@
   igdb_id: 325594
 - title_id: "star-wars-outlaws"
   igdb_id: 252827
+- title_id: "kingdom-come-deliverance-ii"
+  igdb_id: 298526
