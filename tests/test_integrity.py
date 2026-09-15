@@ -7,10 +7,11 @@ from switch2db.integrity import (
     find_duplicates,
     find_id_duplication_errors,
     find_orphan_sku_errors,
+    find_refresh_warnings,
     find_title_sync_errors,
     find_unimported_seed_warnings,
 )
-from switch2db.models import Sku, Title, TitleSeed
+from switch2db.models import Sku, Title, TitleSeed, TitleStatus
 
 
 @pytest.mark.parametrize(
@@ -84,6 +85,19 @@ def test_find_unimported_seed_warnings_returns_empty_list_when_imported(
     assert find_unimported_seed_warnings([title_seed], [title]) == []
 
 
+def test_find_refresh_warnings_reports_titles_marked_for_refresh(title: Title) -> None:
+    marked = title.model_copy(update={"status": TitleStatus.REFRESH})
+
+    assert find_refresh_warnings([marked]) == [
+        "titles.yaml: 'example-game' está marcado para refrescar (scripts.import_titles)"
+    ]
+
+
+@pytest.mark.parametrize("status", [TitleStatus.PENDING, TitleStatus.REVIEWED])
+def test_find_refresh_warnings_returns_empty_list_when_not_marked(title: Title, status: TitleStatus) -> None:
+    assert find_refresh_warnings([title.model_copy(update={"status": status})]) == []
+
+
 def test_find_cart_size_warnings_reports_cart_size_on_non_full_cart(eu_key_card_sku: Sku) -> None:
     sku = eu_key_card_sku.model_copy(update={"cart_size_gb": 16})
 
@@ -109,7 +123,11 @@ def test_collect_integrity_errors_combines_every_check(title: Title, eu_key_card
     assert len(errors) == 4
 
 
-def test_collect_integrity_warnings_combines_every_check(title_seed: TitleSeed, eu_key_card_sku: Sku) -> None:
+def test_collect_integrity_warnings_combines_every_check(
+    title_seed: TitleSeed, title: Title, eu_key_card_sku: Sku
+) -> None:
+    marked = title.model_copy(update={"title_id": "marked-game", "status": TitleStatus.REFRESH})
     sku = eu_key_card_sku.model_copy(update={"cart_size_gb": 16})
 
-    assert len(collect_integrity_warnings([title_seed], [], [sku])) == 2
+    # 1 semilla sin importar + 1 título marcado para refrescar + 1 cart_size_gb sin full_cart
+    assert len(collect_integrity_warnings([title_seed], [marked], [sku])) == 3

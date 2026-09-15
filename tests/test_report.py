@@ -1,15 +1,31 @@
-from switch2db.models import Sku
-from switch2db.report import build_report, count_skus_by, describe_format_divergences
+from switch2db.models import Sku, Title, TitleStatus
+from switch2db.report import (
+    build_report,
+    count_by,
+    describe_format_divergences,
+    list_pending_review_title_ids,
+)
 
 
-def test_count_skus_by_success(eu_key_card_sku: Sku, asia_full_cart_sku: Sku, jp_unknown_sku: Sku) -> None:
+def test_count_by_success(eu_key_card_sku: Sku, asia_full_cart_sku: Sku, jp_unknown_sku: Sku) -> None:
     skus = [eu_key_card_sku, asia_full_cart_sku, jp_unknown_sku]
 
-    assert count_skus_by(skus, "region") == {"EU": 1, "ASIA": 1, "JP": 1}
+    assert count_by(skus, "region") == {"EU": 1, "ASIA": 1, "JP": 1}
 
 
-def test_count_skus_by_returns_empty_dict_without_skus() -> None:
-    assert count_skus_by([], "region") == {}
+def test_count_by_returns_empty_dict_without_rows() -> None:
+    assert count_by([], "region") == {}
+
+
+def test_list_pending_review_title_ids_success(title: Title) -> None:
+    reviewed = title.model_copy(update={"title_id": "reviewed-game", "status": TitleStatus.REVIEWED})
+    marked = title.model_copy(update={"title_id": "refresh-game", "status": TitleStatus.REFRESH})
+
+    assert list_pending_review_title_ids([reviewed, title, marked]) == ["example-game"]
+
+
+def test_list_pending_review_title_ids_returns_empty_list_when_all_reviewed(title: Title) -> None:
+    assert list_pending_review_title_ids([title.model_copy(update={"status": TitleStatus.REVIEWED})]) == []
 
 
 def test_describe_format_divergences_success(eu_key_card_sku: Sku, asia_full_cart_sku: Sku) -> None:
@@ -18,9 +34,12 @@ def test_describe_format_divergences_success(eu_key_card_sku: Sku, asia_full_car
     }
 
 
-def test_build_report_success(eu_key_card_sku: Sku, asia_full_cart_sku: Sku) -> None:
-    report = build_report([eu_key_card_sku, asia_full_cart_sku], fill_threshold=60.0)
+def test_build_report_success(title: Title, eu_key_card_sku: Sku, asia_full_cart_sku: Sku) -> None:
+    report = build_report([title], [eu_key_card_sku, asia_full_cart_sku], fill_threshold=60.0)
 
+    assert report.title_count == 1
+    assert report.titles_by_status == {"pending": 1}
+    assert report.pending_review_titles == ["example-game"]
     assert report.sku_count == 2
     assert report.skus_by_format == {"game_key_card": 1, "full_cart": 1}
     assert report.fill_rates["cart_size_gb"] == 100.0
@@ -30,10 +49,13 @@ def test_build_report_success(eu_key_card_sku: Sku, asia_full_cart_sku: Sku) -> 
     }
 
 
-def test_build_report_handles_empty_skus() -> None:
-    report = build_report([], fill_threshold=60.0)
+def test_build_report_handles_empty_data() -> None:
+    report = build_report([], [], fill_threshold=60.0)
 
     assert report.model_dump() == {
+        "title_count": 0,
+        "titles_by_status": {},
+        "pending_review_titles": [],
         "sku_count": 0,
         "skus_by_region": {},
         "skus_by_format": {},

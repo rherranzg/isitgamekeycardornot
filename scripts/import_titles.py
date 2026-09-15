@@ -9,7 +9,7 @@ from switch2db.igdb_auth import get_access_token
 from switch2db.igdb_client import fetch_games_by_ids
 from switch2db.models import Title, TitleSeed
 from switch2db.title_mapper import map_games_to_titles
-from switch2db.title_sync import chunk_seeds, merge_titles, select_seeds_to_fetch
+from switch2db.title_sync import chunk_seeds, find_title_ids_to_refresh, merge_titles, select_seeds_to_fetch
 
 DATA_DIR = Path(__file__).resolve().parent.parent / "data"
 
@@ -80,6 +80,7 @@ def main() -> None:
 
     refresh_ids = set(args.refresh or [])
     check_refresh_ids_exist(refresh_ids, seeds)
+    refresh_ids |= find_title_ids_to_refresh(existing_titles)
 
     limit = None if args.all else args.count
     to_fetch = select_seeds_to_fetch(
@@ -107,7 +108,7 @@ def main() -> None:
         extra={
             "imported": imported,
             "total": len(existing_titles),
-            "pending": len(seeds) - len(existing_titles),
+            "not_imported": len(seeds) - len(existing_titles),
         },
     )
 

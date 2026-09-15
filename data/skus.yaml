@@ -237,3 +237,172 @@
   evidence: "press_report"  # (listado) GoNintendo: la edición física de Switch 2 es Game-key card
   source_url: "https://gonintendo.com/contents/48102-star-wars-outlaws-physical-switch-2-release-is-a-game-key-card"
   verified_at: "2026-09-13"
+
+# ---------------------------------------------------------------------------------------------------------
+# PROPUESTOS por Claude el 2026-09-15: PENDIENTES DE REVISIÓN. Mismo criterio (leída)/(listado) que arriba.
+# ---------------------------------------------------------------------------------------------------------
+
+# 007 First Light: game-key card. IO Interactive retrasó la versión de Switch 2 a marzo de 2027 (Nintendo Life,
+# 12-09-2026), así que no hay fecha: los listados siguen mostrando fechas antiguas (16-09-2026, 31-12-2026).
+- sku_id: "eu-007-first-light-standard"
+  title_id: "007-first-light"
+  region: "EU"
+  edition: "standard"
+  distributor: null
+  release_date: null
+  format: "game_key_card"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: "0884095225285"  # EAN del listado de WOG
+  evidence: "retailer_listing"  # (leída) WOG (Suiza, caja en alemán): "007 First Light (Game-Key Card)"
+  source_url: "https://www.wog.ch/en/index.cfm/details/product/220906-007-First-Light-Game-Key-Card"
+  verified_at: "2026-09-15"
+- sku_id: "na-007-first-light-standard"
+  title_id: "007-first-light"
+  region: "NA"
+  edition: "standard"
+  distributor: null
+  release_date: null
+  format: "game_key_card"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: "884095225025"  # UPC del listado de Target
+  evidence: "retailer_listing"  # (leída) Target: formato "Game-Key Card"
+  source_url: "https://www.target.com/p/007-first-light-nintendo-switch-2/-/A-94948513"
+  verified_at: "2026-09-15"
+- sku_id: "jp-007-first-light-standard"
+  title_id: "007-first-light"
+  region: "JP"
+  edition: "standard"
+  distributor: null
+  release_date: null
+  format: "game_key_card"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) AllKeyShop, sobre el listado de Amazon Japan: "The retail box includes a Game-Key Card"
+  source_url: "https://www.allkeyshop.com/blog/007-first-light-nintendo-switch-2-release-date-leaked-news-r/"
+  verified_at: "2026-09-15"
+
+# Absolum: cartucho completo, edición física de Silver Lining Interactive con precio en £/€/$ (sin datos de JP/ASIA).
+- sku_id: "eu-absolum-standard"
+  title_id: "absolum"
+  region: "EU"
+  edition: "standard"
+  distributor: "Silver Lining Interactive"
+  release_date: "2026-09-17"
+  format: "full_cart"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) GoNintendo: "full-cartridge physical edition", 17-09-2026, £44.99 / €49.99
+  source_url: "https://gonintendo.com/contents/59655-absolum-getting-physical-switch-2-release"
+  verified_at: "2026-09-15"
+- sku_id: "na-absolum-standard"
+  title_id: "absolum"
+  region: "NA"
+  edition: "standard"
+  distributor: "Silver Lining Interactive"
+  release_date: "2026-09-17"
+  format: "full_cart"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) misma nota de GoNintendo, $49.99; Nintendo Life: "the full game will be on the Switch 2 cartridge"
+  source_url: "https://gonintendo.com/contents/59655-absolum-getting-physical-switch-2-release"
+  verified_at: "2026-09-15"
+
+# Akiba Lost: edición física solo en Japón, en game-key card.
+- sku_id: "jp-akiba-lost-standard"
+  title_id: "akiba-lost"
+  region: "JP"
+  edition: "standard"
+  distributor: "IzanagiGames"  # Gematsu la cita como publisher; la edición física es solo japonesa
+  release_date: "2026-09-17"
+  format: "game_key_card"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: "4573553536020"  # JAN que aparece en la URL del listado de Hobby Genki (listado, 403)
+  evidence: "press_report"  # (leída) Gematsu: "The Switch 2 version will ship on a game-key card"
+  source_url: "https://www.gematsu.com/2026/01/akiba-lost-launches-september-17"
+  verified_at: "2026-09-15"
+
+# Donkey Kong Bananza: cartucho completo en todas las regiones; lanzamiento mundial el 17-07-2025.
+# Sin fuente para cart_size_gb ni para el EAN de EU y KR. download_size_gb no aplica: el juego va en el cartucho.
+# (API) = API pública de la web oficial de Nintendo.
+- sku_id: "eu-donkey-kong-bananza-standard"
+  title_id: "donkey-kong-bananza"
+  region: "EU"
+  edition: "standard"
+  distributor: null
+  release_date: "2025-07-17"  # (leída) ficha de Nintendo UK: "17/07/2025"
+  format: "full_cart"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) Nintendo Life lo lista entre los juegos con el juego completo en el cartucho
+  source_url: "https://www.nintendolife.com/guides/every-nintendo-switch-2-physical-release-with-the-full-game-on-the-cart"
+  verified_at: "2026-09-15"
+- sku_id: "na-donkey-kong-bananza-standard"
+  title_id: "donkey-kong-bananza"
+  region: "NA"
+  edition: "standard"
+  distributor: null
+  release_date: "2025-07-17"  # (API) Nintendo of America (Algolia): releaseDate 2025-07-17
+  format: "full_cart"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: "0045496905576"  # (listado) UPCitemdb: GameStop, Target y Walmart "U.S. Version"; Walmart también lista 0045496312763
+  evidence: "press_report"  # (leída) Game Rant: "physical version is not a Game Key Card"
+  source_url: "https://gamerant.com/is-donkey-kong-bananza-game-key-card-download-size-explained/"
+  verified_at: "2026-09-15"
+- sku_id: "jp-donkey-kong-bananza-standard"
+  title_id: "donkey-kong-bananza"
+  region: "JP"
+  edition: "standard"
+  distributor: "Nintendo"  # (API) Nintendo Japón: maker 任天堂
+  release_date: "2025-07-17"  # (API) Nintendo Japón: sdate 2025.7.17, パッケージ版 8.980 yenes
+  format: "full_cart"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: "4902370553413"  # (listado) JAN en las URLs de Rakuten Books, AEON y SoftBank Selection
+  evidence: "press_report"  # (leída) AUTOMATON: "同じくゲームカードを採用した『ドンキーコング バナンザ』"
+  source_url: "https://automaton-media.com/articles/newsjp/nintendo-switch-2-20250424-336320/"
+  verified_at: "2026-09-15"
+- sku_id: "kr-donkey-kong-bananza-standard"
+  title_id: "donkey-kong-bananza"
+  region: "KR"
+  edition: "standard"
+  distributor: null
+  release_date: "2025-07-17"  # (leída) Nintendo Korea: "2025년 7월 17일", 패키지 버전 88.000 wones
+  format: "full_cart"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "retailer_listing"  # (leída) Danawa: "동키콩 바난자 한글판 SWITCH2, 패키지칩"
+  source_url: "https://prod.danawa.com/info/?pcode=91559972"
+  verified_at: "2026-09-15"
+- sku_id: "asia-donkey-kong-bananza-standard"
+  title_id: "donkey-kong-bananza"
+  region: "ASIA"
+  edition: "standard"
+  distributor: null
+  release_date: "2025-07-17"  # (leída) Nintendo HK: "2025年7月17日", versión en caja a 499 HKD
+  format: "full_cart"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: "4711279510645"  # (listado) código en la URL de HobbyDigi "[Asia Ver]"
+  evidence: "retailer_listing"  # (listado) Play-Asia: "(Multi-Language) Game Cart"; las key cards las llama "Game Key Cart"
+  source_url: "https://www.play-asia.com/en/donkey-kong-bananza-multi-language/13/70igxd"
+  verified_at: "2026-09-15"

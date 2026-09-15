@@ -1,49 +1,124 @@
-# Generado por scripts/import_titles.py a partir de title_seeds.yaml. No editar a mano.
+# Generado por scripts/import_titles.py a partir de title_seeds.yaml. A mano solo se edita status:
+#   pending  = importado de IGDB y aún sin comprobar (lo pone import_titles)
+#   reviewed = datos comprobados a mano
+#   refresh  = volver a importarlo de IGDB en el próximo import_titles, que lo deja en pending
 - title_id: mario-kart-world
   igdb_id: 338067
   name: Mario Kart World
   publisher: Nintendo
+  status: reviewed
 - title_id: donkey-kong-bananza
   igdb_id: 338106
   name: Donkey Kong Bananza
   publisher: Nintendo
+  status: reviewed
 - title_id: metroid-prime-4-beyond
   igdb_id: 37136
   name: 'Metroid Prime 4: Beyond'
   publisher: Nintendo
+  status: reviewed
 - title_id: street-fighter-6
   igdb_id: 343673
   name: Street Fighter 6
   publisher: Capcom
+  status: reviewed
 - title_id: yakuza-0-directors-cut
   igdb_id: 338084
   name: 'Yakuza 0: Director''s Cut'
   publisher: Sega
+  status: reviewed
 - title_id: bravely-default-flying-fairy-hd-remaster
   igdb_id: 338083
   name: 'Bravely Default: Flying Fairy - HD Remaster'
   publisher: Square Enix
+  status: pending
 - title_id: elden-ring-tarnished-edition
   igdb_id: 338079
   name: 'Elden Ring: Tarnished Edition'
   publisher: Bandai Namco Entertainment
+  status: reviewed
 - title_id: cyberpunk-2077-ultimate-edition
   igdb_id: 277807
   name: 'Cyberpunk 2077: Ultimate Edition'
   publisher: CD Projekt RED
+  status: reviewed
 - title_id: hitman-world-of-assassination-signature-edition
   igdb_id: 338082
   name: 'Hitman World of Assassination: Signature Edition'
   publisher: IO Interactive
+  status: pending
 - title_id: split-fiction
   igdb_id: 325594
   name: Split Fiction
   publisher: Electronic Arts
+  status: reviewed
 - title_id: star-wars-outlaws
   igdb_id: 252827
   name: Star Wars Outlaws
   publisher: Ubisoft Entertainment
+  status: reviewed
 - title_id: kingdom-come-deliverance-ii
   igdb_id: 298526
   name: 'Kingdom Come: Deliverance II'
   publisher: Deep Silver
+  status: reviewed
+- title_id: 007-first-light
+  igdb_id: 141114
+  name: 007 First Light
+  publisher: IO Interactive
+  status: reviewed
+- title_id: 1000xresist
+  igdb_id: 218282
+  name: 1000xResist
+  publisher: Fellow Traveller
+  status: pending
+- title_id: 1001-threads-of-mizan
+  igdb_id: 414985
+  name: 1001 Threads of Mizan
+  publisher: MBC Game Studio
+  status: pending
+- title_id: a-train-all-aboard-tourism-nintendo-switch-2-edition
+  igdb_id: 380696
+  name: 'A-Train: All Aboard! Tourism - Nintendo Switch 2 Edition'
+  publisher: Artdink
+  status: pending
+- title_id: absolum
+  igdb_id: 334239
+  name: Absolum
+  publisher: DotEmu
+  status: reviewed
+- title_id: acornia-mirror-worlds
+  igdb_id: 414957
+  name: 'Acornia: Mirror Worlds'
+  publisher: The Arcade Crew
+  status: pending
+- title_id: afl-26
+  igdb_id: 340723
+  name: AFL 26
+  publisher: Nacon
+  status: pending
+- title_id: after-the-wane
+  igdb_id: 387356
+  name: After the Wane
+  publisher: Nova-Box
+  status: pending
+- title_id: age-twisters
+  igdb_id: 414963
+  name: Age Twisters
+  publisher: Krafton
+  status: pending
+- title_id: akatori
+  igdb_id: 140375
+  name: Akatori
+  publisher: Games Harbor
+  status: pending
+- title_id: akiba-lost
+  igdb_id: 369701
+  name: Akiba Lost
+  publisher: IzanagiGames
+  status: pending
+- title_id: alien-isolation-2
+  igdb_id: 319082
+  name: 'Alien: Isolation 2'
+  publisher: Sega
+  status: reviewed

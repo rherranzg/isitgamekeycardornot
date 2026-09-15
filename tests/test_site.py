@@ -1,5 +1,5 @@
-from switch2db.models import Region, Sku, Title
-from switch2db.site import build_sku_view, build_title_views
+from switch2db.models import Region, Sku, Title, TitleStatus
+from switch2db.site import build_sku_view, build_title_views, select_published_titles
 
 
 def test_build_sku_view_translates_labels(eu_key_card_sku: Sku) -> None:
@@ -69,11 +69,28 @@ def test_build_title_views_includes_titles_without_skus(title: Title) -> None:
 
 
 def test_build_title_views_sorts_by_name_case_insensitive() -> None:
-    lowercase_title = Title(title_id="zelda", igdb_id=1, name="zelda", publisher="Nintendo")
+    lowercase_title = Title(
+        title_id="zelda", igdb_id=1, name="zelda", publisher="Nintendo", status=TitleStatus.PENDING
+    )
     uppercase_title = Title(
-        title_id="animal-crossing", igdb_id=2, name="Animal Crossing", publisher="Nintendo"
+        title_id="animal-crossing",
+        igdb_id=2,
+        name="Animal Crossing",
+        publisher="Nintendo",
+        status=TitleStatus.PENDING,
     )
 
     views = build_title_views([lowercase_title, uppercase_title], [])
 
     assert [view.name for view in views] == ["Animal Crossing", "zelda"]
+
+
+def test_select_published_titles_keeps_only_reviewed_titles(title: Title) -> None:
+    reviewed = title.model_copy(update={"title_id": "reviewed-game", "status": TitleStatus.REVIEWED})
+    marked = title.model_copy(update={"title_id": "refresh-game", "status": TitleStatus.REFRESH})
+
+    assert select_published_titles([title, reviewed, marked]) == [reviewed]
+
+
+def test_select_published_titles_returns_empty_list_when_nothing_is_reviewed(title: Title) -> None:
+    assert select_published_titles([title]) == []

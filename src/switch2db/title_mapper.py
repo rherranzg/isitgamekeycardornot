@@ -1,5 +1,5 @@
 from switch2db.igdb_models import IgdbGame
-from switch2db.models import Title, TitleSeed
+from switch2db.models import Title, TitleSeed, TitleStatus
 
 PUBLISHER_SEPARATOR = " / "
 
@@ -20,9 +20,13 @@ def extract_publisher(game: IgdbGame) -> str:
 
 
 def map_game_to_title(seed: TitleSeed, game: IgdbGame) -> Title:
-    """Construye el Title de una semilla con los metadatos de su juego de IGDB."""
+    """Construye el Title de una semilla con los metadatos de su juego de IGDB, pendiente de revisar."""
     return Title(
-        title_id=seed.title_id, igdb_id=seed.igdb_id, name=game.name, publisher=extract_publisher(game)
+        title_id=seed.title_id,
+        igdb_id=seed.igdb_id,
+        name=game.name,
+        publisher=extract_publisher(game),
+        status=TitleStatus.PENDING,
     )
 
 

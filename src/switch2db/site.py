@@ -4,9 +4,12 @@ from pydantic import BaseModel
 
 from switch2db.divergences import find_format_divergences
 from switch2db.i18n import EDITION_LABELS, EVIDENCE_LABELS, FORMAT_LABELS, LANGUAGES, UI_STRINGS
-from switch2db.models import Edition, Format, Region, Sku, Title
+from switch2db.models import Edition, Format, Region, Sku, Title, TitleStatus
 
 LocalizedText = dict[str, str]
+
+# Solo se publica lo comprobado a mano: pending y refresh tienen datos de IGDB sin revisar.
+PUBLISHED_TITLE_STATUS = TitleStatus.REVIEWED
 
 FORMAT_CSS_CLASSES: dict[Format, str] = {
     Format.FULL_CART: "format-full-cart",
@@ -93,6 +96,11 @@ def build_title_view(
         skus=[build_sku_view(sku) for sku in title_skus],
         has_divergence=title.title_id in diverging_title_ids,
     )
+
+
+def select_published_titles(titles: list[Title]) -> list[Title]:
+    """Devuelve los títulos que se publican en la web: solo los revisados a mano."""
+    return [title for title in titles if title.status == PUBLISHED_TITLE_STATUS]
 
 
 def build_title_views(titles: list[Title], skus: list[Sku]) -> list[TitleView]:

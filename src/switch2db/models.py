@@ -45,6 +45,14 @@ class Evidence(StrEnum):
     UNCONFIRMED = "unconfirmed"
 
 
+class TitleStatus(StrEnum):
+    """Estado de revisión de los datos de un título importados de IGDB."""
+
+    PENDING = "pending"  # importado de IGDB y aún sin comprobar a mano
+    REVIEWED = "reviewed"  # comprobado a mano
+    REFRESH = "refresh"  # marcado a mano para volver a importarlo de IGDB
+
+
 class TitleSeed(BaseModel):
     """Juego a importar de IGDB, con su igdb_id fijado a mano."""
 
@@ -59,6 +67,7 @@ class Title(TitleSeed):
 
     name: str = Field(..., min_length=1, description="Nombre del juego según IGDB")
     publisher: str = Field(..., min_length=1, description="Publisher global según IGDB")
+    status: TitleStatus = Field(..., description="Estado de revisión de los datos importados de IGDB")
 
 
 def build_sku_id(region: Region, title_id: str, edition: Edition) -> str:

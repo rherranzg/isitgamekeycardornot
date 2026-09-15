@@ -3,7 +3,7 @@ from datetime import date
 import pytest
 from pydantic import ValidationError
 
-from switch2db.models import Edition, Region, Sku, TitleSeed, build_sku_id
+from switch2db.models import Edition, Region, Sku, Title, TitleSeed, TitleStatus, build_sku_id
 
 
 def test_build_sku_id_success() -> None:
@@ -82,3 +82,21 @@ def test_sku_model_validate_raises_on_invalid_field(
 def test_title_seed_model_validate_raises_on_invalid_row(row: dict[str, object]) -> None:
     with pytest.raises(ValidationError):
         TitleSeed.model_validate(row)
+
+
+@pytest.mark.parametrize("status", ["pending", "reviewed", "refresh"])
+def test_title_model_validate_success(title_row: dict[str, object], status: str) -> None:
+    assert Title.model_validate({**title_row, "status": status}).status == TitleStatus(status)
+
+
+@pytest.mark.parametrize("status", ["done", "PENDING", None])
+def test_title_model_validate_raises_on_invalid_status(title_row: dict[str, object], status: object) -> None:
+    with pytest.raises(ValidationError):
+        Title.model_validate({**title_row, "status": status})
+
+
+def test_title_model_validate_raises_when_status_is_missing(title_row: dict[str, object]) -> None:
+    row = {field: value for field, value in title_row.items() if field != "status"}
+
+    with pytest.raises(ValidationError, match="status"):
+        Title.model_validate(row)

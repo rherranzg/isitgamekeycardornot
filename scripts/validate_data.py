@@ -22,7 +22,7 @@ def main() -> int:
 
     for warning in collect_integrity_warnings(seeds, titles, skus):
         logger.warning(warning)
-    logger.info("Informe de datos", extra=build_report(skus, FILL_RATE_THRESHOLD).model_dump())
+    logger.info("Informe de datos", extra=build_report(titles, skus, FILL_RATE_THRESHOLD).model_dump())
     for error in errors:
         logger.error(error)
     logger.info("Validación terminada", extra={"error_count": len(errors)})

@@ -10,7 +10,12 @@ from switch2db.models import Sku, Title, TitleSeed
 
 ModelT = TypeVar("ModelT", bound=BaseModel)
 
-TITLES_HEADER = "# Generado por scripts/import_titles.py a partir de title_seeds.yaml. No editar a mano.\n"
+TITLES_HEADER = (
+    "# Generado por scripts/import_titles.py a partir de title_seeds.yaml. A mano solo se edita status:\n"
+    "#   pending  = importado de IGDB y aún sin comprobar (lo pone import_titles)\n"
+    "#   reviewed = datos comprobados a mano\n"
+    "#   refresh  = volver a importarlo de IGDB en el próximo import_titles, que lo deja en pending\n"
+)
 CATALOG_HEADER = "# Juegos de Switch 2 en IGDB (scripts/download_igdb_catalog.py). Local, no se versiona.\n"
 
 
@@ -83,8 +88,8 @@ def append_title_seeds(path: Path, seeds: list[TitleSeed], comment: str) -> None
 
 
 def write_titles(path: Path, titles: list[Title]) -> None:
-    """Reescribe el fichero de títulos importados de IGDB."""
-    write_generated_yaml(path, [title.model_dump() for title in titles], TITLES_HEADER)
+    """Reescribe el fichero de títulos importados de IGDB, con el status como texto plano."""
+    write_generated_yaml(path, [title.model_dump(mode="json") for title in titles], TITLES_HEADER)
 
 
 def write_catalog(path: Path, entries: list[CatalogEntry]) -> None:

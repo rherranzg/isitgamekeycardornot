@@ -15,9 +15,21 @@ def title_seed() -> TitleSeed:
 
 
 @pytest.fixture
-def title() -> Title:
-    """Título importado que corresponde a title_seed."""
-    return Title(title_id="example-game", igdb_id=12345, name="Example Game", publisher="Example Publisher")
+def title_row() -> dict[str, object]:
+    """Fila válida de titles.yaml que corresponde a title_seed, recién importada."""
+    return {
+        "title_id": "example-game",
+        "igdb_id": 12345,
+        "name": "Example Game",
+        "publisher": "Example Publisher",
+        "status": "pending",
+    }
+
+
+@pytest.fixture
+def title(title_row: dict[str, object]) -> Title:
+    """Título importado que corresponde a title_seed, pendiente de revisar."""
+    return Title.model_validate(title_row)
 
 
 @pytest.fixture

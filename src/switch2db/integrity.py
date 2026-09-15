@@ -1,6 +1,6 @@
 from collections import Counter
 
-from switch2db.models import Format, Sku, Title, TitleSeed
+from switch2db.models import Format, Sku, Title, TitleSeed, TitleStatus
 
 
 def find_duplicates(values: list[str]) -> list[str]:
@@ -56,6 +56,15 @@ def find_unimported_seed_warnings(seeds: list[TitleSeed], titles: list[Title]) -
     ]
 
 
+def find_refresh_warnings(titles: list[Title]) -> list[str]:
+    """Avisa de los títulos marcados con status refresh que aún no se han vuelto a importar."""
+    return [
+        f"titles.yaml: '{title.title_id}' está marcado para refrescar (scripts.import_titles)"
+        for title in titles
+        if title.status == TitleStatus.REFRESH
+    ]
+
+
 def find_cart_size_warnings(skus: list[Sku]) -> list[str]:
     """Avisa de los SKUs que indican cart_size_gb sin ser full_cart."""
     return [
@@ -76,4 +85,8 @@ def collect_integrity_errors(seeds: list[TitleSeed], titles: list[Title], skus: 
 
 def collect_integrity_warnings(seeds: list[TitleSeed], titles: list[Title], skus: list[Sku]) -> list[str]:
     """Reúne los avisos que no invalidan los datos."""
-    return [*find_unimported_seed_warnings(seeds, titles), *find_cart_size_warnings(skus)]
+    return [
+        *find_unimported_seed_warnings(seeds, titles),
+        *find_refresh_warnings(titles),
+        *find_cart_size_warnings(skus),
+    ]
