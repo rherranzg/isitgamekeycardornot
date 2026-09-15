@@ -110,12 +110,23 @@
     #search-input {
       flex: 1 1 200px;
       min-width: 160px;
+      -webkit-appearance: none;
+      appearance: none;
       background: var(--surface);
       color: var(--text);
       border: 1px solid var(--border);
       border-radius: 6px;
       padding: 7px 10px;
       font-size: 0.88rem;
+    }
+    #search-input::-webkit-search-cancel-button {
+      -webkit-appearance: none;
+    }
+    .toolbar-controls {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
     }
     .filter-dropdown {
       position: relative;
@@ -286,11 +297,6 @@
       #search-input {
         width: 100%;
       }
-      .toolbar-controls {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 10px;
-      }
       .title-card {
         padding: 14px;
       }
@@ -360,7 +366,6 @@
           <span class="sort-by-label">{{ i18n(t.sort_by_label) }}</span>
           <button type="button" class="sort-pill" data-sort-key="name" aria-pressed="true">{{ i18n(t.sort_name) }}</button>
           <button type="button" class="sort-pill" data-sort-key="publisher" aria-pressed="false">{{ i18n(t.sort_publisher) }}</button>
-          <button type="button" class="sort-pill" data-sort-key="regions" aria-pressed="false">{{ i18n(t.sort_regions) }}</button>
         </div>
       </div>
     </div>
@@ -369,7 +374,7 @@
 
     <div class="titles">
       {% for title in titles %}
-      <div class="title-card" data-name="{{ title.name|lower }}" data-publisher="{{ title.publisher|lower }}" data-regions="{{ title.region_count }}">
+      <div class="title-card" data-name="{{ title.name|lower }}" data-publisher="{{ title.publisher|lower }}">
         <div class="title-head">
           <div>
             <h2>{{ title.name }}</h2>
@@ -507,8 +512,8 @@
       var key = state.sortKey;
 
       nodes.sort(function (a, b) {
-        var av = key === "regions" ? Number(a.dataset.regions) : a.dataset[key];
-        var bv = key === "regions" ? Number(b.dataset.regions) : b.dataset[key];
+        var av = a.dataset[key];
+        var bv = b.dataset[key];
         var cmp = av < bv ? -1 : av > bv ? 1 : 0;
         // Array.prototype.sort es estable: los empates conservan el orden previo
         // (nombre ascendente en la carga inicial), siempre que las tarjetas no se

@@ -40,7 +40,6 @@ class TitleView(BaseModel):
     publisher: str
     skus: list[SkuView]
     has_divergence: bool
-    region_count: int
 
 
 def build_size_text(sku: Sku) -> LocalizedText:
@@ -93,7 +92,6 @@ def build_title_view(
         publisher=title.publisher,
         skus=[build_sku_view(sku) for sku in title_skus],
         has_divergence=title.title_id in diverging_title_ids,
-        region_count=len({sku.region for sku in title_skus}),
     )
 
 

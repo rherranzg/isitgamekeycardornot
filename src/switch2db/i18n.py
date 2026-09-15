@@ -52,7 +52,6 @@ UI_STRINGS: dict[str, dict[str, str]] = {
     "sort_by_label": {"es": "Ordenar por", "en": "Sort by"},
     "sort_name": {"es": "Nombre", "en": "Name"},
     "sort_publisher": {"es": "Publisher", "en": "Publisher"},
-    "sort_regions": {"es": "Nº regiones", "en": "Regions"},
     "no_results": {"es": "No se encontraron juegos.", "en": "No games found."},
 }
 

@@ -110,12 +110,23 @@
     #search-input {
       flex: 1 1 200px;
       min-width: 160px;
+      -webkit-appearance: none;
+      appearance: none;
       background: var(--surface);
       color: var(--text);
       border: 1px solid var(--border);
       border-radius: 6px;
       padding: 7px 10px;
       font-size: 0.88rem;
+    }
+    #search-input::-webkit-search-cancel-button {
+      -webkit-appearance: none;
+    }
+    .toolbar-controls {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
     }
     .filter-dropdown {
       position: relative;
@@ -286,11 +297,6 @@
       #search-input {
         width: 100%;
       }
-      .toolbar-controls {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 10px;
-      }
       .title-card {
         padding: 14px;
       }
@@ -383,7 +389,6 @@
           <span class="sort-by-label"><span data-i18n="es">Ordenar por</span><span data-i18n="en" hidden>Sort by</span></span>
           <button type="button" class="sort-pill" data-sort-key="name" aria-pressed="true"><span data-i18n="es">Nombre</span><span data-i18n="en" hidden>Name</span></button>
           <button type="button" class="sort-pill" data-sort-key="publisher" aria-pressed="false"><span data-i18n="es">Publisher</span><span data-i18n="en" hidden>Publisher</span></button>
-          <button type="button" class="sort-pill" data-sort-key="regions" aria-pressed="false"><span data-i18n="es">Nº regiones</span><span data-i18n="en" hidden>Regions</span></button>
         </div>
       </div>
     </div>
@@ -392,7 +397,7 @@
 
     <div class="titles">
       
-      <div class="title-card" data-name="bravely default: flying fairy - hd remaster" data-publisher="square enix" data-regions="1">
+      <div class="title-card" data-name="bravely default: flying fairy - hd remaster" data-publisher="square enix">
         <div class="title-head">
           <div>
             <h2>Bravely Default: Flying Fairy - HD Remaster</h2>
@@ -435,7 +440,7 @@
         
       </div>
       
-      <div class="title-card" data-name="cyberpunk 2077: ultimate edition" data-publisher="cd projekt red" data-regions="4">
+      <div class="title-card" data-name="cyberpunk 2077: ultimate edition" data-publisher="cd projekt red">
         <div class="title-head">
           <div>
             <h2>Cyberpunk 2077: Ultimate Edition</h2>
@@ -517,7 +522,7 @@
         
       </div>
       
-      <div class="title-card" data-name="donkey kong bananza" data-publisher="nintendo" data-regions="0">
+      <div class="title-card" data-name="donkey kong bananza" data-publisher="nintendo">
         <div class="title-head">
           <div>
             <h2>Donkey Kong Bananza</h2>
@@ -531,7 +536,7 @@
         
       </div>
       
-      <div class="title-card" data-name="elden ring: tarnished edition" data-publisher="bandai namco entertainment" data-regions="1">
+      <div class="title-card" data-name="elden ring: tarnished edition" data-publisher="bandai namco entertainment">
         <div class="title-head">
           <div>
             <h2>Elden Ring: Tarnished Edition</h2>
@@ -574,7 +579,7 @@
         
       </div>
       
-      <div class="title-card" data-name="hitman world of assassination: signature edition" data-publisher="io interactive" data-regions="0">
+      <div class="title-card" data-name="hitman world of assassination: signature edition" data-publisher="io interactive">
         <div class="title-head">
           <div>
             <h2>Hitman World of Assassination: Signature Edition</h2>
@@ -588,7 +593,7 @@
         
       </div>
       
-      <div class="title-card" data-name="kingdom come: deliverance ii" data-publisher="deep silver" data-regions="0">
+      <div class="title-card" data-name="kingdom come: deliverance ii" data-publisher="deep silver">
         <div class="title-head">
           <div>
             <h2>Kingdom Come: Deliverance II</h2>
@@ -602,7 +607,7 @@
         
       </div>
       
-      <div class="title-card" data-name="mario kart world" data-publisher="nintendo" data-regions="0">
+      <div class="title-card" data-name="mario kart world" data-publisher="nintendo">
         <div class="title-head">
           <div>
             <h2>Mario Kart World</h2>
@@ -616,7 +621,7 @@
         
       </div>
       
-      <div class="title-card" data-name="metroid prime 4: beyond" data-publisher="nintendo" data-regions="0">
+      <div class="title-card" data-name="metroid prime 4: beyond" data-publisher="nintendo">
         <div class="title-head">
           <div>
             <h2>Metroid Prime 4: Beyond</h2>
@@ -630,7 +635,7 @@
         
       </div>
       
-      <div class="title-card" data-name="split fiction" data-publisher="electronic arts" data-regions="1">
+      <div class="title-card" data-name="split fiction" data-publisher="electronic arts">
         <div class="title-head">
           <div>
             <h2>Split Fiction</h2>
@@ -673,7 +678,7 @@
         
       </div>
       
-      <div class="title-card" data-name="star wars outlaws" data-publisher="ubisoft entertainment" data-regions="1">
+      <div class="title-card" data-name="star wars outlaws" data-publisher="ubisoft entertainment">
         <div class="title-head">
           <div>
             <h2>Star Wars Outlaws</h2>
@@ -716,7 +721,7 @@
         
       </div>
       
-      <div class="title-card" data-name="street fighter 6" data-publisher="capcom" data-regions="4">
+      <div class="title-card" data-name="street fighter 6" data-publisher="capcom">
         <div class="title-head">
           <div>
             <h2>Street Fighter 6</h2>
@@ -798,7 +803,7 @@
         
       </div>
       
-      <div class="title-card" data-name="yakuza 0: director's cut" data-publisher="sega" data-regions="3">
+      <div class="title-card" data-name="yakuza 0: director's cut" data-publisher="sega">
         <div class="title-head">
           <div>
             <h2>Yakuza 0: Director's Cut</h2>
@@ -872,7 +877,7 @@
     <p id="empty-state" hidden><span data-i18n="es">No se encontraron juegos.</span><span data-i18n="en" hidden>No games found.</span></p>
 
     <footer>
-      <span data-i18n="es">Generado el 2026-09-15 18:34 UTC.</span><span data-i18n="en" hidden>Generated on 2026-09-15 18:34 UTC.</span>
+      <span data-i18n="es">Generado el 2026-09-15 18:43 UTC.</span><span data-i18n="en" hidden>Generated on 2026-09-15 18:43 UTC.</span>
     </footer>
   </div>
 
@@ -956,8 +961,8 @@
       var key = state.sortKey;
 
       nodes.sort(function (a, b) {
-        var av = key === "regions" ? Number(a.dataset.regions) : a.dataset[key];
-        var bv = key === "regions" ? Number(b.dataset.regions) : b.dataset[key];
+        var av = a.dataset[key];
+        var bv = b.dataset[key];
         var cmp = av < bv ? -1 : av > bv ? 1 : 0;
         // Array.prototype.sort es estable: los empates conservan el orden previo
         // (nombre ascendente en la carga inicial), siempre que las tarjetas no se

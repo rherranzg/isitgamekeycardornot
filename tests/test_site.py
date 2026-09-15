@@ -1,4 +1,4 @@
-from switch2db.models import Edition, Region, Sku, Title
+from switch2db.models import Region, Sku, Title
 from switch2db.site import build_sku_view, build_title_views
 
 
@@ -41,20 +41,6 @@ def test_build_title_views_groups_and_sorts_skus_by_region(
     view = views[0]
     assert view.name == "Example Game"
     assert [sku.region for sku in view.skus] == [Region.ASIA, Region.EU]
-    assert view.region_count == 2
-
-
-def test_build_title_views_region_count_counts_distinct_regions_not_skus(
-    title: Title, eu_key_card_sku: Sku
-) -> None:
-    same_region_other_edition = eu_key_card_sku.model_copy(
-        update={"sku_id": "eu-example-game-deluxe", "edition": Edition.DELUXE}
-    )
-
-    views = build_title_views([title], [eu_key_card_sku, same_region_other_edition])
-
-    assert len(views[0].skus) == 2
-    assert views[0].region_count == 1
 
 
 def test_build_title_views_flags_divergence_when_formats_differ(
@@ -80,7 +66,6 @@ def test_build_title_views_includes_titles_without_skus(title: Title) -> None:
 
     assert views[0].skus == []
     assert views[0].has_divergence is False
-    assert views[0].region_count == 0
 
 
 def test_build_title_views_sorts_by_name_case_insensitive() -> None:
