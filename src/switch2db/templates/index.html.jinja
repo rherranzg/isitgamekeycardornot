@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Is It Game-Key Card Or Not</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #f5f5f4;
+      --surface: #ffffff;
+      --text: #1c1c1c;
+      --muted: #6b6b6b;
+      --border: #e2e2e0;
+      --full-cart-bg: #dcf5e3;
+      --full-cart-text: #146c2e;
+      --game-key-card-bg: #fbdede;
+      --game-key-card-text: #a3242a;
+      --code-in-box-bg: #fdecc8;
+      --code-in-box-text: #8a5a00;
+      --unknown-bg: #e6e6e6;
+      --unknown-text: #555555;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #17181a;
+        --surface: #212225;
+        --text: #ececec;
+        --muted: #9a9a9a;
+        --border: #34363a;
+        --full-cart-bg: #123821;
+        --full-cart-text: #7be3a0;
+        --game-key-card-bg: #3d1a1c;
+        --game-key-card-text: #f4a6a9;
+        --code-in-box-bg: #3a2c0d;
+        --code-in-box-text: #f0c674;
+        --unknown-bg: #2b2c2f;
+        --unknown-text: #b7b7b7;
+      }
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      padding-block: 32px;
+    }
+    .wrap {
+      max-width: 880px;
+      margin: 0 auto;
+      padding-inline: 20px;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    header h1 {
+      font-size: 1.6rem;
+      margin: 0 0 6px;
+    }
+    header p {
+      color: var(--muted);
+      margin: 0 0 4px;
+      line-height: 1.5;
+      max-width: 60ch;
+    }
+    .lang-switcher {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.8rem;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+    .lang-switcher select {
+      background: var(--surface);
+      color: var(--text);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 4px 8px;
+      font-size: 0.85rem;
+    }
+    .stats {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin: 20px 0 28px;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+    .stats strong { color: var(--text); }
+    .titles {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .title-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 16px 18px;
+    }
+    .title-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .title-head h2 {
+      font-size: 1.1rem;
+      margin: 0;
+    }
+    .publisher {
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+    .divergence-flag {
+      font-size: 0.78rem;
+      color: var(--code-in-box-text);
+      background: var(--code-in-box-bg);
+      border-radius: 6px;
+      padding: 2px 8px;
+      white-space: nowrap;
+    }
+    .no-data {
+      color: var(--muted);
+      font-size: 0.85rem;
+      margin-top: 8px;
+    }
+    table.skus {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 12px;
+      font-size: 0.85rem;
+    }
+    table.skus th {
+      text-align: left;
+      color: var(--muted);
+      font-weight: 500;
+      padding: 4px 8px 4px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    table.skus td {
+      padding: 6px 8px 6px 0;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+    table.skus tr:last-child td { border-bottom: none; }
+    .badge {
+      display: inline-block;
+      border-radius: 6px;
+      padding: 2px 8px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+    .format-full-cart { background: var(--full-cart-bg); color: var(--full-cart-text); }
+    .format-game-key-card { background: var(--game-key-card-bg); color: var(--game-key-card-text); }
+    .format-code-in-box { background: var(--code-in-box-bg); color: var(--code-in-box-text); }
+    .format-unknown { background: var(--unknown-bg); color: var(--unknown-text); }
+    .source-link { color: inherit; }
+    .pagination {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 14px;
+      margin-top: 20px;
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+    .pagination button {
+      background: var(--surface);
+      color: var(--text);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 6px 14px;
+      font-size: 0.85rem;
+      cursor: pointer;
+    }
+    .pagination button:disabled {
+      opacity: 0.4;
+      cursor: default;
+    }
+    footer {
+      margin-top: 32px;
+      color: var(--muted);
+      font-size: 0.8rem;
+    }
+  </style>
+</head>
+<body>
+  {% macro i18n(pair) -%}
+  <span data-i18n="es">{{ pair.es }}</span><span data-i18n="en" hidden>{{ pair.en }}</span>
+  {%- endmacro %}
+  <div class="wrap">
+    <header>
+      <div>
+        <h1>Is It Game-Key Card Or Not</h1>
+        <p>{{ i18n(t.tagline) }}</p>
+      </div>
+      <div class="lang-switcher">
+        <label for="lang-select">{{ i18n(t.language_label) }}</label>
+        <select id="lang-select" onchange="applyLanguage(this.value)">
+          <option value="es">Español</option>
+          <option value="en">English</option>
+        </select>
+      </div>
+    </header>
+
+    <div class="stats">
+      <span><strong>{{ title_count }}</strong> {{ i18n(t.stat_titles) }}</span>
+      <span><strong>{{ sku_count }}</strong> {{ i18n(t.stat_skus) }}</span>
+    </div>
+
+    <div class="titles">
+      {% for page_titles in titles|batch(page_size) %}
+      <div class="titles-page" data-page="{{ loop.index }}" {% if not loop.first %}hidden{% endif %}>
+        {% for title in page_titles %}
+        <div class="title-card">
+          <div class="title-head">
+            <div>
+              <h2>{{ title.name }}</h2>
+              <div class="publisher">{{ title.publisher }}</div>
+            </div>
+            {% if title.has_divergence %}
+            <span class="divergence-flag">{{ i18n(t.divergence_flag) }}</span>
+            {% endif %}
+          </div>
+
+          {% if title.skus %}
+          <table class="skus">
+            <thead>
+              <tr>
+                <th>{{ i18n(t.col_region) }}</th>
+                <th>{{ i18n(t.col_edition) }}</th>
+                <th>{{ i18n(t.col_format) }}</th>
+                <th>{{ i18n(t.col_distributor) }}</th>
+                <th>{{ i18n(t.col_size) }}</th>
+                <th>{{ i18n(t.col_source) }}</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for sku in title.skus %}
+              <tr>
+                <td>{{ sku.region.value }}</td>
+                <td>{{ sku.edition.value }}</td>
+                <td><span class="badge {{ sku.format_css_class }}">{{ i18n(sku.format_label) }}</span></td>
+                <td>{{ sku.distributor or "—" }}</td>
+                <td>{{ i18n(sku.size_text) }}</td>
+                <td>
+                  {% if sku.source_url %}
+                  <a class="source-link" href="{{ sku.source_url }}" target="_blank" rel="noopener noreferrer">{{ i18n(sku.evidence_label) }}</a>
+                  {% else %}
+                  {{ i18n(sku.evidence_label) }}
+                  {% endif %}
+                </td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+          {% else %}
+          <p class="no-data">{{ i18n(t.no_data) }}</p>
+          {% endif %}
+        </div>
+        {% endfor %}
+      </div>
+      {% endfor %}
+    </div>
+
+    {% if page_count > 1 %}
+    <div class="pagination">
+      <button id="prev-page" type="button">{{ i18n(t.prev_page) }}</button>
+      <span id="page-indicator"></span>
+      <button id="next-page" type="button">{{ i18n(t.next_page) }}</button>
+    </div>
+    {% endif %}
+
+    <footer>
+      {{ i18n(footer) }}
+    </footer>
+  </div>
+
+  <script>
+    var PAGE_INDICATOR_TEMPLATES = {{ page_indicator_templates|tojson }};
+    var TOTAL_PAGES = {{ page_count }};
+    var currentLang = "es";
+    var currentPage = 1;
+
+    function applyLanguage(lang) {
+      currentLang = lang;
+      document.documentElement.lang = lang;
+      document.querySelectorAll("[data-i18n]").forEach(function (el) {
+        el.hidden = el.dataset.i18n !== lang;
+      });
+      document.getElementById("lang-select").value = lang;
+      try {
+        localStorage.setItem("lang", lang);
+      } catch (error) {
+        /* almacenamiento no disponible: la preferencia solo dura la sesión */
+      }
+      updatePageIndicator();
+    }
+
+    function updatePageIndicator() {
+      var indicator = document.getElementById("page-indicator");
+      if (!indicator) return;
+      var template = PAGE_INDICATOR_TEMPLATES[currentLang] || PAGE_INDICATOR_TEMPLATES.es;
+      indicator.textContent = template
+        .replace("{page}", currentPage)
+        .replace("{total}", TOTAL_PAGES);
+    }
+
+    function showPage(page) {
+      currentPage = page;
+      document.querySelectorAll(".titles-page").forEach(function (el) {
+        el.hidden = Number(el.dataset.page) !== page;
+      });
+      var prevButton = document.getElementById("prev-page");
+      var nextButton = document.getElementById("next-page");
+      if (prevButton) prevButton.disabled = page <= 1;
+      if (nextButton) nextButton.disabled = page >= TOTAL_PAGES;
+      updatePageIndicator();
+    }
+
+    var prevPageButton = document.getElementById("prev-page");
+    var nextPageButton = document.getElementById("next-page");
+    if (prevPageButton) {
+      prevPageButton.addEventListener("click", function () {
+        if (currentPage > 1) showPage(currentPage - 1);
+      });
+    }
+    if (nextPageButton) {
+      nextPageButton.addEventListener("click", function () {
+        if (currentPage < TOTAL_PAGES) showPage(currentPage + 1);
+      });
+    }
+
+    (function () {
+      var saved = null;
+      try {
+        saved = localStorage.getItem("lang");
+      } catch (error) {
+        saved = null;
+      }
+      var preferred = saved || (navigator.language && navigator.language.startsWith("en") ? "en" : "es");
+      showPage(1);
+      applyLanguage(preferred);
+    })();
+  </script>
+</body>
+</html>
