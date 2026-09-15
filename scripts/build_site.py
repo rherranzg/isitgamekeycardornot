@@ -6,14 +6,9 @@ from aws_lambda_powertools import Logger
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 
 from switch2db.data_store import load_skus, load_titles
-from switch2db.i18n import PAGE_INDICATOR_TEMPLATES, UI_STRINGS
-from switch2db.site import (
-    DEFAULT_PAGE_SIZE,
-    TitleView,
-    build_footer_text,
-    build_title_views,
-    compute_page_count,
-)
+from switch2db.i18n import EDITION_LABELS, FORMAT_LABELS, SHOWING_COUNT_TEMPLATES, UI_STRINGS
+from switch2db.models import Edition, Format
+from switch2db.site import TitleView, build_footer_text, build_title_views
 
 DATA_DIR = Path(__file__).resolve().parent.parent / "data"
 TEMPLATES_DIR = Path(__file__).resolve().parent.parent / "src" / "switch2db" / "templates"
@@ -24,7 +19,7 @@ logger = Logger(service="switch2db-build-site")
 
 
 def render_index(title_views: list[TitleView], generated_at: str) -> str:
-    """Renderiza la página única de la web, paginada, a partir de los títulos agrupados."""
+    """Renderiza la página única de la web, con buscador, filtros y orden, a partir de los títulos."""
     environment = Environment(loader=FileSystemLoader(TEMPLATES_DIR), autoescape=select_autoescape())
     template = environment.get_template("index.html.jinja")
     return template.render(
@@ -33,14 +28,16 @@ def render_index(title_views: list[TitleView], generated_at: str) -> str:
         sku_count=sum(len(title.skus) for title in title_views),
         t=UI_STRINGS,
         footer=build_footer_text(generated_at),
-        page_size=DEFAULT_PAGE_SIZE,
-        page_count=compute_page_count(len(title_views), DEFAULT_PAGE_SIZE),
-        page_indicator_templates=PAGE_INDICATOR_TEMPLATES,
+        formats=list(Format),
+        editions=list(Edition),
+        format_labels=FORMAT_LABELS,
+        edition_labels=EDITION_LABELS,
+        showing_count_templates=SHOWING_COUNT_TEMPLATES,
     )
 
 
 def main() -> int:
-    """Genera la web estática en site/ a partir de titles.yaml y skus.yaml."""
+    """Genera la web estática en docs/ a partir de titles.yaml y skus.yaml."""
     titles, title_errors = load_titles(DATA_DIR / "titles.yaml")
     skus, sku_errors = load_skus(DATA_DIR / "skus.yaml")
     for error in [*title_errors, *sku_errors]:

@@ -1,4 +1,4 @@
-from switch2db.models import Evidence, Format
+from switch2db.models import Edition, Evidence, Format
 
 LANGUAGES: tuple[str, ...] = ("es", "en")
 
@@ -7,6 +7,12 @@ FORMAT_LABELS: dict[Format, dict[str, str]] = {
     Format.GAME_KEY_CARD: {"es": "Game-Key Card", "en": "Game-Key Card"},
     Format.CODE_IN_BOX: {"es": "Código en la caja", "en": "Code in box"},
     Format.UNKNOWN: {"es": "Desconocido", "en": "Unknown"},
+}
+
+EDITION_LABELS: dict[Edition, dict[str, str]] = {
+    Edition.STANDARD: {"es": "Estándar", "en": "Standard"},
+    Edition.DELUXE: {"es": "Deluxe", "en": "Deluxe"},
+    Edition.COLLECTORS: {"es": "Coleccionista", "en": "Collector's"},
 }
 
 EVIDENCE_LABELS: dict[Evidence, dict[str, str]] = {
@@ -42,11 +48,15 @@ UI_STRINGS: dict[str, dict[str, str]] = {
     "download_suffix": {"es": "GB (descarga)", "en": "GB (download)"},
     "footer": {"es": "Generado el {date}.", "en": "Generated on {date}."},
     "language_label": {"es": "Idioma", "en": "Language"},
-    "prev_page": {"es": "Anterior", "en": "Previous"},
-    "next_page": {"es": "Siguiente", "en": "Next"},
+    "search_placeholder": {"es": "Buscar juego...", "en": "Search game..."},
+    "sort_by_label": {"es": "Ordenar por", "en": "Sort by"},
+    "sort_name": {"es": "Nombre", "en": "Name"},
+    "sort_publisher": {"es": "Publisher", "en": "Publisher"},
+    "sort_regions": {"es": "Nº regiones", "en": "Regions"},
+    "no_results": {"es": "No se encontraron juegos.", "en": "No games found."},
 }
 
-PAGE_INDICATOR_TEMPLATES: dict[str, str] = {
-    "es": "Página {page} de {total}",
-    "en": "Page {page} of {total}",
+SHOWING_COUNT_TEMPLATES: dict[str, str] = {
+    "es": "Mostrando {shown} de {total} juegos",
+    "en": "Showing {shown} of {total} games",
 }

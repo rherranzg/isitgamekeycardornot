@@ -1,15 +1,12 @@
-import math
 from collections import defaultdict
 
 from pydantic import BaseModel
 
 from switch2db.divergences import find_format_divergences
-from switch2db.i18n import EVIDENCE_LABELS, FORMAT_LABELS, LANGUAGES, UI_STRINGS
+from switch2db.i18n import EDITION_LABELS, EVIDENCE_LABELS, FORMAT_LABELS, LANGUAGES, UI_STRINGS
 from switch2db.models import Edition, Format, Region, Sku, Title
 
 LocalizedText = dict[str, str]
-
-DEFAULT_PAGE_SIZE = 10
 
 FORMAT_CSS_CLASSES: dict[Format, str] = {
     Format.FULL_CART: "format-full-cart",
@@ -27,6 +24,7 @@ class SkuView(BaseModel):
     format: Format
     format_label: LocalizedText
     format_css_class: str
+    edition_label: LocalizedText
     distributor: str | None
     size_text: LocalizedText
     evidence_label: LocalizedText
@@ -42,6 +40,7 @@ class TitleView(BaseModel):
     publisher: str
     skus: list[SkuView]
     has_divergence: bool
+    region_count: int
 
 
 def build_size_text(sku: Sku) -> LocalizedText:
@@ -61,6 +60,7 @@ def build_sku_view(sku: Sku) -> SkuView:
         format=sku.format,
         format_label=FORMAT_LABELS[sku.format],
         format_css_class=FORMAT_CSS_CLASSES[sku.format],
+        edition_label=EDITION_LABELS[sku.edition],
         distributor=sku.distributor,
         size_text=build_size_text(sku),
         evidence_label=EVIDENCE_LABELS[sku.evidence],
@@ -93,6 +93,7 @@ def build_title_view(
         publisher=title.publisher,
         skus=[build_sku_view(sku) for sku in title_skus],
         has_divergence=title.title_id in diverging_title_ids,
+        region_count=len({sku.region for sku in title_skus}),
     )
 
 
@@ -107,10 +108,3 @@ def build_title_views(titles: list[Title], skus: list[Sku]) -> list[TitleView]:
 def build_footer_text(generated_at: str) -> LocalizedText:
     """Compone el texto del pie de página con la fecha de generación, en cada idioma."""
     return {lang: text.format(date=generated_at) for lang, text in UI_STRINGS["footer"].items()}
-
-
-def compute_page_count(item_count: int, page_size: int = DEFAULT_PAGE_SIZE) -> int:
-    """Calcula cuántas páginas de page_size elementos hacen falta para mostrar item_count."""
-    if item_count <= 0:
-        return 1
-    return math.ceil(item_count / page_size)

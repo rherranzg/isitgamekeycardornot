@@ -1,7 +1,5 @@
-import pytest
-
-from switch2db.models import Region, Sku, Title
-from switch2db.site import build_sku_view, build_title_views, compute_page_count
+from switch2db.models import Edition, Region, Sku, Title
+from switch2db.site import build_sku_view, build_title_views
 
 
 def test_build_sku_view_translates_labels(eu_key_card_sku: Sku) -> None:
@@ -9,6 +7,7 @@ def test_build_sku_view_translates_labels(eu_key_card_sku: Sku) -> None:
 
     assert view.format_label == {"es": "Game-Key Card", "en": "Game-Key Card"}
     assert view.format_css_class == "format-game-key-card"
+    assert view.edition_label == {"es": "Estándar", "en": "Standard"}
     assert view.evidence_label == {"es": "Foto de la caja", "en": "Box photo"}
     assert view.size_text == {"es": "~20.5 GB (descarga)", "en": "~20.5 GB (download)"}
     assert view.source_url == "https://example.com/eu"
@@ -42,6 +41,20 @@ def test_build_title_views_groups_and_sorts_skus_by_region(
     view = views[0]
     assert view.name == "Example Game"
     assert [sku.region for sku in view.skus] == [Region.ASIA, Region.EU]
+    assert view.region_count == 2
+
+
+def test_build_title_views_region_count_counts_distinct_regions_not_skus(
+    title: Title, eu_key_card_sku: Sku
+) -> None:
+    same_region_other_edition = eu_key_card_sku.model_copy(
+        update={"sku_id": "eu-example-game-deluxe", "edition": Edition.DELUXE}
+    )
+
+    views = build_title_views([title], [eu_key_card_sku, same_region_other_edition])
+
+    assert len(views[0].skus) == 2
+    assert views[0].region_count == 1
 
 
 def test_build_title_views_flags_divergence_when_formats_differ(
@@ -67,6 +80,7 @@ def test_build_title_views_includes_titles_without_skus(title: Title) -> None:
 
     assert views[0].skus == []
     assert views[0].has_divergence is False
+    assert views[0].region_count == 0
 
 
 def test_build_title_views_sorts_by_name_case_insensitive() -> None:
@@ -78,18 +92,3 @@ def test_build_title_views_sorts_by_name_case_insensitive() -> None:
     views = build_title_views([lowercase_title, uppercase_title], [])
 
     assert [view.name for view in views] == ["Animal Crossing", "zelda"]
-
-
-@pytest.mark.parametrize(
-    "item_count,page_size,expected",
-    [
-        (0, 10, 1),
-        (10, 10, 1),
-        (11, 10, 2),
-        (12, 10, 2),
-        (20, 10, 2),
-        (21, 10, 3),
-    ],
-)
-def test_compute_page_count(item_count: int, page_size: int, expected: int) -> None:
-    assert compute_page_count(item_count, page_size) == expected
