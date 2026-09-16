@@ -39,6 +39,21 @@ Leyenda del estado: ✅ probada y útil · ⚠️ probada con limitaciones · �
   no.
 - **Los códigos de barras**: en NA vía UPCitemdb; en JP, el JAN aparece en la URL de muchas tiendas; en EU y KR
   no se ha encontrado nada.
+- **La divergencia región↔formato no siempre es "Occidente game-key, Japón cartucho completo"**: puede ser al
+  revés. Confirmado con cita textual (17-09-2026): **Daemon X Machina: Titanic Scion** ("a Game-key card
+  release in Japan, but a regular game card release in the West") y **Brigandine Abyss** ("the western release
+  from NIS America is a game-key card", con el asiático en cartucho completo). No asumir el patrón habitual sin
+  comprobar cada región.
+- **La prensa a veces solo especula y lo escribe con matices ("seemingly implying", "expected to be", "could
+  also be a placeholder")**: eso no es cita válida del formato, aunque el titular del artículo lo dé por hecho.
+  Pasó con Bubsy 4D (Nintendo Life) y Crisis Core Reunion (xeznaff.com): en ambos casos el propio texto
+  reconoce que no está confirmado, así que el SKU queda `pending` con `format: unknown` en vez de asumir
+  `full_cart`.
+- **Una edición cuyo propio nombre dice "Digital Deluxe"/"Digital Ultimate"** (p. ej. Digimon Story Time
+  Stranger: Deluxe/Ultimate Edition, Dragon Quest VII: Reimagined - Digital Deluxe Edition) suele ser un
+  bundle solo de eShop sin SKU físico propio, distinto de la edición "Standard" del mismo juego que sí puede
+  tener cartucho. El nombre no es una cita del formato, pero es una señal fuerte para no perder tiempo
+  buscando físico de esas ediciones concretas (17-09-2026).
 
 ## 2. Qué fuente usar para cada campo
 
@@ -198,7 +213,7 @@ curl -sL 'https://www.nintendo.com.hk/data/json/switch_software.json'   # -L: 30
 | Hong Kong | `nintendo.com/hk/games/switch2/{icode}/index.html` | 發售日, precio de la caja en HKD | ✅ En las "Switch 2 Edition" solo da el precio 盒裝版, sin 發售日 (Metroid Prime 4, 16-09-2026) |
 | Singapur / Malasia | `nintendo.com/{sg,my}/games/switch2/{icode}/index.html` | Fecha; enlaza a Shopee/Lazada | ⚠️ Sin precio |
 | Reino Unido | `nintendo.com/en-gb/Games/Nintendo-Switch-2-games/{Nombre}-{fs_id}.html` | Fecha, PEGI | ⚠️ WebFetch la trunca; mejor la API Solr |
-| EE. UU. | `nintendo.com/us/store/products/{urlKey}/` | Fecha, publisher, tamaño, idiomas | ⚠️ El resumen de WebFetch dijo que no hay versión física (falso) |
+| EE. UU. | `nintendo.com/us/store/products/{urlKey}/` | Fecha, publisher, tamaño, idiomas | ⚠️ El resumen de WebFetch dijo que no hay versión física (falso). Con `fetch_quote <url> 'Edition \| Digital'` sí sale una cita fiable: el campo "Version \| Nintendo Switch 2 \| Edition \| Digital" marca que la ficha es solo digital (probado con Dream Shogi 4K, 17-09-2026) |
 | Japón: キーカード | `nintendo.com/jp/games/switch2/key-card/index.html` | Explica que la caja de una キーカード lo avisa en la portada y la tarjeta lleva un candado arriba a la derecha | ❌ No lista títulos |
 | Japón: lineup | `nintendo.com/jp/games/switch2/lineup/index.html` | — | ❔ Sin revisar si marca las キーカード o carga un JSON |
 
@@ -263,6 +278,7 @@ curl -s 'https://api.upcitemdb.com/prod/trial/search?s=donkey%20kong%20bananza&m
 | Best Buy | NA | ❔ | Aviso "GAME CARD NOT INCLUDED" para code-in-box (vía GoNintendo) | — |
 | Danawa | KR | ✅ legible | Formato, fecha | "패키지칩" (chip en caja) |
 | univstore | KR | ✅ legible | Formato, precio | "게임 칩 팩" |
+| VideoGamesPlus.ca | NA (Canadá) | ⚠️ solo título, vía WebSearch (17-09) | Formato | "[Game-Key Card] - Nintendo Switch 2" en el título del producto, igual que Play-Asia; no probado con curl directo |
 | hit.co.uk | UK | ⚠️ legible | Fecha | El resumen afirmó "not a key card" sin cita: no fiable |
 | Smyths, Currys, John Lewis, Amazon UK | UK | ❔ | — | — |
 
@@ -277,8 +293,11 @@ Formatos vistos en los títulos de Tokyo Game Story: `(GAME CART)` para el cartu
 |---|---|---|---|
 | VGC | JP / occidente | ✅ leída (13-09) | Lista de third-party con game-key card en Japón; citas de publishers (CD Projekt: "contained entirely on the cartridge") |
 | Nintendo Life: juegos con el juego completo en el cartucho | EU/UK | ✅ leída (16-09) | Formato `full_cart` por título, sin distinción regional. Solo admite confirmaciones oficiales: "we won't be relying on retailer listings alone" |
-| Nintendo Life: ficha de cada juego | EU/UK | ⚠️ leída (16-09) | Campo **"Physical Release"** con el formato (`Standard Game Card`), fecha y precio en $ y £. URL: `nintendolife.com/games/nintendo-switch-2/{slug}` (el slug no se adivina: hay que sacarlo del buscador). **El campo no siempre está**: en la ficha de AFL 26 solo hay "Release Date", sin "Physical Release" |
-| Nintendo Life: juegos con game-key card | EU/UK | ❔ | Lista inversa |
+| Nintendo Life: ficha de cada juego | EU/UK | ⚠️ leída (16-09, 17-09) | Campo **"Physical Release"** con el formato (`Standard Game Card`), fecha y precio en $ y £. URL: `nintendolife.com/games/nintendo-switch-2/{slug}` (el slug no se adivina: hay que sacarlo del buscador). **El campo no siempre está**: en la ficha de AFL 26 solo hay "Release Date", sin "Physical Release". Cuando sí está y el juego es solo digital, el valor literal es `Physical Release \| None (Digital Only)` (confirmado en Arcade Archives 2: Ridge Racer, Air Combat 22, Cyber Commando, Gee Bee, y también en **Drag x Drive**, first-party de Nintendo: la asunción "first-party siempre full_cart" tiene excepciones, hay que comprobar cada juego). Cuando sí está y es un cartucho, el mismo campo (`Physical Release \| Game-Key Card`) suele valer para EU y NA a la vez si la ficha trae precio en $ y en £ con la misma fecha. Sirve como cita `press_report` para `physical_release.yaml`. Su ausencia **no** es cita de "sin físico" (solo pasa a `unconfirmed`) |
+| Nintendo Life: slug de fichas con nombre de caja distinto del título base | EU/UK | ⚠️ (17-09) | El slug de la ficha sigue el **nombre comercial de la caja**, no siempre el `name` de IGDB: `devil-may-cry-5-devil-hunter-edition` (no `devil-may-cry-5`), `dragons-dogma-2-dark-arisen` (no `dragons-dogma-ii`), `dragon-quest-i-and-ii-hd-2d-remake` (un solo producto físico para dos títulos separados de IGDB, `dragon-quest-i-hd-2d-remake` y `dragon-quest-ii-hd-2d-remake`) y slugs con guion bajo/final `dragon_quest_heroes_tornekos_mystery_dungeon_-classic_hd-`. **No adivinar el slug a pelo con el nombre de IGDB**: sale 404. Mejor sacarlo del buscador o, si no hay resultado directo, probar variantes razonables con `curl -o /dev/null -w '%{http_code}'` antes de darlo por inexistente |
+| Nintendo Life: "Upgrade Path" en vez de "Physical Release" | EU/UK | ✅ (17-09) | En las Switch 2 Edition que son solo una actualización digital gratuita de un juego de Switch 1 (no un producto nuevo), la ficha no trae "Physical Release" sino `Upgrade Path \| Via <Juego> (Switch eShop) \| Free — Free — Free`: pista fuerte (aunque no cita literal de "sin físico") de que no hay SKU propio de Switch 2. Visto en Dinkum, Disney Dreamlight Valley y Disney Speedstorm |
+| Nintendo Life: listado de una serie (`games/browse?title=series%3A{slug-de-serie}`) | — | ⚠️ leída (17-09) | Devuelve en el HTML (sin JS) un lote de `games/nintendo-switch-2/{slug}` de la serie, p.ej. `series%3Aarcade-archives-2`: útil para sacar slugs sin adivinarlos ni gastar una búsqueda por juego, pero **no es exhaustivo** — parece limitado a ~46 resultados (¿"load more" por JS?): en dos tandas se quedaron fuera títulos que sí tienen ficha (`ridge-racer`, `rave-racer`). Si un slug obvio no aparece en el listado, **comprobarlo igualmente con un `curl -o /dev/null -w '%{http_code}'` directo** antes de darlo por inexistente. Cuidado también con la ortografía del slug: Nintendo Life a veces omite guiones en compuestos (`rackem-up`, no `rack-em-up`; `rocn-rope`, no `roc-n-rope`). Tres títulos de nuestras tandas (`arkanoid-revenge-of-doh`, `cyber-cycles`, `munch-mobile`, `ninja-emaki`, `pinball-action`) no tienen ficha real en Nintendo Life (404 comprobado): para esos, sin fuente → `unconfirmed` |
+| Nintendo Life: juegos con game-key card | EU/UK | ❌ (17-09) | `nintendolife.com/guides/every-nintendo-switch-2-game-key-card-release`: la cabecera y el nav se leen con `fetch_quote`, pero la lista de juegos la pinta JavaScript, igual que Deku Deals — el HTML no trae ningún nombre |
 | Nintendo Everything: lista de game-key cards | NA | ✅ leída (16-09) | `nintendoeverything.com/list-of-all-nintendo-switch-2-games-with-a-game-key-card-release/` (la actualizan; revisada el 07-09-2026). Sirve para descartar, no para afirmar: que un juego no salga ahí no es cita |
 | Nintendo Everything: Switch 2 Editions enteras en la tarjeta | NA | ✅ leída (16-09) | Cita la declaración de Nintendo: "physical versions of Nintendo Switch 2 Edition games will include the original Nintendo Switch game and its upgrade pack all on the same game card (i.e. they are exclusively Nintendo Switch 2 game cards, with no download code)" |
 | TheGamer | NA | ✅ leída (16-09) | "Nintendo's First-Party Switch 2 Games Won't Use Game-Key Cards"; un representante de Nintendo UK dice que no hay "no plans" de usarlas en first-party |
@@ -382,7 +401,23 @@ Distribuidor boutique (pines, pósters, edición física de coleccionista) que e
   - Dedujo "Distributor: Nintendo Korea".
   - Dijo que la eShop US no lista versión física.
   - Siempre pedir **citas textuales** y descartar lo que venga sin cita.
+- **WebSearch también inventa citas cuando resume, no solo WebFetch** (probado 17-09-2026): sobre Attack on
+  Titan 3 afirmó literalmente que "the Nintendo Switch 2 physical package will be sold as Game-Key Card version
+  only", pero al abrir con `fetch_quote` el artículo que citaba (techtimes.com) esa frase **no existe** — el
+  artículo solo habla de una restricción de acceso anticipado, nada de formato de cartucho. La cita real de
+  Game-Key Card para ese juego salió de otra fuente (ficha de Nintendo Life). Regla: el resumen de WebSearch
+  vale como pista de dónde mirar, nunca como cita — hay que abrir la fuente que menciona y sacar la frase con
+  `fetch_quote` antes de escribir nada.
+- **WebSearch puede resumir un resultado de un juego completamente distinto al buscado** (probado 17-09-2026):
+  al buscar "Dear me, I was... Switch 2 physical edition" devolvió como respuesta una cita de la FAQ de soporte
+  de Square Enix que en realidad hablaba de "FINAL FANTASY TACTICS - The Ivalice Chronicles" (la página de
+  soporte es genérica y el resumen mezcló el contexto). Al abrir la fuente con `fetch_quote` se ve el encabezado
+  real (`FINAL FANTASY TACTICS - The Ivalice Chronicles | About the Game | ...`) y queda claro que no sirve.
+  Regla de siempre: abrir la fuente y mirar el contexto inmediato de la frase, no solo el fragmento que coincide.
 - WebFetch trunca las páginas largas (ficha de Nintendo UK) y recibe 403 de casi todas las tiendas.
+- **Bloquean `fetch_quote`/curl (403), aparte de las ya conocidas**: ResetEra y las fichas de producto de
+  Play-Asia (`play-asia.com/en/...`); su blog (`play.asia/blog/...`) sí se lee. `rawfury.com` devuelve 200 pero
+  el contenido lo pinta JavaScript (fetch_quote no encuentra nada útil).
 - zsh: `echo ====HK` falla ("=cmd" se expande como ruta de un comando). Poner el texto entre comillas.
 - `search.nintendo.jp`: los errores llegan en gzip; `curl --compressed`.
 - `nintendo.com.hk` redirige con 301 a `nintendo.com/hk`: `curl -L`.

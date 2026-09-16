@@ -5,8 +5,6 @@ from switch2db.site import (
     build_search_text,
     build_sku_view,
     build_title_views,
-    select_published_skus,
-    select_published_titles,
 )
 
 
@@ -99,63 +97,20 @@ def test_build_title_views_sorts_by_name_case_insensitive() -> None:
     assert [view.name for view in views] == ["Animal Crossing", "zelda"]
 
 
-def test_select_published_titles_keeps_only_reviewed_titles(title: Title, eu_key_card_sku: Sku) -> None:
-    reviewed = title.model_copy(update={"status": TitleStatus.REVIEWED})
-    untouched = title.model_copy(update={"status": TitleStatus.NEW})
+def test_build_title_views_includes_titles_of_every_status(title: Title) -> None:
+    new_title = title.model_copy(update={"title_id": "new-game", "status": TitleStatus.NEW})
+    pending_title = title.model_copy(update={"title_id": "pending-game", "status": TitleStatus.PENDING})
+    reviewed_title = title.model_copy(update={"title_id": "reviewed-game", "status": TitleStatus.REVIEWED})
 
-    assert select_published_titles([title, reviewed, untouched], [eu_key_card_sku], []) == [reviewed]
+    views = build_title_views([new_title, pending_title, reviewed_title], [], [])
 
-
-def test_select_published_titles_skips_reviewed_titles_without_skus(
-    title: Title, eu_key_card_sku: Sku
-) -> None:
-    reviewed = title.model_copy(update={"status": TitleStatus.REVIEWED})
-    reviewed_without_skus = title.model_copy(
-        update={"title_id": "empty-game", "status": TitleStatus.REVIEWED}
-    )
-
-    assert select_published_titles([reviewed, reviewed_without_skus], [eu_key_card_sku], []) == [reviewed]
+    assert {view.title_id for view in views} == {"new-game", "pending-game", "reviewed-game"}
 
 
-def test_select_published_titles_returns_empty_list_when_nothing_is_reviewed(
-    title: Title, eu_key_card_sku: Sku
-) -> None:
-    assert select_published_titles([title], [eu_key_card_sku], []) == []
-
-
-def test_select_published_skus_hides_new_skus(eu_key_card_sku: Sku, new_sku: Sku, pending_sku: Sku) -> None:
-    published = select_published_skus([eu_key_card_sku, new_sku, pending_sku])
-
-    assert [sku.sku_id for sku in published] == ["eu-example-game-standard", "kr-example-game-standard"]
-
-
-def test_select_published_titles_skips_titles_whose_skus_are_all_new(title: Title, new_sku: Sku) -> None:
-    reviewed = title.model_copy(update={"status": TitleStatus.REVIEWED})
-
-    assert select_published_titles([reviewed], [new_sku], []) == []
-
-
-def test_build_title_views_leaves_new_skus_out(title: Title, eu_key_card_sku: Sku, new_sku: Sku) -> None:
+def test_build_title_views_includes_new_skus(title: Title, eu_key_card_sku: Sku, new_sku: Sku) -> None:
     views = build_title_views([title], [eu_key_card_sku, new_sku], [])
 
-    assert [sku.region for sku in views[0].skus] == [Region.EU]
-
-
-def test_select_published_titles_keeps_reviewed_titles_without_box(
-    title: Title, digital_only: PhysicalRelease
-) -> None:
-    reviewed = title.model_copy(update={"status": TitleStatus.REVIEWED})
-
-    assert select_published_titles([reviewed], [], [digital_only]) == [reviewed]
-
-
-def test_select_published_titles_skips_titles_with_a_box_but_no_skus_yet(
-    title: Title, digital_only: PhysicalRelease
-) -> None:
-    reviewed = title.model_copy(update={"status": TitleStatus.REVIEWED})
-    with_box = digital_only.model_copy(update={"has_physical_release": True})
-
-    assert select_published_titles([reviewed], [], [with_box]) == []
+    assert [sku.region for sku in views[0].skus] == [Region.EU, Region.NA]
 
 
 def test_build_title_views_shows_the_no_box_note_with_its_source(
@@ -186,4 +141,4 @@ def test_format_filter_labels_add_the_no_box_option() -> None:
         "unknown",
         NO_BOX_FILTER_VALUE,
     ]
-    assert FORMAT_FILTER_LABELS[NO_BOX_FILTER_VALUE]["es"] == "Sin edición física"
+    assert FORMAT_FILTER_LABELS[NO_BOX_FILTER_VALUE]["es"] == "Solo digital"

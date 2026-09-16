@@ -18,7 +18,7 @@ def docs_dir(mocker: MockerFixture, tmp_path: Path) -> Path:
     return output_dir
 
 
-def test_main_publishes_only_reviewed_titles_with_skus(
+def test_main_publishes_every_title_regardless_of_status(
     docs_dir: Path, write_yaml: WriteYaml, title_row: dict[str, object], sku_row: dict[str, object]
 ) -> None:
     reviewed = {**title_row, "status": "reviewed"}
@@ -30,7 +30,8 @@ def test_main_publishes_only_reviewed_titles_with_skus(
     }
     pending_with_skus = {**title_row, "title_id": "pending-game", "name": "Pending Game"}
     pending_sku = {**sku_row, "sku_id": "eu-pending-game-standard", "title_id": "pending-game"}
-    write_yaml("titles.yaml", [reviewed, reviewed_without_skus, pending_with_skus])
+    new_title = {**title_row, "title_id": "new-game", "name": "New Game", "status": "new"}
+    write_yaml("titles.yaml", [reviewed, reviewed_without_skus, pending_with_skus, new_title])
     write_yaml("skus.yaml", [sku_row, pending_sku])
     write_yaml("physical_release.yaml", [])
 
@@ -42,8 +43,9 @@ def test_main_publishes_only_reviewed_titles_with_skus(
     assert 'id="example-game"' in html
     assert 'data-search="example game example publisher"' in html
     assert 'data-region="EU"' in html
-    assert "Empty Game" not in html
-    assert "Pending Game" not in html
+    assert "Empty Game" in html
+    assert "Pending Game" in html
+    assert "New Game" in html
 
 
 def test_main_escapes_html_in_title_names(
@@ -94,6 +96,6 @@ def test_main_publishes_games_without_a_boxed_edition(
     assert exit_code == 0
     assert 'id="digital-game"' in html
     assert 'data-no-box="true"' in html
-    assert "Este juego no salió en caja en ninguna región." in html
+    assert "Solo digital" in html
     assert "https://example.com/digital-only" in html
     assert 'value="no_box"' in html

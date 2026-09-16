@@ -18,7 +18,6 @@ from switch2db.site import (
     TitleView,
     build_footer_text,
     build_title_views,
-    select_published_titles,
 )
 
 logger = Logger(service="switch2db-build-site")
@@ -47,7 +46,7 @@ def render_index(title_views: list[TitleView], generated_at: str) -> str:
 
 
 def main() -> int:
-    """Genera la web estática en docs/ con los títulos revisados que tienen SKUs o que no salieron en caja."""
+    """Genera la web estática en docs/ con todos los títulos y SKUs de la base de datos."""
     titles, title_errors = load_titles(DATA_DIR / "titles.yaml")
     skus, sku_errors = load_skus(DATA_DIR / "skus.yaml")
     releases, release_errors = load_physical_releases(DATA_DIR / "physical_release.yaml")
@@ -56,8 +55,7 @@ def main() -> int:
     if title_errors or sku_errors or release_errors:
         return 1
 
-    published_titles = select_published_titles(titles, skus, releases)
-    title_views = build_title_views(published_titles, skus, releases)
+    title_views = build_title_views(titles, skus, releases)
     generated_at = datetime.now(UTC).strftime("%Y-%m-%d %H:%M UTC")
 
     DOCS_DIR.mkdir(exist_ok=True)
@@ -70,7 +68,6 @@ def main() -> int:
             "output": str(output_path),
             "title_count": len(title_views),
             "digital_only_count": sum(1 for view in title_views if view.no_box),
-            "unpublished_title_count": len(titles) - len(published_titles),
         },
     )
     return 0

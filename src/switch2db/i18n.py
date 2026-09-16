@@ -60,10 +60,11 @@ UI_STRINGS: dict[str, dict[str, str]] = {
     "language_label": {"es": "Idioma", "en": "Language"},
     "search_placeholder": {"es": "Buscar juego o publisher...", "en": "Search game or publisher..."},
     "no_results": {"es": "No se encontraron juegos.", "en": "No games found."},
-    "no_box_filter": {"es": "Sin edición física", "en": "No physical edition"},
+    "no_data": {"es": "Todavía sin SKUs documentados.", "en": "No SKUs documented yet."},
+    "no_box_filter": {"es": "Solo digital", "en": "Digital only"},
     "no_box_note": {
-        "es": "Este juego no salió en caja en ninguna región.",
-        "en": "This game never got a boxed release in any region.",
+        "es": "Solo digital",
+        "en": "Digital only",
     },
 }
 

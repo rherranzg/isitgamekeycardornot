@@ -99,9 +99,18 @@ def jp_unknown_sku(sku_row: dict[str, object]) -> Sku:
 
 @pytest.fixture
 def new_sku(sku_row: dict[str, object]) -> Sku:
-    """SKU recién escrito y sin revisar: no debe salir en la web."""
+    """SKU recién escrito y sin revisar: sale en la web como formato desconocido."""
     return Sku.model_validate(
-        {**sku_row, "sku_id": "na-example-game-standard", "region": "NA", "status": "new"}
+        {
+            **sku_row,
+            "sku_id": "na-example-game-standard",
+            "region": "NA",
+            "format": "unknown",
+            "download_size_gb": None,
+            "evidence": "unconfirmed",
+            "source_url": None,
+            "status": "new",
+        }
     )
 
 

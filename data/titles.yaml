@@ -1,8 +1,8 @@
 # Juegos de Switch 2 conocidos. Los añade scripts/add_titles.py desde data/igdb_catalog.yaml.
-# name y publisher vienen de IGDB; a mano solo se edita status:
-#   new      = del catálogo y sin investigar (lo pone add_titles); no sale en la web
+# name y publisher vienen de IGDB; a mano solo se edita status (la web publica todos los status):
+#   new      = del catálogo y sin investigar (lo pone add_titles)
 #   pending  = investigado sin confirmar la edición de la caja ni encontrar fuente
-#   reviewed = investigado y comprobado; sale en la web si tiene algún SKU no-new
+#   reviewed = investigado y comprobado
 - title_id: mario-kart-world
   igdb_id: 338067
   name: Mario Kart World
@@ -137,39 +137,1289 @@
   igdb_id: 216465
   name: All Hands on Deck
   publisher: Studio Mantasaur
-  status: new
+  status: reviewed
 - title_id: amanda-the-adventurer-3
   igdb_id: 341815
   name: Amanda the Adventurer 3
   publisher: DreadXP
-  status: new
+  status: reviewed
 - title_id: amnesia-rebirth
   igdb_id: 131785
   name: 'Amnesia: Rebirth'
   publisher: Frictional Games
-  status: new
+  status: reviewed
 - title_id: and-roger
   igdb_id: 324784
   name: And Roger
   publisher: KODANSHA
-  status: new
+  status: reviewed
 - title_id: animal-crossing-new-horizons-nintendo-switch-2-edition
   igdb_id: 375733
   name: 'Animal Crossing: New Horizons - Nintendo Switch 2 Edition'
   publisher: Nintendo
-  status: new
+  status: reviewed
 - title_id: animula-nook
   igdb_id: 369856
   name: Animula Nook
   publisher: null
-  status: new
+  status: pending
 - title_id: anomalith
   igdb_id: 402530
   name: Anomalith
   publisher: FuRyu
-  status: new
+  status: reviewed
 - title_id: another-eden-begins
   igdb_id: 388448
   name: Another Eden Begins
   publisher: Wright Flyer Studios
-  status: new
+  status: reviewed
+- title_id: apex-legends
+  igdb_id: 114795
+  name: Apex Legends
+  publisher: Electronic Arts
+  status: reviewed
+- title_id: arcade-archives-2-ace-driver
+  igdb_id: 403299
+  name: 'Arcade Archives 2: Ace Driver'
+  publisher: Hamster Corporation
+  status: reviewed
+- title_id: arcade-archives-2-adventure-canoe
+  igdb_id: 392764
+  name: 'Arcade Archives 2: Adventure Canoe'
+  publisher: null
+  status: reviewed
+- title_id: arcade-archives-2-air-combat-22
+  igdb_id: 352492
+  name: 'Arcade Archives 2: Air Combat 22'
+  publisher: Hamster Corporation
+  status: reviewed
+- title_id: arcade-archives-2-aqua-jet
+  igdb_id: 361238
+  name: 'Arcade Archives 2: Aqua Jet'
+  publisher: Hamster Corporation
+  status: reviewed
+- title_id: arcade-archives-2-arkanoid
+  igdb_id: 400781
+  name: 'Arcade Archives 2: Arkanoid'
+  publisher: Hamster Corporation
+  status: reviewed
+- title_id: arcade-archives-2-arkanoid-revenge-of-doh
+  igdb_id: 417315
+  name: 'Arcade Archives 2: Arkanoid - Revenge of Doh'
+  publisher: null
+  status: reviewed
+- title_id: arcade-archives-2-armadillo-racing
+  igdb_id: 411154
+  name: 'Arcade Archives 2: Armadillo Racing'
+  publisher: Hamster Corporation
+  status: reviewed
+- title_id: arcade-archives-2-battlantis
+  igdb_id: 373375
+  name: 'Arcade Archives 2: Battlantis'
+  publisher: Hamster Corporation
+  status: reviewed
+- title_id: arcade-archives-2-bomb-bee
+  igdb_id: 378489
+  name: 'Arcade Archives 2: Bomb Bee'
+  publisher: Hamster Corporation
+  status: reviewed
+- title_id: arcade-archives-2-bomb-jack-twin
+  igdb_id: 386175
+  name: 'Arcade Archives 2: Bomb Jack Twin'
+  publisher: Hamster Corporation
+  status: reviewed
+- title_id: arcade-archives-2-cameltry
+  igdb_id: 404379
+  name: 'Arcade Archives 2: Cameltry'
+  publisher: Hamster Corporation
+  status: reviewed
+- title_id: arcade-archives-2-combat-school
+  igdb_id: 412762
+  name: 'Arcade Archives 2: Combat School'
+  publisher: Hamster Corporation
+  status: reviewed
+- title_id: arcade-archives-2-cyber-commando
+  igdb_id: 400162
+  name: 'Arcade Archives 2: Cyber Commando'
+  publisher: Hamster Corporation
+  status: reviewed
+- title_id: arcade-archives-2-cyber-cycles
+  igdb_id: 414798
+  name: 'Arcade Archives 2: Cyber Cycles'
+  publisher: Hamster Corporation
+  status: reviewed
+- title_id: arcade-archives-2-devastators
+  igdb_id: 395646
+  name: 'Arcade Archives 2: Devastators'
+  publisher: Hamster Corporation
+  status: reviewed
+- title_id: arcade-archives-2-final-lap
+  igdb_id: 396094
+  name: 'Arcade Archives 2: Final Lap'
+  publisher: Hamster Corporation
+  status: reviewed
+- title_id: arcade-archives-2-galactic-warriors
+  igdb_id: 377686
+  name: 'Arcade Archives 2: Galactic Warriors'
+  publisher: Hamster Corporation
+  status: reviewed
+- title_id: arcade-archives-2-gee-bee
+  igdb_id: 371415
+  name: 'Arcade Archives 2: Gee Bee'
+  publisher: null
+  status: reviewed
+- title_id: arcade-archives-2-hyper-crash
+  igdb_id: 409672
+  name: 'Arcade Archives 2: Hyper Crash'
+  publisher: null
+  status: reviewed
+- title_id: arcade-archives-2-konami-gt
+  igdb_id: 398768
+  name: 'Arcade Archives 2: Konami GT'
+  publisher: Hamster Corporation
+  status: reviewed
+- title_id: arcade-archives-2-labyrinth-runner
+  igdb_id: 386906
+  name: 'Arcade Archives 2: Labyrinth Runner'
+  publisher: Hamster Corporation
+  status: reviewed
+- title_id: arcade-archives-2-lady-bug
+  igdb_id: 409278
+  name: 'Arcade Archives 2: Lady Bug'
+  publisher: null
+  status: reviewed
+- title_id: arcade-archives-2-mach-breakers
+  igdb_id: 365534
+  name: 'Arcade Archives 2: Mach Breakers'
+  publisher: Hamster Corporation
+  status: reviewed
+- title_id: arcade-archives-2-mega-zone
+  igdb_id: 390481
+  name: 'Arcade Archives 2: Mega Zone'
+  publisher: null
+  status: reviewed
+- title_id: arcade-archives-2-midnight-landing
+  igdb_id: 375138
+  name: 'Arcade Archives 2: Midnight Landing'
+  publisher: Hamster Corporation
+  status: reviewed
+- title_id: arcade-archives-2-moon-shuttle
+  igdb_id: 408159
+  name: 'Arcade Archives 2: Moon Shuttle'
+  publisher: Hamster Corporation
+  status: reviewed
+- title_id: arcade-archives-2-mouser
+  igdb_id: 411153
+  name: 'Arcade Archives 2: Mouser'
+  publisher: null
+  status: reviewed
+- title_id: arcade-archives-2-mr-do
+  igdb_id: 402000
+  name: 'Arcade Archives 2: Mr.Do!'
+  publisher: Hamster Corporation
+  status: reviewed
+- title_id: arcade-archives-2-munch-mobile
+  igdb_id: 374668
+  name: 'Arcade Archives 2: Munch Mobile'
+  publisher: Hamster Corporation
+  status: reviewed
+- title_id: arcade-archives-2-ninja-emaki
+  igdb_id: 414797
+  name: 'Arcade Archives 2: Ninja Emaki'
+  publisher: Hamster Corporation
+  status: reviewed
+- title_id: arcade-archives-2-pinball-action
+  igdb_id: 413936
+  name: 'Arcade Archives 2: Pinball Action'
+  publisher: null
+  status: reviewed
+- title_id: arcade-archives-2-plump-pop
+  igdb_id: 394721
+  name: 'Arcade Archives 2: Plump Pop'
+  publisher: Hamster Corporation
+  status: reviewed
+- title_id: arcade-archives-2-polaris
+  igdb_id: 398191
+  name: 'Arcade Archives 2: Polaris'
+  publisher: Hamster Corporation
+  status: reviewed
+- title_id: arcade-archives-2-quester
+  igdb_id: 387879
+  name: 'Arcade Archives 2: Quester'
+  publisher: Hamster Corporation
+  status: reviewed
+- title_id: arcade-archives-2-rack-em-up
+  igdb_id: 406053
+  name: 'Arcade Archives 2: Rack''em Up'
+  publisher: null
+  status: reviewed
+- title_id: arcade-archives-2-rave-racer
+  igdb_id: 388443
+  name: 'Arcade Archives 2: Rave Racer'
+  publisher: Hamster Corporation
+  status: reviewed
+- title_id: arcade-archives-2-ridge-racer
+  igdb_id: 338097
+  name: 'Arcade Archives 2: Ridge Racer'
+  publisher: Hamster Corporation
+  status: reviewed
+- title_id: arcade-archives-2-roc-n-rope
+  igdb_id: 381796
+  name: 'Arcade Archives 2: Roc''n Rope'
+  publisher: Hamster Corporation
+  status: reviewed
+- title_id: arcade-archives-2-scion
+  igdb_id: 375698
+  name: 'Arcade Archives 2: Scion'
+  publisher: Hamster Corporation
+  status: reviewed
+- title_id: arcade-archives-2-scrambled-egg
+  igdb_id: 364071
+  name: 'Arcade Archives 2: Scrambled Egg'
+  publisher: Hamster Corporation
+  status: reviewed
+- title_id: arcade-archives-2-space-cyclone
+  igdb_id: 407268
+  name: 'Arcade Archives 2: Space Cyclone'
+  publisher: null
+  status: reviewed
+- title_id: arcade-archives-2-space-invaders
+  igdb_id: 382649
+  name: 'Arcade Archives 2: Space Invaders'
+  publisher: Hamster Corporation
+  status: reviewed
+- title_id: arcade-archives-2-space-invaders-part-ii
+  igdb_id: 385155
+  name: 'Arcade Archives 2: Space Invaders Part II'
+  publisher: Hamster Corporation
+  status: reviewed
+- title_id: arcade-archives-2-steel-worker
+  igdb_id: 368332
+  name: 'Arcade Archives 2: Steel Worker'
+  publisher: Hamster Corporation
+  status: reviewed
+- title_id: arcade-archives-2-syvalion
+  igdb_id: 410363
+  name: 'Arcade Archives 2: Syvalion'
+  publisher: null
+  status: reviewed
+- title_id: arcade-archives-2-tag-team-wrestling
+  igdb_id: 402569
+  name: 'Arcade Archives 2: Tag Team Wrestling'
+  publisher: null
+  status: reviewed
+- title_id: arcade-archives-2-tatakae-big-fighter
+  igdb_id: 403300
+  name: 'Arcade Archives 2: Tatakae! Big Fighter'
+  publisher: Hamster Corporation
+  status: reviewed
+- title_id: arcade-archives-2-tekken
+  igdb_id: 408158
+  name: 'Arcade Archives 2: Tekken'
+  publisher: Hamster Corporation
+  status: reviewed
+- title_id: arcade-archives-2-the-outfoxies
+  igdb_id: 382963
+  name: 'Arcade Archives 2: The Outfoxies'
+  publisher: Hamster Corporation
+  status: reviewed
+- title_id: arcade-archives-2-tokyo-wars
+  igdb_id: 377001
+  name: 'Arcade Archives 2: Tokyo Wars'
+  publisher: null
+  status: reviewed
+- title_id: arcade-archives-2-top-speed
+  igdb_id: 389061
+  name: 'Arcade Archives 2: Top Speed'
+  publisher: Hamster Corporation
+  status: reviewed
+- title_id: arcade-archives-2-tx-1
+  igdb_id: 411809
+  name: 'Arcade Archives 2: TX-1'
+  publisher: Hamster Corporation
+  status: reviewed
+- title_id: arcade-archives-2-v-ball
+  igdb_id: 413937
+  name: 'Arcade Archives 2: V''Ball'
+  publisher: Hamster Corporation
+  status: reviewed
+- title_id: arcade-archives-2-video-hustler
+  igdb_id: 366754
+  name: 'Arcade Archives 2: Video Hustler'
+  publisher: Hamster Corporation
+  status: reviewed
+- title_id: arcade-archives-2-wiz
+  igdb_id: 417316
+  name: 'Arcade Archives 2: Wiz'
+  publisher: Hamster Corporation
+  status: reviewed
+- title_id: arcade-archives-touki-denshou-angel-eyes
+  igdb_id: 222390
+  name: 'Arcade Archives: Touki Denshou Angel Eyes'
+  publisher: Hamster Corporation
+  status: reviewed
+- title_id: arizona-sunshine
+  igdb_id: 404896
+  name: Arizona Sunshine
+  publisher: Vertigo Games
+  status: reviewed
+- title_id: armatus
+  igdb_id: 378225
+  name: Armatus
+  publisher: Fictions
+  status: pending
+- title_id: arms
+  igdb_id: 26759
+  name: Arms
+  publisher: Nintendo of Europe / Nintendo of America / Nintendo
+  status: reviewed
+- title_id: asdivine-knot
+  igdb_id: 414796
+  name: Asdivine Knot
+  publisher: Kemco
+  status: reviewed
+- title_id: asphalt-legends
+  igdb_id: 23314
+  name: Asphalt Legends
+  publisher: Gameloft
+  status: reviewed
+- title_id: assassin-s-creed-shadows
+  igdb_id: 300976
+  name: Assassin's Creed Shadows
+  publisher: Ubisoft Entertainment
+  status: reviewed
+- title_id: astonishia-story
+  igdb_id: 416317
+  name: Astonishia Story
+  publisher: NIS America
+  status: pending
+- title_id: atelier-karia-the-night-kingdom-the-guide-of-memories
+  igdb_id: 405457
+  name: 'Atelier Karia: The Night Kingdom & the Guide of Memories'
+  publisher: Koei Tecmo
+  status: reviewed
+- title_id: atelier-ryza-2-lost-legends-the-secret-fairy-dx
+  igdb_id: 359425
+  name: 'Atelier Ryza 2: Lost Legends & the Secret Fairy DX'
+  publisher: Koei Tecmo
+  status: reviewed
+- title_id: atelier-ryza-3-alchemist-of-the-end-the-secret-key-dx
+  igdb_id: 359427
+  name: 'Atelier Ryza 3: Alchemist of the End & the Secret Key DX'
+  publisher: Koei Tecmo
+  status: reviewed
+- title_id: atelier-ryza-ever-darkness-the-secret-hideout-dx
+  igdb_id: 359424
+  name: 'Atelier Ryza: Ever Darkness & the Secret Hideout DX'
+  publisher: Koei Tecmo
+  status: reviewed
+- title_id: atelier-yumia-the-alchemist-of-memories-the-envisioned-land
+  igdb_id: 314943
+  name: 'Atelier Yumia: The Alchemist of Memories & the Envisioned Land'
+  publisher: Koei Tecmo
+  status: reviewed
+- title_id: attack-on-titan-3
+  igdb_id: 404715
+  name: Attack on Titan 3
+  publisher: Koei Tecmo Games
+  status: reviewed
+- title_id: aurascope
+  igdb_id: 177951
+  name: Aurascope
+  publisher: Nick Oztok
+  status: pending
+- title_id: avatar-legends-the-fighting-game
+  igdb_id: 373021
+  name: 'Avatar Legends: The Fighting Game'
+  publisher: PM Studios
+  status: reviewed
+- title_id: avatar-legends-the-fighting-game-deluxe-edition
+  igdb_id: 412376
+  name: 'Avatar Legends: The Fighting Game - Deluxe Edition'
+  publisher: PM Studios
+  status: reviewed
+- title_id: back-in-time
+  igdb_id: 367896
+  name: Back in Time
+  publisher: Omnaya Studios
+  status: pending
+- title_id: back-to-the-dawn
+  igdb_id: 200544
+  name: Back to the Dawn
+  publisher: Spiral Up Games
+  status: reviewed
+- title_id: backyard-baseball
+  igdb_id: 393033
+  name: Backyard Baseball
+  publisher: Playground Productions / Mega Cat Studios
+  status: reviewed
+- title_id: balatro
+  igdb_id: 251833
+  name: Balatro
+  publisher: Playstack
+  status: reviewed
+- title_id: ball-x-pit
+  igdb_id: 346035
+  name: Ball x Pit
+  publisher: Devolver Digital
+  status: reviewed
+- title_id: bandit-trap
+  igdb_id: 306417
+  name: Bandit Trap
+  publisher: PM Studios
+  status: reviewed
+- title_id: bang-bang-bandits
+  igdb_id: 376493
+  name: Bang! Bang! Bandits
+  publisher: Nippon Columbia
+  status: reviewed
+- title_id: baptiste
+  igdb_id: 332314
+  name: Baptiste
+  publisher: Firenut Games
+  status: pending
+- title_id: barbie-horse-ride-rescue
+  igdb_id: 398424
+  name: 'Barbie: Horse Ride & Rescue'
+  publisher: PikPok
+  status: pending
+- title_id: bestiario
+  igdb_id: 296847
+  name: Bestiario
+  publisher: Wiggin Industries
+  status: pending
+- title_id: beyblade-x-evobattle
+  igdb_id: 369115
+  name: Beyblade X Evobattle
+  publisher: FuRyu
+  status: reviewed
+- title_id: beyond-the-dark-nightwatch
+  igdb_id: 403828
+  name: Beyond the Dark Nightwatch
+  publisher: null
+  status: pending
+- title_id: big-brain-academy-brain-vs-brain
+  igdb_id: 166489
+  name: 'Big Brain Academy: Brain vs. Brain'
+  publisher: Nintendo
+  status: reviewed
+- title_id: big-walk
+  igdb_id: 279624
+  name: Big Walk
+  publisher: Panic
+  status: reviewed
+- title_id: bioeden
+  igdb_id: 404905
+  name: BioEden
+  publisher: Focus Entertainment
+  status: reviewed
+- title_id: bit-trip-rerunner
+  igdb_id: 263289
+  name: Bit.Trip Rerunner
+  publisher: Choice Provisions
+  status: pending
+- title_id: blazblue-entropy-effect-x
+  igdb_id: 377236
+  name: 'BlazBlue: Entropy Effect X'
+  publisher: Arc System Works
+  status: reviewed
+- title_id: blighted
+  igdb_id: 347662
+  name: Blighted
+  publisher: Drinkbox Studios
+  status: pending
+- title_id: blood-dungeon
+  igdb_id: 404724
+  name: Blood Dungeon
+  publisher: Messhof
+  status: reviewed
+- title_id: blood-refreshed-supply
+  igdb_id: 370701
+  name: 'Blood: Refreshed Supply'
+  publisher: Warner Bros. Games / Atari
+  status: reviewed
+- title_id: bloodseed-the-last-helsing
+  igdb_id: 361286
+  name: 'Bloodseed: The Last Helsing'
+  publisher: null
+  status: pending
+- title_id: blue-prince
+  igdb_id: 149657
+  name: Blue Prince
+  publisher: Raw Fury
+  status: reviewed
+- title_id: blue-reflection
+  igdb_id: 396236
+  name: Blue Reflection
+  publisher: Koei Tecmo
+  status: reviewed
+- title_id: blue-reflection-ray
+  igdb_id: 396234
+  name: Blue Reflection Ray
+  publisher: Koei Tecmo
+  status: reviewed
+- title_id: blue-reflection-sun
+  igdb_id: 396235
+  name: Blue Reflection Sun
+  publisher: null
+  status: reviewed
+- title_id: blue-reflection-second-light
+  igdb_id: 396237
+  name: 'Blue Reflection: Second Light'
+  publisher: Koei Tecmo
+  status: pending
+- title_id: bluey-s-happy-snaps
+  igdb_id: 396024
+  name: Bluey's Happy Snaps
+  publisher: Gameloft
+  status: reviewed
+- title_id: bluey-s-quest-for-the-gold-pen
+  igdb_id: 375072
+  name: Bluey's Quest for the Gold Pen
+  publisher: PM Studios
+  status: reviewed
+- title_id: boku-to-tsuri-nikki
+  igdb_id: 412519
+  name: Boku to Tsuri Nikki
+  publisher: Imagineer
+  status: reviewed
+- title_id: bokura
+  igdb_id: 195883
+  name: Bokura
+  publisher: KODANSHA
+  status: reviewed
+- title_id: bokura-planet
+  igdb_id: 318275
+  name: 'Bokura: Planet'
+  publisher: KODANSHA
+  status: reviewed
+- title_id: borderlands-4
+  igdb_id: 314246
+  name: Borderlands 4
+  publisher: 2K
+  status: reviewed
+- title_id: borderlands-4-deluxe-edition
+  igdb_id: 358672
+  name: 'Borderlands 4: Deluxe Edition'
+  publisher: 2K
+  status: reviewed
+- title_id: bowser-s-fury
+  igdb_id: 142909
+  name: Bowser's Fury
+  publisher: Nintendo
+  status: reviewed
+- title_id: braid-anniversary-edition
+  igdb_id: 136511
+  name: 'Braid: Anniversary Edition'
+  publisher: Netflix / Thekla, Inc
+  status: reviewed
+- title_id: brigandine-abyss
+  igdb_id: 389424
+  name: Brigandine Abyss
+  publisher: NIS America, Inc.
+  status: reviewed
+- title_id: brightfall
+  igdb_id: 378215
+  name: Brightfall
+  publisher: Dark Point Games
+  status: reviewed
+- title_id: broken-sword-shadow-of-the-templars-reforged
+  igdb_id: 262651
+  name: 'Broken Sword: Shadow of the Templars Reforged'
+  publisher: Revolution Software
+  status: reviewed
+- title_id: brotato-nintendo-switch-2-edition
+  igdb_id: 378791
+  name: 'Brotato: Nintendo Switch 2 Edition'
+  publisher: null
+  status: reviewed
+- title_id: bubsy-4d
+  igdb_id: 361820
+  name: Bubsy 4D
+  publisher: Atari
+  status: reviewed
+- title_id: bunnimon
+  igdb_id: 351283
+  name: Bunnimon
+  publisher: Spacefarer Games
+  status: pending
+- title_id: bunraku
+  igdb_id: 265491
+  name: Bunraku
+  publisher: Efecto Studios
+  status: pending
+- title_id: cairn
+  igdb_id: 305017
+  name: Cairn
+  publisher: The Game Bakers
+  status: pending
+- title_id: calame
+  igdb_id: 399999
+  name: Calame
+  publisher: Nextale Games
+  status: pending
+- title_id: call-of-duty-modern-warfare-4
+  igdb_id: 403310
+  name: 'Call of Duty: Modern Warfare 4'
+  publisher: Activision
+  status: reviewed
+- title_id: call-of-duty-modern-warfare-4-vault-edition
+  igdb_id: 415399
+  name: 'Call of Duty: Modern Warfare 4 - Vault Edition'
+  publisher: null
+  status: reviewed
+- title_id: call-of-the-elder-gods
+  igdb_id: 347882
+  name: Call of the Elder Gods
+  publisher: Kwalee
+  status: reviewed
+- title_id: captain-toad-treasure-tracker
+  igdb_id: 243900
+  name: 'Captain Toad: Treasure Tracker'
+  publisher: 1-UP Studio / Nintendo
+  status: reviewed
+- title_id: card-casino
+  igdb_id: 399617
+  name: Card&Casino
+  publisher: null
+  status: reviewed
+- title_id: card-en-ciel
+  igdb_id: 292835
+  name: Card-en-Ciel
+  publisher: Inti Creates
+  status: reviewed
+- title_id: carmageddon-rogue-shift
+  igdb_id: 378311
+  name: 'Carmageddon: Rogue Shift'
+  publisher: 34BigThings
+  status: reviewed
+- title_id: carrier-command-2
+  igdb_id: 151902
+  name: Carrier Command 2
+  publisher: MicroProse
+  status: pending
+- title_id: cassette-beasts-2002
+  igdb_id: 404378
+  name: Cassette Beasts 2002
+  publisher: Raw Fury
+  status: reviewed
+- title_id: cast-n-chill
+  igdb_id: 330638
+  name: Cast n Chill
+  publisher: Wombat Brawler
+  status: reviewed
+- title_id: castlebound
+  igdb_id: 335841
+  name: Castlebound
+  publisher: Ogre Pixel
+  status: pending
+- title_id: cats-away
+  igdb_id: 352180
+  name: Cats Away
+  publisher: Nicalis, Inc.
+  status: reviewed
+- title_id: chillin-by-the-fire
+  igdb_id: 358531
+  name: Chillin' by the Fire
+  publisher: null
+  status: reviewed
+- title_id: chou-shin-jikuu-geimu-neptune-unlimited
+  igdb_id: 395340
+  name: 'Chou Shin Jikuu Geimu Neptune: Unlimited'
+  publisher: Idea Factory
+  status: reviewed
+- title_id: chromagun-2-dye-hard
+  igdb_id: 305224
+  name: 'ChromaGun 2: Dye Hard'
+  publisher: PM Studios
+  status: reviewed
+- title_id: chronoforge
+  igdb_id: 365311
+  name: ChronoForge
+  publisher: MintedLoot Studios
+  status: reviewed
+- title_id: citadelum
+  igdb_id: 284973
+  name: Citadelum
+  publisher: Abylight Studios
+  status: reviewed
+- title_id: citizen-sleeper
+  igdb_id: 152271
+  name: Citizen Sleeper
+  publisher: Fellow Traveller
+  status: pending
+- title_id: citizen-sleeper-2-starward-vector
+  igdb_id: 252853
+  name: 'Citizen Sleeper 2: Starward Vector'
+  publisher: Fellow Traveller / Surprise Attack Games
+  status: reviewed
+- title_id: city-hunter
+  igdb_id: 370192
+  name: City Hunter
+  publisher: SUNSOFT / Clouded Leopard Entertainment Inc. / Red Art Games
+  status: reviewed
+- title_id: clean-up-earth
+  igdb_id: 367820
+  name: Clean Up Earth
+  publisher: null
+  status: reviewed
+- title_id: clive-barker-s-hellraiser-revival
+  igdb_id: 356552
+  name: 'Clive Barker''s Hellraiser: Revival'
+  publisher: Boss Team Games / Saber Interactive
+  status: reviewed
+- title_id: cloverpit
+  igdb_id: 338902
+  name: Cloverpit
+  publisher: Future Friends Games
+  status: reviewed
+- title_id: coffee-talk-tokyo
+  igdb_id: 314928
+  name: 'Coffee Talk: Tokyo'
+  publisher: Chorus Worldwide
+  status: reviewed
+- title_id: colorbound
+  igdb_id: 347850
+  name: Colorbound
+  publisher: Whitethorn Games
+  status: reviewed
+- title_id: console-archives-bokosuka-wars
+  igdb_id: 408387
+  name: 'Console Archives: Bokosuka Wars'
+  publisher: Hamster Corporation
+  status: reviewed
+- title_id: console-archives-bubble-bobble
+  igdb_id: 415224
+  name: 'Console Archives: Bubble Bobble'
+  publisher: Hamster Corporation
+  status: reviewed
+- title_id: console-archives-cool-boarders
+  igdb_id: 388446
+  name: 'Console Archives: Cool Boarders'
+  publisher: null
+  status: reviewed
+- title_id: console-archives-dezaemon
+  igdb_id: 391963
+  name: 'Console Archives: Dezaemon'
+  publisher: Hamster Corporation
+  status: reviewed
+- title_id: console-archives-doraemon
+  igdb_id: 388444
+  name: 'Console Archives: Doraemon'
+  publisher: Hamster Corporation
+  status: reviewed
+- title_id: console-archives-firework-thrower-kantaro-s-53-stations-of-the-tokaido
+  igdb_id: 405392
+  name: 'Console Archives: Firework Thrower Kantaro''s 53 Stations of the Tokaido'
+  publisher: null
+  status: reviewed
+- title_id: console-archives-geki-oh-shienryu
+  igdb_id: 403301
+  name: 'Console Archives: Geki-Oh ShienRyu'
+  publisher: Hamster Corporation
+  status: reviewed
+- title_id: console-archives-hercules-no-eikou-ii-taitan-no-metsubou
+  igdb_id: 410364
+  name: 'Console Archives: Hercules no Eikou II - Taitan no Metsubou'
+  publisher: Hamster Corporation
+  status: reviewed
+- title_id: console-archives-ishin-no-arashi
+  igdb_id: 398773
+  name: 'Console Archives: Ishin no Arashi'
+  publisher: Hamster Corporation
+  status: reviewed
+- title_id: console-archives-l-empereur
+  igdb_id: 405808
+  name: 'Console Archives: L''Empereur'
+  publisher: Hamster Corporation
+  status: reviewed
+- title_id: console-archives-magmax
+  igdb_id: 400783
+  name: 'Console Archives: MagMax'
+  publisher: Hamster Corporation
+  status: reviewed
+- title_id: console-archives-master-of-monsters-disciples-of-gaia
+  igdb_id: 401691
+  name: 'Console Archives: Master of Monsters - Disciples of Gaia'
+  publisher: Hamster Corporation
+  status: reviewed
+- title_id: console-archives-ninja-gaiden-ii-the-dark-sword-of-chaos
+  igdb_id: 388447
+  name: 'Console Archives: Ninja Gaiden II - The Dark Sword of Chaos'
+  publisher: Hamster Corporation
+  status: reviewed
+- title_id: console-archives-ninja-gaiden-iii-the-ancient-ship-of-doom
+  igdb_id: 399298
+  name: 'Console Archives: Ninja Gaiden III - The Ancient Ship of Doom'
+  publisher: Hamster Corporation
+  status: reviewed
+- title_id: console-archives-ninja-kid-ii
+  igdb_id: 395248
+  name: 'Console Archives: Ninja-Kid II'
+  publisher: Hamster Corporation
+  status: reviewed
+- title_id: console-archives-nobunaga-s-ambition
+  igdb_id: 394383
+  name: 'Console Archives: Nobunaga''s Ambition'
+  publisher: Hamster Corporation
+  status: reviewed
+- title_id: console-archives-nobunaga-s-ambition-ii
+  igdb_id: 417859
+  name: 'Console Archives: Nobunaga''s Ambition II'
+  publisher: Hamster Corporation
+  status: reviewed
+- title_id: console-archives-rhapsody-a-musical-adventure
+  igdb_id: 409617
+  name: 'Console Archives: Rhapsody - A Musical Adventure'
+  publisher: Hamster Corporation
+  status: reviewed
+- title_id: console-archives-rhapsody-ii-ballad-of-the-little-princess
+  igdb_id: 415220
+  name: 'Console Archives: Rhapsody II - Ballad of the Little Princess'
+  publisher: Hamster Corporation
+  status: reviewed
+- title_id: console-archives-rohga-armor-force
+  igdb_id: 400163
+  name: 'Console Archives: Rohga - Armor Force'
+  publisher: Hamster Corporation
+  status: reviewed
+- title_id: console-archives-seicross
+  igdb_id: 398195
+  name: 'Console Archives: Seicross'
+  publisher: Hamster Corporation
+  status: reviewed
+- title_id: console-archives-sonic-wings-special
+  igdb_id: 388445
+  name: 'Console Archives: Sonic Wings Special'
+  publisher: null
+  status: reviewed
+- title_id: console-archives-t-r-a-g-tactical-rescue-assault-group-mission-of-mercy
+  igdb_id: 408738
+  name: 'Console Archives: T.R.A.G. - Tactical Rescue Assault Group: Mission of Mercy'
+  publisher: Hamster Corporation
+  status: reviewed
+- title_id: console-archives-terra-cresta
+  igdb_id: 396096
+  name: 'Console Archives: Terra Cresta'
+  publisher: Hamster Corporation
+  status: reviewed
+- title_id: console-archives-the-conveni
+  igdb_id: 411151
+  name: 'Console Archives: The Conveni'
+  publisher: Hamster Corporation
+  status: reviewed
+- title_id: console-archives-the-conveni-2
+  igdb_id: 416244
+  name: 'Console Archives: The Conveni 2'
+  publisher: Hamster Corporation
+  status: reviewed
+- title_id: console-archives-the-legend-of-kage
+  igdb_id: 409281
+  name: 'Console Archives: The Legend of Kage'
+  publisher: null
+  status: reviewed
+- title_id: console-archives-toujin-makyou-den-heracles-no-eikou
+  igdb_id: 402567
+  name: 'Console Archives: Toujin Makyou-den - Heracles no Eikou'
+  publisher: Hamster Corporation
+  status: reviewed
+- title_id: console-archives-touki-denshou-angel-eyes
+  igdb_id: 415385
+  name: 'Console Archives: Touki Denshou Angel Eyes'
+  publisher: null
+  status: reviewed
+- title_id: console-archives-ufo-a-day-in-the-life
+  igdb_id: 388476
+  name: 'Console Archives: UFO - A Day in the Life'
+  publisher: Hamster Corporation
+  status: reviewed
+- title_id: constance
+  igdb_id: 258950
+  name: Constance
+  publisher: Blue Backpack
+  status: pending
+- title_id: content-warning
+  igdb_id: 294661
+  name: Content Warning
+  publisher: Landfall Games
+  status: reviewed
+- title_id: core-keeper
+  igdb_id: 152127
+  name: Core Keeper
+  publisher: Fireshine Games
+  status: reviewed
+- title_id: cotton-rock-with-you-oriental-night-dreams
+  igdb_id: 409886
+  name: 'Cotton Rock with You: Oriental Night Dreams'
+  publisher: SUCCESS Corp.
+  status: reviewed
+- title_id: cozy-grove
+  igdb_id: 144800
+  name: Cozy Grove
+  publisher: The Quantum Astrophysicists Guild / Spry Fox
+  status: reviewed
+- title_id: cozy-grove-camp-spirit
+  igdb_id: 305032
+  name: 'Cozy Grove: Camp Spirit'
+  publisher: Netflix / Spry Fox
+  status: reviewed
+- title_id: crazy-taxi-world-tour
+  igdb_id: 279633
+  name: 'Crazy Taxi: World Tour'
+  publisher: Sega
+  status: pending
+- title_id: crisis-core-final-fantasy-vii-reunion
+  igdb_id: 205201
+  name: 'Crisis Core: Final Fantasy VII - Reunion'
+  publisher: Square Enix
+  status: reviewed
+- title_id: cronos-the-new-dawn
+  igdb_id: 320137
+  name: 'Cronos: The New Dawn'
+  publisher: Bloober Team
+  status: reviewed
+- title_id: crymelight
+  igdb_id: 399408
+  name: Crymelight
+  publisher: FuRyu
+  status: reviewed
+- title_id: crymelight-tea-party-box
+  igdb_id: 399436
+  name: 'Crymelight: Tea Party Box'
+  publisher: FuRyu
+  status: reviewed
+- title_id: culdcept-begins
+  igdb_id: 388451
+  name: Culdcept Begins
+  publisher: Neos Corporation
+  status: reviewed
+- title_id: cultic
+  igdb_id: 164944
+  name: Cultic
+  publisher: Atari / 3D Realms
+  status: reviewed
+- title_id: cururu-whispers-of-the-forest
+  igdb_id: 383951
+  name: 'Cururu: Whispers of the Forest'
+  publisher: null
+  status: pending
+- title_id: cyberpunk-2077
+  igdb_id: 1877
+  name: Cyberpunk 2077
+  publisher: CD Projekt
+  status: reviewed
+- title_id: d-topia
+  igdb_id: 369840
+  name: D-topia
+  publisher: Annapurna Interactive
+  status: reviewed
+- title_id: daemon-x-machina-titanic-scion
+  igdb_id: 250925
+  name: 'Daemon x Machina: Titanic Scion'
+  publisher: Marvelous / Marvelous Europe Ltd. / XSEED Games / Marvelous USA, Inc.
+  status: reviewed
+- title_id: daemon-x-machina-titanic-scion-digital-deluxe-edition
+  igdb_id: 349591
+  name: 'Daemon x Machina: Titanic Scion - Digital Deluxe Edition'
+  publisher: Marvelous / Marvelous Europe Ltd. / XSEED Games
+  status: reviewed
+- title_id: daemon-x-machina-titanic-scion-super-digital-deluxe-edition
+  igdb_id: 349592
+  name: 'Daemon x Machina: Titanic Scion - Super Digital Deluxe Edition'
+  publisher: Marvelous / Marvelous Europe Ltd. / XSEED Games
+  status: reviewed
+- title_id: daisenryaku-ssb2
+  igdb_id: 368908
+  name: Daisenryaku SSB2
+  publisher: SystemSoft Beta
+  status: reviewed
+- title_id: danganronpa-2x2
+  igdb_id: 366895
+  name: Danganronpa 2x2
+  publisher: Spike Chunsoft
+  status: reviewed
+- title_id: dark-auction
+  igdb_id: 264359
+  name: Dark Auction
+  publisher: IzanagiGames / Good Smile Company
+  status: reviewed
+- title_id: dark-ties
+  igdb_id: 369849
+  name: Dark Ties
+  publisher: Sega
+  status: reviewed
+- title_id: darwin-s-paradox
+  igdb_id: 331202
+  name: Darwin's Paradox!
+  publisher: Konami
+  status: reviewed
+- title_id: dave-the-diver
+  igdb_id: 203722
+  name: Dave the Diver
+  publisher: MINTROCKET
+  status: reviewed
+- title_id: dayz
+  igdb_id: 2117
+  name: DayZ
+  publisher: Bohemia Interactive
+  status: reviewed
+- title_id: dead-age-2
+  igdb_id: 127098
+  name: Dead Age 2
+  publisher: Headup Games
+  status: reviewed
+- title_id: dead-as-disco
+  igdb_id: 341592
+  name: Dead as Disco
+  publisher: Brain Jar Games
+  status: pending
+- title_id: deadzone-rogue
+  igdb_id: 316979
+  name: 'Deadzone: Rogue'
+  publisher: Prophecy Games
+  status: reviewed
+- title_id: deadzone-rogue-deluxe-edition
+  igdb_id: 393895
+  name: 'Deadzone: Rogue - Deluxe Edition'
+  publisher: null
+  status: reviewed
+- title_id: dear-me-i-was
+  igdb_id: 351207
+  name: Dear me, I was…
+  publisher: Arc System Works
+  status: reviewed
+- title_id: decapolice
+  igdb_id: 236661
+  name: DecaPolice
+  publisher: LEVEL-5
+  status: pending
+- title_id: deltarune
+  igdb_id: 171233
+  name: Deltarune
+  publisher: tobyfox / 8-4
+  status: reviewed
+- title_id: demeo-x-dungeons-dragons-battlemarked
+  igdb_id: 346959
+  name: 'Demeo x Dungeons & Dragons: Battlemarked'
+  publisher: Resolution Games
+  status: reviewed
+- title_id: demi-and-the-fractured-dream
+  igdb_id: 369843
+  name: Demi and the Fractured Dream
+  publisher: Annapurna Interactive
+  status: pending
+- title_id: demon-slayer-kimetsu-no-yaiba-the-hinokami-chronicles-2
+  igdb_id: 337907
+  name: 'Demon Slayer: Kimetsu no Yaiba - The Hinokami Chronicles 2'
+  publisher: Sega / Aniplex
+  status: reviewed
+- title_id: demonschool
+  igdb_id: 204640
+  name: Demonschool
+  publisher: Ysbryd Games
+  status: pending
+- title_id: denshattack
+  igdb_id: 361826
+  name: Denshattack!
+  publisher: Fireshine Games / Boltray Games
+  status: reviewed
+- title_id: depth-loop
+  igdb_id: 317854
+  name: Depth Loop
+  publisher: Kemco
+  status: pending
+- title_id: derby-stallion-2
+  igdb_id: 405468
+  name: Derby Stallion 2
+  publisher: null
+  status: reviewed
+- title_id: destroy-all-humans
+  igdb_id: 119257
+  name: Destroy All Humans!
+  publisher: THQ Nordic
+  status: reviewed
+- title_id: destroy-all-humans-2-reprobed
+  igdb_id: 171214
+  name: 'Destroy All Humans! 2: Reprobed'
+  publisher: THQ Nordic
+  status: reviewed
+- title_id: devil-may-cry-5
+  igdb_id: 76253
+  name: Devil May Cry 5
+  publisher: Capcom
+  status: reviewed
+- title_id: dew
+  igdb_id: 343439
+  name: Dew
+  publisher: MVRX games
+  status: pending
+- title_id: digimon-story-time-stranger-deluxe-edition
+  igdb_id: 390528
+  name: 'Digimon Story Time Stranger: Deluxe Edition'
+  publisher: Bandai Namco Entertainment
+  status: reviewed
+- title_id: digimon-story-time-stranger-ultimate-edition
+  igdb_id: 390529
+  name: 'Digimon Story Time Stranger: Ultimate Edition'
+  publisher: Bandai Namco Entertainment
+  status: reviewed
+- title_id: digimon-story-time-stranger
+  igdb_id: 331188
+  name: 'Digimon Story: Time Stranger'
+  publisher: Bandai Namco Entertainment
+  status: reviewed
+- title_id: dinkum
+  igdb_id: 120322
+  name: Dinkum
+  publisher: The Irregular Corporation / Krafton
+  status: reviewed
+- title_id: disgaea-7-complete
+  igdb_id: 295622
+  name: Disgaea 7 Complete
+  publisher: Nippon Ichi Software
+  status: reviewed
+- title_id: disgaea-mayhem
+  igdb_id: 335576
+  name: Disgaea Mayhem
+  publisher: Nippon Ichi Software / NIS America
+  status: reviewed
+- title_id: disney-dreamlight-valley
+  igdb_id: 198506
+  name: Disney Dreamlight Valley
+  publisher: Gameloft
+  status: reviewed
+- title_id: disney-speedstorm
+  igdb_id: 191402
+  name: Disney Speedstorm
+  publisher: Gameloft
+  status: reviewed
+- title_id: dispatch
+  igdb_id: 325609
+  name: Dispatch
+  publisher: AdHoc Studio
+  status: reviewed
+- title_id: divinity-original-sin-ii-definitive-edition
+  igdb_id: 103337
+  name: 'Divinity: Original Sin II - Definitive Edition'
+  publisher: Bandai Namco Entertainment / Larian Studios
+  status: reviewed
+- title_id: dk-challenge
+  igdb_id: 405439
+  name: DK Challenge
+  publisher: Nintendo
+  status: reviewed
+- title_id: dogpile
+  igdb_id: 373491
+  name: Dogpile
+  publisher: Wings
+  status: reviewed
+- title_id: donkey-kong-country-returns-hd
+  igdb_id: 306143
+  name: Donkey Kong Country Returns HD
+  publisher: Nintendo
+  status: reviewed
+- title_id: dosa-divas
+  igdb_id: 305023
+  name: Dosa Divas
+  publisher: Outerloop Games / Outersloth
+  status: reviewed
+- title_id: drag-x-drive
+  igdb_id: 338077
+  name: Drag x Drive
+  publisher: Nintendo
+  status: reviewed
+- title_id: dragon-ball-sparking-zero
+  igdb_id: 279634
+  name: 'Dragon Ball: Sparking! Zero'
+  publisher: Bandai Namco Entertainment
+  status: reviewed
+- title_id: dragon-quest-heroes-torneko-s-mystery-dungeon-classic-hd
+  igdb_id: 417182
+  name: 'Dragon Quest Heroes: Torneko''s Mystery Dungeon Classic HD'
+  publisher: Square Enix
+  status: reviewed
+- title_id: dragon-quest-i-hd-2d-remake
+  igdb_id: 375616
+  name: Dragon Quest I HD-2D Remake
+  publisher: Square Enix
+  status: reviewed
+- title_id: dragon-quest-ii-hd-2d-remake
+  igdb_id: 375617
+  name: Dragon Quest II HD-2D Remake
+  publisher: Square Enix
+  status: reviewed
+- title_id: dragon-quest-iii-hd-2d-remake
+  igdb_id: 149980
+  name: Dragon Quest III HD-2D Remake
+  publisher: Square Enix
+  status: reviewed
+- title_id: dragon-quest-monsters-the-withered-world
+  igdb_id: 403174
+  name: 'Dragon Quest Monsters: The Withered World'
+  publisher: Square Enix
+  status: reviewed
+- title_id: dragon-quest-vii-reimagined
+  igdb_id: 366884
+  name: Dragon Quest VII Reimagined
+  publisher: Square Enix
+  status: reviewed
+- title_id: dragon-quest-vii-reimagined-digital-deluxe-edition
+  igdb_id: 367098
+  name: 'Dragon Quest VII: Reimagined - Digital Deluxe Edition'
+  publisher: Square Enix
+  status: reviewed
+- title_id: dragon-quest-xi-s-echoes-of-an-elusive-age-definitive-edition
+  igdb_id: 110069
+  name: 'Dragon Quest XI S: Echoes of an Elusive Age - Definitive Edition'
+  publisher: Nintendo / Square Enix
+  status: reviewed
+- title_id: dragon-s-dogma-ii
+  igdb_id: 115060
+  name: Dragon's Dogma II
+  publisher: Capcom
+  status: reviewed
+- title_id: draw-king
+  igdb_id: 388068
+  name: Draw King
+  publisher: null
+  status: reviewed
+- title_id: dread-delusion
+  igdb_id: 159735
+  name: Dread Delusion
+  publisher: DreadXP
+  status: reviewed
+- title_id: dream-shogi-4k
+  igdb_id: 391863
+  name: Dream Shogi 4K
+  publisher: null
+  status: reviewed
+- title_id: drop-pop
+  igdb_id: 386981
+  name: Drop Pop
+  publisher: null
+  status: reviewed
+- title_id: dumb-ways-to-party
+  igdb_id: 375096
+  name: Dumb Ways to Party
+  publisher: PlaySide
+  status: pending
+- title_id: dumbriel-magnificent-adventure-in-hell
+  igdb_id: 260404
+  name: 'Dumbriel: Magnificent Adventure in Hell'
+  publisher: MadMoa
+  status: pending
+- title_id: duskfade
+  igdb_id: 310665
+  name: Duskfade
+  publisher: Fireshine Games
+  status: reviewed
+- title_id: dvor
+  igdb_id: 414122
+  name: Dvor
+  publisher: Studio Betonika
+  status: pending
+- title_id: dynasty-warriors-3-complete-edition-remastered
+  igdb_id: 369991
+  name: 'Dynasty Warriors 3: Complete Edition Remastered'
+  publisher: Koei Tecmo
+  status: reviewed

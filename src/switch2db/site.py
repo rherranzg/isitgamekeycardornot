@@ -11,7 +11,7 @@ from switch2db.i18n import (
     REGION_LABELS,
     UI_STRINGS,
 )
-from switch2db.models import Edition, Format, PhysicalRelease, Region, Sku, SkuStatus, Title, TitleStatus
+from switch2db.models import Edition, Format, PhysicalRelease, Region, Sku, Title
 from switch2db.slug import strip_accents
 
 LocalizedText = dict[str, str]
@@ -19,12 +19,6 @@ LocalizedText = dict[str, str]
 # Valor con el que el filtro de formato representa a los juegos que nunca salieron en caja: no son un
 # formato del enum, pero el visitante los busca en el mismo sitio que los demás.
 NO_BOX_FILTER_VALUE = "no_box"
-
-# Solo se publica lo investigado y comprobado: new y pending no lo están.
-PUBLISHED_TITLE_STATUS = TitleStatus.REVIEWED
-# Un SKU new es un borrador que nadie ha buscado: no sale. Lo demás sí, incluidos los pending,
-# que salen como formato desconocido porque se buscó su fuente y no apareció.
-HIDDEN_SKU_STATUS = SkuStatus.NEW
 
 REPO_URL = "https://github.com/rherranzg/isitgamekeycardornot"
 DATA_LICENSE_URL = f"{REPO_URL}/blob/main/data/LICENSE"
@@ -117,11 +111,6 @@ def sku_sort_key(sku: Sku) -> tuple[str, str]:
     return (sku.region.value, sku.edition.value)
 
 
-def select_published_skus(skus: list[Sku]) -> list[Sku]:
-    """Devuelve los SKUs que se publican: todos menos los recién escritos y sin mirar (status new)."""
-    return [sku for sku in skus if sku.status != HIDDEN_SKU_STATUS]
-
-
 def group_skus_by_title(skus: list[Sku]) -> dict[str, list[Sku]]:
     """Agrupa los SKUs por title_id, en el orden en que llegan."""
     groups: defaultdict[str, list[Sku]] = defaultdict(list)
@@ -163,27 +152,12 @@ def build_title_view(
     )
 
 
-def select_published_titles(
-    titles: list[Title], skus: list[Sku], releases: list[PhysicalRelease]
-) -> list[Title]:
-    """Devuelve los títulos investigados que tienen algo que contar: SKUs publicables o que no hay caja."""
-    title_ids_with_skus = {sku.title_id for sku in select_published_skus(skus)}
-    digital_only = find_digital_only_releases(releases)
-    return [
-        title
-        for title in titles
-        if title.status == PUBLISHED_TITLE_STATUS
-        and (title.title_id in title_ids_with_skus or title.title_id in digital_only)
-    ]
-
-
 def build_title_views(
     titles: list[Title], skus: list[Sku], releases: list[PhysicalRelease]
 ) -> list[TitleView]:
-    """Agrupa los SKUs por título y devuelve las vistas ordenadas por nombre."""
-    published_skus = select_published_skus(skus)
-    skus_by_title = group_skus_by_title(published_skus)
-    diverging_title_ids = {title_id for title_id, _ in find_format_divergences(published_skus)}
+    """Agrupa los SKUs por título y devuelve las vistas ordenadas por nombre, para todos los títulos."""
+    skus_by_title = group_skus_by_title(skus)
+    diverging_title_ids = {title_id for title_id, _ in find_format_divergences(skus)}
     digital_only = find_digital_only_releases(releases)
     views = [build_title_view(title, skus_by_title, diverging_title_ids, digital_only) for title in titles]
     return sorted(views, key=lambda view: view.name.casefold())

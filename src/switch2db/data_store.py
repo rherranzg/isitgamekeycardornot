@@ -12,10 +12,10 @@ ModelT = TypeVar("ModelT", bound=BaseModel)
 
 TITLES_HEADER = (
     "# Juegos de Switch 2 conocidos. Los añade scripts/add_titles.py desde data/igdb_catalog.yaml.\n"
-    "# name y publisher vienen de IGDB; a mano solo se edita status:\n"
-    "#   new      = del catálogo y sin investigar (lo pone add_titles); no sale en la web\n"
+    "# name y publisher vienen de IGDB; a mano solo se edita status (la web publica todos los status):\n"
+    "#   new      = del catálogo y sin investigar (lo pone add_titles)\n"
     "#   pending  = investigado sin confirmar la edición de la caja ni encontrar fuente\n"
-    "#   reviewed = investigado y comprobado; sale en la web si tiene algún SKU no-new\n"
+    "#   reviewed = investigado y comprobado\n"
 )
 CATALOG_HEADER = "# Juegos de Switch 2 en IGDB (scripts/download_igdb_catalog.py). Local, no se versiona.\n"
 

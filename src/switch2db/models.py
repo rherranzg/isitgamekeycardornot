@@ -47,18 +47,18 @@ class Evidence(StrEnum):
 
 
 class SkuStatus(StrEnum):
-    """Estado de revisión de un SKU. Solo `new` no se publica en la web."""
+    """Estado de revisión de un SKU. La web publica todos los status."""
 
-    NEW = "new"  # borrador que nadie ha buscado todavía: no sale en la web
+    NEW = "new"  # borrador que nadie ha buscado todavía: sale como formato desconocido
     PENDING = "pending"  # buscado sin encontrar fuente: sale como formato desconocido, falta buscar a fondo
     REVIEWED = "reviewed"  # comprobado abriendo la fuente: sale con su fuente
     REFRESH = "refresh"  # tiene fuente, pero hay que volver a buscar evidencias en la web; sigue publicado
 
 
 class TitleStatus(StrEnum):
-    """Estado de investigación de un título. Solo `reviewed` se publica en la web."""
+    """Estado de investigación de un título. La web publica todos los status."""
 
-    NEW = "new"  # sacado del catálogo de IGDB y sin investigar: no sale en la web
+    NEW = "new"  # sacado del catálogo de IGDB y sin investigar
     PENDING = "pending"  # investigado sin poder confirmar la edición de la caja ni encontrar fuente
     REVIEWED = "reviewed"  # investigado: el igdb_id es la edición de la caja y el resto está comprobado
 
@@ -137,7 +137,7 @@ class Sku(BaseModel):
     verified_at: date = Field(
         ..., description="Última fecha en que se comprobó la fuente; en los `pending`, la de la búsqueda"
     )
-    status: SkuStatus = Field(..., description="Estado de revisión del SKU; solo `new` no se publica")
+    status: SkuStatus = Field(..., description="Estado de revisión del SKU; la web publica todos")
 
     @field_validator("ean")
     @classmethod

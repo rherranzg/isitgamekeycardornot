@@ -368,11 +368,9 @@
           {{ i18n(t.no_box_note) }}
           {% if title.no_box.source_url %}
           <a class="source-link" href="{{ title.no_box.source_url }}" target="_blank" rel="noopener noreferrer">{{ i18n(title.no_box.evidence_label) }}</a>
-          {% else %}
-          <span class="evidence">{{ i18n(title.no_box.evidence_label) }}</span>
           {% endif %}
         </p>
-        {% else %}
+        {% elif title.skus %}
         <div class="table-scroll">
           <table class="skus">
             <thead>
@@ -397,7 +395,7 @@
                   {% if sku.source_url %}
                   <a class="source-link" href="{{ sku.source_url }}" target="_blank" rel="noopener noreferrer">{{ i18n(sku.evidence_label) }}</a>
                   {% else %}
-                  {{ i18n(sku.evidence_label) }}
+                  —
                   {% endif %}
                 </td>
               </tr>
@@ -405,6 +403,8 @@
             </tbody>
           </table>
         </div>
+        {% else %}
+        <p class="no-data">{{ i18n(t.no_data) }}</p>
         {% endif %}
       </div>
       {% endfor %}
@@ -495,14 +495,21 @@
 
       cards.forEach(function (card) {
         var matchesSearch = !state.search || card.dataset.search.indexOf(state.search) !== -1;
+        var rows = card.querySelectorAll("table.skus tbody tr");
         var anyRowVisible = false;
 
-        card.querySelectorAll("table.skus tbody tr").forEach(function (row) {
+        rows.forEach(function (row) {
           row.hidden = !isRowVisible(row);
           if (!row.hidden) anyRowVisible = true;
         });
 
-        if (card.dataset.noBox) anyRowVisible = isNoBoxCardVisible();
+        if (card.dataset.noBox) {
+          anyRowVisible = isNoBoxCardVisible();
+        } else if (rows.length === 0) {
+          // Título todavía sin SKUs (status new sin investigar): no hay filas que filtrar, así que
+          // los filtros de región/formato/edición no lo ocultan, solo lo hace la búsqueda.
+          anyRowVisible = true;
+        }
         card.hidden = !matchesSearch || !anyRowVisible;
         if (!card.hidden) visibleCount++;
       });
