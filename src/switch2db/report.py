@@ -19,6 +19,7 @@ class DataReport(BaseModel):
     sku_count: int = Field(..., description="Número de SKUs válidos")
     skus_by_region: dict[str, int] = Field(..., description="SKUs por región")
     skus_by_format: dict[str, int] = Field(..., description="SKUs por formato")
+    skus_by_status: dict[str, int] = Field(..., description="SKUs por estado de revisión")
     fill_rates: dict[str, float | None] = Field(
         ..., description="% de relleno por campo; condicionales medidos donde aplican (null si en ninguno)"
     )
@@ -58,6 +59,7 @@ def build_report(titles: list[Title], skus: list[Sku], fill_threshold: float) ->
         sku_count=len(skus),
         skus_by_region=count_by(skus, "region"),
         skus_by_format=count_by(skus, "format"),
+        skus_by_status=count_by(skus, "status"),
         fill_rates=fill_rates,
         low_fill_fields=find_low_fill_fields(fill_rates, fill_threshold),
         format_divergences=describe_format_divergences(skus),

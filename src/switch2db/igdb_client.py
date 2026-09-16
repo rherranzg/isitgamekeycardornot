@@ -30,16 +30,6 @@ def post_query(url: str, query: str, access_token: str, client_id: str) -> objec
     return response.json()
 
 
-def build_games_query(igdb_ids: list[int]) -> str:
-    """Construye la query APICalypse que pide los juegos con los ids indicados."""
-    if not igdb_ids:
-        raise ValueError("No hay igdb_ids que consultar")
-    if len(igdb_ids) > IGDB_MAX_LIMIT:
-        raise ValueError(f"IGDB admite como máximo {IGDB_MAX_LIMIT} resultados por petición")
-    ids = ",".join(str(igdb_id) for igdb_id in igdb_ids)
-    return f"fields {GAME_FIELDS}; where id = ({ids}); limit {len(igdb_ids)};"
-
-
 def build_platform_query(name_fragment: str) -> str:
     """Construye la query que busca plataformas cuyo nombre contiene el texto."""
     return f'fields name; where name ~ *"{name_fragment}"*;'
@@ -51,12 +41,6 @@ def build_platform_games_query(platform_id: int, offset: int) -> str:
         f"fields {GAME_FIELDS}; where platforms = ({platform_id}); "
         f"sort id asc; limit {IGDB_MAX_LIMIT}; offset {offset};"
     )
-
-
-def fetch_games_by_ids(igdb_ids: list[int], access_token: str, client_id: str) -> list[IgdbGame]:
-    """Descarga de IGDB los juegos con los ids dados en una sola petición."""
-    payload = post_query(IGDB_GAMES_URL, build_games_query(igdb_ids), access_token, client_id)
-    return GAMES_ADAPTER.validate_python(payload)
 
 
 def find_platform_id(name_fragment: str, access_token: str, client_id: str) -> int:

@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="{{ t.tagline.es }}">
   <title>Is It Game-Key Card Or Not</title>
   <style>
     :root {
@@ -152,7 +153,7 @@
       flex-direction: column;
       gap: 6px;
       font-size: 0.85rem;
-      white-space: normal;
+      white-space: nowrap;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
     }
     .filter-panel label {
@@ -160,31 +161,6 @@
       align-items: center;
       gap: 6px;
       cursor: pointer;
-    }
-    .sort-pills {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      flex-wrap: wrap;
-      font-size: 0.85rem;
-    }
-    .sort-pills .sort-by-label {
-      color: var(--muted);
-      margin-right: 2px;
-    }
-    .sort-pill {
-      background: transparent;
-      color: var(--text);
-      border: 1px solid var(--border);
-      border-radius: 999px;
-      padding: 5px 12px;
-      font-size: 0.82rem;
-      cursor: pointer;
-    }
-    .sort-pill[aria-pressed="true"] {
-      background: var(--surface);
-      font-weight: 600;
-      border-color: var(--text);
     }
     #showing-count {
       font-size: 0.82rem;
@@ -201,6 +177,8 @@
       border: 1px solid var(--border);
       border-radius: 10px;
       padding: 16px 18px;
+      /* Deja hueco a la barra fija al saltar a un juego por su ancla (#title_id) */
+      scroll-margin-top: 80px;
     }
     .title-head {
       display: flex;
@@ -213,6 +191,17 @@
       font-size: 1.1rem;
       margin: 0;
     }
+    .no-box {
+      margin: 0;
+      padding: 0.75rem 0;
+      color: var(--muted);
+    }
+
+    .no-box .evidence,
+    .no-box .source-link {
+      margin-left: 0.35rem;
+    }
+
     .publisher {
       color: var(--muted);
       font-size: 0.85rem;
@@ -224,11 +213,6 @@
       border-radius: 6px;
       padding: 2px 8px;
       white-space: nowrap;
-    }
-    .no-data {
-      color: var(--muted);
-      font-size: 0.85rem;
-      margin-top: 8px;
     }
     #empty-state {
       color: var(--muted);
@@ -283,6 +267,8 @@
       color: var(--muted);
       font-size: 0.8rem;
     }
+    footer p { margin: 0 0 6px; }
+    footer a { color: inherit; }
 
     @media (max-width: 640px) {
       .toolbar {
@@ -301,6 +287,7 @@
       }
       .title-card {
         padding: 14px;
+        scroll-margin-top: 130px;
       }
     }
   </style>
@@ -308,6 +295,19 @@
 <body>
   {% macro i18n(pair) -%}
   <span data-i18n="es">{{ pair.es }}</span><span data-i18n="en" hidden>{{ pair.en }}</span>
+  {%- endmacro %}
+  {% macro filter_dropdown(title, class_name, labels) -%}
+  <details class="filter-dropdown">
+    <summary>{{ i18n(title) }}</summary>
+    <div class="filter-panel">
+      {% for option, label in labels.items() %}
+      <label>
+        <input type="checkbox" class="{{ class_name }}" value="{{ option }}" checked>
+        {{ i18n(label) }}
+      </label>
+      {% endfor %}
+    </div>
+  </details>
   {%- endmacro %}
   <div class="wrap">
     <header>
@@ -342,34 +342,9 @@
       >
 
       <div class="toolbar-controls">
-        <details class="filter-dropdown">
-          <summary>{{ i18n(t.col_format) }}</summary>
-          <div class="filter-panel">
-            {% for fmt in formats %}
-            <label>
-              <input type="checkbox" class="format-filter" value="{{ fmt.value }}" checked>
-              {{ i18n(format_labels[fmt]) }}
-            </label>
-            {% endfor %}
-          </div>
-        </details>
-
-        <details class="filter-dropdown">
-          <summary>{{ i18n(t.col_edition) }}</summary>
-          <div class="filter-panel">
-            {% for ed in editions %}
-            <label>
-              <input type="checkbox" class="edition-filter" value="{{ ed.value }}" checked>
-              {{ i18n(edition_labels[ed]) }}
-            </label>
-            {% endfor %}
-          </div>
-        </details>
-
-        <div class="sort-pills" role="group" aria-label="{{ t.sort_by_label.es }}">
-          <span class="sort-by-label">{{ i18n(t.sort_by_label) }}</span>
-          <button type="button" class="sort-pill" data-sort-key="name" aria-pressed="true">{{ i18n(t.sort_name) }}</button>
-        </div>
+        {{ filter_dropdown(t.col_region, "region-filter", region_labels) }}
+        {{ filter_dropdown(t.col_format, "format-filter", format_labels) }}
+        {{ filter_dropdown(t.col_edition, "edition-filter", edition_labels) }}
       </div>
     </div>
 
@@ -377,18 +352,27 @@
 
     <div class="titles">
       {% for title in titles %}
-      <div class="title-card" data-name="{{ title.name|lower }}">
+      <div class="title-card" id="{{ title.title_id }}" data-search="{{ title.search_text }}"{% if title.no_box %} data-no-box="true"{% endif %}>
         <div class="title-head">
           <div>
             <h2>{{ title.name }}</h2>
-            <div class="publisher">{{ title.publisher }}</div>
+            {% if title.publisher %}<div class="publisher">{{ title.publisher }}</div>{% endif %}
           </div>
           {% if title.has_divergence %}
           <span class="divergence-flag">{{ i18n(t.divergence_flag) }}</span>
           {% endif %}
         </div>
 
-        {% if title.skus %}
+        {% if title.no_box %}
+        <p class="no-box">
+          {{ i18n(t.no_box_note) }}
+          {% if title.no_box.source_url %}
+          <a class="source-link" href="{{ title.no_box.source_url }}" target="_blank" rel="noopener noreferrer">{{ i18n(title.no_box.evidence_label) }}</a>
+          {% else %}
+          <span class="evidence">{{ i18n(title.no_box.evidence_label) }}</span>
+          {% endif %}
+        </p>
+        {% else %}
         <div class="table-scroll">
           <table class="skus">
             <thead>
@@ -403,7 +387,7 @@
             </thead>
             <tbody>
               {% for sku in title.skus %}
-              <tr data-format="{{ sku.format.value }}" data-edition="{{ sku.edition.value }}">
+              <tr data-region="{{ sku.region.value }}" data-format="{{ sku.format.value }}" data-edition="{{ sku.edition.value }}">
                 <td>{{ sku.region.value }}</td>
                 <td>{{ i18n(sku.edition_label) }}</td>
                 <td><span class="badge {{ sku.format_css_class }}">{{ i18n(sku.format_label) }}</span></td>
@@ -421,8 +405,6 @@
             </tbody>
           </table>
         </div>
-        {% else %}
-        <p class="no-data">{{ i18n(t.no_data) }}</p>
         {% endif %}
       </div>
       {% endfor %}
@@ -431,26 +413,40 @@
     <p id="empty-state" hidden>{{ i18n(t.no_results) }}</p>
 
     <footer>
-      {{ i18n(footer) }}
+      <p>{{ i18n(footer) }}</p>
+      <p>
+        <a href="{{ repo_url }}">{{ i18n(t.footer_repo) }}</a> ·
+        <a href="{{ data_license_url }}">{{ i18n(t.footer_license) }}</a> ·
+        <a href="{{ report_issue_url }}">{{ i18n(t.footer_report) }}</a>
+      </p>
     </footer>
   </div>
 
   <script>
     var SHOWING_COUNT_TEMPLATES = {{ showing_count_templates|tojson }};
-    var ALL_FORMATS = Array.from(document.querySelectorAll(".format-filter")).map(function (el) { return el.value; });
-    var ALL_EDITIONS = Array.from(document.querySelectorAll(".edition-filter")).map(function (el) { return el.value; });
 
     var currentLang = "es";
     var lastVisibleCount = 0;
     var lastTotalCount = 0;
 
+    // Se leen del DOM y no se asume "todo marcado": el navegador puede restaurar las casillas al volver atrás.
     var state = {
       search: "",
-      formats: new Set(ALL_FORMATS),
-      editions: new Set(ALL_EDITIONS),
-      sortKey: "name",
-      sortDesc: false
+      regions: readCheckedValues("region-filter"),
+      formats: readCheckedValues("format-filter"),
+      editions: readCheckedValues("edition-filter")
     };
+
+    function readCheckedValues(className) {
+      return new Set(
+        Array.from(document.querySelectorAll("." + className + ":checked")).map(function (el) { return el.value; })
+      );
+    }
+
+    function normalizeText(text) {
+      // Misma normalización que build_search_text (site.py): sin tildes ni otras marcas y en minúsculas.
+      return text.normalize("NFKD").replace(/\p{M}/gu, "").toLowerCase();
+    }
 
     function applyLanguage(lang) {
       currentLang = lang;
@@ -479,28 +475,36 @@
         .replace("{total}", lastTotalCount);
     }
 
+    var NO_BOX_FILTER_VALUE = {{ no_box_filter_value | tojson }};
+
+    function isRowVisible(row) {
+      return state.regions.has(row.dataset.region)
+        && state.formats.has(row.dataset.format)
+        && state.editions.has(row.dataset.edition);
+    }
+
+    // Un juego sin edición física no tiene filas: no salió en caja en ninguna región ni edición, así que
+    // cualquier región o edición marcada le vale y lo que decide es su propio valor del filtro de formato.
+    function isNoBoxCardVisible() {
+      return state.formats.has(NO_BOX_FILTER_VALUE) && state.regions.size > 0 && state.editions.size > 0;
+    }
+
     function applyFilters() {
       var cards = document.querySelectorAll(".title-card");
-      // Con todo marcado no hay filtro real: las tarjetas sin SKUs se muestran igual que antes.
-      var filtersActive = state.formats.size < ALL_FORMATS.length || state.editions.size < ALL_EDITIONS.length;
       var visibleCount = 0;
 
       cards.forEach(function (card) {
-        var matchesSearch = !state.search || card.dataset.name.indexOf(state.search) !== -1;
-        var rows = card.querySelectorAll("table.skus tbody tr");
-        var hasRows = rows.length > 0;
+        var matchesSearch = !state.search || card.dataset.search.indexOf(state.search) !== -1;
         var anyRowVisible = false;
 
-        rows.forEach(function (row) {
-          var rowVisible = state.formats.has(row.dataset.format) && state.editions.has(row.dataset.edition);
-          row.hidden = !rowVisible;
-          if (rowVisible) anyRowVisible = true;
+        card.querySelectorAll("table.skus tbody tr").forEach(function (row) {
+          row.hidden = !isRowVisible(row);
+          if (!row.hidden) anyRowVisible = true;
         });
 
-        var passesRowFilter = hasRows ? anyRowVisible : !filtersActive;
-        var hideCard = !matchesSearch || !passesRowFilter;
-        card.hidden = hideCard;
-        if (!hideCard) visibleCount++;
+        if (card.dataset.noBox) anyRowVisible = isNoBoxCardVisible();
+        card.hidden = !matchesSearch || !anyRowVisible;
+        if (!card.hidden) visibleCount++;
       });
 
       lastVisibleCount = visibleCount;
@@ -509,68 +513,24 @@
       renderShowingCount();
     }
 
-    function applySort() {
-      var container = document.querySelector(".titles");
-      var nodes = Array.from(container.children);
-      var key = state.sortKey;
-
-      nodes.sort(function (a, b) {
-        var av = a.dataset[key];
-        var bv = b.dataset[key];
-        var cmp = av < bv ? -1 : av > bv ? 1 : 0;
-        // Array.prototype.sort es estable: los empates conservan el orden previo
-        // (nombre ascendente en la carga inicial), siempre que las tarjetas no se
-        // reconstruyan tras cargar la página.
-        return state.sortDesc ? -cmp : cmp;
-      });
-
-      nodes.forEach(function (node) { container.appendChild(node); });
-    }
-
-    function setActiveSortPill(key) {
-      document.querySelectorAll(".sort-pill").forEach(function (pill) {
-        pill.setAttribute("aria-pressed", String(pill.dataset.sortKey === key));
+    function bindFilter(className, stateKey) {
+      document.querySelectorAll("." + className).forEach(function (checkbox) {
+        checkbox.addEventListener("change", function () {
+          state[stateKey] = readCheckedValues(className);
+          applyFilters();
+        });
       });
     }
 
-    document.getElementById("search-input").addEventListener("input", function (event) {
-      state.search = event.target.value.trim().toLowerCase();
+    var searchInput = document.getElementById("search-input");
+    searchInput.addEventListener("input", function () {
+      state.search = normalizeText(searchInput.value.trim());
       applyFilters();
     });
 
-    document.querySelectorAll(".format-filter").forEach(function (checkbox) {
-      checkbox.addEventListener("change", function () {
-        state.formats = new Set(
-          Array.from(document.querySelectorAll(".format-filter:checked")).map(function (el) { return el.value; })
-        );
-        applyFilters();
-      });
-    });
-
-    document.querySelectorAll(".edition-filter").forEach(function (checkbox) {
-      checkbox.addEventListener("change", function () {
-        state.editions = new Set(
-          Array.from(document.querySelectorAll(".edition-filter:checked")).map(function (el) { return el.value; })
-        );
-        applyFilters();
-      });
-    });
-
-    document.querySelectorAll(".sort-pill").forEach(function (pill) {
-      pill.addEventListener("click", function () {
-        var key = pill.dataset.sortKey;
-        if (key === state.sortKey) {
-          state.sortDesc = !state.sortDesc;
-          var container = document.querySelector(".titles");
-          container.append(...Array.from(container.children).reverse());
-        } else {
-          state.sortKey = key;
-          state.sortDesc = false;
-          setActiveSortPill(key);
-          applySort();
-        }
-      });
-    });
+    bindFilter("region-filter", "regions");
+    bindFilter("format-filter", "formats");
+    bindFilter("edition-filter", "editions");
 
     (function () {
       var saved = null;
@@ -580,6 +540,7 @@
         saved = null;
       }
       var preferred = saved || (navigator.language && navigator.language.startsWith("en") ? "en" : "es");
+      state.search = normalizeText(searchInput.value.trim());
       applyLanguage(preferred);
       applyFilters();
     })();

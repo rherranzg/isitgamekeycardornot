@@ -1,12 +1,57 @@
 from datetime import date
 
+import pytest
+
 from switch2db.catalog import (
     CatalogEntry,
     build_catalog,
     build_catalog_entry,
     convert_unix_timestamp_to_date,
+    is_catalog_candidate,
+    list_publishers,
 )
 from switch2db.igdb_models import IgdbGame
+
+
+def build_game(igdb_id: int, name: str, game_type: str) -> IgdbGame:
+    """Juego de IGDB con el tipo indicado, tal como llega de la API."""
+    return IgdbGame.model_validate({"id": igdb_id, "name": name, "game_type": {"id": 0, "type": game_type}})
+
+
+@pytest.mark.parametrize(
+    "game_type,expected",
+    [
+        ("Main Game", True),
+        ("Port", True),
+        ("Remaster", True),
+        ("Expanded Game", True),
+        ("Standalone Expansion", True),
+        (None, True),
+        ("DLC", False),
+        ("Pack / Addon", False),
+        ("Expansion", False),
+        ("Bundle", False),
+        ("Season", False),
+        ("Update", False),
+    ],
+)
+def test_is_catalog_candidate_success(game_type: str | None, expected: bool) -> None:
+    assert is_catalog_candidate(game_type) is expected
+
+
+def test_build_catalog_drops_game_types_without_their_own_box() -> None:
+    games = [
+        build_game(1, "Base Game", "Main Game"),
+        build_game(2, "Extra Content", "DLC"),
+        build_game(3, "Season Pass", "Pack / Addon"),
+        build_game(4, "Big Expansion", "Expansion"),
+    ]
+
+    assert [entry.name for entry in build_catalog(games)] == ["Base Game"]
+
+
+def test_list_publishers_keeps_only_publishers_without_repeating(igdb_game: IgdbGame) -> None:
+    assert list_publishers(igdb_game) == ["Example Publisher"]
 
 
 def test_convert_unix_timestamp_to_date_success() -> None:

@@ -3,19 +3,48 @@ from collections import defaultdict
 from pydantic import BaseModel
 
 from switch2db.divergences import find_format_divergences
-from switch2db.i18n import EDITION_LABELS, EVIDENCE_LABELS, FORMAT_LABELS, LANGUAGES, UI_STRINGS
-from switch2db.models import Edition, Format, Region, Sku, Title, TitleStatus
+from switch2db.i18n import (
+    EDITION_LABELS,
+    EVIDENCE_LABELS,
+    FORMAT_LABELS,
+    LANGUAGES,
+    REGION_LABELS,
+    UI_STRINGS,
+)
+from switch2db.models import Edition, Format, PhysicalRelease, Region, Sku, SkuStatus, Title, TitleStatus
+from switch2db.slug import strip_accents
 
 LocalizedText = dict[str, str]
 
-# Solo se publica lo comprobado a mano: pending y refresh tienen datos de IGDB sin revisar.
+# Valor con el que el filtro de formato representa a los juegos que nunca salieron en caja: no son un
+# formato del enum, pero el visitante los busca en el mismo sitio que los demás.
+NO_BOX_FILTER_VALUE = "no_box"
+
+# Solo se publica lo investigado y comprobado: new y pending no lo están.
 PUBLISHED_TITLE_STATUS = TitleStatus.REVIEWED
+# Un SKU new es un borrador que nadie ha buscado: no sale. Lo demás sí, incluidos los pending,
+# que salen como formato desconocido porque se buscó su fuente y no apareció.
+HIDDEN_SKU_STATUS = SkuStatus.NEW
+
+REPO_URL = "https://github.com/rherranzg/isitgamekeycardornot"
+DATA_LICENSE_URL = f"{REPO_URL}/blob/main/data/LICENSE"
+REPORT_ISSUE_URL = f"{REPO_URL}/issues/new"
 
 FORMAT_CSS_CLASSES: dict[Format, str] = {
     Format.FULL_CART: "format-full-cart",
     Format.GAME_KEY_CARD: "format-game-key-card",
     Format.CODE_IN_BOX: "format-code-in-box",
     Format.UNKNOWN: "format-unknown",
+}
+
+# Etiquetas de los filtros, con la clave ya en texto: el filtro de formato añade un valor que no es un Format.
+REGION_FILTER_LABELS: dict[str, LocalizedText] = {region.value: REGION_LABELS[region] for region in Region}
+EDITION_FILTER_LABELS: dict[str, LocalizedText] = {
+    edition.value: EDITION_LABELS[edition] for edition in Edition
+}
+FORMAT_FILTER_LABELS: dict[str, LocalizedText] = {
+    **{format_.value: FORMAT_LABELS[format_] for format_ in Format},
+    NO_BOX_FILTER_VALUE: UI_STRINGS["no_box_filter"],
 }
 
 
@@ -32,7 +61,13 @@ class SkuView(BaseModel):
     size_text: LocalizedText
     evidence_label: LocalizedText
     source_url: str | None
-    verified_at: str
+
+
+class NoBoxView(BaseModel):
+    """Nota de un juego que nunca salió en caja, con la fuente que lo respalda."""
+
+    evidence_label: LocalizedText
+    source_url: str | None
 
 
 class TitleView(BaseModel):
@@ -40,9 +75,11 @@ class TitleView(BaseModel):
 
     title_id: str
     name: str
-    publisher: str
+    publisher: str | None
+    search_text: str
     skus: list[SkuView]
     has_divergence: bool
+    no_box: NoBoxView | None
 
 
 def build_size_text(sku: Sku) -> LocalizedText:
@@ -67,13 +104,22 @@ def build_sku_view(sku: Sku) -> SkuView:
         size_text=build_size_text(sku),
         evidence_label=EVIDENCE_LABELS[sku.evidence],
         source_url=str(sku.source_url) if sku.source_url else None,
-        verified_at=sku.verified_at.isoformat(),
     )
+
+
+def build_search_text(title: Title) -> str:
+    """Texto por el que se busca un título: nombre y publisher sin tildes y en minúsculas, como en el JS."""
+    return strip_accents(" ".join(filter(None, [title.name, title.publisher]))).lower()
 
 
 def sku_sort_key(sku: Sku) -> tuple[str, str]:
     """Ordena los SKUs de un título por región y luego por edición."""
     return (sku.region.value, sku.edition.value)
+
+
+def select_published_skus(skus: list[Sku]) -> list[Sku]:
+    """Devuelve los SKUs que se publican: todos menos los recién escritos y sin mirar (status new)."""
+    return [sku for sku in skus if sku.status != HIDDEN_SKU_STATUS]
 
 
 def group_skus_by_title(skus: list[Sku]) -> dict[str, list[Sku]]:
@@ -84,30 +130,62 @@ def group_skus_by_title(skus: list[Sku]) -> dict[str, list[Sku]]:
     return dict(groups)
 
 
+def build_no_box_view(release: PhysicalRelease) -> NoBoxView:
+    """Traduce a la vista lo investigado sobre un juego que no llegó a tener caja."""
+    return NoBoxView(
+        evidence_label=EVIDENCE_LABELS[release.evidence],
+        source_url=str(release.source_url) if release.source_url else None,
+    )
+
+
+def find_digital_only_releases(releases: list[PhysicalRelease]) -> dict[str, PhysicalRelease]:
+    """Indexa por title_id los juegos investigados que no salieron en caja en ninguna región."""
+    return {release.title_id: release for release in releases if not release.has_physical_release}
+
+
 def build_title_view(
-    title: Title, skus_by_title: dict[str, list[Sku]], diverging_title_ids: set[str]
+    title: Title,
+    skus_by_title: dict[str, list[Sku]],
+    diverging_title_ids: set[str],
+    digital_only: dict[str, PhysicalRelease],
 ) -> TitleView:
-    """Construye la vista de un título con sus SKUs ordenados."""
+    """Construye la vista de un título con sus SKUs ordenados, o con su nota de "no salió en caja"."""
     title_skus = sorted(skus_by_title.get(title.title_id, []), key=sku_sort_key)
+    release = digital_only.get(title.title_id)
     return TitleView(
         title_id=title.title_id,
         name=title.name,
         publisher=title.publisher,
+        search_text=build_search_text(title),
         skus=[build_sku_view(sku) for sku in title_skus],
         has_divergence=title.title_id in diverging_title_ids,
+        no_box=build_no_box_view(release) if release is not None and not title_skus else None,
     )
 
 
-def select_published_titles(titles: list[Title]) -> list[Title]:
-    """Devuelve los títulos que se publican en la web: solo los revisados a mano."""
-    return [title for title in titles if title.status == PUBLISHED_TITLE_STATUS]
+def select_published_titles(
+    titles: list[Title], skus: list[Sku], releases: list[PhysicalRelease]
+) -> list[Title]:
+    """Devuelve los títulos investigados que tienen algo que contar: SKUs publicables o que no hay caja."""
+    title_ids_with_skus = {sku.title_id for sku in select_published_skus(skus)}
+    digital_only = find_digital_only_releases(releases)
+    return [
+        title
+        for title in titles
+        if title.status == PUBLISHED_TITLE_STATUS
+        and (title.title_id in title_ids_with_skus or title.title_id in digital_only)
+    ]
 
 
-def build_title_views(titles: list[Title], skus: list[Sku]) -> list[TitleView]:
+def build_title_views(
+    titles: list[Title], skus: list[Sku], releases: list[PhysicalRelease]
+) -> list[TitleView]:
     """Agrupa los SKUs por título y devuelve las vistas ordenadas por nombre."""
-    skus_by_title = group_skus_by_title(skus)
-    diverging_title_ids = {title_id for title_id, _ in find_format_divergences(skus)}
-    views = [build_title_view(title, skus_by_title, diverging_title_ids) for title in titles]
+    published_skus = select_published_skus(skus)
+    skus_by_title = group_skus_by_title(published_skus)
+    diverging_title_ids = {title_id for title_id, _ in find_format_divergences(published_skus)}
+    digital_only = find_digital_only_releases(releases)
+    views = [build_title_view(title, skus_by_title, diverging_title_ids, digital_only) for title in titles]
     return sorted(views, key=lambda view: view.name.casefold())
 
 

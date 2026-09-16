@@ -1,6 +1,12 @@
 from collections import Counter
+from collections.abc import Sequence
 
-from switch2db.models import Format, Sku, Title, TitleSeed, TitleStatus
+from switch2db.data_store import describe_row
+from switch2db.models import Format, PhysicalRelease, Sku, SkuStatus, Title, TitleStatus
+
+# Un título en estos estados ya se ha investigado: tiene que haber dejado SKUs o una entrada
+# en physical_release.yaml diciendo que no hay caja.
+RESEARCHED_TITLE_STATUSES = {TitleStatus.PENDING, TitleStatus.REVIEWED}
 
 
 def find_duplicates(values: list[str]) -> list[str]:
@@ -8,15 +14,15 @@ def find_duplicates(values: list[str]) -> list[str]:
     return sorted(value for value, count in Counter(values).items() if count > 1)
 
 
-def find_id_duplication_errors(seeds: list[TitleSeed], skus: list[Sku]) -> list[str]:
-    """Detecta title_id, igdb_id y sku_id repetidos."""
+def find_id_duplication_errors(titles: list[Title], skus: list[Sku]) -> list[str]:
+    """Detecta title_id e igdb_id repetidos en los títulos y sku_id repetidos en los SKUs."""
     errors = [
-        f"title_seeds.yaml: title_id repetido '{title_id}'"
-        for title_id in find_duplicates([seed.title_id for seed in seeds])
+        f"titles.yaml: title_id repetido '{title_id}'"
+        for title_id in find_duplicates([title.title_id for title in titles])
     ]
     errors += [
-        f"title_seeds.yaml: igdb_id repetido {igdb_id}"
-        for igdb_id in find_duplicates([str(seed.igdb_id) for seed in seeds])
+        f"titles.yaml: igdb_id repetido {igdb_id}"
+        for igdb_id in find_duplicates([str(title.igdb_id) for title in titles])
     ]
     errors += [
         f"skus.yaml: sku_id repetido '{sku_id}'" for sku_id in find_duplicates([sku.sku_id for sku in skus])
@@ -24,44 +30,62 @@ def find_id_duplication_errors(seeds: list[TitleSeed], skus: list[Sku]) -> list[
     return errors
 
 
-def find_orphan_sku_errors(seeds: list[TitleSeed], skus: list[Sku]) -> list[str]:
-    """Detecta SKUs cuyo title_id no está declarado en las semillas."""
-    known_title_ids = {seed.title_id for seed in seeds}
+def find_orphan_sku_errors(titles: list[Title], skus: list[Sku]) -> list[str]:
+    """Detecta SKUs cuyo title_id no está en titles.yaml."""
+    known_title_ids = {title.title_id for title in titles}
     return [
-        f"skus.yaml: '{sku.sku_id}' referencia title_id '{sku.title_id}', que no está en title_seeds.yaml"
+        f"skus.yaml: '{sku.sku_id}' referencia title_id '{sku.title_id}', que no está en titles.yaml"
         for sku in skus
         if sku.title_id not in known_title_ids
     ]
 
 
-def find_title_sync_errors(seeds: list[TitleSeed], titles: list[Title]) -> list[str]:
-    """Detecta títulos importados que no están en las semillas o cuyo igdb_id no coincide."""
-    igdb_ids_by_title = {seed.title_id: seed.igdb_id for seed in seeds}
-    errors = []
-    for title in titles:
-        if title.title_id not in igdb_ids_by_title:
-            errors.append(f"titles.yaml: '{title.title_id}' no está en title_seeds.yaml")
-        elif title.igdb_id != igdb_ids_by_title[title.title_id]:
-            errors.append(f"titles.yaml: '{title.title_id}' tiene un igdb_id distinto al de title_seeds.yaml")
+def find_physical_release_errors(
+    titles: list[Title], releases: list[PhysicalRelease], skus: list[Sku]
+) -> list[str]:
+    """Detecta title_id repetidos o desconocidos y juegos marcados solo digital que tienen SKUs."""
+    known_title_ids = {title.title_id for title in titles}
+    title_ids_with_skus = {sku.title_id for sku in skus}
+    errors = [
+        f"physical_release.yaml: title_id repetido '{title_id}'"
+        for title_id in find_duplicates([release.title_id for release in releases])
+    ]
+    errors += [
+        f"physical_release.yaml: '{release.title_id}' no está en titles.yaml"
+        for release in releases
+        if release.title_id not in known_title_ids
+    ]
+    errors += [
+        f"physical_release.yaml: '{release.title_id}' dice que no hay edición física, pero tiene SKUs"
+        for release in releases
+        if not release.has_physical_release and release.title_id in title_ids_with_skus
+    ]
     return errors
 
 
-def find_unimported_seed_warnings(seeds: list[TitleSeed], titles: list[Title]) -> list[str]:
-    """Avisa de las semillas que todavía no tienen título importado de IGDB."""
-    imported_title_ids = {title.title_id for title in titles}
+def find_missing_sku_warnings(releases: list[PhysicalRelease], skus: list[Sku]) -> list[str]:
+    """Avisa de los juegos con edición física confirmada a los que aún no se les ha escrito ningún SKU."""
+    title_ids_with_skus = {sku.title_id for sku in skus}
     return [
-        f"title_seeds.yaml: '{seed.title_id}' aún no está importado de IGDB (scripts.import_titles)"
-        for seed in seeds
-        if seed.title_id not in imported_title_ids
+        f"physical_release.yaml: '{release.title_id}' tiene edición física y todavía no tiene ningún SKU"
+        for release in releases
+        if release.has_physical_release and release.title_id not in title_ids_with_skus
     ]
 
 
-def find_refresh_warnings(titles: list[Title]) -> list[str]:
-    """Avisa de los títulos marcados con status refresh que aún no se han vuelto a importar."""
+def find_unresearched_title_warnings(
+    titles: list[Title], skus: list[Sku], releases: list[PhysicalRelease]
+) -> list[str]:
+    """Avisa de los títulos que dicen estar investigados pero no dejaron ni SKUs ni edición física."""
+    title_ids_with_skus = {sku.title_id for sku in skus}
+    researched_title_ids = {release.title_id for release in releases}
     return [
-        f"titles.yaml: '{title.title_id}' está marcado para refrescar (scripts.import_titles)"
+        f"titles.yaml: '{title.title_id}' está {title.status} pero no tiene ningún SKU "
+        "ni entrada en physical_release.yaml"
         for title in titles
-        if title.status == TitleStatus.REFRESH
+        if title.status in RESEARCHED_TITLE_STATUSES
+        and title.title_id not in title_ids_with_skus
+        and title.title_id not in researched_title_ids
     ]
 
 
@@ -74,19 +98,95 @@ def find_cart_size_warnings(skus: list[Sku]) -> list[str]:
     ]
 
 
-def collect_integrity_errors(seeds: list[TitleSeed], titles: list[Title], skus: list[Sku]) -> list[str]:
-    """Reúne los errores de integridad entre ficheros."""
+def find_download_size_warnings(skus: list[Sku]) -> list[str]:
+    """Avisa de los SKUs full_cart con download_size_gb: el juego va en el cartucho y no hay descarga."""
     return [
-        *find_id_duplication_errors(seeds, skus),
-        *find_orphan_sku_errors(seeds, skus),
-        *find_title_sync_errors(seeds, titles),
+        f"skus.yaml: '{sku.sku_id}' tiene download_size_gb con format '{sku.format}'"
+        for sku in skus
+        if sku.download_size_gb is not None and sku.format == Format.FULL_CART
     ]
 
 
-def collect_integrity_warnings(seeds: list[TitleSeed], titles: list[Title], skus: list[Sku]) -> list[str]:
-    """Reúne los avisos que no invalidan los datos."""
+def find_sku_status_warnings(skus: list[Sku]) -> list[str]:
+    """Avisa de los SKUs que esperan trabajo: sin buscar, buscados sin fuente y marcados para refrescar."""
+    new_counts = Counter(sku.title_id for sku in skus if sku.status == SkuStatus.NEW)
+    pending_counts = Counter(sku.title_id for sku in skus if sku.status == SkuStatus.PENDING)
+    refresh_counts = Counter(sku.title_id for sku in skus if sku.status == SkuStatus.REFRESH)
+    warnings = [
+        f"skus.yaml: '{title_id}' tiene {count} SKU(s) con status new, que no salen en la web"
+        for title_id, count in new_counts.items()
+    ]
+    warnings += [
+        f"skus.yaml: '{title_id}' tiene {count} SKU(s) sin fuente encontrada (status pending): "
+        "salen como formato desconocido y hay que buscarlos a fondo"
+        for title_id, count in pending_counts.items()
+    ]
+    warnings += [
+        f"skus.yaml: '{title_id}' tiene {count} SKU(s) marcados para volver a comprobar (status refresh)"
+        for title_id, count in refresh_counts.items()
+    ]
+    return warnings
+
+
+def find_unpublished_sku_warnings(titles: list[Title], skus: list[Sku]) -> list[str]:
+    """Avisa de los juegos con SKUs que no salen en la web porque su título no está reviewed."""
+    reviewed_title_ids = {title.title_id for title in titles if title.status == TitleStatus.REVIEWED}
+    unpublished_counts = Counter(sku.title_id for sku in skus if sku.title_id not in reviewed_title_ids)
     return [
-        *find_unimported_seed_warnings(seeds, titles),
-        *find_refresh_warnings(titles),
+        f"skus.yaml: '{title_id}' tiene {count} SKU(s) sin publicar porque su título no está reviewed"
+        for title_id, count in unpublished_counts.items()
+    ]
+
+
+def list_omitted_optional_sku_fields(row: object) -> list[str]:
+    """Devuelve los campos opcionales de Sku que no aparecen como clave en una fila cruda del YAML."""
+    if not isinstance(row, dict):
+        return []
+    return [
+        field_name
+        for field_name, field in Sku.model_fields.items()
+        if not field.is_required() and field_name not in row
+    ]
+
+
+def find_omitted_sku_field_warnings(sku_rows: Sequence[object]) -> list[str]:
+    """Avisa de las filas de skus.yaml que omiten un campo opcional en vez de escribirlo como null."""
+    warnings = []
+    for index, row in enumerate(sku_rows):
+        omitted = list_omitted_optional_sku_fields(row)
+        if omitted:
+            warnings.append(
+                f"skus.yaml {describe_row(row, index)}: faltan las claves {omitted} (null si no se sabe)"
+            )
+    return warnings
+
+
+def collect_integrity_errors(
+    titles: list[Title],
+    skus: list[Sku],
+    releases: list[PhysicalRelease],
+) -> list[str]:
+    """Reúne los errores de integridad entre ficheros."""
+    return [
+        *find_id_duplication_errors(titles, skus),
+        *find_orphan_sku_errors(titles, skus),
+        *find_physical_release_errors(titles, releases, skus),
+    ]
+
+
+def collect_integrity_warnings(
+    titles: list[Title],
+    skus: list[Sku],
+    releases: list[PhysicalRelease],
+    sku_rows: Sequence[object],
+) -> list[str]:
+    """Reúne los avisos que no invalidan los datos; sku_rows son las filas crudas de skus.yaml."""
+    return [
+        *find_unresearched_title_warnings(titles, skus, releases),
         *find_cart_size_warnings(skus),
+        *find_download_size_warnings(skus),
+        *find_unpublished_sku_warnings(titles, skus),
+        *find_missing_sku_warnings(releases, skus),
+        *find_sku_status_warnings(skus),
+        *find_omitted_sku_field_warnings(sku_rows),
     ]

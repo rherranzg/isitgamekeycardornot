@@ -1,0 +1,12 @@
+# Qué se sabe sobre la existencia de edición en caja de cada juego, investigado a mano.
+# Sirve para distinguir "sin edición física" de "aún sin investigar": un juego sin SKUs y sin entrada aquí
+# es que todavía no lo ha mirado nadie. Los detalles por región van en skus.yaml.
+# Validar con: uv run python -m scripts.validate_data
+#
+# Formato (ejemplo ficticio, no es un dato real):
+# - title_id: "example-game"        # debe existir en titles.yaml
+#   has_physical_release: false     # true si hay caja en alguna región; false si es solo digital
+#   evidence: "official"            # official | box_photo | retailer_listing | press_report | unconfirmed
+#   source_url: "https://..."       # obligatorio salvo evidence: unconfirmed (buscado y no encontrado)
+#   checked_at: "2026-09-16"
+[]

@@ -1,6 +1,19 @@
 import pytest
 
-from switch2db.slug import make_unique_slug, slugify
+from switch2db.slug import make_unique_slug, slugify, strip_accents
+
+
+@pytest.mark.parametrize(
+    "text,expected",
+    [
+        ("Pokémon Légendes", "Pokemon Legendes"),
+        ("Ñandú", "Nandu"),
+        ("Plain Text", "Plain Text"),
+        ("東京", "東京"),
+    ],
+)
+def test_strip_accents_success(text: str, expected: str) -> None:
+    assert strip_accents(text) == expected
 
 
 @pytest.mark.parametrize(
@@ -10,6 +23,7 @@ from switch2db.slug import make_unique_slug, slugify
         ("Kingdom Come: Deliverance II", "kingdom-come-deliverance-ii"),
         ("Hitman: World of Assassination — Signature", "hitman-world-of-assassination-signature"),
         ("  Split/Fiction  ", "split-fiction"),
+        ("Pokémon Légendes", "pokemon-legendes"),
     ],
 )
 def test_slugify_success(name: str, expected: str) -> None:

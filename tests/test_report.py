@@ -19,9 +19,9 @@ def test_count_by_returns_empty_dict_without_rows() -> None:
 
 def test_list_pending_review_title_ids_success(title: Title) -> None:
     reviewed = title.model_copy(update={"title_id": "reviewed-game", "status": TitleStatus.REVIEWED})
-    marked = title.model_copy(update={"title_id": "refresh-game", "status": TitleStatus.REFRESH})
+    untouched = title.model_copy(update={"title_id": "new-game", "status": TitleStatus.NEW})
 
-    assert list_pending_review_title_ids([reviewed, title, marked]) == ["example-game"]
+    assert list_pending_review_title_ids([reviewed, title, untouched]) == ["example-game"]
 
 
 def test_list_pending_review_title_ids_returns_empty_list_when_all_reviewed(title: Title) -> None:
@@ -59,6 +59,7 @@ def test_build_report_handles_empty_data() -> None:
         "sku_count": 0,
         "skus_by_region": {},
         "skus_by_format": {},
+        "skus_by_status": {},
         "fill_rates": {},
         "low_fill_fields": [],
         "format_divergences": {},

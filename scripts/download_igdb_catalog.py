@@ -1,5 +1,3 @@
-from pathlib import Path
-
 from aws_lambda_powertools import Logger
 
 from switch2db.catalog import build_catalog
@@ -7,8 +5,8 @@ from switch2db.data_store import write_catalog
 from switch2db.env import read_required_env
 from switch2db.igdb_auth import get_access_token
 from switch2db.igdb_client import fetch_platform_games, find_platform_id
+from switch2db.paths import DATA_DIR
 
-DATA_DIR = Path(__file__).resolve().parent.parent / "data"
 PLATFORM_NAME_FRAGMENT = "Switch 2"
 
 logger = Logger(service="switch2db-download-igdb-catalog")

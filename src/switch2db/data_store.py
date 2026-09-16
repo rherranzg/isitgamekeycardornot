@@ -6,15 +6,16 @@ import yaml
 from pydantic import BaseModel, ValidationError
 
 from switch2db.catalog import CatalogEntry
-from switch2db.models import Sku, Title, TitleSeed
+from switch2db.models import PhysicalRelease, Sku, Title
 
 ModelT = TypeVar("ModelT", bound=BaseModel)
 
 TITLES_HEADER = (
-    "# Generado por scripts/import_titles.py a partir de title_seeds.yaml. A mano solo se edita status:\n"
-    "#   pending  = importado de IGDB y aún sin comprobar (lo pone import_titles)\n"
-    "#   reviewed = datos comprobados a mano\n"
-    "#   refresh  = volver a importarlo de IGDB en el próximo import_titles, que lo deja en pending\n"
+    "# Juegos de Switch 2 conocidos. Los añade scripts/add_titles.py desde data/igdb_catalog.yaml.\n"
+    "# name y publisher vienen de IGDB; a mano solo se edita status:\n"
+    "#   new      = del catálogo y sin investigar (lo pone add_titles); no sale en la web\n"
+    "#   pending  = investigado sin confirmar la edición de la caja ni encontrar fuente\n"
+    "#   reviewed = investigado y comprobado; sale en la web si tiene algún SKU no-new\n"
 )
 CATALOG_HEADER = "# Juegos de Switch 2 en IGDB (scripts/download_igdb_catalog.py). Local, no se versiona.\n"
 
@@ -57,11 +58,6 @@ def parse_rows(rows: Sequence[object], model: type[ModelT], source: str) -> tupl
     return parsed, errors
 
 
-def load_title_seeds(path: Path) -> tuple[list[TitleSeed], list[str]]:
-    """Carga y valida las semillas de títulos."""
-    return parse_rows(read_yaml_rows(path), TitleSeed, path.name)
-
-
 def load_titles(path: Path) -> tuple[list[Title], list[str]]:
     """Carga y valida los títulos importados de IGDB."""
     return parse_rows(read_yaml_rows(path), Title, path.name)
@@ -72,23 +68,27 @@ def load_skus(path: Path) -> tuple[list[Sku], list[str]]:
     return parse_rows(read_yaml_rows(path), Sku, path.name)
 
 
+def load_physical_releases(path: Path) -> tuple[list[PhysicalRelease], list[str]]:
+    """Carga y valida lo investigado sobre la existencia de edición física de cada juego."""
+    return parse_rows(read_yaml_rows(path), PhysicalRelease, path.name)
+
+
+def require_valid(loaded: tuple[list[ModelT], list[str]], file_name: str) -> list[ModelT]:
+    """Devuelve las filas validadas de un load_*; falla con todos sus errores si hubo alguno."""
+    rows, errors = loaded
+    if errors:
+        raise ValueError(f"{file_name} tiene {len(errors)} errores (ejecuta scripts.validate_data): {errors}")
+    return rows
+
+
 def write_generated_yaml(path: Path, rows: list[dict[str, object]], header: str) -> None:
     """Escribe las filas como YAML precedidas de la cabecera de fichero generado."""
     content = yaml.safe_dump(rows, sort_keys=False, allow_unicode=True)
     path.write_text(f"{header}{content}", encoding="utf-8")
 
 
-def append_title_seeds(path: Path, seeds: list[TitleSeed], comment: str) -> None:
-    """Añade semillas nuevas al final de title_seeds.yaml sin tocar el contenido existente."""
-    if not seeds:
-        return
-    block = yaml.safe_dump([seed.model_dump() for seed in seeds], sort_keys=False, allow_unicode=True)
-    with path.open("a", encoding="utf-8") as handle:
-        handle.write(f"\n# {comment}\n{block}")
-
-
 def write_titles(path: Path, titles: list[Title]) -> None:
-    """Reescribe el fichero de títulos importados de IGDB, con el status como texto plano."""
+    """Reescribe el fichero de títulos conservando el status de cada uno, con el enum como texto plano."""
     write_generated_yaml(path, [title.model_dump(mode="json") for title in titles], TITLES_HEADER)
 
 

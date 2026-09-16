@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Base de datos abierta del formato físico de los juegos de Nintendo Switch 2: cartucho completo, Game-Key Card o código en la caja, región por región.">
   <title>Is It Game-Key Card Or Not</title>
   <style>
     :root {
@@ -152,7 +153,7 @@
       flex-direction: column;
       gap: 6px;
       font-size: 0.85rem;
-      white-space: normal;
+      white-space: nowrap;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
     }
     .filter-panel label {
@@ -160,31 +161,6 @@
       align-items: center;
       gap: 6px;
       cursor: pointer;
-    }
-    .sort-pills {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      flex-wrap: wrap;
-      font-size: 0.85rem;
-    }
-    .sort-pills .sort-by-label {
-      color: var(--muted);
-      margin-right: 2px;
-    }
-    .sort-pill {
-      background: transparent;
-      color: var(--text);
-      border: 1px solid var(--border);
-      border-radius: 999px;
-      padding: 5px 12px;
-      font-size: 0.82rem;
-      cursor: pointer;
-    }
-    .sort-pill[aria-pressed="true"] {
-      background: var(--surface);
-      font-weight: 600;
-      border-color: var(--text);
     }
     #showing-count {
       font-size: 0.82rem;
@@ -201,6 +177,8 @@
       border: 1px solid var(--border);
       border-radius: 10px;
       padding: 16px 18px;
+      /* Deja hueco a la barra fija al saltar a un juego por su ancla (#title_id) */
+      scroll-margin-top: 80px;
     }
     .title-head {
       display: flex;
@@ -213,6 +191,17 @@
       font-size: 1.1rem;
       margin: 0;
     }
+    .no-box {
+      margin: 0;
+      padding: 0.75rem 0;
+      color: var(--muted);
+    }
+
+    .no-box .evidence,
+    .no-box .source-link {
+      margin-left: 0.35rem;
+    }
+
     .publisher {
       color: var(--muted);
       font-size: 0.85rem;
@@ -224,11 +213,6 @@
       border-radius: 6px;
       padding: 2px 8px;
       white-space: nowrap;
-    }
-    .no-data {
-      color: var(--muted);
-      font-size: 0.85rem;
-      margin-top: 8px;
     }
     #empty-state {
       color: var(--muted);
@@ -283,6 +267,8 @@
       color: var(--muted);
       font-size: 0.8rem;
     }
+    footer p { margin: 0 0 6px; }
+    footer a { color: inherit; }
 
     @media (max-width: 640px) {
       .toolbar {
@@ -301,11 +287,13 @@
       }
       .title-card {
         padding: 14px;
+        scroll-margin-top: 130px;
       }
     }
   </style>
 </head>
 <body>
+  
   
   <div class="wrap">
     <header>
@@ -323,8 +311,8 @@
     </header>
 
     <div class="stats">
-      <span><strong>13</strong> <span data-i18n="es">juegos catalogados</span><span data-i18n="en" hidden>games catalogued</span></span>
-      <span><strong>24</strong> <span data-i18n="es">SKUs regionales documentados</span><span data-i18n="en" hidden>regional SKUs documented</span></span>
+      <span><strong>18</strong> <span data-i18n="es">juegos catalogados</span><span data-i18n="en" hidden>games catalogued</span></span>
+      <span><strong>49</strong> <span data-i18n="es">SKUs regionales documentados</span><span data-i18n="en" hidden>regional SKUs documented</span></span>
     </div>
 
     <div class="toolbar">
@@ -333,66 +321,96 @@
         inputmode="search"
         autocomplete="off"
         id="search-input"
-        data-placeholder-es="Buscar juego..."
-        data-placeholder-en="Search game..."
-        placeholder="Buscar juego..."
-        aria-label="Buscar juego..."
+        data-placeholder-es="Buscar juego o publisher..."
+        data-placeholder-en="Search game or publisher..."
+        placeholder="Buscar juego o publisher..."
+        aria-label="Buscar juego o publisher..."
       >
 
       <div class="toolbar-controls">
         <details class="filter-dropdown">
-          <summary><span data-i18n="es">Formato</span><span data-i18n="en" hidden>Format</span></summary>
-          <div class="filter-panel">
-            
-            <label>
-              <input type="checkbox" class="format-filter" value="full_cart" checked>
-              <span data-i18n="es">Cartucho completo</span><span data-i18n="en" hidden>Full cartridge</span>
-            </label>
-            
-            <label>
-              <input type="checkbox" class="format-filter" value="game_key_card" checked>
-              <span data-i18n="es">Game-Key Card</span><span data-i18n="en" hidden>Game-Key Card</span>
-            </label>
-            
-            <label>
-              <input type="checkbox" class="format-filter" value="code_in_box" checked>
-              <span data-i18n="es">Código en la caja</span><span data-i18n="en" hidden>Code in box</span>
-            </label>
-            
-            <label>
-              <input type="checkbox" class="format-filter" value="unknown" checked>
-              <span data-i18n="es">Desconocido</span><span data-i18n="en" hidden>Unknown</span>
-            </label>
-            
-          </div>
-        </details>
-
+    <summary><span data-i18n="es">Región</span><span data-i18n="en" hidden>Region</span></summary>
+    <div class="filter-panel">
+      
+      <label>
+        <input type="checkbox" class="region-filter" value="EU" checked>
+        <span data-i18n="es">Europa (EU)</span><span data-i18n="en" hidden>Europe (EU)</span>
+      </label>
+      
+      <label>
+        <input type="checkbox" class="region-filter" value="NA" checked>
+        <span data-i18n="es">Norteamérica (NA)</span><span data-i18n="en" hidden>North America (NA)</span>
+      </label>
+      
+      <label>
+        <input type="checkbox" class="region-filter" value="JP" checked>
+        <span data-i18n="es">Japón (JP)</span><span data-i18n="en" hidden>Japan (JP)</span>
+      </label>
+      
+      <label>
+        <input type="checkbox" class="region-filter" value="KR" checked>
+        <span data-i18n="es">Corea (KR)</span><span data-i18n="en" hidden>Korea (KR)</span>
+      </label>
+      
+      <label>
+        <input type="checkbox" class="region-filter" value="ASIA" checked>
+        <span data-i18n="es">Asia: HK/TW/SEA (ASIA)</span><span data-i18n="en" hidden>Asia: HK/TW/SEA (ASIA)</span>
+      </label>
+      
+    </div>
+  </details>
         <details class="filter-dropdown">
-          <summary><span data-i18n="es">Edición</span><span data-i18n="en" hidden>Edition</span></summary>
-          <div class="filter-panel">
-            
-            <label>
-              <input type="checkbox" class="edition-filter" value="standard" checked>
-              <span data-i18n="es">Estándar</span><span data-i18n="en" hidden>Standard</span>
-            </label>
-            
-            <label>
-              <input type="checkbox" class="edition-filter" value="deluxe" checked>
-              <span data-i18n="es">Deluxe</span><span data-i18n="en" hidden>Deluxe</span>
-            </label>
-            
-            <label>
-              <input type="checkbox" class="edition-filter" value="collectors" checked>
-              <span data-i18n="es">Coleccionista</span><span data-i18n="en" hidden>Collector's</span>
-            </label>
-            
-          </div>
-        </details>
-
-        <div class="sort-pills" role="group" aria-label="Ordenar por">
-          <span class="sort-by-label"><span data-i18n="es">Ordenar por</span><span data-i18n="en" hidden>Sort by</span></span>
-          <button type="button" class="sort-pill" data-sort-key="name" aria-pressed="true"><span data-i18n="es">Nombre</span><span data-i18n="en" hidden>Name</span></button>
-        </div>
+    <summary><span data-i18n="es">Formato</span><span data-i18n="en" hidden>Format</span></summary>
+    <div class="filter-panel">
+      
+      <label>
+        <input type="checkbox" class="format-filter" value="full_cart" checked>
+        <span data-i18n="es">Cartucho completo</span><span data-i18n="en" hidden>Full cartridge</span>
+      </label>
+      
+      <label>
+        <input type="checkbox" class="format-filter" value="game_key_card" checked>
+        <span data-i18n="es">Game-Key Card</span><span data-i18n="en" hidden>Game-Key Card</span>
+      </label>
+      
+      <label>
+        <input type="checkbox" class="format-filter" value="code_in_box" checked>
+        <span data-i18n="es">Código en la caja</span><span data-i18n="en" hidden>Code in box</span>
+      </label>
+      
+      <label>
+        <input type="checkbox" class="format-filter" value="unknown" checked>
+        <span data-i18n="es">Desconocido</span><span data-i18n="en" hidden>Unknown</span>
+      </label>
+      
+      <label>
+        <input type="checkbox" class="format-filter" value="no_box" checked>
+        <span data-i18n="es">Sin edición física</span><span data-i18n="en" hidden>No physical edition</span>
+      </label>
+      
+    </div>
+  </details>
+        <details class="filter-dropdown">
+    <summary><span data-i18n="es">Edición</span><span data-i18n="en" hidden>Edition</span></summary>
+    <div class="filter-panel">
+      
+      <label>
+        <input type="checkbox" class="edition-filter" value="standard" checked>
+        <span data-i18n="es">Estándar</span><span data-i18n="en" hidden>Standard</span>
+      </label>
+      
+      <label>
+        <input type="checkbox" class="edition-filter" value="deluxe" checked>
+        <span data-i18n="es">Deluxe</span><span data-i18n="en" hidden>Deluxe</span>
+      </label>
+      
+      <label>
+        <input type="checkbox" class="edition-filter" value="collectors" checked>
+        <span data-i18n="es">Coleccionista</span><span data-i18n="en" hidden>Collector&#39;s</span>
+      </label>
+      
+    </div>
+  </details>
       </div>
     </div>
 
@@ -400,7 +418,7 @@
 
     <div class="titles">
       
-      <div class="title-card" data-name="007 first light">
+      <div class="title-card" id="007-first-light" data-search="007 first light io interactive">
         <div class="title-head">
           <div>
             <h2>007 First Light</h2>
@@ -424,7 +442,7 @@
             </thead>
             <tbody>
               
-              <tr data-format="game_key_card" data-edition="standard">
+              <tr data-region="EU" data-format="game_key_card" data-edition="standard">
                 <td>EU</td>
                 <td><span data-i18n="es">Estándar</span><span data-i18n="en" hidden>Standard</span></td>
                 <td><span class="badge format-game-key-card"><span data-i18n="es">Game-Key Card</span><span data-i18n="en" hidden>Game-Key Card</span></span></td>
@@ -437,7 +455,7 @@
                 </td>
               </tr>
               
-              <tr data-format="game_key_card" data-edition="standard">
+              <tr data-region="JP" data-format="game_key_card" data-edition="standard">
                 <td>JP</td>
                 <td><span data-i18n="es">Estándar</span><span data-i18n="en" hidden>Standard</span></td>
                 <td><span class="badge format-game-key-card"><span data-i18n="es">Game-Key Card</span><span data-i18n="en" hidden>Game-Key Card</span></span></td>
@@ -450,7 +468,7 @@
                 </td>
               </tr>
               
-              <tr data-format="game_key_card" data-edition="standard">
+              <tr data-region="NA" data-format="game_key_card" data-edition="standard">
                 <td>NA</td>
                 <td><span data-i18n="es">Estándar</span><span data-i18n="en" hidden>Standard</span></td>
                 <td><span class="badge format-game-key-card"><span data-i18n="es">Game-Key Card</span><span data-i18n="en" hidden>Game-Key Card</span></span></td>
@@ -469,7 +487,132 @@
         
       </div>
       
-      <div class="title-card" data-name="absolum">
+      <div class="title-card" id="1000xresist" data-search="1000xresist fellow traveller">
+        <div class="title-head">
+          <div>
+            <h2>1000xResist</h2>
+            <div class="publisher">Fellow Traveller</div>
+          </div>
+          
+        </div>
+
+        
+        <div class="table-scroll">
+          <table class="skus">
+            <thead>
+              <tr>
+                <th><span data-i18n="es">Región</span><span data-i18n="en" hidden>Region</span></th>
+                <th><span data-i18n="es">Edición</span><span data-i18n="en" hidden>Edition</span></th>
+                <th><span data-i18n="es">Formato</span><span data-i18n="en" hidden>Format</span></th>
+                <th><span data-i18n="es">Distribuidora</span><span data-i18n="en" hidden>Distributor</span></th>
+                <th><span data-i18n="es">Tamaño</span><span data-i18n="en" hidden>Size</span></th>
+                <th><span data-i18n="es">Fuente</span><span data-i18n="en" hidden>Source</span></th>
+              </tr>
+            </thead>
+            <tbody>
+              
+              <tr data-region="EU" data-format="full_cart" data-edition="standard">
+                <td>EU</td>
+                <td><span data-i18n="es">Estándar</span><span data-i18n="en" hidden>Standard</span></td>
+                <td><span class="badge format-full-cart"><span data-i18n="es">Cartucho completo</span><span data-i18n="en" hidden>Full cartridge</span></span></td>
+                <td>Fangamer Europe</td>
+                <td><span data-i18n="es">—</span><span data-i18n="en" hidden>—</span></td>
+                <td>
+                  
+                  <a class="source-link" href="https://gonintendo.com/contents/63876-fangamer-reveals-1000xresist-physical-switch-2-releases" target="_blank" rel="noopener noreferrer"><span data-i18n="es">Prensa</span><span data-i18n="en" hidden>Press report</span></a>
+                  
+                </td>
+              </tr>
+              
+              <tr data-region="NA" data-format="full_cart" data-edition="standard">
+                <td>NA</td>
+                <td><span data-i18n="es">Estándar</span><span data-i18n="en" hidden>Standard</span></td>
+                <td><span class="badge format-full-cart"><span data-i18n="es">Cartucho completo</span><span data-i18n="en" hidden>Full cartridge</span></span></td>
+                <td>Fangamer</td>
+                <td><span data-i18n="es">—</span><span data-i18n="en" hidden>—</span></td>
+                <td>
+                  
+                  <a class="source-link" href="https://gonintendo.com/contents/63876-fangamer-reveals-1000xresist-physical-switch-2-releases" target="_blank" rel="noopener noreferrer"><span data-i18n="es">Prensa</span><span data-i18n="en" hidden>Press report</span></a>
+                  
+                </td>
+              </tr>
+              
+            </tbody>
+          </table>
+        </div>
+        
+      </div>
+      
+      <div class="title-card" id="a-train-all-aboard-tourism-nintendo-switch-2-edition" data-search="a-train: all aboard! tourism - nintendo switch 2 edition artdink">
+        <div class="title-head">
+          <div>
+            <h2>A-Train: All Aboard! Tourism - Nintendo Switch 2 Edition</h2>
+            <div class="publisher">Artdink</div>
+          </div>
+          
+        </div>
+
+        
+        <div class="table-scroll">
+          <table class="skus">
+            <thead>
+              <tr>
+                <th><span data-i18n="es">Región</span><span data-i18n="en" hidden>Region</span></th>
+                <th><span data-i18n="es">Edición</span><span data-i18n="en" hidden>Edition</span></th>
+                <th><span data-i18n="es">Formato</span><span data-i18n="en" hidden>Format</span></th>
+                <th><span data-i18n="es">Distribuidora</span><span data-i18n="en" hidden>Distributor</span></th>
+                <th><span data-i18n="es">Tamaño</span><span data-i18n="en" hidden>Size</span></th>
+                <th><span data-i18n="es">Fuente</span><span data-i18n="en" hidden>Source</span></th>
+              </tr>
+            </thead>
+            <tbody>
+              
+              <tr data-region="EU" data-format="unknown" data-edition="standard">
+                <td>EU</td>
+                <td><span data-i18n="es">Estándar</span><span data-i18n="en" hidden>Standard</span></td>
+                <td><span class="badge format-unknown"><span data-i18n="es">Desconocido</span><span data-i18n="en" hidden>Unknown</span></span></td>
+                <td>ARTDINK</td>
+                <td><span data-i18n="es">~3.6 GB (descarga)</span><span data-i18n="en" hidden>~3.6 GB (download)</span></td>
+                <td>
+                  
+                  <span data-i18n="es">Sin confirmar</span><span data-i18n="en" hidden>Unconfirmed</span>
+                  
+                </td>
+              </tr>
+              
+              <tr data-region="JP" data-format="unknown" data-edition="standard">
+                <td>JP</td>
+                <td><span data-i18n="es">Estándar</span><span data-i18n="en" hidden>Standard</span></td>
+                <td><span class="badge format-unknown"><span data-i18n="es">Desconocido</span><span data-i18n="en" hidden>Unknown</span></span></td>
+                <td>ARTDINK</td>
+                <td><span data-i18n="es">—</span><span data-i18n="en" hidden>—</span></td>
+                <td>
+                  
+                  <span data-i18n="es">Sin confirmar</span><span data-i18n="en" hidden>Unconfirmed</span>
+                  
+                </td>
+              </tr>
+              
+              <tr data-region="NA" data-format="unknown" data-edition="standard">
+                <td>NA</td>
+                <td><span data-i18n="es">Estándar</span><span data-i18n="en" hidden>Standard</span></td>
+                <td><span class="badge format-unknown"><span data-i18n="es">Desconocido</span><span data-i18n="en" hidden>Unknown</span></span></td>
+                <td>ARTDINK</td>
+                <td><span data-i18n="es">—</span><span data-i18n="en" hidden>—</span></td>
+                <td>
+                  
+                  <span data-i18n="es">Sin confirmar</span><span data-i18n="en" hidden>Unconfirmed</span>
+                  
+                </td>
+              </tr>
+              
+            </tbody>
+          </table>
+        </div>
+        
+      </div>
+      
+      <div class="title-card" id="absolum" data-search="absolum dotemu">
         <div class="title-head">
           <div>
             <h2>Absolum</h2>
@@ -493,7 +636,7 @@
             </thead>
             <tbody>
               
-              <tr data-format="full_cart" data-edition="standard">
+              <tr data-region="EU" data-format="full_cart" data-edition="standard">
                 <td>EU</td>
                 <td><span data-i18n="es">Estándar</span><span data-i18n="en" hidden>Standard</span></td>
                 <td><span class="badge format-full-cart"><span data-i18n="es">Cartucho completo</span><span data-i18n="en" hidden>Full cartridge</span></span></td>
@@ -506,7 +649,7 @@
                 </td>
               </tr>
               
-              <tr data-format="full_cart" data-edition="standard">
+              <tr data-region="NA" data-format="full_cart" data-edition="standard">
                 <td>NA</td>
                 <td><span data-i18n="es">Estándar</span><span data-i18n="en" hidden>Standard</span></td>
                 <td><span class="badge format-full-cart"><span data-i18n="es">Cartucho completo</span><span data-i18n="en" hidden>Full cartridge</span></span></td>
@@ -525,21 +668,192 @@
         
       </div>
       
-      <div class="title-card" data-name="alien: isolation 2">
+      <div class="title-card" id="afl-26" data-search="afl 26 nacon">
         <div class="title-head">
           <div>
-            <h2>Alien: Isolation 2</h2>
-            <div class="publisher">Sega</div>
+            <h2>AFL 26</h2>
+            <div class="publisher">Nacon</div>
           </div>
           
         </div>
 
         
-        <p class="no-data"><span data-i18n="es">Todavía sin SKUs documentados.</span><span data-i18n="en" hidden>No SKUs documented yet.</span></p>
+        <div class="table-scroll">
+          <table class="skus">
+            <thead>
+              <tr>
+                <th><span data-i18n="es">Región</span><span data-i18n="en" hidden>Region</span></th>
+                <th><span data-i18n="es">Edición</span><span data-i18n="en" hidden>Edition</span></th>
+                <th><span data-i18n="es">Formato</span><span data-i18n="en" hidden>Format</span></th>
+                <th><span data-i18n="es">Distribuidora</span><span data-i18n="en" hidden>Distributor</span></th>
+                <th><span data-i18n="es">Tamaño</span><span data-i18n="en" hidden>Size</span></th>
+                <th><span data-i18n="es">Fuente</span><span data-i18n="en" hidden>Source</span></th>
+              </tr>
+            </thead>
+            <tbody>
+              
+              <tr data-region="EU" data-format="unknown" data-edition="standard">
+                <td>EU</td>
+                <td><span data-i18n="es">Estándar</span><span data-i18n="en" hidden>Standard</span></td>
+                <td><span class="badge format-unknown"><span data-i18n="es">Desconocido</span><span data-i18n="en" hidden>Unknown</span></span></td>
+                <td>Big Ant Studios</td>
+                <td><span data-i18n="es">~38.9 GB (descarga)</span><span data-i18n="en" hidden>~38.9 GB (download)</span></td>
+                <td>
+                  
+                  <span data-i18n="es">Sin confirmar</span><span data-i18n="en" hidden>Unconfirmed</span>
+                  
+                </td>
+              </tr>
+              
+              <tr data-region="NA" data-format="game_key_card" data-edition="standard">
+                <td>NA</td>
+                <td><span data-i18n="es">Estándar</span><span data-i18n="en" hidden>Standard</span></td>
+                <td><span class="badge format-game-key-card"><span data-i18n="es">Game-Key Card</span><span data-i18n="en" hidden>Game-Key Card</span></span></td>
+                <td>Big Ant Studios</td>
+                <td><span data-i18n="es">—</span><span data-i18n="en" hidden>—</span></td>
+                <td>
+                  
+                  <a class="source-link" href="https://gonintendo.com/contents/48049-afl-26-now-available-on-switch-2-digitally-physical-release-announced" target="_blank" rel="noopener noreferrer"><span data-i18n="es">Prensa</span><span data-i18n="en" hidden>Press report</span></a>
+                  
+                </td>
+              </tr>
+              
+            </tbody>
+          </table>
+        </div>
         
       </div>
       
-      <div class="title-card" data-name="cyberpunk 2077: ultimate edition">
+      <div class="title-card" id="akiba-lost" data-search="akiba lost izanagigames">
+        <div class="title-head">
+          <div>
+            <h2>Akiba Lost</h2>
+            <div class="publisher">IzanagiGames</div>
+          </div>
+          
+        </div>
+
+        
+        <div class="table-scroll">
+          <table class="skus">
+            <thead>
+              <tr>
+                <th><span data-i18n="es">Región</span><span data-i18n="en" hidden>Region</span></th>
+                <th><span data-i18n="es">Edición</span><span data-i18n="en" hidden>Edition</span></th>
+                <th><span data-i18n="es">Formato</span><span data-i18n="en" hidden>Format</span></th>
+                <th><span data-i18n="es">Distribuidora</span><span data-i18n="en" hidden>Distributor</span></th>
+                <th><span data-i18n="es">Tamaño</span><span data-i18n="en" hidden>Size</span></th>
+                <th><span data-i18n="es">Fuente</span><span data-i18n="en" hidden>Source</span></th>
+              </tr>
+            </thead>
+            <tbody>
+              
+              <tr data-region="JP" data-format="game_key_card" data-edition="standard">
+                <td>JP</td>
+                <td><span data-i18n="es">Estándar</span><span data-i18n="en" hidden>Standard</span></td>
+                <td><span class="badge format-game-key-card"><span data-i18n="es">Game-Key Card</span><span data-i18n="en" hidden>Game-Key Card</span></span></td>
+                <td>IzanagiGames</td>
+                <td><span data-i18n="es">—</span><span data-i18n="en" hidden>—</span></td>
+                <td>
+                  
+                  <a class="source-link" href="https://www.gematsu.com/2026/01/akiba-lost-launches-september-17" target="_blank" rel="noopener noreferrer"><span data-i18n="es">Prensa</span><span data-i18n="en" hidden>Press report</span></a>
+                  
+                </td>
+              </tr>
+              
+            </tbody>
+          </table>
+        </div>
+        
+      </div>
+      
+      <div class="title-card" id="alien-rogue-incursion-evolved-edition" data-search="alien: rogue incursion evolved edition survios">
+        <div class="title-head">
+          <div>
+            <h2>Alien: Rogue Incursion Evolved Edition</h2>
+            <div class="publisher">Survios</div>
+          </div>
+          
+        </div>
+
+        
+        <div class="table-scroll">
+          <table class="skus">
+            <thead>
+              <tr>
+                <th><span data-i18n="es">Región</span><span data-i18n="en" hidden>Region</span></th>
+                <th><span data-i18n="es">Edición</span><span data-i18n="en" hidden>Edition</span></th>
+                <th><span data-i18n="es">Formato</span><span data-i18n="en" hidden>Format</span></th>
+                <th><span data-i18n="es">Distribuidora</span><span data-i18n="en" hidden>Distributor</span></th>
+                <th><span data-i18n="es">Tamaño</span><span data-i18n="en" hidden>Size</span></th>
+                <th><span data-i18n="es">Fuente</span><span data-i18n="en" hidden>Source</span></th>
+              </tr>
+            </thead>
+            <tbody>
+              
+              <tr data-region="NA" data-format="unknown" data-edition="standard">
+                <td>NA</td>
+                <td><span data-i18n="es">Estándar</span><span data-i18n="en" hidden>Standard</span></td>
+                <td><span class="badge format-unknown"><span data-i18n="es">Desconocido</span><span data-i18n="en" hidden>Unknown</span></span></td>
+                <td>Limited Run Games</td>
+                <td><span data-i18n="es">—</span><span data-i18n="en" hidden>—</span></td>
+                <td>
+                  
+                  <span data-i18n="es">Sin confirmar</span><span data-i18n="en" hidden>Unconfirmed</span>
+                  
+                </td>
+              </tr>
+              
+            </tbody>
+          </table>
+        </div>
+        
+      </div>
+      
+      <div class="title-card" id="bravely-default-flying-fairy-hd-remaster" data-search="bravely default: flying fairy - hd remaster square enix">
+        <div class="title-head">
+          <div>
+            <h2>Bravely Default: Flying Fairy - HD Remaster</h2>
+            <div class="publisher">Square Enix</div>
+          </div>
+          
+        </div>
+
+        
+        <div class="table-scroll">
+          <table class="skus">
+            <thead>
+              <tr>
+                <th><span data-i18n="es">Región</span><span data-i18n="en" hidden>Region</span></th>
+                <th><span data-i18n="es">Edición</span><span data-i18n="en" hidden>Edition</span></th>
+                <th><span data-i18n="es">Formato</span><span data-i18n="en" hidden>Format</span></th>
+                <th><span data-i18n="es">Distribuidora</span><span data-i18n="en" hidden>Distributor</span></th>
+                <th><span data-i18n="es">Tamaño</span><span data-i18n="en" hidden>Size</span></th>
+                <th><span data-i18n="es">Fuente</span><span data-i18n="en" hidden>Source</span></th>
+              </tr>
+            </thead>
+            <tbody>
+              
+              <tr data-region="JP" data-format="game_key_card" data-edition="standard">
+                <td>JP</td>
+                <td><span data-i18n="es">Estándar</span><span data-i18n="en" hidden>Standard</span></td>
+                <td><span class="badge format-game-key-card"><span data-i18n="es">Game-Key Card</span><span data-i18n="en" hidden>Game-Key Card</span></span></td>
+                <td>—</td>
+                <td><span data-i18n="es">~11.0 GB (descarga)</span><span data-i18n="en" hidden>~11.0 GB (download)</span></td>
+                <td>
+                  
+                  <a class="source-link" href="https://www.famitsu.com/article/202506/43937" target="_blank" rel="noopener noreferrer"><span data-i18n="es">Prensa</span><span data-i18n="en" hidden>Press report</span></a>
+                  
+                </td>
+              </tr>
+              
+            </tbody>
+          </table>
+        </div>
+        
+      </div>
+      
+      <div class="title-card" id="cyberpunk-2077-ultimate-edition" data-search="cyberpunk 2077: ultimate edition cd projekt red">
         <div class="title-head">
           <div>
             <h2>Cyberpunk 2077: Ultimate Edition</h2>
@@ -563,7 +877,7 @@
             </thead>
             <tbody>
               
-              <tr data-format="full_cart" data-edition="standard">
+              <tr data-region="ASIA" data-format="full_cart" data-edition="standard">
                 <td>ASIA</td>
                 <td><span data-i18n="es">Estándar</span><span data-i18n="en" hidden>Standard</span></td>
                 <td><span class="badge format-full-cart"><span data-i18n="es">Cartucho completo</span><span data-i18n="en" hidden>Full cartridge</span></span></td>
@@ -576,7 +890,7 @@
                 </td>
               </tr>
               
-              <tr data-format="full_cart" data-edition="standard">
+              <tr data-region="EU" data-format="full_cart" data-edition="standard">
                 <td>EU</td>
                 <td><span data-i18n="es">Estándar</span><span data-i18n="en" hidden>Standard</span></td>
                 <td><span class="badge format-full-cart"><span data-i18n="es">Cartucho completo</span><span data-i18n="en" hidden>Full cartridge</span></span></td>
@@ -589,7 +903,7 @@
                 </td>
               </tr>
               
-              <tr data-format="full_cart" data-edition="standard">
+              <tr data-region="JP" data-format="full_cart" data-edition="standard">
                 <td>JP</td>
                 <td><span data-i18n="es">Estándar</span><span data-i18n="en" hidden>Standard</span></td>
                 <td><span class="badge format-full-cart"><span data-i18n="es">Cartucho completo</span><span data-i18n="en" hidden>Full cartridge</span></span></td>
@@ -602,7 +916,7 @@
                 </td>
               </tr>
               
-              <tr data-format="full_cart" data-edition="standard">
+              <tr data-region="NA" data-format="full_cart" data-edition="standard">
                 <td>NA</td>
                 <td><span data-i18n="es">Estándar</span><span data-i18n="en" hidden>Standard</span></td>
                 <td><span class="badge format-full-cart"><span data-i18n="es">Cartucho completo</span><span data-i18n="en" hidden>Full cartridge</span></span></td>
@@ -621,7 +935,7 @@
         
       </div>
       
-      <div class="title-card" data-name="donkey kong bananza">
+      <div class="title-card" id="donkey-kong-bananza" data-search="donkey kong bananza nintendo">
         <div class="title-head">
           <div>
             <h2>Donkey Kong Bananza</h2>
@@ -645,7 +959,7 @@
             </thead>
             <tbody>
               
-              <tr data-format="full_cart" data-edition="standard">
+              <tr data-region="ASIA" data-format="full_cart" data-edition="standard">
                 <td>ASIA</td>
                 <td><span data-i18n="es">Estándar</span><span data-i18n="en" hidden>Standard</span></td>
                 <td><span class="badge format-full-cart"><span data-i18n="es">Cartucho completo</span><span data-i18n="en" hidden>Full cartridge</span></span></td>
@@ -658,7 +972,7 @@
                 </td>
               </tr>
               
-              <tr data-format="full_cart" data-edition="standard">
+              <tr data-region="EU" data-format="full_cart" data-edition="standard">
                 <td>EU</td>
                 <td><span data-i18n="es">Estándar</span><span data-i18n="en" hidden>Standard</span></td>
                 <td><span class="badge format-full-cart"><span data-i18n="es">Cartucho completo</span><span data-i18n="en" hidden>Full cartridge</span></span></td>
@@ -671,7 +985,7 @@
                 </td>
               </tr>
               
-              <tr data-format="full_cart" data-edition="standard">
+              <tr data-region="JP" data-format="full_cart" data-edition="standard">
                 <td>JP</td>
                 <td><span data-i18n="es">Estándar</span><span data-i18n="en" hidden>Standard</span></td>
                 <td><span class="badge format-full-cart"><span data-i18n="es">Cartucho completo</span><span data-i18n="en" hidden>Full cartridge</span></span></td>
@@ -684,7 +998,7 @@
                 </td>
               </tr>
               
-              <tr data-format="full_cart" data-edition="standard">
+              <tr data-region="KR" data-format="full_cart" data-edition="standard">
                 <td>KR</td>
                 <td><span data-i18n="es">Estándar</span><span data-i18n="en" hidden>Standard</span></td>
                 <td><span class="badge format-full-cart"><span data-i18n="es">Cartucho completo</span><span data-i18n="en" hidden>Full cartridge</span></span></td>
@@ -697,7 +1011,7 @@
                 </td>
               </tr>
               
-              <tr data-format="full_cart" data-edition="standard">
+              <tr data-region="NA" data-format="full_cart" data-edition="standard">
                 <td>NA</td>
                 <td><span data-i18n="es">Estándar</span><span data-i18n="en" hidden>Standard</span></td>
                 <td><span class="badge format-full-cart"><span data-i18n="es">Cartucho completo</span><span data-i18n="en" hidden>Full cartridge</span></span></td>
@@ -716,7 +1030,7 @@
         
       </div>
       
-      <div class="title-card" data-name="elden ring: tarnished edition">
+      <div class="title-card" id="elden-ring-tarnished-edition" data-search="elden ring: tarnished edition bandai namco entertainment">
         <div class="title-head">
           <div>
             <h2>Elden Ring: Tarnished Edition</h2>
@@ -740,7 +1054,7 @@
             </thead>
             <tbody>
               
-              <tr data-format="game_key_card" data-edition="standard">
+              <tr data-region="NA" data-format="game_key_card" data-edition="standard">
                 <td>NA</td>
                 <td><span data-i18n="es">Estándar</span><span data-i18n="en" hidden>Standard</span></td>
                 <td><span class="badge format-game-key-card"><span data-i18n="es">Game-Key Card</span><span data-i18n="en" hidden>Game-Key Card</span></span></td>
@@ -759,21 +1073,102 @@
         
       </div>
       
-      <div class="title-card" data-name="kingdom come: deliverance ii">
+      <div class="title-card" id="hitman-world-of-assassination-signature-edition" data-search="hitman world of assassination: signature edition io interactive">
         <div class="title-head">
           <div>
-            <h2>Kingdom Come: Deliverance II</h2>
-            <div class="publisher">Deep Silver</div>
+            <h2>Hitman World of Assassination: Signature Edition</h2>
+            <div class="publisher">IO Interactive</div>
           </div>
           
         </div>
 
         
-        <p class="no-data"><span data-i18n="es">Todavía sin SKUs documentados.</span><span data-i18n="en" hidden>No SKUs documented yet.</span></p>
+        <div class="table-scroll">
+          <table class="skus">
+            <thead>
+              <tr>
+                <th><span data-i18n="es">Región</span><span data-i18n="en" hidden>Region</span></th>
+                <th><span data-i18n="es">Edición</span><span data-i18n="en" hidden>Edition</span></th>
+                <th><span data-i18n="es">Formato</span><span data-i18n="en" hidden>Format</span></th>
+                <th><span data-i18n="es">Distribuidora</span><span data-i18n="en" hidden>Distributor</span></th>
+                <th><span data-i18n="es">Tamaño</span><span data-i18n="en" hidden>Size</span></th>
+                <th><span data-i18n="es">Fuente</span><span data-i18n="en" hidden>Source</span></th>
+              </tr>
+            </thead>
+            <tbody>
+              
+              <tr data-region="ASIA" data-format="game_key_card" data-edition="standard">
+                <td>ASIA</td>
+                <td><span data-i18n="es">Estándar</span><span data-i18n="en" hidden>Standard</span></td>
+                <td><span class="badge format-game-key-card"><span data-i18n="es">Game-Key Card</span><span data-i18n="en" hidden>Game-Key Card</span></span></td>
+                <td>—</td>
+                <td><span data-i18n="es">—</span><span data-i18n="en" hidden>—</span></td>
+                <td>
+                  
+                  <a class="source-link" href="https://www.play-asia.com/hitman-world-of-assassination-signature-edition-multi-language/13/70igel" target="_blank" rel="noopener noreferrer"><span data-i18n="es">Ficha de tienda</span><span data-i18n="en" hidden>Retailer listing</span></a>
+                  
+                </td>
+              </tr>
+              
+              <tr data-region="EU" data-format="game_key_card" data-edition="standard">
+                <td>EU</td>
+                <td><span data-i18n="es">Estándar</span><span data-i18n="en" hidden>Standard</span></td>
+                <td><span class="badge format-game-key-card"><span data-i18n="es">Game-Key Card</span><span data-i18n="en" hidden>Game-Key Card</span></span></td>
+                <td>—</td>
+                <td><span data-i18n="es">~55.2 GB (descarga)</span><span data-i18n="en" hidden>~55.2 GB (download)</span></td>
+                <td>
+                  
+                  <a class="source-link" href="https://www.nintendolife.com/games/nintendo-switch-2/hitman-world-of-assassination-signature-edition" target="_blank" rel="noopener noreferrer"><span data-i18n="es">Prensa</span><span data-i18n="en" hidden>Press report</span></a>
+                  
+                </td>
+              </tr>
+              
+              <tr data-region="JP" data-format="game_key_card" data-edition="standard">
+                <td>JP</td>
+                <td><span data-i18n="es">Estándar</span><span data-i18n="en" hidden>Standard</span></td>
+                <td><span class="badge format-game-key-card"><span data-i18n="es">Game-Key Card</span><span data-i18n="en" hidden>Game-Key Card</span></span></td>
+                <td>IO Interactive</td>
+                <td><span data-i18n="es">—</span><span data-i18n="en" hidden>—</span></td>
+                <td>
+                  
+                  <a class="source-link" href="https://www.famitsu.com/article/202505/42304" target="_blank" rel="noopener noreferrer"><span data-i18n="es">Prensa</span><span data-i18n="en" hidden>Press report</span></a>
+                  
+                </td>
+              </tr>
+              
+              <tr data-region="KR" data-format="unknown" data-edition="standard">
+                <td>KR</td>
+                <td><span data-i18n="es">Estándar</span><span data-i18n="en" hidden>Standard</span></td>
+                <td><span class="badge format-unknown"><span data-i18n="es">Desconocido</span><span data-i18n="en" hidden>Unknown</span></span></td>
+                <td>—</td>
+                <td><span data-i18n="es">—</span><span data-i18n="en" hidden>—</span></td>
+                <td>
+                  
+                  <span data-i18n="es">Sin confirmar</span><span data-i18n="en" hidden>Unconfirmed</span>
+                  
+                </td>
+              </tr>
+              
+              <tr data-region="NA" data-format="game_key_card" data-edition="standard">
+                <td>NA</td>
+                <td><span data-i18n="es">Estándar</span><span data-i18n="en" hidden>Standard</span></td>
+                <td><span class="badge format-game-key-card"><span data-i18n="es">Game-Key Card</span><span data-i18n="en" hidden>Game-Key Card</span></span></td>
+                <td>—</td>
+                <td><span data-i18n="es">—</span><span data-i18n="en" hidden>—</span></td>
+                <td>
+                  
+                  <a class="source-link" href="https://nintendoeverything.com/list-of-all-nintendo-switch-2-games-with-a-game-key-card-release/" target="_blank" rel="noopener noreferrer"><span data-i18n="es">Prensa</span><span data-i18n="en" hidden>Press report</span></a>
+                  
+                </td>
+              </tr>
+              
+            </tbody>
+          </table>
+        </div>
         
       </div>
       
-      <div class="title-card" data-name="mario kart world">
+      <div class="title-card" id="mario-kart-world" data-search="mario kart world nintendo">
         <div class="title-head">
           <div>
             <h2>Mario Kart World</h2>
@@ -783,11 +1178,92 @@
         </div>
 
         
-        <p class="no-data"><span data-i18n="es">Todavía sin SKUs documentados.</span><span data-i18n="en" hidden>No SKUs documented yet.</span></p>
+        <div class="table-scroll">
+          <table class="skus">
+            <thead>
+              <tr>
+                <th><span data-i18n="es">Región</span><span data-i18n="en" hidden>Region</span></th>
+                <th><span data-i18n="es">Edición</span><span data-i18n="en" hidden>Edition</span></th>
+                <th><span data-i18n="es">Formato</span><span data-i18n="en" hidden>Format</span></th>
+                <th><span data-i18n="es">Distribuidora</span><span data-i18n="en" hidden>Distributor</span></th>
+                <th><span data-i18n="es">Tamaño</span><span data-i18n="en" hidden>Size</span></th>
+                <th><span data-i18n="es">Fuente</span><span data-i18n="en" hidden>Source</span></th>
+              </tr>
+            </thead>
+            <tbody>
+              
+              <tr data-region="ASIA" data-format="full_cart" data-edition="standard">
+                <td>ASIA</td>
+                <td><span data-i18n="es">Estándar</span><span data-i18n="en" hidden>Standard</span></td>
+                <td><span class="badge format-full-cart"><span data-i18n="es">Cartucho completo</span><span data-i18n="en" hidden>Full cartridge</span></span></td>
+                <td>—</td>
+                <td><span data-i18n="es">—</span><span data-i18n="en" hidden>—</span></td>
+                <td>
+                  
+                  <a class="source-link" href="https://www.play-asia.com/en/mario-kart-world-multi-language/13/70igbr" target="_blank" rel="noopener noreferrer"><span data-i18n="es">Ficha de tienda</span><span data-i18n="en" hidden>Retailer listing</span></a>
+                  
+                </td>
+              </tr>
+              
+              <tr data-region="EU" data-format="full_cart" data-edition="standard">
+                <td>EU</td>
+                <td><span data-i18n="es">Estándar</span><span data-i18n="en" hidden>Standard</span></td>
+                <td><span class="badge format-full-cart"><span data-i18n="es">Cartucho completo</span><span data-i18n="en" hidden>Full cartridge</span></span></td>
+                <td>—</td>
+                <td><span data-i18n="es">—</span><span data-i18n="en" hidden>—</span></td>
+                <td>
+                  
+                  <a class="source-link" href="https://www.nintendolife.com/guides/every-nintendo-switch-2-physical-release-with-the-full-game-on-the-cart" target="_blank" rel="noopener noreferrer"><span data-i18n="es">Prensa</span><span data-i18n="en" hidden>Press report</span></a>
+                  
+                </td>
+              </tr>
+              
+              <tr data-region="JP" data-format="full_cart" data-edition="standard">
+                <td>JP</td>
+                <td><span data-i18n="es">Estándar</span><span data-i18n="en" hidden>Standard</span></td>
+                <td><span class="badge format-full-cart"><span data-i18n="es">Cartucho completo</span><span data-i18n="en" hidden>Full cartridge</span></span></td>
+                <td>Nintendo</td>
+                <td><span data-i18n="es">—</span><span data-i18n="en" hidden>—</span></td>
+                <td>
+                  
+                  <a class="source-link" href="https://automaton-media.com/articles/newsjp/nintendo-switch-2-20250424-336320/" target="_blank" rel="noopener noreferrer"><span data-i18n="es">Prensa</span><span data-i18n="en" hidden>Press report</span></a>
+                  
+                </td>
+              </tr>
+              
+              <tr data-region="KR" data-format="full_cart" data-edition="standard">
+                <td>KR</td>
+                <td><span data-i18n="es">Estándar</span><span data-i18n="en" hidden>Standard</span></td>
+                <td><span class="badge format-full-cart"><span data-i18n="es">Cartucho completo</span><span data-i18n="en" hidden>Full cartridge</span></span></td>
+                <td>—</td>
+                <td><span data-i18n="es">—</span><span data-i18n="en" hidden>—</span></td>
+                <td>
+                  
+                  <a class="source-link" href="https://prod.danawa.com/info/?pcode=88136987" target="_blank" rel="noopener noreferrer"><span data-i18n="es">Ficha de tienda</span><span data-i18n="en" hidden>Retailer listing</span></a>
+                  
+                </td>
+              </tr>
+              
+              <tr data-region="NA" data-format="full_cart" data-edition="standard">
+                <td>NA</td>
+                <td><span data-i18n="es">Estándar</span><span data-i18n="en" hidden>Standard</span></td>
+                <td><span class="badge format-full-cart"><span data-i18n="es">Cartucho completo</span><span data-i18n="en" hidden>Full cartridge</span></span></td>
+                <td>—</td>
+                <td><span data-i18n="es">—</span><span data-i18n="en" hidden>—</span></td>
+                <td>
+                  
+                  <a class="source-link" href="https://www.thegamer.com/nintendo-switch-2-first-party-physical-releases-wont-use-game-key-cards-for-now-donkey-kong-bananza-mario-kart-world-kirby-air-riders/" target="_blank" rel="noopener noreferrer"><span data-i18n="es">Prensa</span><span data-i18n="en" hidden>Press report</span></a>
+                  
+                </td>
+              </tr>
+              
+            </tbody>
+          </table>
+        </div>
         
       </div>
       
-      <div class="title-card" data-name="metroid prime 4: beyond">
+      <div class="title-card" id="metroid-prime-4-beyond" data-search="metroid prime 4: beyond nintendo">
         <div class="title-head">
           <div>
             <h2>Metroid Prime 4: Beyond</h2>
@@ -797,11 +1273,92 @@
         </div>
 
         
-        <p class="no-data"><span data-i18n="es">Todavía sin SKUs documentados.</span><span data-i18n="en" hidden>No SKUs documented yet.</span></p>
+        <div class="table-scroll">
+          <table class="skus">
+            <thead>
+              <tr>
+                <th><span data-i18n="es">Región</span><span data-i18n="en" hidden>Region</span></th>
+                <th><span data-i18n="es">Edición</span><span data-i18n="en" hidden>Edition</span></th>
+                <th><span data-i18n="es">Formato</span><span data-i18n="en" hidden>Format</span></th>
+                <th><span data-i18n="es">Distribuidora</span><span data-i18n="en" hidden>Distributor</span></th>
+                <th><span data-i18n="es">Tamaño</span><span data-i18n="en" hidden>Size</span></th>
+                <th><span data-i18n="es">Fuente</span><span data-i18n="en" hidden>Source</span></th>
+              </tr>
+            </thead>
+            <tbody>
+              
+              <tr data-region="ASIA" data-format="full_cart" data-edition="standard">
+                <td>ASIA</td>
+                <td><span data-i18n="es">Estándar</span><span data-i18n="en" hidden>Standard</span></td>
+                <td><span class="badge format-full-cart"><span data-i18n="es">Cartucho completo</span><span data-i18n="en" hidden>Full cartridge</span></span></td>
+                <td>—</td>
+                <td><span data-i18n="es">—</span><span data-i18n="en" hidden>—</span></td>
+                <td>
+                  
+                  <a class="source-link" href="https://www.play-asia.com/en/metroid-prime-4-beyond-for-nintendo-switch-2-edition-multi-langu/13/70j7mz" target="_blank" rel="noopener noreferrer"><span data-i18n="es">Ficha de tienda</span><span data-i18n="en" hidden>Retailer listing</span></a>
+                  
+                </td>
+              </tr>
+              
+              <tr data-region="EU" data-format="full_cart" data-edition="standard">
+                <td>EU</td>
+                <td><span data-i18n="es">Estándar</span><span data-i18n="en" hidden>Standard</span></td>
+                <td><span class="badge format-full-cart"><span data-i18n="es">Cartucho completo</span><span data-i18n="en" hidden>Full cartridge</span></span></td>
+                <td>—</td>
+                <td><span data-i18n="es">—</span><span data-i18n="en" hidden>—</span></td>
+                <td>
+                  
+                  <a class="source-link" href="https://www.nintendolife.com/guides/every-nintendo-switch-2-physical-release-with-the-full-game-on-the-cart" target="_blank" rel="noopener noreferrer"><span data-i18n="es">Prensa</span><span data-i18n="en" hidden>Press report</span></a>
+                  
+                </td>
+              </tr>
+              
+              <tr data-region="JP" data-format="full_cart" data-edition="standard">
+                <td>JP</td>
+                <td><span data-i18n="es">Estándar</span><span data-i18n="en" hidden>Standard</span></td>
+                <td><span class="badge format-full-cart"><span data-i18n="es">Cartucho completo</span><span data-i18n="en" hidden>Full cartridge</span></span></td>
+                <td>Nintendo</td>
+                <td><span data-i18n="es">—</span><span data-i18n="en" hidden>—</span></td>
+                <td>
+                  
+                  <a class="source-link" href="https://tokyogamestory.com/en/nintendo-switch-2-game-soft-all/15386-metroid-prime-4-beyond-for-nintendo-switch-2-japan-game-cart-multilingualfps-new-4902370553727.html" target="_blank" rel="noopener noreferrer"><span data-i18n="es">Ficha de tienda</span><span data-i18n="en" hidden>Retailer listing</span></a>
+                  
+                </td>
+              </tr>
+              
+              <tr data-region="KR" data-format="full_cart" data-edition="standard">
+                <td>KR</td>
+                <td><span data-i18n="es">Estándar</span><span data-i18n="en" hidden>Standard</span></td>
+                <td><span class="badge format-full-cart"><span data-i18n="es">Cartucho completo</span><span data-i18n="en" hidden>Full cartridge</span></span></td>
+                <td>—</td>
+                <td><span data-i18n="es">—</span><span data-i18n="en" hidden>—</span></td>
+                <td>
+                  
+                  <a class="source-link" href="https://prod.danawa.com/info/?pcode=99750545" target="_blank" rel="noopener noreferrer"><span data-i18n="es">Ficha de tienda</span><span data-i18n="en" hidden>Retailer listing</span></a>
+                  
+                </td>
+              </tr>
+              
+              <tr data-region="NA" data-format="full_cart" data-edition="standard">
+                <td>NA</td>
+                <td><span data-i18n="es">Estándar</span><span data-i18n="en" hidden>Standard</span></td>
+                <td><span class="badge format-full-cart"><span data-i18n="es">Cartucho completo</span><span data-i18n="en" hidden>Full cartridge</span></span></td>
+                <td>—</td>
+                <td><span data-i18n="es">—</span><span data-i18n="en" hidden>—</span></td>
+                <td>
+                  
+                  <a class="source-link" href="https://nintendoeverything.com/nintendo-confirms-physical-switch-2-editions-have-everything-on-the-cartridge-no-downloads/" target="_blank" rel="noopener noreferrer"><span data-i18n="es">Prensa</span><span data-i18n="en" hidden>Press report</span></a>
+                  
+                </td>
+              </tr>
+              
+            </tbody>
+          </table>
+        </div>
         
       </div>
       
-      <div class="title-card" data-name="split fiction">
+      <div class="title-card" id="split-fiction" data-search="split fiction electronic arts">
         <div class="title-head">
           <div>
             <h2>Split Fiction</h2>
@@ -825,7 +1382,7 @@
             </thead>
             <tbody>
               
-              <tr data-format="code_in_box" data-edition="standard">
+              <tr data-region="NA" data-format="code_in_box" data-edition="standard">
                 <td>NA</td>
                 <td><span data-i18n="es">Estándar</span><span data-i18n="en" hidden>Standard</span></td>
                 <td><span class="badge format-code-in-box"><span data-i18n="es">Código en la caja</span><span data-i18n="en" hidden>Code in box</span></span></td>
@@ -844,7 +1401,7 @@
         
       </div>
       
-      <div class="title-card" data-name="star wars outlaws">
+      <div class="title-card" id="star-wars-outlaws" data-search="star wars outlaws ubisoft entertainment">
         <div class="title-head">
           <div>
             <h2>Star Wars Outlaws</h2>
@@ -868,7 +1425,7 @@
             </thead>
             <tbody>
               
-              <tr data-format="game_key_card" data-edition="standard">
+              <tr data-region="NA" data-format="game_key_card" data-edition="standard">
                 <td>NA</td>
                 <td><span data-i18n="es">Estándar</span><span data-i18n="en" hidden>Standard</span></td>
                 <td><span class="badge format-game-key-card"><span data-i18n="es">Game-Key Card</span><span data-i18n="en" hidden>Game-Key Card</span></span></td>
@@ -887,7 +1444,7 @@
         
       </div>
       
-      <div class="title-card" data-name="street fighter 6">
+      <div class="title-card" id="street-fighter-6" data-search="street fighter 6 capcom">
         <div class="title-head">
           <div>
             <h2>Street Fighter 6</h2>
@@ -911,7 +1468,7 @@
             </thead>
             <tbody>
               
-              <tr data-format="game_key_card" data-edition="standard">
+              <tr data-region="ASIA" data-format="game_key_card" data-edition="standard">
                 <td>ASIA</td>
                 <td><span data-i18n="es">Estándar</span><span data-i18n="en" hidden>Standard</span></td>
                 <td><span class="badge format-game-key-card"><span data-i18n="es">Game-Key Card</span><span data-i18n="en" hidden>Game-Key Card</span></span></td>
@@ -924,7 +1481,7 @@
                 </td>
               </tr>
               
-              <tr data-format="game_key_card" data-edition="standard">
+              <tr data-region="EU" data-format="game_key_card" data-edition="standard">
                 <td>EU</td>
                 <td><span data-i18n="es">Estándar</span><span data-i18n="en" hidden>Standard</span></td>
                 <td><span class="badge format-game-key-card"><span data-i18n="es">Game-Key Card</span><span data-i18n="en" hidden>Game-Key Card</span></span></td>
@@ -937,7 +1494,7 @@
                 </td>
               </tr>
               
-              <tr data-format="game_key_card" data-edition="standard">
+              <tr data-region="JP" data-format="game_key_card" data-edition="standard">
                 <td>JP</td>
                 <td><span data-i18n="es">Estándar</span><span data-i18n="en" hidden>Standard</span></td>
                 <td><span class="badge format-game-key-card"><span data-i18n="es">Game-Key Card</span><span data-i18n="en" hidden>Game-Key Card</span></span></td>
@@ -950,7 +1507,7 @@
                 </td>
               </tr>
               
-              <tr data-format="game_key_card" data-edition="standard">
+              <tr data-region="NA" data-format="game_key_card" data-edition="standard">
                 <td>NA</td>
                 <td><span data-i18n="es">Estándar</span><span data-i18n="en" hidden>Standard</span></td>
                 <td><span class="badge format-game-key-card"><span data-i18n="es">Game-Key Card</span><span data-i18n="en" hidden>Game-Key Card</span></span></td>
@@ -969,10 +1526,10 @@
         
       </div>
       
-      <div class="title-card" data-name="yakuza 0: director's cut">
+      <div class="title-card" id="yakuza-0-directors-cut" data-search="yakuza 0: director&#39;s cut sega">
         <div class="title-head">
           <div>
-            <h2>Yakuza 0: Director's Cut</h2>
+            <h2>Yakuza 0: Director&#39;s Cut</h2>
             <div class="publisher">Sega</div>
           </div>
           
@@ -993,7 +1550,7 @@
             </thead>
             <tbody>
               
-              <tr data-format="game_key_card" data-edition="standard">
+              <tr data-region="ASIA" data-format="game_key_card" data-edition="standard">
                 <td>ASIA</td>
                 <td><span data-i18n="es">Estándar</span><span data-i18n="en" hidden>Standard</span></td>
                 <td><span class="badge format-game-key-card"><span data-i18n="es">Game-Key Card</span><span data-i18n="en" hidden>Game-Key Card</span></span></td>
@@ -1006,7 +1563,7 @@
                 </td>
               </tr>
               
-              <tr data-format="game_key_card" data-edition="standard">
+              <tr data-region="JP" data-format="game_key_card" data-edition="standard">
                 <td>JP</td>
                 <td><span data-i18n="es">Estándar</span><span data-i18n="en" hidden>Standard</span></td>
                 <td><span class="badge format-game-key-card"><span data-i18n="es">Game-Key Card</span><span data-i18n="en" hidden>Game-Key Card</span></span></td>
@@ -1019,7 +1576,7 @@
                 </td>
               </tr>
               
-              <tr data-format="game_key_card" data-edition="standard">
+              <tr data-region="NA" data-format="game_key_card" data-edition="standard">
                 <td>NA</td>
                 <td><span data-i18n="es">Estándar</span><span data-i18n="en" hidden>Standard</span></td>
                 <td><span class="badge format-game-key-card"><span data-i18n="es">Game-Key Card</span><span data-i18n="en" hidden>Game-Key Card</span></span></td>
@@ -1043,26 +1600,40 @@
     <p id="empty-state" hidden><span data-i18n="es">No se encontraron juegos.</span><span data-i18n="en" hidden>No games found.</span></p>
 
     <footer>
-      <span data-i18n="es">Generado el 2026-09-15 19:33 UTC.</span><span data-i18n="en" hidden>Generated on 2026-09-15 19:33 UTC.</span>
+      <p><span data-i18n="es">Generado el 2026-09-16 21:55 UTC.</span><span data-i18n="en" hidden>Generated on 2026-09-16 21:55 UTC.</span></p>
+      <p>
+        <a href="https://github.com/rherranzg/isitgamekeycardornot"><span data-i18n="es">Código y datos en GitHub</span><span data-i18n="en" hidden>Code and data on GitHub</span></a> ·
+        <a href="https://github.com/rherranzg/isitgamekeycardornot/blob/main/data/LICENSE"><span data-i18n="es">Datos bajo licencia ODbL 1.0</span><span data-i18n="en" hidden>Data licensed under ODbL 1.0</span></a> ·
+        <a href="https://github.com/rherranzg/isitgamekeycardornot/issues/new"><span data-i18n="es">Reportar una corrección</span><span data-i18n="en" hidden>Report a correction</span></a>
+      </p>
     </footer>
   </div>
 
   <script>
     var SHOWING_COUNT_TEMPLATES = {"en": "Showing {shown} of {total} games", "es": "Mostrando {shown} de {total} juegos"};
-    var ALL_FORMATS = Array.from(document.querySelectorAll(".format-filter")).map(function (el) { return el.value; });
-    var ALL_EDITIONS = Array.from(document.querySelectorAll(".edition-filter")).map(function (el) { return el.value; });
 
     var currentLang = "es";
     var lastVisibleCount = 0;
     var lastTotalCount = 0;
 
+    // Se leen del DOM y no se asume "todo marcado": el navegador puede restaurar las casillas al volver atrás.
     var state = {
       search: "",
-      formats: new Set(ALL_FORMATS),
-      editions: new Set(ALL_EDITIONS),
-      sortKey: "name",
-      sortDesc: false
+      regions: readCheckedValues("region-filter"),
+      formats: readCheckedValues("format-filter"),
+      editions: readCheckedValues("edition-filter")
     };
+
+    function readCheckedValues(className) {
+      return new Set(
+        Array.from(document.querySelectorAll("." + className + ":checked")).map(function (el) { return el.value; })
+      );
+    }
+
+    function normalizeText(text) {
+      // Misma normalización que build_search_text (site.py): sin tildes ni otras marcas y en minúsculas.
+      return text.normalize("NFKD").replace(/\p{M}/gu, "").toLowerCase();
+    }
 
     function applyLanguage(lang) {
       currentLang = lang;
@@ -1091,28 +1662,36 @@
         .replace("{total}", lastTotalCount);
     }
 
+    var NO_BOX_FILTER_VALUE = "no_box";
+
+    function isRowVisible(row) {
+      return state.regions.has(row.dataset.region)
+        && state.formats.has(row.dataset.format)
+        && state.editions.has(row.dataset.edition);
+    }
+
+    // Un juego sin edición física no tiene filas: no salió en caja en ninguna región ni edición, así que
+    // cualquier región o edición marcada le vale y lo que decide es su propio valor del filtro de formato.
+    function isNoBoxCardVisible() {
+      return state.formats.has(NO_BOX_FILTER_VALUE) && state.regions.size > 0 && state.editions.size > 0;
+    }
+
     function applyFilters() {
       var cards = document.querySelectorAll(".title-card");
-      // Con todo marcado no hay filtro real: las tarjetas sin SKUs se muestran igual que antes.
-      var filtersActive = state.formats.size < ALL_FORMATS.length || state.editions.size < ALL_EDITIONS.length;
       var visibleCount = 0;
 
       cards.forEach(function (card) {
-        var matchesSearch = !state.search || card.dataset.name.indexOf(state.search) !== -1;
-        var rows = card.querySelectorAll("table.skus tbody tr");
-        var hasRows = rows.length > 0;
+        var matchesSearch = !state.search || card.dataset.search.indexOf(state.search) !== -1;
         var anyRowVisible = false;
 
-        rows.forEach(function (row) {
-          var rowVisible = state.formats.has(row.dataset.format) && state.editions.has(row.dataset.edition);
-          row.hidden = !rowVisible;
-          if (rowVisible) anyRowVisible = true;
+        card.querySelectorAll("table.skus tbody tr").forEach(function (row) {
+          row.hidden = !isRowVisible(row);
+          if (!row.hidden) anyRowVisible = true;
         });
 
-        var passesRowFilter = hasRows ? anyRowVisible : !filtersActive;
-        var hideCard = !matchesSearch || !passesRowFilter;
-        card.hidden = hideCard;
-        if (!hideCard) visibleCount++;
+        if (card.dataset.noBox) anyRowVisible = isNoBoxCardVisible();
+        card.hidden = !matchesSearch || !anyRowVisible;
+        if (!card.hidden) visibleCount++;
       });
 
       lastVisibleCount = visibleCount;
@@ -1121,68 +1700,24 @@
       renderShowingCount();
     }
 
-    function applySort() {
-      var container = document.querySelector(".titles");
-      var nodes = Array.from(container.children);
-      var key = state.sortKey;
-
-      nodes.sort(function (a, b) {
-        var av = a.dataset[key];
-        var bv = b.dataset[key];
-        var cmp = av < bv ? -1 : av > bv ? 1 : 0;
-        // Array.prototype.sort es estable: los empates conservan el orden previo
-        // (nombre ascendente en la carga inicial), siempre que las tarjetas no se
-        // reconstruyan tras cargar la página.
-        return state.sortDesc ? -cmp : cmp;
-      });
-
-      nodes.forEach(function (node) { container.appendChild(node); });
-    }
-
-    function setActiveSortPill(key) {
-      document.querySelectorAll(".sort-pill").forEach(function (pill) {
-        pill.setAttribute("aria-pressed", String(pill.dataset.sortKey === key));
+    function bindFilter(className, stateKey) {
+      document.querySelectorAll("." + className).forEach(function (checkbox) {
+        checkbox.addEventListener("change", function () {
+          state[stateKey] = readCheckedValues(className);
+          applyFilters();
+        });
       });
     }
 
-    document.getElementById("search-input").addEventListener("input", function (event) {
-      state.search = event.target.value.trim().toLowerCase();
+    var searchInput = document.getElementById("search-input");
+    searchInput.addEventListener("input", function () {
+      state.search = normalizeText(searchInput.value.trim());
       applyFilters();
     });
 
-    document.querySelectorAll(".format-filter").forEach(function (checkbox) {
-      checkbox.addEventListener("change", function () {
-        state.formats = new Set(
-          Array.from(document.querySelectorAll(".format-filter:checked")).map(function (el) { return el.value; })
-        );
-        applyFilters();
-      });
-    });
-
-    document.querySelectorAll(".edition-filter").forEach(function (checkbox) {
-      checkbox.addEventListener("change", function () {
-        state.editions = new Set(
-          Array.from(document.querySelectorAll(".edition-filter:checked")).map(function (el) { return el.value; })
-        );
-        applyFilters();
-      });
-    });
-
-    document.querySelectorAll(".sort-pill").forEach(function (pill) {
-      pill.addEventListener("click", function () {
-        var key = pill.dataset.sortKey;
-        if (key === state.sortKey) {
-          state.sortDesc = !state.sortDesc;
-          var container = document.querySelector(".titles");
-          container.append(...Array.from(container.children).reverse());
-        } else {
-          state.sortKey = key;
-          state.sortDesc = false;
-          setActiveSortPill(key);
-          applySort();
-        }
-      });
-    });
+    bindFilter("region-filter", "regions");
+    bindFilter("format-filter", "formats");
+    bindFilter("edition-filter", "editions");
 
     (function () {
       var saved = null;
@@ -1192,6 +1727,7 @@
         saved = null;
       }
       var preferred = saved || (navigator.language && navigator.language.startsWith("en") ? "en" : "es");
+      state.search = normalizeText(searchInput.value.trim());
       applyLanguage(preferred);
       applyFilters();
     })();

@@ -17,11 +17,35 @@ Switch 2 por región. Flujos y comandos en `README.md`.
 
 - Nunca se inventa: sin fuente, el campo queda `null`.
 - `skus.yaml` son SKUs curados a mano: los datos de un SKU se escriben directamente ahí (no hay overrides).
-- `titles.yaml` lo genera `import_titles` desde IGDB. A mano solo se toca `status`: `pending` (importado sin
-  comprobar), `reviewed` (comprobado a mano) o `refresh` (reimportar de IGDB; vuelve a `pending`). Nunca marcar
-  `reviewed` en nombre del usuario. La web (`build_site`) solo publica los títulos `reviewed` y sus SKUs.
+- Cada SKU lleva su `status`: `new` (borrador que nadie ha buscado todavía, **no sale en la web**),
+  `pending` (ya se ha buscado la fuente y no aparece: sale en la web como formato desconocido y queda
+  pendiente de una búsqueda a fondo), `reviewed` (tiene fuente abierta y comprobada) y `refresh` (tiene
+  fuente, pero hay que volver a buscar evidencias en la web sobre si el juego es game-key card o no; sale
+  igual que `reviewed` mientras tanto). **Un SKU con `source_url` comprobado se escribe directamente como
+  `reviewed`**: la garantía la da la cita textual, no una segunda revisión. Un SKU `pending` no lleva
+  `source_url` (lo valida el modelo), y nunca hay `reviewed` sin `source_url`.
+- `titles.yaml` es **el único fichero de títulos**: lo llena `add_titles` desde `igdb_catalog.yaml` (sin red;
+  la única llamada a IGDB es `download_igdb_catalog`, que ya descarta DLC, packs, bundles y expansiones).
+  `name` y `publisher` vienen del catálogo, y `publisher` es `null` si IGDB no marca ninguno. A mano (o al
+  investigar) solo se toca `status`: `new` (del catálogo, sin investigar), `pending` (investigado sin poder
+  confirmar la edición ni encontrar fuente) o `reviewed` (confirmado que el `igdb_id` es la edición de la
+  caja y que nombre y publisher son correctos). Al investigar un juego, si se confirma su edición, el título
+  pasa a `reviewed`. Si `name`, `publisher` o `igdb_id` quedan mal por un cambio en IGDB, se corrigen a mano
+  directamente en `titles.yaml` (no hay un status para esto: es un dato de identidad del título, no una
+  evidencia por comprobar). La web (`build_site`) publica los títulos `reviewed` que tengan al menos un SKU
+  no-`new`, y de ellos los SKUs que no sean `new`. La web no muestra marcas de verificación ni la fecha de
+  comprobación.
+- El `title_id` lo genera `add_titles` como slug del nombre. Se puede corregir mientras el título esté `new` y
+  sin ningún SKU; en cuanto un SKU lo referencia, no se cambia.
+- `physical_release.yaml` guarda si un juego llegó a tener edición en caja, con su fuente: es lo que respalda
+  un "solo digital". Quién lo ha mirado y quién no lo dice el `status` del título, no este fichero. Un juego
+  `reviewed` confirmado sin caja **se publica** como "sin edición física" con su fuente, así que investigar un
+  "no" también produce web.
+- En `skus.yaml` se escriben todas las claves; lo desconocido va como `null` explícito (`validate_data` avisa
+  si falta alguna).
 - En los comentarios del YAML, cada dato lleva `(leída)`, `(listado)` o `(API)`, con la cita que lo respalda.
-- Lo propuesto por Claude va bajo una cabecera "PROPUESTOS ... PENDIENTES DE REVISIÓN".
+- Para investigar el formato de un juego: skill `investigar-juego` (enruta por publisher y región).
+- Qué queda por hacer: `uv run python -m scripts.next_work`.
 
 ## Herramientas
 

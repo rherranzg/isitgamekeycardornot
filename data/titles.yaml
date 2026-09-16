@@ -1,7 +1,8 @@
-# Generado por scripts/import_titles.py a partir de title_seeds.yaml. A mano solo se edita status:
-#   pending  = importado de IGDB y aún sin comprobar (lo pone import_titles)
-#   reviewed = datos comprobados a mano
-#   refresh  = volver a importarlo de IGDB en el próximo import_titles, que lo deja en pending
+# Juegos de Switch 2 conocidos. Los añade scripts/add_titles.py desde data/igdb_catalog.yaml.
+# name y publisher vienen de IGDB; a mano solo se edita status:
+#   new      = del catálogo y sin investigar (lo pone add_titles); no sale en la web
+#   pending  = investigado sin confirmar la edición de la caja ni encontrar fuente
+#   reviewed = investigado y comprobado; sale en la web si tiene algún SKU no-new
 - title_id: mario-kart-world
   igdb_id: 338067
   name: Mario Kart World
@@ -31,7 +32,7 @@
   igdb_id: 338083
   name: 'Bravely Default: Flying Fairy - HD Remaster'
   publisher: Square Enix
-  status: pending
+  status: reviewed
 - title_id: elden-ring-tarnished-edition
   igdb_id: 338079
   name: 'Elden Ring: Tarnished Edition'
@@ -46,7 +47,7 @@
   igdb_id: 338082
   name: 'Hitman World of Assassination: Signature Edition'
   publisher: IO Interactive
-  status: pending
+  status: reviewed
 - title_id: split-fiction
   igdb_id: 325594
   name: Split Fiction
@@ -61,7 +62,7 @@
   igdb_id: 298526
   name: 'Kingdom Come: Deliverance II'
   publisher: Deep Silver
-  status: reviewed
+  status: pending
 - title_id: 007-first-light
   igdb_id: 141114
   name: 007 First Light
@@ -71,7 +72,7 @@
   igdb_id: 218282
   name: 1000xResist
   publisher: Fellow Traveller
-  status: pending
+  status: reviewed
 - title_id: 1001-threads-of-mizan
   igdb_id: 414985
   name: 1001 Threads of Mizan
@@ -81,7 +82,7 @@
   igdb_id: 380696
   name: 'A-Train: All Aboard! Tourism - Nintendo Switch 2 Edition'
   publisher: Artdink
-  status: pending
+  status: reviewed
 - title_id: absolum
   igdb_id: 334239
   name: Absolum
@@ -96,7 +97,7 @@
   igdb_id: 340723
   name: AFL 26
   publisher: Nacon
-  status: pending
+  status: reviewed
 - title_id: after-the-wane
   igdb_id: 387356
   name: After the Wane
@@ -116,9 +117,59 @@
   igdb_id: 369701
   name: Akiba Lost
   publisher: IzanagiGames
-  status: pending
+  status: reviewed
 - title_id: alien-isolation-2
   igdb_id: 319082
   name: 'Alien: Isolation 2'
   publisher: Sega
+  status: pending
+- title_id: akiba-lost-digital-deluxe-edition
+  igdb_id: 418328
+  name: 'Akiba Lost: Digital Deluxe Edition'
+  publisher: null
+  status: pending
+- title_id: alien-rogue-incursion-evolved-edition
+  igdb_id: 342923
+  name: 'Alien: Rogue Incursion Evolved Edition'
+  publisher: Survios
   status: reviewed
+- title_id: all-hands-on-deck
+  igdb_id: 216465
+  name: All Hands on Deck
+  publisher: Studio Mantasaur
+  status: new
+- title_id: amanda-the-adventurer-3
+  igdb_id: 341815
+  name: Amanda the Adventurer 3
+  publisher: DreadXP
+  status: new
+- title_id: amnesia-rebirth
+  igdb_id: 131785
+  name: 'Amnesia: Rebirth'
+  publisher: Frictional Games
+  status: new
+- title_id: and-roger
+  igdb_id: 324784
+  name: And Roger
+  publisher: KODANSHA
+  status: new
+- title_id: animal-crossing-new-horizons-nintendo-switch-2-edition
+  igdb_id: 375733
+  name: 'Animal Crossing: New Horizons - Nintendo Switch 2 Edition'
+  publisher: Nintendo
+  status: new
+- title_id: animula-nook
+  igdb_id: 369856
+  name: Animula Nook
+  publisher: null
+  status: new
+- title_id: anomalith
+  igdb_id: 402530
+  name: Anomalith
+  publisher: FuRyu
+  status: new
+- title_id: another-eden-begins
+  igdb_id: 388448
+  name: Another Eden Begins
+  publisher: Wright Flyer Studios
+  status: new

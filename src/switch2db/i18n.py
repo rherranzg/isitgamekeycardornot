@@ -1,4 +1,4 @@
-from switch2db.models import Edition, Evidence, Format
+from switch2db.models import Edition, Evidence, Format, Region
 
 LANGUAGES: tuple[str, ...] = ("es", "en")
 
@@ -13,6 +13,14 @@ EDITION_LABELS: dict[Edition, dict[str, str]] = {
     Edition.STANDARD: {"es": "Estándar", "en": "Standard"},
     Edition.DELUXE: {"es": "Deluxe", "en": "Deluxe"},
     Edition.COLLECTORS: {"es": "Coleccionista", "en": "Collector's"},
+}
+
+REGION_LABELS: dict[Region, dict[str, str]] = {
+    Region.EU: {"es": "Europa (EU)", "en": "Europe (EU)"},
+    Region.NA: {"es": "Norteamérica (NA)", "en": "North America (NA)"},
+    Region.JP: {"es": "Japón (JP)", "en": "Japan (JP)"},
+    Region.KR: {"es": "Corea (KR)", "en": "Korea (KR)"},
+    Region.ASIA: {"es": "Asia: HK/TW/SEA (ASIA)", "en": "Asia: HK/TW/SEA (ASIA)"},
 }
 
 EVIDENCE_LABELS: dict[Evidence, dict[str, str]] = {
@@ -37,7 +45,6 @@ UI_STRINGS: dict[str, dict[str, str]] = {
     "stat_titles": {"es": "juegos catalogados", "en": "games catalogued"},
     "stat_skus": {"es": "SKUs regionales documentados", "en": "regional SKUs documented"},
     "divergence_flag": {"es": "El formato cambia según la región", "en": "Format differs by region"},
-    "no_data": {"es": "Todavía sin SKUs documentados.", "en": "No SKUs documented yet."},
     "col_region": {"es": "Región", "en": "Region"},
     "col_edition": {"es": "Edición", "en": "Edition"},
     "col_format": {"es": "Formato", "en": "Format"},
@@ -47,11 +54,17 @@ UI_STRINGS: dict[str, dict[str, str]] = {
     "cart_suffix": {"es": "GB (cartucho)", "en": "GB (cartridge)"},
     "download_suffix": {"es": "GB (descarga)", "en": "GB (download)"},
     "footer": {"es": "Generado el {date}.", "en": "Generated on {date}."},
+    "footer_repo": {"es": "Código y datos en GitHub", "en": "Code and data on GitHub"},
+    "footer_license": {"es": "Datos bajo licencia ODbL 1.0", "en": "Data licensed under ODbL 1.0"},
+    "footer_report": {"es": "Reportar una corrección", "en": "Report a correction"},
     "language_label": {"es": "Idioma", "en": "Language"},
-    "search_placeholder": {"es": "Buscar juego...", "en": "Search game..."},
-    "sort_by_label": {"es": "Ordenar por", "en": "Sort by"},
-    "sort_name": {"es": "Nombre", "en": "Name"},
+    "search_placeholder": {"es": "Buscar juego o publisher...", "en": "Search game or publisher..."},
     "no_results": {"es": "No se encontraron juegos.", "en": "No games found."},
+    "no_box_filter": {"es": "Sin edición física", "en": "No physical edition"},
+    "no_box_note": {
+        "es": "Este juego no salió en caja en ninguna región.",
+        "en": "This game never got a boxed release in any region.",
+    },
 }
 
 SHOWING_COUNT_TEMPLATES: dict[str, str] = {

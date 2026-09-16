@@ -8,28 +8,12 @@ from switch2db.igdb_client import (
     IGDB_MAX_LIMIT,
     IGDB_PLATFORMS_URL,
     REQUEST_TIMEOUT_SECONDS,
-    build_games_query,
     build_platform_games_query,
     build_platform_query,
-    fetch_games_by_ids,
     fetch_platform_games,
     find_platform_id,
     post_query,
 )
-
-
-def test_build_games_query_success() -> None:
-    assert build_games_query([1, 2]) == f"fields {GAME_FIELDS}; where id = (1,2); limit 2;"
-
-
-def test_build_games_query_raises_without_ids() -> None:
-    with pytest.raises(ValueError, match="No hay igdb_ids"):
-        build_games_query([])
-
-
-def test_build_games_query_raises_when_exceeding_igdb_limit() -> None:
-    with pytest.raises(ValueError, match="como máximo"):
-        build_games_query(list(range(1, IGDB_MAX_LIMIT + 2)))
 
 
 def test_build_platform_query_success() -> None:
@@ -63,15 +47,6 @@ def test_post_query_raises_on_http_error(mocker: MockerFixture) -> None:
 
     with pytest.raises(requests.HTTPError):
         post_query(IGDB_GAMES_URL, "fields name;", "token", "client-id")
-
-
-def test_fetch_games_by_ids_success(mocker: MockerFixture, igdb_game_payload: dict[str, object]) -> None:
-    mock_post_query = mocker.patch("switch2db.igdb_client.post_query", return_value=[igdb_game_payload])
-
-    games = fetch_games_by_ids([12345], "token", "client-id")
-
-    assert [game.id for game in games] == [12345]
-    mock_post_query.assert_called_once_with(IGDB_GAMES_URL, build_games_query([12345]), "token", "client-id")
 
 
 def test_find_platform_id_success(mocker: MockerFixture) -> None:

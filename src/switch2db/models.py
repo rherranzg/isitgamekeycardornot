@@ -2,10 +2,11 @@ from datetime import date
 from enum import StrEnum
 from typing import Self
 
-from pydantic import BaseModel, ConfigDict, Field, HttpUrl, model_validator
+from pydantic import BaseModel, ConfigDict, Field, HttpUrl, field_validator, model_validator
 
 SLUG_PATTERN = r"^[a-z0-9]+(?:-[a-z0-9]+)*$"
 GTIN_PATTERN = r"^\d{12,13}$"
+GTIN13_LENGTH = 13
 
 
 class Region(StrEnum):
@@ -45,34 +46,68 @@ class Evidence(StrEnum):
     UNCONFIRMED = "unconfirmed"
 
 
+class SkuStatus(StrEnum):
+    """Estado de revisión de un SKU. Solo `new` no se publica en la web."""
+
+    NEW = "new"  # borrador que nadie ha buscado todavía: no sale en la web
+    PENDING = "pending"  # buscado sin encontrar fuente: sale como formato desconocido, falta buscar a fondo
+    REVIEWED = "reviewed"  # comprobado abriendo la fuente: sale con su fuente
+    REFRESH = "refresh"  # tiene fuente, pero hay que volver a buscar evidencias en la web; sigue publicado
+
+
 class TitleStatus(StrEnum):
-    """Estado de revisión de los datos de un título importados de IGDB."""
+    """Estado de investigación de un título. Solo `reviewed` se publica en la web."""
 
-    PENDING = "pending"  # importado de IGDB y aún sin comprobar a mano
-    REVIEWED = "reviewed"  # comprobado a mano
-    REFRESH = "refresh"  # marcado a mano para volver a importarlo de IGDB
+    NEW = "new"  # sacado del catálogo de IGDB y sin investigar: no sale en la web
+    PENDING = "pending"  # investigado sin poder confirmar la edición de la caja ni encontrar fuente
+    REVIEWED = "reviewed"  # investigado: el igdb_id es la edición de la caja y el resto está comprobado
 
 
-class TitleSeed(BaseModel):
-    """Juego a importar de IGDB, con su igdb_id fijado a mano."""
+class Title(BaseModel):
+    """Juego de Switch 2 con sus metadatos de IGDB y el estado de su investigación."""
 
     model_config = ConfigDict(extra="forbid")
 
     title_id: str = Field(..., pattern=SLUG_PATTERN, description="Slug estable propio del juego")
-    igdb_id: int = Field(..., gt=0, description="Id del juego en IGDB, comprobado a mano")
-
-
-class Title(TitleSeed):
-    """Juego con los metadatos genéricos importados de IGDB."""
-
+    igdb_id: int = Field(..., gt=0, description="Id del juego en IGDB")
     name: str = Field(..., min_length=1, description="Nombre del juego según IGDB")
-    publisher: str = Field(..., min_length=1, description="Publisher global según IGDB")
-    status: TitleStatus = Field(..., description="Estado de revisión de los datos importados de IGDB")
+    publisher: str | None = Field(
+        None, min_length=1, description="Publisher global según IGDB; null si IGDB no marca ninguno"
+    )
+    status: TitleStatus = Field(..., description="Estado de investigación del título")
+
+
+class PhysicalRelease(BaseModel):
+    """Resultado de investigar si un juego llegó a tener edición en caja en alguna región."""
+
+    model_config = ConfigDict(extra="forbid")
+
+    title_id: str = Field(..., pattern=SLUG_PATTERN, description="Juego investigado")
+    has_physical_release: bool = Field(
+        ..., description="True si existe edición en caja en alguna región; False si es solo digital"
+    )
+    evidence: Evidence = Field(..., description="Nivel de evidencia de lo encontrado")
+    source_url: HttpUrl | None = Field(None, description="Fuente que lo respalda")
+    checked_at: date = Field(..., description="Fecha en que se comprobó la fuente")
+
+    @model_validator(mode="after")
+    def check_source_url_when_evidence_is_confirmed(self) -> Self:
+        """Falla si se afirma algo sin fuente; unconfirmed es 'buscado y no encontrado', y no la necesita."""
+        if self.evidence != Evidence.UNCONFIRMED and self.source_url is None:
+            raise ValueError(f"source_url es obligatorio cuando evidence es '{self.evidence}'")
+        return self
 
 
 def build_sku_id(region: Region, title_id: str, edition: Edition) -> str:
     """Construye el sku_id canónico a partir de región, título y edición."""
     return f"{region.lower()}-{title_id}-{edition}"
+
+
+def has_valid_gtin_check_digit(code: str) -> bool:
+    """Comprueba el dígito de control de un EAN-13 o UPC-A (este, como EAN-13 con un 0 delante)."""
+    digits = [int(digit) for digit in code.zfill(GTIN13_LENGTH)]
+    weighted_sum = sum(digit * (3 if position % 2 else 1) for position, digit in enumerate(digits[:-1]))
+    return (10 - weighted_sum % 10) % 10 == digits[-1]
 
 
 class Sku(BaseModel):
@@ -99,7 +134,18 @@ class Sku(BaseModel):
     )
     evidence: Evidence = Field(..., description="Nivel de evidencia del formato")
     source_url: HttpUrl | None = Field(None, description="Fuente que respalda el formato")
-    verified_at: date = Field(..., description="Última fecha en que se comprobó la fuente")
+    verified_at: date = Field(
+        ..., description="Última fecha en que se comprobó la fuente; en los `pending`, la de la búsqueda"
+    )
+    status: SkuStatus = Field(..., description="Estado de revisión del SKU; solo `new` no se publica")
+
+    @field_validator("ean")
+    @classmethod
+    def check_ean_check_digit(cls, ean: str | None) -> str | None:
+        """Falla si el código de barras no cuadra con su dígito de control (suele ser una errata)."""
+        if ean is not None and not has_valid_gtin_check_digit(ean):
+            raise ValueError(f"ean '{ean}' tiene un dígito de control incorrecto")
+        return ean
 
     @model_validator(mode="after")
     def check_sku_id_is_canonical(self) -> Self:
@@ -114,4 +160,11 @@ class Sku(BaseModel):
         """Falla si el formato está afirmado pero no hay source_url que lo respalde."""
         if self.format != Format.UNKNOWN and self.source_url is None:
             raise ValueError(f"source_url es obligatorio cuando format es '{self.format}'")
+        return self
+
+    @model_validator(mode="after")
+    def check_pending_has_no_source(self) -> Self:
+        """Falla si un SKU `pending` trae fuente: `pending` es haberla buscado sin encontrarla."""
+        if self.status == SkuStatus.PENDING and self.source_url is not None:
+            raise ValueError("status 'pending' es para SKUs sin fuente; con source_url va 'reviewed'")
         return self
