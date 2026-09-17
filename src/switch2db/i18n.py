@@ -62,6 +62,7 @@ UI_STRINGS: dict[str, dict[str, str]] = {
     "no_results": {"es": "No se encontraron juegos.", "en": "No games found."},
     "no_data": {"es": "Todavía sin SKUs documentados.", "en": "No SKUs documented yet."},
     "no_box_filter": {"es": "Solo digital", "en": "Digital only"},
+    "no_skus_filter": {"es": "Sin SKUs todavía", "en": "No SKUs yet"},
     "no_box_note": {
         "es": "Solo digital",
         "en": "Digital only",

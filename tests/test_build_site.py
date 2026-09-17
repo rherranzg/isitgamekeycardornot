@@ -46,6 +46,8 @@ def test_main_publishes_every_title_regardless_of_status(
     assert "Empty Game" in html
     assert "Pending Game" in html
     assert "New Game" in html
+    assert 'data-no-skus="true"' in html
+    assert 'value="no_skus"' in html
 
 
 def test_main_escapes_html_in_title_names(

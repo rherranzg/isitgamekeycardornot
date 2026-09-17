@@ -20,6 +20,10 @@ LocalizedText = dict[str, str]
 # formato del enum, pero el visitante los busca en el mismo sitio que los demás.
 NO_BOX_FILTER_VALUE = "no_box"
 
+# Igual que NO_BOX_FILTER_VALUE, pero para los títulos que todavía no tienen ningún SKU documentado
+# (status new/pending sin investigar).
+NO_SKUS_FILTER_VALUE = "no_skus"
+
 REPO_URL = "https://github.com/rherranzg/isitgamekeycardornot"
 DATA_LICENSE_URL = f"{REPO_URL}/blob/main/data/LICENSE"
 REPORT_ISSUE_URL = f"{REPO_URL}/issues/new"
@@ -39,6 +43,7 @@ EDITION_FILTER_LABELS: dict[str, LocalizedText] = {
 FORMAT_FILTER_LABELS: dict[str, LocalizedText] = {
     **{format_.value: FORMAT_LABELS[format_] for format_ in Format},
     NO_BOX_FILTER_VALUE: UI_STRINGS["no_box_filter"],
+    NO_SKUS_FILTER_VALUE: UI_STRINGS["no_skus_filter"],
 }
 
 

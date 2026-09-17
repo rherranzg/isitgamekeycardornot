@@ -2360,3 +2360,638 @@
   source_url: "https://www.play-asia.com/en/dynasty-warriors-3-complete-edition-remastered-multi-language/13/70j4dz"
   verified_at: "2026-09-17"
   status: "reviewed"
+
+# Dynasty Warriors: Origins: game-key card en EU, NA y JP.
+- sku_id: "eu-dynasty-warriors-origins-standard"
+  title_id: "dynasty-warriors-origins"
+  region: "EU"
+  edition: "standard"
+  distributor: "Koei Tecmo"
+  release_date: "2026-01-22"
+  format: "game_key_card"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) Nintendo Life: "Physical Release | Game-Key Card | Release Date | Nintendo Switch 2 | 22nd Jan 2026 — £54.99"
+  source_url: "https://www.nintendolife.com/games/nintendo-switch-2/dynasty-warriors-origins"
+  verified_at: "2026-09-17"
+  status: "reviewed"
+- sku_id: "na-dynasty-warriors-origins-standard"
+  title_id: "dynasty-warriors-origins"
+  region: "NA"
+  edition: "standard"
+  distributor: "Koei Tecmo"
+  release_date: "2026-01-22"
+  format: "game_key_card"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) Nintendo Life: "Physical Release | Game-Key Card | Release Date | Nintendo Switch 2 | 22nd Jan 2026 — $59.99"
+  source_url: "https://www.nintendolife.com/games/nintendo-switch-2/dynasty-warriors-origins"
+  verified_at: "2026-09-17"
+  status: "reviewed"
+- sku_id: "jp-dynasty-warriors-origins-standard"
+  title_id: "dynasty-warriors-origins"
+  region: "JP"
+  edition: "standard"
+  distributor: "Koei Tecmo"
+  release_date: null
+  format: "game_key_card"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "retailer_listing"  # (listado) Mercari: "Switch2 真・三國無双 ORIGINS キーカード版"
+  source_url: "https://jp.mercari.com/item/m24466177745"
+  verified_at: "2026-09-17"
+  status: "reviewed"
+
+# EA Sports FC 26: game-key card en EU y NA.
+- sku_id: "eu-ea-sports-fc-26-standard"
+  title_id: "ea-sports-fc-26"
+  region: "EU"
+  edition: "standard"
+  distributor: "Electronic Arts"
+  release_date: "2025-09-26"
+  format: "game_key_card"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) Nintendo Life: "Physical Release | Game-Key Card | Release Date | Nintendo Switch 2 | 26th Sep 2025 — £59.99"
+  source_url: "https://www.nintendolife.com/games/nintendo-switch-2/ea-sports-fc-26"
+  verified_at: "2026-09-17"
+  status: "reviewed"
+- sku_id: "na-ea-sports-fc-26-standard"
+  title_id: "ea-sports-fc-26"
+  region: "NA"
+  edition: "standard"
+  distributor: "Electronic Arts"
+  release_date: "2025-09-26"
+  format: "game_key_card"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) Nintendo Life: "Physical Release | Game-Key Card | Release Date | Nintendo Switch 2 | 26th Sep 2025 — $69.99"
+  source_url: "https://www.nintendolife.com/games/nintendo-switch-2/ea-sports-fc-26"
+  verified_at: "2026-09-17"
+  status: "reviewed"
+
+# EA Sports FC 27: game-key card en EU y NA (aún sin lanzar, anunciado para el 25/09/2026).
+- sku_id: "eu-ea-sports-fc-27-standard"
+  title_id: "ea-sports-fc-27"
+  region: "EU"
+  edition: "standard"
+  distributor: "Electronic Arts"
+  release_date: "2026-09-25"
+  format: "game_key_card"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) Nintendo Life: "Physical Release | Game-Key Card | Release Date | Nintendo Switch 2 | 25th Sep 2026"
+  source_url: "https://www.nintendolife.com/games/nintendo-switch-2/ea-sports-fc-27"
+  verified_at: "2026-09-17"
+  status: "reviewed"
+- sku_id: "na-ea-sports-fc-27-standard"
+  title_id: "ea-sports-fc-27"
+  region: "NA"
+  edition: "standard"
+  distributor: "Electronic Arts"
+  release_date: "2026-09-25"
+  format: "game_key_card"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) Nintendo Life: "Physical Release | Game-Key Card | Release Date | Nintendo Switch 2 | 25th Sep 2026 — $69.99"
+  source_url: "https://www.nintendolife.com/games/nintendo-switch-2/ea-sports-fc-27"
+  verified_at: "2026-09-17"
+  status: "reviewed"
+
+# Earth Defense Force 5: game-key card, confirmado por la web oficial para todas las regiones.
+- sku_id: "jp-earth-defense-force-5-standard"
+  title_id: "earth-defense-force-5"
+  region: "JP"
+  edition: "standard"
+  distributor: null
+  release_date: null
+  format: "game_key_card"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "official"  # (leída) "The Nintendo Switch 2 physical edition is distributed as a Game-Key Card."
+  source_url: "https://www.cloudedleopardent.com/game/edf_switch2/en/edf5/"
+  verified_at: "2026-09-17"
+  status: "reviewed"
+- sku_id: "eu-earth-defense-force-5-standard"
+  title_id: "earth-defense-force-5"
+  region: "EU"
+  edition: "standard"
+  distributor: null
+  release_date: null
+  format: "game_key_card"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "official"  # (leída) "The Nintendo Switch 2 physical edition is distributed as a Game-Key Card."
+  source_url: "https://www.cloudedleopardent.com/game/edf_switch2/en/edf5/"
+  verified_at: "2026-09-17"
+  status: "reviewed"
+- sku_id: "na-earth-defense-force-5-standard"
+  title_id: "earth-defense-force-5"
+  region: "NA"
+  edition: "standard"
+  distributor: null
+  release_date: null
+  format: "game_key_card"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "official"  # (leída) "The Nintendo Switch 2 physical edition is distributed as a Game-Key Card."
+  source_url: "https://www.cloudedleopardent.com/game/edf_switch2/en/edf5/"
+  verified_at: "2026-09-17"
+  status: "reviewed"
+- sku_id: "kr-earth-defense-force-5-standard"
+  title_id: "earth-defense-force-5"
+  region: "KR"
+  edition: "standard"
+  distributor: null
+  release_date: null
+  format: "game_key_card"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "official"  # (leída) "The Nintendo Switch 2 physical edition is distributed as a Game-Key Card." (Package Edition: 44,400 KRW)
+  source_url: "https://www.cloudedleopardent.com/game/edf_switch2/en/edf5/"
+  verified_at: "2026-09-17"
+  status: "reviewed"
+- sku_id: "asia-earth-defense-force-5-standard"
+  title_id: "earth-defense-force-5"
+  region: "ASIA"
+  edition: "standard"
+  distributor: null
+  release_date: null
+  format: "game_key_card"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "official"  # (leída) "The Nintendo Switch 2 physical edition is distributed as a Game-Key Card." (Package Edition: 238 HKD / 990 NTD)
+  source_url: "https://www.cloudedleopardent.com/game/edf_switch2/en/edf5/"
+  verified_at: "2026-09-17"
+  status: "reviewed"
+
+# eFootball Kick-Off!: game-key card solo en JP; el resto de regiones es digital-only.
+- sku_id: "jp-efootball-kick-off-standard"
+  title_id: "efootball-kick-off"
+  region: "JP"
+  edition: "standard"
+  distributor: "Konami"
+  release_date: "2026-06-03"
+  format: "game_key_card"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) Nintendo Everything: "will release digitally in all regions, with a game key card release coming to Japan"
+  source_url: "https://nintendoeverything.com/konami-bringing-efootball-kick-off-to-nintendo-switch-2/"
+  verified_at: "2026-09-17"
+  status: "reviewed"
+
+# Fallout 4: Anniversary Edition: code in box en EU y NA.
+- sku_id: "eu-fallout-4-anniversary-edition-standard"
+  title_id: "fallout-4-anniversary-edition"
+  region: "EU"
+  edition: "standard"
+  distributor: "Bethesda Softworks"
+  release_date: "2026-02-24"
+  format: "code_in_box"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: true
+  ean: null
+  evidence: "press_report"  # (leída) Nintendo Life: "Physical Release | Code In Box | Release Date | Nintendo Switch 2 | 24th Feb 2026 — £52.99"
+  source_url: "https://www.nintendolife.com/games/nintendo-switch-2/fallout-4-anniversary-edition"
+  verified_at: "2026-09-17"
+  status: "reviewed"
+- sku_id: "na-fallout-4-anniversary-edition-standard"
+  title_id: "fallout-4-anniversary-edition"
+  region: "NA"
+  edition: "standard"
+  distributor: "Bethesda Softworks"
+  release_date: "2026-02-24"
+  format: "code_in_box"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: true
+  ean: null
+  evidence: "press_report"  # (leída) Nintendo Life: "Physical Release | Code In Box | Release Date | Nintendo Switch 2 | 24th Feb 2026 — $59.99"
+  source_url: "https://www.nintendolife.com/games/nintendo-switch-2/fallout-4-anniversary-edition"
+  verified_at: "2026-09-17"
+  status: "reviewed"
+
+# Eternal Anima: cartucho completo en NA (aún sin lanzar, anunciado para el 04/03/2027).
+- sku_id: "na-eternal-anima-standard"
+  title_id: "eternal-anima"
+  region: "NA"
+  edition: "standard"
+  distributor: "Marvelous USA"
+  release_date: "2027-03-04"
+  format: "full_cart"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) RPG Site: "The physical Switch 2 edition is a full release on cartridge, and not a Game-Key Card."
+  source_url: "https://www.rpgsite.net/news/21337-eternal-anima-release-date-switch-2-physical"
+  verified_at: "2026-09-17"
+  status: "reviewed"
+
+# Fantasy Life i: The Girl Who Steals Time: cartucho completo ("Standard Game Card") en EU, NA y JP.
+- sku_id: "eu-fantasy-life-i-the-girl-who-steals-time-standard"
+  title_id: "fantasy-life-i-the-girl-who-steals-time"
+  region: "EU"
+  edition: "standard"
+  distributor: "LEVEL-5"
+  release_date: "2025-06-05"
+  format: "full_cart"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) Nintendo Life: "Physical Release | Standard Game Card | ... 5th Jun 2025 — £52.03"
+  source_url: "https://www.nintendolife.com/games/nintendo-switch-2/fantasy-life-i-the-girl-who-steals-time-nintendo-switch-2-edition"
+  verified_at: "2026-09-17"
+  status: "reviewed"
+- sku_id: "na-fantasy-life-i-the-girl-who-steals-time-standard"
+  title_id: "fantasy-life-i-the-girl-who-steals-time"
+  region: "NA"
+  edition: "standard"
+  distributor: "LEVEL-5"
+  release_date: "2025-06-05"
+  format: "full_cart"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) Nintendo Life: "Physical Release | Standard Game Card | ... 5th Jun 2025 — $62.58"
+  source_url: "https://www.nintendolife.com/games/nintendo-switch-2/fantasy-life-i-the-girl-who-steals-time-nintendo-switch-2-edition"
+  verified_at: "2026-09-17"
+  status: "reviewed"
+- sku_id: "jp-fantasy-life-i-the-girl-who-steals-time-standard"
+  title_id: "fantasy-life-i-the-girl-who-steals-time"
+  region: "JP"
+  edition: "standard"
+  distributor: "LEVEL-5"
+  release_date: null
+  format: "full_cart"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) Nintendo Life: "the game is apparently 'on the cart' ('like Rune Factory: Guardians of Azuma')"
+  source_url: "https://www.nintendolife.com/news/2025/07/fantasy-life-i-switch-2-physical-release-and-photo-mode-update-announced"
+  verified_at: "2026-09-17"
+  status: "reviewed"
+
+# Farming Simulator: Signature Edition: game-key card en EU y NA.
+- sku_id: "eu-farming-simulator-signature-edition-standard"
+  title_id: "farming-simulator-signature-edition"
+  region: "EU"
+  edition: "standard"
+  distributor: "Giants Software"
+  release_date: "2025-12-09"
+  format: "game_key_card"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) Nintendo Life: "Physical Release | Game-Key Card | ... 9th Dec 2025 — £52.99"
+  source_url: "https://www.nintendolife.com/games/nintendo-switch-2/farming-simulator-signature-edition"
+  verified_at: "2026-09-17"
+  status: "reviewed"
+- sku_id: "na-farming-simulator-signature-edition-standard"
+  title_id: "farming-simulator-signature-edition"
+  region: "NA"
+  edition: "standard"
+  distributor: "Giants Software"
+  release_date: "2025-12-09"
+  format: "game_key_card"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) Nintendo Life: "Physical Release | Game-Key Card | ... 9th Dec 2025 — $59.99"
+  source_url: "https://www.nintendolife.com/games/nintendo-switch-2/farming-simulator-signature-edition"
+  verified_at: "2026-09-17"
+  status: "reviewed"
+
+# Fatal Frame II: Crimson Butterfly Remake: game-key card, "disponible mundial" (EU, NA, JP).
+- sku_id: "eu-fatal-frame-ii-crimson-butterfly-remake-standard"
+  title_id: "fatal-frame-ii-crimson-butterfly-remake"
+  region: "EU"
+  edition: "standard"
+  distributor: "Koei Tecmo"
+  release_date: "2026-03-12"
+  format: "game_key_card"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) Gematsu: "A physical edition will be available for consoles worldwide, with the Switch 2 version shipping on a game-key card."
+  source_url: "https://www.gematsu.com/2025/11/fatal-frame-ii-crimson-butterfly-remake-launches-march-12-2026"
+  verified_at: "2026-09-17"
+  status: "reviewed"
+- sku_id: "na-fatal-frame-ii-crimson-butterfly-remake-standard"
+  title_id: "fatal-frame-ii-crimson-butterfly-remake"
+  region: "NA"
+  edition: "standard"
+  distributor: "Koei Tecmo"
+  release_date: "2026-03-12"
+  format: "game_key_card"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) Gematsu: "A physical edition will be available for consoles worldwide, with the Switch 2 version shipping on a game-key card."
+  source_url: "https://www.gematsu.com/2025/11/fatal-frame-ii-crimson-butterfly-remake-launches-march-12-2026"
+  verified_at: "2026-09-17"
+  status: "reviewed"
+- sku_id: "jp-fatal-frame-ii-crimson-butterfly-remake-standard"
+  title_id: "fatal-frame-ii-crimson-butterfly-remake"
+  region: "JP"
+  edition: "standard"
+  distributor: "Koei Tecmo"
+  release_date: "2026-03-12"
+  format: "game_key_card"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) Gematsu: "A physical edition will be available for consoles worldwide, with the Switch 2 version shipping on a game-key card."
+  source_url: "https://www.gematsu.com/2025/11/fatal-frame-ii-crimson-butterfly-remake-launches-march-12-2026"
+  verified_at: "2026-09-17"
+  status: "reviewed"
+
+# Fate/Extra Record: cartucho completo en NA, game-key card en EU y JP (aún sin lanzar, 28/01/2027).
+- sku_id: "na-fate-extra-record-standard"
+  title_id: "fate-extra-record"
+  region: "NA"
+  edition: "standard"
+  distributor: "XSEED Games"
+  release_date: "2027-01-28"
+  format: "full_cart"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) RPG Site: "XSEED Games also confirmed the physical release plans and it will get a full game on cart Switch 2 release for North America."
+  source_url: "https://www.rpgsite.net/news/21288-fate-extra-record-release-date-switch-2-physical-edition-ps5-physical"
+  verified_at: "2026-09-17"
+  status: "reviewed"
+- sku_id: "eu-fate-extra-record-standard"
+  title_id: "fate-extra-record"
+  region: "EU"
+  edition: "standard"
+  distributor: "Aniplex"
+  release_date: "2027-01-28"
+  format: "game_key_card"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) RPG Site: "The JP and EU physical releases on Switch 2 will be Game-Key Cards."
+  source_url: "https://www.rpgsite.net/news/21288-fate-extra-record-release-date-switch-2-physical-edition-ps5-physical"
+  verified_at: "2026-09-17"
+  status: "reviewed"
+- sku_id: "jp-fate-extra-record-standard"
+  title_id: "fate-extra-record"
+  region: "JP"
+  edition: "standard"
+  distributor: "Aniplex"
+  release_date: "2027-01-28"
+  format: "game_key_card"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) RPG Site: "The JP and EU physical releases on Switch 2 will be Game-Key Cards."
+  source_url: "https://www.rpgsite.net/news/21288-fate-extra-record-release-date-switch-2-physical-edition-ps5-physical"
+  verified_at: "2026-09-17"
+  status: "reviewed"
+
+# Final Fantasy VII Rebirth: game-key card en EU y NA.
+- sku_id: "eu-final-fantasy-vii-rebirth-standard"
+  title_id: "final-fantasy-vii-rebirth"
+  region: "EU"
+  edition: "standard"
+  distributor: "Square Enix"
+  release_date: "2026-06-03"
+  format: "game_key_card"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) Nintendo Life: "Physical Release | Game-Key Card | ... 3rd Jun 2026 — £49.99"
+  source_url: "https://www.nintendolife.com/games/nintendo-switch-2/final-fantasy-vii-rebirth"
+  verified_at: "2026-09-17"
+  status: "reviewed"
+- sku_id: "na-final-fantasy-vii-rebirth-standard"
+  title_id: "final-fantasy-vii-rebirth"
+  region: "NA"
+  edition: "standard"
+  distributor: "Square Enix"
+  release_date: "2026-06-03"
+  format: "game_key_card"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) Nintendo Life: "Physical Release | Game-Key Card | ... 3rd Jun 2026 — $59.99"
+  source_url: "https://www.nintendolife.com/games/nintendo-switch-2/final-fantasy-vii-rebirth"
+  verified_at: "2026-09-17"
+  status: "reviewed"
+
+# Final Fantasy VII Remake (Intergrade): game-key card en EU y NA.
+- sku_id: "eu-final-fantasy-vii-remake-standard"
+  title_id: "final-fantasy-vii-remake"
+  region: "EU"
+  edition: "standard"
+  distributor: "Square Enix"
+  release_date: "2026-01-22"
+  format: "game_key_card"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) Nintendo Life: "Also Known As | Final Fantasy 7 Remake Intergrade | ... Physical Release | Game-Key Card | ... 22nd Jan 2026 — £39.99"
+  source_url: "https://www.nintendolife.com/games/nintendo-switch-2/final-fantasy-vii-remake-intergrade"
+  verified_at: "2026-09-17"
+  status: "reviewed"
+- sku_id: "na-final-fantasy-vii-remake-standard"
+  title_id: "final-fantasy-vii-remake"
+  region: "NA"
+  edition: "standard"
+  distributor: "Square Enix"
+  release_date: "2026-01-22"
+  format: "game_key_card"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) Nintendo Life: "Also Known As | Final Fantasy 7 Remake Intergrade | ... Physical Release | Game-Key Card | ... 22nd Jan 2026 — $59.99"
+  source_url: "https://www.nintendolife.com/games/nintendo-switch-2/final-fantasy-vii-remake-intergrade"
+  verified_at: "2026-09-17"
+  status: "reviewed"
+
+# Final Fantasy VII Revelation: game-key card en EU y NA (aún sin lanzar, 08/04/2027).
+- sku_id: "eu-final-fantasy-vii-revelation-standard"
+  title_id: "final-fantasy-vii-revelation"
+  region: "EU"
+  edition: "standard"
+  distributor: "Square Enix"
+  release_date: "2027-04-08"
+  format: "game_key_card"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) Nintendo Life: "Revelation will be a Game-Key Card release on Switch 2, with pre-orders now available for £69.99 / $69.99 / €79.99"
+  source_url: "https://www.nintendolife.com/news/2026/09/final-fantasy-vii-revelation-is-a-game-key-card-on-switch-2-and-its-no-wonder-with-that-file-size"
+  verified_at: "2026-09-17"
+  status: "reviewed"
+- sku_id: "na-final-fantasy-vii-revelation-standard"
+  title_id: "final-fantasy-vii-revelation"
+  region: "NA"
+  edition: "standard"
+  distributor: "Square Enix"
+  release_date: "2027-04-08"
+  format: "game_key_card"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) Nintendo Life: "Revelation will be a Game-Key Card release on Switch 2, with pre-orders now available for £69.99 / $69.99 / €79.99"
+  source_url: "https://www.nintendolife.com/news/2026/09/final-fantasy-vii-revelation-is-a-game-key-card-on-switch-2-and-its-no-wonder-with-that-file-size"
+  verified_at: "2026-09-17"
+  status: "reviewed"
+
+# Final Fantasy Resonance: game-key card en EU y NA (aún sin lanzar, 22/10/2026).
+- sku_id: "eu-final-fantasy-resonance-standard"
+  title_id: "final-fantasy-resonance"
+  region: "EU"
+  edition: "standard"
+  distributor: "Square Enix"
+  release_date: "2026-10-22"
+  format: "game_key_card"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) Nintendo Life: "Physical Release | Game-Key Card | ... 22nd Oct 2026 — £49.99"
+  source_url: "https://www.nintendolife.com/games/nintendo-switch-2/final_fantasy_resonance"
+  verified_at: "2026-09-17"
+  status: "reviewed"
+- sku_id: "na-final-fantasy-resonance-standard"
+  title_id: "final-fantasy-resonance"
+  region: "NA"
+  edition: "standard"
+  distributor: "Square Enix"
+  release_date: "2026-10-22"
+  format: "game_key_card"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) Nintendo Life: "Physical Release | Game-Key Card | ... 22nd Oct 2026 — $49.99"
+  source_url: "https://www.nintendolife.com/games/nintendo-switch-2/final_fantasy_resonance"
+  verified_at: "2026-09-17"
+  status: "reviewed"
+
+# Fire Emblem: Fortune's Weave: cartucho completo ("Standard Game Card") en EU y NA.
+- sku_id: "eu-fire-emblem-fortune-s-weave-standard"
+  title_id: "fire-emblem-fortune-s-weave"
+  region: "EU"
+  edition: "standard"
+  distributor: "Nintendo"
+  release_date: "2026-09-17"
+  format: "full_cart"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) Nintendo Life: "Physical Release | Standard Game Card | ... 17th Sep 2026 — £66.99"
+  source_url: "https://www.nintendolife.com/games/nintendo-switch-2/fire-emblem-fortunes-weave"
+  verified_at: "2026-09-17"
+  status: "reviewed"
+- sku_id: "na-fire-emblem-fortune-s-weave-standard"
+  title_id: "fire-emblem-fortune-s-weave"
+  region: "NA"
+  edition: "standard"
+  distributor: "Nintendo"
+  release_date: "2026-09-17"
+  format: "full_cart"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) Nintendo Life: "Physical Release | Standard Game Card | ... 17th Sep 2026 — $79.99"
+  source_url: "https://www.nintendolife.com/games/nintendo-switch-2/fire-emblem-fortunes-weave"
+  verified_at: "2026-09-17"
+  status: "reviewed"
+
+# Full Metal Schoolgirl: game-key card en JP y ASIA.
+- sku_id: "jp-full-metal-schoolgirl-standard"
+  title_id: "full-metal-schoolgirl"
+  region: "JP"
+  edition: "standard"
+  distributor: "D3 Publisher"
+  release_date: "2025-10-23"
+  format: "game_key_card"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) Gematsu: "In Japan, the standard edition will be available both physically and digitally for PlayStation 5 and Switch 2. The Switch 2 version will ship on a game-key card."
+  source_url: "https://www.gematsu.com/2025/07/d3-publisher-and-yukes-announce-action-shooter-full-metal-schoolgirl-for-ps5-switch-2-and-pc"
+  verified_at: "2026-09-17"
+  status: "reviewed"
+- sku_id: "asia-full-metal-schoolgirl-standard"
+  title_id: "full-metal-schoolgirl"
+  region: "ASIA"
+  edition: "standard"
+  distributor: "Clouded Leopard Entertainment"
+  release_date: "2025-10-23"
+  format: "game_key_card"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "retailer_listing"  # (listado) Japanzon: "D3 Publisher Full Metal Schoolgirl – Key Card Edition Nintendo Switch2"
+  source_url: "https://www.japanzon.com/en/game-switch-2/47523-full-metal-schoolgirl-nintendo-switch-key-card-edition-2-4527823999558.html"
+  verified_at: "2026-09-17"
+  status: "reviewed"
+
+- sku_id: "eu-eternal-anima-standard"
+  title_id: "eternal-anima"
+  region: "EU"
+  edition: "standard"
+  distributor: "Marvelous"
+  release_date: "2027-03-04"
+  format: "full_cart"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) RPG Site: "The physical Switch 2 edition is a full release on cartridge, and not a Game-Key Card."
+  source_url: "https://www.rpgsite.net/news/21337-eternal-anima-release-date-switch-2-physical"
+  verified_at: "2026-09-17"
+  status: "reviewed"

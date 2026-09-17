@@ -829,3 +829,128 @@
   evidence: "official"  # (leída) ficha oficial de Nintendo: "Version | Nintendo Switch 2 | Edition | Digital"
   source_url: "https://www.nintendo.com/us/store/products/dream-shogi-4k-switch-2/"
   checked_at: "2026-09-17"
+- title_id: "arcade-archives-2-karnov"
+  has_physical_release: false
+  evidence: "unconfirmed"
+  source_url: null
+  checked_at: "2026-09-17"
+- title_id: "dynasty-warriors-3-complete-edition-remastered-digital-deluxe-edition"
+  has_physical_release: false
+  evidence: "press_report"  # (leída) "Digital Deluxe Edition: 69.99 USD | Physical TREASURE BOX: 13,860.00 JPY" — la deluxe es solo digital, la caja es otra edición
+  source_url: "https://saiganak.com/news/smusou2-re-release-date-announcement/"
+  checked_at: "2026-09-17"
+- title_id: "dynasty-warriors-origins-digital-deluxe-edition"
+  has_physical_release: false
+  evidence: "official"  # (leída) ficha oficial de Nintendo: "Version | Nintendo Switch 2 | Select an edition | Digital -"
+  source_url: "https://www.nintendo.com/us/store/products/dynasty-warriors-origins-digital-deluxe-edition-switch-2/"
+  checked_at: "2026-09-17"
+- title_id: "dysplaced"
+  has_physical_release: false
+  evidence: "unconfirmed"
+  source_url: null
+  checked_at: "2026-09-17"
+- title_id: "ea-sports-fc-26-the-world-s-game-edition"
+  has_physical_release: false
+  evidence: "unconfirmed"
+  source_url: null
+  checked_at: "2026-09-17"
+- title_id: "ea-sports-fc-26-toty-edition"
+  has_physical_release: false
+  evidence: "unconfirmed"
+  source_url: null
+  checked_at: "2026-09-17"
+- title_id: "ea-sports-fc-26-ultimate-edition"
+  has_physical_release: false
+  evidence: "unconfirmed"
+  source_url: null
+  checked_at: "2026-09-17"
+- title_id: "elden-ring"
+  has_physical_release: false
+  evidence: "unconfirmed"  # solo existe caja de "Elden Ring: Tarnished Edition" (título separado); no hay ficha de Nintendo Life ni tienda para una edición base
+  source_url: null
+  checked_at: "2026-09-17"
+- title_id: "earth-defense-force-5-deluxe-edition"
+  has_physical_release: false
+  evidence: "official"  # (leída) web oficial: "Package Edition | Digital Standard Edition | Digital Deluxe Edition" — solo la Package Edition (título base) es física
+  source_url: "https://www.cloudedleopardent.com/game/edf_switch2/en/edf5/"
+  checked_at: "2026-09-17"
+- title_id: "fangtopia"
+  has_physical_release: false
+  evidence: "press_report"  # (leída) Nintendo Everything: "This one will be sold as a digital download."
+  source_url: "https://nintendoeverything.com/fangtopia-secures-nintendo-switch-2-release-date-new-trailer"
+  checked_at: "2026-09-17"
+- title_id: "escape-the-backrooms"
+  has_physical_release: false
+  evidence: "unconfirmed"
+  source_url: null
+  checked_at: "2026-09-17"
+- title_id: "exit-lab-15-rooms"
+  has_physical_release: false
+  evidence: "unconfirmed"
+  source_url: null
+  checked_at: "2026-09-17"
+- title_id: "fading-echo"
+  has_physical_release: false
+  evidence: "unconfirmed"
+  source_url: null
+  checked_at: "2026-09-17"
+- title_id: "factorio"
+  has_physical_release: false
+  evidence: "press_report"  # (leída) Nintendo Life: "Physical Release | None (Digital Only)"
+  source_url: "https://www.nintendolife.com/games/nintendo-switch-2/factorio-nintendo-switch-2-edition"
+  checked_at: "2026-09-17"
+- title_id: "fast-fusion"
+  has_physical_release: false
+  evidence: "press_report"  # (leída) Nintendo Life: "Physical Release | None (Digital Only)"
+  source_url: "https://www.nintendolife.com/games/nintendo-switch-2/fast-fusion"
+  checked_at: "2026-09-17"
+- title_id: "fatal-frame-ii-crimson-butterfly-remake-digital-deluxe-edition"
+  has_physical_release: false
+  evidence: "press_report"  # (leída) Gematsu: "A Digital Deluxe Edition will also be available for $69.99 / £52.99 / €64.99 / ¥8,580" — solo la standard tiene game-key card
+  source_url: "https://www.gematsu.com/2025/11/fatal-frame-ii-crimson-butterfly-remake-launches-march-12-2026"
+  checked_at: "2026-09-17"
+- title_id: "final-fantasy-vii-rebirth-digital-deluxe-edition"
+  has_physical_release: false
+  evidence: "official"  # (leída) ficha oficial de Nintendo: "Version | Nintendo Switch 2 | Select an edition | Digital -"
+  source_url: "https://www.nintendo.com/us/store/products/final-fantasy-vii-rebirth-digital-deluxe-edition-switch-2/"
+  checked_at: "2026-09-17"
+- title_id: "final-fantasy-xiv-online"
+  has_physical_release: false
+  evidence: "official"  # (leída) ficha oficial de Nintendo: "Version | Nintendo Switch 2 | Edition | Digital"
+  source_url: "https://www.nintendo.com/us/store/products/final-fantasy-xiv-online-complete-edition-70050000069552-switch-2/"
+  checked_at: "2026-09-17"
+- title_id: "final-fantasy-tactics-the-ivalice-chronicles"
+  has_physical_release: false
+  evidence: "official"  # (leída) Square Enix Limited (soporte oficial): "Is there a physical version for the Nintendo Switch 2 Edition? | No, there is no physical version for the Nintendo Switch 2 Edition."
+  source_url: "https://support.square-enix-games.com/hc/en-gb/articles/5670688670239-Is-there-a-physical-version-for-the-Nintendo-Switch-2-Edition"
+  checked_at: "2026-09-17"
+- title_id: "final-fantasy-resonance-digital-deluxe-edition"
+  has_physical_release: false
+  evidence: "official"  # (leída) ficha oficial de Nintendo: la Digital Deluxe es un DLC "FINAL FANTASY RESONANCE Digital Deluxe Upgrade" de $14.99 sobre la edición base, no un producto físico independiente
+  source_url: "https://www.nintendo.com/us/store/products/final-fantasy-resonance-switch-2/"
+  checked_at: "2026-09-17"
+- title_id: "fight-life-vanguard"
+  has_physical_release: false
+  evidence: "unconfirmed"
+  source_url: null
+  checked_at: "2026-09-17"
+- title_id: "fortnite"
+  has_physical_release: false
+  evidence: "unconfirmed"
+  source_url: null
+  checked_at: "2026-09-17"
+- title_id: "fitness-boxing-3-your-personal-trainer-nintendo-switch-2-edition"
+  has_physical_release: false
+  evidence: "unconfirmed"  # sin ficha "Physical Release" en Nintendo Life; Amazon la lista como "Digital Code"
+  source_url: null
+  checked_at: "2026-09-17"
+- title_id: "forever-ago"
+  has_physical_release: false
+  evidence: "press_report"  # (leída) Nintendo Everything: "The game will be sold as a digital download."
+  source_url: "https://nintendoeverything.com/forever-ago-sets-release-date-on-nintendo-switch-2-new-trailer/"
+  checked_at: "2026-09-17"
+- title_id: "full-metal-schoolgirl-deluxe-edition"
+  has_physical_release: false
+  evidence: "press_report"  # (leída) Gematsu: "Digital pre-orders are available now for PlayStation 5 in both standard and Deluxe editions." — solo la standard japonesa tiene game-key card
+  source_url: "https://www.gematsu.com/2025/07/d3-publisher-and-yukes-announce-action-shooter-full-metal-schoolgirl-for-ps5-switch-2-and-pc"
+  checked_at: "2026-09-17"

@@ -2,6 +2,7 @@ from switch2db.models import PhysicalRelease, Region, Sku, Title, TitleStatus
 from switch2db.site import (
     FORMAT_FILTER_LABELS,
     NO_BOX_FILTER_VALUE,
+    NO_SKUS_FILTER_VALUE,
     build_search_text,
     build_sku_view,
     build_title_views,
@@ -133,12 +134,14 @@ def test_build_title_views_prefers_the_skus_over_the_no_box_note(
     assert [sku.region for sku in view.skus] == [Region.EU]
 
 
-def test_format_filter_labels_add_the_no_box_option() -> None:
+def test_format_filter_labels_add_the_no_box_and_no_skus_options() -> None:
     assert list(FORMAT_FILTER_LABELS) == [
         "full_cart",
         "game_key_card",
         "code_in_box",
         "unknown",
         NO_BOX_FILTER_VALUE,
+        NO_SKUS_FILTER_VALUE,
     ]
     assert FORMAT_FILTER_LABELS[NO_BOX_FILTER_VALUE]["es"] == "Solo digital"
+    assert FORMAT_FILTER_LABELS[NO_SKUS_FILTER_VALUE]["es"] == "Sin SKUs todavía"

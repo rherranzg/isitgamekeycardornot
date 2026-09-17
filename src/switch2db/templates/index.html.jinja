@@ -352,7 +352,7 @@
 
     <div class="titles">
       {% for title in titles %}
-      <div class="title-card" id="{{ title.title_id }}" data-search="{{ title.search_text }}"{% if title.no_box %} data-no-box="true"{% endif %}>
+      <div class="title-card" id="{{ title.title_id }}" data-search="{{ title.search_text }}"{% if title.no_box %} data-no-box="true"{% elif not title.skus %} data-no-skus="true"{% endif %}>
         <div class="title-head">
           <div>
             <h2>{{ title.name }}</h2>
@@ -476,6 +476,7 @@
     }
 
     var NO_BOX_FILTER_VALUE = {{ no_box_filter_value | tojson }};
+    var NO_SKUS_FILTER_VALUE = {{ no_skus_filter_value | tojson }};
 
     function isRowVisible(row) {
       return state.regions.has(row.dataset.region)
@@ -487,6 +488,11 @@
     // cualquier región o edición marcada le vale y lo que decide es su propio valor del filtro de formato.
     function isNoBoxCardVisible() {
       return state.formats.has(NO_BOX_FILTER_VALUE) && state.regions.size > 0 && state.editions.size > 0;
+    }
+
+    // Igual que isNoBoxCardVisible, pero para los títulos que todavía no tienen ningún SKU documentado.
+    function isNoSkusCardVisible() {
+      return state.formats.has(NO_SKUS_FILTER_VALUE) && state.regions.size > 0 && state.editions.size > 0;
     }
 
     function applyFilters() {
@@ -505,10 +511,8 @@
 
         if (card.dataset.noBox) {
           anyRowVisible = isNoBoxCardVisible();
-        } else if (rows.length === 0) {
-          // Título todavía sin SKUs (status new sin investigar): no hay filas que filtrar, así que
-          // los filtros de región/formato/edición no lo ocultan, solo lo hace la búsqueda.
-          anyRowVisible = true;
+        } else if (card.dataset.noSkus) {
+          anyRowVisible = isNoSkusCardVisible();
         }
         card.hidden = !matchesSearch || !anyRowVisible;
         if (!card.hidden) visibleCount++;
