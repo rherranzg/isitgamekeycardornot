@@ -313,7 +313,14 @@ Formatos vistos en los títulos de Tokyo Game Story: `(GAME CART)` para el cartu
 | Famitsu | JP | ⚠️ resumen | パッケージ版 como キーカード, espacio libre necesario |
 | Web oficial del publisher (p.ej. `artdink.co.jp`) | JP | ⚠️ probada (16-09) | Ficha de producto con メディア/価格/発売日, pero **no siempre dice si es キーカード**: la de A-Train (`artdink.co.jp/japanese/title/a-tourism/info/sw2.html`) solo pone "パッケージ（ガイドブックパック）", sin especificar el tipo de cartucho |
 | Game*Spark, GameWith, Game8 | JP | ⚠️ resumen | Tamaño digital (DK: de 10 GB a 8,5 GB) |
-| RPG Site, Nintendo Insider | — | ❔ | Listas de físicos completos |
+| RPG Site | JP/NA | ✅ leída (17-09) | Cubre anuncios de físico de terceros japoneses (LEVEL-5, Atlus) con cita explícita: "The physical release is not a Game-Key Card and it includes the full Switch game... on a single cartridge" (Inazuma Eleven: Victory Road); también anuncios de precio/Game-Key Card de Atlus (Metaphor: ReFantazio). Se lee con `fetch_quote` sin problema |
+| Nintendo Insider: "Every Physical Nintendo Switch 2 Game Complete On Cartridge" | NA | ✅ leída (17-09) | `nintendo-insider.com/every-physical-nintendo-switch-2-game-complete-on-cartridge/`. Lista por nombre los juegos first-party de Nintendo con "the full game on the cartridge", citando la declaración de Nintendo. Se lee bien con `fetch_quote` sin UA especial |
+| TechRadar | NA | ✅ leída (17-09) | Cubre declaraciones oficiales citando el X oficial de una franquicia ("And yes, the game is on Game Card"); usado para Indiana Jones and the Great Circle |
+| Nintendo World Report: ficha de juego | NA | ⚠️ leída (17-09) | `nintendoworldreport.com/game/<id>/<slug>`: clasifica la ficha con una etiqueta de tipo justo antes del nombre (p. ej. "Switch 2 Download Software \| Kokutoto \| S2 \| Game Profile"). Útil como cita rápida de "solo digital" cuando no hay nada más |
+| X / Twitter, cuenta oficial de un publisher | — | ✅ leída (17-09) | `fetch_quote` sí puede leer `x.com/<usuario>/status/<id>` (no bloqueado como los buscadores). Sirve como fuente `official` cuando el publisher aclara el formato directamente y GoNintendo/Nintendo Everything no lo recogen textualmente (ej. tuit de Dragami Games aclarando cartucho completo, no key card, para dos juegos a la vez) |
+| Nin-Nin-Game.com (tienda francesa) | EU | ⚠️ solo título, sin abrir | `nin-nin-game.com`. Usa la misma convención que Play-Asia: "(Game Cart)" en el nombre del producto. Puede servir como `(listado)` adicional cuando Play-Asia da 403 |
+| noisypixel.net | — | ❌ 403 | — |
+| nintendowire.com | — | ❌ 403 (confirma lo ya documentado en la fila "Nintendo Wire") | — |
 | Tom's Hardware, TweakTown | — | ⚠️ | Capacidades de cartucho disponibles en general (rumores), no por juego |
 
 ## 8. IGDB (integrada en el código)
@@ -422,3 +429,134 @@ Distribuidor boutique (pines, pósters, edición física de coleccionista) que e
 - `search.nintendo.jp`: los errores llegan en gzip; `curl --compressed`.
 - `nintendo.com.hk` redirige con 301 a `nintendo.com/hk`: `curl -L`.
 - Las descargas intermedias van al scratchpad de la sesión, no al repo.
+- **Los comentarios de lectores bajo un artículo de Nintendo Life no valen como cita** (probado 17-09-2026):
+  al buscar `cart|key.?card` con `fetch_quote` sobre una noticia, el fragmento devuelto puede venir de los
+  comentarios de usuarios al final de la página, no del cuerpo editorial (pasó con Hollow Knight/Silksong y
+  Hello Kitty Island Adventure). Comprobar que el fragmento esté en el cuerpo del artículo antes de citarlo.
+- **Series/recopilaciones catalogadas por IGDB como títulos individuales sin caja propia**: cuando el
+  producto físico real es una recopilación (p. ej. "KINGDOM HEARTS Collection [I~III]" o "Metal Gear Solid:
+  Master Collection Vol. 1/Vol. 2"), IGDB puede traer cada juego incluido como `title_id` suelto. Ninguno de
+  esos componentes tiene caja propia de Switch 2: no escribir el SKU en el componente sin decidir antes cómo
+  modelar la recopilación (¿title_id propio para la colección?). De momento quedan `pending` sin SKU
+  (17-09-2026, tandas Kingdom Hearts y Metal Gear Solid Master Collection).
+- **IGDB puede duplicar el mismo juego con dos `igdb_id` y nombres casi idénticos** (probado 18-09-2026):
+  `model-debut-4` (igdb 378505, "Model Debut 4" con espacio) y `model-debut4` (igdb 415392, "Model Debut4"
+  sin espacio) apuntan al mismo juego de FuRyu/Racjin según toda la prensa (Gematsu, GoNintendo, Play-Asia
+  usan siempre "Model Debut4" sin espacio). No se puede fusionar ni borrar un `title_id` desde la skill: se
+  investiga el que coincide con el nombre real de la prensa (`model-debut4`, reviewed con SKU) y el otro
+  queda `pending` sin SKU, pendiente de decidir cómo tratar el duplicado.
+- **Ficha de Nintendo Life sin campo "Physical Release"**: además del patrón ya documentado (ausencia no es
+  cita de "sin físico"), se ha visto que cuando el campo SÍ existe pero solo trae precio en una divisa (p. ej.
+  Minecraft Dungeons II: game-key card con "$49.99" pero sin "£..." en la misma fila), no se puede asumir que
+  cubre ambas regiones EU/NA a la vez — hay que quedarse solo con la región que sí tiene precio y dejar la
+  otra `pending` (18-09-2026).
+- **Gamespress.com (notas de prensa de distribuidoras boutique, p. ej. Super Rare Games)** ✅ (probada
+  18-09-2026): se lee bien con `fetch_quote` sin UA especial. Las notas propias de SRG citan el formato
+  explícitamente: "Both editions include the full game on cartridge/disc - no download codes." Útil para
+  indies con distribuidor tipo Limited Run/Super Rare que publican su propia nota técnica.
+- **Web oficial de Konami de un juego japonés (`konami.com/games/<serie>/products.php`)** ✅ (probada
+  18-09-2026): da 販売地域 (región de venta) explícita — sirve para confirmar que un juego japonés NO sale
+  fuera de Japón sin tener que buscar EU/NA por separado (Momotaro Dentetsu 2: "販売地域 | 日本"). El
+  `switch2.php` de la misma web no trae el detalle de formato del cartucho; hay que ir a Famitsu.
+
+## 11.3. WebSearch puede mezclar el tuit citado con otro completamente distinto ❌ (probada 18-09-2026)
+
+Buscando "Muramasa Revenant Blades Switch 2 physical cartridge", WebSearch devolvió como resultado un tuit de
+`@XSEEDGames` con el titular "physical edition on Nintendo Switch & Switch 2 (fully on cart)" atribuido a
+Muramasa. Al abrir el tuit con `fetch_quote` (x.com sí se lee, §7), el texto real habla de **Fate/EXTRA
+Record** ("Fate/EXTRA Record launches Jan. 28, 2027", enlace a `fate-extra-record.typemoon.com`), no de
+Muramasa. Es la misma trampa ya documentada en §12 para artículos, pero con un tuit: el titular/resumen de
+WebSearch puede no corresponder al tuit enlazado. La cita real de Muramasa (NA full cart, EU/JP Game-Key
+Card) salió de RPG Site (`rpgsite.net/feature/17453-...`), que sí lo dice con el nombre correcto. Regla:
+abrir siempre el tuit con `fetch_quote` y comprobar que el texto habla del juego buscado antes de citarlo.
+
+## 11.4. Nintendo Life ficha: "Physical Release" con $ y £ en la misma fila de Release Date ✅ (18-09-2026)
+
+Cuando la fila `Release Date` trae dos precios juntos (p. ej. "4th Sep 2026 — £54.99 | 4th Sep 2026 —
+$59.99") y el campo `Physical Release` existe por separado con un único valor (p. ej. "Game-Key Card"), ese
+formato cubre EU y NA a la vez sin ambigüedad (a diferencia del caso ya documentado en §12 donde
+`Physical Release` solo traía un precio). Visto con My Hero Academia: All's Justice, NBA 2K26 y NBA 2K27.
+
+## 11.5. Nintendo US store: patrón "Select an edition | Digital -" también en ediciones especiales ✅ (18-09-2026)
+
+El patrón ya documentado en §4.5 ("Version | Nintendo Switch 2 | Edition | Digital") para detectar fichas
+solo-digitales también aparece como "Select an edition | Digital -" en ediciones especiales sin toggle de
+Physical/Digital (probado con NBA 2K26 SLAM Edition: `nintendo.com/us/store/products/nba-2k26-slam-edition-switch-2/`),
+mientras que la edición base del mismo juego (NBA 2K26) sí tiene Game-Key Card confirmado. Sirve como cita
+`official` de "solo digital" cuando la ficha no ofrece ninguna opción física.
+
+## 11.6. Cuenta de seguimiento "Is Game Key Card?" (X) ✅⚠️ (probada 18-09-2026)
+
+`x.com/IsGameKeyCard` es una cuenta dedicada a anunciar por juego si la edición física de Switch 2 es
+cartucho completo o Game-Key Card, con capturas de la propia ficha de la tienda. Se lee bien con
+`fetch_quote` como cualquier tuit (§7). No es prensa ni el propio publisher, así que se ha anotado como
+`press_report` con la cita literal del tuit; sirve cuando ni Nintendo Life ni la prensa habitual han
+cubierto el dato (usado con Moonlighter 2: The Endless Vault, "will be distributed as a real Game Cartridge
+in EUR").
+
+## 11.7. VideoGamesPlus.ca: importaciones japonesas etiquetadas "[Game-Key Card]" ⚠️ (probada 18-09-2026)
+
+Además de vender ediciones NA nativas, VideoGamesPlus.ca lista importaciones japonesas multi-idioma con el
+patrón `"<Juego> [Standard] (JPN Import - Multi-Language) [Game-Key Card] - Nintendo Switch 2 (PRE-ORDER)"`.
+El título del listado (`(listado)`) da el formato del producto japonés, no un producto norteamericano nativo:
+se ha anotado como región JP, no NA/ASIA (usado con Moomin: Midsummer Madness, sin ficha de Nintendo Life ni
+cobertura de prensa que diera el formato).
+
+## 11.8. Más fuentes probadas en la tanda "N" (18-09-2026)
+
+- **ninten-switch.com** ✅: blog japonés de noticias de Switch 2, se lee bien con `fetch_quote` sin UA
+  especial. Cuando anuncia la パッケージ版 de un juego, suele citar textualmente si es キーカード, p. ej.
+  Obakeidoro 2: "※本作のパッケージ版は「キーカード」です。". Útil como `press_report` para JP cuando Famitsu/AUTOMATON
+  no cubren el juego.
+- **gametyrant.com** ✅: cubre preguntas frecuentes tipo FAQ sobre un juego con una sección literal
+  "Is [game]'s physical edition a Game-Key Card?" seguida de la respuesta; usado para confirmar
+  Nintendo Switch Sports Resort como cartucho completo.
+- **meridiem-games.com** (distribuidor boutique EU, como Meridiem) ✅: sus notas de producto dicen el
+  formato entre paréntesis junto a la fecha, p. ej. "will arrive physically for Nintendo Switch 2
+  (cartridge) on October 30, 2026." Sirve como `official` (es el propio distribuidor).
+- **spike-chunsoft.com/news** ✅: notas oficiales del publisher que declaran el formato explícitamente
+  ("Nintendo Switch 2 physical version is available as a Game-Key Card") y a veces cubren varias
+  regiones de golpe en el propio titular ("Available Now in North America and Europe"); en ese caso se
+  ha aplicado la misma cita a ambas regiones al no haber matiz de divergencia en el texto.
+- **gbatemp.net** ✅: sus artículos de noticias (no solo el foro) se leen con `fetch_quote` y citan bien
+  el formato en el titular y el cuerpo; usado para confirmar Octopath Traveler 0 como Game-Key Card.
+- **API de Nintendo JP: entradas パッケージ版 separadas de la ダウンロード, con `icode: null`** (probado con
+  Obakeidoro 2, 18-09-2026): cuando un juego tiene パッケージ版, a veces aparece como una entrada JSON
+  aparte de la digital, con su propio `sdate` pero sin `icode` ni `pprice` todavía (precio no anunciado).
+  Es señal de que la caja existe y ya tiene fecha, aunque haga falta otra fuente para el tipo de
+  cartucho.
+- **Patrón "Select an edition | Digital -" / "Edition | Digital" en fichas de Nintendo US store**
+  (aplicado repetidas veces en la tanda "N", 18-09-2026): cuando dos ediciones del mismo juego japonés
+  comparten nombre base pero una añade "+ Collector's Set" o "Digital Deluxe Edition", solo la variante
+  base a veces tiene パッケージ版 en JP (con `pprice`), mientras que la variante ampliada sale digital-only
+  tanto en JP (API, sin `pprice`) como en NA (ficha oficial). Confirmado con NOBUNAGA'S AMBITION:
+  Awakening Complete Edition (con パッケージ版) frente a + Collector's Set (sin ella) y con OCTOPATH
+  TRAVELER 0 frente a su Digital Deluxe Edition.
+
+## 11.9. Más fuentes probadas en la tanda "O" (18-09-2026)
+
+- **GameStop.com** ❌ 403 a `fetch_quote`/curl aunque el título del resultado del buscador ya sirve como
+  `(listado)` (p. ej. "Onimusha Way of the Sword Steel Book Edition - Nintendo Switch 2 (Game Key Card)").
+- **nintendocentral.com** ✅: se lee bien con `fetch_quote`; declara el formato explícitamente en titular
+  y cuerpo ("confirming a full physical release on cartridge"). Usado para Orbitals.
+- **gamespress.com** ⚠️: a veces corta la conexión (`ConnectionResetError`) al pedirla con `fetch_quote`;
+  no insistir, hay alternativas (Nintendo Central, Nintendo Life, GoNintendo).
+- **Web oficial del juego con "Where to Buy" por país** (p. ej. `orbitalsgame.com/where-to-buy`) ✅: lista
+  minoristas físicos reales por país (Fnac/MediaMarkt/El Corte Inglés en EU, Amazon/Target/Walmart Canada
+  en NA) frente a "NINTENDO STORE (DIGITAL)" para las tiendas solo-descarga. Confirma que existe una
+  edición física por región (`official`), pero **no dice el tipo de cartucho**: hace falta otra fuente
+  (prensa) para full_cart/game-key card.
+- **Patrón "Nintendo Switch 2 Edition ... Upgrade Pack ... Edition | Digital" en la ficha de EE. UU.**: el
+  mismo patrón de §4.5/§11.8 aplicado a "Switch 2 Edition" de un juego que ya existía en Switch 1 (no solo
+  a ediciones Deluxe): cuando la ficha describe la Switch 2 Edition como "Upgrade Pack" con
+  "Edition | Digital", es un upgrade digital sin cartucho propio, aunque el juego original tuviera caja en
+  Switch 1. Confirmado con ONE PIECE: PIRATE WARRIORS 4 Nintendo Switch 2 Edition.
+- **Lista de Nintendo Everything "list-of-all-nintendo-switch-2-games-with-a-game-key-card-release"**: útil
+  también en negativo dentro del presupuesto de una tanda — si un juego con caja confirmada **no** aparece
+  en la lista, es indicio (no cita firme por sí solo) de full_cart; hace falta una frase textual aparte
+  (ficha de Nintendo Life con "Physical Release", nota de prensa) para escribirlo como `reviewed`.
+- **DLC vendido como "edición" separada en IGDB**: "Orbitals: Deluxe Edition" tiene su propio `igdb_id` en
+  el catálogo, pero en la ficha de Nintendo US store es un "Downloadable content (DLC)" llamado
+  "Orbitals: Deluxe Upgrade Pack" (sin cartucho propio, se compra sobre el juego base). Se ha escrito como
+  título `reviewed` con `has_physical_release: false` en `physical_release.yaml`, igual que cualquier otra
+  edición solo digital.

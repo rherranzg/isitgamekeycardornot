@@ -2995,3 +2995,2699 @@
   source_url: "https://www.rpgsite.net/news/21337-eternal-anima-release-date-switch-2-physical"
   verified_at: "2026-09-17"
   status: "reviewed"
+
+# FZ: Formation Z (Clear River Games): Japón, cartucho completo confirmado por Nintendo Life ("It'll
+# arrive in both digital and physical forms, and the physical isn't a Game-Key Card, either."). Formato
+# occidental (Limited Run Games) no confirmado con cita: pending.
+- sku_id: "jp-fz-formation-z-standard"
+  title_id: "fz-formation-z"
+  region: "JP"
+  edition: "standard"
+  distributor: null
+  release_date: "2026-05-21"
+  format: "full_cart"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) Nintendo Life: "the physical isn't a Game-Key Card, either"
+  source_url: "https://www.nintendolife.com/news/2026/01/side-scrolling-robo-shooter-remake-fz-formation-z-blasts-onto-switch-2-this-may"
+  verified_at: "2026-09-17"
+  status: "reviewed"
+- sku_id: "na-fz-formation-z-standard"
+  title_id: "fz-formation-z"
+  region: "NA"
+  edition: "standard"
+  distributor: null
+  release_date: null
+  format: "unknown"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "unconfirmed"
+  source_url: null
+  verified_at: "2026-09-17"
+  status: "pending"
+
+# Gear.Club Unlimited 3 (Nacon): ficha de Nintendo Life da "Physical Release | Game-Key Card" con precio
+# en $ y £ el mismo día, así que vale para EU y NA a la vez.
+- sku_id: "eu-gear-club-unlimited-3-standard"
+  title_id: "gear-club-unlimited-3"
+  region: "EU"
+  edition: "standard"
+  distributor: "Nacon"
+  release_date: "2026-02-19"
+  format: "game_key_card"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) Nintendo Life: "Physical Release | Game-Key Card"
+  source_url: "https://www.nintendolife.com/games/nintendo-switch-2/gear-club-unlimited-3"
+  verified_at: "2026-09-17"
+  status: "reviewed"
+- sku_id: "na-gear-club-unlimited-3-standard"
+  title_id: "gear-club-unlimited-3"
+  region: "NA"
+  edition: "standard"
+  distributor: "Nacon"
+  release_date: "2026-02-19"
+  format: "game_key_card"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) Nintendo Life: "Physical Release | Game-Key Card" ($49.99 / £44.99, mismo día)
+  source_url: "https://www.nintendolife.com/games/nintendo-switch-2/gear-club-unlimited-3"
+  verified_at: "2026-09-17"
+  status: "reviewed"
+
+# Godzilla: Destroy All Monsters Melee Remastered (Atari): en la lista de Nintendo Life de cartucho
+# completo (EU) y en su ficha "Physical Release | Standard Game Card" con precio en $ (NA).
+- sku_id: "eu-godzilla-destroy-all-monsters-melee-remastered-standard"
+  title_id: "godzilla-destroy-all-monsters-melee-remastered"
+  region: "EU"
+  edition: "standard"
+  distributor: "Atari"
+  release_date: "2026-11-03"
+  format: "full_cart"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) Nintendo Life, lista "full game on the cart": "Godzilla: Destroy All Monsters Melee Remastered (Switch 2)"
+  source_url: "https://www.nintendolife.com/guides/every-nintendo-switch-2-physical-release-with-the-full-game-on-the-cart"
+  verified_at: "2026-09-17"
+  status: "reviewed"
+- sku_id: "na-godzilla-destroy-all-monsters-melee-remastered-standard"
+  title_id: "godzilla-destroy-all-monsters-melee-remastered"
+  region: "NA"
+  edition: "standard"
+  distributor: "Atari"
+  release_date: "2026-11-03"
+  format: "full_cart"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) Nintendo Life: "Physical Release | Standard Game Card | ... 3rd Nov 2026 — $39.99"
+  source_url: "https://www.nintendolife.com/games/nintendo-switch-2/godzilla-destroy-all-monsters-melee-remastered"
+  verified_at: "2026-09-17"
+  status: "reviewed"
+
+# Goodnight Universe (Skybound Games): ficha de Nintendo Life, "Physical Release | Game-Key Card" con
+# precio en $ y £ el mismo día.
+- sku_id: "eu-goodnight-universe-standard"
+  title_id: "goodnight-universe"
+  region: "EU"
+  edition: "standard"
+  distributor: "Skybound Games"
+  release_date: "2025-11-11"
+  format: "game_key_card"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) Nintendo Life: "Physical Release | Game-Key Card"
+  source_url: "https://www.nintendolife.com/games/nintendo-switch-2/goodnight-universe"
+  verified_at: "2026-09-17"
+  status: "reviewed"
+- sku_id: "na-goodnight-universe-standard"
+  title_id: "goodnight-universe"
+  region: "NA"
+  edition: "standard"
+  distributor: "Skybound Games"
+  release_date: "2025-11-11"
+  format: "game_key_card"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) Nintendo Life: "Physical Release | Game-Key Card" ($19.99 / £16.99, mismo día)
+  source_url: "https://www.nintendolife.com/games/nintendo-switch-2/goodnight-universe"
+  verified_at: "2026-09-17"
+  status: "reviewed"
+
+# Granblue Fantasy: Relink - Endless Ragnarok (Cygames): ficha de Nintendo Life, "Physical Release |
+# Game-Key Card" con precio en $ y £ el mismo día. También en la lista de game-key cards de Nintendo
+# Everything (gkc.html descargado en la tanda).
+- sku_id: "eu-granblue-fantasy-relink-endless-ragnarok-standard"
+  title_id: "granblue-fantasy-relink-endless-ragnarok"
+  region: "EU"
+  edition: "standard"
+  distributor: "Cygames"
+  release_date: "2026-07-09"
+  format: "game_key_card"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) Nintendo Life: "Physical Release | Game-Key Card"
+  source_url: "https://www.nintendolife.com/games/nintendo-switch-2/granblue-fantasy-relink-endless-ragnarok"
+  verified_at: "2026-09-17"
+  status: "reviewed"
+- sku_id: "na-granblue-fantasy-relink-endless-ragnarok-standard"
+  title_id: "granblue-fantasy-relink-endless-ragnarok"
+  region: "NA"
+  edition: "standard"
+  distributor: "Cygames"
+  release_date: "2026-07-09"
+  format: "game_key_card"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) Nintendo Life: "Physical Release | Game-Key Card" ($59.99 / £49.99, mismo día); también en la lista de Nintendo Everything
+  source_url: "https://www.nintendolife.com/games/nintendo-switch-2/granblue-fantasy-relink-endless-ragnarok"
+  verified_at: "2026-09-17"
+  status: "reviewed"
+
+# Golf With Your Friends 2 (Team17): hay caja anunciada (Play-Asia, DayOne) pero sin cita del formato
+# (cartucho vs. game-key card) en el presupuesto de la tanda: pending para refresh.
+- sku_id: "na-golf-with-your-friends-2-standard"
+  title_id: "golf-with-your-friends-2"
+  region: "NA"
+  edition: "standard"
+  distributor: null
+  release_date: null
+  format: "unknown"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "unconfirmed"
+  source_url: null
+  verified_at: "2026-09-17"
+  status: "pending"
+
+# Grim Trials: cartucho completo en Switch 2 (la versión de PS5 va en disco). Soft Source Publishing.
+- sku_id: "na-grim-trials-standard"
+  title_id: "grim-trials"
+  region: "NA"
+  edition: "standard"
+  distributor: "Soft Source"
+  release_date: null
+  format: "full_cart"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) "the Nintendo Switch 2 version will be released on cartridge"
+  source_url: "https://pokde.net/gaming/sony/ps5/grim-trials-physical-edition-ps5-ns2"
+  verified_at: "2026-09-17"
+  status: "reviewed"
+
+# Hades II: cartucho completo, no game-key card (confirmado por Best Buy vía My Nintendo News).
+- sku_id: "na-hades-ii-standard"
+  title_id: "hades-ii"
+  region: "NA"
+  edition: "standard"
+  distributor: "Supergiant Games"
+  release_date: "2025-11-20"
+  format: "full_cart"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) "will contain the game on the cartridge and won't be a Game-Key Card"
+  source_url: "https://mynintendonews.com/2025/09/13/hades-2-physical-will-contain-game-on-cartridge-on-nintendo-switch-2/"
+  verified_at: "2026-09-17"
+  status: "reviewed"
+
+# Harvest Moon: Echoes of Teradea — ficha de Nintendo Life (EU): "Standard Game Card".
+- sku_id: "eu-harvest-moon-echoes-of-teradea-standard"
+  title_id: "harvest-moon-echoes-of-teradea"
+  region: "EU"
+  edition: "standard"
+  distributor: "Natsume Inc."
+  release_date: "2026-10-15"
+  format: "full_cart"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) ficha: "Physical Release | Standard Game Card"
+  source_url: "https://www.nintendolife.com/games/nintendo-switch-2/harvest-moon-echoes-of-teradea"
+  verified_at: "2026-09-17"
+  status: "reviewed"
+
+# Hasbro Games Junior Collection: aparece en la lista de game-key cards de Nintendo Everything.
+- sku_id: "na-hasbro-games-junior-collection-standard"
+  title_id: "hasbro-games-junior-collection"
+  region: "NA"
+  edition: "standard"
+  distributor: "Outright Games"
+  release_date: null
+  format: "game_key_card"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (listado) aparece en la lista de Nintendo Everything de game-key cards
+  source_url: "https://nintendoeverything.com/list-of-all-nintendo-switch-2-games-with-a-game-key-card-release/"
+  verified_at: "2026-09-17"
+  status: "reviewed"
+
+# Hela: Of Mice & Magic: aparece en la lista de game-key cards de Nintendo Everything.
+- sku_id: "na-hela-of-mice-magic-standard"
+  title_id: "hela-of-mice-magic"
+  region: "NA"
+  edition: "standard"
+  distributor: "Knights Peak"
+  release_date: null
+  format: "game_key_card"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (listado) aparece en la lista de Nintendo Everything de game-key cards
+  source_url: "https://nintendoeverything.com/list-of-all-nintendo-switch-2-games-with-a-game-key-card-release/"
+  verified_at: "2026-09-17"
+  status: "reviewed"
+
+# Hell is Us: aparece en la lista de game-key cards de Nintendo Everything.
+- sku_id: "na-hell-is-us-standard"
+  title_id: "hell-is-us"
+  region: "NA"
+  edition: "standard"
+  distributor: "Nacon"
+  release_date: null
+  format: "game_key_card"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (listado) aparece en la lista de Nintendo Everything de game-key cards
+  source_url: "https://nintendoeverything.com/list-of-all-nintendo-switch-2-games-with-a-game-key-card-release/"
+  verified_at: "2026-09-17"
+  status: "reviewed"
+
+# Hello Kitty: Party Land: aparece en la lista de game-key cards de Nintendo Everything. Publisher según
+# eu.json (Bandai Namco Entertainment) — el titles.yaml de la tanda trae "None"; a corregir a mano.
+- sku_id: "na-hello-kitty-party-land-standard"
+  title_id: "hello-kitty-party-land"
+  region: "NA"
+  edition: "standard"
+  distributor: "Bandai Namco Entertainment"
+  release_date: null
+  format: "game_key_card"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (listado) aparece en la lista de Nintendo Everything de game-key cards
+  source_url: "https://nintendoeverything.com/list-of-all-nintendo-switch-2-games-with-a-game-key-card-release/"
+  verified_at: "2026-09-17"
+  status: "reviewed"
+
+# High on Life 2: aparece en la lista de game-key cards de Nintendo Everything.
+- sku_id: "na-high-on-life-2-standard"
+  title_id: "high-on-life-2"
+  region: "NA"
+  edition: "standard"
+  distributor: "Squanch Games"
+  release_date: null
+  format: "game_key_card"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (listado) aparece en la lista de Nintendo Everything de game-key cards
+  source_url: "https://nintendoeverything.com/list-of-all-nintendo-switch-2-games-with-a-game-key-card-release/"
+  verified_at: "2026-09-17"
+  status: "reviewed"
+
+# Hoa 2: PM Studios confirma cartucho completo, no game-key card.
+- sku_id: "na-hoa-2-standard"
+  title_id: "hoa-2"
+  region: "NA"
+  edition: "standard"
+  distributor: "PM Studios"
+  release_date: null
+  format: "full_cart"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) "this version will not use a game-key card. Instead, the complete game will be stored directly on the cartridge"
+  source_url: "https://www.nintendoreporters.com/en/news/nintendo-switch-2/hoa-2-physical-release-confirmed-for-nintendo-switch-2-with-full-game-on-cartridge/"
+  verified_at: "2026-09-17"
+  status: "reviewed"
+
+# Hogwarts Legacy: aparece en la lista de game-key cards de Nintendo Everything.
+- sku_id: "na-hogwarts-legacy-standard"
+  title_id: "hogwarts-legacy"
+  region: "NA"
+  edition: "standard"
+  distributor: "Warner Bros. Games"
+  release_date: null
+  format: "game_key_card"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (listado) aparece en la lista de Nintendo Everything de game-key cards
+  source_url: "https://nintendoeverything.com/list-of-all-nintendo-switch-2-games-with-a-game-key-card-release/"
+  verified_at: "2026-09-17"
+  status: "reviewed"
+
+# Hollow Knight (Nintendo Switch 2 Edition): distribuido por Fangamer; la mejora va en el cartucho,
+# sin descarga necesaria (el DLC no cuenta, es el propio juego base Switch 1 + upgrade).
+- sku_id: "na-hollow-knight-standard"
+  title_id: "hollow-knight"
+  region: "NA"
+  edition: "standard"
+  distributor: "Fangamer"
+  release_date: "2026-10-16"
+  format: "full_cart"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) Nintendo Everything: la mejora de Switch 2 va en el cartucho, sin descarga necesaria
+  source_url: "https://nintendoeverything.com/hollow-knight-silksong-hollow-knight-nintendo-switch-2-physical-releases-revealed/"
+  verified_at: "2026-09-17"
+  status: "reviewed"
+
+# Hollow Knight: Silksong (Nintendo Switch 2 Edition): distribuido por Fangamer; el DLC Sea of Sorrow
+# no viene en el cartucho, lo que confirma que el resto del juego sí.
+- sku_id: "na-hollow-knight-silksong-standard"
+  title_id: "hollow-knight-silksong"
+  region: "NA"
+  edition: "standard"
+  distributor: "Fangamer"
+  release_date: "2026-10-16"
+  format: "full_cart"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) "the upcoming Sea of Sorrow DLC will not be included on the cartridge" (implica que el resto sí lo está)
+  source_url: "https://nintendoeverything.com/hollow-knight-silksong-hollow-knight-nintendo-switch-2-physical-releases-revealed/"
+  verified_at: "2026-09-17"
+  status: "reviewed"
+
+# Hot Wheels: Infinite Rush: aparece en la lista de game-key cards de Nintendo Everything.
+- sku_id: "na-hot-wheels-infinite-rush-standard"
+  title_id: "hot-wheels-infinite-rush"
+  region: "NA"
+  edition: "standard"
+  distributor: "Milestone S.r.l."
+  release_date: null
+  format: "game_key_card"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (listado) aparece en la lista de Nintendo Everything de game-key cards
+  source_url: "https://nintendoeverything.com/list-of-all-nintendo-switch-2-games-with-a-game-key-card-release/"
+  verified_at: "2026-09-17"
+  status: "reviewed"
+
+# House Flipper 2 + Sakura DLC: cartucho completo, edición física de Silver Lining Interactive.
+# Precio combinado EU/NA (£44.99 / €49.99 / $49.99) sugiere venta en ambos mercados vía Silver Lining
+# Direct y tiendas locales. Fecha "Q3 2026" no es una fecha exacta -> null.
+- sku_id: "eu-house-flipper-2-standard"
+  title_id: "house-flipper-2"
+  region: "EU"
+  edition: "standard"
+  distributor: "Silver Lining Interactive"  # (leída) "Silver Lining Interactive are thrilled to give fans the chance to own a new boxed edition"
+  release_date: null
+  format: "full_cart"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) GoNintendo: "House Flipper 2 is sprouting a stunning House Flipper 2 + Sakura DLC Nintendo Switch 2 physical release"
+  source_url: "https://gonintendo.com/contents/60997-house-flipper-2-getting-physical-switch-2-release"
+  verified_at: "2026-09-17"
+  status: "reviewed"
+- sku_id: "na-house-flipper-2-standard"
+  title_id: "house-flipper-2"
+  region: "NA"
+  edition: "standard"
+  distributor: "Silver Lining Interactive"  # (leída) igual que EU
+  release_date: null
+  format: "full_cart"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) mismo artículo, precio en $ incluido
+  source_url: "https://gonintendo.com/contents/60997-house-flipper-2-getting-physical-switch-2-release"
+  verified_at: "2026-09-17"
+  status: "reviewed"
+
+# Human: Fall Flat - Nintendo Switch 2 Edition: cartucho completo, venta confirmada en NA y EU.
+- sku_id: "eu-human-fall-flat-standard"
+  title_id: "human-fall-flat"
+  region: "EU"
+  edition: "standard"
+  distributor: null
+  release_date: "2026-10-23"
+  format: "full_cart"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) Nintendo Everything: "The full game will be available on the cartridge... sold in both North America and Europe"
+  source_url: "https://nintendoeverything.com/human-fall-flat-nintendo-switch-2-edition-reveals-physical-release-pre-orders-open/"
+  verified_at: "2026-09-17"
+  status: "reviewed"
+- sku_id: "na-human-fall-flat-standard"
+  title_id: "human-fall-flat"
+  region: "NA"
+  edition: "standard"
+  distributor: null
+  release_date: "2026-10-23"
+  format: "full_cart"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) mismo artículo
+  source_url: "https://nintendoeverything.com/human-fall-flat-nintendo-switch-2-edition-reveals-physical-release-pre-orders-open/"
+  verified_at: "2026-09-17"
+  status: "reviewed"
+
+# Hyperdimension Neptunia Unlimited: solo confirmado ASIA por ahora (título del listado de Play-Asia y
+# Nin-Nin-Game, ambos "Game Cart"). JP/EU/NA no se han comprobado en esta sesión (quedan para refresh).
+- sku_id: "asia-hyperdimension-neptunia-unlimited-standard"
+  title_id: "hyperdimension-neptunia-unlimited"
+  region: "ASIA"
+  edition: "standard"
+  distributor: null
+  release_date: null
+  format: "full_cart"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "retailer_listing"  # (listado) "Neptunia Unlimited Game Cart for Nintendo Switch 2" (Play-Asia)
+  source_url: "https://www.play-asia.com/en/neptunia-unlimited/13/70jr55"
+  verified_at: "2026-09-17"
+  status: "reviewed"
+
+# Hyrule Warriors: Age of Calamity - Definitive Edition: game-key card confirmado en Japón y en
+# Occidente (VGP como fuente para el oeste); no hay cartucho completo en ninguna región.
+- sku_id: "eu-hyrule-warriors-age-of-calamity-definitive-edition-standard"
+  title_id: "hyrule-warriors-age-of-calamity-definitive-edition"
+  region: "EU"
+  edition: "standard"
+  distributor: null
+  release_date: "2027-02-25"  # (listado) titular de Zelda Dungeon: "Releases February 25th, 2027"
+  format: "game_key_card"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) Nintendo Everything: "will be sold as a game-key card on Nintendo Switch 2... This means there will not be a true physical release in any part of the world"
+  source_url: "https://nintendoeverything.com/hyrule-warriors-age-of-calamity-definitive-edition-is-a-game-key-card-on-nintendo-switch-2/"
+  verified_at: "2026-09-17"
+  status: "reviewed"
+- sku_id: "na-hyrule-warriors-age-of-calamity-definitive-edition-standard"
+  title_id: "hyrule-warriors-age-of-calamity-definitive-edition"
+  region: "NA"
+  edition: "standard"
+  distributor: null
+  release_date: "2027-02-25"
+  format: "game_key_card"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) mismo artículo: "Today's update comes from VGP. The retailer confirms the game-key card situation"
+  source_url: "https://nintendoeverything.com/hyrule-warriors-age-of-calamity-definitive-edition-is-a-game-key-card-on-nintendo-switch-2/"
+  verified_at: "2026-09-17"
+  status: "reviewed"
+- sku_id: "jp-hyrule-warriors-age-of-calamity-definitive-edition-standard"
+  title_id: "hyrule-warriors-age-of-calamity-definitive-edition"
+  region: "JP"
+  edition: "standard"
+  distributor: null
+  release_date: "2027-02-25"
+  format: "game_key_card"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) mismo artículo: "In Japan, it was already revealed that Hyrule Warriors: Age of Calamity – Definitive Edition would be a game-key card"
+  source_url: "https://nintendoeverything.com/hyrule-warriors-age-of-calamity-definitive-edition-is-a-game-key-card-on-nintendo-switch-2/"
+  verified_at: "2026-09-17"
+  status: "reviewed"
+
+# Hyrule Warriors: Age of Imprisonment: first-party Nintendo, cartucho completo confirmado por nombre en
+# la lista de Nintendo Insider de juegos con el juego completo en el cartucho.
+- sku_id: "eu-hyrule-warriors-age-of-imprisonment-standard"
+  title_id: "hyrule-warriors-age-of-imprisonment"
+  region: "EU"
+  edition: "standard"
+  distributor: null
+  release_date: null
+  format: "full_cart"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) Nintendo Insider: "Nintendo has confirmed that the physical editions of its games 'will feature the full game on the cartridge.'" (lista que incluye "Hyrule Warriors: Age of Imprisonment")
+  source_url: "https://www.nintendo-insider.com/every-physical-nintendo-switch-2-game-complete-on-cartridge/"
+  verified_at: "2026-09-17"
+  status: "reviewed"
+- sku_id: "na-hyrule-warriors-age-of-imprisonment-standard"
+  title_id: "hyrule-warriors-age-of-imprisonment"
+  region: "NA"
+  edition: "standard"
+  distributor: null
+  release_date: null
+  format: "full_cart"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) mismo artículo/lista
+  source_url: "https://www.nintendo-insider.com/every-physical-nintendo-switch-2-game-complete-on-cartridge/"
+  verified_at: "2026-09-17"
+  status: "reviewed"
+
+# Inazuma Eleven: Victory Road - Nintendo Switch 2 Edition: cartucho completo, solo lanzado en Japón.
+- sku_id: "jp-inazuma-eleven-victory-road-standard"
+  title_id: "inazuma-eleven-victory-road"
+  region: "JP"
+  edition: "standard"
+  distributor: null
+  release_date: "2026-06-11"
+  format: "full_cart"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) RPG Site: "The physical release is not a Game-Key Card and it includes the full Switch game and the Nintendo Switch 2 Edition Upgrade Pack on a single cartridge"
+  source_url: "https://www.rpgsite.net/news/20094-inazuma-eleven-victory-road-switch-2-physical-release-english-date"
+  verified_at: "2026-09-17"
+  status: "reviewed"
+
+# Indiana Jones and the Great Circle: único juego de Bethesda con Game Card (no key card) en Switch 2,
+# confirmado por Bethesda/Nintendo. Solo comprobado NA en esta sesión.
+- sku_id: "na-indiana-jones-and-the-great-circle-standard"
+  title_id: "indiana-jones-and-the-great-circle"
+  region: "NA"
+  edition: "standard"
+  distributor: null
+  release_date: null
+  format: "full_cart"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "official"  # (leída) TechRadar cita el X oficial: "And yes, the game is on Game Card", instead of one of the controversial Game-Key Cards
+  source_url: "https://www.techradar.com/gaming/indiana-jones-and-the-great-circle-is-the-only-bethesda-game-coming-to-nintendo-switch-2-that-will-have-a-physical-edition-cartridge"
+  verified_at: "2026-09-17"
+  status: "reviewed"
+
+# It Takes Two (EA): tiene edición física confirmada en Switch 2 (lanzado 15-10-2026), pero no se ha
+# encontrado cita que diga si es Game Card o Game-Key Card. Pendiente de refresh.
+- sku_id: "eu-it-takes-two-standard"
+  title_id: "it-takes-two"
+  region: "EU"
+  edition: "standard"
+  distributor: null
+  release_date: null
+  format: "unknown"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "unconfirmed"
+  source_url: null
+  verified_at: "2026-09-17"
+  status: "pending"
+- sku_id: "na-it-takes-two-standard"
+  title_id: "it-takes-two"
+  region: "NA"
+  edition: "standard"
+  distributor: null
+  release_date: null
+  format: "unknown"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "unconfirmed"
+  source_url: null
+  verified_at: "2026-09-17"
+  status: "pending"
+
+# inKONBINI: One Store. Many Stories: hay edición física en ASIA (ya a la venta) y en NA (anunciada para
+# septiembre 2026, vía Serenity Forge), pero ninguna fuente abierta dice si es cartucho completo o
+# game-key card. Pendiente de refresh.
+- sku_id: "asia-inkonbini-one-store-many-stories-standard"
+  title_id: "inkonbini-one-store-many-stories"
+  region: "ASIA"
+  edition: "standard"
+  distributor: null
+  release_date: null
+  format: "unknown"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "unconfirmed"
+  source_url: null
+  verified_at: "2026-09-17"
+  status: "pending"
+- sku_id: "na-inkonbini-one-store-many-stories-standard"
+  title_id: "inkonbini-one-store-many-stories"
+  region: "NA"
+  edition: "standard"
+  distributor: null
+  release_date: null
+  format: "unknown"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "unconfirmed"
+  source_url: null
+  verified_at: "2026-09-17"
+  status: "pending"
+
+# Tanda 4 (kingdom-hearts-birth-by-sleep-final-mix .. lego-batman-...-deluxe-edition), 2026-09-17.
+
+# Kirby Air Riders: cartucho completo, Nintendo primera parte. Está en la lista "Every Nintendo Switch 2
+# Physical Release With The Full Game On The Cart" de Nintendo Life junto a su fecha (20 Nov 2025) y
+# publisher/developer (Nintendo / HAL Laboratory).
+- sku_id: "eu-kirby-air-riders-standard"
+  title_id: "kirby-air-riders"
+  region: "EU"
+  edition: "standard"
+  distributor: null
+  release_date: "2025-11-20"
+  format: "full_cart"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) fila de la tabla: "Kirby Air Riders (Switch 2) | 20th Nov 2025 / Nintendo / HAL Laboratory"
+  source_url: "https://www.nintendolife.com/guides/every-nintendo-switch-2-physical-release-with-the-full-game-on-the-cart"
+  verified_at: "2026-09-17"
+  status: "reviewed"
+- sku_id: "na-kirby-air-riders-standard"
+  title_id: "kirby-air-riders"
+  region: "NA"
+  edition: "standard"
+  distributor: null
+  release_date: "2025-11-20"
+  format: "full_cart"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) misma tabla de Nintendo Life
+  source_url: "https://www.nintendolife.com/guides/every-nintendo-switch-2-physical-release-with-the-full-game-on-the-cart"
+  verified_at: "2026-09-17"
+  status: "reviewed"
+
+# Kirby and the Forgotten Land - Nintendo Switch 2 Edition + Star-Crossed World: cartucho completo. Misma
+# tabla de Nintendo Life: "Kirby and the Forgotten Land - Nintendo Switch 2 Edition + Star-Crossed World
+# (Switch 2) | 28th Aug 2025".
+- sku_id: "eu-kirby-and-the-forgotten-land-nintendo-switch-2-edition-star-crossed-world-standard"
+  title_id: "kirby-and-the-forgotten-land-nintendo-switch-2-edition-star-crossed-world"
+  region: "EU"
+  edition: "standard"
+  distributor: null
+  release_date: "2025-08-28"
+  format: "full_cart"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) fila de la tabla de Nintendo Life
+  source_url: "https://www.nintendolife.com/guides/every-nintendo-switch-2-physical-release-with-the-full-game-on-the-cart"
+  verified_at: "2026-09-17"
+  status: "reviewed"
+- sku_id: "na-kirby-and-the-forgotten-land-nintendo-switch-2-edition-star-crossed-world-standard"
+  title_id: "kirby-and-the-forgotten-land-nintendo-switch-2-edition-star-crossed-world"
+  region: "NA"
+  edition: "standard"
+  distributor: null
+  release_date: "2025-08-28"
+  format: "full_cart"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) misma tabla de Nintendo Life
+  source_url: "https://www.nintendolife.com/guides/every-nintendo-switch-2-physical-release-with-the-full-game-on-the-cart"
+  verified_at: "2026-09-17"
+  status: "reviewed"
+
+# Kunitsu-Gami: Path of the Goddess (Capcom): en Japón sale como Game-Key Card. Play-Asia devuelve 403, el
+# título del listado ya dice el formato.
+- sku_id: "jp-kunitsu-gami-path-of-the-goddess-standard"
+  title_id: "kunitsu-gami-path-of-the-goddess"
+  region: "JP"
+  edition: "standard"
+  distributor: null
+  release_date: "2025-06-05"
+  format: "game_key_card"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "retailer_listing"  # (listado) Play-Asia: "Kunitsu-Gami: Path of the Goddess Game Key Cart for Nintendo Switch 2"
+  source_url: "https://www.play-asia.com/en/kunitsu-gami-path-of-the-goddess/13/70igr3"
+  verified_at: "2026-09-17"
+  status: "reviewed"
+
+# LEGO Batman: Legacy of the Dark Knight (WB Games, edición estándar): Game-Key Card confirmado por la
+# categoría del propio listado del distribuidor canadiense (NA).
+- sku_id: "na-lego-batman-legacy-of-the-dark-knight-standard"
+  title_id: "lego-batman-legacy-of-the-dark-knight"
+  region: "NA"
+  edition: "standard"
+  distributor: null
+  release_date: "2026-09-18"
+  format: "game_key_card"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "retailer_listing"  # (leída) videogamesplus.ca clasifica el producto bajo "Nintendo Switch 2 [Game-Key Cards]"
+  source_url: "https://videogamesplus.ca/products/lego-batman-legacy-of-the-dark-knight-nintendo-switch-2-pre-order"
+  verified_at: "2026-09-17"
+  status: "reviewed"
+
+# LEGO Batman: Legacy of the Dark Knight - Deluxe Edition: hay edición física en tiendas (Target, Best Buy,
+# Walmart, GameStop, Amazon), pero no se ha encontrado una cita que confirme si es Game-Key Card o cartucho
+# completo específicamente para esta edición (solo para la Standard).
+- sku_id: "na-lego-batman-legacy-of-the-dark-knight-deluxe-edition-deluxe"
+  title_id: "lego-batman-legacy-of-the-dark-knight-deluxe-edition"
+  region: "NA"
+  edition: "deluxe"
+  distributor: null
+  release_date: null
+  format: "unknown"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "unconfirmed"
+  source_url: null
+  verified_at: "2026-09-17"
+  status: "pending"
+
+# Layers of Fear: The Final Masterpiece Edition (Bloober Team, distribución física de Meridiem Games):
+# edición física confirmada (GoNintendo, Bloody Disgusting, nintendoeverything), pero fechas contradictorias
+# entre fuentes (18-sep vs 28-oct-2026) y sin cita textual de si el juego completo está en la tarjeta o es
+# Game-Key Card (un comentario de un lector lo pregunta, no lo confirma).
+- sku_id: "eu-layers-of-fear-the-final-masterpiece-edition-standard"
+  title_id: "layers-of-fear-the-final-masterpiece-edition"
+  region: "EU"
+  edition: "standard"
+  distributor: null
+  release_date: null
+  format: "unknown"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "unconfirmed"
+  source_url: null
+  verified_at: "2026-09-17"
+  status: "pending"
+
+# Lollipop Chainsaw RePOP: Nintendo Switch 2 Edition — Dragami Games aclaró oficialmente en X que la
+# edición en caja va en cartucho completo, no key card, para este juego y para LoveR Kiss Endless Memories.
+- sku_id: "eu-lollipop-chainsaw-repop-nintendo-switch-2-edition-standard"
+  title_id: "lollipop-chainsaw-repop-nintendo-switch-2-edition"
+  region: "EU"
+  edition: "standard"
+  distributor: "Dragami Games"  # (API) eu.json: publisher "Dragami Games"
+  release_date: "2026-05-28"  # (API) eu.json: dates_released_dts
+  format: "full_cart"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "official"  # (leída) X/@Dragami_Games: "パッケージ版は、いずれもキーカードではなくゲームカードでの発売となります。"
+  source_url: "https://x.com/Dragami_Games/status/2011390290230460594"
+  verified_at: "2026-09-17"
+  status: "reviewed"
+- sku_id: "jp-lollipop-chainsaw-repop-nintendo-switch-2-edition-standard"
+  title_id: "lollipop-chainsaw-repop-nintendo-switch-2-edition"
+  region: "JP"
+  edition: "standard"
+  distributor: "Dragami Games"
+  release_date: "2026-05-28"  # (listado) Nintendo Life ficha: "Release Date | Nintendo Switch 2 | 28th May 2026"
+  format: "full_cart"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "official"  # (leída) X/@Dragami_Games: "パッケージ版は、いずれもキーカードではなくゲームカードでの発売となります。"
+  source_url: "https://x.com/Dragami_Games/status/2011390290230460594"
+  verified_at: "2026-09-17"
+  status: "reviewed"
+
+# LoveR Kiss: Endless Memories — Nintendo Switch 2 Edition, solo confirmado en Japón (no aparece en el
+# catálogo EU). Misma aclaración oficial de Dragami Games que Lollipop Chainsaw RePOP.
+- sku_id: "jp-lover-kiss-endless-memories-standard"
+  title_id: "lover-kiss-endless-memories"
+  region: "JP"
+  edition: "standard"
+  distributor: "Dragami Games"
+  release_date: "2026-04-30"  # (listado) Gematsu: "launches April 30 in Japan"
+  format: "full_cart"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "official"  # (leída) X/@Dragami_Games: "パッケージ版は、いずれもキーカードではなくゲームカードでの発売となります。"
+  source_url: "https://x.com/Dragami_Games/status/2011390290230460594"
+  verified_at: "2026-09-17"
+  status: "reviewed"
+
+# Little Nightmares III: game-key card confirmado en EU (ficha Nintendo Life) y en NA (lista de
+# Nintendo Everything). Bandai Namco Entertainment.
+- sku_id: "eu-little-nightmares-iii-standard"
+  title_id: "little-nightmares-iii"
+  region: "EU"
+  edition: "standard"
+  distributor: "BANDAI NAMCO Entertainment"  # (API) eu.json: publisher
+  release_date: "2025-10-10"  # (API) eu.json: dates_released_dts
+  format: "game_key_card"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) Nintendo Life ficha: "Physical Release | Game-Key Card | Release Date | Nintendo eShop | 10th Oct"
+  source_url: "https://www.nintendolife.com/games/nintendo-switch-2/little-nightmares-iii"
+  verified_at: "2026-09-17"
+  status: "reviewed"
+- sku_id: "na-little-nightmares-iii-standard"
+  title_id: "little-nightmares-iii"
+  region: "NA"
+  edition: "standard"
+  distributor: "BANDAI NAMCO Entertainment"
+  release_date: "2025-10-10"
+  format: "game_key_card"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) lista de Nintendo Everything de game-key cards: "Little Nightmares 3" aparece en el listado
+  source_url: "https://nintendoeverything.com/list-of-all-nintendo-switch-2-games-with-a-game-key-card-release/"
+  verified_at: "2026-09-17"
+  status: "reviewed"
+
+# Little Nightmares: Enhanced Edition (Complete Edition): game-key card confirmado en EU (ficha
+# Nintendo Life); no aparece en la lista de Nintendo Everything para NA, así que esa región queda sin SKU.
+- sku_id: "eu-little-nightmares-enhanced-edition-standard"
+  title_id: "little-nightmares-enhanced-edition"
+  region: "EU"
+  edition: "standard"
+  distributor: "BANDAI NAMCO Entertainment"  # (API) eu.json: publisher
+  release_date: "2025-10-10"  # (API) eu.json: dates_released_dts
+  format: "game_key_card"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) Nintendo Life ficha: "Little Nightmares Enhanced Edition Complete Edition | Physical Release | Game-Key Card | Release Date | Nintendo Switch 2 | 10th O..."
+  source_url: "https://www.nintendolife.com/games/nintendo-switch-2/little-nightmares-enhanced-edition"
+  verified_at: "2026-09-17"
+  status: "reviewed"
+
+# Madden NFL 26: game-key card confirmado en EU (ficha Nintendo Life) y NA (lista de Nintendo Everything).
+- sku_id: "eu-madden-nfl-26-standard"
+  title_id: "madden-nfl-26"
+  region: "EU"
+  edition: "standard"
+  distributor: "Electronic Arts"  # (API) eu.json: publisher
+  release_date: "2025-08-14"  # (API) eu.json: dates_released_dts
+  format: "game_key_card"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) Nintendo Life ficha: "Madden NFL 2026 | ... | Physical Release | Game-Key Card | Release Date | Nintendo Switch 2 | 14th A..."
+  source_url: "https://www.nintendolife.com/games/nintendo-switch-2/ea-sports-madden-nfl-26"
+  verified_at: "2026-09-17"
+  status: "reviewed"
+- sku_id: "na-madden-nfl-26-standard"
+  title_id: "madden-nfl-26"
+  region: "NA"
+  edition: "standard"
+  distributor: "Electronic Arts"
+  release_date: "2025-08-14"
+  format: "game_key_card"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) lista de Nintendo Everything de game-key cards: "Madden NFL 26" aparece en el listado
+  source_url: "https://nintendoeverything.com/list-of-all-nintendo-switch-2-games-with-a-game-key-card-release/"
+  verified_at: "2026-09-17"
+  status: "reviewed"
+
+# Madden NFL 27: game-key card confirmado en EU (ficha Nintendo Life) y NA (lista de Nintendo Everything).
+- sku_id: "eu-madden-nfl-27-standard"
+  title_id: "madden-nfl-27"
+  region: "EU"
+  edition: "standard"
+  distributor: "Electronic Arts"  # (API) eu.json: publisher
+  release_date: "2026-08-13"  # (API) eu.json: dates_released_dts
+  format: "game_key_card"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) Nintendo Life ficha: "... | Physical Release | Game-Key Card | Release Date | Nintendo Switch 2 | 13th A..."
+  source_url: "https://www.nintendolife.com/games/nintendo-switch-2/ea-sports-madden-nfl-27"
+  verified_at: "2026-09-17"
+  status: "reviewed"
+- sku_id: "na-madden-nfl-27-standard"
+  title_id: "madden-nfl-27"
+  region: "NA"
+  edition: "standard"
+  distributor: "Electronic Arts"
+  release_date: "2026-08-13"
+  format: "game_key_card"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) lista de Nintendo Everything de game-key cards: "Madden NFL 27" aparece en el listado
+  source_url: "https://nintendoeverything.com/list-of-all-nintendo-switch-2-games-with-a-game-key-card-release/"
+  verified_at: "2026-09-17"
+  status: "reviewed"
+
+# Majogami: cuarto juego Switch 2 exclusivo con el juego completo en la tarjeta (no Game-Key Card); versión
+# física publicada en Asia (multi-idioma: inglés, japonés, coreano, chino trad./simpl.). En Norteamérica sale
+# solo digital ("no plans for a physical release here in the states").
+- sku_id: "asia-majogami-standard"
+  title_id: "majogami"
+  region: "ASIA"
+  edition: "standard"
+  distributor: null
+  release_date: null
+  format: "full_cart"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) GoNintendo: "the Switch 2 version is the full game on a Game Card, rather than a Game-Key Card"
+  source_url: "https://gonintendo.com/contents/54030-majogami-physical-switch-switch-2-release-detailed-traditional-game-card-on-switch-2"
+  verified_at: "2026-09-17"
+  status: "reviewed"
+
+# Mario Tennis Fever: primera parte (Nintendo, first-party): ficha de Nintendo Life confirma cartucho
+# completo ("Standard Game Card") con precio en $ y £ para la misma fecha, así que sirve como cita para EU y
+# NA a la vez.
+- sku_id: "eu-mario-tennis-fever-standard"
+  title_id: "mario-tennis-fever"
+  region: "EU"
+  edition: "standard"
+  distributor: null
+  release_date: "2026-02-12"
+  format: "full_cart"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) Nintendo Life: "Physical Release | Standard Game Card"
+  source_url: "https://www.nintendolife.com/games/nintendo-switch-2/mario-tennis-fever"
+  verified_at: "2026-09-17"
+  status: "reviewed"
+- sku_id: "na-mario-tennis-fever-standard"
+  title_id: "mario-tennis-fever"
+  region: "NA"
+  edition: "standard"
+  distributor: null
+  release_date: "2026-02-12"
+  format: "full_cart"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) misma ficha de Nintendo Life: "Physical Release | Standard Game Card", precio en $69.99
+  source_url: "https://www.nintendolife.com/games/nintendo-switch-2/mario-tennis-fever"
+  verified_at: "2026-09-17"
+  status: "reviewed"
+
+# Marvel Cosmic Invasion (Dotemu/Tribute): confirmado cartucho completo en Switch 2 en las dos ediciones
+# ("Tribute and Dotemu have confirmed the full game will be on the card"). Standard $49.99 / Deluxe $69.99
+# en Switch 2, 13 de marzo de 2026.
+- sku_id: "eu-marvel-cosmic-invasion-standard"
+  title_id: "marvel-cosmic-invasion"
+  region: "EU"
+  edition: "standard"
+  distributor: "Dotemu"
+  release_date: "2026-03-13"
+  format: "full_cart"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) Nintendo Life: 'Including a "full cartridge" release on Switch 2'
+  source_url: "https://www.nintendolife.com/news/2025/11/marvel-cosmic-invasion-scores-deluxe-physical-release-on-switch-and-switch-2"
+  verified_at: "2026-09-17"
+  status: "reviewed"
+- sku_id: "eu-marvel-cosmic-invasion-deluxe"
+  title_id: "marvel-cosmic-invasion"
+  region: "EU"
+  edition: "deluxe"
+  distributor: "Dotemu"
+  release_date: "2026-03-13"
+  format: "full_cart"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) Nintendo Life: 'Including a "full cartridge" release on Switch 2'
+  source_url: "https://www.nintendolife.com/news/2025/11/marvel-cosmic-invasion-scores-deluxe-physical-release-on-switch-and-switch-2"
+  verified_at: "2026-09-17"
+  status: "reviewed"
+- sku_id: "na-marvel-cosmic-invasion-standard"
+  title_id: "marvel-cosmic-invasion"
+  region: "NA"
+  edition: "standard"
+  distributor: "Dotemu"
+  release_date: "2026-03-13"
+  format: "full_cart"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) TheGamer: "Tribute and Dotemu have confirmed the full game will be on the card"
+  source_url: "https://www.thegamer.com/marvel-comsic-invasion-physical-release/"
+  verified_at: "2026-09-17"
+  status: "reviewed"
+- sku_id: "na-marvel-cosmic-invasion-deluxe"
+  title_id: "marvel-cosmic-invasion"
+  region: "NA"
+  edition: "deluxe"
+  distributor: "Dotemu"
+  release_date: "2026-03-13"
+  format: "full_cart"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) TheGamer: "Tribute and Dotemu have confirmed the full game will be on the card"
+  source_url: "https://www.thegamer.com/marvel-comsic-invasion-physical-release/"
+  verified_at: "2026-09-17"
+  status: "reviewed"
+
+# Marvel's Guardians of the Galaxy: Encore Edition (Square Enix): puerto nativo Switch 2, 5 nov 2026.
+# OJO: el title_id/igdb_id de la tanda apunta al juego base "Marvel's Guardians of the Galaxy" (2021), no a
+# una entrada separada de "Encore Edition"; el SKU queda igualmente escrito porque la caja es real y tiene
+# cita, pero el título se deja en pending hasta comprobar si el igdb_id correcto es el de la Encore Edition.
+- sku_id: "na-marvel-s-guardians-of-the-galaxy-standard"
+  title_id: "marvel-s-guardians-of-the-galaxy"
+  region: "NA"
+  edition: "standard"
+  distributor: null
+  release_date: "2026-11-05"
+  format: "game_key_card"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) RPG Site: "The physical release will be a Game-Key Card."
+  source_url: "https://www.rpgsite.net/news/21376-marvels-guardians-of-the-galaxy-switch-2-resolution-frame-rate-performance"
+  verified_at: "2026-09-17"
+  status: "reviewed"
+
+# Metaphor: ReFantazio (Atlus/Sega): edición Switch 2 en Game-Key Card, 12 nov 2026, con SteelBook Edition.
+- sku_id: "na-metaphor-refantazio-standard"
+  title_id: "metaphor-refantazio"
+  region: "NA"
+  edition: "standard"
+  distributor: null
+  release_date: "2026-11-12"
+  format: "game_key_card"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) RPG Site: "Metaphor: ReFantazio Switch 2 physical Game Key Card pre-orders are now live"
+  source_url: "https://www.rpgsite.net/news/21281-metaphor-refantazio-switch-2-physical-game-key-card-steelbook-edition-pre-order-price"
+  verified_at: "2026-09-17"
+  status: "reviewed"
+- sku_id: "na-metaphor-refantazio-deluxe"
+  title_id: "metaphor-refantazio"
+  region: "NA"
+  edition: "deluxe"
+  distributor: null
+  release_date: "2026-11-12"
+  format: "game_key_card"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) RPG Site: "A SteelBook Edition will also be available" (mismo Game-Key Card + extras)
+  source_url: "https://www.rpgsite.net/news/21281-metaphor-refantazio-switch-2-physical-game-key-card-steelbook-edition-pre-order-price"
+  verified_at: "2026-09-17"
+  status: "reviewed"
+
+# ---------------------------------------------------------------------------------------------------------
+# Tanda "me...mon...": Metroid Ravenous, Mewgenics, Minecraft, Minecraft Dungeons II, Minishoot' Adventures,
+# MIO: Memories in Orbit, Model Debut4, Momotaro Dentetsu 2, Monopoly: Star Wars Heroes vs. Villains,
+# Monster Hunter Stories 3: Twisted Reflection (18-09-2026).
+
+# Metroid Ravenous (Nintendo): first-party, lista de Nintendo Life con el juego completo en el cartucho.
+- sku_id: "eu-metroid-ravenous-standard"
+  title_id: "metroid-ravenous"
+  region: "EU"
+  edition: "standard"
+  distributor: "Nintendo"
+  release_date: "2027-01-28"  # (leída) Nintendo Life: "Metroid Ravenous (Switch 2) | 28th Jan 2027 / Nintendo"
+  format: "full_cart"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) Nintendo Life, lista "Every Nintendo Switch 2 Physical Release With The Full Game On The Cart"
+  source_url: "https://www.nintendolife.com/guides/every-nintendo-switch-2-physical-release-with-the-full-game-on-the-cart"
+  verified_at: "2026-09-18"
+  status: "reviewed"
+# NA/JP/KR/ASIA: buscado (1 intento), sin cita específica de formato para la edición estándar en estas regiones.
+- sku_id: "na-metroid-ravenous-standard"
+  title_id: "metroid-ravenous"
+  region: "NA"
+  edition: "standard"
+  distributor: null
+  release_date: null
+  format: "unknown"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "unconfirmed"
+  source_url: null
+  verified_at: "2026-09-18"
+  status: "pending"
+- sku_id: "jp-metroid-ravenous-standard"
+  title_id: "metroid-ravenous"
+  region: "JP"
+  edition: "standard"
+  distributor: null
+  release_date: null
+  format: "unknown"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "unconfirmed"
+  source_url: null
+  verified_at: "2026-09-18"
+  status: "pending"
+- sku_id: "kr-metroid-ravenous-standard"
+  title_id: "metroid-ravenous"
+  region: "KR"
+  edition: "standard"
+  distributor: null
+  release_date: null
+  format: "unknown"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "unconfirmed"
+  source_url: null
+  verified_at: "2026-09-18"
+  status: "pending"
+- sku_id: "asia-metroid-ravenous-standard"
+  title_id: "metroid-ravenous"
+  region: "ASIA"
+  edition: "standard"
+  distributor: null
+  release_date: null
+  format: "unknown"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "unconfirmed"
+  source_url: null
+  verified_at: "2026-09-18"
+  status: "pending"
+
+# Metroid Ravenous: Special Edition — el listado de Play-Asia marca "Game Cart" (no "Game Key Cart") para ASIA.
+- sku_id: "asia-metroid-ravenous-special-edition-standard"
+  title_id: "metroid-ravenous-special-edition"
+  region: "ASIA"
+  edition: "standard"
+  distributor: null
+  release_date: null
+  format: "full_cart"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "retailer_listing"  # (listado) Play-Asia: "Metroid Ravenous [Special Edition] (Multi-Language) Game Cart (Cover - Asian) for Nintendo Switch 2"
+  source_url: "https://www.play-asia.com/en/metroid-ravenous-special-edition-multi-language/13/70kfi9"
+  verified_at: "2026-09-18"
+  status: "reviewed"
+- sku_id: "eu-metroid-ravenous-special-edition-standard"
+  title_id: "metroid-ravenous-special-edition"
+  region: "EU"
+  edition: "standard"
+  distributor: null
+  release_date: null
+  format: "unknown"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "unconfirmed"
+  source_url: null
+  verified_at: "2026-09-18"
+  status: "pending"
+- sku_id: "na-metroid-ravenous-special-edition-standard"
+  title_id: "metroid-ravenous-special-edition"
+  region: "NA"
+  edition: "standard"
+  distributor: null
+  release_date: null
+  format: "unknown"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "unconfirmed"
+  source_url: null
+  verified_at: "2026-09-18"
+  status: "pending"
+- sku_id: "jp-metroid-ravenous-special-edition-standard"
+  title_id: "metroid-ravenous-special-edition"
+  region: "JP"
+  edition: "standard"
+  distributor: null
+  release_date: null
+  format: "unknown"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "unconfirmed"
+  source_url: null
+  verified_at: "2026-09-18"
+  status: "pending"
+- sku_id: "kr-metroid-ravenous-special-edition-standard"
+  title_id: "metroid-ravenous-special-edition"
+  region: "KR"
+  edition: "standard"
+  distributor: null
+  release_date: null
+  format: "unknown"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "unconfirmed"
+  source_url: null
+  verified_at: "2026-09-18"
+  status: "pending"
+
+# Mewgenics (Nicalis): "full game on cart" en el titular del propio artículo de RPG Site; solo NA anunciada.
+- sku_id: "na-mewgenics-standard"
+  title_id: "mewgenics"
+  region: "NA"
+  edition: "standard"
+  distributor: "Nicalis"  # (leída) RPG Site: "coming to... Switch 2 next week through Nicalis"
+  release_date: null
+  format: "full_cart"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) RPG Site, título del artículo: "Mewgenics PS5 and Nintendo Switch 2 physical release pre-orders are now live, full game on cart"
+  source_url: "https://www.rpgsite.net/news/21263-mewgenics-ps5-nintendo-switch-2-physical-release-pre-orders-are-now-live-full-game-on-cart"
+  verified_at: "2026-09-18"
+  status: "reviewed"
+
+# Minecraft (Mojang Studios): la ficha de Nintendo Life confirma game-key card, con precio en $ y en £.
+- sku_id: "eu-minecraft-standard"
+  title_id: "minecraft"
+  region: "EU"
+  edition: "standard"
+  distributor: null
+  release_date: "2026-10-27"  # (leída) Nintendo Life: "Release Date | Nintendo Switch 2 | 27th Oct 2026"
+  format: "game_key_card"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) Nintendo Life: "Physical Release | Game-Key Card" y "Minecraft Nintendo Switch 2 (Game-Key Card) | $29.99 | £39.99"
+  source_url: "https://www.nintendolife.com/games/nintendo-switch-2/minecraft"
+  verified_at: "2026-09-18"
+  status: "reviewed"
+- sku_id: "na-minecraft-standard"
+  title_id: "minecraft"
+  region: "NA"
+  edition: "standard"
+  distributor: null
+  release_date: "2026-10-27"  # (leída) Nintendo Life: "Release Date | Nintendo Switch 2 | 27th Oct 2026"
+  format: "game_key_card"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) Nintendo Life: "Physical Release | Game-Key Card" y "Minecraft Nintendo Switch 2 (Game-Key Card) | $29.99 | £39.99"
+  source_url: "https://www.nintendolife.com/games/nintendo-switch-2/minecraft"
+  verified_at: "2026-09-18"
+  status: "reviewed"
+
+# Minecraft Dungeons II (Mojang Studios / Xbox Game Studios): ficha de Nintendo Life confirma game-key card.
+- sku_id: "na-minecraft-dungeons-ii-standard"
+  title_id: "minecraft-dungeons-ii"
+  region: "NA"
+  edition: "standard"
+  distributor: null
+  release_date: "2026-09-29"  # (leída) Nintendo Life: "Release Date | Nintendo Switch 2 | 29th Sep 2026"; coincide con eu.json (API EU)
+  format: "game_key_card"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) Nintendo Life: "Physical Release | Game-Key Card"
+  source_url: "https://www.nintendolife.com/games/nintendo-switch-2/minecraft-dungeons-ii"
+  verified_at: "2026-09-18"
+  status: "reviewed"
+- sku_id: "eu-minecraft-dungeons-ii-standard"
+  title_id: "minecraft-dungeons-ii"
+  region: "EU"
+  edition: "standard"
+  distributor: null
+  release_date: "2026-09-29"  # (API) eu.json: dates_released_dts
+  format: "unknown"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "unconfirmed"  # la ficha de Nintendo Life solo da precio en $ para la fila física, sin confirmar precio/formato en £
+  source_url: null
+  verified_at: "2026-09-18"
+  status: "pending"
+
+# Minishoot' Adventures (Super Rare Games, SRG): nota de prensa propia, "full game on cartridge/disc - no download codes".
+- sku_id: "eu-minishoot-adventures-standard"
+  title_id: "minishoot-adventures"
+  region: "EU"
+  edition: "standard"
+  distributor: "Super Rare Games"  # (leída) nota de prensa de SRG vía Games Press
+  release_date: null
+  format: "full_cart"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) Games Press (nota de Super Rare Games): "Both editions include the full game on cartridge/disc - no download codes."
+  source_url: "https://www.gamespress.com/Super-Rare-Games-Announce-First-Nintendo-Switch-2-Physical-Release-Min"
+  verified_at: "2026-09-18"
+  status: "reviewed"
+
+# MIO: Memories in Orbit (Focus Entertainment): full cartridge confirmado en EU (lista de Nintendo Life) y NA
+# (Nintendo Everything: "the Nintendo Switch 2 version is a full cartridge, not a game-key card").
+- sku_id: "eu-mio-memories-in-orbit-standard"
+  title_id: "mio-memories-in-orbit"
+  region: "EU"
+  edition: "standard"
+  distributor: null
+  release_date: "2026-01-20"  # (leída) Nintendo Life: "MIO: Memories in Orbit (Switch 2) | 20th Jan 2026"
+  format: "full_cart"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) Nintendo Life, lista "Every Nintendo Switch 2 Physical Release With The Full Game On The Cart"
+  source_url: "https://www.nintendolife.com/guides/every-nintendo-switch-2-physical-release-with-the-full-game-on-the-cart"
+  verified_at: "2026-09-18"
+  status: "reviewed"
+- sku_id: "na-mio-memories-in-orbit-standard"
+  title_id: "mio-memories-in-orbit"
+  region: "NA"
+  edition: "standard"
+  distributor: null
+  release_date: "2026-04-10"  # (leída) Nintendo Everything: "boxed format on April 10, 2026"
+  format: "full_cart"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) Nintendo Everything: "the Nintendo Switch 2 version is a full cartridge, not a game-key card"
+  source_url: "https://nintendoeverything.com/mio-memories-in-orbit-will-have-a-physical-release-on-nintendo-switch-2-and-switch-pre-orders-open/"
+  verified_at: "2026-09-18"
+  status: "reviewed"
+
+# Model Debut4 (FuRyu/Racjin): Gematsu confirma game-key card en Japón. EU/NA sin cita de formato (1 intento).
+- sku_id: "jp-model-debut4-standard"
+  title_id: "model-debut4"
+  region: "JP"
+  edition: "standard"
+  distributor: "FuRyu"  # (leída) Gematsu: "Publisher FuRyu and developer Racjin"
+  release_date: "2026-08-27"  # (leída) Gematsu: "will release... for Switch 2 and PC via Steam on August 27"
+  format: "game_key_card"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) Gematsu: "In Japan, the Switch 2 version will be available both physically and digitally, and the physical edition will ship on a game-key card."
+  source_url: "https://www.gematsu.com/2026/06/model-debut4-coming-to-switch-2-pc-on-august-27"
+  verified_at: "2026-09-18"
+  status: "reviewed"
+- sku_id: "eu-model-debut4-standard"
+  title_id: "model-debut4"
+  region: "EU"
+  edition: "standard"
+  distributor: null
+  release_date: null
+  format: "unknown"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "unconfirmed"
+  source_url: null
+  verified_at: "2026-09-18"
+  status: "pending"
+- sku_id: "na-model-debut4-standard"
+  title_id: "model-debut4"
+  region: "NA"
+  edition: "standard"
+  distributor: null
+  release_date: null
+  format: "unknown"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "unconfirmed"
+  source_url: null
+  verified_at: "2026-09-18"
+  status: "pending"
+
+# Momento (Silver Lining Interactive): GoNintendo confirma que hay edición física en caja, pero ni la ficha
+# de Nintendo Life ni la nota traen el campo de formato del cartucho.
+- sku_id: "na-momento-standard"
+  title_id: "momento"
+  region: "NA"
+  edition: "standard"
+  distributor: "Silver Lining Interactive"
+  release_date: "2026-07-17"  # (listado) GoNintendo: "Momento physical edition now available for Switch and Switch 2"
+  format: "unknown"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "unconfirmed"  # la ficha de Nintendo Life no trae "Physical Release"; GoNintendo confirma que hay caja pero no el tipo de cartucho
+  source_url: null
+  verified_at: "2026-09-18"
+  status: "pending"
+
+# Momotaro Dentetsu 2 (Konami): Famitsu dice explícitamente que la Nintendo Switch 2 Edition NO es key card.
+# Venta exclusiva de Japón (販売地域：日本 en la propia ficha de producto de Konami).
+- sku_id: "jp-momotaro-dentetsu-2-anata-no-machi-mo-kitto-aru-standard"
+  title_id: "momotaro-dentetsu-2-anata-no-machi-mo-kitto-aru"
+  region: "JP"
+  edition: "standard"
+  distributor: "Konami"
+  release_date: "2025-11-13"  # (leída) konami.com/games/momotetsu/2/products.php: "発売日 | 2025年11月13日(木)"
+  format: "full_cart"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "official"  # (leída) Famitsu, citando la web oficial de Konami: "Nintendo Switch 2 Editionのソフトはキーカードではなく、従来のカートリッジ式ですので、追加のダウンロードが不要となります"
+  source_url: "https://www.famitsu.com/article/202507/48711"
+  verified_at: "2026-09-18"
+  status: "reviewed"
+
+# Monopoly: Star Wars Heroes vs. Villains (Ubisoft): ficha de Nintendo Life, precio en $ y en £ con la misma fecha.
+- sku_id: "eu-monopoly-star-wars-heroes-vs-villains-standard"
+  title_id: "monopoly-star-wars-heroes-vs-villains"
+  region: "EU"
+  edition: "standard"
+  distributor: null
+  release_date: "2026-06-30"  # (leída) Nintendo Life: "Release Date | Nintendo Switch 2 | 30th Jun 2026"
+  format: "game_key_card"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) Nintendo Life: "Physical Release | Game-Key Card | ... 30th Jun 2026 — $29.99 | ... — £24.99"
+  source_url: "https://www.nintendolife.com/games/nintendo-switch-2/monopoly-star-wars-heroes-vs-villains"
+  verified_at: "2026-09-18"
+  status: "reviewed"
+- sku_id: "na-monopoly-star-wars-heroes-vs-villains-standard"
+  title_id: "monopoly-star-wars-heroes-vs-villains"
+  region: "NA"
+  edition: "standard"
+  distributor: null
+  release_date: "2026-06-30"  # (leída) Nintendo Life: "Release Date | Nintendo Switch 2 | 30th Jun 2026"
+  format: "game_key_card"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) Nintendo Life: "Physical Release | Game-Key Card | ... 30th Jun 2026 — $29.99 | ... — £24.99"; también en la lista de game-key cards de Nintendo Everything
+  source_url: "https://www.nintendolife.com/games/nintendo-switch-2/monopoly-star-wars-heroes-vs-villains"
+  verified_at: "2026-09-18"
+  status: "reviewed"
+
+# Monster Hunter Stories 3: Twisted Reflection (Capcom): ficha de Nintendo Life, precio en $ y en £.
+- sku_id: "eu-monster-hunter-stories-3-twisted-reflection-standard"
+  title_id: "monster-hunter-stories-3-twisted-reflection"
+  region: "EU"
+  edition: "standard"
+  distributor: null
+  release_date: "2026-03-13"  # (leída) Nintendo Life: "Release Date | Nintendo Switch 2 | 13th Mar 2026"
+  format: "game_key_card"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) Nintendo Life: "Physical Release | Game-Key Card | ... 13th Mar 2026 — $69.99 | ... — £54.99"
+  source_url: "https://www.nintendolife.com/games/nintendo-switch-2/monster-hunter-stories-3-twisted-reflection"
+  verified_at: "2026-09-18"
+  status: "reviewed"
+- sku_id: "na-monster-hunter-stories-3-twisted-reflection-standard"
+  title_id: "monster-hunter-stories-3-twisted-reflection"
+  region: "NA"
+  edition: "standard"
+  distributor: null
+  release_date: "2026-03-13"  # (leída) Nintendo Life: "Release Date | Nintendo Switch 2 | 13th Mar 2026"
+  format: "game_key_card"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) Nintendo Life: "Physical Release | Game-Key Card | ... 13th Mar 2026 — $69.99 | ... — £54.99"; listado igual en GameStop ("Game Key Card")
+  source_url: "https://www.nintendolife.com/games/nintendo-switch-2/monster-hunter-stories-3-twisted-reflection"
+  verified_at: "2026-09-18"
+  status: "reviewed"
+- sku_id: "jp-monster-hunter-stories-3-twisted-reflection-standard"
+  title_id: "monster-hunter-stories-3-twisted-reflection"
+  region: "JP"
+  edition: "standard"
+  distributor: null
+  release_date: null
+  format: "unknown"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "unconfirmed"
+  source_url: null
+  verified_at: "2026-09-18"
+  status: "pending"
+
+# Monster Hunter Wilds (Capcom): la única edición física confirmada es la Deluxe Edition (base game + Deluxe
+# Pack voucher), en Game-Key Card. La edición Standard es solo digital según la web oficial.
+- sku_id: "na-monster-hunter-wilds-deluxe"
+  title_id: "monster-hunter-wilds"
+  region: "NA"
+  edition: "deluxe"
+  distributor: null
+  release_date: "2026-12-04"  # (leída) Nintendo Life: "4th Dec 2026 — $39.99"
+  format: "game_key_card"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) Nintendo Life: "A Game-Key Card release has been confirmed for $39.99 USD and comes with the base game and a Deluxe Pack voucher"; confirmado también en la web oficial (monsterhunter.com): "Physical Version | (game-key card) | Deluxe Edition"
+  source_url: "https://www.nintendolife.com/news/2026/09/monster-hunter-wilds-launches-for-switch-2-this-december-includes-local-and-cross-platform-play"
+  verified_at: "2026-09-18"
+  status: "reviewed"
+- sku_id: "eu-monster-hunter-wilds-deluxe"
+  title_id: "monster-hunter-wilds"
+  region: "EU"
+  edition: "deluxe"
+  distributor: null
+  release_date: null
+  format: "unknown"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "unconfirmed"
+  source_url: null
+  verified_at: "2026-09-18"
+  status: "pending"
+- sku_id: "jp-monster-hunter-wilds-deluxe"
+  title_id: "monster-hunter-wilds"
+  region: "JP"
+  edition: "deluxe"
+  distributor: null
+  release_date: null
+  format: "unknown"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "unconfirmed"
+  source_url: null
+  verified_at: "2026-09-18"
+  status: "pending"
+
+# Moomin: Midsummer Madness (publisher sin confirmar en IGDB): físico anunciado para Switch/Switch 2 sin
+# detalle de formato en la nota de GoNintendo. VideoGamesPlus.ca lista una versión JPN import como Game-Key
+# Card; la fecha de lanzamiento en Japón la da Saiga NAK.
+- sku_id: "jp-moomin-midsummer-madness-standard"
+  title_id: "moomin-midsummer-madness"
+  region: "JP"
+  edition: "standard"
+  distributor: null
+  release_date: "2026-11-12"  # (leída) Saiga NAK: "'Moomin: Summer Festival in Moominvalley' Set for Release on November 12! Pre-orders Now Open for Physical Editions on Nintendo Switch and Nintendo Switch 2"
+  format: "game_key_card"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "retailer_listing"  # (listado) VideoGamesPlus.ca: "Moomin: Midsummer Madness [Standard] (JPN Import - Multi-Language) [Game-Key Card] - Nintendo Switch 2 (PRE-ORDER)"
+  source_url: "https://videogamesplus.ca/products/moomin-midsummer-madness-standard-jpn-import-multi-language-game-key-card-nintendo-switch-2-pre-order"
+  verified_at: "2026-09-18"
+  status: "reviewed"
+- sku_id: "na-moomin-midsummer-madness-standard"
+  title_id: "moomin-midsummer-madness"
+  region: "NA"
+  edition: "standard"
+  distributor: null
+  release_date: null
+  format: "unknown"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "unconfirmed"
+  source_url: null
+  verified_at: "2026-09-18"
+  status: "pending"
+
+# Moonlight Peaks (Little Chicken / XSEED / Marvelous Europe): en Japón sale en cartucho completo (AUTOMATON-
+# style press report de Nintendo Everything); en Europa hay físico pero sin confirmar el tipo de tarjeta; en
+# Norteamérica es solo digital (no se escribe SKU).
+- sku_id: "jp-moonlight-peaks-standard"
+  title_id: "moonlight-peaks"
+  region: "JP"
+  edition: "standard"
+  distributor: null
+  release_date: null
+  format: "full_cart"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) Nintendo Everything: "Boxed versions will be released there for both Nintendo Switch 2 and Switch with the full game on the cartridge."
+  source_url: "https://nintendoeverything.com/moonlight-peaks-getting-nintendo-switch-2-and-switch-physical-release-in-japan-with-english-support-pre-orders-open/"
+  verified_at: "2026-09-18"
+  status: "reviewed"
+- sku_id: "eu-moonlight-peaks-standard"
+  title_id: "moonlight-peaks"
+  region: "EU"
+  edition: "standard"
+  distributor: "Marvelous Europe"  # (leída) GoNintendo: "Marvelous Europe today announced the launch of the physical Nintendo Switch 2 Edition of Moonlight Peaks across Europe"
+  release_date: "2026-08-28"  # (leída) GoNintendo: "Moonlight Peaks Physical Switch 2 Edition Launches Today ... 28 August 2026"
+  format: "unknown"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "unconfirmed"
+  source_url: null
+  verified_at: "2026-09-18"
+  status: "pending"
+
+# Moonlighter 2: The Endless Vault (Silver Lining Interactive / Digital Sun): en Europa se distribuye en
+# cartucho completo según la cuenta de seguimiento "Is Game Key Card?"; Norteamérica sin confirmar el formato.
+- sku_id: "eu-moonlighter-2-the-endless-vault-standard"
+  title_id: "moonlighter-2-the-endless-vault"
+  region: "EU"
+  edition: "standard"
+  distributor: "Silver Lining Interactive"
+  release_date: "2026-11-13"  # (leída) Nintendo Life: "Physical Confirmed For November"; Silver Lining: "13th November"
+  format: "full_cart"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) "Is Game Key Card?" (X): "Moonlighter 2: The Endless Vault will be distributed as a real Game Cartridge in EUR. #Switch2 #SilverLiningInteractive #GameCard"
+  source_url: "https://x.com/IsGameKeyCard/status/2085287058050883995"
+  verified_at: "2026-09-18"
+  status: "reviewed"
+- sku_id: "na-moonlighter-2-the-endless-vault-standard"
+  title_id: "moonlighter-2-the-endless-vault"
+  region: "NA"
+  edition: "standard"
+  distributor: "Silver Lining Interactive"
+  release_date: "2026-11-13"  # (leída) Nintendo Life: "Physical Confirmed For November"
+  format: "unknown"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "unconfirmed"
+  source_url: null
+  verified_at: "2026-09-18"
+  status: "pending"
+
+# Mouse: P.I. For Hire (PlaySide / Fumi Games): Standard Edition confirmada en cartucho completo (no Game-Key
+# Card) con el mismo lanzamiento global el 10-07-2026, precio en $/£/€.
+- sku_id: "eu-mouse-p-i-for-hire-standard"
+  title_id: "mouse-p-i-for-hire"
+  region: "EU"
+  edition: "standard"
+  distributor: "PlaySide Studios"
+  release_date: "2026-07-10"  # (leída) Gamereactor: "Nintendo Switch 2 | Physical game-on cartridge | ... | Global | July 10, 2026"
+  format: "full_cart"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) Gamereactor: "this included as an on-cartridge product for Switch 2 and not a Game-Key Card"
+  source_url: "https://www.gamereactor.eu/mouse-pi-for-hire-physical-and-digital-editions-announced-switch-2-includes-on-cartridge-game-1696233/"
+  verified_at: "2026-09-18"
+  status: "reviewed"
+- sku_id: "na-mouse-p-i-for-hire-standard"
+  title_id: "mouse-p-i-for-hire"
+  region: "NA"
+  edition: "standard"
+  distributor: "PlaySide Studios"
+  release_date: "2026-07-10"  # (leída) Gamereactor: "Nintendo Switch 2 | Physical game-on cartridge | ... | Global | July 10, 2026"
+  format: "full_cart"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) Gamereactor: "this included as an on-cartridge product for Switch 2 and not a Game-Key Card"
+  source_url: "https://www.gamereactor.eu/mouse-pi-for-hire-physical-and-digital-editions-announced-switch-2-includes-on-cartridge-game-1696233/"
+  verified_at: "2026-09-18"
+  status: "reviewed"
+
+# Muramasa: Revenant Blades (XSEED Games / Marvelous USA): confirmado por RPG Site que Norteamérica tiene el
+# juego completo en el cartucho, mientras Europa y Japón reciben Game-Key Card.
+- sku_id: "na-muramasa-revenant-blades-standard"
+  title_id: "muramasa-revenant-blades"
+  region: "NA"
+  edition: "standard"
+  distributor: "XSEED Games / Marvelous USA"
+  release_date: null
+  format: "full_cart"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) RPG Site: "Muramasa: Revenant Blades has been confirmed for a full physical release through Marvelous USA/XSEED Games in North America only so far... release in North America with the game on cartridge."
+  source_url: "https://www.rpgsite.net/feature/17453-nintendo-switch-2-rpg-physical-release-cartridge-no-game-key-card-list"
+  verified_at: "2026-09-18"
+  status: "reviewed"
+- sku_id: "eu-muramasa-revenant-blades-standard"
+  title_id: "muramasa-revenant-blades"
+  region: "EU"
+  edition: "standard"
+  distributor: null
+  release_date: null
+  format: "game_key_card"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) RPG Site: "The EU and other region listings have it as a Game-Key Card right now."
+  source_url: "https://www.rpgsite.net/feature/17453-nintendo-switch-2-rpg-physical-release-cartridge-no-game-key-card-list"
+  verified_at: "2026-09-18"
+  status: "reviewed"
+- sku_id: "jp-muramasa-revenant-blades-standard"
+  title_id: "muramasa-revenant-blades"
+  region: "JP"
+  edition: "standard"
+  distributor: null
+  release_date: null
+  format: "game_key_card"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) RPG Site: "The EU and JP versions are Game-Key Cards."
+  source_url: "https://www.rpgsite.net/feature/17453-nintendo-switch-2-rpg-physical-release-cartridge-no-game-key-card-list"
+  verified_at: "2026-09-18"
+  status: "reviewed"
+
+# My Hero Academia: All's Justice (Bandai Namco): ficha de Nintendo Life confirma Game-Key Card en EU y NA a
+# la vez (precio en £ y $ en la misma fila). Japón sin confirmar el tipo de tarjeta.
+- sku_id: "eu-my-hero-academia-all-s-justice-standard"
+  title_id: "my-hero-academia-all-s-justice"
+  region: "EU"
+  edition: "standard"
+  distributor: null
+  release_date: "2026-09-04"  # (leída) Nintendo Life: "4th Sep 2026 — £54.99"
+  format: "game_key_card"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) Nintendo Life: "Physical Release | Game-Key Card | Release Date | Nintendo Switch 2 | 4th Sep 2026 — £54.99 | 4th Sep 2026 — $59.99"
+  source_url: "https://www.nintendolife.com/games/nintendo-switch-2/my-hero-academia-alls-justice"
+  verified_at: "2026-09-18"
+  status: "reviewed"
+- sku_id: "na-my-hero-academia-all-s-justice-standard"
+  title_id: "my-hero-academia-all-s-justice"
+  region: "NA"
+  edition: "standard"
+  distributor: null
+  release_date: "2026-09-04"  # (leída) Nintendo Life: "4th Sep 2026 — $59.99"
+  format: "game_key_card"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) Nintendo Life: "Physical Release | Game-Key Card | Release Date | Nintendo Switch 2 | 4th Sep 2026 — £54.99 | 4th Sep 2026 — $59.99"
+  source_url: "https://www.nintendolife.com/games/nintendo-switch-2/my-hero-academia-alls-justice"
+  verified_at: "2026-09-18"
+  status: "reviewed"
+- sku_id: "jp-my-hero-academia-all-s-justice-standard"
+  title_id: "my-hero-academia-all-s-justice"
+  region: "JP"
+  edition: "standard"
+  distributor: "バンダイナムコエンターテインメント"  # (API) Nintendo JP: maker "バンダイナムコエンターテインメント"
+  release_date: "2026-09-03"  # (API) Nintendo JP: sdate "2026.9.3"
+  format: "unknown"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "unconfirmed"
+  source_url: null
+  verified_at: "2026-09-18"
+  status: "pending"
+
+# NBA 2K26 (2K): ficha de Nintendo Life confirma Game-Key Card en EU y NA a la vez, corroborado por varios
+# listados de tiendas NA (eBay, Macy's, QVC) con "(Game-Key Card)" en el título.
+- sku_id: "eu-nba-2k26-standard"
+  title_id: "nba-2k26"
+  region: "EU"
+  edition: "standard"
+  distributor: null
+  release_date: "2025-09-05"  # (leída) Nintendo Life: "5th Sep 2025 — £69.99"
+  format: "game_key_card"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) Nintendo Life: "Physical Release | Game-Key Card | Release Date | Nintendo Switch 2 | 5th Sep 2025 — $69.99 | 5th Sep 2025 — £69.99"
+  source_url: "https://www.nintendolife.com/games/nintendo-switch-2/nba-2k26"
+  verified_at: "2026-09-18"
+  status: "reviewed"
+- sku_id: "na-nba-2k26-standard"
+  title_id: "nba-2k26"
+  region: "NA"
+  edition: "standard"
+  distributor: null
+  release_date: "2025-09-05"  # (leída) Nintendo Life: "5th Sep 2025 — $69.99"
+  format: "game_key_card"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) Nintendo Life: "Physical Release | Game-Key Card | ..."; (listado) QVC: "NBA 2K26 (Game Key Card) - Nintendo Switch 2"; Macy's/eBay: "NBA 2K26 (Game-Key Card)"
+  source_url: "https://www.nintendolife.com/games/nintendo-switch-2/nba-2k26"
+  verified_at: "2026-09-18"
+  status: "reviewed"
+
+# NBA 2K27 (2K): ficha de Nintendo Life confirma Game-Key Card en EU y NA a la vez, mismo patrón que las
+# entregas anteriores de la serie.
+- sku_id: "eu-nba-2k27-standard"
+  title_id: "nba-2k27"
+  region: "EU"
+  edition: "standard"
+  distributor: null
+  release_date: "2026-09-04"  # (leída) Nintendo Life: "4th Sep 2026 — £69.99"
+  format: "game_key_card"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) Nintendo Life: "Physical Release | Game-Key Card | Release Date | Nintendo Switch 2 | 4th Sep 2026 — £69.99 | 4th Sep 2026 — $69.99"
+  source_url: "https://www.nintendolife.com/games/nintendo-switch-2/nba-2k27"
+  verified_at: "2026-09-18"
+  status: "reviewed"
+- sku_id: "na-nba-2k27-standard"
+  title_id: "nba-2k27"
+  region: "NA"
+  edition: "standard"
+  distributor: null
+  release_date: "2026-09-04"  # (leída) Nintendo Life: "4th Sep 2026 — $69.99"
+  format: "game_key_card"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) Nintendo Life: "Physical Release | Game-Key Card | Release Date | Nintendo Switch 2 | 4th Sep 2026 — £69.99 | 4th Sep 2026 — $69.99"
+  source_url: "https://www.nintendolife.com/games/nintendo-switch-2/nba-2k27"
+  verified_at: "2026-09-18"
+  status: "reviewed"
+
+# MotoGP 26 (Milestone): físico anunciado (precio en la ficha de Nintendo Life) pero sin campo "Physical
+# Release" ni cita de prensa que confirme cartucho completo o Game-Key Card en ninguna región.
+- sku_id: "eu-motogp-26-standard"
+  title_id: "motogp-26"
+  region: "EU"
+  edition: "standard"
+  distributor: null
+  release_date: "2026-04-29"  # (leída) Nintendo Life: "29th Apr 2026 — £44.99"
+  format: "unknown"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "unconfirmed"
+  source_url: null
+  verified_at: "2026-09-18"
+  status: "pending"
+- sku_id: "na-motogp-26-standard"
+  title_id: "motogp-26"
+  region: "NA"
+  edition: "standard"
+  distributor: null
+  release_date: "2026-04-29"  # (leída) Nintendo Life: "29th Apr 2026 — $49.99"
+  format: "unknown"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "unconfirmed"
+  source_url: null
+  verified_at: "2026-09-18"
+  status: "pending"
+
+# Nicktoons & The Dice of Destiny (GameMill Entertainment): en la lista de game-key cards de Nintendo
+# Everything sale como "Nickelodeon & The Dice of Destiny" (mismo juego, pequeña errata de nombre en su
+# lista). EU: existe en el catálogo Solr (Game Mill, 2025-12-05) pero sin fuente de formato.
+- sku_id: "na-nicktoons-the-dice-of-destiny-standard"
+  title_id: "nicktoons-the-dice-of-destiny"
+  region: "NA"
+  edition: "standard"
+  distributor: null
+  release_date: null
+  format: "game_key_card"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (listado) nintendoeverything.com: listado en "list-of-all-nintendo-switch-2-games-with-a-game-key-card-release" como "Nickelodeon & The Dice of Destiny"
+  source_url: "https://nintendoeverything.com/list-of-all-nintendo-switch-2-games-with-a-game-key-card-release/"
+  verified_at: "2026-09-18"
+  status: "reviewed"
+- sku_id: "eu-nicktoons-the-dice-of-destiny-standard"
+  title_id: "nicktoons-the-dice-of-destiny"
+  region: "EU"
+  edition: "standard"
+  distributor: null
+  release_date: "2025-12-05"  # (API) Nintendo EU Solr: dates_released_dts
+  format: "unknown"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "unconfirmed"
+  source_url: null
+  verified_at: "2026-09-18"
+  status: "pending"
+
+# Ninja Baseball League-Man: Bases Loaded (City Connection, revival de Ninja Baseball Bat Man de Irem):
+# confirmado cartucho completo en Japón. Occidente solo tiene la especulación del propio artículo
+# ("it will likely be supported on the cartridge"), no una cita válida.
+- sku_id: "jp-ninja-baseball-league-man-bases-loaded-standard"
+  title_id: "ninja-baseball-league-man-bases-loaded"
+  region: "JP"
+  edition: "standard"
+  distributor: null
+  release_date: "2026-12-10"  # (leída) nintendoeverything.com: "Ninja Baseball League-Man: Bases Loaded hits Switch 2 Dec. 10th, 2026"
+  format: "full_cart"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) nintendoeverything.com: "Note that the full game is on the cartridge."
+  source_url: "https://nintendoeverything.com/ninja-baseball-league-man-bases-loaded-announced-for-nintendo-switch-2-1993-game-returns-with-new-content-and-features/"
+  verified_at: "2026-09-18"
+  status: "reviewed"
+- sku_id: "eu-ninja-baseball-league-man-bases-loaded-standard"
+  title_id: "ninja-baseball-league-man-bases-loaded"
+  region: "EU"
+  edition: "standard"
+  distributor: null
+  release_date: null
+  format: "unknown"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "unconfirmed"
+  source_url: null
+  verified_at: "2026-09-18"
+  status: "pending"
+- sku_id: "na-ninja-baseball-league-man-bases-loaded-standard"
+  title_id: "ninja-baseball-league-man-bases-loaded"
+  region: "NA"
+  edition: "standard"
+  distributor: null
+  release_date: null
+  format: "unknown"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "unconfirmed"
+  source_url: null
+  verified_at: "2026-09-18"
+  status: "pending"
+
+# Ninja JajaMaru: Yokai Night Parade (City Connection): anunciado para 2027, físico y digital
+# confirmados en general pero sin cita del tipo de cartucho en ninguna región.
+- sku_id: "jp-ninja-jajamaru-yokai-night-parade-standard"
+  title_id: "ninja-jajamaru-yokai-night-parade"
+  region: "JP"
+  edition: "standard"
+  distributor: null
+  release_date: null
+  format: "unknown"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "unconfirmed"
+  source_url: null
+  verified_at: "2026-09-18"
+  status: "pending"
+- sku_id: "eu-ninja-jajamaru-yokai-night-parade-standard"
+  title_id: "ninja-jajamaru-yokai-night-parade"
+  region: "EU"
+  edition: "standard"
+  distributor: null
+  release_date: null
+  format: "unknown"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "unconfirmed"
+  source_url: null
+  verified_at: "2026-09-18"
+  status: "pending"
+- sku_id: "na-ninja-jajamaru-yokai-night-parade-standard"
+  title_id: "ninja-jajamaru-yokai-night-parade"
+  region: "NA"
+  edition: "standard"
+  distributor: null
+  release_date: null
+  format: "unknown"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "unconfirmed"
+  source_url: null
+  verified_at: "2026-09-18"
+  status: "pending"
+
+# Ninjala 2: The Uncharted Planet (GungHo Online Entertainment): anunciado para primavera de 2027;
+# la API de Nintendo JP ya marca "パッケージ版／ダウンロード版" pero sin pprice todavía (precio no anunciado) y sin
+# cita del tipo de tarjeta.
+- sku_id: "jp-ninjala-2-the-uncharted-planet-standard"
+  title_id: "ninjala-2-the-uncharted-planet"
+  region: "JP"
+  edition: "standard"
+  distributor: null
+  release_date: null
+  format: "unknown"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "unconfirmed"
+  source_url: null
+  verified_at: "2026-09-18"
+  status: "pending"
+- sku_id: "eu-ninjala-2-the-uncharted-planet-standard"
+  title_id: "ninjala-2-the-uncharted-planet"
+  region: "EU"
+  edition: "standard"
+  distributor: null
+  release_date: null
+  format: "unknown"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "unconfirmed"
+  source_url: null
+  verified_at: "2026-09-18"
+  status: "pending"
+- sku_id: "na-ninjala-2-the-uncharted-planet-standard"
+  title_id: "ninjala-2-the-uncharted-planet"
+  region: "NA"
+  edition: "standard"
+  distributor: null
+  release_date: null
+  format: "unknown"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "unconfirmed"
+  source_url: null
+  verified_at: "2026-09-18"
+  status: "pending"
+
+# Nintendo Switch Sports Resort (Nintendo): confirmado cartucho completo, no game-key card, en la nota
+# de GameTyrant. Solo NA tiene cita; el resto de la ruta first-party queda pendiente de un refresh.
+- sku_id: "na-nintendo-switch-sports-resort-standard"
+  title_id: "nintendo-switch-sports-resort"
+  region: "NA"
+  edition: "standard"
+  distributor: null
+  release_date: "2026-10-22"
+  format: "full_cart"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) gametyrant.com: "No, the physical version of Nintendo Switch Sports Resort will not be a Game-Key Card. This means that the cartridge will have the actual game inside"
+  source_url: "https://gametyrant.com/news/everything-you-need-to-know-about-nintendo-switch-sports-resort"
+  verified_at: "2026-09-18"
+  status: "reviewed"
+- sku_id: "eu-nintendo-switch-sports-resort-standard"
+  title_id: "nintendo-switch-sports-resort"
+  region: "EU"
+  edition: "standard"
+  distributor: null
+  release_date: "2026-10-22"  # (API) Nintendo EU Solr: dates_released_dts
+  format: "unknown"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "unconfirmed"
+  source_url: null
+  verified_at: "2026-09-18"
+  status: "pending"
+- sku_id: "jp-nintendo-switch-sports-resort-standard"
+  title_id: "nintendo-switch-sports-resort"
+  region: "JP"
+  edition: "standard"
+  distributor: null
+  release_date: null
+  format: "unknown"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "unconfirmed"
+  source_url: null
+  verified_at: "2026-09-18"
+  status: "pending"
+- sku_id: "kr-nintendo-switch-sports-resort-standard"
+  title_id: "nintendo-switch-sports-resort"
+  region: "KR"
+  edition: "standard"
+  distributor: null
+  release_date: null
+  format: "unknown"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "unconfirmed"
+  source_url: null
+  verified_at: "2026-09-18"
+  status: "pending"
+- sku_id: "asia-nintendo-switch-sports-resort-standard"
+  title_id: "nintendo-switch-sports-resort"
+  region: "ASIA"
+  edition: "standard"
+  distributor: null
+  release_date: null
+  format: "unknown"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "unconfirmed"
+  source_url: null
+  verified_at: "2026-09-18"
+  status: "pending"
+
+# No Man's Sky (Hello Games): la ficha oficial de Nintendo (US store) marca "Select a version | ... |
+# Edition | Digital" sin opción física: no hay SKU físico en NA (no se escribe SKU para esa región).
+# EU aparece en el catálogo Solr pero sin fuente de formato.
+- sku_id: "eu-no-man-s-sky-standard"
+  title_id: "no-man-s-sky"
+  region: "EU"
+  edition: "standard"
+  distributor: null
+  release_date: "2025-06-05"  # (API) Nintendo EU Solr: dates_released_dts
+  format: "unknown"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "unconfirmed"
+  source_url: null
+  verified_at: "2026-09-18"
+  status: "pending"
+
+# No Sleep For Kaname Date - From AI: THE SOMNIUM FILES (Spike Chunsoft): la propia nota oficial de
+# Spike Chunsoft confirma Game-Key Card en Switch 2 y dice explícitamente que está disponible en
+# Norteamérica y Europa a la vez. Japón queda pendiente (sin cita propia).
+- sku_id: "na-no-sleep-for-kaname-date-from-ai-the-somnium-files-standard"
+  title_id: "no-sleep-for-kaname-date-from-ai-the-somnium-files"
+  region: "NA"
+  edition: "standard"
+  distributor: null
+  release_date: "2025-07-25"
+  format: "game_key_card"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "official"  # (leída) spike-chunsoft.com: "Nintendo Switch 2 physical version is available as a Game-Key Card." — "Available Now in North America and Europe"
+  source_url: "https://www.spike-chunsoft.com/news/ai_sleep_availablenow/"
+  verified_at: "2026-09-18"
+  status: "reviewed"
+- sku_id: "eu-no-sleep-for-kaname-date-from-ai-the-somnium-files-standard"
+  title_id: "no-sleep-for-kaname-date-from-ai-the-somnium-files"
+  region: "EU"
+  edition: "standard"
+  distributor: null
+  release_date: "2025-07-25"  # (API) Nintendo EU Solr: dates_released_dts
+  format: "game_key_card"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "official"  # (leída) spike-chunsoft.com: "Nintendo Switch 2 physical version is available as a Game-Key Card." — "Available Now in North America and Europe"
+  source_url: "https://www.spike-chunsoft.com/news/ai_sleep_availablenow/"
+  verified_at: "2026-09-18"
+  status: "reviewed"
+- sku_id: "jp-no-sleep-for-kaname-date-from-ai-the-somnium-files-standard"
+  title_id: "no-sleep-for-kaname-date-from-ai-the-somnium-files"
+  region: "JP"
+  edition: "standard"
+  distributor: null
+  release_date: null
+  format: "unknown"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "unconfirmed"
+  source_url: null
+  verified_at: "2026-09-18"
+  status: "pending"
+
+# Nobunaga's Ambition: Hishou (Koei Tecmo): anunciado para PS5/Switch 2/Switch/PC, invierno de 2026 en
+# Japón y Asia; sin anuncio occidental, así que solo se escribe JP.
+- sku_id: "jp-nobunaga-s-ambition-hishou-standard"
+  title_id: "nobunaga-s-ambition-hishou"
+  region: "JP"
+  edition: "standard"
+  distributor: null
+  release_date: null
+  format: "unknown"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "unconfirmed"
+  source_url: null
+  verified_at: "2026-09-18"
+  status: "pending"
+
+# Obakeidoro 2: Chase & Seek (Free Style / フリースタイル): la nota de ninten-switch.com cita directamente que
+# la パッケージ版 japonesa es "キーカード". La ficha de Play-Asia la lista como "Game Key Cart" en Asia. La
+# ficha oficial de Nintendo (US store) marca "Edition | Digital" sin opción física: no hay SKU en NA.
+- sku_id: "jp-obakeidoro-2-chase-seek-standard"
+  title_id: "obakeidoro-2-chase-seek"
+  region: "JP"
+  edition: "standard"
+  distributor: null
+  release_date: "2025-12-18"  # (API) Nintendo JP: sdate de la entrada パッケージ版
+  format: "game_key_card"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) ninten-switch.com: "※本作のパッケージ版は「キーカード」です。"
+  source_url: "https://ninten-switch.com/obakeidoro2-for-switch2-package-yoyaku"
+  verified_at: "2026-09-18"
+  status: "reviewed"
+- sku_id: "asia-obakeidoro-2-chase-seek-standard"
+  title_id: "obakeidoro-2-chase-seek"
+  region: "ASIA"
+  edition: "standard"
+  distributor: null
+  release_date: null
+  format: "game_key_card"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "retailer_listing"  # (listado) play-asia.com: "Obakeidoro 2: Chase & Seek Game Key Cart for Nintendo Switch 2"
+  source_url: "https://www.play-asia.com/obakeidoro-2-chase-seek/13/70igjx"
+  verified_at: "2026-09-18"
+  status: "reviewed"
+- sku_id: "eu-obakeidoro-2-chase-seek-standard"
+  title_id: "obakeidoro-2-chase-seek"
+  region: "EU"
+  edition: "standard"
+  distributor: null
+  release_date: "2026-08-06"  # (API) Nintendo EU Solr: dates_released_dts
+  format: "unknown"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "unconfirmed"
+  source_url: null
+  verified_at: "2026-09-18"
+  status: "pending"
+
+# Observer: System Redux (Bloober Team, distribuido en caja por Meridiem en EU): Meridiem confirma
+# cartucho completo ("(cartridge)") en su propia nota de anuncio; nintendoeverything lo corrobora
+# ("everything is apparently on the cartridge, so no game-key card here"). NA (GameStop la lista) queda
+# pendiente de una fuente con cita.
+- sku_id: "eu-observer-system-redux-standard"
+  title_id: "observer-system-redux"
+  region: "EU"
+  edition: "standard"
+  distributor: "Meridiem"  # (leída) meridiem-games.com: "Meridiem is pleased to announce that it will publish and distribute a physical edition"
+  release_date: "2026-10-30"
+  format: "full_cart"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "official"  # (leída) meridiem-games.com: "Observer System Redux - Limited Edition will arrive physically for Nintendo Switch 2 (cartridge) on October 30, 2026."
+  source_url: "https://meridiem-games.com/en/new/meridiem-announces-physical-edition-of-observer-system-redux-for-nintendo-switch-2"
+  verified_at: "2026-09-18"
+  status: "reviewed"
+- sku_id: "na-observer-system-redux-standard"
+  title_id: "observer-system-redux"
+  region: "NA"
+  edition: "standard"
+  distributor: null
+  release_date: null
+  format: "unknown"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "unconfirmed"
+  source_url: null
+  verified_at: "2026-09-18"
+  status: "pending"
+
+# Octopath Traveler (puerto de Switch 1 a Switch 2, anunciado junto a Octopath Traveler II): RPG Site
+# confirma Game-Key Card para el lanzamiento físico en Reino Unido y EE. UU. el 1 de octubre. La API de
+# Nintendo JP muestra la entrada japonesa solo como ダウンロードソフト (sin パッケージ版), pero eso no es cita firme
+# de "sin físico": queda pendiente.
+- sku_id: "eu-octopath-traveler-standard"
+  title_id: "octopath-traveler"
+  region: "EU"
+  edition: "standard"
+  distributor: null
+  release_date: "2026-10-01"  # (API) Nintendo EU Solr: dates_released_dts
+  format: "game_key_card"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) rpgsite.net: "The physical releases will be Game-Key Cards" (precio dado "in the UK" y "The US prices are $59.99 each")
+  source_url: "https://www.rpgsite.net/news/20903-octopath-traveler-switch-2-port-release-date-1-2-physical-digital"
+  verified_at: "2026-09-18"
+  status: "reviewed"
+- sku_id: "na-octopath-traveler-standard"
+  title_id: "octopath-traveler"
+  region: "NA"
+  edition: "standard"
+  distributor: null
+  release_date: "2026-10-01"  # (leída) rpgsite.net: "October 1 in the West"
+  format: "game_key_card"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) rpgsite.net: "The physical releases will be Game-Key Cards" (precio dado "The US prices are $59.99 each")
+  source_url: "https://www.rpgsite.net/news/20903-octopath-traveler-switch-2-port-release-date-1-2-physical-digital"
+  verified_at: "2026-09-18"
+  status: "reviewed"
+- sku_id: "jp-octopath-traveler-standard"
+  title_id: "octopath-traveler"
+  region: "JP"
+  edition: "standard"
+  distributor: null
+  release_date: null
+  format: "unknown"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "unconfirmed"
+  source_url: null
+  verified_at: "2026-09-18"
+  status: "pending"
+
+# Octopath Traveler 0 (Square Enix): Nintendo Life confirma Game-Key Card en Switch 2 sin matices; la
+# API de Nintendo JP muestra pprice 7678 (sí hay パッケージ版) y aparece en la lista de game-key cards de
+# Nintendo Everything (NA). EU está en el catálogo Solr con la misma fecha que JP.
+- sku_id: "jp-octopath-traveler-0-standard"
+  title_id: "octopath-traveler-0"
+  region: "JP"
+  edition: "standard"
+  distributor: null
+  release_date: "2025-12-04"  # (API) Nintendo JP: sdate
+  format: "game_key_card"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) nintendolife.com: "Octopath 0 Is A Game-Key Card On Switch 2"
+  source_url: "https://www.nintendolife.com/news/2025/07/octopath-0-is-a-game-key-card-on-switch-2-and-square-enix-has-no-plans-for-a-switch-1-upgrade-option"
+  verified_at: "2026-09-18"
+  status: "reviewed"
+- sku_id: "eu-octopath-traveler-0-standard"
+  title_id: "octopath-traveler-0"
+  region: "EU"
+  edition: "standard"
+  distributor: null
+  release_date: "2025-12-04"  # (API) Nintendo EU Solr: dates_released_dts
+  format: "game_key_card"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) nintendolife.com: "Octopath 0 Is A Game-Key Card On Switch 2"
+  source_url: "https://www.nintendolife.com/news/2025/07/octopath-0-is-a-game-key-card-on-switch-2-and-square-enix-has-no-plans-for-a-switch-1-upgrade-option"
+  verified_at: "2026-09-18"
+  status: "reviewed"
+- sku_id: "na-octopath-traveler-0-standard"
+  title_id: "octopath-traveler-0"
+  region: "NA"
+  edition: "standard"
+  distributor: null
+  release_date: null
+  format: "game_key_card"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (listado) nintendoeverything.com: listado en "list-of-all-nintendo-switch-2-games-with-a-game-key-card-release" como "Octopath Traveler 0"
+  source_url: "https://nintendoeverything.com/list-of-all-nintendo-switch-2-games-with-a-game-key-card-release/"
+  verified_at: "2026-09-18"
+  status: "reviewed"
+
+# Octopath Traveler II (anunciado junto a Octopath Traveler): RPG Site confirma Game-Key Card para el
+# lanzamiento físico en Reino Unido y EE. UU. el 1 de octubre. Japón queda pendiente (la API de Nintendo
+# JP solo muestra ダウンロードソフト, sin パッケージ版, pero no es cita firme de "sin físico").
+- sku_id: "eu-octopath-traveler-ii-standard"
+  title_id: "octopath-traveler-ii"
+  region: "EU"
+  edition: "standard"
+  distributor: null
+  release_date: "2026-10-01"  # (API) Nintendo EU Solr: dates_released_dts
+  format: "game_key_card"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) rpgsite.net: "The physical releases will be Game-Key Cards" (precio dado "in the UK" y "The US prices are $59.99 each")
+  source_url: "https://www.rpgsite.net/news/20903-octopath-traveler-switch-2-port-release-date-1-2-physical-digital"
+  verified_at: "2026-09-18"
+  status: "reviewed"
+- sku_id: "na-octopath-traveler-ii-standard"
+  title_id: "octopath-traveler-ii"
+  region: "NA"
+  edition: "standard"
+  distributor: null
+  release_date: "2026-10-01"  # (leída) rpgsite.net: "October 1 in the West"
+  format: "game_key_card"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) rpgsite.net: "The physical releases will be Game-Key Cards" (precio dado "The US prices are $59.99 each")
+  source_url: "https://www.rpgsite.net/news/20903-octopath-traveler-switch-2-port-release-date-1-2-physical-digital"
+  verified_at: "2026-09-18"
+  status: "reviewed"
+- sku_id: "jp-octopath-traveler-ii-standard"
+  title_id: "octopath-traveler-ii"
+  region: "JP"
+  edition: "standard"
+  distributor: null
+  release_date: null
+  format: "unknown"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "unconfirmed"
+  source_url: null
+  verified_at: "2026-09-18"
+  status: "pending"
+
+# Onimusha: Way of the Sword: ficha de Nintendo Life (EU) confirma Game-Key Card, con precio y fecha para
+# EU y una edición Steelbook listada para Amazon (US). Japón queda pendiente: no se ha encontrado fuente
+# dentro del presupuesto de la tanda.
+- sku_id: "eu-onimusha-way-of-the-sword-standard"
+  title_id: "onimusha-way-of-the-sword"
+  region: "EU"
+  edition: "standard"
+  distributor: null
+  release_date: "2026-09-04"  # (leída) nintendolife.com: "Release Date | Nintendo Switch 2 | 4th Sep 2026 — £59.99"
+  format: "game_key_card"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) nintendolife.com: "Physical Release | Game-Key Card"
+  source_url: "https://www.nintendolife.com/games/nintendo-switch-2/onimusha_way_of_the_sword"
+  verified_at: "2026-09-18"
+  status: "reviewed"
+- sku_id: "na-onimusha-way-of-the-sword-standard"
+  title_id: "onimusha-way-of-the-sword"
+  region: "NA"
+  edition: "standard"
+  distributor: null
+  release_date: "2026-09-04"  # (leída) nintendolife.com: "Release Date | Nintendo Switch 2 | 4th Sep 2026 — $69.99"
+  format: "game_key_card"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) nintendolife.com: "Onimusha: Way of the Sword Steelbook Edition - Nintendo Switch 2, Game-Key Card | $74.99 | $69.99 | Amazon (US)"
+  source_url: "https://www.nintendolife.com/games/nintendo-switch-2/onimusha_way_of_the_sword"
+  verified_at: "2026-09-18"
+  status: "reviewed"
+- sku_id: "jp-onimusha-way-of-the-sword-standard"
+  title_id: "onimusha-way-of-the-sword"
+  region: "JP"
+  edition: "standard"
+  distributor: null
+  release_date: null
+  format: "unknown"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "unconfirmed"
+  source_url: null
+  verified_at: "2026-09-18"
+  status: "pending"
+
+# One Piece: Grand Gourmet: aún sin lanzar (anunciado para el 23/09/2026 según Nintendo Life EU, sin campo
+# "Physical Release" todavía). Play-Asia ya lista la versión ASIA como Game Key Cart.
+- sku_id: "asia-one-piece-grand-gourmet-standard"
+  title_id: "one-piece-grand-gourmet"
+  region: "ASIA"
+  edition: "standard"
+  distributor: null
+  release_date: null
+  format: "game_key_card"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "retailer_listing"  # (listado) play-asia.com: "ONE PIECE: Grand Gourmet (Multi-Language) Game Key Cart for Nintendo Switch 2"
+  source_url: "https://www.play-asia.com/en/one-piece-grand-gourmet-multi-language/13/70k1jj"
+  verified_at: "2026-09-18"
+  status: "reviewed"
+
+# Outbound: Silver Lining Interactive confirma cartucho completo para la edición de Switch 2; la ficha de
+# Nintendo Life (EU) lo corrobora como "Standard Game Card".
+- sku_id: "eu-outbound-standard"
+  title_id: "outbound"
+  region: "EU"
+  edition: "standard"
+  distributor: "Silver Lining Interactive"  # (leída) gonintendo.com: nota firmada por "Silver Lining"
+  release_date: "2026-05-14"  # (leída) nintendolife.com: "Release Date | Nintendo eShop | 14th May 2026"
+  format: "full_cart"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) nintendolife.com: "Physical Release | Standard Game Card"
+  source_url: "https://www.nintendolife.com/games/nintendo-switch-2/outbound"
+  verified_at: "2026-09-18"
+  status: "reviewed"
+- sku_id: "na-outbound-standard"
+  title_id: "outbound"
+  region: "NA"
+  edition: "standard"
+  distributor: "Silver Lining Interactive"  # (leída) gonintendo.com: nota firmada por "Silver Lining"
+  release_date: "2026-05-14"
+  format: "full_cart"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) gonintendo.com: "the Nintendo Switch 2 edition will be a full cartridge release"
+  source_url: "https://gonintendo.com/contents/55946-outbound-getting-physical-release-on-switch-and-switch-2"
+  verified_at: "2026-09-18"
+  status: "reviewed"
+
+# Orbitals: Nintendo Central confirma cartucho físico completo junto al lanzamiento digital; la web
+# oficial (orbitalsgame.com) lista minoristas físicos en EU (Fnac, MediaMarkt, El Corte Inglés...) y NA
+# (Amazon, Target, Walmart Canada...).
+- sku_id: "eu-orbitals-standard"
+  title_id: "orbitals"
+  region: "EU"
+  edition: "standard"
+  distributor: null
+  release_date: "2026-09-03"  # (leída) nintendocentral.com: "arriving alongside its digital launch on September 3, 2026"
+  format: "full_cart"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) nintendocentral.com: "confirming a full physical release on cartridge"
+  source_url: "https://nintendocentral.com/nintendo-switch-2-exclusive-orbitals-confirms-full-physical-cartridge-release-amid-rising-concern-over-digital-only-gaming-future/"
+  verified_at: "2026-09-18"
+  status: "reviewed"
+- sku_id: "na-orbitals-standard"
+  title_id: "orbitals"
+  region: "NA"
+  edition: "standard"
+  distributor: null
+  release_date: "2026-09-03"
+  format: "full_cart"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) nintendocentral.com: "confirming a full physical release on cartridge"
+  source_url: "https://nintendocentral.com/nintendo-switch-2-exclusive-orbitals-confirms-full-physical-cartridge-release-amid-rising-concern-over-digital-only-gaming-future/"
+  verified_at: "2026-09-18"
+  status: "reviewed"

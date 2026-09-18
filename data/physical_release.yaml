@@ -954,3 +954,439 @@
   evidence: "press_report"  # (leída) Gematsu: "Digital pre-orders are available now for PlayStation 5 in both standard and Deluxe editions." — solo la standard japonesa tiene game-key card
   source_url: "https://www.gematsu.com/2025/07/d3-publisher-and-yukes-announce-action-shooter-full-metal-schoolgirl-for-ps5-switch-2-and-pc"
   checked_at: "2026-09-17"
+
+- title_id: "funguys-swarm"
+  has_physical_release: false
+  evidence: "unconfirmed"
+  source_url: null
+  checked_at: "2026-09-17"
+- title_id: "fur-squadron-phoenix"
+  has_physical_release: false
+  evidence: "unconfirmed"
+  source_url: null
+  checked_at: "2026-09-17"
+- title_id: "go-go-town"
+  has_physical_release: false
+  evidence: "unconfirmed"
+  source_url: null
+  checked_at: "2026-09-17"
+- title_id: "g-mode-archives-shin-megami-tensei-tokyo-requiem"
+  has_physical_release: false
+  evidence: "unconfirmed"
+  source_url: null
+  checked_at: "2026-09-17"
+- title_id: "g-mode-archives-stella-deus-the-age-of-alchemy"
+  has_physical_release: false
+  evidence: "unconfirmed"
+  source_url: null
+  checked_at: "2026-09-17"
+- title_id: "g-mode-archives-stella-deus-the-spirit-of-darkness"
+  has_physical_release: false
+  evidence: "unconfirmed"
+  source_url: null
+  checked_at: "2026-09-17"
+- title_id: "goat-simulator-3"
+  has_physical_release: false
+  evidence: "unconfirmed"
+  source_url: null
+  checked_at: "2026-09-17"
+- title_id: "grid-legends-deluxe-edition"
+  has_physical_release: false
+  evidence: "unconfirmed"
+  source_url: null
+  checked_at: "2026-09-17"
+- title_id: "granblue-fantasy-versus-rising-legendary-edition"
+  has_physical_release: false
+  evidence: "unconfirmed"
+  source_url: null
+  checked_at: "2026-09-17"
+- title_id: "game-builder-garage"
+  # Solo existe el cartucho de Switch 1 (2021), jugable en Switch 2 por compatibilidad; no hay una
+  # edición física propia de Switch 2 (regla del proyecto: cartucho de Switch 1 no cuenta).
+  has_physical_release: false
+  evidence: "unconfirmed"
+  source_url: null
+  checked_at: "2026-09-17"
+
+- title_id: "handy-hockey"
+  has_physical_release: false
+  evidence: "press_report"
+  source_url: "https://www.nintendolife.com/games/nintendo-switch-2/handy-hockey"
+  checked_at: "2026-09-17"
+
+- title_id: "ground-zero-hero"
+  has_physical_release: false
+  evidence: "unconfirmed"
+  source_url: null
+  checked_at: "2026-09-17"
+
+- title_id: "haste"
+  has_physical_release: false
+  evidence: "unconfirmed"
+  source_url: null
+  checked_at: "2026-09-17"
+
+- title_id: "heave-ho-2"
+  has_physical_release: false
+  evidence: "unconfirmed"
+  source_url: null
+  checked_at: "2026-09-17"
+
+- title_id: "isekai-rondo"
+  has_physical_release: false
+  evidence: "unconfirmed"
+  source_url: null
+  checked_at: "2026-09-17"
+- title_id: "jenny-leclue-detectivu"
+  has_physical_release: false
+  evidence: "unconfirmed"
+  source_url: null
+  checked_at: "2026-09-17"
+- title_id: "junkster"
+  has_physical_release: false
+  evidence: "unconfirmed"
+  source_url: null
+  checked_at: "2026-09-17"
+- title_id: "ira"
+  has_physical_release: false
+  evidence: "unconfirmed"
+  source_url: null
+  checked_at: "2026-09-17"
+- title_id: "jotunnslayer-hordes-of-hel"
+  has_physical_release: false
+  evidence: "unconfirmed"
+  source_url: null
+  checked_at: "2026-09-17"
+- title_id: "kernel-hearts"
+  has_physical_release: false
+  evidence: "unconfirmed"
+  source_url: null
+  checked_at: "2026-09-17"
+- title_id: "kena-bridge-of-spirits"
+  has_physical_release: false
+  evidence: "unconfirmed"
+  source_url: null
+  checked_at: "2026-09-17"
+
+# Tanda 4 (kingdom-hearts-birth-by-sleep-final-mix .. lego-batman-...-deluxe-edition), 2026-09-17.
+# Formato: ver data/physical_release.yaml. evidence: unconfirmed = buscado y no encontrado; press_report = cita.
+
+# Kingdom III: Rising Realms: anunciado para Switch 2, solo se menciona lanzamiento digital en eShop; sin
+# mención de caja en la cobertura de anuncio (GoNintendo, Gematsu, Nintendo Insider, play.asia).
+- title_id: "kingdom-iii-rising-realms"
+  has_physical_release: false
+  evidence: "unconfirmed"
+  source_url: null
+  checked_at: "2026-09-17"
+
+# Kingdom Loop: anunciado para Switch 2 (GoNintendo, Nintendo Everything); sin mención de edición física.
+- title_id: "kingdom-loop"
+  has_physical_release: false
+  evidence: "unconfirmed"
+  source_url: null
+  checked_at: "2026-09-17"
+
+# Kingdom's Return: Time-Eating Fruit and the Ancient Monster - Nintendo Switch 2 Edition: en Japón hay
+# edición física estándar/limitada para PS5 y Switch (cartucho de Switch 1), con "Upgrade Pack" gratis a
+# Switch 2; no se ha encontrado edición física propia de la Nintendo Switch 2 Edition.
+- title_id: "kingdom-s-return-time-eating-fruit-and-the-ancient-monster"
+  has_physical_release: false
+  evidence: "unconfirmed"
+  source_url: null
+  checked_at: "2026-09-17"
+
+# Kinki Spiritual Affairs Bureau: publicado por AMATA el 29-30 de julio de 2026; cobertura (Gematsu,
+# Nintendo Life, nintendoeverything, Niche Gamer) no menciona edición física.
+- title_id: "kinki-spiritual-affairs-bureau"
+  has_physical_release: false
+  evidence: "unconfirmed"
+  source_url: null
+  checked_at: "2026-09-17"
+
+# Kitaria Fables 2: anunciado en abril de 2026 para PS5/Xbox/Switch 2/PC sin fecha; sin mención de edición
+# física (la que tuvo edición física fue la primera entrega, en Switch 1).
+- title_id: "kitaria-fables-2"
+  has_physical_release: false
+  evidence: "unconfirmed"
+  source_url: null
+  checked_at: "2026-09-17"
+
+# Kokutoto: Nintendo World Report lo cataloga como "Switch 2 Download Software" en su ficha de juego.
+- title_id: "kokutoto"
+  has_physical_release: false
+  evidence: "press_report"  # (leída) "Switch 2 Download Software | Kokutoto | S2 | Game Profile"
+  source_url: "http://www.nintendoworldreport.com/game/76130/kokutoto-switch-2"
+  checked_at: "2026-09-17"
+
+# Kosmocean: The Endless Sea: anunciado para Switch 2/PS5/Xbox/PC; sin mención de edición física en la
+# cobertura (Kotaku, Génération Nintendo, Nintendo-Difference).
+- title_id: "kosmocean-the-endless-sea"
+  has_physical_release: false
+  evidence: "unconfirmed"
+  source_url: null
+  checked_at: "2026-09-17"
+
+# Kuukiyomi 4: Consider It (Nintendo Switch 2 Edition, la edición individual del catálogo IGDB): la edición
+# física en Game Cart encontrada (Play-Asia) es "Nintendo Switch 2 Edition+", una recopilación con las tres
+# entregas previas de Switch, distinta de esta edición individual; no se ha encontrado caja propia de esta.
+- title_id: "kuukiyomi-4-consider-it"
+  has_physical_release: false
+  evidence: "unconfirmed"
+  source_url: null
+  checked_at: "2026-09-17"
+
+# Kuukiyomi: Consider It World - Thailand Ver.: distribución digital vía eShop de Sudeste Asiático
+# (Switch/Switch 2); no se ha encontrado edición física.
+- title_id: "kuukiyomi-consider-it-world-thailand-ver"
+  has_physical_release: false
+  evidence: "unconfirmed"
+  source_url: null
+  checked_at: "2026-09-17"
+
+# Kyoto Xanadu: the Blooming Phantom: hay edición física (incluso Limited Edition) para PS5 y Switch 1
+# (Play-Asia), con Upgrade Pack a Switch 2; no se ha encontrado cita textual que confirme o descarte una
+# edición física propia de Switch 2 (solo resúmenes de buscador, no válidos como cita).
+- title_id: "kyoto-xanadu-the-blooming-phantom"
+  has_physical_release: false
+  evidence: "unconfirmed"
+  source_url: null
+  checked_at: "2026-09-17"
+
+- title_id: "lego-party"
+  has_physical_release: false
+  evidence: "press_report"
+  source_url: "https://www.nintendolife.com/games/nintendo-switch-2/lego-party-nintendo-switch-2-edition"  # (leída) ficha: "Physical Release | None (Digital Only)"
+  checked_at: "2026-09-17"
+
+# Madden NFL 26 Deluxe Edition y Madden NFL 27 Deluxe Edition: no se ha encontrado ningún listado de
+# tienda ni ficha oficial de una caja específica de la Deluxe Edition (solo de la Standard, ya en
+# skus_fragment_5.yaml); el patrón habitual en el resto de "Deluxe"/"Digital Deluxe" es que sea un bundle
+# solo de eShop sobre la edición estándar en caja (SOURCES.md §1). Sin cita directa, así que evidence
+# queda unconfirmed en vez de asumir el patrón.
+- title_id: "madden-nfl-26-deluxe-edition"
+  has_physical_release: false
+  evidence: "unconfirmed"
+  source_url: null
+  checked_at: "2026-09-17"
+- title_id: "madden-nfl-27-deluxe-edition"
+  has_physical_release: false
+  evidence: "unconfirmed"
+  source_url: null
+  checked_at: "2026-09-17"
+
+# Tanda 6 (maestro..metaphor). Añadir a data/physical_release.yaml.
+
+# Magika Bounce: buscado "Magika Bounce Switch 2 physical edition"; ninguna lista de físicos de Switch 2
+# (Nintendo Wire, Nintendo Life, Deku Deals, RPG Site) lo menciona. Solo Steam. Sin fuente de caja.
+- title_id: "magika-bounce"
+  has_physical_release: false
+  evidence: "unconfirmed"
+  source_url: null
+  checked_at: "2026-09-17"
+
+# Mario Kart 8 Deluxe: es compatible con Switch 2 (Nintendo Switch 2 Compatibility: "Supported"), pero no se
+# ha encontrado ninguna "Nintendo Switch 2 Edition" en caja ni anuncio de una edición física propia de
+# Switch 2 (solo el cartucho de Switch 1 original sigue a la venta). Cartucho de Switch 1 no cuenta como
+# edición física de Switch 2.
+- title_id: "mario-kart-8-deluxe"
+  has_physical_release: false
+  evidence: "unconfirmed"
+  source_url: null
+  checked_at: "2026-09-17"
+
+# Meccha Chameleon: ficha de Nintendo Life solo trae "Release Date" (eShop, $5.99/£4.59), sin campo
+# "Physical Release". Ninguna tienda ni lista de físicos lo menciona.
+- title_id: "meccha-chameleon"
+  has_physical_release: false
+  evidence: "unconfirmed"
+  source_url: null
+  checked_at: "2026-09-17"
+
+# MechCrisis: solo aparece como edición digital en la ficha de Nintendo (compatible con Switch 2, 477 MB).
+# Sin ninguna mención de versión física en caja.
+- title_id: "mechcrisis"
+  has_physical_release: false
+  evidence: "unconfirmed"
+  source_url: null
+  checked_at: "2026-09-17"
+
+# Memory of Memorie: A Chill Story - Nintendo Switch 2 Edition: la ficha de Nintendo UK la cataloga con el
+# campo "Upgrade pack" (no "Physical Release"), el mismo patrón que Dinkum/Disney Dreamlight Valley: es una
+# mejora digital del juego de Switch 1, no un producto en caja propio de Switch 2.
+- title_id: "memory-of-memorie-a-chill-story"
+  has_physical_release: false
+  evidence: "official"  # (leída) "Upgrade pack | System | Nintendo Switch 2"
+  source_url: "https://www.nintendo.com/en-gb/Games/Nintendo-Switch-2-Edition/Memory-of-Memorie-A-Chill-Story-Nintendo-Switch-2-Edition-3136648.html"
+  checked_at: "2026-09-17"
+
+# Metaphor: ReFantazio Guidebook Edition (Atlus): es un bundle digital de la eShop (guía, banda sonora, art
+# book y DLC), distinto de la edición física en Game-Key Card del título base "metaphor-refantazio".
+- title_id: "metaphor-refantazio-guidebook-edition"
+  has_physical_release: false
+  evidence: "press_report"  # (leída) RPG Site: "The Metaphor: ReFantazio Guidebook Edition is $49.99 on the eShop."
+  source_url: "https://www.rpgsite.net/news/21261-metaphor-refantazio-switch-2-price-preorder-trailer-dlc-anniversary-edition"
+  checked_at: "2026-09-18"
+
+# Mind Diver (PLAYISM): lanzado el 27-08-2026 en Switch 2; ni la web oficial ni la prensa del lanzamiento
+# (Gematsu, GoNintendo, Nintendo Everything, Capsule Computers) mencionan edición física.
+- title_id: "mind-diver"
+  has_physical_release: false
+  evidence: "unconfirmed"
+  source_url: null
+  checked_at: "2026-09-18"
+
+# Mixtape (Annapurna Interactive): la ficha de Nintendo Life no trae el campo "Physical Release" (solo
+# Release Date/Nintendo eShop), a diferencia de otros juegos con caja confirmada.
+- title_id: "mixtape"
+  has_physical_release: false
+  evidence: "unconfirmed"
+  source_url: null
+  checked_at: "2026-09-18"
+
+# Monster Hunter Stories 3: Twisted Reflection - Deluxe Edition (Capcom): solo digital; la edición Standard
+# (con caja) es un título distinto ("monster-hunter-stories-3-twisted-reflection").
+- title_id: "monster-hunter-stories-3-twisted-reflection-deluxe-edition"
+  has_physical_release: false
+  evidence: "press_report"  # (leída) RPG Site: "Monster Hunter Stories 3: Twisted Reflection Deluxe Edition - $89.99 - Digital"
+  source_url: "https://www.rpgsite.net/guide/19817-monster-hunter-stories-3-edition-buy-guide-dlc-price-upgrade-premium-deluxe"
+  checked_at: "2026-09-18"
+
+# Monster Hunter Stories 3: Twisted Reflection - Premium Deluxe Edition (Capcom): solo digital; la edición
+# Standard (con caja) es un título distinto ("monster-hunter-stories-3-twisted-reflection").
+- title_id: "monster-hunter-stories-3-twisted-reflection-premium-deluxe-edition"
+  has_physical_release: false
+  evidence: "press_report"  # (leída) RPG Site: "Monster Hunter Stories 3: Twisted Reflection Premium Deluxe Edition - $99.99 - Digital"
+  source_url: "https://www.rpgsite.net/guide/19817-monster-hunter-stories-3-edition-buy-guide-dlc-price-upgrade-premium-deluxe"
+  checked_at: "2026-09-18"
+
+# Moss: The Forgotten Relic (Polyarc): la ficha de Nintendo Life no trae el campo "Physical Release" (solo
+# Release Date), y ni Play-Asia, GameStop ni la prensa mencionan una edición en caja para Switch 2.
+- title_id: "moss-the-forgotten-relic"
+  has_physical_release: false
+  evidence: "unconfirmed"
+  source_url: null
+  checked_at: "2026-09-18"
+
+# Namco Legendary Mountains (BeXide): puzzle indie lanzado el 25-06-2026; ni la ficha de Nintendo Life
+# ("Release Date" sin "Physical Release") ni ninguna tienda ni la prensa mencionan edición en caja.
+- title_id: "namco-legendary-mountains"
+  has_physical_release: false
+  evidence: "unconfirmed"
+  source_url: null
+  checked_at: "2026-09-18"
+
+# NBA 2K26: Slam Edition (2K): la ficha oficial de Nintendo (US store) solo ofrece "Select an edition |
+# Digital -", sin opción física, a diferencia de NBA 2K26 estándar que sí tiene Game-Key Card.
+- title_id: "nba-2k26-slam-edition"
+  has_physical_release: false
+  evidence: "official"  # (leída) nintendo.com: "Version | Nintendo Switch 2 | Select an edition | Digital -"
+  source_url: "https://www.nintendo.com/us/store/products/nba-2k26-slam-edition-switch-2/"
+  checked_at: "2026-09-18"
+
+# New Super Mario Bros. U Deluxe: la ficha oficial de Nintendo (US store) marca "Version | Nintendo Switch"
+# (no Switch 2) y solo ofrece un "free update" de compatibilidad; no es una edición de Switch 2 propia
+# (cartucho de Switch 1 con update gratis, no cuenta como edición física de Switch 2).
+- title_id: "new-super-mario-bros-u-deluxe"
+  has_physical_release: false
+  evidence: "official"  # (leída) nintendo.com: "Version | Nintendo Switch | ... Nintendo Switch 2 Compatibility Information | Supported – Game behavior is consistent with Nintendo Switch."
+  source_url: "https://www.nintendo.com/us/store/products/new-super-mario-bros-u-deluxe-switch/"
+  checked_at: "2026-09-18"
+
+# Nintendo Switch 2 Welcome Tour: ficha oficial de Nintendo (US store) sin opción física, solo
+# "Edition | Digital"; el tech demo de lanzamiento no tiene edición en caja en ninguna región.
+- title_id: "nintendo-switch-2-welcome-tour"
+  has_physical_release: false
+  evidence: "official"  # (leída) nintendo.com: "Version | Nintendo Switch 2 | Edition | Digital"
+  source_url: "https://www.nintendo.com/us/store/products/nintendo-switch-2-welcome-tour-switch-2/"
+  checked_at: "2026-09-18"
+
+# Nobunaga's Ambition: Awakening Complete Edition + Collector's Set: la ficha oficial de Nintendo (US
+# store) solo ofrece "Select an edition | Digital -", sin opción física; coincide con la API de Nintendo
+# JP, donde el mismo producto (icode AAEXC) sale como "ダウンロードソフト（セット商品）" sin pprice, mientras que la
+# "Complete Edition" sin el Collector's Set sí tiene パッケージ版 (pprice 11880) en JP.
+- title_id: "nobunaga-s-ambition-awakening-complete-edition-collector-s-set"
+  has_physical_release: false
+  evidence: "official"  # (leída) nintendo.com: "Version | Nintendo Switch 2 | Select an edition | Digital -"
+  source_url: "https://www.nintendo.com/us/store/products/nobunagas-ambition-awakening-complete-edition-plus-collectors-set-switch-2/"
+  checked_at: "2026-09-18"
+
+# Octopath Traveler 0: Digital Deluxe Edition: la ficha oficial de Nintendo (US store) solo ofrece
+# "Select an edition | Digital -", sin opción física; coincide con la API de Nintendo JP (icode AAW2C,
+# "ダウンロードソフト（セット商品）", sin pprice), a diferencia de la edición base que sí tiene パッケージ版.
+- title_id: "octopath-traveler-0-digital-deluxe-edition"
+  has_physical_release: false
+  evidence: "official"  # (leída) nintendo.com: "Version | Nintendo Switch 2 | Select an edition | Digital -"
+  source_url: "https://www.nintendo.com/us/store/products/octopath-traveler-0-digital-deluxe-edition-switch-2/"
+  checked_at: "2026-09-18"
+
+# Old Coin Pusher Gaiden: la ficha oficial de Nintendo (US store) solo ofrece "Edition | Digital", sin
+# opción física.
+- title_id: "old-coin-pusher-gaiden"
+  has_physical_release: false
+  evidence: "official"  # (leída) nintendo.com: "Version | Nintendo Switch 2 | Edition | Digital"
+  source_url: "https://www.nintendo.com/us/store/products/old-coin-pusher-gaiden-switch-2/"
+  checked_at: "2026-09-18"
+
+# Once Upon a Katamari: no es una edición física propia de Switch 2, es una actualización gratuita para
+# quien ya tiene el cartucho de Switch 1 (mejoras de framerate y controles de ratón), más un DLC de pago.
+- title_id: "once-upon-a-katamari"
+  has_physical_release: false
+  evidence: "press_report"  # (leída) nintendoeverything.com: "Those who own the original Nintendo Switch version will be able to download a free update to access the improved frame rate and mouse controls."
+  source_url: "https://nintendoeverything.com/once-upon-a-katamari-coming-to-nintendo-switch-2-rolling-live-highlights-dlc-revealed/"
+  checked_at: "2026-09-18"
+
+# One Military Camp: la ficha oficial de Nintendo (US store) solo ofrece "Edition | Digital", sin opción
+# física.
+- title_id: "one-military-camp"
+  has_physical_release: false
+  evidence: "official"  # (leída) nintendo.com: "Version | Nintendo Switch 2 | Edition | Digital"
+  source_url: "https://www.nintendo.com/us/store/products/one-military-camp-switch-2/"
+  checked_at: "2026-09-18"
+
+# One Move Away: es un juego de Nintendo Switch (1) con compatibilidad en Switch 2, sin edición propia de
+# Switch 2 ("Nintendo Switch™ 2 Edition and Upgrade Pack are not available for this product").
+- title_id: "one-move-away"
+  has_physical_release: false
+  evidence: "official"  # (leída) nintendo.com: "Version | Nintendo Switch | Edition | Digital ... Nintendo Switch™ 2 Edition and Upgrade Pack are not available for this product."
+  source_url: "https://www.nintendo.com/us/store/products/one-move-away-switch/"
+  checked_at: "2026-09-18"
+
+# One Piece: Pirate Warriors 4 Nintendo Switch 2 Edition: la ficha oficial de Nintendo (US store) es un
+# "Upgrade Pack" que solo ofrece "Edition | Digital", sin opción física para la edición de Switch 2.
+- title_id: "one-piece-pirate-warriors-4"
+  has_physical_release: false
+  evidence: "official"  # (leída) nintendo.com: "Nintendo Switch 2 | Nintendo Switch | Upgrade Pack ... Edition | Digital"
+  source_url: "https://www.nintendo.com/us/store/products/one-piece-pirate-warriors-4-nintendo-switch-2-edition-switch-2/"
+  checked_at: "2026-09-18"
+
+# Opus: Prism Peak: la ficha de Nintendo Life da el campo "Physical Release" directamente como digital-only.
+- title_id: "opus-prism-peak"
+  has_physical_release: false
+  evidence: "press_report"  # (leída) nintendolife.com: "Physical Release | None (Digital Only)"
+  source_url: "https://www.nintendolife.com/games/nintendo-switch-2/opus-prism-peak"
+  checked_at: "2026-09-18"
+
+# Orbitals: Deluxe Edition: no es una caja distinta, es el "Orbitals: Deluxe Upgrade Pack", un DLC
+# descargable de pago sobre el juego base (que sí tiene edición física propia, ver "orbitals").
+- title_id: "orbitals-deluxe-edition"
+  has_physical_release: false
+  evidence: "official"  # (leída) nintendo.com: "Downloadable content (DLC) | Orbitals: Deluxe Upgrade Pack | 9/3/26 | DLC | Regular Price: $14.99"
+  source_url: "https://www.nintendo.com/us/store/products/orbitals-switch-2/"
+  checked_at: "2026-09-18"
+
+# Outlanders: es un juego de Nintendo Switch (1), sin ficha ni edición propia de Switch 2 (solo aparece en
+# la sección "Switch eShop Game" de Nintendo Life, con lanzamiento el 6/11/2025).
+- title_id: "outlanders"
+  has_physical_release: false
+  evidence: "press_report"  # (leída) nintendolife.com: "Release Date | Switch eShop | 6th Nov 2025"
+  source_url: "https://www.nintendolife.com/games/switch-eshop/outlanders"
+  checked_at: "2026-09-18"
+
+# Outlaws + Handful of Missions: Remaster: la versión de Switch 2 es una entrada de eShop (upgrade gratis
+# para quien ya tiene el juego en Switch, o compra digital a partir de $29.99/£24.99 para quien no lo
+# tiene); no se menciona edición física propia de Switch 2.
+- title_id: "outlaws-handful-of-missions-remaster"
+  has_physical_release: false
+  evidence: "press_report"  # (leída) nintendolife.com: "a new eShop listing reveals that Atari and Nightdive Studio's Outlaws + Handful of Missions: Remaster is also coming to the Switch 2, but this time, current owners on Switch can upgrade for free. Otherwise, you're looking at £24.99 / $29.99 if you're a newcomer."
+  source_url: "https://www.nintendolife.com/news/2026/07/outlaws-plus-handful-of-missions-is-coming-to-switch-2-free-upgrade-confirmed"
+  checked_at: "2026-09-18"

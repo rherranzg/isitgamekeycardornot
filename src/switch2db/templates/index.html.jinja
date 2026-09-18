@@ -124,11 +124,7 @@
       flex-wrap: wrap;
       gap: 10px;
     }
-    .filter-dropdown {
-      position: relative;
-    }
-    .filter-dropdown summary {
-      list-style: none;
+    .filter-trigger {
       cursor: pointer;
       background: var(--surface);
       color: var(--text);
@@ -136,25 +132,29 @@
       border-radius: 6px;
       padding: 7px 12px;
       font-size: 0.85rem;
+      font-family: inherit;
       white-space: nowrap;
     }
-    .filter-dropdown summary::-webkit-details-marker { display: none; }
-    .filter-dropdown summary::after { content: " ▾"; }
+    .filter-trigger::after { content: " ▾"; }
     .filter-panel {
-      position: absolute;
-      top: calc(100% + 4px);
-      left: 0;
+      position: fixed;
+      inset: auto;
+      margin: 0;
       max-width: calc(100vw - 40px);
       background: var(--surface);
       border: 1px solid var(--border);
       border-radius: 8px;
       padding: 8px 10px;
-      display: flex;
-      flex-direction: column;
       gap: 6px;
       font-size: 0.85rem;
       white-space: nowrap;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+    }
+    /* El popover se oculta con display:none del navegador mientras está cerrado;
+       si display:flex fuera incondicional, pisaría ese estilo y quedaría siempre visible. */
+    .filter-panel:popover-open {
+      display: flex;
+      flex-direction: column;
     }
     .filter-panel label {
       display: flex;
@@ -296,18 +296,18 @@
   {% macro i18n(pair) -%}
   <span data-i18n="es">{{ pair.es }}</span><span data-i18n="en" hidden>{{ pair.en }}</span>
   {%- endmacro %}
-  {% macro filter_dropdown(title, class_name, labels) -%}
-  <details class="filter-dropdown">
-    <summary>{{ i18n(title) }}</summary>
-    <div class="filter-panel">
+  {% macro filter_dropdown(title, class_name, labels, unchecked=[]) -%}
+  <div class="filter-dropdown">
+    <button type="button" class="filter-trigger" popovertarget="{{ class_name }}-panel">{{ i18n(title) }}</button>
+    <div class="filter-panel" id="{{ class_name }}-panel" popover>
       {% for option, label in labels.items() %}
       <label>
-        <input type="checkbox" class="{{ class_name }}" value="{{ option }}" checked>
+        <input type="checkbox" class="{{ class_name }}" value="{{ option }}"{% if option not in unchecked %} checked{% endif %}>
         {{ i18n(label) }}
       </label>
       {% endfor %}
     </div>
-  </details>
+  </div>
   {%- endmacro %}
   <div class="wrap">
     <header>
@@ -325,8 +325,8 @@
     </header>
 
     <div class="stats">
-      <span><strong>{{ title_count }}</strong> {{ i18n(t.stat_titles) }}</span>
-      <span><strong>{{ sku_count }}</strong> {{ i18n(t.stat_skus) }}</span>
+      <span><strong id="stat-titles-count">{{ title_count }}</strong> {{ i18n(t.stat_titles) }}</span>
+      <span><strong id="stat-skus-count">{{ sku_count }}</strong> {{ i18n(t.stat_skus) }}</span>
     </div>
 
     <div class="toolbar">
@@ -343,7 +343,7 @@
 
       <div class="toolbar-controls">
         {{ filter_dropdown(t.col_region, "region-filter", region_labels) }}
-        {{ filter_dropdown(t.col_format, "format-filter", format_labels) }}
+        {{ filter_dropdown(t.col_format, "format-filter", format_labels, [no_box_filter_value, no_skus_filter_value]) }}
         {{ filter_dropdown(t.col_edition, "edition-filter", edition_labels) }}
       </div>
     </div>
@@ -498,15 +498,20 @@
     function applyFilters() {
       var cards = document.querySelectorAll(".title-card");
       var visibleCount = 0;
+      var visibleSkuCount = 0;
 
       cards.forEach(function (card) {
         var matchesSearch = !state.search || card.dataset.search.indexOf(state.search) !== -1;
         var rows = card.querySelectorAll("table.skus tbody tr");
         var anyRowVisible = false;
+        var visibleRowsInCard = 0;
 
         rows.forEach(function (row) {
           row.hidden = !isRowVisible(row);
-          if (!row.hidden) anyRowVisible = true;
+          if (!row.hidden) {
+            anyRowVisible = true;
+            visibleRowsInCard++;
+          }
         });
 
         if (card.dataset.noBox) {
@@ -515,13 +520,18 @@
           anyRowVisible = isNoSkusCardVisible();
         }
         card.hidden = !matchesSearch || !anyRowVisible;
-        if (!card.hidden) visibleCount++;
+        if (!card.hidden) {
+          visibleCount++;
+          visibleSkuCount += visibleRowsInCard;
+        }
       });
 
       lastVisibleCount = visibleCount;
       lastTotalCount = cards.length;
       document.getElementById("empty-state").hidden = visibleCount > 0;
       renderShowingCount();
+      document.getElementById("stat-titles-count").textContent = visibleCount;
+      document.getElementById("stat-skus-count").textContent = visibleSkuCount;
     }
 
     function bindFilter(className, stateKey) {
@@ -542,6 +552,19 @@
     bindFilter("region-filter", "regions");
     bindFilter("format-filter", "formats");
     bindFilter("edition-filter", "editions");
+
+    // El navegador centra los popovers por defecto: los anclamos bajo su botón antes de abrirlos.
+    document.querySelectorAll(".filter-dropdown").forEach(function (dropdown) {
+      var trigger = dropdown.querySelector(".filter-trigger");
+      var panel = dropdown.querySelector(".filter-panel");
+      panel.addEventListener("beforetoggle", function (event) {
+        if (event.newState === "open") {
+          var rect = trigger.getBoundingClientRect();
+          panel.style.top = (rect.bottom + 4) + "px";
+          panel.style.left = rect.left + "px";
+        }
+      });
+    });
 
     (function () {
       var saved = null;
