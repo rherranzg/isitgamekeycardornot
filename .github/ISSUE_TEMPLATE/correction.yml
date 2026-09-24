@@ -1,0 +1,67 @@
+name: Correction or new data
+description: Report a wrong format, or add a region, edition or game, with a source that backs it.
+title: "[Correction] <game> — <region>"
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Every entry in this database is backed by a public source. A change without a source can't be merged,
+        however likely it seems, so please link one: a publisher or Nintendo page, a press article, a
+        retailer listing or a photo of the box.
+  - type: input
+    id: game
+    attributes:
+      label: Game
+      description: Name as shown on the site, or its link (`...#title-id`).
+    validations:
+      required: true
+  - type: dropdown
+    id: region
+    attributes:
+      label: Region
+      options:
+        - Europe (EU)
+        - North America (NA)
+        - Japan (JP)
+        - Korea (KR)
+        - "Asia: HK/TW/SEA (ASIA)"
+        - All regions
+    validations:
+      required: true
+  - type: input
+    id: edition
+    attributes:
+      label: Edition
+      description: Standard, or the commercial name of the edition (e.g. "Deluxe Edition").
+      placeholder: Standard
+  - type: dropdown
+    id: format
+    attributes:
+      label: Correct format
+      options:
+        - Full cartridge
+        - Game-Key Card
+        - Code in box
+        - No physical edition
+        - Other (explain below)
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: Source URL
+      description: The page that says it. Required.
+      placeholder: https://
+    validations:
+      required: true
+  - type: textarea
+    id: quote
+    attributes:
+      label: Quote
+      description: The exact sentence from the source that states the format, in its original language.
+    validations:
+      required: true
+  - type: textarea
+    id: notes
+    attributes:
+      label: Anything else

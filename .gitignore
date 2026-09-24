@@ -1,0 +1,19 @@
+# Secretos: cualquier variante de .env salvo la plantilla
+.env
+.env.*
+!.env.example
+
+# Python y herramientas
+__pycache__/
+.venv/
+.pytest_cache/
+.ruff_cache/
+dist/
+
+# docs/ SÍ se versiona: es la web estática que sirve GitHub Pages (scripts/build_site.py)
+
+# Catálogo completo de IGDB: solo para elegir semillas, no se republica
+data/igdb_catalog.yaml
+
+# Sistema
+.DS_Store

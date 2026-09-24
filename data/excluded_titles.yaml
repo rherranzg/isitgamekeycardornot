@@ -1,0 +1,405 @@
+# Juegos del catálogo de IGDB (igdb_catalog.yaml) que no se catalogan aquí. add_titles se los salta y
+# validate_data falla si alguno sigue en titles.yaml. Se escribe a mano.
+# Validar con: uv run python -m scripts.validate_data
+#
+# Formato (ejemplo ficticio, no es un dato real):
+# - igdb_id: 12345                  # id del juego en IGDB
+#   name: "Example Game"            # nombre según IGDB, solo para leer el fichero
+#   reason: "..."                   # por qué no se cataloga
+#
+# Juegos que solo se venden en caja dentro de una recopilación: la caja y sus SKUs van en la recopilación.
+- igdb_id: 368182
+  name: "Yakuza Kiwami 3"
+  reason: "Solo en caja dentro de Yakuza Kiwami 3 & Dark Ties (yakuza-kiwami-3-dark-ties): una sola caja en EU, NA, JP y KR"
+  former_title_id: "yakuza-kiwami-3"
+  merged_into: "yakuza-kiwami-3-dark-ties"
+- igdb_id: 369849
+  name: "Dark Ties"
+  reason: "Solo en caja dentro de Yakuza Kiwami 3 & Dark Ties (yakuza-kiwami-3-dark-ties): una sola caja en EU, NA, JP y KR"
+  former_title_id: "dark-ties"
+  merged_into: "yakuza-kiwami-3-dark-ties"
+- igdb_id: 212758
+  name: "Kingdom Hearts Final Mix"
+  reason: "Solo en caja dentro de Kingdom Hearts Collection [I-III] (kingdom-hearts-collection-i-iii)"
+- igdb_id: 214986
+  name: "Kingdom Hearts Re:Chain of Memories"
+  reason: "Solo en caja dentro de Kingdom Hearts Collection [I-III] (kingdom-hearts-collection-i-iii)"
+- igdb_id: 221998
+  name: "Kingdom Hearts II Final Mix"
+  reason: "Solo en caja dentro de Kingdom Hearts Collection [I-III] (kingdom-hearts-collection-i-iii)"
+- igdb_id: 221997
+  name: "Kingdom Hearts Birth by Sleep Final Mix"
+  reason: "Solo en caja dentro de Kingdom Hearts Collection [I-III] (kingdom-hearts-collection-i-iii)"
+- igdb_id: 117525
+  name: "Kingdom Hearts Dream Drop Distance HD"
+  reason: "Solo en caja dentro de Kingdom Hearts Collection [I-III] (kingdom-hearts-collection-i-iii)"
+- igdb_id: 26676
+  name: "Kingdom Hearts 0.2: Birth by Sleep - A Fragmentary Passage"
+  reason: "Solo en caja dentro de Kingdom Hearts Collection [I-III] (kingdom-hearts-collection-i-iii)"
+- igdb_id: 2933
+  name: "Kingdom Hearts III"
+  reason: "Solo en caja dentro de Kingdom Hearts Collection [I-III] (kingdom-hearts-collection-i-iii)"
+- igdb_id: 328110
+  name: "Suikoden I HD Remaster: Gate Rune War"
+  reason: >-
+    Solo en caja dentro de Suikoden I & II HD Remaster
+    (suikoden-i-ii-hd-remaster-gate-rune-and-dunan-unification-wars)
+- igdb_id: 328111
+  name: "Suikoden II HD Remaster: Dunan Unification War"
+  reason: >-
+    Solo en caja dentro de Suikoden I & II HD Remaster
+    (suikoden-i-ii-hd-remaster-gate-rune-and-dunan-unification-wars)
+- igdb_id: 375616
+  name: "Dragon Quest I HD-2D Remake"
+  reason: "Solo en caja dentro de Dragon Quest I & II HD-2D Remake (dragon-quest-i-ii-hd-2d-remake)"
+- igdb_id: 375617
+  name: "Dragon Quest II HD-2D Remake"
+  reason: "Solo en caja dentro de Dragon Quest I & II HD-2D Remake (dragon-quest-i-ii-hd-2d-remake)"
+- igdb_id: 334248
+  name: "Tony Hawk's Pro Skater 3"
+  reason: "Solo en caja dentro de Tony Hawk's Pro Skater 3+4 (tony-hawk-s-pro-skater-3-4)"
+- igdb_id: 334249
+  name: "Tony Hawk's Pro Skater 4"
+  reason: "Solo en caja dentro de Tony Hawk's Pro Skater 3+4 (tony-hawk-s-pro-skater-3-4)"
+- igdb_id: 391780
+  name: "Metal Gear Solid 4: Guns of the Patriots - Master Collection Version"
+  reason: "Solo en caja dentro de Metal Gear Solid Master Collection: Volume 2 (metal-gear-solid-master-collection-volume-2)"
+- igdb_id: 391792
+  name: "Metal Gear Solid: Peace Walker - Master Collection Version"
+  reason: "Solo en caja dentro de Metal Gear Solid Master Collection: Volume 2 (metal-gear-solid-master-collection-volume-2)"
+- igdb_id: 392677
+  name: "Metal Gear Solid: Master Collection Vol. 2 Bonus Content"
+  reason: "Solo en caja dentro de Metal Gear Solid Master Collection: Volume 2 (metal-gear-solid-master-collection-volume-2)"
+- igdb_id: 506
+  name: "Sonic Generations"
+  reason: "Solo en caja dentro de Sonic X Shadow Generations (sonic-x-shadow-generations-day-one-edition)"
+- igdb_id: 320894
+  name: "Sonic Generations"
+  reason: "Solo en caja dentro de Sonic X Shadow Generations (sonic-x-shadow-generations-day-one-edition)"
+- igdb_id: 320861
+  name: "Shadow Generations"
+  reason: "Solo en caja dentro de Sonic X Shadow Generations (sonic-x-shadow-generations-day-one-edition)"
+- igdb_id: 404035
+  name: "Toy Story 3 Complete Edition"
+  reason: >-
+    Solo en caja dentro de Toy Story: Retro Roundup! + Toy Story 3 Complete Edition Double Pack
+    (toy-story-retro-roundup-toy-story-3-complete-edition-double-pack)
+
+# Ediciones de IGDB (Deluxe, Gold, Collector's...) que no son un juego aparte (2026-09-24): su caja, si la
+# tiene, es un SKU del juego base con su edition. Y al revés: juegos que en Switch 2 solo se venden como una
+# edición, que es la que se cataloga. former_title_id/merged_into mantienen el ancla vieja de la web.
+- igdb_id: 370826
+  name: "Yakuza Kiwami 3 & Dark Ties: Deluxe Edition"
+  reason: "Edición solo digital de Yakuza Kiwami 3 & Dark Ties (search.nintendo.jp: sform DL_DLC, pprice null; RPG Site la llama \"Digital Deluxe Edition\")"
+  former_title_id: "yakuza-kiwami-3-dark-ties-deluxe-edition"
+  merged_into: "yakuza-kiwami-3-dark-ties"
+- igdb_id: 418328
+  name: "Akiba Lost: Digital Deluxe Edition"
+  reason: "Edición de Akiba Lost sin caja propia (https://search.nintendo.jp/nintendo_soft/search.json?q=AKIBA%20LOST&limit=30)"
+  former_title_id: "akiba-lost-digital-deluxe-edition"
+  merged_into: "akiba-lost"
+- igdb_id: 412376
+  name: "Avatar Legends: The Fighting Game - Deluxe Edition"
+  reason: "Edición de Avatar Legends: The Fighting Game: su caja es el SKU deluxe de avatar-legends-the-fighting-game"
+  former_title_id: "avatar-legends-the-fighting-game-deluxe-edition"
+  merged_into: "avatar-legends-the-fighting-game"
+- igdb_id: 358672
+  name: "Borderlands 4: Deluxe Edition"
+  reason: "Edición de Borderlands 4: su caja es el SKU deluxe de borderlands-4"
+  former_title_id: "borderlands-4-deluxe-edition"
+  merged_into: "borderlands-4"
+- igdb_id: 415399
+  name: "Call of Duty: Modern Warfare 4 - Vault Edition"
+  reason: "Edición de Call of Duty: Modern Warfare 4: su caja es el SKU deluxe de call-of-duty-modern-warfare-4"
+  former_title_id: "call-of-duty-modern-warfare-4-vault-edition"
+  merged_into: "call-of-duty-modern-warfare-4"
+- igdb_id: 399436
+  name: "Crymelight: Tea Party Box"
+  reason: "Edición de Crymelight: su caja es el SKU collectors de crymelight"
+  former_title_id: "crymelight-tea-party-box"
+  merged_into: "crymelight"
+- igdb_id: 1877
+  name: "Cyberpunk 2077"
+  reason: "En Switch 2 solo se vende como Cyberpunk 2077: Ultimate Edition"
+  former_title_id: "cyberpunk-2077"
+  merged_into: "cyberpunk-2077-ultimate-edition"
+- igdb_id: 349591
+  name: "Daemon x Machina: Titanic Scion - Digital Deluxe Edition"
+  reason: "Edición de Daemon x Machina: Titanic Scion; sin caja encontrada (buscado el 2026-09-17)"
+  former_title_id: "daemon-x-machina-titanic-scion-digital-deluxe-edition"
+  merged_into: "daemon-x-machina-titanic-scion"
+- igdb_id: 349592
+  name: "Daemon x Machina: Titanic Scion - Super Digital Deluxe Edition"
+  reason: "Edición de Daemon x Machina: Titanic Scion; sin caja encontrada (buscado el 2026-09-17)"
+  former_title_id: "daemon-x-machina-titanic-scion-super-digital-deluxe-edition"
+  merged_into: "daemon-x-machina-titanic-scion"
+- igdb_id: 393895
+  name: "Deadzone: Rogue - Deluxe Edition"
+  reason: "Edición de Deadzone: Rogue; sin caja encontrada (buscado el 2026-09-17)"
+  former_title_id: "deadzone-rogue-deluxe-edition"
+  merged_into: "deadzone-rogue"
+- igdb_id: 390528
+  name: "Digimon Story Time Stranger: Deluxe Edition"
+  reason: "Edición de Digimon Story: Time Stranger; sin caja encontrada (buscado el 2026-09-17)"
+  former_title_id: "digimon-story-time-stranger-deluxe-edition"
+  merged_into: "digimon-story-time-stranger"
+- igdb_id: 390529
+  name: "Digimon Story Time Stranger: Ultimate Edition"
+  reason: "Edición de Digimon Story: Time Stranger; sin caja encontrada (buscado el 2026-09-17)"
+  former_title_id: "digimon-story-time-stranger-ultimate-edition"
+  merged_into: "digimon-story-time-stranger"
+- igdb_id: 367098
+  name: "Dragon Quest VII: Reimagined - Digital Deluxe Edition"
+  reason: "Edición de Dragon Quest VII Reimagined; sin caja encontrada (buscado el 2026-09-17)"
+  former_title_id: "dragon-quest-vii-reimagined-digital-deluxe-edition"
+  merged_into: "dragon-quest-vii-reimagined"
+- igdb_id: 418333
+  name: "Dynasty Warriors 3: Complete Edition Remastered - Digital Deluxe Edition"
+  reason: "Edición de Dynasty Warriors 3: Complete Edition Remastered sin caja propia (https://saiganak.com/news/smusou2-re-release-date-announcement/)"
+  former_title_id: "dynasty-warriors-3-complete-edition-remastered-digital-deluxe-edition"
+  merged_into: "dynasty-warriors-3-complete-edition-remastered"
+- igdb_id: 327145
+  name: "Dynasty Warriors: Origins - Digital Deluxe Edition"
+  reason: "Edición de Dynasty Warriors: Origins sin caja propia (https://www.nintendo.com/us/store/products/dynasty-warriors-origins-digital-deluxe-edition-switch-2/)"
+  former_title_id: "dynasty-warriors-origins-digital-deluxe-edition"
+  merged_into: "dynasty-warriors-origins"
+- igdb_id: 407113
+  name: "EA Sports FC 26: The World's Game Edition"
+  reason: "Edición de EA Sports FC 26; sin caja encontrada (buscado el 2026-09-17)"
+  former_title_id: "ea-sports-fc-26-the-world-s-game-edition"
+  merged_into: "ea-sports-fc-26"
+- igdb_id: 386799
+  name: "EA Sports FC 26: TOTY Edition"
+  reason: "Edición de EA Sports FC 26; sin caja encontrada (buscado el 2026-09-17)"
+  former_title_id: "ea-sports-fc-26-toty-edition"
+  merged_into: "ea-sports-fc-26"
+- igdb_id: 356805
+  name: "EA Sports FC 26: Ultimate Edition"
+  reason: "Edición de EA Sports FC 26; sin caja encontrada (buscado el 2026-09-17)"
+  former_title_id: "ea-sports-fc-26-ultimate-edition"
+  merged_into: "ea-sports-fc-26"
+- igdb_id: 118953
+  name: "Earth Defense Force 5: Deluxe Edition"
+  reason: "Edición de Earth Defense Force 5 sin caja propia (https://www.cloudedleopardent.com/game/edf_switch2/en/edf5/)"
+  former_title_id: "earth-defense-force-5-deluxe-edition"
+  merged_into: "earth-defense-force-5"
+- igdb_id: 119133
+  name: "Elden Ring"
+  reason: "En Switch 2 solo se vende como Elden Ring: Tarnished Edition"
+  former_title_id: "elden-ring"
+  merged_into: "elden-ring-tarnished-edition"
+- igdb_id: 387683
+  name: "Fatal Frame II: Crimson Butterfly Remake - Digital Deluxe Edition"
+  reason: "Edición de Fatal Frame II: Crimson Butterfly Remake sin caja propia (https://www.gematsu.com/2025/11/fatal-frame-ii-crimson-butterfly-remake-launches-march-12-2026)"
+  former_title_id: "fatal-frame-ii-crimson-butterfly-remake-digital-deluxe-edition"
+  merged_into: "fatal-frame-ii-crimson-butterfly-remake"
+- igdb_id: 410844
+  name: "Final Fantasy Resonance: Digital Deluxe Edition"
+  reason: "Edición de Final Fantasy Resonance sin caja propia (https://www.nintendo.com/us/store/products/final-fantasy-resonance-switch-2/)"
+  former_title_id: "final-fantasy-resonance-digital-deluxe-edition"
+  merged_into: "final-fantasy-resonance"
+- igdb_id: 266733
+  name: "Final Fantasy VII Rebirth: Digital Deluxe Edition"
+  reason: "Edición de Final Fantasy VII Rebirth sin caja propia (https://www.nintendo.com/us/store/products/final-fantasy-vii-rebirth-digital-deluxe-edition-switch-2/)"
+  former_title_id: "final-fantasy-vii-rebirth-digital-deluxe-edition"
+  merged_into: "final-fantasy-vii-rebirth"
+- igdb_id: 407117
+  name: "Fire Emblem: Fortune's Weave - Dagdan Collection"
+  reason: "Edición de Fire Emblem: Fortune's Weave: su caja es el SKU collectors de fire-emblem-fortune-s-weave"
+  former_title_id: "fire-emblem-fortune-s-weave-dagdan-collection"
+  merged_into: "fire-emblem-fortune-s-weave"
+- igdb_id: 365554
+  name: "Full Metal Schoolgirl: Deluxe Edition"
+  reason: "Edición de Full Metal Schoolgirl sin caja propia (https://www.gematsu.com/2025/07/d3-publisher-and-yukes-announce-action-shooter-full-metal-schoolgirl-for-ps5-switch-2-and-pc)"
+  former_title_id: "full-metal-schoolgirl-deluxe-edition"
+  merged_into: "full-metal-schoolgirl"
+- igdb_id: 376247
+  name: "Inazuma Eleven: Victory Road - Deluxe Edition"
+  reason: "Edición de Inazuma Eleven: Victory Road; si tiene caja, va como SKU de inazuma-eleven-victory-road"
+  former_title_id: "inazuma-eleven-victory-road-deluxe-edition"
+  merged_into: "inazuma-eleven-victory-road"
+- igdb_id: 387030
+  name: "LEGO Batman: Legacy of the Dark Knight - Deluxe Edition"
+  reason: "Edición de LEGO Batman: Legacy of the Dark Knight: su caja es el SKU deluxe de lego-batman-legacy-of-the-dark-knight"
+  former_title_id: "lego-batman-legacy-of-the-dark-knight-deluxe-edition"
+  merged_into: "lego-batman-legacy-of-the-dark-knight"
+- igdb_id: 342383
+  name: "Madden NFL 26: Deluxe Edition"
+  reason: "Edición de Madden NFL 26; sin caja encontrada (buscado el 2026-09-17)"
+  former_title_id: "madden-nfl-26-deluxe-edition"
+  merged_into: "madden-nfl-26"
+- igdb_id: 411832
+  name: "Madden NFL 27: Deluxe Edition"
+  reason: "Edición de Madden NFL 27; sin caja encontrada (buscado el 2026-09-17)"
+  former_title_id: "madden-nfl-27-deluxe-edition"
+  merged_into: "madden-nfl-27"
+- igdb_id: 331820
+  name: "Metaphor: ReFantazio - Atlus 35th Digital Anniversary Edition"
+  reason: "Edición de Metaphor: ReFantazio sin caja propia (https://search.nintendo.jp/nintendo_soft/search.json?q=%E3%83%A1%E3%82%BF%E3%83%95%E3%82%A1%E3%83%BC&limit=50)"
+  former_title_id: "metaphor-refantazio-atlus-35th-digital-anniversary-edition"
+  merged_into: "metaphor-refantazio"
+- igdb_id: 384949
+  name: "Metaphor: ReFantazio Guidebook Edition"
+  reason: "Edición de Metaphor: ReFantazio sin caja propia (https://www.rpgsite.net/news/21261-metaphor-refantazio-switch-2-price-preorder-trailer-dlc-anniversary-edition)"
+  former_title_id: "metaphor-refantazio-guidebook-edition"
+  merged_into: "metaphor-refantazio"
+- igdb_id: 418230
+  name: "Metroid Ravenous: Special Edition"
+  reason: "Edición de Metroid Ravenous: su caja es el SKU collectors de metroid-ravenous"
+  former_title_id: "metroid-ravenous-special-edition"
+  merged_into: "metroid-ravenous"
+- igdb_id: 376773
+  name: "Monster Hunter Stories 3: Twisted Reflection - Deluxe Edition"
+  reason: "Edición de Monster Hunter Stories 3: Twisted Reflection sin caja propia (https://www.rpgsite.net/guide/19817-monster-hunter-stories-3-edition-buy-guide-dlc-price-upgrade-premium-deluxe)"
+  former_title_id: "monster-hunter-stories-3-twisted-reflection-deluxe-edition"
+  merged_into: "monster-hunter-stories-3-twisted-reflection"
+- igdb_id: 378855
+  name: "Monster Hunter Stories 3: Twisted Reflection - Premium Deluxe Edition"
+  reason: "Edición de Monster Hunter Stories 3: Twisted Reflection sin caja propia (https://www.rpgsite.net/guide/19817-monster-hunter-stories-3-edition-buy-guide-dlc-price-upgrade-premium-deluxe)"
+  former_title_id: "monster-hunter-stories-3-twisted-reflection-premium-deluxe-edition"
+  merged_into: "monster-hunter-stories-3-twisted-reflection"
+- igdb_id: 376244
+  name: "NBA 2K26: Slam Edition"
+  reason: "Edición de NBA 2K26 sin caja propia (https://www.nintendo.com/us/store/products/nba-2k26-slam-edition-switch-2/)"
+  former_title_id: "nba-2k26-slam-edition"
+  merged_into: "nba-2k26"
+- igdb_id: 366786
+  name: "Octopath Traveler 0: Digital Deluxe Edition"
+  reason: "Edición de Octopath Traveler 0 sin caja propia (https://www.nintendo.com/us/store/products/octopath-traveler-0-digital-deluxe-edition-switch-2/)"
+  former_title_id: "octopath-traveler-0-digital-deluxe-edition"
+  merged_into: "octopath-traveler-0"
+- igdb_id: 407108
+  name: "Orbitals: Deluxe Edition"
+  reason: "Edición de Orbitals sin caja propia (https://www.nintendo.com/us/store/products/orbitals-switch-2/)"
+  former_title_id: "orbitals-deluxe-edition"
+  merged_into: "orbitals"
+- igdb_id: 358662
+  name: "Pac-Man World 2 Re-Pac: Deluxe Edition"
+  reason: "Edición de Pac-Man World 2 Re-Pac sin caja propia (https://ntdeals.net/us-store/game/996415/pacman-world-2-repac-deluxe-edition)"
+  former_title_id: "pac-man-world-2-re-pac-deluxe-edition"
+  merged_into: "pac-man-world-2-re-pac"
+- igdb_id: 262642
+  name: "Persona 3 Reload: Digital Deluxe Edition"
+  reason: "Edición de Persona 3 Reload sin caja propia (https://www.nintendo.com/us/store/products/persona-3-reload-digital-deluxe-edition-switch-2/)"
+  former_title_id: "persona-3-reload-digital-deluxe-edition"
+  merged_into: "persona-3-reload"
+- igdb_id: 262643
+  name: "Persona 3 Reload: Digital Premium Edition"
+  reason: "Edición de Persona 3 Reload sin caja propia (https://www.nintendo.com/us/store/products/persona-3-reload-digital-premium-edition-switch-2/)"
+  former_title_id: "persona-3-reload-digital-premium-edition"
+  merged_into: "persona-3-reload"
+- igdb_id: 293933
+  name: "Police Simulator: Patrol Officers - Gold Edition"
+  reason: "Edición de Police Simulator: Patrol Officers: su caja es el SKU deluxe de police-simulator-patrol-officers"
+  former_title_id: "police-simulator-patrol-officers-gold-edition"
+  merged_into: "police-simulator-patrol-officers"
+- igdb_id: 418336
+  name: "Ratatan: Digital Deluxe Edition"
+  reason: "Edición de Ratatan; si tiene caja, va como SKU de ratatan"
+  former_title_id: "ratatan-digital-deluxe-edition"
+  merged_into: "ratatan"
+- igdb_id: 378339
+  name: "Reanimal: Collector's Edition"
+  reason: "Edición de Reanimal: su caja es el SKU collectors de reanimal"
+  former_title_id: "reanimal-collector-s-edition"
+  merged_into: "reanimal"
+- igdb_id: 378346
+  name: "Reanimal: Deluxe Edition"
+  reason: "Edición de Reanimal: su caja es el SKU deluxe de reanimal"
+  former_title_id: "reanimal-deluxe-edition"
+  merged_into: "reanimal"
+- igdb_id: 378343
+  name: "Reanimal: Digital Deluxe Edition"
+  reason: "Edición de Reanimal; si tiene caja, va como SKU de reanimal"
+  former_title_id: "reanimal-digital-deluxe-edition"
+  merged_into: "reanimal"
+- igdb_id: 392779
+  name: "Resident Evil Requiem: Lenticular Edition"
+  reason: "Edición de Resident Evil Requiem: su caja es el SKU deluxe de resident-evil-requiem"
+  former_title_id: "resident-evil-requiem-lenticular-edition"
+  merged_into: "resident-evil-requiem"
+- igdb_id: 418348
+  name: "Romancing SaGa 3: Destinies United - Digital Deluxe Version"
+  reason: "Edición de Romancing SaGa 3: Destinies United; si tiene caja, va como SKU de romancing-saga-3-destinies-united"
+  former_title_id: "romancing-saga-3-destinies-united-digital-deluxe-version"
+  merged_into: "romancing-saga-3-destinies-united"
+- igdb_id: 342450
+  name: "Shadow Labyrinth: Deluxe Edition"
+  reason: "Edición de Shadow Labyrinth; si tiene caja, va como SKU de shadow-labyrinth"
+  former_title_id: "shadow-labyrinth-deluxe-edition"
+  merged_into: "shadow-labyrinth"
+- igdb_id: 394391
+  name: "South of Midnight: Weaver's Edition"
+  reason: "Edición de South of Midnight sin caja propia (https://www.nintendolife.com/games/nintendo-switch-2/south-of-midnight)"
+  former_title_id: "south-of-midnight-weaver-s-edition"
+  merged_into: "south-of-midnight"
+- igdb_id: 329136
+  name: "South of Midnight: Weaver’s Edition"
+  reason: "Edición de South of Midnight sin caja propia (https://www.nintendolife.com/games/nintendo-switch-2/south-of-midnight)"
+  former_title_id: "south-of-midnight-weavers-edition"
+  merged_into: "south-of-midnight"
+- igdb_id: 252827
+  name: "Star Wars Outlaws"
+  reason: "En Switch 2 solo se vende como Star Wars Outlaws: Gold Edition"
+  former_title_id: "star-wars-outlaws"
+  merged_into: "star-wars-outlaws-gold-edition"
+- igdb_id: 400760
+  name: "Steins;Gate Re:Boot - Limited Edition"
+  reason: "Edición de Steins;Gate Re:Boot: su caja es el SKU collectors de steins-gate-re-boot"
+  former_title_id: "steins-gate-re-boot-limited-edition"
+  merged_into: "steins-gate-re-boot"
+- igdb_id: 395685
+  name: "The Adventures of Elliot: The Millennium Tales - Digital Deluxe Edition"
+  reason: "Edición de The Adventures of Elliot: The Millennium Tales sin caja propia (https://search.nintendo.jp/nintendo_soft/search.json?q=%E3%82%A8%E3%83%AA%E3%82%AA%E3%83%83%E3%83%88&limit=50)"
+  former_title_id: "the-adventures-of-elliot-the-millennium-tales-digital-deluxe-edition"
+  merged_into: "the-adventures-of-elliot-the-millennium-tales"
+- igdb_id: 341402
+  name: "The Elder Scrolls IV: Oblivion Remastered - Deluxe Edition"
+  reason: "Edición de The Elder Scrolls IV: Oblivion Remastered sin caja propia (https://search.nintendo.jp/nintendo_soft/search.json?q=Oblivion&limit=50)"
+  former_title_id: "the-elder-scrolls-iv-oblivion-remastered-deluxe-edition"
+  merged_into: "the-elder-scrolls-iv-oblivion-remastered"
+- igdb_id: 418337
+  name: "Tomb Raider: Legacy of Atlantis - Deluxe Edition"
+  reason: "Edición de Tomb Raider: Legacy of Atlantis: su caja es el SKU deluxe de tomb-raider-legacy-of-atlantis"
+  former_title_id: "tomb-raider-legacy-of-atlantis-deluxe-edition"
+  merged_into: "tomb-raider-legacy-of-atlantis"
+- igdb_id: 418331
+  name: "Touhou Koumakyou: New Classic - The Embodiment of Scarlet Devil: Deluxe Edition"
+  reason: "Edición de Touhou Koumakyou: New Classic - The Embodiment of Scarlet Devil sin caja propia (https://search.nintendo.jp/nintendo_soft/search.json?q=%E6%9D%B1%E6%96%B9&limit=50)"
+  former_title_id: "touhou-koumakyou-new-classic-the-embodiment-of-scarlet-devil-deluxe-edition"
+  merged_into: "touhou-koumakyou-new-classic-the-embodiment-of-scarlet-devil"
+- igdb_id: 324779
+  name: "Two Point Museum: Explorer Edition"
+  reason: "Edición de Two Point Museum: su caja es el SKU deluxe de two-point-museum"
+  former_title_id: "two-point-museum-explorer-edition"
+  merged_into: "two-point-museum"
+- igdb_id: 402444
+  name: "Unbeatable: Breakout Edition"
+  reason: "Edición de Unbeatable: su caja es el SKU deluxe de unbeatable"
+  former_title_id: "unbeatable-breakout-edition"
+  merged_into: "unbeatable"
+- igdb_id: 399532
+  name: "Utawarerumono: Past and Present Rediscovered - Premium Edition"
+  reason: "Edición de Utawarerumono: Past and Present Rediscovered: su caja es el SKU collectors de utawarerumono-past-and-present-rediscovered"
+  former_title_id: "utawarerumono-past-and-present-rediscovered-premium-edition"
+  merged_into: "utawarerumono-past-and-present-rediscovered"
+- igdb_id: 335095
+  name: "WWE 2K25: Deadman Edition"
+  reason: "Edición de WWE 2K25 sin caja propia (https://www.nintendo.com/us/store/products/wwe-2k25-deadman-edition-switch-2/)"
+  former_title_id: "wwe-2k25-deadman-edition"
+  merged_into: "wwe-2k25"
+- igdb_id: 335096
+  name: "WWE 2K25: The Bloodline Edition"
+  reason: "Edición de WWE 2K25 sin caja propia (https://www.nintendo.com/us/store/products/wwe-2k25-the-bloodline-edition-switch-2/)"
+  former_title_id: "wwe-2k25-the-bloodline-edition"
+  merged_into: "wwe-2k25"
+- igdb_id: 401733
+  name: "Ys X: Proud Nordics - Ultimate Edition"
+  reason: "Edición de Ys X: Proud Nordics sin caja propia (https://www.nintendo.com/us/store/products/ys-x-proud-nordics-ultimate-edition-switch-2/)"
+  former_title_id: "ys-x-proud-nordics-ultimate-edition"
+  merged_into: "ys-x-proud-nordics"
+- igdb_id: 395340
+  name: "Chou Shin Jikuu Geimu Neptune: Unlimited"
+  reason: "Nombre japonés de Hyperdimension Neptunia Unlimited (IGDB 400492): mismo juego (Idea Factory, 27-08-2026), con dos entradas en IGDB"
+  former_title_id: "chou-shin-jikuu-geimu-neptune-unlimited"
+  merged_into: "hyperdimension-neptunia-unlimited"

@@ -1,0 +1,29 @@
+Is It Game-Key Card Or Not — data license
+=========================================
+
+The code in this repository is released under the MIT License (see LICENSE at the root).
+The data in this directory has its own license:
+
+This database (data/skus.yaml and data/physical_release.yaml, and the project's own fields in the other files
+of this directory) is made available under the Open Database License:
+https://opendatacommons.org/licenses/odbl/1-0/. Any rights in individual contents of the database are
+licensed under the Database Contents License: https://opendatacommons.org/licenses/dbcl/1-0/
+
+In short (the legal text is the one at the links):
+- You may copy, distribute and use the database, including commercially.
+- You must attribute it: "Is It Game-Key Card Or Not, ODbL 1.0", with a link to
+  https://github.com/rherranzg/isitgamekeycardornot.
+- If you publish a derived database, it must also be released under the ODbL.
+- A website, chart or report made from the data (a "Produced Work") only requires attribution.
+
+Contributions to the data are accepted under this same license.
+
+Not covered by this license
+---------------------------
+- IGDB metadata. data/titles.yaml and data/excluded_titles.yaml (and the local, git-ignored
+  data/igdb_catalog.yaml) contain metadata from IGDB (https://www.igdb.com): ids, names, publishers and
+  release dates. It is not this project's data; it is subject to the terms of IGDB and Twitch Developer
+  Services and is not relicensed under the ODbL.
+- Quoted excerpts. The comments in the YAML files quote short passages from third-party sources (press
+  articles, official pages, retailer listings) to show what backs each entry. Those passages belong to
+  their authors, are included only as citations, and are not relicensed under the ODbL.

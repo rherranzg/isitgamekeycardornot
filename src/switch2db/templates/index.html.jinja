@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="{{ t.tagline.es }}">
+  <title>Is It Game-Key Card Or Not</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #f5f5f4;
+      --surface: #ffffff;
+      --text: #1c1c1c;
+      --muted: #6b6b6b;
+      --border: #e2e2e0;
+      --full-cart-bg: #dcf5e3;
+      --full-cart-text: #146c2e;
+      --game-key-card-bg: #fbdede;
+      --game-key-card-text: #a3242a;
+      --code-in-box-bg: #fdecc8;
+      --code-in-box-text: #8a5a00;
+      --unknown-bg: #e6e6e6;
+      --unknown-text: #555555;
+      --release-date-bg: #e3ecfb;
+      --release-date-text: #1f4f9e;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #17181a;
+        --surface: #212225;
+        --text: #ececec;
+        --muted: #9a9a9a;
+        --border: #34363a;
+        --full-cart-bg: #123821;
+        --full-cart-text: #7be3a0;
+        --game-key-card-bg: #3d1a1c;
+        --game-key-card-text: #f4a6a9;
+        --code-in-box-bg: #3a2c0d;
+        --code-in-box-text: #f0c674;
+        --unknown-bg: #2b2c2f;
+        --unknown-text: #b7b7b7;
+        --release-date-bg: #172a45;
+        --release-date-text: #9cc2ff;
+      }
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      padding-block: 32px;
+    }
+    .wrap {
+      max-width: 880px;
+      margin: 0 auto;
+      padding-inline: 20px;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    header h1 {
+      font-size: 1.6rem;
+      margin: 0 0 6px;
+    }
+    header p {
+      color: var(--muted);
+      margin: 0 0 4px;
+      line-height: 1.5;
+      max-width: 60ch;
+    }
+    .lang-switcher {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.8rem;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+    .lang-switcher select {
+      background: var(--surface);
+      color: var(--text);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 4px 8px;
+      font-size: 0.85rem;
+    }
+    .stats {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin: 20px 0 16px;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+    .stats strong { color: var(--text); }
+
+    .toolbar {
+      position: sticky;
+      top: 0;
+      z-index: 5;
+      background: var(--bg);
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      padding-block: 10px;
+      margin-bottom: 4px;
+      border-bottom: 1px solid var(--border);
+    }
+    #search-input {
+      flex: 1 1 200px;
+      min-width: 160px;
+      background: var(--surface);
+      color: var(--text);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 7px 10px;
+      font-size: 0.88rem;
+    }
+    .toolbar-controls {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .filter-trigger {
+      cursor: pointer;
+      background: var(--surface);
+      color: var(--text);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 7px 12px;
+      font-size: 0.85rem;
+      font-family: inherit;
+      white-space: nowrap;
+    }
+    .filter-trigger::after { content: " ▾"; }
+    .filter-panel {
+      position: fixed;
+      inset: auto;
+      margin: 0;
+      max-width: calc(100vw - 40px);
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 8px 10px;
+      gap: 6px;
+      font-size: 0.85rem;
+      white-space: nowrap;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+    }
+    /* El popover se oculta con display:none del navegador mientras está cerrado;
+       si display:flex fuera incondicional, pisaría ese estilo y quedaría siempre visible. */
+    .filter-panel:popover-open {
+      display: flex;
+      flex-direction: column;
+    }
+    .filter-panel label {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      cursor: pointer;
+    }
+    #showing-count {
+      font-size: 0.82rem;
+      color: var(--muted);
+      margin: 10px 0 14px;
+    }
+    .titles {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .title-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 16px 18px;
+      /* Deja hueco a la barra fija al saltar a un juego por su ancla (#title_id) */
+      scroll-margin-top: 80px;
+    }
+    /* Ancla del title_id de un juego fusionado en este: los enlaces viejos siguen llevando aquí */
+    .former-anchor {
+      display: block;
+      scroll-margin-top: 96px;
+    }
+    .title-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .title-head h2 {
+      font-size: 1.1rem;
+      margin: 0;
+    }
+    .no-box {
+      margin: 0;
+      padding: 0.75rem 0;
+      color: var(--muted);
+    }
+
+    .no-box .evidence,
+    .no-box .source-link {
+      margin-left: 0.35rem;
+    }
+
+    .publisher {
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+    .title-badges {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 6px;
+      margin-left: auto;
+    }
+    .release-date {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--release-date-text);
+      background: var(--release-date-bg);
+      border-radius: 6px;
+      padding: 2px 8px;
+      white-space: nowrap;
+    }
+    .divergence-flag {
+      font-size: 0.78rem;
+      color: var(--code-in-box-text);
+      background: var(--code-in-box-bg);
+      border-radius: 6px;
+      padding: 2px 8px;
+      white-space: nowrap;
+    }
+    #empty-state {
+      color: var(--muted);
+      font-size: 0.9rem;
+      text-align: center;
+      padding: 32px 0;
+    }
+    .table-scroll {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      margin-top: 12px;
+    }
+    table.skus {
+      width: 100%;
+      min-width: 480px;
+      border-collapse: collapse;
+      margin-top: 0;
+      font-size: 0.85rem;
+    }
+    table.skus th {
+      text-align: left;
+      color: var(--muted);
+      font-weight: 500;
+      padding: 4px 8px 4px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    table.skus td {
+      padding: 6px 8px 6px 0;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+    table.skus tr:last-child td { border-bottom: none; }
+    table.skus td:first-child,
+    table.skus td:nth-child(5) {
+      font-variant-numeric: tabular-nums;
+    }
+    .badge {
+      display: inline-block;
+      border-radius: 6px;
+      padding: 2px 8px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+    .format-full-cart { background: var(--full-cart-bg); color: var(--full-cart-text); }
+    .format-game-key-card { background: var(--game-key-card-bg); color: var(--game-key-card-text); }
+    .format-code-in-box { background: var(--code-in-box-bg); color: var(--code-in-box-text); }
+    .format-unknown { background: var(--unknown-bg); color: var(--unknown-text); }
+    .source-link { color: inherit; }
+    footer {
+      margin-top: 32px;
+      color: var(--muted);
+      font-size: 0.8rem;
+    }
+    footer p { margin: 0 0 6px; }
+    footer a { color: inherit; }
+
+    @media (max-width: 640px) {
+      .toolbar {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      #search-input {
+        /* .toolbar pasa a flex-direction: column aquí, y en un eje vertical
+           flex-basis controla la altura: sin resetear flex, el "200px" de
+           la regla de escritorio (pensado como ancho) se aplicaba como alto. */
+        flex: none;
+        width: 100%;
+        /* >=16px evita que iOS Safari haga zoom automático al enfocar el campo */
+        font-size: 16px;
+        padding: 9px 10px;
+      }
+      .title-card {
+        padding: 14px;
+        scroll-margin-top: 130px;
+      }
+    }
+  </style>
+</head>
+<body>
+  {% macro i18n(pair) -%}
+  <span data-i18n="es">{{ pair.es }}</span><span data-i18n="en" hidden>{{ pair.en }}</span>
+  {%- endmacro %}
+  {% macro filter_dropdown(title, class_name, labels, unchecked=[]) -%}
+  <div class="filter-dropdown">
+    <button type="button" class="filter-trigger" popovertarget="{{ class_name }}-panel">{{ i18n(title) }}</button>
+    <div class="filter-panel" id="{{ class_name }}-panel" popover>
+      {% for option, label in labels.items() %}
+      <label>
+        <input type="checkbox" class="{{ class_name }}" value="{{ option }}"{% if option not in unchecked %} checked{% endif %}>
+        {{ i18n(label) }}
+      </label>
+      {% endfor %}
+    </div>
+  </div>
+  {%- endmacro %}
+  <div class="wrap">
+    <header>
+      <div>
+        <h1>Is It Game-Key Card Or Not</h1>
+        <p>{{ i18n(t.tagline) }}</p>
+      </div>
+      <div class="lang-switcher">
+        <label for="lang-select">{{ i18n(t.language_label) }}</label>
+        <select id="lang-select" onchange="applyLanguage(this.value)">
+          <option value="es">Español</option>
+          <option value="en">English</option>
+        </select>
+      </div>
+    </header>
+
+    <div class="stats">
+      <span><strong id="stat-titles-count">{{ title_count }}</strong> {{ i18n(t.stat_titles) }}</span>
+      <span><strong id="stat-skus-count">{{ sku_count }}</strong> {{ i18n(t.stat_skus) }}</span>
+    </div>
+
+    <div class="toolbar">
+      <input
+        type="text"
+        inputmode="search"
+        autocomplete="off"
+        id="search-input"
+        data-placeholder-es="{{ t.search_placeholder.es }}"
+        data-placeholder-en="{{ t.search_placeholder.en }}"
+        placeholder="{{ t.search_placeholder.es }}"
+        aria-label="{{ t.search_placeholder.es }}"
+      >
+
+      <div class="toolbar-controls">
+        {{ filter_dropdown(t.col_region, "region-filter", region_labels) }}
+        {{ filter_dropdown(t.col_format, "format-filter", format_labels, [no_box_filter_value, no_skus_filter_value]) }}
+        {{ filter_dropdown(t.col_edition, "edition-filter", edition_labels) }}
+      </div>
+    </div>
+
+    <div id="showing-count"></div>
+
+    <div class="titles">
+      {% for title in titles %}
+      <div class="title-card" id="{{ title.title_id }}" data-search="{{ title.search_text }}"{% if title.no_box %} data-no-box="true"{% elif not title.skus %} data-no-skus="true"{% endif %}>
+        {% for former_title_id in title.former_title_ids %}<span class="former-anchor" id="{{ former_title_id }}"></span>{% endfor %}
+        <div class="title-head">
+          <div>
+            <h2>{{ title.name }}</h2>
+            {% if title.publisher %}<div class="publisher">{{ title.publisher }}</div>{% endif %}
+          </div>
+          {% if title.has_divergence or title.release_date_text %}
+          <div class="title-badges">
+            {% if title.has_divergence %}
+            <span class="divergence-flag">{{ i18n(t.divergence_flag) }}</span>
+            {% endif %}
+            {% if title.release_date_text %}
+            <span class="release-date">{{ i18n(title.release_date_text) }}</span>
+            {% endif %}
+          </div>
+          {% endif %}
+        </div>
+
+        {% if title.no_box %}
+        <p class="no-box">
+          {{ i18n(title.no_box.note) }}
+          {% if title.no_box.source_url %}
+          <a class="source-link" href="{{ title.no_box.source_url }}" target="_blank" rel="noopener noreferrer">{{ i18n(title.no_box.evidence_label) }}</a>
+          {% endif %}
+        </p>
+        {% elif title.skus %}
+        <div class="table-scroll">
+          <table class="skus">
+            <thead>
+              <tr>
+                <th>{{ i18n(t.col_region) }}</th>
+                <th>{{ i18n(t.col_edition) }}</th>
+                <th>{{ i18n(t.col_format) }}</th>
+                <th>{{ i18n(t.col_distributor) }}</th>
+                <th>{{ i18n(t.col_size) }}</th>
+                <th>{{ i18n(t.col_source) }}</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for sku in title.skus %}
+              <tr data-region="{{ sku.region.value }}" data-format="{{ sku.format.value }}" data-edition="{{ sku.edition.value }}">
+                <td>{{ sku.region.value }}</td>
+                <td>{{ i18n(sku.edition_label) }}</td>
+                <td><span class="badge {{ sku.format_css_class }}">{{ i18n(sku.format_label) }}</span></td>
+                <td>{{ sku.distributor or "—" }}</td>
+                <td>{{ i18n(sku.size_text) }}</td>
+                <td>
+                  {% if sku.source_url %}
+                  <a class="source-link" href="{{ sku.source_url }}" target="_blank" rel="noopener noreferrer">{{ i18n(sku.evidence_label) }}</a>
+                  {% else %}
+                  —
+                  {% endif %}
+                </td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+        {% else %}
+        <p class="no-data">{{ i18n(t.no_data) }}</p>
+        {% endif %}
+      </div>
+      {% endfor %}
+    </div>
+
+    <p id="empty-state" hidden>{{ i18n(t.no_results) }}</p>
+
+    <footer>
+      <p>{{ i18n(t.footer_accuracy) }}</p>
+      <p>{{ i18n(footer) }}</p>
+      <p>
+        <a href="{{ repo_url }}">{{ i18n(t.footer_repo) }}</a> ·
+        <a href="{{ data_license_url }}">{{ i18n(t.footer_license) }}</a> ·
+        <a href="{{ report_issue_url }}">{{ i18n(t.footer_report) }}</a>
+      </p>
+      <p>{{ i18n(t.footer_igdb) }} <a href="{{ igdb_url }}">IGDB</a>.</p>
+      <p>{{ i18n(t.footer_trademark) }}</p>
+    </footer>
+  </div>
+
+  <script>
+    var SHOWING_COUNT_TEMPLATES = {{ showing_count_templates|tojson }};
+
+    var currentLang = "es";
+    var lastVisibleCount = 0;
+    var lastTotalCount = 0;
+
+    // Se leen del DOM y no se asume "todo marcado": el navegador puede restaurar las casillas al volver atrás.
+    var state = {
+      search: "",
+      regions: readCheckedValues("region-filter"),
+      formats: readCheckedValues("format-filter"),
+      editions: readCheckedValues("edition-filter")
+    };
+
+    function readCheckedValues(className) {
+      return new Set(
+        Array.from(document.querySelectorAll("." + className + ":checked")).map(function (el) { return el.value; })
+      );
+    }
+
+    function normalizeText(text) {
+      // Misma normalización que build_search_text (site.py): sin tildes ni otras marcas y en minúsculas.
+      return text.normalize("NFKD").replace(/\p{M}/gu, "").toLowerCase();
+    }
+
+    function applyLanguage(lang) {
+      currentLang = lang;
+      document.documentElement.lang = lang;
+      document.querySelectorAll("[data-i18n]").forEach(function (el) {
+        el.hidden = el.dataset.i18n !== lang;
+      });
+      document.getElementById("lang-select").value = lang;
+      try {
+        localStorage.setItem("lang", lang);
+      } catch (error) {
+        /* almacenamiento no disponible: la preferencia solo dura la sesión */
+      }
+      var searchInput = document.getElementById("search-input");
+      var placeholder = searchInput.dataset["placeholder" + (lang === "en" ? "En" : "Es")];
+      searchInput.placeholder = placeholder;
+      searchInput.setAttribute("aria-label", placeholder);
+      renderShowingCount();
+    }
+
+    function renderShowingCount() {
+      var el = document.getElementById("showing-count");
+      var template = SHOWING_COUNT_TEMPLATES[currentLang] || SHOWING_COUNT_TEMPLATES.es;
+      el.textContent = template
+        .replace("{shown}", lastVisibleCount)
+        .replace("{total}", lastTotalCount);
+    }
+
+    var NO_BOX_FILTER_VALUE = {{ no_box_filter_value | tojson }};
+    var NO_SKUS_FILTER_VALUE = {{ no_skus_filter_value | tojson }};
+
+    function isRowVisible(row) {
+      return state.regions.has(row.dataset.region)
+        && state.formats.has(row.dataset.format)
+        && state.editions.has(row.dataset.edition);
+    }
+
+    // Un juego sin edición física no tiene filas: no salió en caja en ninguna región ni edición, así que
+    // cualquier región o edición marcada le vale y lo que decide es su propio valor del filtro de formato.
+    function isNoBoxCardVisible() {
+      return state.formats.has(NO_BOX_FILTER_VALUE) && state.regions.size > 0 && state.editions.size > 0;
+    }
+
+    // Igual que isNoBoxCardVisible, pero para los títulos que todavía no tienen ningún SKU documentado.
+    function isNoSkusCardVisible() {
+      return state.formats.has(NO_SKUS_FILTER_VALUE) && state.regions.size > 0 && state.editions.size > 0;
+    }
+
+    function applyFilters() {
+      var cards = document.querySelectorAll(".title-card");
+      var visibleCount = 0;
+      var visibleSkuCount = 0;
+
+      cards.forEach(function (card) {
+        var matchesSearch = !state.search || card.dataset.search.indexOf(state.search) !== -1;
+        var rows = card.querySelectorAll("table.skus tbody tr");
+        var anyRowVisible = false;
+        var visibleRowsInCard = 0;
+
+        rows.forEach(function (row) {
+          row.hidden = !isRowVisible(row);
+          if (!row.hidden) {
+            anyRowVisible = true;
+            visibleRowsInCard++;
+          }
+        });
+
+        if (card.dataset.noBox) {
+          anyRowVisible = isNoBoxCardVisible();
+        } else if (card.dataset.noSkus) {
+          anyRowVisible = isNoSkusCardVisible();
+        }
+        card.hidden = !matchesSearch || !anyRowVisible;
+        if (!card.hidden) {
+          visibleCount++;
+          visibleSkuCount += visibleRowsInCard;
+        }
+      });
+
+      lastVisibleCount = visibleCount;
+      lastTotalCount = cards.length;
+      document.getElementById("empty-state").hidden = visibleCount > 0;
+      renderShowingCount();
+      document.getElementById("stat-titles-count").textContent = visibleCount;
+      document.getElementById("stat-skus-count").textContent = visibleSkuCount;
+    }
+
+    function bindFilter(className, stateKey) {
+      document.querySelectorAll("." + className).forEach(function (checkbox) {
+        checkbox.addEventListener("change", function () {
+          state[stateKey] = readCheckedValues(className);
+          applyFilters();
+        });
+      });
+    }
+
+    var searchInput = document.getElementById("search-input");
+    searchInput.addEventListener("input", function () {
+      state.search = normalizeText(searchInput.value.trim());
+      applyFilters();
+    });
+
+    bindFilter("region-filter", "regions");
+    bindFilter("format-filter", "formats");
+    bindFilter("edition-filter", "editions");
+
+    // El navegador centra los popovers por defecto: los anclamos bajo su botón antes de abrirlos.
+    document.querySelectorAll(".filter-dropdown").forEach(function (dropdown) {
+      var trigger = dropdown.querySelector(".filter-trigger");
+      var panel = dropdown.querySelector(".filter-panel");
+      panel.addEventListener("beforetoggle", function (event) {
+        if (event.newState === "open") {
+          var rect = trigger.getBoundingClientRect();
+          panel.style.top = (rect.bottom + 4) + "px";
+          panel.style.left = rect.left + "px";
+        }
+      });
+    });
+
+    (function () {
+      var saved = null;
+      try {
+        saved = localStorage.getItem("lang");
+      } catch (error) {
+        saved = null;
+      }
+      var preferred = saved || (navigator.language && navigator.language.startsWith("en") ? "en" : "es");
+      state.search = normalizeText(searchInput.value.trim());
+      applyLanguage(preferred);
+      applyFilters();
+    })();
+  </script>
+</body>
+</html>
