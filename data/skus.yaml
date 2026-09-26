@@ -11389,3 +11389,40 @@
   source_url: "https://vandal.elespanol.com/noticia/1350792032/la-supervivencia-de-smalland-survive-the-wilds-confirma-lanzamiento-fisico-en-nintendo-switch-2/"
   verified_at: "2026-09-24"
   status: "reviewed"
+
+# Clive Barker's Hellraiser: Revival (Saber Interactive): caja en Norteamérica como game-key card. La Deluxe
+# Edition solo se vende en digital.
+- sku_id: "na-clive-barker-s-hellraiser-revival-standard"
+  title_id: "clive-barker-s-hellraiser-revival"
+  region: "NA"
+  edition: "standard"
+  edition_name: null
+  distributor: "Plaion"  # (listado) Wario64 en X: "Saber ... confirmed it's a game key card ... Plaion is working to add the disclaimer"
+  release_date: "2026-10-08"  # (leída) GoNintendo: "coming to Nintendo Switch 2 on Oct. 8, 2026"
+  format: "game_key_card"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) GoNintendo: "Those going the physical route may want to know that this is a Game-Key Card release."
+  source_url: "https://gonintendo.com/contents/63931-clive-barker-s-hellraiser-revival-launches-for-switch-2-oct-8th-2026"
+  verified_at: "2026-09-26"
+  status: "reviewed"
+
+# Disney Dreamlight Valley (Gameloft): la caja de Switch 2 es la Cozy Edition, con solo un código de descarga.
+- sku_id: "na-disney-dreamlight-valley-deluxe"
+  title_id: "disney-dreamlight-valley"
+  region: "NA"
+  edition: "deluxe"
+  edition_name: "Cozy Edition"  # (leída) GamesRadar: "Disney Dreamlight Valley Cozy Edition pre-orders are available on the Nintendo Switch 2"
+  distributor: null
+  release_date: null
+  format: "code_in_box"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: true
+  ean: null
+  evidence: "press_report"  # (leída) GamesRadar: "The new $49.99 (via Best Buy) Switch 2 Cozy Edition is not even a game-key card release, and remains a download code in a box like the version before it."
+  source_url: "https://www.gamesradar.com/games/disneys-dreamlight-valley-switch-2-cozy-edition-is-up-for-pre-order-but-its-cheaper-to-stick-with-the-magic-of-the-og/"
+  verified_at: "2026-09-26"
+  status: "reviewed"

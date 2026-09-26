@@ -11,24 +11,24 @@
 #   checked_at: "2026-09-16"
 - title_id: "all-hands-on-deck"
   has_physical_release: false
-  evidence: "unconfirmed"
+  evidence: "unconfirmed"  # búsqueda web: solo aparece como juego de Switch 1 en eShop; sin ficha de Switch 2 ni caja
   source_url: null
-  checked_at: "2026-09-17"
+  checked_at: "2026-09-26"
 - title_id: "amanda-the-adventurer-3"
   has_physical_release: false
-  evidence: "unconfirmed"
+  evidence: "unconfirmed"  # búsqueda web: solo eShop, ningún listado físico; (API) search.nintendo.jp: "Amanda the Adventurer 3", icode ABZ3A, sdate "2026.5.28", pprice: null
   source_url: null
-  checked_at: "2026-09-17"
+  checked_at: "2026-09-26"
 - title_id: "and-roger"
   has_physical_release: false
-  evidence: "unconfirmed"
+  evidence: "unconfirmed"  # búsqueda web: solo eShop, ningún listado físico
   source_url: null
-  checked_at: "2026-09-17"
+  checked_at: "2026-09-26"
 - title_id: "apex-legends"
   has_physical_release: false
-  evidence: "unconfirmed"
+  evidence: "unconfirmed"  # free-to-play, solo eShop; (API) search.nintendo.jp: "エーペックスレジェンズ", icode AAFJA, sdate "2025.8.6", pprice: null
   source_url: null
-  checked_at: "2026-09-17"
+  checked_at: "2026-09-26"
 - title_id: "arcade-archives-2-ace-driver"
   has_physical_release: false
   evidence: "unconfirmed"
@@ -311,84 +311,84 @@
   checked_at: "2026-09-17"
 - title_id: "arizona-sunshine"
   has_physical_release: false
-  evidence: "unconfirmed"
+  evidence: "unconfirmed"  # búsqueda web: sin anuncio de caja (el remake aún no tiene fecha)
   source_url: null
-  checked_at: "2026-09-17"
+  checked_at: "2026-09-26"
 - title_id: "asdivine-knot"
   has_physical_release: false
-  evidence: "unconfirmed"
+  evidence: "unconfirmed"  # búsqueda web: solo eShop, ningún listado físico; (API) search.nintendo.jp: "アスディバインノット Nintendo Switch 2 Edition", icode BWAFA, sdate "2026.9.4", pprice: null
   source_url: null
-  checked_at: "2026-09-17"
+  checked_at: "2026-09-26"
 - title_id: "asphalt-legends"
   has_physical_release: false
-  evidence: "unconfirmed"
+  evidence: "unconfirmed"  # free-to-play, solo eShop
   source_url: null
-  checked_at: "2026-09-17"
+  checked_at: "2026-09-26"
 - title_id: "atelier-ryza-2-lost-legends-the-secret-fairy-dx"
   has_physical_release: false
-  evidence: "unconfirmed"
+  evidence: "unconfirmed"  # la caja de Secret Trilogy DX es de Switch 1 (y PS4/PS5 en JP); (API) search.nintendo.jp: "ライザのアトリエ２ ～失われた伝承と秘密の妖精～ DX", icode AA23A, sdate "2025.11.13", pprice: null
   source_url: null
-  checked_at: "2026-09-17"
+  checked_at: "2026-09-26"
 - title_id: "atelier-ryza-3-alchemist-of-the-end-the-secret-key-dx"
   has_physical_release: false
-  evidence: "unconfirmed"
+  evidence: "unconfirmed"  # la caja de Secret Trilogy DX es de Switch 1 (y PS4/PS5 en JP); (API) search.nintendo.jp: "ライザのアトリエ３ ～終わりの錬金術士と秘密の鍵～ DX", icode AA24A, sdate "2025.11.13", pprice: null
   source_url: null
-  checked_at: "2026-09-17"
+  checked_at: "2026-09-26"
 - title_id: "atelier-ryza-ever-darkness-the-secret-hideout-dx"
   has_physical_release: false
-  evidence: "unconfirmed"
+  evidence: "unconfirmed"  # la caja de Secret Trilogy DX es de Switch 1 (y PS4/PS5 en JP); (API) search.nintendo.jp: "ライザのアトリエ ～常闇の女王と秘密の隠れ家～ DX", icode AA22A, sdate "2025.11.13", pprice: null
   source_url: null
-  checked_at: "2026-09-17"
+  checked_at: "2026-09-26"
 - title_id: "atelier-yumia-the-alchemist-of-memories-the-envisioned-land"
   has_physical_release: false
-  evidence: "unconfirmed"
+  evidence: "unconfirmed"  # (leída) RPG Site: "now available digitally on Nintendo Switch 2"; sin anuncio de caja de la Nintendo Switch 2 Edition
   source_url: null
-  checked_at: "2026-09-17"
+  checked_at: "2026-09-26"
 - title_id: "beyblade-x-evobattle"
   has_physical_release: false
-  evidence: "unconfirmed"
+  evidence: "unconfirmed"  # la Package Edition japonesa (con peonza) es de Switch 1; la Nintendo Switch 2 Edition solo en eShop (Upgrade Pack)
   source_url: null
-  checked_at: "2026-09-17"
+  checked_at: "2026-09-26"
 - title_id: "big-walk"
   has_physical_release: false
-  evidence: "unconfirmed"
+  evidence: "unconfirmed"  # búsqueda web: solo eShop, ningún listado físico; (API) search.nintendo.jp: "『Big Walk』", icode ABJDA, sdate "2026.8.4", pprice: null
   source_url: null
-  checked_at: "2026-09-17"
+  checked_at: "2026-09-26"
 - title_id: "balatro"
   has_physical_release: false
-  evidence: "unconfirmed"
+  evidence: "unconfirmed"  # la caja (Special Edition) es de Switch 1; la versión de Switch 2 solo en eShop
   source_url: null
-  checked_at: "2026-09-17"
+  checked_at: "2026-09-26"
 - title_id: "ball-x-pit"
   has_physical_release: false
-  evidence: "unconfirmed"
+  evidence: "unconfirmed"  # la caja de Devolver (29-05-2026) es de Switch 1; la Nintendo Switch 2 Edition solo en eShop
   source_url: null
-  checked_at: "2026-09-17"
+  checked_at: "2026-09-26"
 - title_id: "blazblue-entropy-effect-x"
   has_physical_release: false
-  evidence: "unconfirmed"
+  evidence: "unconfirmed"  # la Deluxe Edition física de Astrolabe Games es de Switch 1; la Nintendo Switch 2 Edition solo en eShop (Upgrade Pack)
   source_url: null
-  checked_at: "2026-09-17"
+  checked_at: "2026-09-26"
 - title_id: "blood-dungeon"
   has_physical_release: false
-  evidence: "unconfirmed"
+  evidence: "unconfirmed"  # búsqueda web: solo eShop, ningún listado físico; (API) search.nintendo.jp: "Blood Dungeon ブラッドダンジョン - Nintendo Switch 2 Edition", icode BTWUA, sdate "2026.8.26", pprice: null
   source_url: null
-  checked_at: "2026-09-17"
+  checked_at: "2026-09-26"
 - title_id: "blood-refreshed-supply"
   has_physical_release: false
-  evidence: "unconfirmed"
+  evidence: "unconfirmed"  # búsqueda web: la Nintendo Switch 2 Edition de Nightdive solo en eShop; ningún listado físico
   source_url: null
-  checked_at: "2026-09-17"
+  checked_at: "2026-09-26"
 - title_id: "bioeden"
   has_physical_release: false
-  evidence: "unconfirmed"
+  evidence: "unconfirmed"  # búsqueda web: solo eShop, ningún listado físico
   source_url: null
-  checked_at: "2026-09-17"
+  checked_at: "2026-09-26"
 - title_id: "backyard-baseball"
   has_physical_release: false
-  evidence: "unconfirmed"
+  evidence: "unconfirmed"  # búsqueda web: solo eShop, ningún listado físico
   source_url: null
-  checked_at: "2026-09-17"
+  checked_at: "2026-09-26"
 - title_id: "blue-reflection"
   has_physical_release: false
   evidence: "press_report"
@@ -561,79 +561,79 @@
   checked_at: "2026-09-17"
 - title_id: "brotato-nintendo-switch-2-edition"
   has_physical_release: false
-  evidence: "unconfirmed"
+  evidence: "unconfirmed"  # la caja de Red Art Games es de Switch 1; (API) search.nintendo.jp: "Brotato Nintendo Switch 2 Edition", icode BBGPA, sdate "2025.11.20", pprice: null
   source_url: null
-  checked_at: "2026-09-17"
+  checked_at: "2026-09-26"
 - title_id: "cassette-beasts-2002"
   has_physical_release: false
-  evidence: "unconfirmed"
+  evidence: "unconfirmed"  # búsqueda web: sin anuncio de caja (la del primer juego, de Super Rare Games, es de Switch 1)
   source_url: null
-  checked_at: "2026-09-17"
+  checked_at: "2026-09-26"
 - title_id: "cozy-grove"
   has_physical_release: false
-  evidence: "unconfirmed"
+  evidence: "unconfirmed"  # búsqueda web: solo eShop, ningún listado físico; (API) search.nintendo.jp: "Cozy Grove – Nintendo Switch 2 Edition", icode A2FKC, sdate "2026.3.12", pprice: null
   source_url: null
-  checked_at: "2026-09-17"
+  checked_at: "2026-09-26"
 - title_id: "cozy-grove-camp-spirit"
   has_physical_release: false
-  evidence: "unconfirmed"
+  evidence: "unconfirmed"  # búsqueda web: solo eShop, ningún listado físico; (API) search.nintendo.jp: "Cozy Grove: Camp Spirit – Nintendo Switch 2 Edition", icode BUZNC, sdate "2026.7.16", pprice: null
   source_url: null
-  checked_at: "2026-09-17"
+  checked_at: "2026-09-26"
 - title_id: "content-warning"
   has_physical_release: false
-  evidence: "unconfirmed"
+  evidence: "unconfirmed"  # búsqueda web: solo eShop, ningún listado físico
   source_url: null
-  checked_at: "2026-09-17"
+  checked_at: "2026-09-26"
 - title_id: "cloverpit"
   has_physical_release: false
-  evidence: "unconfirmed"
+  evidence: "unconfirmed"  # búsqueda web: solo eShop, ningún listado físico; (API) search.nintendo.jp: "CloverPit", icode ACKEA, sdate "2026.8.13", pprice: null
   source_url: null
-  checked_at: "2026-09-17"
+  checked_at: "2026-09-26"
 - title_id: "clive-barker-s-hellraiser-revival"
-  has_physical_release: false
-  evidence: "unconfirmed"
-  source_url: null
-  checked_at: "2026-09-17"
+  has_physical_release: true
+  evidence: "press_report"  # (leída) GoNintendo: "Those going the physical route may want to know that this is a Game-Key Card release."
+  source_url: "https://gonintendo.com/contents/63931-clive-barker-s-hellraiser-revival-launches-for-switch-2-oct-8th-2026"
+  checked_at: "2026-09-26"
 - title_id: "broken-sword-shadow-of-the-templars-reforged"
   has_physical_release: false
-  evidence: "unconfirmed"
+  evidence: "unconfirmed"  # la caja de Red Art Games es de Switch 1; la Nintendo Switch 2 Edition solo en eShop
   source_url: null
-  checked_at: "2026-09-17"
+  checked_at: "2026-09-26"
 - title_id: "core-keeper"
   has_physical_release: false
-  evidence: "unconfirmed"
+  evidence: "unconfirmed"  # Nintendo Switch 2 Edition solo en eShop (actualización gratuita de la versión de Switch 1); ficha de Nintendo Life sin campo Physical Release
   source_url: null
-  checked_at: "2026-09-17"
+  checked_at: "2026-09-26"
 - title_id: "braid-anniversary-edition"
   has_physical_release: false
-  evidence: "unconfirmed"
+  evidence: "unconfirmed"  # Nintendo Switch 2 Edition solo en eShop (Upgrade Pack); (API) search.nintendo.jp: "Braid: アニバーサリーエディション Nintendo Switch 2 Edition", icode AP8SA, sdate "2026.2.12", pprice: null
   source_url: null
-  checked_at: "2026-09-17"
+  checked_at: "2026-09-26"
 - title_id: "city-hunter"
   has_physical_release: false
-  evidence: "unconfirmed"
+  evidence: "unconfirmed"  # las cajas de Red Art Games (Standard, Deluxe, XYZ) son de Switch 1; (leída) Noisy Pixel: "City Hunter launches digitally on PlayStation 5, Xbox Series, Nintendo Switch 2, Nintendo Switch"
   source_url: null
-  checked_at: "2026-09-17"
+  checked_at: "2026-09-26"
 - title_id: "dead-age-2"
   has_physical_release: false
-  evidence: "unconfirmed"
+  evidence: "unconfirmed"  # (listado) Nintendo Everything: "Dead Age 2 gets surprise Nintendo Switch 2 release"; solo eShop
   source_url: null
-  checked_at: "2026-09-17"
+  checked_at: "2026-09-26"
 - title_id: "citadelum"
   has_physical_release: false
-  evidence: "unconfirmed"
+  evidence: "unconfirmed"  # búsqueda web: solo eShop; ningún listado físico
   source_url: null
-  checked_at: "2026-09-17"
+  checked_at: "2026-09-26"
 - title_id: "carmageddon-rogue-shift"
   has_physical_release: false
-  evidence: "unconfirmed"
+  evidence: "unconfirmed"  # búsqueda web: solo eShop; ningún listado físico
   source_url: null
-  checked_at: "2026-09-17"
+  checked_at: "2026-09-26"
 - title_id: "cultic"
   has_physical_release: false
-  evidence: "unconfirmed"
+  evidence: "unconfirmed"  # búsqueda web: solo eShop en Switch 2; la Complete Edition física de Atari no incluye Switch 2
   source_url: null
-  checked_at: "2026-09-17"
+  checked_at: "2026-09-26"
 - title_id: "brightfall"
   has_physical_release: false
   evidence: "unconfirmed"
@@ -641,74 +641,74 @@
   checked_at: "2026-09-17"
 - title_id: "colorbound"
   has_physical_release: false
-  evidence: "unconfirmed"
+  evidence: "unconfirmed"  # búsqueda web: solo eShop, ningún listado físico
   source_url: null
-  checked_at: "2026-09-17"
+  checked_at: "2026-09-26"
 - title_id: "chillin-by-the-fire"
   has_physical_release: false
-  evidence: "unconfirmed"
+  evidence: "unconfirmed"  # búsqueda web: solo eShop, ningún listado físico
   source_url: null
-  checked_at: "2026-09-17"
+  checked_at: "2026-09-26"
 - title_id: "cats-away"
   has_physical_release: false
-  evidence: "unconfirmed"
+  evidence: "unconfirmed"  # búsqueda web: solo eShop (y en Switch 1)
   source_url: null
-  checked_at: "2026-09-17"
+  checked_at: "2026-09-26"
 - title_id: "card-casino"
   has_physical_release: false
-  evidence: "unconfirmed"
+  evidence: "unconfirmed"  # búsqueda web: solo eShop, ningún listado físico (SIMPLE Series Vol.3 de D3 Publisher)
   source_url: null
-  checked_at: "2026-09-17"
+  checked_at: "2026-09-26"
 - title_id: "clean-up-earth"
   has_physical_release: false
-  evidence: "unconfirmed"
+  evidence: "unconfirmed"  # búsqueda web: solo eShop, ningún listado físico (sin fecha en Switch 2)
   source_url: null
-  checked_at: "2026-09-17"
+  checked_at: "2026-09-26"
 - title_id: "cast-n-chill"
   has_physical_release: false
-  evidence: "unconfirmed"
+  evidence: "unconfirmed"  # Nintendo Switch 2 Edition solo en eShop (Upgrade Pack); (API) search.nintendo.jp: "Cast n Chill - Nintendo Switch 2 Edition", icode BRDZA, sdate "2025.12.18", pprice: null
   source_url: null
-  checked_at: "2026-09-17"
+  checked_at: "2026-09-26"
 - title_id: "d-topia"
   has_physical_release: false
-  evidence: "unconfirmed"
+  evidence: "unconfirmed"  # búsqueda web: solo eShop, ningún listado físico; (API) search.nintendo.jp: "D-topia", icode ABSLA, sdate "2026.7.14", pprice: null
   source_url: null
-  checked_at: "2026-09-17"
+  checked_at: "2026-09-26"
 - title_id: "chronoforge"
   has_physical_release: false
-  evidence: "unconfirmed"
+  evidence: "unconfirmed"  # búsqueda web: ningún resultado de la versión de Switch 2
   source_url: null
-  checked_at: "2026-09-17"
+  checked_at: "2026-09-26"
 - title_id: "arms"
   has_physical_release: false
-  evidence: "unconfirmed"
+  evidence: "unconfirmed"  # juego de Switch 1 (compatible o con actualización gratuita): la única caja es la de Switch 1; (API) search.nintendo.jp no tiene ficha de Switch 2 (hard 05_BEE)
   source_url: null
-  checked_at: "2026-09-17"
+  checked_at: "2026-09-26"
 - title_id: "big-brain-academy-brain-vs-brain"
   has_physical_release: false
-  evidence: "unconfirmed"
+  evidence: "unconfirmed"  # juego de Switch 1 (compatible o con actualización gratuita): la única caja es la de Switch 1; (API) search.nintendo.jp no tiene ficha de Switch 2 (hard 05_BEE)
   source_url: null
-  checked_at: "2026-09-17"
+  checked_at: "2026-09-26"
 - title_id: "bowser-s-fury"
   has_physical_release: false
-  evidence: "unconfirmed"
+  evidence: "unconfirmed"  # juego de Switch 1 (compatible o con actualización gratuita): la única caja es la de Switch 1; (API) search.nintendo.jp no tiene ficha de Switch 2 (hard 05_BEE)
   source_url: null
-  checked_at: "2026-09-17"
+  checked_at: "2026-09-26"
 - title_id: "captain-toad-treasure-tracker"
   has_physical_release: false
-  evidence: "unconfirmed"
+  evidence: "unconfirmed"  # juego de Switch 1 (compatible o con actualización gratuita): la única caja es la de Switch 1; (API) search.nintendo.jp no tiene ficha de Switch 2 (hard 05_BEE)
   source_url: null
-  checked_at: "2026-09-17"
+  checked_at: "2026-09-26"
 - title_id: "deadzone-rogue"
   has_physical_release: false
-  evidence: "unconfirmed"
+  evidence: "unconfirmed"  # búsqueda web: solo eShop, ningún listado físico (Deluxe Edition solo digital); (API) search.nintendo.jp: "Deadzone: Rogue", icode ABAMA, sdate "2026.3.17", pprice: null
   source_url: null
-  checked_at: "2026-09-17"
+  checked_at: "2026-09-26"
 - title_id: "dear-me-i-was"
   has_physical_release: false
-  evidence: "unconfirmed"
+  evidence: "unconfirmed"  # búsqueda web: solo eShop, ningún listado físico; (API) search.nintendo.jp: "Dear me, I was ...", icode AAW8A, sdate "2025.7.31", pprice: null
   source_url: null
-  checked_at: "2026-09-17"
+  checked_at: "2026-09-26"
 - title_id: "deltarune"
   has_physical_release: false
   evidence: "press_report"
@@ -716,54 +716,54 @@
   checked_at: "2026-09-17"
 - title_id: "demeo-x-dungeons-dragons-battlemarked"
   has_physical_release: false
-  evidence: "unconfirmed"
+  evidence: "unconfirmed"  # búsqueda web: solo eShop, ningún listado físico; (API) search.nintendo.jp: icode ABU3A, sdate "2026.6.16", pprice: null
   source_url: null
-  checked_at: "2026-09-17"
+  checked_at: "2026-09-26"
 - title_id: "denshattack"
   has_physical_release: false
-  evidence: "unconfirmed"
+  evidence: "unconfirmed"  # búsqueda web: solo eShop; Play-Asia solo lista la versión digital
   source_url: null
-  checked_at: "2026-09-17"
+  checked_at: "2026-09-26"
 - title_id: "dinkum"
   has_physical_release: false
-  evidence: "unconfirmed"
+  evidence: "unconfirmed"  # la caja es de Switch 1; (listado) Krafton: "released the Nintendo Switch 2 version (digital version)"
   source_url: null
-  checked_at: "2026-09-17"
+  checked_at: "2026-09-26"
 - title_id: "disney-dreamlight-valley"
-  has_physical_release: false
-  evidence: "unconfirmed"
-  source_url: null
-  checked_at: "2026-09-17"
+  has_physical_release: true
+  evidence: "press_report"  # (leída) GamesRadar: "Switch 2 Cozy Edition is not even a game-key card release, and remains a download code in a box"
+  source_url: "https://www.gamesradar.com/games/disneys-dreamlight-valley-switch-2-cozy-edition-is-up-for-pre-order-but-its-cheaper-to-stick-with-the-magic-of-the-og/"
+  checked_at: "2026-09-26"
 - title_id: "disney-speedstorm"
   has_physical_release: false
-  evidence: "unconfirmed"
+  evidence: "unconfirmed"  # Nintendo Switch 2 Edition gratuita en eShop; (API) search.nintendo.jp: "ディズニー スピードストーム", icode A3JFA, sdate "2026.7.16", pprice: null
   source_url: null
-  checked_at: "2026-09-17"
+  checked_at: "2026-09-26"
 - title_id: "divinity-original-sin-ii-definitive-edition"
   has_physical_release: false
-  evidence: "unconfirmed"
+  evidence: "unconfirmed"  # búsqueda web: solo eShop (Nintendo Switch 2 Edition); ningún listado físico
   source_url: null
-  checked_at: "2026-09-17"
+  checked_at: "2026-09-26"
 - title_id: "dk-challenge"
   has_physical_release: false
-  evidence: "unconfirmed"
+  evidence: "unconfirmed"  # evento de Nintendo Switch Online (09-06 a 01-09-2026), sin caja; el premio físico es un juego de cartas de My Nintendo, no el juego
   source_url: null
-  checked_at: "2026-09-17"
+  checked_at: "2026-09-26"
 - title_id: "dogpile"
   has_physical_release: false
-  evidence: "unconfirmed"
+  evidence: "unconfirmed"  # búsqueda web: solo eShop, ningún listado físico; (API) search.nintendo.jp: "ドッグパイル (Dogpile)", icode ACEHA, sdate "2026.8.20", pprice: null
   source_url: null
-  checked_at: "2026-09-17"
+  checked_at: "2026-09-26"
 - title_id: "donkey-kong-country-returns-hd"
   has_physical_release: false
-  evidence: "unconfirmed"
+  evidence: "unconfirmed"  # la caja es la de Switch 1, con actualización gratuita para Switch 2; (API) search.nintendo.jp no tiene ficha de Switch 2
   source_url: null
-  checked_at: "2026-09-17"
+  checked_at: "2026-09-26"
 - title_id: "dosa-divas"
   has_physical_release: false
-  evidence: "unconfirmed"
+  evidence: "unconfirmed"  # búsqueda web: solo eShop, ningún listado físico; (API) search.nintendo.jp: "Dosa Divas", icode ABRXA, sdate "2026.4.14", pprice: null
   source_url: null
-  checked_at: "2026-09-17"
+  checked_at: "2026-09-26"
 - title_id: "drag-x-drive"
   has_physical_release: false
   evidence: "press_report"
@@ -771,29 +771,29 @@
   checked_at: "2026-09-17"
 - title_id: "dragon-quest-heroes-torneko-s-mystery-dungeon-classic-hd"
   has_physical_release: false
-  evidence: "unconfirmed"
+  evidence: "unconfirmed"  # (listado) RPG Site: "shadow drops on Switch 1 & 2, PS5, Xbox, and PC"; lanzamiento solo digital
   source_url: null
-  checked_at: "2026-09-17"
+  checked_at: "2026-09-26"
 - title_id: "dragon-quest-iii-hd-2d-remake"
   has_physical_release: false
-  evidence: "unconfirmed"
+  evidence: "unconfirmed"  # búsqueda web: solo la caja de Switch 1 (RPG Site: se sigue tratando como juego de Switch 1); la key card de Switch 2 es la de Dragon Quest I & II HD-2D Remake
   source_url: null
-  checked_at: "2026-09-17"
+  checked_at: "2026-09-26"
 - title_id: "draw-king"
   has_physical_release: false
-  evidence: "unconfirmed"
+  evidence: "unconfirmed"  # búsqueda web: solo eShop, ningún listado físico
   source_url: null
-  checked_at: "2026-09-17"
+  checked_at: "2026-09-26"
 - title_id: "drop-pop"
   has_physical_release: false
-  evidence: "unconfirmed"
+  evidence: "unconfirmed"  # búsqueda web: solo aparece como juego de Switch 1 en eShop; sin ficha de Switch 2 ni caja
   source_url: null
-  checked_at: "2026-09-17"
+  checked_at: "2026-09-26"
 - title_id: "duskfade"
   has_physical_release: false
-  evidence: "unconfirmed"
+  evidence: "unconfirmed"  # (listado) cuenta oficial en X: una edición física "is something we'd love to do" tras la salida digital; (API) search.nintendo.jp: "ダスクフェード (DUSKFADE)", icode ACH3A, sdate "2026.8.13", pprice: null
   source_url: null
-  checked_at: "2026-09-17"
+  checked_at: "2026-09-26"
 - title_id: "dream-shogi-4k"
   has_physical_release: false
   evidence: "official"  # (leída) ficha oficial de Nintendo: "Version | Nintendo Switch 2 | Edition | Digital"
@@ -806,9 +806,9 @@
   checked_at: "2026-09-17"
 - title_id: "dysplaced"
   has_physical_release: false
-  evidence: "unconfirmed"
+  evidence: "unconfirmed"  # búsqueda web: solo aparece como juego de Switch 1 en eShop; sin ficha de Switch 2 ni caja
   source_url: null
-  checked_at: "2026-09-17"
+  checked_at: "2026-09-26"
 - title_id: "fangtopia"
   has_physical_release: false
   evidence: "press_report"  # (leída) Nintendo Everything: "This one will be sold as a digital download."
@@ -816,19 +816,19 @@
   checked_at: "2026-09-17"
 - title_id: "escape-the-backrooms"
   has_physical_release: false
-  evidence: "unconfirmed"
+  evidence: "unconfirmed"  # búsqueda web: solo eShop, ningún listado físico; (API) search.nintendo.jp: "Escape the Backrooms", icode ABVNA, sdate "2026.7.7", pprice: null
   source_url: null
-  checked_at: "2026-09-17"
+  checked_at: "2026-09-26"
 - title_id: "exit-lab-15-rooms"
   has_physical_release: false
-  evidence: "unconfirmed"
+  evidence: "unconfirmed"  # búsqueda web: solo eShop, ningún listado físico
   source_url: null
-  checked_at: "2026-09-17"
+  checked_at: "2026-09-26"
 - title_id: "fading-echo"
   has_physical_release: false
-  evidence: "unconfirmed"
+  evidence: "unconfirmed"  # búsqueda web: solo eShop, ningún listado físico; (API) search.nintendo.jp: "Fading Echo - フェイディング・エコー", icode AA74A, sdate "2026.9.17", pprice: null
   source_url: null
-  checked_at: "2026-09-17"
+  checked_at: "2026-09-26"
 - title_id: "factorio"
   has_physical_release: false
   evidence: "press_report"  # (leída) Nintendo Life: "Physical Release | None (Digital Only)"
@@ -851,19 +851,19 @@
   checked_at: "2026-09-17"
 - title_id: "fight-life-vanguard"
   has_physical_release: false
-  evidence: "unconfirmed"
+  evidence: "unconfirmed"  # búsqueda web: solo eShop, ningún listado físico
   source_url: null
-  checked_at: "2026-09-17"
+  checked_at: "2026-09-26"
 - title_id: "fortnite"
   has_physical_release: false
-  evidence: "unconfirmed"
+  evidence: "unconfirmed"  # free-to-play; la única caja de Switch 2 es el "Darkfire & Ice Bundle (Code in Box)" (listado, Smyths Toys y GameStop), un código de contenido adicional que requiere descargar el juego gratis aparte: no es una edición del juego
   source_url: null
-  checked_at: "2026-09-17"
+  checked_at: "2026-09-26"
 - title_id: "fitness-boxing-3-your-personal-trainer-nintendo-switch-2-edition"
   has_physical_release: false
   evidence: "unconfirmed"  # sin ficha "Physical Release" en Nintendo Life; Amazon la lista como "Digital Code"
   source_url: null
-  checked_at: "2026-09-17"
+  checked_at: "2026-09-26"
 - title_id: "forever-ago"
   has_physical_release: false
   evidence: "press_report"  # (leída) Nintendo Everything: "The game will be sold as a digital download."
@@ -872,19 +872,19 @@
 
 - title_id: "funguys-swarm"
   has_physical_release: false
-  evidence: "unconfirmed"
+  evidence: "unconfirmed"  # búsqueda web: solo eShop, ningún listado físico; (API) search.nintendo.jp: "Funguys Swarm", icode ACKSA, sdate "2026.8.26", pprice: null
   source_url: null
-  checked_at: "2026-09-17"
+  checked_at: "2026-09-26"
 - title_id: "fur-squadron-phoenix"
   has_physical_release: false
-  evidence: "unconfirmed"
+  evidence: "unconfirmed"  # búsqueda web: solo aparece como juego de Switch 1 en eShop; sin ficha de Switch 2 ni caja
   source_url: null
-  checked_at: "2026-09-17"
+  checked_at: "2026-09-26"
 - title_id: "go-go-town"
   has_physical_release: false
-  evidence: "unconfirmed"
+  evidence: "unconfirmed"  # búsqueda web: solo eShop, ningún listado físico; (API) search.nintendo.jp: "Go-Go Town! – Nintendo Switch 2 Edition", icode BCPDA, sdate "2026.7.16", pprice: null
   source_url: null
-  checked_at: "2026-09-17"
+  checked_at: "2026-09-26"
 # (API) search.nintendo.jp: "G-MODEアーカイブス+ 真・女神転生 東京鎮魂歌" solo en Switch 1 (hard: 1_HAC), pprice: null, sform: HAC_DL.
 - title_id: "g-mode-archives-shin-megami-tensei-tokyo-requiem"
   has_physical_release: false
@@ -905,26 +905,26 @@
   checked_at: "2026-09-19"
 - title_id: "goat-simulator-3"
   has_physical_release: false
-  evidence: "unconfirmed"
+  evidence: "unconfirmed"  # la caja de Plaion es de Switch 1; la versión de Switch 2 solo en eShop
   source_url: null
-  checked_at: "2026-09-17"
+  checked_at: "2026-09-26"
 - title_id: "grid-legends-deluxe-edition"
   has_physical_release: false
-  evidence: "unconfirmed"
+  evidence: "unconfirmed"  # búsqueda web: la Deluxe Edition de Feral Interactive solo en eShop
   source_url: null
-  checked_at: "2026-09-17"
+  checked_at: "2026-09-26"
 - title_id: "granblue-fantasy-versus-rising-legendary-edition"
   has_physical_release: false
-  evidence: "unconfirmed"
+  evidence: "unconfirmed"  # búsqueda web: Legendary Edition solo en eShop; la nota de reservas de GoNintendo no nombra caja y la ficha de Nintendo Life no tiene Physical Release
   source_url: null
-  checked_at: "2026-09-17"
+  checked_at: "2026-09-26"
 - title_id: "game-builder-garage"
   # Solo existe el cartucho de Switch 1 (2021), jugable en Switch 2 por compatibilidad; no hay una
   # edición física propia de Switch 2 (regla del proyecto: cartucho de Switch 1 no cuenta).
   has_physical_release: false
   evidence: "unconfirmed"
   source_url: null
-  checked_at: "2026-09-17"
+  checked_at: "2026-09-26"
 
 - title_id: "handy-hockey"
   has_physical_release: false
@@ -934,57 +934,57 @@
 
 - title_id: "ground-zero-hero"
   has_physical_release: false
-  evidence: "unconfirmed"
+  evidence: "unconfirmed"  # búsqueda web: solo eShop, ningún listado físico; (API) search.nintendo.jp: "Ground Zero Hero", icode ACPZA, sdate "2026.8.20", pprice: null
   source_url: null
-  checked_at: "2026-09-17"
+  checked_at: "2026-09-26"
 
 - title_id: "haste"
   has_physical_release: false
-  evidence: "unconfirmed"
+  evidence: "unconfirmed"  # búsqueda web: solo eShop, ningún listado físico (lanzamiento sorpresa)
   source_url: null
-  checked_at: "2026-09-17"
+  checked_at: "2026-09-26"
 
 - title_id: "heave-ho-2"
   has_physical_release: false
-  evidence: "unconfirmed"
+  evidence: "unconfirmed"  # búsqueda web: solo eShop; ningún listado físico
   source_url: null
-  checked_at: "2026-09-17"
+  checked_at: "2026-09-26"
 
 - title_id: "isekai-rondo"
   has_physical_release: false
-  evidence: "unconfirmed"
+  evidence: "unconfirmed"  # Nintendo Switch 2 Edition solo en eShop (Upgrade Pack)
   source_url: null
-  checked_at: "2026-09-17"
+  checked_at: "2026-09-26"
 - title_id: "jenny-leclue-detectivu"
   has_physical_release: false
-  evidence: "unconfirmed"
+  evidence: "unconfirmed"  # búsqueda web: solo eShop, ningún listado físico (Spoken Secrets Edition solo digital)
   source_url: null
-  checked_at: "2026-09-17"
+  checked_at: "2026-09-26"
 - title_id: "junkster"
   has_physical_release: false
-  evidence: "unconfirmed"
+  evidence: "unconfirmed"  # búsqueda web: solo eShop, ningún listado físico; (API) search.nintendo.jp: "Junkster", icode ABYGA, sdate "2026.6.16", pprice: null
   source_url: null
-  checked_at: "2026-09-17"
+  checked_at: "2026-09-26"
 - title_id: "ira"
   has_physical_release: false
-  evidence: "unconfirmed"
+  evidence: "unconfirmed"  # búsqueda web: solo eShop, ningún listado físico; (API) search.nintendo.jp: "Ira", icode ABF6A, sdate "2026.7.30", pprice: null
   source_url: null
-  checked_at: "2026-09-17"
+  checked_at: "2026-09-26"
 - title_id: "jotunnslayer-hordes-of-hel"
   has_physical_release: false
-  evidence: "unconfirmed"
+  evidence: "unconfirmed"  # búsqueda web: solo eShop, ningún listado físico
   source_url: null
-  checked_at: "2026-09-17"
+  checked_at: "2026-09-26"
 - title_id: "kernel-hearts"
   has_physical_release: false
-  evidence: "unconfirmed"
+  evidence: "unconfirmed"  # búsqueda web: solo eShop, ningún listado físico
   source_url: null
-  checked_at: "2026-09-17"
+  checked_at: "2026-09-26"
 - title_id: "kena-bridge-of-spirits"
   has_physical_release: false
-  evidence: "unconfirmed"
+  evidence: "unconfirmed"  # solo eShop; (leída) RPG Site, entrevista con Ember Lab: la edición física en cartucho es solo una posibilidad ("a potential physical release")
   source_url: null
-  checked_at: "2026-09-17"
+  checked_at: "2026-09-26"
 
 # Tanda 4 (kingdom-hearts-birth-by-sleep-final-mix .. lego-batman-...-deluxe-edition), 2026-09-17.
 # Formato: ver data/physical_release.yaml. evidence: unconfirmed = buscado y no encontrado; press_report = cita.
@@ -1089,9 +1089,9 @@
 # (Nintendo Wire, Nintendo Life, Deku Deals, RPG Site) lo menciona. Solo Steam. Sin fuente de caja.
 - title_id: "magika-bounce"
   has_physical_release: false
-  evidence: "unconfirmed"
+  evidence: "unconfirmed"  # búsqueda web: solo aparece en Steam; ningún resultado de la versión de Switch 2
   source_url: null
-  checked_at: "2026-09-17"
+  checked_at: "2026-09-26"
 
 # Mario Kart 8 Deluxe: es compatible con Switch 2 (Nintendo Switch 2 Compatibility: "Supported"), pero no se
 # ha encontrado ninguna "Nintendo Switch 2 Edition" en caja ni anuncio de una edición física propia de
@@ -1099,25 +1099,25 @@
 # edición física de Switch 2.
 - title_id: "mario-kart-8-deluxe"
   has_physical_release: false
-  evidence: "unconfirmed"
+  evidence: "unconfirmed"  # juego de Switch 1 (compatible o con actualización gratuita): la única caja es la de Switch 1; (API) search.nintendo.jp no tiene ficha de Switch 2 (hard 05_BEE)
   source_url: null
-  checked_at: "2026-09-17"
+  checked_at: "2026-09-26"
 
 # Meccha Chameleon: ficha de Nintendo Life solo trae "Release Date" (eShop, $5.99/£4.59), sin campo
 # "Physical Release". Ninguna tienda ni lista de físicos lo menciona.
 - title_id: "meccha-chameleon"
   has_physical_release: false
-  evidence: "unconfirmed"
+  evidence: "unconfirmed"  # búsqueda web: solo eShop, ningún listado físico
   source_url: null
-  checked_at: "2026-09-17"
+  checked_at: "2026-09-26"
 
 # MechCrisis: solo aparece como edición digital en la ficha de Nintendo (compatible con Switch 2, 477 MB).
 # Sin ninguna mención de versión física en caja.
 - title_id: "mechcrisis"
   has_physical_release: false
-  evidence: "unconfirmed"
+  evidence: "unconfirmed"  # búsqueda web: solo aparece como juego de Switch 1 en eShop; sin ficha de Switch 2 ni caja
   source_url: null
-  checked_at: "2026-09-17"
+  checked_at: "2026-09-26"
 
 # Memory of Memorie: A Chill Story - Nintendo Switch 2 Edition: la ficha de Nintendo UK la cataloga con el
 # campo "Upgrade pack" (no "Physical Release"), el mismo patrón que Dinkum/Disney Dreamlight Valley: es una
@@ -1135,17 +1135,17 @@
 # (Gematsu, GoNintendo, Nintendo Everything, Capsule Computers) mencionan edición física.
 - title_id: "mind-diver"
   has_physical_release: false
-  evidence: "unconfirmed"
+  evidence: "unconfirmed"  # búsqueda web: solo eShop, ningún listado físico; (API) search.nintendo.jp: "Mind Diver / マインドダイバー", icode ACEYA, sdate "2026.8.27", pprice: null
   source_url: null
-  checked_at: "2026-09-18"
+  checked_at: "2026-09-26"
 
 # Mixtape (Annapurna Interactive): la ficha de Nintendo Life no trae el campo "Physical Release" (solo
 # Release Date/Nintendo eShop), a diferencia de otros juegos con caja confirmada.
 - title_id: "mixtape"
   has_physical_release: false
-  evidence: "unconfirmed"
+  evidence: "unconfirmed"  # búsqueda web: solo eShop, ningún listado físico; (API) search.nintendo.jp: "Mixtape", icode ABQDA, sdate "2026.5.7", pprice: null
   source_url: null
-  checked_at: "2026-09-18"
+  checked_at: "2026-09-26"
 
 # Monster Hunter Stories 3: Twisted Reflection - Deluxe Edition (Capcom): solo digital; la edición Standard
 # (con caja) es un título distinto ("monster-hunter-stories-3-twisted-reflection").
@@ -1157,17 +1157,17 @@
 # Release Date), y ni Play-Asia, GameStop ni la prensa mencionan una edición en caja para Switch 2.
 - title_id: "moss-the-forgotten-relic"
   has_physical_release: false
-  evidence: "unconfirmed"
+  evidence: "unconfirmed"  # búsqueda web: solo eShop, ningún listado físico; (API) search.nintendo.jp: icode AB4DA, sdate "2026.7.16", pprice: null
   source_url: null
-  checked_at: "2026-09-18"
+  checked_at: "2026-09-26"
 
 # Namco Legendary Mountains (BeXide): puzzle indie lanzado el 25-06-2026; ni la ficha de Nintendo Life
 # ("Release Date" sin "Physical Release") ni ninguna tienda ni la prensa mencionan edición en caja.
 - title_id: "namco-legendary-mountains"
   has_physical_release: false
-  evidence: "unconfirmed"
+  evidence: "unconfirmed"  # búsqueda web: solo eShop, ningún listado físico; (API) search.nintendo.jp: "NAMCO LEGENDARY Mountains", icode ACHBA, sdate "2026.6.25", pprice: null
   source_url: null
-  checked_at: "2026-09-18"
+  checked_at: "2026-09-26"
 
 # NBA 2K26: Slam Edition (2K): la ficha oficial de Nintendo (US store) solo ofrece "Select an edition |
 # Digital -", sin opción física, a diferencia de NBA 2K26 estándar que sí tiene Game-Key Card.
@@ -1479,29 +1479,29 @@
 # Juegos de Switch 1 con actualización gratuita para Switch 2: el único cartucho es el de Switch 1.
 - title_id: "splatoon-3"
   has_physical_release: false
-  evidence: "unconfirmed"
+  evidence: "unconfirmed"  # juego de Switch 1 (compatible o con actualización gratuita): la única caja es la de Switch 1; (API) search.nintendo.jp no tiene ficha de Switch 2 (hard 05_BEE)
   source_url: null
-  checked_at: "2026-09-23"
+  checked_at: "2026-09-26"
 - title_id: "super-mario-3d-world"
   has_physical_release: false
   evidence: "unconfirmed"  # (listado) la caja es "Super Mario 3D World + Bowser's Fury" de Switch 1, con "a free update" para Switch 2
   source_url: null
-  checked_at: "2026-09-23"
+  checked_at: "2026-09-26"
 - title_id: "super-mario-galaxy"
   has_physical_release: false
   evidence: "unconfirmed"  # la caja es "Super Mario Galaxy + Super Mario Galaxy 2" de Switch 1 (02-10-2025), con mejora gratuita para Switch 2
   source_url: null
-  checked_at: "2026-09-23"
+  checked_at: "2026-09-26"
 - title_id: "super-mario-galaxy-2"
   has_physical_release: false
   evidence: "unconfirmed"  # la caja es "Super Mario Galaxy + Super Mario Galaxy 2" de Switch 1 (02-10-2025), con mejora gratuita para Switch 2
   source_url: null
-  checked_at: "2026-09-23"
+  checked_at: "2026-09-26"
 - title_id: "super-mario-odyssey"
   has_physical_release: false
-  evidence: "unconfirmed"
+  evidence: "unconfirmed"  # juego de Switch 1 (compatible o con actualización gratuita): la única caja es la de Switch 1; (API) search.nintendo.jp no tiene ficha de Switch 2 (hard 05_BEE)
   source_url: null
-  checked_at: "2026-09-23"
+  checked_at: "2026-09-26"
 
 # Juegos que solo existen en Switch 1 y sin caja (IGDB los lista en Switch 2 por compatibilidad).
 - title_id: "super-adventure-hand"
@@ -1523,7 +1523,7 @@
   has_physical_release: false
   evidence: "unconfirmed"  # solo en la eShop de Switch 1 (25-08-2025); sin versión de Switch 2 ni caja encontradas
   source_url: null
-  checked_at: "2026-09-23"
+  checked_at: "2026-09-26"
 
 # Ya lanzados en Japón y sin caja (API de Nintendo JP, pprice: null).
 - title_id: "sushi-bar-moebius"
@@ -1547,24 +1547,24 @@
 # Ya lanzados y sin caja encontrada (buscado en Nintendo Life, listas de key cards/cartuchos y búsqueda web).
 - title_id: "space-warlord-baby-trading-simulator"
   has_physical_release: false
-  evidence: "unconfirmed"
+  evidence: "unconfirmed"  # búsqueda web: solo eShop, ningún listado físico (la caja de Crescent Marketing es de Space Warlord Organ Trading Simulator, de Switch 1)
   source_url: null
-  checked_at: "2026-09-23"
+  checked_at: "2026-09-26"
 - title_id: "sprawl-zero"
   has_physical_release: false
-  evidence: "unconfirmed"
+  evidence: "unconfirmed"  # búsqueda web: solo eShop, ningún listado físico; (API) search.nintendo.jp: "SPRAWL zero", icode ABZ2A, sdate "2026.9.17", pprice: null
   source_url: null
-  checked_at: "2026-09-23"
+  checked_at: "2026-09-26"
 - title_id: "star-ocean-the-second-story-r"
   has_physical_release: false
   evidence: "unconfirmed"  # (API) search.nintendo.jp: "STAR OCEAN THE SECOND STORY R", icode AB5AA, sdate "2026.7.16", pprice: null; Nintendo Life: "It's available on the eShop"
   source_url: null
-  checked_at: "2026-09-23"
+  checked_at: "2026-09-26"
 - title_id: "starseeker-astroneer-expeditions"
   has_physical_release: false
-  evidence: "unconfirmed"
+  evidence: "unconfirmed"  # búsqueda web: solo eShop, ningún listado físico; (API) search.nintendo.jp: "STARSEEKER: Astroneer Expeditions", icode AA8FA, sdate "2026.6.12", pprice: null
   source_url: null
-  checked_at: "2026-09-23"
+  checked_at: "2026-09-26"
 - title_id: "suika-game-planet"
   has_physical_release: false
   evidence: "unconfirmed"  # (API) search.nintendo.jp: "スイカゲーム ぷらねっと", icode ABACA, sdate "2025.12.18", pprice: null
@@ -1574,7 +1574,7 @@
   has_physical_release: false
   evidence: "unconfirmed"  # Super Rare Games lo publica en la eShop (15-07-2026); sin caja en su página de Switch 2 ni en la prensa
   source_url: null
-  checked_at: "2026-09-23"
+  checked_at: "2026-09-26"
 
 # Tanda del 23-09-2026 (2): Switch 2 Editions y ediciones digitales sin caja.
 - title_id: "the-exit-8"
@@ -1623,19 +1623,19 @@
 # Juegos de Switch 1 (compatibilidad o actualización gratuita), sin caja propia de Switch 2.
 - title_id: "the-legend-of-zelda-echoes-of-wisdom"
   has_physical_release: false
-  evidence: "unconfirmed"
+  evidence: "unconfirmed"  # juego de Switch 1 (compatible o con actualización gratuita): la única caja es la de Switch 1; (API) search.nintendo.jp no tiene ficha de Switch 2 (hard 05_BEE)
   source_url: null
-  checked_at: "2026-09-23"
+  checked_at: "2026-09-26"
 - title_id: "the-legend-of-zelda-link-s-awakening"
   has_physical_release: false
-  evidence: "unconfirmed"
+  evidence: "unconfirmed"  # juego de Switch 1 (compatible o con actualización gratuita): la única caja es la de Switch 1; (API) search.nintendo.jp no tiene ficha de Switch 2 (hard 05_BEE)
   source_url: null
-  checked_at: "2026-09-23"
+  checked_at: "2026-09-26"
 - title_id: "tunic"
   has_physical_release: false
   evidence: "unconfirmed"  # la caja (Fangamer) es de Switch 1; en Switch 2 solo por compatibilidad
   source_url: null
-  checked_at: "2026-09-23"
+  checked_at: "2026-09-26"
 - title_id: "the-jerrymaya-detective-agency"
   has_physical_release: false
   evidence: "official"  # (listado) Nintendo UK: "The JerryMaya Detective Agency | Nintendo Switch download software"
@@ -1647,37 +1647,37 @@
   has_physical_release: false
   evidence: "unconfirmed"  # (API) search.nintendo.jp: "TOKYO SCRAMBLE", icode AA4BA, sdate "2026.2.12", pprice: null
   source_url: null
-  checked_at: "2026-09-23"
+  checked_at: "2026-09-26"
 - title_id: "they-are-billions"
   has_physical_release: false
-  evidence: "unconfirmed"
+  evidence: "unconfirmed"  # búsqueda web: solo eShop, ningún listado físico
   source_url: null
-  checked_at: "2026-09-23"
+  checked_at: "2026-09-26"
 - title_id: "total-chaos"
   has_physical_release: false
-  evidence: "unconfirmed"
+  evidence: "unconfirmed"  # búsqueda web: solo eShop; ningún listado físico
   source_url: null
-  checked_at: "2026-09-23"
+  checked_at: "2026-09-26"
 - title_id: "the-necromancer-s-tale"
   has_physical_release: false
   evidence: "unconfirmed"  # Silver Lining lo lanzó en la eShop (24-06-2026); sin anuncio de caja
   source_url: null
-  checked_at: "2026-09-23"
+  checked_at: "2026-09-26"
 - title_id: "the-mermaid-mask"
   has_physical_release: false
-  evidence: "unconfirmed"
+  evidence: "unconfirmed"  # búsqueda web: solo eShop, ningún listado físico; (API) search.nintendo.jp: "The Mermaid Mask", icode AB76A, sdate "2026.7.16", pprice: null
   source_url: null
-  checked_at: "2026-09-23"
+  checked_at: "2026-09-26"
 - title_id: "to-a-t"
   has_physical_release: false
-  evidence: "unconfirmed"
+  evidence: "unconfirmed"  # búsqueda web: solo eShop, ningún listado físico
   source_url: null
-  checked_at: "2026-09-23"
+  checked_at: "2026-09-26"
 - title_id: "the-touryst-deluxe"
   has_physical_release: false
   evidence: "unconfirmed"  # (API) search.nintendo.jp: "THE TOURYST DELUXE", icode ABBHA, sdate "2025.9.25", pprice: null
   source_url: null
-  checked_at: "2026-09-23"
+  checked_at: "2026-09-26"
 - title_id: "touhou-koumakyou-new-classic-the-embodiment-of-scarlet-devil"
   has_physical_release: false
   evidence: "unconfirmed"  # (API) search.nintendo.jp: "東方紅魔郷：New Classic ～ the Embodiment of Scarlet Devil.", icode ACG5A, sdate "2026.9.10", pprice: null
@@ -1687,7 +1687,7 @@
   has_physical_release: false
   evidence: "unconfirmed"  # la caja de Limited Run Games es de Switch 1; (API) search.nintendo.jp: "オレっ!トンバ Special Edition", sdate "2026.1.8", pprice: null
   source_url: null
-  checked_at: "2026-09-23"
+  checked_at: "2026-09-26"
 - title_id: "warframe"
   has_physical_release: false
   evidence: "press_report"  # (leída) Nintendo Life: "Physical Release | None (Digital Only) | Release Date | Nintendo eShop | 25th Mar 2026"
@@ -1717,62 +1717,62 @@
   has_physical_release: false
   evidence: "unconfirmed"  # (API) search.nintendo.jp: "UNDERWARD: LASTBOSS, Genius Gyaru Doctor", icode AA7LA, sdate "2025.12.18", sform BEE_DL, pprice: null
   source_url: null
-  checked_at: "2026-09-24"
+  checked_at: "2026-09-26"
 - title_id: "xenoblade-chronicles-2-torna-the-golden-country"
   has_physical_release: false
   evidence: "unconfirmed"  # (leída) Nintendo Everything: "the standalone physical version of Xenoblade Chronicles 2: Torna – The Golden Country is getting the update": la caja es la de Switch 1 con mejora gratuita, que no se cataloga
   source_url: null
-  checked_at: "2026-09-24"
+  checked_at: "2026-09-26"
 - title_id: "another-crab-s-treasure"
   has_physical_release: false
   evidence: "unconfirmed"  # (leída) Nintendo Life: "Another Crab's Treasure Scores A Switch 2 Edition And Free Upgrade"; la caja de iam8bit es de Switch 1
   source_url: null
-  checked_at: "2026-09-24"
+  checked_at: "2026-09-26"
 - title_id: "unrailed-2-back-on-track"
   has_physical_release: false
   evidence: "unconfirmed"  # (API) search.nintendo.jp: "Unrailed 2:バック・オン・トラック – Nintendo Switch 2 Edition", sdate "2026.6.11", sform BEE_DL, pprice: null; la caja japonesa es de Switch 1
   source_url: null
-  checked_at: "2026-09-24"
+  checked_at: "2026-09-26"
 - title_id: "yobarai-detective-miasma-breaker"
   has_physical_release: false
   evidence: "unconfirmed"  # la caja multi-idioma de Play-Asia es de Switch 1 ("Switch Physical with Multi-language Subtitles Launches on February 5")
   source_url: null
-  checked_at: "2026-09-24"
+  checked_at: "2026-09-26"
 - title_id: "wobbly-life"
   has_physical_release: false
   evidence: "unconfirmed"  # (leída) Nintendo Life: "Upgrade Path | Via Wobbly Life (Switch eShop) | $4.99"; sin caja de Switch 2 en la búsqueda
   source_url: null
-  checked_at: "2026-09-24"
+  checked_at: "2026-09-26"
 - title_id: "vampire-crawlers-the-turbo-wildcard-from-vampire-survivors"
   has_physical_release: false
-  evidence: "unconfirmed"
+  evidence: "unconfirmed"  # búsqueda web: solo eShop, ningún listado físico; (API) search.nintendo.jp: icode AB3VA, sdate "2026.4.22", pprice: null
   source_url: null
-  checked_at: "2026-09-24"
+  checked_at: "2026-09-26"
 - title_id: "valheim"
   has_physical_release: false
-  evidence: "unconfirmed"
+  evidence: "unconfirmed"  # búsqueda web: solo eShop; ningún listado físico
   source_url: null
-  checked_at: "2026-09-24"
+  checked_at: "2026-09-26"
 - title_id: "valkyrie-saga"
   has_physical_release: false
-  evidence: "unconfirmed"
+  evidence: "unconfirmed"  # búsqueda web: solo eShop, ningún listado físico; (API) search.nintendo.jp: "ヴァルキリー・サーガ（VALKYRIE SAGA）", icode AA2ZA, sdate "2026.7.30", pprice: null
   source_url: null
-  checked_at: "2026-09-24"
+  checked_at: "2026-09-26"
 - title_id: "under-par-golf-architect"
   has_physical_release: false
-  evidence: "unconfirmed"
+  evidence: "unconfirmed"  # búsqueda web: solo eShop, ningún listado físico (Deluxe Edition solo digital); (API) search.nintendo.jp: icode AA7ZA, pprice: null
   source_url: null
-  checked_at: "2026-09-24"
+  checked_at: "2026-09-26"
 - title_id: "ultimate-sheep-raccoon"
   has_physical_release: false
-  evidence: "unconfirmed"
+  evidence: "unconfirmed"  # búsqueda web: solo eShop, ningún listado físico; (API) search.nintendo.jp: "Ultimate Sheep Raccoon", icode ABFRA, sdate "2025.12.10", pprice: null
   source_url: null
-  checked_at: "2026-09-24"
+  checked_at: "2026-09-26"
 - title_id: "well-dweller"
   has_physical_release: false
-  evidence: "unconfirmed"
+  evidence: "unconfirmed"  # búsqueda web: solo eShop, ningún listado físico
   source_url: null
-  checked_at: "2026-09-24"
+  checked_at: "2026-09-26"
 # Legacy of Kain: Defiance Remastered: las ediciones en caja (Standard y Deluxe, distribuidas por Plaion, 13-11-2026)
 # son de PS5, Switch (code in box) y Xbox; en Switch 2 solo está en digital. La caja de Switch 1 no cuenta.
 # (leída) Nota de Crystal Dynamics: "new physical editions of Legacy of Kain: Defiance Remastered, releasing Nov. 13,
