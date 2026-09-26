@@ -12,9 +12,10 @@ ModelT = TypeVar("ModelT", bound=BaseModel)
 
 TITLES_HEADER = (
     "# Juegos de Switch 2 conocidos. Los añade scripts/add_titles.py desde data/igdb_catalog.yaml.\n"
-    "# name, publisher y release_date vienen de IGDB; a mano solo se edita status (la web publica todos).\n"
+    "# name, publisher y release_date vienen de IGDB; a mano se edita status (la web publica todos).\n"
     "# release_date es la salida en Switch 2 con la precisión conocida (2026-08-20, 2026-08, 2026-Q3,\n"
-    "# 2026) o null; add_titles la refresca mientras no sea un día exacto ya pasado.\n"
+    "# 2026) o null; add_titles la refresca mientras no sea un día exacto ya pasado. Si IGDB no la tiene,\n"
+    "# se escribe a mano con fuente comprobada, y un null de IGDB no la borra.\n"
     "# status:\n"
     "#   new      = del catálogo y sin investigar (lo pone add_titles)\n"
     "#   pending  = investigado sin confirmar la edición de la caja ni encontrar fuente\n"

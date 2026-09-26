@@ -5,6 +5,7 @@ import pytest
 from pytest_mock import MockerFixture
 
 from scripts.build_site import main
+from switch2db.site import DEFAULT_PAGE_SIZE, PAGE_SIZES
 
 WriteYaml = Callable[[str, Sequence[object]], Path]
 
@@ -139,3 +140,22 @@ def test_main_keeps_the_anchor_of_a_title_merged_into_another(
 
     html = (docs_dir / "index.html").read_text(encoding="utf-8")
     assert '<span class="former-anchor" id="example-game-deluxe-edition"></span>' in html
+
+
+def test_main_writes_the_pagination_with_a_page_size_selector(
+    docs_dir: Path, write_yaml: WriteYaml, title_row: dict[str, object], sku_row: dict[str, object]
+) -> None:
+    write_yaml("titles.yaml", [title_row])
+    write_yaml("skus.yaml", [sku_row])
+    write_yaml("physical_release.yaml", [])
+
+    main()
+
+    html = (docs_dir / "index.html").read_text(encoding="utf-8")
+    assert 'id="pagination"' in html
+    assert "Siguiente ›" in html
+    assert "Next ›" in html
+    assert 'id="page-size-select"' in html
+    for size in PAGE_SIZES:
+        assert f'<option value="{size}"' in html
+    assert f'<option value="{DEFAULT_PAGE_SIZE}" selected>' in html

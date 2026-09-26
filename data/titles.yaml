@@ -1,7 +1,8 @@
 # Juegos de Switch 2 conocidos. Los añade scripts/add_titles.py desde data/igdb_catalog.yaml.
-# name, publisher y release_date vienen de IGDB; a mano solo se edita status (la web publica todos).
+# name, publisher y release_date vienen de IGDB; a mano se edita status (la web publica todos).
 # release_date es la salida en Switch 2 con la precisión conocida (2026-08-20, 2026-08, 2026-Q3,
-# 2026) o null; add_titles la refresca mientras no sea un día exacto ya pasado.
+# 2026) o null; add_titles la refresca mientras no sea un día exacto ya pasado. Si IGDB no la tiene,
+# se escribe a mano con fuente comprobada, y un null de IGDB no la borra.
 # status:
 #   new      = del catálogo y sin investigar (lo pone add_titles)
 #   pending  = investigado sin confirmar la edición de la caja ni encontrar fuente
@@ -88,7 +89,7 @@
   igdb_id: 414985
   name: 1001 Threads of Mizan
   publisher: MBC Game Studio
-  release_date: null
+  release_date: '2027'
   status: pending
 - title_id: a-train-all-aboard-tourism-nintendo-switch-2-edition
   igdb_id: 380696
@@ -130,7 +131,7 @@
   igdb_id: 140375
   name: Akatori
   publisher: Games Harbor
-  release_date: null
+  release_date: '2027'
   status: pending
 - title_id: akiba-lost
   igdb_id: 369701
@@ -628,7 +629,7 @@
   igdb_id: 373021
   name: 'Avatar Legends: The Fighting Game'
   publisher: PM Studios
-  release_date: null
+  release_date: '2026-10-23'
   status: reviewed
 - title_id: back-in-time
   igdb_id: 367896
@@ -646,7 +647,7 @@
   igdb_id: 393033
   name: Backyard Baseball
   publisher: Playground Productions / Mega Cat Studios
-  release_date: null
+  release_date: '2026-08-18'
   status: reviewed
 - title_id: balatro
   igdb_id: 251833
@@ -676,7 +677,7 @@
   igdb_id: 332314
   name: Baptiste
   publisher: Firenut Games
-  release_date: null
+  release_date: '2026'
   status: pending
 - title_id: barbie-horse-ride-rescue
   igdb_id: 398424
@@ -688,7 +689,7 @@
   igdb_id: 296847
   name: Bestiario
   publisher: Wiggin Industries
-  release_date: null
+  release_date: '2026'
   status: pending
 - title_id: beyblade-x-evobattle
   igdb_id: 369115
@@ -1390,7 +1391,7 @@
   igdb_id: 204640
   name: Demonschool
   publisher: Ysbryd Games
-  release_date: null
+  release_date: '2026'
   status: pending
 - title_id: denshattack
   igdb_id: 361826
@@ -1468,7 +1469,7 @@
   igdb_id: 191402
   name: Disney Speedstorm
   publisher: Gameloft
-  release_date: null
+  release_date: '2026-07-15'
   status: reviewed
 - title_id: dispatch
   igdb_id: 325609
@@ -1672,13 +1673,13 @@
   igdb_id: 350045
   name: Ending the Happy Route
   publisher: Kemco
-  release_date: null
+  release_date: '2026-01-29'
   status: pending
 - title_id: enter-the-gungeon-2
   igdb_id: 338088
   name: Enter the Gungeon 2
   publisher: Devolver Digital
-  release_date: null
+  release_date: '2026'
   status: pending
 - title_id: epic-mickey-rebrushed
   igdb_id: 287849
@@ -1798,7 +1799,7 @@
   igdb_id: 142911
   name: Fate/Extra Record
   publisher: Aniplex
-  release_date: null
+  release_date: '2027-01-28'
   status: reviewed
 - title_id: fear-fa-98
   igdb_id: 332915
@@ -1966,7 +1967,7 @@
   igdb_id: 219797
   name: Gnomonic
   publisher: NOKOGODO / Studio Kumiho
-  release_date: null
+  release_date: 2028-12
   status: pending
 - title_id: go-go-town
   igdb_id: 244178
@@ -2200,7 +2201,7 @@
   igdb_id: 252503
   name: Human Fall Flat 2
   publisher: Devolver Digital
-  release_date: null
+  release_date: '2026'
   status: pending
 - title_id: human-fall-flat
   igdb_id: 16992
@@ -2560,7 +2561,7 @@
   igdb_id: 355544
   name: 'LoveR Kiss: Endless Memories'
   publisher: Dragami Games
-  release_date: null
+  release_date: '2026-04-30'
   status: reviewed
 - title_id: lynked-banner-of-the-spark
   igdb_id: 314256
@@ -2644,7 +2645,7 @@
   igdb_id: 302107
   name: 'Maseylia: Echoes of the Past'
   publisher: Sol Brothers
-  release_date: null
+  release_date: '2026'
   status: pending
 - title_id: meccha-chameleon
   igdb_id: 405028
@@ -2944,7 +2945,7 @@
   igdb_id: 327111
   name: Nightmare Circus
   publisher: Red Dunes Games
-  release_date: null
+  release_date: '2026'
   status: pending
 - title_id: ninja-baseball-league-man-bases-loaded
   igdb_id: 414245
@@ -3377,7 +3378,7 @@
   igdb_id: 358539
   name: Pritto Prisoner
   publisher: PinCool, Inc
-  release_date: null
+  release_date: '2025-12-25'
   status: reviewed
 - title_id: professor-layton-and-the-curious-village-remake
   igdb_id: 417339
@@ -3701,7 +3702,7 @@
   igdb_id: 339592
   name: Shellbound
   publisher: Kinetic Publishing
-  release_date: null
+  release_date: '2028'
   status: pending
 - title_id: shenmue-iii-enhanced
   igdb_id: 361664
@@ -3983,7 +3984,7 @@
   igdb_id: 117170
   name: Stellar Blade
   publisher: Sony Interactive Entertainment
-  release_date: null
+  release_date: '2026-11-05'
   status: reviewed
 - title_id: stellar-freight-endless-horizon
   igdb_id: 395520
@@ -4248,7 +4249,7 @@
   igdb_id: 375635
   name: The Florist
   publisher: Unclear Games
-  release_date: null
+  release_date: '2026'
   status: pending
 - title_id: the-fox-s-way-home
   igdb_id: 308875
@@ -4452,7 +4453,7 @@
   igdb_id: 405156
   name: 'Thief: The Dark Project Remastered'
   publisher: Atari
-  release_date: null
+  release_date: 2026-Q4
   status: pending
 - title_id: tianji-shadow-of-the-ancients
   igdb_id: 416886
@@ -4500,7 +4501,7 @@
   igdb_id: 339675
   name: 'Tomo: Endless Blue'
   publisher: Onibi
-  release_date: null
+  release_date: '2026'
   status: pending
 - title_id: tony-hawk-s-pro-skater-3-4
   igdb_id: 334243
@@ -4681,7 +4682,7 @@
   igdb_id: 322751
   name: Virtua Fighter 5 R.E.V.O.
   publisher: Sega
-  release_date: null
+  release_date: '2026-03-26'
   status: reviewed
 - title_id: wanderstop
   igdb_id: 305019

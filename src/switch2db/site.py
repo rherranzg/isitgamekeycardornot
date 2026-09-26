@@ -27,6 +27,10 @@ NO_BOX_FILTER_VALUE = "no_box"
 # (status new/pending sin investigar).
 NO_SKUS_FILTER_VALUE = "no_skus"
 
+# Juegos por página que puede elegir el visitante: se filtra sobre todos y solo se muestra la página actual.
+PAGE_SIZES: tuple[int, ...] = (10, 20, 50)
+DEFAULT_PAGE_SIZE = 10
+
 REPO_URL = "https://github.com/rherranzg/isitgamekeycardornot"
 DATA_LICENSE_URL = f"{REPO_URL}/blob/main/data/LICENSE"
 REPORT_ISSUE_URL = f"{REPO_URL}/issues/new?template=correction.yml"

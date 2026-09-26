@@ -79,6 +79,10 @@ UI_STRINGS: dict[str, dict[str, str]] = {
     "no_data": {"es": "Todavía sin SKUs documentados.", "en": "No SKUs documented yet."},
     "no_box_filter": {"es": "Sin edición física", "en": "No physical edition"},
     "no_skus_filter": {"es": "Sin SKUs todavía", "en": "No SKUs yet"},
+    "pagination_label": {"es": "Páginas", "en": "Pages"},
+    "page_size_label": {"es": "Juegos por página", "en": "Games per page"},
+    "pagination_previous": {"es": "‹ Anterior", "en": "‹ Previous"},
+    "pagination_next": {"es": "Siguiente ›", "en": "Next ›"},
     "no_box_note": {
         "es": "Solo digital",
         "en": "Digital only",

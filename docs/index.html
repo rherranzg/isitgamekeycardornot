@@ -166,10 +166,30 @@
       gap: 6px;
       cursor: pointer;
     }
-    #showing-count {
+    .list-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 10px 0 14px;
       font-size: 0.82rem;
       color: var(--muted);
-      margin: 10px 0 14px;
+    }
+    .page-size {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      white-space: nowrap;
+    }
+    .page-size select {
+      background: var(--surface);
+      color: var(--text);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 3px 6px;
+      font-size: inherit;
+      font-family: inherit;
     }
     .titles {
       display: flex;
@@ -245,6 +265,46 @@
       text-align: center;
       padding: 32px 0;
     }
+    .pagination {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 20px;
+      font-size: 0.85rem;
+    }
+    .pagination[hidden] { display: none; }
+    #page-numbers {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    .pagination button {
+      cursor: pointer;
+      min-width: 34px;
+      background: var(--surface);
+      color: var(--text);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 6px 10px;
+      font-size: inherit;
+      font-family: inherit;
+      font-variant-numeric: tabular-nums;
+    }
+    .pagination button:disabled {
+      cursor: default;
+      opacity: 0.45;
+    }
+    .pagination button[aria-current="page"] {
+      cursor: default;
+      background: var(--text);
+      color: var(--bg);
+      border-color: var(--text);
+      font-weight: 600;
+    }
+    .page-gap { color: var(--muted); }
     .table-scroll {
       overflow-x: auto;
       -webkit-overflow-scrolling: touch;
@@ -337,7 +397,7 @@
 
     <div class="stats">
       <span><strong id="stat-titles-count">823</strong> <span data-i18n="es">juegos catalogados</span><span data-i18n="en" hidden>games catalogued</span></span>
-      <span><strong id="stat-skus-count">656</strong> <span data-i18n="es">SKUs regionales documentados</span><span data-i18n="en" hidden>regional SKUs documented</span></span>
+      <span><strong id="stat-skus-count">658</strong> <span data-i18n="es">SKUs regionales documentados</span><span data-i18n="en" hidden>regional SKUs documented</span></span>
     </div>
 
     <div class="toolbar">
@@ -444,7 +504,21 @@
       </div>
     </div>
 
-    <div id="showing-count"></div>
+    <div class="list-head">
+      <div id="showing-count"></div>
+      <div class="page-size">
+        <label for="page-size-select"><span data-i18n="es">Juegos por página</span><span data-i18n="en" hidden>Games per page</span></label>
+        <select id="page-size-select">
+          
+          <option value="10" selected>10</option>
+          
+          <option value="20">20</option>
+          
+          <option value="50">50</option>
+          
+        </select>
+      </div>
+    </div>
 
     <div class="titles">
       
@@ -608,6 +682,13 @@
           <div>
             <h2>1001 Threads of Mizan</h2>
             <div class="publisher">MBC Game Studio</div>
+          </div>
+          
+          <div class="title-badges">
+            
+            
+            <span class="release-date"><span data-i18n="es">2027</span><span data-i18n="en" hidden>2027</span></span>
+            
           </div>
           
         </div>
@@ -887,6 +968,13 @@
           <div>
             <h2>Akatori</h2>
             <div class="publisher">Games Harbor</div>
+          </div>
+          
+          <div class="title-badges">
+            
+            
+            <span class="release-date"><span data-i18n="es">2027</span><span data-i18n="en" hidden>2027</span></span>
+            
           </div>
           
         </div>
@@ -3335,6 +3423,13 @@
             <div class="publisher">PM Studios</div>
           </div>
           
+          <div class="title-badges">
+            
+            
+            <span class="release-date"><span data-i18n="es">23 oct 2026</span><span data-i18n="en" hidden>Oct 23, 2026</span></span>
+            
+          </div>
+          
         </div>
 
         
@@ -3495,6 +3590,13 @@
           <div>
             <h2>Backyard Baseball</h2>
             <div class="publisher">Playground Productions / Mega Cat Studios</div>
+          </div>
+          
+          <div class="title-badges">
+            
+            
+            <span class="release-date"><span data-i18n="es">18 ago 2026</span><span data-i18n="en" hidden>Aug 18, 2026</span></span>
+            
           </div>
           
         </div>
@@ -3667,6 +3769,13 @@
             <div class="publisher">Firenut Games</div>
           </div>
           
+          <div class="title-badges">
+            
+            
+            <span class="release-date"><span data-i18n="es">2026</span><span data-i18n="en" hidden>2026</span></span>
+            
+          </div>
+          
         </div>
 
         
@@ -3707,6 +3816,13 @@
           <div>
             <h2>Bestiario</h2>
             <div class="publisher">Wiggin Industries</div>
+          </div>
+          
+          <div class="title-badges">
+            
+            
+            <span class="release-date"><span data-i18n="es">2026</span><span data-i18n="en" hidden>2026</span></span>
+            
           </div>
           
         </div>
@@ -7646,6 +7762,13 @@
             <div class="publisher">Ysbryd Games</div>
           </div>
           
+          <div class="title-badges">
+            
+            
+            <span class="release-date"><span data-i18n="es">2026</span><span data-i18n="en" hidden>2026</span></span>
+            
+          </div>
+          
         </div>
 
         
@@ -8258,6 +8381,13 @@
           <div>
             <h2>Disney Speedstorm</h2>
             <div class="publisher">Gameloft</div>
+          </div>
+          
+          <div class="title-badges">
+            
+            
+            <span class="release-date"><span data-i18n="es">15 jul 2026</span><span data-i18n="en" hidden>Jul 15, 2026</span></span>
+            
           </div>
           
         </div>
@@ -9973,6 +10103,13 @@
             <div class="publisher">Kemco</div>
           </div>
           
+          <div class="title-badges">
+            
+            
+            <span class="release-date"><span data-i18n="es">29 ene 2026</span><span data-i18n="en" hidden>Jan 29, 2026</span></span>
+            
+          </div>
+          
         </div>
 
         
@@ -9986,6 +10123,13 @@
           <div>
             <h2>Enter the Gungeon 2</h2>
             <div class="publisher">Devolver Digital</div>
+          </div>
+          
+          <div class="title-badges">
+            
+            
+            <span class="release-date"><span data-i18n="es">2026</span><span data-i18n="en" hidden>2026</span></span>
+            
           </div>
           
         </div>
@@ -10749,6 +10893,8 @@
             
             <span class="divergence-flag"><span data-i18n="es">El formato cambia según la región</span><span data-i18n="en" hidden>Format differs by region</span></span>
             
+            
+            <span class="release-date"><span data-i18n="es">28 ene 2027</span><span data-i18n="en" hidden>Jan 28, 2027</span></span>
             
           </div>
           
@@ -11976,6 +12122,13 @@
             <div class="publisher">NOKOGODO / Studio Kumiho</div>
           </div>
           
+          <div class="title-badges">
+            
+            
+            <span class="release-date"><span data-i18n="es">dic 2028</span><span data-i18n="en" hidden>Dec 2028</span></span>
+            
+          </div>
+          
         </div>
 
         
@@ -12033,7 +12186,7 @@
         
       </div>
       
-      <div class="title-card" id="gobble" data-search="gobble nis america" data-no-skus="true">
+      <div class="title-card" id="gobble" data-search="gobble nis america">
         
         <div class="title-head">
           <div>
@@ -12051,7 +12204,36 @@
         </div>
 
         
-        <p class="no-data"><span data-i18n="es">Todavía sin SKUs documentados.</span><span data-i18n="en" hidden>No SKUs documented yet.</span></p>
+        <div class="table-scroll">
+          <table class="skus">
+            <thead>
+              <tr>
+                <th><span data-i18n="es">Región</span><span data-i18n="en" hidden>Region</span></th>
+                <th><span data-i18n="es">Edición</span><span data-i18n="en" hidden>Edition</span></th>
+                <th><span data-i18n="es">Formato</span><span data-i18n="en" hidden>Format</span></th>
+                <th><span data-i18n="es">Distribuidora</span><span data-i18n="en" hidden>Distributor</span></th>
+                <th><span data-i18n="es">Tamaño</span><span data-i18n="en" hidden>Size</span></th>
+                <th><span data-i18n="es">Fuente</span><span data-i18n="en" hidden>Source</span></th>
+              </tr>
+            </thead>
+            <tbody>
+              
+              <tr data-region="JP" data-format="game_key_card" data-edition="standard">
+                <td>JP</td>
+                <td><span data-i18n="es">Estándar</span><span data-i18n="en" hidden>Standard</span></td>
+                <td><span class="badge format-game-key-card"><span data-i18n="es">Game-Key Card</span><span data-i18n="en" hidden>Game-Key Card</span></span></td>
+                <td>日本一ソフトウェア</td>
+                <td><span data-i18n="es">—</span><span data-i18n="en" hidden>—</span></td>
+                <td>
+                  
+                  <a class="source-link" href="https://nintendoeverything.com/list-of-all-nintendo-switch-2-games-with-a-game-key-card-release/" target="_blank" rel="noopener noreferrer"><span data-i18n="es">Prensa</span><span data-i18n="en" hidden>Press report</span></a>
+                  
+                </td>
+              </tr>
+              
+            </tbody>
+          </table>
+        </div>
         
       </div>
       
@@ -13592,6 +13774,13 @@
           <div>
             <h2>Human Fall Flat 2</h2>
             <div class="publisher">Devolver Digital</div>
+          </div>
+          
+          <div class="title-badges">
+            
+            
+            <span class="release-date"><span data-i18n="es">2026</span><span data-i18n="en" hidden>2026</span></span>
+            
           </div>
           
         </div>
@@ -16017,6 +16206,13 @@
             <div class="publisher">Dragami Games</div>
           </div>
           
+          <div class="title-badges">
+            
+            
+            <span class="release-date"><span data-i18n="es">30 abr 2026</span><span data-i18n="en" hidden>Apr 30, 2026</span></span>
+            
+          </div>
+          
         </div>
 
         
@@ -16755,6 +16951,13 @@
           <div>
             <h2>Maseylia: Echoes of the Past</h2>
             <div class="publisher">Sol Brothers</div>
+          </div>
+          
+          <div class="title-badges">
+            
+            
+            <span class="release-date"><span data-i18n="es">2026</span><span data-i18n="en" hidden>2026</span></span>
+            
           </div>
           
         </div>
@@ -19033,6 +19236,13 @@
             <div class="publisher">Red Dunes Games</div>
           </div>
           
+          <div class="title-badges">
+            
+            
+            <span class="release-date"><span data-i18n="es">2026</span><span data-i18n="en" hidden>2026</span></span>
+            
+          </div>
+          
         </div>
 
         
@@ -20462,7 +20672,7 @@
         
       </div>
       
-      <div class="title-card" id="otonari-no-tenshi-sama-ni-itsu-no-ma-ni-ka-dame-ningen-ni-sareteita-ken-memorial-vacation" data-search="otonari no tenshi-sama ni itsu no ma ni ka dame ningen ni sareteita ken: memorial vacation mages." data-no-skus="true">
+      <div class="title-card" id="otonari-no-tenshi-sama-ni-itsu-no-ma-ni-ka-dame-ningen-ni-sareteita-ken-memorial-vacation" data-search="otonari no tenshi-sama ni itsu no ma ni ka dame ningen ni sareteita ken: memorial vacation mages." data-no-box="true">
         
         <div class="title-head">
           <div>
@@ -20480,7 +20690,12 @@
         </div>
 
         
-        <p class="no-data"><span data-i18n="es">Todavía sin SKUs documentados.</span><span data-i18n="en" hidden>No SKUs documented yet.</span></p>
+        <p class="no-box">
+          <span data-i18n="es">Solo digital</span><span data-i18n="en" hidden>Digital only</span>
+          
+          <a class="source-link" href="https://dengekionline.com/article/202603/69410" target="_blank" rel="noopener noreferrer"><span data-i18n="es">Prensa</span><span data-i18n="en" hidden>Press report</span></a>
+          
+        </p>
         
       </div>
       
@@ -22098,6 +22313,13 @@
           <div>
             <h2>Pritto Prisoner</h2>
             <div class="publisher">PinCool, Inc</div>
+          </div>
+          
+          <div class="title-badges">
+            
+            
+            <span class="release-date"><span data-i18n="es">25 dic 2025</span><span data-i18n="en" hidden>Dec 25, 2025</span></span>
+            
           </div>
           
         </div>
@@ -24200,6 +24422,13 @@
             <div class="publisher">Kinetic Publishing</div>
           </div>
           
+          <div class="title-badges">
+            
+            
+            <span class="release-date"><span data-i18n="es">2028</span><span data-i18n="en" hidden>2028</span></span>
+            
+          </div>
+          
         </div>
 
         
@@ -24624,7 +24853,7 @@
         
       </div>
       
-      <div class="title-card" id="skyship-quest-story" data-search="skyship quest story kairosoft" data-no-skus="true">
+      <div class="title-card" id="skyship-quest-story" data-search="skyship quest story kairosoft" data-no-box="true">
         
         <div class="title-head">
           <div>
@@ -24642,11 +24871,16 @@
         </div>
 
         
-        <p class="no-data"><span data-i18n="es">Todavía sin SKUs documentados.</span><span data-i18n="en" hidden>No SKUs documented yet.</span></p>
+        <p class="no-box">
+          <span data-i18n="es">Solo digital</span><span data-i18n="en" hidden>Digital only</span>
+          
+          <a class="source-link" href="https://search.nintendo.jp/nintendo_soft/search.json?q=%E9%A3%9B%E7%A9%BA%E8%89%87%E3%82%AF%E3%82%A8%E3%82%B9%E3%83%88%E5%B3%B6&amp;limit=40" target="_blank" rel="noopener noreferrer"><span data-i18n="es">Fuente oficial</span><span data-i18n="en" hidden>Official source</span></a>
+          
+        </p>
         
       </div>
       
-      <div class="title-card" id="smalland-survive-the-wilds" data-search="smalland: survive the wilds maximum entertainment" data-no-skus="true">
+      <div class="title-card" id="smalland-survive-the-wilds" data-search="smalland: survive the wilds maximum entertainment">
         
         <div class="title-head">
           <div>
@@ -24664,7 +24898,36 @@
         </div>
 
         
-        <p class="no-data"><span data-i18n="es">Todavía sin SKUs documentados.</span><span data-i18n="en" hidden>No SKUs documented yet.</span></p>
+        <div class="table-scroll">
+          <table class="skus">
+            <thead>
+              <tr>
+                <th><span data-i18n="es">Región</span><span data-i18n="en" hidden>Region</span></th>
+                <th><span data-i18n="es">Edición</span><span data-i18n="en" hidden>Edition</span></th>
+                <th><span data-i18n="es">Formato</span><span data-i18n="en" hidden>Format</span></th>
+                <th><span data-i18n="es">Distribuidora</span><span data-i18n="en" hidden>Distributor</span></th>
+                <th><span data-i18n="es">Tamaño</span><span data-i18n="en" hidden>Size</span></th>
+                <th><span data-i18n="es">Fuente</span><span data-i18n="en" hidden>Source</span></th>
+              </tr>
+            </thead>
+            <tbody>
+              
+              <tr data-region="EU" data-format="game_key_card" data-edition="standard">
+                <td>EU</td>
+                <td><span data-i18n="es">Estándar</span><span data-i18n="en" hidden>Standard</span></td>
+                <td><span class="badge format-game-key-card"><span data-i18n="es">Game-Key Card</span><span data-i18n="en" hidden>Game-Key Card</span></span></td>
+                <td>Meridiem Games</td>
+                <td><span data-i18n="es">~13.0 GB (descarga)</span><span data-i18n="en" hidden>~13.0 GB (download)</span></td>
+                <td>
+                  
+                  <a class="source-link" href="https://vandal.elespanol.com/noticia/1350792032/la-supervivencia-de-smalland-survive-the-wilds-confirma-lanzamiento-fisico-en-nintendo-switch-2/" target="_blank" rel="noopener noreferrer"><span data-i18n="es">Prensa</span><span data-i18n="en" hidden>Press report</span></a>
+                  
+                </td>
+              </tr>
+              
+            </tbody>
+          </table>
+        </div>
         
       </div>
       
@@ -26200,6 +26463,13 @@
           <div>
             <h2>Stellar Blade</h2>
             <div class="publisher">Sony Interactive Entertainment</div>
+          </div>
+          
+          <div class="title-badges">
+            
+            
+            <span class="release-date"><span data-i18n="es">5 nov 2026</span><span data-i18n="en" hidden>Nov 5, 2026</span></span>
+            
           </div>
           
         </div>
@@ -28094,6 +28364,13 @@
             <div class="publisher">Unclear Games</div>
           </div>
           
+          <div class="title-badges">
+            
+            
+            <span class="release-date"><span data-i18n="es">2026</span><span data-i18n="en" hidden>2026</span></span>
+            
+          </div>
+          
         </div>
 
         
@@ -29300,6 +29577,13 @@
             <div class="publisher">Atari</div>
           </div>
           
+          <div class="title-badges">
+            
+            
+            <span class="release-date"><span data-i18n="es">T4 2026</span><span data-i18n="en" hidden>Q4 2026</span></span>
+            
+          </div>
+          
         </div>
 
         
@@ -29553,6 +29837,13 @@
           <div>
             <h2>Tomo: Endless Blue</h2>
             <div class="publisher">Onibi</div>
+          </div>
+          
+          <div class="title-badges">
+            
+            
+            <span class="release-date"><span data-i18n="es">2026</span><span data-i18n="en" hidden>2026</span></span>
+            
           </div>
           
         </div>
@@ -30645,6 +30936,13 @@
           <div>
             <h2>Virtua Fighter 5 R.E.V.O.</h2>
             <div class="publisher">Sega</div>
+          </div>
+          
+          <div class="title-badges">
+            
+            
+            <span class="release-date"><span data-i18n="es">26 mar 2026</span><span data-i18n="en" hidden>Mar 26, 2026</span></span>
+            
           </div>
           
         </div>
@@ -32347,11 +32645,24 @@
       
     </div>
 
+    <nav
+      class="pagination"
+      id="pagination"
+      data-label-es="Páginas"
+      data-label-en="Pages"
+      aria-label="Páginas"
+      hidden
+    >
+      <button type="button" id="page-prev"><span data-i18n="es">‹ Anterior</span><span data-i18n="en" hidden>‹ Previous</span></button>
+      <span id="page-numbers"></span>
+      <button type="button" id="page-next"><span data-i18n="es">Siguiente ›</span><span data-i18n="en" hidden>Next ›</span></button>
+    </nav>
+
     <p id="empty-state" hidden><span data-i18n="es">No se encontraron juegos.</span><span data-i18n="en" hidden>No games found.</span></p>
 
     <footer>
       <p><span data-i18n="es">Cada dato enlaza la fuente en la que se basa. Puede haber errores: compruébalo antes de comprar.</span><span data-i18n="en" hidden>Every entry links to the source it is based on. Mistakes are possible: double-check before buying.</span></p>
-      <p><span data-i18n="es">Generado el 2026-09-24 21:45 UTC.</span><span data-i18n="en" hidden>Generated on 2026-09-24 21:45 UTC.</span></p>
+      <p><span data-i18n="es">Generado el 2026-09-26 11:02 UTC.</span><span data-i18n="en" hidden>Generated on 2026-09-26 11:02 UTC.</span></p>
       <p>
         <a href="https://github.com/rherranzg/isitgamekeycardornot"><span data-i18n="es">Código y datos en GitHub</span><span data-i18n="en" hidden>Code and data on GitHub</span></a> ·
         <a href="https://github.com/rherranzg/isitgamekeycardornot/blob/main/data/LICENSE"><span data-i18n="es">Datos bajo licencia ODbL 1.0</span><span data-i18n="en" hidden>Data licensed under ODbL 1.0</span></a> ·
@@ -32365,12 +32676,17 @@
   <script>
     var SHOWING_COUNT_TEMPLATES = {"en": "Showing {shown} of {total} games", "es": "Mostrando {shown} de {total} juegos"};
 
+
     var currentLang = "es";
     var lastVisibleCount = 0;
     var lastTotalCount = 0;
+    // Fichas que pasan el buscador y los filtros, en orden; de ellas solo se muestra la página actual.
+    var matchingCards = [];
 
     // Se leen del DOM y no se asume "todo marcado": el navegador puede restaurar las casillas al volver atrás.
     var state = {
+      page: 1,
+      pageSize: readPageSize(),
       search: "",
       regions: readCheckedValues("region-filter"),
       formats: readCheckedValues("format-filter"),
@@ -32381,6 +32697,21 @@
       return new Set(
         Array.from(document.querySelectorAll("." + className + ":checked")).map(function (el) { return el.value; })
       );
+    }
+
+    // El tamaño guardado manda; si no hay (o ya no es una opción), vale lo que marque el selector.
+    function readPageSize() {
+      var select = document.getElementById("page-size-select");
+      var saved = null;
+      try {
+        saved = localStorage.getItem("pageSize");
+      } catch (error) {
+        saved = null;
+      }
+      if (saved && select.querySelector('option[value="' + saved + '"]')) {
+        select.value = saved;
+      }
+      return Number(select.value);
     }
 
     function normalizeText(text) {
@@ -32404,6 +32735,8 @@
       var placeholder = searchInput.dataset["placeholder" + (lang === "en" ? "En" : "Es")];
       searchInput.placeholder = placeholder;
       searchInput.setAttribute("aria-label", placeholder);
+      var pagination = document.getElementById("pagination");
+      pagination.setAttribute("aria-label", pagination.dataset["label" + (lang === "en" ? "En" : "Es")]);
       renderShowingCount();
     }
 
@@ -32435,10 +32768,12 @@
       return state.formats.has(NO_SKUS_FILTER_VALUE) && state.regions.size > 0 && state.editions.size > 0;
     }
 
+    // Filtra todas las fichas y muestra la página actual. No vuelve a la primera página: eso lo hace quien
+    // cambia el buscador o un filtro, para que el ancla de la carga pueda elegir la suya después.
     function applyFilters() {
       var cards = document.querySelectorAll(".title-card");
-      var visibleCount = 0;
       var visibleSkuCount = 0;
+      matchingCards = [];
 
       cards.forEach(function (card) {
         var matchesSearch = !state.search || card.dataset.search.indexOf(state.search) !== -1;
@@ -32459,25 +32794,96 @@
         } else if (card.dataset.noSkus) {
           anyRowVisible = isNoSkusCardVisible();
         }
-        card.hidden = !matchesSearch || !anyRowVisible;
-        if (!card.hidden) {
-          visibleCount++;
+        if (matchesSearch && anyRowVisible) {
+          matchingCards.push(card);
           visibleSkuCount += visibleRowsInCard;
         }
       });
 
-      lastVisibleCount = visibleCount;
+      lastVisibleCount = matchingCards.length;
       lastTotalCount = cards.length;
-      document.getElementById("empty-state").hidden = visibleCount > 0;
+      document.getElementById("empty-state").hidden = matchingCards.length > 0;
       renderShowingCount();
-      document.getElementById("stat-titles-count").textContent = visibleCount;
+      document.getElementById("stat-titles-count").textContent = matchingCards.length;
       document.getElementById("stat-skus-count").textContent = visibleSkuCount;
+      renderPage();
+    }
+
+    function pageCount() {
+      return Math.max(1, Math.ceil(matchingCards.length / state.pageSize));
+    }
+
+    function renderPage() {
+      state.page = Math.min(Math.max(state.page, 1), pageCount());
+      var start = (state.page - 1) * state.pageSize;
+      var pageCards = new Set(matchingCards.slice(start, start + state.pageSize));
+      document.querySelectorAll(".title-card").forEach(function (card) {
+        card.hidden = !pageCards.has(card);
+      });
+      renderPagination();
+    }
+
+    // Botones de la primera y la última página, y de las dos a cada lado de la actual; el resto, "…".
+    function renderPagination() {
+      var total = pageCount();
+      document.getElementById("pagination").hidden = total <= 1;
+      document.getElementById("page-prev").disabled = state.page === 1;
+      document.getElementById("page-next").disabled = state.page === total;
+      var numbers = document.getElementById("page-numbers");
+      numbers.replaceChildren();
+      var previous = 0;
+      for (var page = 1; page <= total; page++) {
+        if (page !== 1 && page !== total && Math.abs(page - state.page) > 2) {
+          continue;
+        }
+        if (page - previous > 1) {
+          var gap = document.createElement("span");
+          gap.className = "page-gap";
+          gap.textContent = "…";
+          numbers.appendChild(gap);
+        }
+        var button = document.createElement("button");
+        button.type = "button";
+        button.textContent = page;
+        button.dataset.page = page;
+        if (page === state.page) {
+          button.setAttribute("aria-current", "page");
+        }
+        numbers.appendChild(button);
+        previous = page;
+      }
+    }
+
+    // Al cambiar de página desde abajo, sube al principio de la lista (la barra de filtros queda arriba).
+    function goToPage(page) {
+      state.page = page;
+      renderPage();
+      var listTop = document.querySelector(".stats").getBoundingClientRect().bottom + window.scrollY;
+      if (window.scrollY > listTop) {
+        window.scrollTo(0, listTop);
+      }
+    }
+
+    // Un enlace #title_id (o el ancla vieja de un juego fusionado) lleva a la página en la que está su ficha,
+    // si pasa los filtros actuales.
+    function showHashTarget() {
+      var id = decodeURIComponent(location.hash.slice(1));
+      var target = id ? document.getElementById(id) : null;
+      var card = target ? target.closest(".title-card") : null;
+      var index = matchingCards.indexOf(card);
+      if (index === -1) {
+        return;
+      }
+      state.page = Math.floor(index / state.pageSize) + 1;
+      renderPage();
+      target.scrollIntoView();
     }
 
     function bindFilter(className, stateKey) {
       document.querySelectorAll("." + className).forEach(function (checkbox) {
         checkbox.addEventListener("change", function () {
           state[stateKey] = readCheckedValues(className);
+          state.page = 1;
           applyFilters();
         });
       });
@@ -32486,8 +32892,35 @@
     var searchInput = document.getElementById("search-input");
     searchInput.addEventListener("input", function () {
       state.search = normalizeText(searchInput.value.trim());
+      state.page = 1;
       applyFilters();
     });
+
+    document.getElementById("page-prev").addEventListener("click", function () {
+      goToPage(state.page - 1);
+    });
+    document.getElementById("page-next").addEventListener("click", function () {
+      goToPage(state.page + 1);
+    });
+    document.getElementById("page-numbers").addEventListener("click", function (event) {
+      var button = event.target.closest("button[data-page]");
+      if (button && !button.hasAttribute("aria-current")) {
+        goToPage(Number(button.dataset.page));
+      }
+    });
+    // Al cambiar el tamaño se queda en la página que contiene la primera ficha que se estaba viendo.
+    document.getElementById("page-size-select").addEventListener("change", function (event) {
+      var firstIndex = (state.page - 1) * state.pageSize;
+      state.pageSize = Number(event.target.value);
+      state.page = Math.floor(firstIndex / state.pageSize) + 1;
+      try {
+        localStorage.setItem("pageSize", event.target.value);
+      } catch (error) {
+        /* almacenamiento no disponible: el tamaño solo dura la sesión */
+      }
+      renderPage();
+    });
+    window.addEventListener("hashchange", showHashTarget);
 
     bindFilter("region-filter", "regions");
     bindFilter("format-filter", "formats");
@@ -32517,6 +32950,7 @@
       state.search = normalizeText(searchInput.value.trim());
       applyLanguage(preferred);
       applyFilters();
+      showHashTarget();
     })();
   </script>
 </body>

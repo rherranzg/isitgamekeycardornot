@@ -124,6 +124,8 @@ uv run python -m scripts.build_site                 # regenerate docs/index.html
 `add_titles` takes `name`, `publisher` and `release_date` from the catalog and never touches an existing
 title's `status`. `release_date` is the Switch 2 release with whatever precision IGDB knows (`2026-08-20`,
 `2026-08`, `2026-Q3`, `2026` or `null`), refreshed on every run unless it is already an exact day in the past.
+When IGDB has no Switch 2 date, it can be written by hand from a checked source (Nintendo's own store data, the
+publisher or the press); a refresh never replaces it with IGDB's `null`, only with a date.
 
 `fetch_quote` downloads a page, identifying itself with the project's User-Agent (or reads a local file), strips
 scripts and tags, and prints only the fragments that match: the literal quote a SKU comment needs. A site that

@@ -51,12 +51,13 @@ def is_settled_release_date(release_date: str | None, today: date) -> bool:
 
 def refresh_release_dates(titles: list[Title], catalog: list[CatalogEntry], today: date) -> list[Title]:
     """Actualiza desde el catálogo la fecha de los títulos que aún puede cambiar (desconocida, sin día
-    exacto o futura). Las fechas ya pasadas y los títulos que no están en el catálogo no se tocan."""
+    exacto o futura). Las fechas ya pasadas y los títulos que no están en el catálogo no se tocan, y un
+    catálogo sin fecha no borra la que se escribió a mano con fuente cuando IGDB no la tenía."""
     catalog_by_igdb_id = {entry.igdb_id: entry for entry in catalog}
     refreshed: list[Title] = []
     for title in titles:
         entry = catalog_by_igdb_id.get(title.igdb_id)
-        if entry is None or is_settled_release_date(title.release_date, today):
+        if entry is None or entry.release_date is None or is_settled_release_date(title.release_date, today):
             refreshed.append(title)
         else:
             refreshed.append(title.model_copy(update={"release_date": entry.release_date}))

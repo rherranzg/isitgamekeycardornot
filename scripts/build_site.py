@@ -9,11 +9,13 @@ from switch2db.i18n import SHOWING_COUNT_TEMPLATES, UI_STRINGS
 from switch2db.paths import DATA_DIR, DOCS_DIR, TEMPLATES_DIR
 from switch2db.site import (
     DATA_LICENSE_URL,
+    DEFAULT_PAGE_SIZE,
     EDITION_FILTER_LABELS,
     FORMAT_FILTER_LABELS,
     IGDB_URL,
     NO_BOX_FILTER_VALUE,
     NO_SKUS_FILTER_VALUE,
+    PAGE_SIZES,
     REGION_FILTER_LABELS,
     REPO_URL,
     REPORT_ISSUE_URL,
@@ -41,6 +43,8 @@ def render_index(title_views: list[TitleView], generated_at: str) -> str:
         edition_labels=EDITION_FILTER_LABELS,
         no_box_filter_value=NO_BOX_FILTER_VALUE,
         no_skus_filter_value=NO_SKUS_FILTER_VALUE,
+        page_sizes=PAGE_SIZES,
+        default_page_size=DEFAULT_PAGE_SIZE,
         showing_count_templates=SHOWING_COUNT_TEMPLATES,
         repo_url=REPO_URL,
         data_license_url=DATA_LICENSE_URL,

@@ -166,10 +166,30 @@
       gap: 6px;
       cursor: pointer;
     }
-    #showing-count {
+    .list-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 10px 0 14px;
       font-size: 0.82rem;
       color: var(--muted);
-      margin: 10px 0 14px;
+    }
+    .page-size {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      white-space: nowrap;
+    }
+    .page-size select {
+      background: var(--surface);
+      color: var(--text);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 3px 6px;
+      font-size: inherit;
+      font-family: inherit;
     }
     .titles {
       display: flex;
@@ -245,6 +265,46 @@
       text-align: center;
       padding: 32px 0;
     }
+    .pagination {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 20px;
+      font-size: 0.85rem;
+    }
+    .pagination[hidden] { display: none; }
+    #page-numbers {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    .pagination button {
+      cursor: pointer;
+      min-width: 34px;
+      background: var(--surface);
+      color: var(--text);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 6px 10px;
+      font-size: inherit;
+      font-family: inherit;
+      font-variant-numeric: tabular-nums;
+    }
+    .pagination button:disabled {
+      cursor: default;
+      opacity: 0.45;
+    }
+    .pagination button[aria-current="page"] {
+      cursor: default;
+      background: var(--text);
+      color: var(--bg);
+      border-color: var(--text);
+      font-weight: 600;
+    }
+    .page-gap { color: var(--muted); }
     .table-scroll {
       overflow-x: auto;
       -webkit-overflow-scrolling: touch;
@@ -373,7 +433,17 @@
       </div>
     </div>
 
-    <div id="showing-count"></div>
+    <div class="list-head">
+      <div id="showing-count"></div>
+      <div class="page-size">
+        <label for="page-size-select">{{ i18n(t.page_size_label) }}</label>
+        <select id="page-size-select">
+          {% for size in page_sizes %}
+          <option value="{{ size }}"{% if size == default_page_size %} selected{% endif %}>{{ size }}</option>
+          {% endfor %}
+        </select>
+      </div>
+    </div>
 
     <div class="titles">
       {% for title in titles %}
@@ -443,6 +513,19 @@
       {% endfor %}
     </div>
 
+    <nav
+      class="pagination"
+      id="pagination"
+      data-label-es="{{ t.pagination_label.es }}"
+      data-label-en="{{ t.pagination_label.en }}"
+      aria-label="{{ t.pagination_label.es }}"
+      hidden
+    >
+      <button type="button" id="page-prev">{{ i18n(t.pagination_previous) }}</button>
+      <span id="page-numbers"></span>
+      <button type="button" id="page-next">{{ i18n(t.pagination_next) }}</button>
+    </nav>
+
     <p id="empty-state" hidden>{{ i18n(t.no_results) }}</p>
 
     <footer>
@@ -461,12 +544,17 @@
   <script>
     var SHOWING_COUNT_TEMPLATES = {{ showing_count_templates|tojson }};
 
+
     var currentLang = "es";
     var lastVisibleCount = 0;
     var lastTotalCount = 0;
+    // Fichas que pasan el buscador y los filtros, en orden; de ellas solo se muestra la página actual.
+    var matchingCards = [];
 
     // Se leen del DOM y no se asume "todo marcado": el navegador puede restaurar las casillas al volver atrás.
     var state = {
+      page: 1,
+      pageSize: readPageSize(),
       search: "",
       regions: readCheckedValues("region-filter"),
       formats: readCheckedValues("format-filter"),
@@ -477,6 +565,21 @@
       return new Set(
         Array.from(document.querySelectorAll("." + className + ":checked")).map(function (el) { return el.value; })
       );
+    }
+
+    // El tamaño guardado manda; si no hay (o ya no es una opción), vale lo que marque el selector.
+    function readPageSize() {
+      var select = document.getElementById("page-size-select");
+      var saved = null;
+      try {
+        saved = localStorage.getItem("pageSize");
+      } catch (error) {
+        saved = null;
+      }
+      if (saved && select.querySelector('option[value="' + saved + '"]')) {
+        select.value = saved;
+      }
+      return Number(select.value);
     }
 
     function normalizeText(text) {
@@ -500,6 +603,8 @@
       var placeholder = searchInput.dataset["placeholder" + (lang === "en" ? "En" : "Es")];
       searchInput.placeholder = placeholder;
       searchInput.setAttribute("aria-label", placeholder);
+      var pagination = document.getElementById("pagination");
+      pagination.setAttribute("aria-label", pagination.dataset["label" + (lang === "en" ? "En" : "Es")]);
       renderShowingCount();
     }
 
@@ -531,10 +636,12 @@
       return state.formats.has(NO_SKUS_FILTER_VALUE) && state.regions.size > 0 && state.editions.size > 0;
     }
 
+    // Filtra todas las fichas y muestra la página actual. No vuelve a la primera página: eso lo hace quien
+    // cambia el buscador o un filtro, para que el ancla de la carga pueda elegir la suya después.
     function applyFilters() {
       var cards = document.querySelectorAll(".title-card");
-      var visibleCount = 0;
       var visibleSkuCount = 0;
+      matchingCards = [];
 
       cards.forEach(function (card) {
         var matchesSearch = !state.search || card.dataset.search.indexOf(state.search) !== -1;
@@ -555,25 +662,96 @@
         } else if (card.dataset.noSkus) {
           anyRowVisible = isNoSkusCardVisible();
         }
-        card.hidden = !matchesSearch || !anyRowVisible;
-        if (!card.hidden) {
-          visibleCount++;
+        if (matchesSearch && anyRowVisible) {
+          matchingCards.push(card);
           visibleSkuCount += visibleRowsInCard;
         }
       });
 
-      lastVisibleCount = visibleCount;
+      lastVisibleCount = matchingCards.length;
       lastTotalCount = cards.length;
-      document.getElementById("empty-state").hidden = visibleCount > 0;
+      document.getElementById("empty-state").hidden = matchingCards.length > 0;
       renderShowingCount();
-      document.getElementById("stat-titles-count").textContent = visibleCount;
+      document.getElementById("stat-titles-count").textContent = matchingCards.length;
       document.getElementById("stat-skus-count").textContent = visibleSkuCount;
+      renderPage();
+    }
+
+    function pageCount() {
+      return Math.max(1, Math.ceil(matchingCards.length / state.pageSize));
+    }
+
+    function renderPage() {
+      state.page = Math.min(Math.max(state.page, 1), pageCount());
+      var start = (state.page - 1) * state.pageSize;
+      var pageCards = new Set(matchingCards.slice(start, start + state.pageSize));
+      document.querySelectorAll(".title-card").forEach(function (card) {
+        card.hidden = !pageCards.has(card);
+      });
+      renderPagination();
+    }
+
+    // Botones de la primera y la última página, y de las dos a cada lado de la actual; el resto, "…".
+    function renderPagination() {
+      var total = pageCount();
+      document.getElementById("pagination").hidden = total <= 1;
+      document.getElementById("page-prev").disabled = state.page === 1;
+      document.getElementById("page-next").disabled = state.page === total;
+      var numbers = document.getElementById("page-numbers");
+      numbers.replaceChildren();
+      var previous = 0;
+      for (var page = 1; page <= total; page++) {
+        if (page !== 1 && page !== total && Math.abs(page - state.page) > 2) {
+          continue;
+        }
+        if (page - previous > 1) {
+          var gap = document.createElement("span");
+          gap.className = "page-gap";
+          gap.textContent = "…";
+          numbers.appendChild(gap);
+        }
+        var button = document.createElement("button");
+        button.type = "button";
+        button.textContent = page;
+        button.dataset.page = page;
+        if (page === state.page) {
+          button.setAttribute("aria-current", "page");
+        }
+        numbers.appendChild(button);
+        previous = page;
+      }
+    }
+
+    // Al cambiar de página desde abajo, sube al principio de la lista (la barra de filtros queda arriba).
+    function goToPage(page) {
+      state.page = page;
+      renderPage();
+      var listTop = document.querySelector(".stats").getBoundingClientRect().bottom + window.scrollY;
+      if (window.scrollY > listTop) {
+        window.scrollTo(0, listTop);
+      }
+    }
+
+    // Un enlace #title_id (o el ancla vieja de un juego fusionado) lleva a la página en la que está su ficha,
+    // si pasa los filtros actuales.
+    function showHashTarget() {
+      var id = decodeURIComponent(location.hash.slice(1));
+      var target = id ? document.getElementById(id) : null;
+      var card = target ? target.closest(".title-card") : null;
+      var index = matchingCards.indexOf(card);
+      if (index === -1) {
+        return;
+      }
+      state.page = Math.floor(index / state.pageSize) + 1;
+      renderPage();
+      target.scrollIntoView();
     }
 
     function bindFilter(className, stateKey) {
       document.querySelectorAll("." + className).forEach(function (checkbox) {
         checkbox.addEventListener("change", function () {
           state[stateKey] = readCheckedValues(className);
+          state.page = 1;
           applyFilters();
         });
       });
@@ -582,8 +760,35 @@
     var searchInput = document.getElementById("search-input");
     searchInput.addEventListener("input", function () {
       state.search = normalizeText(searchInput.value.trim());
+      state.page = 1;
       applyFilters();
     });
+
+    document.getElementById("page-prev").addEventListener("click", function () {
+      goToPage(state.page - 1);
+    });
+    document.getElementById("page-next").addEventListener("click", function () {
+      goToPage(state.page + 1);
+    });
+    document.getElementById("page-numbers").addEventListener("click", function (event) {
+      var button = event.target.closest("button[data-page]");
+      if (button && !button.hasAttribute("aria-current")) {
+        goToPage(Number(button.dataset.page));
+      }
+    });
+    // Al cambiar el tamaño se queda en la página que contiene la primera ficha que se estaba viendo.
+    document.getElementById("page-size-select").addEventListener("change", function (event) {
+      var firstIndex = (state.page - 1) * state.pageSize;
+      state.pageSize = Number(event.target.value);
+      state.page = Math.floor(firstIndex / state.pageSize) + 1;
+      try {
+        localStorage.setItem("pageSize", event.target.value);
+      } catch (error) {
+        /* almacenamiento no disponible: el tamaño solo dura la sesión */
+      }
+      renderPage();
+    });
+    window.addEventListener("hashchange", showHashTarget);
 
     bindFilter("region-filter", "regions");
     bindFilter("format-filter", "formats");
@@ -613,6 +818,7 @@
       state.search = normalizeText(searchInput.value.trim());
       applyLanguage(preferred);
       applyFilters();
+      showHashTarget();
     })();
   </script>
 </body>

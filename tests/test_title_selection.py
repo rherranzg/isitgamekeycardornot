@@ -117,6 +117,13 @@ def test_refresh_release_dates_keeps_a_past_exact_date(title: Title) -> None:
     assert refresh_release_dates(titles, catalog, TODAY)[0].release_date == "2025-06-05"
 
 
+def test_refresh_release_dates_keeps_a_manual_date_when_the_catalog_has_none(title: Title) -> None:
+    titles = [title.model_copy(update={"release_date": "2026-11-05"})]
+    catalog = [build_entry(title.igdb_id, title.name, release_date=None)]
+
+    assert refresh_release_dates(titles, catalog, TODAY)[0].release_date == "2026-11-05"
+
+
 def test_refresh_release_dates_keeps_titles_missing_from_the_catalog(title: Title) -> None:
     titles = [title.model_copy(update={"release_date": "2026-Q4"})]
 
