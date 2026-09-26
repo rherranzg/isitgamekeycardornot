@@ -72,7 +72,7 @@ def test_find_platform_id_raises_when_not_exactly_one_match(
 ) -> None:
     mocker.patch("switch2db.igdb_client.post_query", return_value=platforms)
 
-    with pytest.raises(ValueError, match="Se esperaba 1 plataforma"):
+    with pytest.raises(ValueError, match="Expected 1 platform"):
         find_platform_id("Switch 2", "token", "client-id")
 
 

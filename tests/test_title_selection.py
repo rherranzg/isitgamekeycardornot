@@ -17,7 +17,7 @@ TODAY = date(2026, 9, 24)
 def build_entry(
     igdb_id: int, name: str, publishers: str | None = "Example Publisher", release_date: str | None = None
 ) -> CatalogEntry:
-    """Entrada del catálogo de IGDB lista para convertirse en título."""
+    """IGDB catalog entry ready to become a title."""
     return CatalogEntry(
         igdb_id=igdb_id, name=name, game_type="Main Game", release_date=release_date, publishers=publishers
     )

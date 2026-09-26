@@ -19,30 +19,28 @@ logger = Logger(service="switch2db-add-titles")
 
 
 def parse_args() -> argparse.Namespace:
-    """Define y parsea los argumentos de línea de comandos."""
+    """Define and parse the command-line arguments."""
     parser = argparse.ArgumentParser(
-        description="Añade a titles.yaml juegos del catálogo local de IGDB, con status new, y refresca la "
-        "fecha de salida de los que ya están."
+        description="Add games from the local IGDB catalog to titles.yaml with status new, and refresh the "
+        "release date of those already there."
     )
     group = parser.add_mutually_exclusive_group(required=True)
-    group.add_argument("--count", type=int, help="Número de juegos nuevos a añadir")
-    group.add_argument("--all", action="store_true", help="Añade todos los juegos que queden del catálogo")
-    group.add_argument(
-        "--dates-only", action="store_true", help="No añade juegos: solo refresca las fechas de salida"
-    )
+    group.add_argument("--count", type=int, help="Number of new games to add")
+    group.add_argument("--all", action="store_true", help="Add every game left in the catalog")
+    group.add_argument("--dates-only", action="store_true", help="Add no games: only refresh release dates")
     args = parser.parse_args()
     if args.count is not None and args.count <= 0:
-        parser.error("--count debe ser mayor que 0")
+        parser.error("--count must be greater than 0")
     return args
 
 
 def load_catalog(path: Path) -> list[CatalogEntry]:
-    """Carga el catálogo local de IGDB descargado por download_igdb_catalog."""
+    """Load the local IGDB catalog downloaded by download_igdb_catalog."""
     return [CatalogEntry.model_validate(row) for row in read_yaml_rows(path)]
 
 
 def resolve_limit(args: argparse.Namespace) -> int | None:
-    """Traduce los argumentos a cuántos títulos añadir: None son todos."""
+    """Turn the arguments into how many titles to add: None means all of them."""
     if args.dates_only:
         return 0
     if args.all:
@@ -51,8 +49,8 @@ def resolve_limit(args: argparse.Namespace) -> int | None:
 
 
 def main() -> None:
-    """Refresca las fechas de salida y añade títulos nuevos del catálogo local a titles.yaml. No consulta
-    IGDB ni ninguna otra red."""
+    """Refresh release dates and add new titles from the local catalog to titles.yaml. Does not query
+    IGDB or any other network."""
     args = parse_args()
     titles_path = DATA_DIR / "titles.yaml"
     catalog = load_catalog(DATA_DIR / "igdb_catalog.yaml")
@@ -66,7 +64,7 @@ def main() -> None:
     new_titles = select_new_titles(catalog, refreshed, excluded, resolve_limit(args))
     write_titles(titles_path, refreshed + new_titles)
     logger.info(
-        "titles.yaml actualizado",
+        "titles.yaml updated",
         extra={
             "added": len(new_titles),
             "changed_release_dates": changed_dates,

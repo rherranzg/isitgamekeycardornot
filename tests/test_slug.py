@@ -31,7 +31,7 @@ def test_slugify_success(name: str, expected: str) -> None:
 
 
 def test_slugify_raises_when_name_has_no_alphanumeric_characters() -> None:
-    with pytest.raises(ValueError, match="No se puede generar un slug"):
+    with pytest.raises(ValueError, match="Cannot generate a slug"):
         slugify("★★★")
 
 

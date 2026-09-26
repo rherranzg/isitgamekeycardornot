@@ -28,8 +28,8 @@ logger = Logger(service="switch2db-build-site")
 
 
 def render_index(title_views: list[TitleView], generated_at: str) -> str:
-    """Renderiza la página única de la web, con buscador y filtros, a partir de los títulos."""
-    # autoescape=True y no select_autoescape(): este solo escapa .html/.htm/.xml y la plantilla es .jinja.
+    """Render the single-page site, with search and filters, from the titles."""
+    # autoescape=True, not select_autoescape(): that one only escapes .html/.htm/.xml, and this is .jinja.
     environment = Environment(loader=FileSystemLoader(TEMPLATES_DIR), autoescape=True)
     template = environment.get_template("index.html.jinja")
     return template.render(
@@ -54,7 +54,7 @@ def render_index(title_views: list[TitleView], generated_at: str) -> str:
 
 
 def main() -> int:
-    """Genera la web estática en docs/ con todos los títulos y SKUs de la base de datos."""
+    """Generate the static site in docs/ with every title and SKU in the database."""
     titles, title_errors = load_titles(DATA_DIR / "titles.yaml")
     skus, sku_errors = load_skus(DATA_DIR / "skus.yaml")
     releases, release_errors = load_physical_releases(DATA_DIR / "physical_release.yaml")
@@ -73,7 +73,7 @@ def main() -> int:
     output_path = DOCS_DIR / "index.html"
     output_path.write_text(render_index(title_views, generated_at), encoding="utf-8")
     logger.info(
-        "Web generada",
+        "Site generated",
         extra={
             "output": str(output_path),
             "title_count": len(title_views),

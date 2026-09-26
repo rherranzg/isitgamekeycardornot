@@ -15,7 +15,7 @@ WHITESPACE = re.compile(r"\s+")
 
 
 def read_source(source: str) -> str:
-    """Devuelve el contenido de una URL (con el User-Agent del proyecto) o de un fichero local descargado."""
+    """Return the content of a URL (with the project's User-Agent) or of a downloaded local file."""
     if not source.startswith(("http://", "https://")):
         return Path(source).read_text(encoding="utf-8", errors="ignore")
     response = requests.get(source, headers={"User-Agent": USER_AGENT}, timeout=REQUEST_TIMEOUT_SECONDS)
@@ -24,7 +24,7 @@ def read_source(source: str) -> str:
 
 
 def html_to_text(page: str) -> str:
-    """Quita scripts, estilos y etiquetas; los bloques quedan separados por ' | ' para no pegar celdas."""
+    """Strip scripts, styles and tags; blocks are separated by ' | ' so cells do not run together."""
     without_code = NON_CONTENT_TAGS.sub(" ", page)
     with_separators = BLOCK_TAGS.sub(" | ", without_code)
     text = html.unescape(ANY_TAG.sub(" ", with_separators))
@@ -32,7 +32,7 @@ def html_to_text(page: str) -> str:
 
 
 def find_quotes(text: str, pattern: str, context: int, max_quotes: int) -> list[str]:
-    """Devuelve fragmentos distintos alrededor de cada coincidencia (regex, sin distinguir mayúsculas)."""
+    """Return distinct snippets around each match (regex, case-insensitive)."""
     quotes: list[str] = []
     for match in re.finditer(pattern, text, re.IGNORECASE):
         quote = text[max(0, match.start() - context) : match.end() + context].strip()

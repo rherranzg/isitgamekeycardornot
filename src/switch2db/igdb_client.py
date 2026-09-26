@@ -21,7 +21,7 @@ PLATFORMS_ADAPTER = TypeAdapter(list[IgdbPlatform])
 
 
 def post_query(url: str, query: str, access_token: str, client_id: str) -> object:
-    """Envía una query APICalypse a un endpoint de IGDB y devuelve el JSON de la respuesta."""
+    """Send an APICalypse query to an IGDB endpoint and return the response JSON."""
     response = requests.post(
         url,
         headers={"Client-ID": client_id, "Authorization": f"Bearer {access_token}"},
@@ -33,12 +33,12 @@ def post_query(url: str, query: str, access_token: str, client_id: str) -> objec
 
 
 def build_platform_query(name_fragment: str) -> str:
-    """Construye la query que busca plataformas cuyo nombre contiene el texto."""
+    """Build the query that searches for platforms whose name contains the text."""
     return f'fields name; where name ~ *"{name_fragment}"*;'
 
 
 def build_platform_games_query(platform_id: int, offset: int) -> str:
-    """Construye la query de una página de juegos de una plataforma, ordenada por id."""
+    """Build the query for one page of a platform's games, sorted by id."""
     return (
         f"fields {GAME_FIELDS}; where platforms = ({platform_id}); "
         f"sort id asc; limit {IGDB_MAX_LIMIT}; offset {offset};"
@@ -46,17 +46,17 @@ def build_platform_games_query(platform_id: int, offset: int) -> str:
 
 
 def find_platform_id(name_fragment: str, access_token: str, client_id: str) -> int:
-    """Busca la plataforma cuyo nombre contiene el texto; falla si IGDB no devuelve exactamente una."""
+    """Find the platform whose name contains the text; fail if IGDB does not return exactly one."""
     payload = post_query(IGDB_PLATFORMS_URL, build_platform_query(name_fragment), access_token, client_id)
     platforms = PLATFORMS_ADAPTER.validate_python(payload)
     if len(platforms) != 1:
         names = [platform.name for platform in platforms]
-        raise ValueError(f"Se esperaba 1 plataforma para '{name_fragment}' y IGDB devolvió {names}")
+        raise ValueError(f"Expected 1 platform for '{name_fragment}' but IGDB returned {names}")
     return platforms[0].id
 
 
 def fetch_platform_games(platform_id: int, access_token: str, client_id: str) -> list[IgdbGame]:
-    """Descarga todos los juegos de una plataforma paginando hasta recibir una página incompleta."""
+    """Download all games of a platform, paging until an incomplete page comes back."""
     games: list[IgdbGame] = []
     while True:
         query = build_platform_games_query(platform_id, offset=len(games))

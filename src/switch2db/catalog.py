@@ -7,8 +7,8 @@ from switch2db.igdb_models import IgdbGame, IgdbReleaseDate
 
 PUBLISHER_SEPARATOR = " / "
 NON_ALNUM = re.compile(r"[^a-z0-9]")
-# Tipos de IGDB que no son un juego con caja propia. Los nombres son los que devuelve la API
-# ("DLC", "Pack / Addon"), normalizados sin espacios ni signos.
+# IGDB types that are not a game with its own box. Names are the ones the API returns
+# ("DLC", "Pack / Addon"), normalized without spaces or punctuation.
 EXCLUDED_GAME_TYPES = {
     "dlc",
     "dlcaddon",
@@ -22,62 +22,62 @@ EXCLUDED_GAME_TYPES = {
     "update",
     "fork",
 }
-# Se guardan en el catálogo aunque no se elijan como títulos nuevos: las recopilaciones y ediciones que IGDB
-# marca como Bundle y se añaden a mano necesitan que add_titles les refresque la fecha.
+# Kept in the catalog even though they are never picked as new titles: compilations and editions that IGDB
+# marks as Bundle and are added by hand need add_titles to refresh their date.
 CATALOG_ONLY_GAME_TYPES = {"bundle"}
 QUARTERS_BY_DATE_FORMAT = {"YYYYQ1": 1, "YYYYQ2": 2, "YYYYQ3": 3, "YYYYQ4": 4}
 
 
 class CatalogEntry(BaseModel):
-    """Juego de Switch 2 en IGDB, candidato a entrar en titles.yaml."""
+    """Switch 2 game on IGDB, a candidate for titles.yaml."""
 
-    igdb_id: int = Field(..., description="Id del juego en IGDB")
-    name: str = Field(..., description="Nombre del juego")
-    game_type: str | None = Field(None, description="Tipo de juego en IGDB (main game, port, remaster...)")
+    igdb_id: int = Field(..., description="Game id on IGDB")
+    name: str = Field(..., description="Game name")
+    game_type: str | None = Field(None, description="Game type on IGDB (main game, port, remaster...)")
     release_date: str | None = Field(
         None,
-        description="Salida en la plataforma con la precisión de IGDB (2026-08-20, 2026-08, 2026-Q3, 2026); "
-        "null si IGDB no da fecha o es TBD",
+        description="Release on the platform with IGDB's precision (2026-08-20, 2026-08, 2026-Q3, 2026); "
+        "null if IGDB gives no date or it is TBD",
     )
-    publishers: str | None = Field(None, description="Publishers según IGDB")
+    publishers: str | None = Field(None, description="Publishers according to IGDB")
     version_parent: int | None = Field(
-        None, description="Id de IGDB del juego del que esta entrada es una edición; null si no lo es"
+        None, description="IGDB id of the game this entry is an edition of; null if it is not one"
     )
 
 
 def normalize_game_type(game_type: str) -> str:
-    """Normaliza el tipo de juego de IGDB para compararlo sin distinguir formato."""
+    """Normalize the IGDB game type so it can be compared regardless of formatting."""
     return NON_ALNUM.sub("", game_type.lower())
 
 
 def is_catalog_candidate(game_type: str | None) -> bool:
-    """True si el tipo de IGDB puede tener caja propia: fuera DLC, packs, bundles y expansiones."""
+    """True if the IGDB type can have its own box: no DLC, packs, bundles or expansions."""
     if game_type is None:
         return True
     return normalize_game_type(game_type) not in EXCLUDED_GAME_TYPES
 
 
 def is_kept_in_catalog(game_type: str | None) -> bool:
-    """True si se guarda en el catálogo: los candidatos a título y los tipos que solo sirven para fechas."""
+    """True if it is kept in the catalog: title candidates and the types only used for dates."""
     return is_catalog_candidate(game_type) or (
         game_type is not None and normalize_game_type(game_type) in CATALOG_ONLY_GAME_TYPES
     )
 
 
 def list_publishers(game: IgdbGame) -> list[str]:
-    """Devuelve, sin repetir y en orden, las compañías que IGDB marca como publisher."""
+    """Return, deduplicated and in order, the companies IGDB marks as publisher."""
     return list(
         dict.fromkeys(involved.company.name for involved in game.involved_companies if involved.publisher)
     )
 
 
 def convert_unix_timestamp_to_date(timestamp: int) -> date:
-    """Convierte un timestamp Unix en segundos a fecha UTC."""
+    """Convert a Unix timestamp in seconds to a UTC date."""
     return datetime.fromtimestamp(timestamp, tz=UTC).date()
 
 
 def format_release_date(release: IgdbReleaseDate) -> str | None:
-    """Escribe la fecha con la precisión que da IGDB: día, mes, trimestre o año; None si es TBD o falta."""
+    """Format the date with the precision IGDB gives: day, month, quarter or year; None if TBD or missing."""
     if release.date is None or release.y is None or release.date_format is None:
         return None
     date_format = release.date_format.format
@@ -93,9 +93,9 @@ def format_release_date(release: IgdbReleaseDate) -> str | None:
 
 
 def find_platform_release_date(game: IgdbGame, platform_id: int) -> str | None:
-    """Devuelve la fecha de salida del juego en la plataforma; si hay varias (una por región), la más
-    temprana. IGDB pone el último día del periodo en las fechas de año o trimestre, así que a igualdad
-    de periodo gana la fecha exacta."""
+    """Return the game's release date on the platform; if there are several (one per region), the
+    earliest. IGDB stores year or quarter dates as the last day of the period, so within the same
+    period the exact date wins."""
     candidates = [
         (release.date, text)
         for release in game.release_dates
@@ -109,7 +109,7 @@ def find_platform_release_date(game: IgdbGame, platform_id: int) -> str | None:
 
 
 def build_catalog_entry(game: IgdbGame, platform_id: int) -> CatalogEntry:
-    """Resume un juego de IGDB en una entrada de catálogo, con su fecha de salida en la plataforma."""
+    """Summarize an IGDB game as a catalog entry, with its release date on the platform."""
     publishers = list_publishers(game)
     return CatalogEntry(
         igdb_id=game.id,
@@ -122,8 +122,8 @@ def build_catalog_entry(game: IgdbGame, platform_id: int) -> CatalogEntry:
 
 
 def build_catalog(games: list[IgdbGame], platform_id: int) -> list[CatalogEntry]:
-    """Construye el catálogo sin los tipos descartados (los Bundle se quedan, solo para fechas), ordenado
-    por nombre."""
+    """Build the catalog without the discarded types (Bundles stay, only for dates), sorted
+    by name."""
     entries = (build_catalog_entry(game, platform_id) for game in games)
     candidates = (entry for entry in entries if is_kept_in_catalog(entry.game_type))
     return sorted(candidates, key=lambda entry: entry.name.casefold())

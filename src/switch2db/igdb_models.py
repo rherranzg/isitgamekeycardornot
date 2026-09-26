@@ -2,62 +2,62 @@ from pydantic import BaseModel, Field
 
 
 class IgdbCompany(BaseModel):
-    """Compañía de IGDB; solo interesa su nombre."""
+    """IGDB company; only its name matters."""
 
-    name: str = Field(..., description="Nombre de la compañía")
+    name: str = Field(..., description="Company name")
 
 
 class IgdbInvolvedCompany(BaseModel):
-    """Relación entre un juego y una compañía en IGDB."""
+    """Link between a game and a company on IGDB."""
 
-    company: IgdbCompany = Field(..., description="Compañía implicada")
-    publisher: bool = Field(False, description="True si la compañía publica el juego")
+    company: IgdbCompany = Field(..., description="Involved company")
+    publisher: bool = Field(False, description="True if the company publishes the game")
 
 
 class IgdbGameType(BaseModel):
-    """Tipo de juego en IGDB (juego principal, port, bundle...)."""
+    """Game type on IGDB (main game, port, bundle...)."""
 
-    type: str = Field(..., description="Nombre del tipo de juego")
+    type: str = Field(..., description="Game type name")
 
 
 class IgdbPlatform(BaseModel):
-    """Plataforma de IGDB."""
+    """IGDB platform."""
 
-    id: int = Field(..., description="Id de la plataforma en IGDB")
-    name: str = Field(..., description="Nombre de la plataforma")
+    id: int = Field(..., description="Platform id on IGDB")
+    name: str = Field(..., description="Platform name")
 
 
 class IgdbDateFormat(BaseModel):
-    """Precisión de una fecha de IGDB: YYYYMMDD, YYYYMM, YYYY, YYYYQ1..YYYYQ4 o TBD."""
+    """Precision of an IGDB date: YYYYMMDD, YYYYMM, YYYY, YYYYQ1..YYYYQ4 or TBD."""
 
-    format: str = Field(..., description="Nombre del formato de fecha")
+    format: str = Field(..., description="Date format name")
 
 
 class IgdbReleaseDate(BaseModel):
-    """Lanzamiento de un juego en una plataforma y región según IGDB."""
+    """Release of a game on a platform and region according to IGDB."""
 
-    platform: int | None = Field(None, description="Id de la plataforma en IGDB")
+    platform: int | None = Field(None, description="Platform id on IGDB")
     date: int | None = Field(
-        None, description="Timestamp Unix en segundos; con año o trimestre es el último día del periodo"
+        None, description="Unix timestamp in seconds; for a year or quarter it is the last day of the period"
     )
-    y: int | None = Field(None, description="Año del lanzamiento")
-    m: int | None = Field(None, description="Mes del lanzamiento")
-    date_format: IgdbDateFormat | None = Field(None, description="Precisión con la que se conoce la fecha")
+    y: int | None = Field(None, description="Release year")
+    m: int | None = Field(None, description="Release month")
+    date_format: IgdbDateFormat | None = Field(None, description="Precision with which the date is known")
 
 
 class IgdbGame(BaseModel):
-    """Juego de IGDB con los campos que pide GAME_FIELDS."""
+    """IGDB game with the fields requested by GAME_FIELDS."""
 
-    id: int = Field(..., description="Id del juego en IGDB")
-    name: str = Field(..., description="Nombre del juego")
+    id: int = Field(..., description="Game id on IGDB")
+    name: str = Field(..., description="Game name")
     release_dates: list[IgdbReleaseDate] = Field(
-        default_factory=list, description="Lanzamientos del juego por plataforma y región"
+        default_factory=list, description="Game releases by platform and region"
     )
-    game_type: IgdbGameType | None = Field(None, description="Tipo de juego")
+    game_type: IgdbGameType | None = Field(None, description="Game type")
     version_parent: int | None = Field(
         None,
-        description="Id del juego del que esta entrada es una edición (Deluxe, Gold...); None si no lo es",
+        description="Id of the game this entry is an edition of (Deluxe, Gold...); None if it is not one",
     )
     involved_companies: list[IgdbInvolvedCompany] = Field(
-        default_factory=list, description="Compañías implicadas en el juego"
+        default_factory=list, description="Companies involved in the game"
     )

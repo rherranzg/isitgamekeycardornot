@@ -6,7 +6,7 @@ UNICODE_MARK_CATEGORY_PREFIX = "M"
 
 
 def strip_accents(text: str) -> str:
-    """Quita tildes y demás marcas diacríticas (categoría Unicode M) tras descomponer el texto con NFKD."""
+    """Remove accents and other diacritical marks (Unicode category M) after NFKD decomposition."""
     decomposed = unicodedata.normalize("NFKD", text)
     return "".join(
         char for char in decomposed if not unicodedata.category(char).startswith(UNICODE_MARK_CATEGORY_PREFIX)
@@ -14,16 +14,16 @@ def strip_accents(text: str) -> str:
 
 
 def slugify(name: str) -> str:
-    """Convierte un nombre en un slug ascii en minúsculas separado por guiones."""
+    """Turn a name into a lowercase, hyphen-separated ASCII slug."""
     normalized = strip_accents(name).encode("ascii", "ignore").decode("ascii")
     slug = NON_ALNUM.sub("-", normalized.lower()).strip("-")
     if not slug:
-        raise ValueError(f"No se puede generar un slug a partir de '{name}'")
+        raise ValueError(f"Cannot generate a slug from '{name}'")
     return slug
 
 
 def make_unique_slug(name: str, taken: set[str]) -> str:
-    """Genera un slug a partir del nombre, añadiendo un sufijo numérico si ya está en uso."""
+    """Generate a slug from the name, adding a numeric suffix if it is already taken."""
     base = slugify(name)
     if base not in taken:
         return base

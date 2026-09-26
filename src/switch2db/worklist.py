@@ -4,48 +4,48 @@ from switch2db.models import Region, Sku, SkuStatus, Title, TitleStatus
 
 
 class WorkQueue(BaseModel):
-    """Lo que queda por hacer, calculado a partir de los ficheros de datos. Sin red."""
+    """What is left to do, computed from the data files. No network."""
 
     titles_to_review: list[str] = Field(
         ...,
-        description="Títulos investigados sin confirmar la edición ni encontrar fuente (status pending)",
+        description="Titles researched without confirming the edition or finding a source (status pending)",
     )
     titles_to_research: list[str] = Field(
-        ..., description="Títulos del catálogo que nadie ha investigado todavía (status new)"
+        ..., description="Catalog titles nobody has researched yet (status new)"
     )
     titles_missing_regions: dict[str, list[str]] = Field(
-        ..., description="Títulos ya empezados y las regiones que les faltan por cubrir"
+        ..., description="Titles already started and the regions they still lack"
     )
     new_skus: list[str] = Field(
-        ..., description="sku_id recién escritos (status new): no salen en la web hasta buscarles fuente"
+        ..., description="Freshly written sku_ids (status new): no source has been searched for yet"
     )
     skus_without_source: list[str] = Field(
         ...,
-        description="sku_id buscados sin encontrar fuente (status pending): salen como formato desconocido",
+        description="sku_ids searched without finding a source (status pending): shown as unknown format",
     )
     skus_to_refresh: list[str] = Field(
-        ..., description="sku_id marcados para volver a comprobar (status refresh)"
+        ..., description="sku_ids flagged to be checked again (status refresh)"
     )
 
 
 def list_titles_by_status(titles: list[Title], status: TitleStatus) -> list[str]:
-    """Devuelve los title_id con ese status, en el orden de titles.yaml."""
+    """Return the title_ids with that status, in titles.yaml order."""
     return [title.title_id for title in titles if title.status == status]
 
 
 def list_skus_by_status(skus: list[Sku], status: SkuStatus) -> list[str]:
-    """Devuelve los sku_id con ese status, en el orden de skus.yaml."""
+    """Return the sku_ids with that status, in skus.yaml order."""
     return [sku.sku_id for sku in skus if sku.status == status]
 
 
 def list_missing_regions(title_id: str, skus: list[Sku]) -> list[str]:
-    """Devuelve las regiones sin ningún SKU para ese juego, en el orden del enum."""
+    """Return the regions with no SKU for that game, in enum order."""
     covered = {sku.region for sku in skus if sku.title_id == title_id}
     return [region.value for region in Region if region not in covered]
 
 
 def find_titles_missing_regions(titles: list[Title], skus: list[Sku]) -> dict[str, list[str]]:
-    """Devuelve, por título ya empezado, las regiones que todavía no tienen SKU."""
+    """Return, for each started title, the regions that still have no SKU."""
     title_ids_with_skus = {sku.title_id for sku in skus}
     missing_by_title = {
         title.title_id: list_missing_regions(title.title_id, skus)
@@ -56,7 +56,7 @@ def find_titles_missing_regions(titles: list[Title], skus: list[Sku]) -> dict[st
 
 
 def build_work_queue(titles: list[Title], skus: list[Sku]) -> WorkQueue:
-    """Construye la cola de trabajo pendiente a partir del status de cada título y de cada SKU."""
+    """Build the pending work queue from the status of each title and each SKU."""
     return WorkQueue(
         titles_to_review=list_titles_by_status(titles, TitleStatus.PENDING),
         titles_to_research=list_titles_by_status(titles, TitleStatus.NEW),

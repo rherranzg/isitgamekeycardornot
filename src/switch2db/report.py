@@ -9,40 +9,40 @@ from switch2db.models import Sku, Title, TitleStatus
 
 
 class DataReport(BaseModel):
-    """Resumen de títulos y SKUs para evaluar el criterio de salida de la Fase 0."""
+    """Summary of titles and SKUs to assess the Phase 0 exit criteria."""
 
-    title_count: int = Field(..., description="Número de títulos importados válidos")
-    titles_by_status: dict[str, int] = Field(..., description="Títulos por status de revisión")
+    title_count: int = Field(..., description="Number of valid imported titles")
+    titles_by_status: dict[str, int] = Field(..., description="Titles by review status")
     pending_review_titles: list[str] = Field(
-        ..., description="title_id importados de IGDB cuyos datos aún no se han comprobado a mano"
+        ..., description="title_ids imported from IGDB whose data has not been checked by hand yet"
     )
-    sku_count: int = Field(..., description="Número de SKUs válidos")
-    skus_by_region: dict[str, int] = Field(..., description="SKUs por región")
-    skus_by_format: dict[str, int] = Field(..., description="SKUs por formato")
-    skus_by_status: dict[str, int] = Field(..., description="SKUs por estado de revisión")
+    sku_count: int = Field(..., description="Number of valid SKUs")
+    skus_by_region: dict[str, int] = Field(..., description="SKUs by region")
+    skus_by_format: dict[str, int] = Field(..., description="SKUs by format")
+    skus_by_status: dict[str, int] = Field(..., description="SKUs by review status")
     fill_rates: dict[str, float | None] = Field(
-        ..., description="% de relleno por campo; condicionales medidos donde aplican (null si en ninguno)"
+        ..., description="Fill rate per field; conditional ones measured where they apply (null if nowhere)"
     )
     low_fill_fields: list[str] = Field(
-        ..., description="Campos que no superan el umbral, sin contar los que se conservan por decisión"
+        ..., description="Fields below the threshold, excluding those kept by decision"
     )
     format_divergences: dict[str, dict[str, str]] = Field(
-        ..., description="Juegos cuyo formato cambia entre regiones, por región"
+        ..., description="Games whose format differs between regions, by region"
     )
 
 
 def count_by(rows: Sequence[BaseModel], field_name: str) -> dict[str, int]:
-    """Cuenta las filas según el valor de un campo."""
+    """Count rows by the value of a field."""
     return dict(Counter(str(getattr(row, field_name)) for row in rows))
 
 
 def list_pending_review_title_ids(titles: list[Title]) -> list[str]:
-    """Devuelve los title_id con status pending, en el orden de titles.yaml."""
+    """Return the title_ids with status pending, in titles.yaml order."""
     return [title.title_id for title in titles if title.status == TitleStatus.PENDING]
 
 
 def describe_format_divergences(skus: list[Sku]) -> dict[str, dict[str, str]]:
-    """Expresa las divergencias de formato con claves legibles."""
+    """Express the format divergences with readable keys."""
     return {
         f"{title_id} ({edition})": {str(region): str(sku_format) for region, sku_format in formats.items()}
         for (title_id, edition), formats in find_format_divergences(skus).items()
@@ -50,7 +50,7 @@ def describe_format_divergences(skus: list[Sku]) -> dict[str, dict[str, str]]:
 
 
 def build_report(titles: list[Title], skus: list[Sku], fill_threshold: float) -> DataReport:
-    """Construye el informe de revisión de títulos y de recuentos, relleno y divergencias de los SKUs."""
+    """Build the report on title review and on SKU counts, fill rates and divergences."""
     fill_rates = compute_fill_rates(skus)
     return DataReport(
         title_count=len(titles),

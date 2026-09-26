@@ -2,21 +2,21 @@ from collections.abc import Callable, Mapping
 
 from switch2db.models import Edition, Format, Sku
 
-# Se conservan aunque no superen el umbral. Decisión del 13-09-2026: la distribuidora es dato interno.
+# Kept even when below the threshold. Decided on 2026-09-13: the distributor is internal data.
 FIELDS_KEPT_REGARDLESS_OF_FILL = frozenset({"distributor"})
 
 
 def is_full_cart(sku: Sku) -> bool:
-    """Indica si el SKU es un cartucho completo."""
+    """Tell whether the SKU is a full cartridge."""
     return sku.format == Format.FULL_CART
 
 
 def is_special_edition(sku: Sku) -> bool:
-    """Indica si el SKU es una edición distinta de la estándar, la única que lleva nombre comercial."""
+    """Tell whether the SKU is a non-standard edition, the only kind that has a commercial name."""
     return sku.edition != Edition.STANDARD
 
 
-# Campos que solo aplican a parte de los SKUs: su relleno se mide únicamente sobre esas filas.
+# Fields that only apply to some SKUs: their fill rate is measured only over those rows.
 FIELD_APPLICABILITY: dict[str, Callable[[Sku], bool]] = {
     "cart_size_gb": is_full_cart,
     "edition_name": is_special_edition,
@@ -24,7 +24,7 @@ FIELD_APPLICABILITY: dict[str, Callable[[Sku], bool]] = {
 
 
 def select_applicable_skus(skus: list[Sku], field_name: str) -> list[Sku]:
-    """Devuelve los SKUs a los que aplica el campo; todos si el campo no es condicional."""
+    """Return the SKUs the field applies to; all of them if the field is not conditional."""
     applies = FIELD_APPLICABILITY.get(field_name)
     if applies is None:
         return skus
@@ -32,7 +32,7 @@ def select_applicable_skus(skus: list[Sku], field_name: str) -> list[Sku]:
 
 
 def compute_field_fill_rate(skus: list[Sku], field_name: str) -> float | None:
-    """Calcula el % de SKUs aplicables con valor no nulo; None si el campo no aplica a ninguno."""
+    """Compute the % of applicable SKUs with a non-null value; None if the field applies to none."""
     applicable_skus = select_applicable_skus(skus, field_name)
     if not applicable_skus:
         return None
@@ -41,14 +41,14 @@ def compute_field_fill_rate(skus: list[Sku], field_name: str) -> float | None:
 
 
 def compute_fill_rates(skus: list[Sku]) -> dict[str, float | None]:
-    """Calcula el % de relleno de cada campo de Sku, midiendo los condicionales solo donde aplican."""
+    """Compute the fill rate of each Sku field, measuring conditional fields only where they apply."""
     if not skus:
         return {}
     return {field_name: compute_field_fill_rate(skus, field_name) for field_name in Sku.model_fields}
 
 
 def find_low_fill_fields(fill_rates: Mapping[str, float | None], threshold: float) -> list[str]:
-    """Devuelve los campos que no superan el umbral, salvo los que no aplican o se conservan por decisión."""
+    """Return the fields below the threshold, except those that apply to no SKU or are kept by decision."""
     return [
         field_name
         for field_name, rate in fill_rates.items()

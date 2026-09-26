@@ -44,7 +44,7 @@ def test_sku_model_validate_success(sku_row: dict[str, object]) -> None:
 
 
 def test_sku_model_validate_raises_when_sku_id_is_not_canonical(sku_row: dict[str, object]) -> None:
-    with pytest.raises(ValidationError, match="debería ser 'eu-example-game-standard'"):
+    with pytest.raises(ValidationError, match="should be 'eu-example-game-standard'"):
         Sku.model_validate({**sku_row, "sku_id": "eu-sf6-std"})
 
 
@@ -52,7 +52,7 @@ def test_sku_model_validate_raises_when_sku_id_is_not_canonical(sku_row: dict[st
 def test_sku_model_validate_raises_when_known_format_has_no_source_url(
     sku_row: dict[str, object], sku_format: str
 ) -> None:
-    with pytest.raises(ValidationError, match="source_url es obligatorio"):
+    with pytest.raises(ValidationError, match="source_url is required"):
         Sku.model_validate({**sku_row, "format": sku_format, "source_url": None})
 
 
@@ -77,7 +77,7 @@ def test_sku_model_validate_defaults_includes_download_code_to_unknown(sku_row: 
 
 
 def test_sku_model_validate_raises_when_ean_check_digit_is_wrong(sku_row: dict[str, object]) -> None:
-    with pytest.raises(ValidationError, match="dígito de control incorrecto"):
+    with pytest.raises(ValidationError, match="wrong check digit"):
         Sku.model_validate({**sku_row, "ean": "0045496123456"})
 
 
@@ -162,7 +162,7 @@ def test_sku_model_validate_accepts_every_status_with_source(sku_row: dict[str, 
 
 
 def test_sku_model_validate_accepts_pending_without_source(sku_row: dict[str, object]) -> None:
-    """`pending` es haber buscado la fuente y no encontrarla: sin source_url y con formato desconocido."""
+    """`pending` means the source was searched for and not found: no source_url and unknown format."""
     sku = Sku.model_validate(
         {**sku_row, "format": "unknown", "evidence": "unconfirmed", "source_url": None, "status": "pending"}
     )
@@ -172,7 +172,7 @@ def test_sku_model_validate_accepts_pending_without_source(sku_row: dict[str, ob
 
 
 def test_sku_model_validate_raises_when_pending_has_source_url(sku_row: dict[str, object]) -> None:
-    with pytest.raises(ValidationError, match="status 'pending' es para SKUs sin fuente"):
+    with pytest.raises(ValidationError, match="status 'pending' is for SKUs without a source"):
         Sku.model_validate({**sku_row, "status": "pending"})
 
 
@@ -198,7 +198,7 @@ def test_physical_release_model_validate_allows_unconfirmed_without_source() -> 
 
 
 def test_physical_release_model_validate_raises_when_claim_has_no_source() -> None:
-    with pytest.raises(ValidationError, match="source_url es obligatorio"):
+    with pytest.raises(ValidationError, match="source_url is required"):
         PhysicalRelease.model_validate(
             {
                 "title_id": "example-game",
@@ -227,7 +227,7 @@ def test_excluded_title_accepts_a_merge_with_its_former_title_id() -> None:
     [{"former_title_id": "alpha-deluxe-edition"}, {"merged_into": "alpha"}],
 )
 def test_excluded_title_rejects_half_a_merge(merge_fields: dict[str, str]) -> None:
-    with pytest.raises(ValidationError, match="former_title_id y merged_into van juntos"):
+    with pytest.raises(ValidationError, match="former_title_id and merged_into go together"):
         ExcludedTitle(igdb_id=1, name="Alpha: Deluxe Edition", reason="Edición de Alpha", **merge_fields)
 
 
@@ -247,5 +247,5 @@ def test_sku_rejects_a_suffix_that_is_not_the_edition_name(sku_row: dict[str, ob
         "edition_name": "Steelbook",
     }
 
-    with pytest.raises(ValidationError, match="debería ser 'eu-example-game-deluxe'"):
+    with pytest.raises(ValidationError, match="should be 'eu-example-game-deluxe'"):
         Sku.model_validate(row)

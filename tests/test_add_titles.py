@@ -12,7 +12,7 @@ WriteYaml = Callable[[str, Sequence[object]], Path]
 
 
 def catalog_row(igdb_id: int, name: str, release_date: str | None = None) -> dict[str, object]:
-    """Fila de igdb_catalog.yaml tal como la escribe download_igdb_catalog."""
+    """igdb_catalog.yaml row as written by download_igdb_catalog."""
     return {
         "igdb_id": igdb_id,
         "name": name,
@@ -23,7 +23,7 @@ def catalog_row(igdb_id: int, name: str, release_date: str | None = None) -> dic
 
 
 def read_titles(tmp_path: Path) -> list[dict[str, object]]:
-    """Devuelve las filas de titles.yaml ya validadas, como diccionarios."""
+    """Return the validated titles.yaml rows as dicts."""
     titles, errors = load_titles(tmp_path / "titles.yaml")
     assert errors == []
     return [title.model_dump(mode="json") for title in titles]
@@ -81,7 +81,7 @@ def test_main_writes_the_generated_header(
 
     main()
 
-    assert (tmp_path / "titles.yaml").read_text(encoding="utf-8").startswith("# Juegos de Switch 2")
+    assert (tmp_path / "titles.yaml").read_text(encoding="utf-8").startswith("# Known Switch 2 games")
 
 
 def test_main_rejects_a_count_that_is_not_positive(
@@ -103,7 +103,7 @@ def test_main_fails_when_titles_yaml_is_invalid(
     write_yaml("titles.yaml", [{"title_id": "example-game"}])
     write_yaml("excluded_titles.yaml", [])
 
-    with pytest.raises(ValueError, match="titles.yaml tiene 1 errores"):
+    with pytest.raises(ValueError, match="titles.yaml has 1 errors"):
         main()
 
 

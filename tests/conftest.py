@@ -11,7 +11,7 @@ from switch2db.models import PhysicalRelease, Sku, Title
 
 @pytest.fixture
 def catalog_entry() -> CatalogEntry:
-    """Entrada del catálogo de IGDB de la que sale title_row."""
+    """IGDB catalog entry that title_row comes from."""
     return CatalogEntry(
         igdb_id=12345,
         name="Example Game",
@@ -23,7 +23,7 @@ def catalog_entry() -> CatalogEntry:
 
 @pytest.fixture
 def title_row() -> dict[str, object]:
-    """Fila válida de titles.yaml, ya investigada sin confirmar la edición."""
+    """Valid titles.yaml row, researched without confirming the edition."""
     return {
         "title_id": "example-game",
         "igdb_id": 12345,
@@ -36,13 +36,13 @@ def title_row() -> dict[str, object]:
 
 @pytest.fixture
 def title(title_row: dict[str, object]) -> Title:
-    """Título con status pending: investigado sin poder confirmar la edición."""
+    """Title with status pending: researched without being able to confirm the edition."""
     return Title.model_validate(title_row)
 
 
 @pytest.fixture
 def sku_row() -> dict[str, object]:
-    """Fila válida de skus.yaml tal como llega del YAML: game-key card en EU."""
+    """Valid skus.yaml row as it comes from the YAML: game-key card in EU."""
     return {
         "sku_id": "eu-example-game-standard",
         "title_id": "example-game",
@@ -65,13 +65,13 @@ def sku_row() -> dict[str, object]:
 
 @pytest.fixture
 def eu_key_card_sku(sku_row: dict[str, object]) -> Sku:
-    """SKU de EU en game-key card."""
+    """EU SKU as a game-key card."""
     return Sku.model_validate(sku_row)
 
 
 @pytest.fixture
 def asia_full_cart_sku(sku_row: dict[str, object]) -> Sku:
-    """SKU del mismo juego en ASIA en cartucho completo."""
+    """SKU of the same game in ASIA as a full cartridge."""
     return Sku.model_validate(
         {
             **sku_row,
@@ -86,7 +86,7 @@ def asia_full_cart_sku(sku_row: dict[str, object]) -> Sku:
 
 @pytest.fixture
 def jp_unknown_sku(sku_row: dict[str, object]) -> Sku:
-    """SKU del mismo juego en JP con formato aún desconocido."""
+    """SKU of the same game in JP with a still unknown format."""
     return Sku.model_validate(
         {
             **sku_row,
@@ -101,7 +101,7 @@ def jp_unknown_sku(sku_row: dict[str, object]) -> Sku:
 
 @pytest.fixture
 def new_sku(sku_row: dict[str, object]) -> Sku:
-    """SKU recién escrito y sin revisar: sale en la web como formato desconocido."""
+    """Freshly written, unreviewed SKU: shown on the site as unknown format."""
     return Sku.model_validate(
         {
             **sku_row,
@@ -118,7 +118,7 @@ def new_sku(sku_row: dict[str, object]) -> Sku:
 
 @pytest.fixture
 def pending_sku(sku_row: dict[str, object]) -> Sku:
-    """SKU buscado sin encontrar fuente: sale en la web como formato desconocido."""
+    """SKU searched without finding a source: shown on the site as unknown format."""
     return Sku.model_validate(
         {
             **sku_row,
@@ -135,7 +135,7 @@ def pending_sku(sku_row: dict[str, object]) -> Sku:
 
 @pytest.fixture
 def digital_only_row() -> dict[str, object]:
-    """Fila de physical_release.yaml: el juego no salió en caja en ninguna región."""
+    """physical_release.yaml row: the game got no boxed release in any region."""
     return {
         "title_id": "example-game",
         "has_physical_release": False,
@@ -147,13 +147,13 @@ def digital_only_row() -> dict[str, object]:
 
 @pytest.fixture
 def digital_only(digital_only_row: dict[str, object]) -> PhysicalRelease:
-    """Juego investigado y confirmado como solo digital."""
+    """Game researched and confirmed as digital only."""
     return PhysicalRelease.model_validate(digital_only_row)
 
 
 @pytest.fixture
 def igdb_game_payload() -> dict[str, object]:
-    """Respuesta de IGDB para un juego con desarrolladora y publisher."""
+    """IGDB response for a game with a developer and a publisher."""
     return {
         "id": 12345,
         "name": "Example Game",
@@ -185,16 +185,16 @@ def igdb_game_payload() -> dict[str, object]:
 
 @pytest.fixture
 def igdb_game(igdb_game_payload: dict[str, object]) -> IgdbGame:
-    """Juego de IGDB parseado a partir de igdb_game_payload."""
+    """IGDB game parsed from igdb_game_payload."""
     return IgdbGame.model_validate(igdb_game_payload)
 
 
 @pytest.fixture
 def write_yaml(tmp_path: Path) -> Callable[[str, Sequence[object]], Path]:
-    """Devuelve una función que escribe una lista como YAML dentro de tmp_path."""
+    """Return a function that writes a list as YAML inside tmp_path."""
 
     def _write_yaml(file_name: str, rows: Sequence[object]) -> Path:
-        """Escribe las filas en tmp_path/file_name y devuelve la ruta."""
+        """Write the rows to tmp_path/file_name and return the path."""
         path = tmp_path / file_name
         path.write_text(yaml.safe_dump(list(rows), sort_keys=False, allow_unicode=True), encoding="utf-8")
         return path

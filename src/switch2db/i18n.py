@@ -87,7 +87,7 @@ UI_STRINGS: dict[str, dict[str, str]] = {
         "es": "Solo digital",
         "en": "Digital only",
     },
-    # Buscado sin encontrar caja, pero sin una fuente que diga que no la hay: no se afirma "solo digital".
+    # Searched without finding a box, but with no source saying there is none: "digital only" is not claimed.
     "no_box_unconfirmed_note": {
         "es": "No se ha encontrado edición física",
         "en": "No physical edition found",
@@ -99,7 +99,7 @@ MONTH_ABBREVIATIONS: dict[str, tuple[str, ...]] = {
     "en": ("Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"),
 }
 
-# Fecha de salida según su precisión; {month} es la abreviatura de MONTH_ABBREVIATIONS.
+# Release date by precision; {month} is the abbreviation from MONTH_ABBREVIATIONS.
 RELEASE_DATE_TEMPLATES: dict[str, dict[str, str]] = {
     "day": {"es": "{day} {month} {year}", "en": "{month} {day}, {year}"},
     "month": {"es": "{month} {year}", "en": "{month} {year}"},

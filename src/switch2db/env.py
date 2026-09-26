@@ -2,8 +2,8 @@ import os
 
 
 def read_required_env(name: str) -> str:
-    """Lee una variable de entorno obligatoria; falla si no existe o está vacía."""
+    """Read a required environment variable; fail if it is missing or empty."""
     value = os.environ.get(name)
     if not value:
-        raise RuntimeError(f"Falta la variable de entorno {name} (usa uv run --env-file .env)")
+        raise RuntimeError(f"Missing environment variable {name} (use uv run --env-file .env)")
     return value

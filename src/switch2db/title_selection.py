@@ -6,7 +6,7 @@ from switch2db.slug import make_unique_slug
 
 
 def build_new_title(entry: CatalogEntry, taken_title_ids: set[str]) -> Title:
-    """Crea el título de una entrada del catálogo, con un slug libre y sin investigar todavía."""
+    """Create the title for a catalog entry, with a free slug and not yet researched."""
     return Title(
         title_id=make_unique_slug(entry.name, taken_title_ids),
         igdb_id=entry.igdb_id,
@@ -20,9 +20,9 @@ def build_new_title(entry: CatalogEntry, taken_title_ids: set[str]) -> Title:
 def select_new_titles(
     catalog: list[CatalogEntry], existing: list[Title], excluded: list[ExcludedTitle], limit: int | None
 ) -> list[Title]:
-    """Elige, en el orden del catálogo, hasta `limit` juegos que no estén ya en titles.yaml ni excluidos
-    (None = todos). Se salta las ediciones (Deluxe, Gold...) cuyo juego base también está en Switch 2:
-    su caja, si la tiene, es un SKU del juego base. Tampoco elige los Bundle: esos se añaden a mano."""
+    """Pick, in catalog order, up to `limit` games that are neither in titles.yaml nor excluded
+    (None = all). Skips editions (Deluxe, Gold...) whose base game is also on Switch 2: their box,
+    if any, is a SKU of the base game. Bundles are not picked either: those are added by hand."""
     known_igdb_ids = {title.igdb_id for title in existing} | {entry.igdb_id for entry in excluded}
     switch2_igdb_ids = {entry.igdb_id for entry in catalog} | {title.igdb_id for title in existing}
     taken_title_ids = {title.title_id for title in existing}
@@ -43,16 +43,16 @@ def select_new_titles(
 
 
 def is_settled_release_date(release_date: str | None, today: date) -> bool:
-    """True si la fecha es un día exacto que ya ha pasado: el juego salió y la fecha ya no cambia."""
+    """True if the date is an exact day already past: the game is out and the date will not change."""
     if release_date is None or len(release_date) != len("YYYY-MM-DD"):
         return False
     return date.fromisoformat(release_date) <= today
 
 
 def refresh_release_dates(titles: list[Title], catalog: list[CatalogEntry], today: date) -> list[Title]:
-    """Actualiza desde el catálogo la fecha de los títulos que aún puede cambiar (desconocida, sin día
-    exacto o futura). Las fechas ya pasadas y los títulos que no están en el catálogo no se tocan, y un
-    catálogo sin fecha no borra la que se escribió a mano con fuente cuando IGDB no la tenía."""
+    """Update from the catalog the release date of titles whose date can still change (unknown, without
+    an exact day, or in the future). Past dates and titles missing from the catalog are left alone, and a
+    catalog entry without a date does not erase one written by hand with a source when IGDB had none."""
     catalog_by_igdb_id = {entry.igdb_id: entry for entry in catalog}
     refreshed: list[Title] = []
     for title in titles:

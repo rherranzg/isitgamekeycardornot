@@ -9,12 +9,12 @@ from switch2db.slug import slugify
 SLUG_PATTERN = r"^[a-z0-9]+(?:-[a-z0-9]+)*$"
 GTIN_PATTERN = r"^\d{12,13}$"
 GTIN13_LENGTH = 13
-# Fecha con la precisión que se conozca: día (2026-08-20), mes (2026-08), trimestre (2026-Q3) o año (2026).
+# Date with whatever precision is known: day (2026-08-20), month (2026-08), quarter (2026-Q3) or year (2026).
 RELEASE_DATE_PATTERN = r"^\d{4}(?:-Q[1-4]|-(?:0[1-9]|1[0-2])(?:-(?:0[1-9]|[12]\d|3[01]))?)?$"
 
 
 class Region(StrEnum):
-    """Mercado de un SKU; ASIA agrupa la versión asiática de HK/TW/SEA."""
+    """Market of a SKU; ASIA covers the Asian release for HK/TW/SEA."""
 
     EU = "EU"
     NA = "NA"
@@ -24,7 +24,7 @@ class Region(StrEnum):
 
 
 class Edition(StrEnum):
-    """Edición comercial de un SKU."""
+    """Commercial edition of a SKU."""
 
     STANDARD = "standard"
     DELUXE = "deluxe"
@@ -32,7 +32,7 @@ class Edition(StrEnum):
 
 
 class Format(StrEnum):
-    """Formato físico en el que se vende el juego."""
+    """Physical format the game is sold in."""
 
     FULL_CART = "full_cart"
     GAME_KEY_CARD = "game_key_card"
@@ -41,7 +41,7 @@ class Format(StrEnum):
 
 
 class Evidence(StrEnum):
-    """Nivel de evidencia que respalda el formato de un SKU."""
+    """Level of evidence backing a SKU's format."""
 
     OFFICIAL = "official"
     BOX_PHOTO = "box_photo"
@@ -51,167 +51,167 @@ class Evidence(StrEnum):
 
 
 class SkuStatus(StrEnum):
-    """Estado de revisión de un SKU. La web publica todos los status."""
+    """Review status of a SKU. The site publishes every status."""
 
-    NEW = "new"  # borrador que nadie ha buscado todavía: sale como formato desconocido
-    PENDING = "pending"  # buscado sin encontrar fuente: sale como formato desconocido, falta buscar a fondo
-    REVIEWED = "reviewed"  # comprobado abriendo la fuente: sale con su fuente
-    REFRESH = "refresh"  # tiene fuente, pero hay que volver a buscar evidencias en la web; sigue publicado
+    NEW = "new"  # draft nobody has searched yet: shown as unknown format
+    PENDING = "pending"  # searched without finding a source: shown as unknown format, needs a deeper search
+    REVIEWED = "reviewed"  # checked by opening the source: shown with its source
+    REFRESH = "refresh"  # has a source, but evidence must be searched for again on the web; still published
 
 
 class TitleStatus(StrEnum):
-    """Estado de investigación de un título. La web publica todos los status."""
+    """Research status of a title. The site publishes every status."""
 
-    NEW = "new"  # sacado del catálogo de IGDB y sin investigar
-    PENDING = "pending"  # investigado sin poder confirmar la edición de la caja ni encontrar fuente
-    REVIEWED = "reviewed"  # investigado: el igdb_id es el del juego (no una edición suya) y el resto cuadra
+    NEW = "new"  # taken from the IGDB catalog, not researched
+    PENDING = "pending"  # researched without confirming the boxed edition or finding a source
+    REVIEWED = "reviewed"  # researched: igdb_id is the game's (not an edition's) and the rest checks out
 
 
 class Title(BaseModel):
-    """Juego de Switch 2 con sus metadatos de IGDB y el estado de su investigación."""
+    """Switch 2 game with its IGDB metadata and its research status."""
 
     model_config = ConfigDict(extra="forbid")
 
-    title_id: str = Field(..., pattern=SLUG_PATTERN, description="Slug estable propio del juego")
-    igdb_id: int = Field(..., gt=0, description="Id del juego en IGDB")
-    name: str = Field(..., min_length=1, description="Nombre del juego según IGDB")
+    title_id: str = Field(..., pattern=SLUG_PATTERN, description="Stable slug of the game")
+    igdb_id: int = Field(..., gt=0, description="Game id on IGDB")
+    name: str = Field(..., min_length=1, description="Game name according to IGDB")
     publisher: str | None = Field(
-        None, min_length=1, description="Publisher global según IGDB; null si IGDB no marca ninguno"
+        None, min_length=1, description="Global publisher according to IGDB; null if IGDB marks none"
     )
     release_date: str | None = Field(
         None,
         pattern=RELEASE_DATE_PATTERN,
-        description="Salida en Switch 2 según IGDB, con la precisión que se conozca; null si no se sabe",
+        description="Switch 2 release according to IGDB, with whatever precision is known; null if unknown",
     )
-    status: TitleStatus = Field(..., description="Estado de investigación del título")
+    status: TitleStatus = Field(..., description="Research status of the title")
 
 
 class ExcludedTitle(BaseModel):
-    """Juego del catálogo de IGDB que no se cataloga aquí, con el motivo."""
+    """IGDB catalog game that is not cataloged here, with the reason."""
 
     model_config = ConfigDict(extra="forbid")
 
-    igdb_id: int = Field(..., gt=0, description="Id del juego en IGDB")
-    name: str = Field(..., min_length=1, description="Nombre del juego según IGDB, para leer el fichero")
-    reason: str = Field(..., min_length=1, description="Por qué no se cataloga")
+    igdb_id: int = Field(..., gt=0, description="Game id on IGDB")
+    name: str = Field(..., min_length=1, description="Game name according to IGDB, to make the file readable")
+    reason: str = Field(..., min_length=1, description="Why it is not cataloged")
     former_title_id: str | None = Field(
-        None, pattern=SLUG_PATTERN, description="title_id que tuvo en titles.yaml, si llegó a publicarse"
+        None, pattern=SLUG_PATTERN, description="title_id it had in titles.yaml, if it was ever published"
     )
     merged_into: str | None = Field(
         None,
         pattern=SLUG_PATTERN,
-        description="Título que lo cubre ahora; la web redirige ahí su ancla vieja",
+        description="Title that covers it now; the site redirects its old anchor there",
     )
 
     @model_validator(mode="after")
     def check_former_title_id_goes_with_merged_into(self) -> Self:
-        """Falla si solo hay uno de los dos: sin el otro no se puede redirigir el ancla vieja."""
+        """Fail if only one of the two is set: without the other the old anchor cannot be redirected."""
         if (self.former_title_id is None) != (self.merged_into is None):
-            raise ValueError("former_title_id y merged_into van juntos: o los dos o ninguno")
+            raise ValueError("former_title_id and merged_into go together: both or neither")
         return self
 
 
 class PhysicalRelease(BaseModel):
-    """Resultado de investigar si un juego llegó a tener edición en caja en alguna región."""
+    """Result of researching whether a game ever got a boxed edition in any region."""
 
     model_config = ConfigDict(extra="forbid")
 
-    title_id: str = Field(..., pattern=SLUG_PATTERN, description="Juego investigado")
+    title_id: str = Field(..., pattern=SLUG_PATTERN, description="Researched game")
     has_physical_release: bool = Field(
-        ..., description="True si existe edición en caja en alguna región; False si es solo digital"
+        ..., description="True if a boxed edition exists in some region; False if digital only"
     )
-    evidence: Evidence = Field(..., description="Nivel de evidencia de lo encontrado")
-    source_url: HttpUrl | None = Field(None, description="Fuente que lo respalda")
-    checked_at: date = Field(..., description="Fecha en que se comprobó la fuente")
+    evidence: Evidence = Field(..., description="Level of evidence of the finding")
+    source_url: HttpUrl | None = Field(None, description="Source that backs it")
+    checked_at: date = Field(..., description="Date the source was checked")
 
     @model_validator(mode="after")
     def check_source_url_when_evidence_is_confirmed(self) -> Self:
-        """Falla si se afirma algo sin fuente; unconfirmed es 'buscado y no encontrado', y no la necesita."""
+        """Fail if something is claimed without a source; unconfirmed ('searched, not found') needs none."""
         if self.evidence != Evidence.UNCONFIRMED and self.source_url is None:
-            raise ValueError(f"source_url es obligatorio cuando evidence es '{self.evidence}'")
+            raise ValueError(f"source_url is required when evidence is '{self.evidence}'")
         return self
 
 
 def build_sku_id(region: Region, title_id: str, edition: Edition) -> str:
-    """Construye el sku_id canónico a partir de región, título y edición."""
+    """Build the canonical sku_id from region, title and edition."""
     return f"{region.lower()}-{title_id}-{edition}"
 
 
 def has_valid_gtin_check_digit(code: str) -> bool:
-    """Comprueba el dígito de control de un EAN-13 o UPC-A (este, como EAN-13 con un 0 delante)."""
+    """Check the check digit of an EAN-13 or UPC-A (the latter as an EAN-13 with a leading 0)."""
     digits = [int(digit) for digit in code.zfill(GTIN13_LENGTH)]
     weighted_sum = sum(digit * (3 if position % 2 else 1) for position, digit in enumerate(digits[:-1]))
     return (10 - weighted_sum % 10) % 10 == digits[-1]
 
 
 class Sku(BaseModel):
-    """SKU regional de un juego: la unidad de la base de datos."""
+    """Regional SKU of a game: the unit of the database."""
 
     model_config = ConfigDict(extra="forbid")
 
     sku_id: str = Field(
         ...,
-        description="Id canónico: {region}-{title_id}-{edition} en minúsculas; si dos SKUs chocan, con el "
-        "slug de edition_name detrás",
+        description="Canonical id: {region}-{title_id}-{edition} in lowercase; if two SKUs clash, followed "
+        "by the edition_name slug",
     )
-    title_id: str = Field(..., pattern=SLUG_PATTERN, description="Juego al que pertenece el SKU")
-    region: Region = Field(..., description="Mercado del SKU")
-    edition: Edition = Field(..., description="Edición del SKU")
+    title_id: str = Field(..., pattern=SLUG_PATTERN, description="Game the SKU belongs to")
+    region: Region = Field(..., description="Market of the SKU")
+    edition: Edition = Field(..., description="Edition of the SKU")
     edition_name: str | None = Field(
         None,
         min_length=1,
-        description='Nombre comercial de la edición ("Gold Edition"); null si es la estándar',
+        description='Commercial name of the edition ("Gold Edition"); null for the standard one',
     )
-    distributor: str | None = Field(None, min_length=1, description="Quién lo distribuye en ese mercado")
-    release_date: date | None = Field(None, description="Fecha de lanzamiento en ese mercado")
-    format: Format = Field(..., description="Formato físico del SKU")
-    cart_size_gb: int | None = Field(None, gt=0, description="Capacidad del cartucho en GB")
+    distributor: str | None = Field(None, min_length=1, description="Who distributes it in that market")
+    release_date: date | None = Field(None, description="Release date in that market")
+    format: Format = Field(..., description="Physical format of the SKU")
+    cart_size_gb: int | None = Field(None, gt=0, description="Cartridge capacity in GB")
     download_size_gb: float | None = Field(
-        None, ge=0, description="Descarga necesaria en GB; aproximado, cambia con los parches"
+        None, ge=0, description="Required download in GB; approximate, changes with patches"
     )
     includes_download_code: bool | None = Field(
-        None, description="True si la caja trae además del juego un código de descarga (DLC, pase...)"
+        None, description="True if the box also includes a download code besides the game (DLC, pass...)"
     )
     ean: str | None = Field(
-        None, pattern=GTIN_PATTERN, description="Código de barras EAN-13 o UPC-A, entre comillas en el YAML"
+        None, pattern=GTIN_PATTERN, description="EAN-13 or UPC-A barcode, quoted in the YAML"
     )
-    evidence: Evidence = Field(..., description="Nivel de evidencia del formato")
-    source_url: HttpUrl | None = Field(None, description="Fuente que respalda el formato")
+    evidence: Evidence = Field(..., description="Level of evidence for the format")
+    source_url: HttpUrl | None = Field(None, description="Source that backs the format")
     verified_at: date = Field(
-        ..., description="Última fecha en que se comprobó la fuente; en los `pending`, la de la búsqueda"
+        ..., description="Last date the source was checked; for `pending`, the date of the search"
     )
-    status: SkuStatus = Field(..., description="Estado de revisión del SKU; la web publica todos")
+    status: SkuStatus = Field(..., description="Review status of the SKU; the site publishes all of them")
 
     @field_validator("ean")
     @classmethod
     def check_ean_check_digit(cls, ean: str | None) -> str | None:
-        """Falla si el código de barras no cuadra con su dígito de control (suele ser una errata)."""
+        """Fail if the barcode does not match its check digit (usually a typo)."""
         if ean is not None and not has_valid_gtin_check_digit(ean):
-            raise ValueError(f"ean '{ean}' tiene un dígito de control incorrecto")
+            raise ValueError(f"ean '{ean}' has a wrong check digit")
         return ean
 
     @model_validator(mode="after")
     def check_sku_id_is_canonical(self) -> Self:
-        """Falla si sku_id no es el construido a partir de región, título y edición. Para desempatar dos
-        ediciones del mismo tipo en una región, admite además el slug de edition_name detrás."""
+        """Fail if sku_id is not the one built from region, title and edition. To tell apart two editions
+        of the same type in one region, the edition_name slug is also allowed as a suffix."""
         expected_sku_id = build_sku_id(self.region, self.title_id, self.edition)
         allowed = {expected_sku_id}
         if self.edition_name is not None:
             allowed.add(f"{expected_sku_id}-{slugify(self.edition_name)}")
         if self.sku_id not in allowed:
-            raise ValueError(f"sku_id '{self.sku_id}' debería ser '{expected_sku_id}'")
+            raise ValueError(f"sku_id '{self.sku_id}' should be '{expected_sku_id}'")
         return self
 
     @model_validator(mode="after")
     def check_source_url_when_format_is_known(self) -> Self:
-        """Falla si el formato está afirmado pero no hay source_url que lo respalde."""
+        """Fail if the format is claimed but there is no source_url backing it."""
         if self.format != Format.UNKNOWN and self.source_url is None:
-            raise ValueError(f"source_url es obligatorio cuando format es '{self.format}'")
+            raise ValueError(f"source_url is required when format is '{self.format}'")
         return self
 
     @model_validator(mode="after")
     def check_pending_has_no_source(self) -> Self:
-        """Falla si un SKU `pending` trae fuente: `pending` es haberla buscado sin encontrarla."""
+        """Fail if a `pending` SKU has a source: `pending` means it was searched for and not found."""
         if self.status == SkuStatus.PENDING and self.source_url is not None:
-            raise ValueError("status 'pending' es para SKUs sin fuente; con source_url va 'reviewed'")
+            raise ValueError("status 'pending' is for SKUs without a source; with source_url use 'reviewed'")
         return self

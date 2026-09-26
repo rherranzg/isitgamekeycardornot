@@ -22,7 +22,7 @@ from switch2db.models import ExcludedTitle, PhysicalRelease, Sku, SkuStatus, Tit
 
 
 def build_release(title_id: str, has_physical_release: bool) -> PhysicalRelease:
-    """Entrada de physical_release.yaml para el juego indicado."""
+    """physical_release.yaml entry for the given game."""
     return PhysicalRelease.model_validate(
         {
             "title_id": title_id,
@@ -66,7 +66,8 @@ def test_find_orphan_sku_errors_reports_unknown_title_id(eu_key_card_sku: Sku) -
     errors = find_orphan_sku_errors([], [eu_key_card_sku])
 
     assert errors == [
-        "skus.yaml: 'eu-example-game-standard' referencia title_id 'example-game', que no está en titles.yaml"
+        "skus.yaml: 'eu-example-game-standard' references title_id 'example-game', "
+        "which is not in titles.yaml"
     ]
 
 
@@ -82,8 +83,7 @@ def test_find_unresearched_title_warnings_reports_researched_title_without_any_r
     warnings = find_unresearched_title_warnings([title], [], [])
 
     assert warnings == [
-        "titles.yaml: 'example-game' está pending pero no tiene ningún SKU "
-        "ni entrada en physical_release.yaml"
+        "titles.yaml: 'example-game' is pending but has no SKU nor a physical_release.yaml entry"
     ]
 
 
@@ -109,7 +109,7 @@ def test_find_cart_size_warnings_reports_cart_size_on_non_full_cart(eu_key_card_
     sku = eu_key_card_sku.model_copy(update={"cart_size_gb": 16})
 
     assert find_cart_size_warnings([sku]) == [
-        "skus.yaml: 'eu-example-game-standard' tiene cart_size_gb con format 'game_key_card'"
+        "skus.yaml: 'eu-example-game-standard' has cart_size_gb with format 'game_key_card'"
     ]
 
 
@@ -119,7 +119,7 @@ def test_find_cart_size_warnings_returns_empty_list_for_full_cart(asia_full_cart
 
 def test_find_download_size_warnings_reports_download_size_on_full_cart(asia_full_cart_sku: Sku) -> None:
     assert find_download_size_warnings([asia_full_cart_sku]) == [
-        "skus.yaml: 'asia-example-game-standard' tiene download_size_gb con format 'full_cart'"
+        "skus.yaml: 'asia-example-game-standard' has download_size_gb with format 'full_cart'"
     ]
 
 
@@ -134,7 +134,7 @@ def test_find_unpublished_sku_warnings_reports_skus_of_titles_not_reviewed(
     not_reviewed = title.model_copy(update={"status": status})
 
     assert find_unpublished_sku_warnings([not_reviewed], [eu_key_card_sku, asia_full_cart_sku]) == [
-        "skus.yaml: 'example-game' tiene 2 SKU(s) sin publicar porque su título no está reviewed"
+        "skus.yaml: 'example-game' has 2 unpublished SKU(s) because its title is not reviewed"
     ]
 
 
@@ -170,7 +170,7 @@ def test_find_omitted_sku_field_warnings_reports_row_position_and_keys(sku_row: 
     row_without_ean = {field: value for field, value in sku_row.items() if field != "ean"}
 
     assert find_omitted_sku_field_warnings([sku_row, row_without_ean]) == [
-        "skus.yaml #1 eu-example-game-standard: faltan las claves ['ean'] (null si no se sabe)"
+        "skus.yaml #1 eu-example-game-standard: missing keys ['ean'] (null if unknown)"
     ]
 
 
@@ -189,7 +189,7 @@ def test_collect_integrity_errors_returns_empty_list_for_consistent_data(
 def test_collect_integrity_errors_combines_every_check(title: Title, eu_key_card_sku: Sku) -> None:
     errors = collect_integrity_errors([title, title], [eu_key_card_sku, eu_key_card_sku], [], [])
 
-    # 1 title_id repetido + 1 igdb_id repetido + 1 sku_id repetido
+    # 1 duplicate title_id + 1 duplicate igdb_id + 1 duplicate sku_id
     assert len(errors) == 3
 
 
@@ -202,8 +202,8 @@ def test_collect_integrity_warnings_combines_every_check(
         [title], [sku_with_cart_size, asia_full_cart_sku], [], [{"sku_id": "row-without-keys"}]
     )
 
-    # cart_size_gb sin full_cart + download_size_gb en full_cart + SKUs sin publicar
-    # + fila con claves omitidas
+    # cart_size_gb without full_cart + download_size_gb on full_cart + unpublished SKUs
+    # + row with omitted keys
     assert len(warnings) == 4
 
 
@@ -215,7 +215,7 @@ def test_find_physical_release_errors_reports_unknown_and_duplicated_title_ids(t
 
     assert errors == [
         "physical_release.yaml: title_id repetido 'example-game'",
-        "physical_release.yaml: 'other-game' no está en titles.yaml",
+        "physical_release.yaml: 'other-game' is not in titles.yaml",
     ]
 
 
@@ -224,15 +224,15 @@ def test_find_physical_release_errors_reports_digital_only_title_with_skus(
 ) -> None:
     errors = find_physical_release_errors([title], [build_release("example-game", False)], [eu_key_card_sku])
 
-    assert errors == ["physical_release.yaml: 'example-game' dice que no hay edición física, pero tiene SKUs"]
+    assert errors == [
+        "physical_release.yaml: 'example-game' says there is no physical edition, but it has SKUs"
+    ]
 
 
 def test_find_missing_sku_warnings_reports_physical_title_without_skus() -> None:
     warnings = find_missing_sku_warnings([build_release("example-game", True)], [])
 
-    assert warnings == [
-        "physical_release.yaml: 'example-game' tiene edición física y todavía no tiene ningún SKU"
-    ]
+    assert warnings == ["physical_release.yaml: 'example-game' has a physical edition but no SKU yet"]
 
 
 def test_find_sku_status_warnings_reports_new_pending_and_refresh_skus(
@@ -243,10 +243,10 @@ def test_find_sku_status_warnings_reports_new_pending_and_refresh_skus(
     warnings = find_sku_status_warnings([eu_key_card_sku, new_sku, pending_sku, to_refresh])
 
     assert warnings == [
-        "skus.yaml: 'example-game' tiene 1 SKU(s) con status new, que no salen en la web",
-        "skus.yaml: 'example-game' tiene 1 SKU(s) sin fuente encontrada (status pending): "
-        "salen como formato desconocido y hay que buscarlos a fondo",
-        "skus.yaml: 'example-game' tiene 1 SKU(s) marcados para volver a comprobar (status refresh)",
+        "skus.yaml: 'example-game' has 1 SKU(s) with status new, not shown on the site",
+        "skus.yaml: 'example-game' has 1 SKU(s) with no source found (status pending): "
+        "shown as unknown format, they need a deeper search",
+        "skus.yaml: 'example-game' has 1 SKU(s) flagged to be checked again (status refresh)",
     ]
 
 
@@ -254,7 +254,7 @@ def test_find_excluded_title_errors_reports_excluded_titles_still_in_titles_yaml
     excluded = [ExcludedTitle(igdb_id=title.igdb_id, name=title.name, reason="Solo en una recopilación")]
 
     assert find_excluded_title_errors([title], excluded) == [
-        "titles.yaml: 'example-game' tiene el igdb_id 12345, que está en excluded_titles.yaml"
+        "titles.yaml: 'example-game' has igdb_id 12345, which is in excluded_titles.yaml"
     ]
 
 
@@ -271,7 +271,7 @@ def test_find_excluded_title_errors_returns_empty_list_when_nothing_overlaps(tit
 
 
 def build_merge(igdb_id: int, former_title_id: str, merged_into: str) -> ExcludedTitle:
-    """Edición excluida cuyo título viejo se ha fusionado en otro."""
+    """Excluded edition whose old title was merged into another."""
     return ExcludedTitle(
         igdb_id=igdb_id,
         name="Example Game: Deluxe Edition",
@@ -285,8 +285,8 @@ def test_find_merged_title_errors_reports_unknown_target_and_former_id_still_in_
     excluded = [build_merge(1, "old-game", "missing-game"), build_merge(2, "example-game", "example-game")]
 
     assert find_merged_title_errors([title], excluded) == [
-        "excluded_titles.yaml: 1 va a 'missing-game', que no está en titles.yaml",
-        "excluded_titles.yaml: el former_title_id 'example-game' sigue en titles.yaml",
+        "excluded_titles.yaml: 1 goes to 'missing-game', which is not in titles.yaml",
+        "excluded_titles.yaml: former_title_id 'example-game' is still in titles.yaml",
     ]
 
 

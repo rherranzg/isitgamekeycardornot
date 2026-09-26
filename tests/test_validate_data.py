@@ -65,8 +65,8 @@ def test_main_returns_one_and_logs_every_invalid_row(
     assert exit_code == 1
     assert len(logged_errors) == 2
     assert "asia-example-game-standard" in logged_errors[0]
-    assert "source_url es obligatorio" in logged_errors[0]
-    assert "'eu-example-game-standard' referencia title_id 'example-game'" in logged_errors[1]
+    assert "source_url is required" in logged_errors[0]
+    assert "'eu-example-game-standard' references title_id 'example-game'" in logged_errors[1]
 
 
 def test_main_warns_about_omitted_keys_and_unpublished_skus(
@@ -88,5 +88,7 @@ def test_main_warns_about_omitted_keys_and_unpublished_skus(
 
     logged_warnings = [call.args[0] for call in mock_logger.warning.call_args_list]
     assert exit_code == 0
-    assert any("faltan las claves ['ean']" in warning for warning in logged_warnings)
-    assert any("sin publicar porque su título no está reviewed" in warning for warning in logged_warnings)
+    assert any("missing keys ['ean']" in warning for warning in logged_warnings)
+    assert any(
+        "unpublished SKU(s) because its title is not reviewed" in warning for warning in logged_warnings
+    )

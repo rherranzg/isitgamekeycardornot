@@ -35,7 +35,7 @@ def test_read_yaml_rows_raises_when_root_is_not_a_list(tmp_path: Path, content: 
     path = tmp_path / "rows.yaml"
     path.write_text(content, encoding="utf-8")
 
-    with pytest.raises(ValueError, match="debe ser una lista"):
+    with pytest.raises(ValueError, match="must be a list"):
         read_yaml_rows(path)
 
 
@@ -100,8 +100,8 @@ def test_require_valid_returns_rows_when_there_are_no_errors(title: Title) -> No
 
 
 def test_require_valid_raises_with_every_error(title: Title) -> None:
-    with pytest.raises(ValueError, match=r"titles.yaml tiene 2 errores .*'error uno', 'error dos'"):
-        require_valid(([title], ["error uno", "error dos"]), "titles.yaml")
+    with pytest.raises(ValueError, match=r"titles.yaml has 2 errors .*'error one', 'error two'"):
+        require_valid(([title], ["error one", "error two"]), "titles.yaml")
 
 
 def test_write_titles_round_trips_with_load_titles(tmp_path: Path, title: Title) -> None:

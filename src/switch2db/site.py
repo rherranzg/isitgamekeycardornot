@@ -19,15 +19,15 @@ from switch2db.slug import strip_accents
 
 LocalizedText = dict[str, str]
 
-# Valor con el que el filtro de formato representa a los juegos que nunca salieron en caja: no son un
-# formato del enum, pero el visitante los busca en el mismo sitio que los demás.
+# Value the format filter uses for games that never got a boxed release: not a Format enum
+# value, but visitors look for them in the same place as the others.
 NO_BOX_FILTER_VALUE = "no_box"
 
-# Igual que NO_BOX_FILTER_VALUE, pero para los títulos que todavía no tienen ningún SKU documentado
-# (status new/pending sin investigar).
+# Same as NO_BOX_FILTER_VALUE, but for titles that have no documented SKU yet
+# (status new/pending, not researched).
 NO_SKUS_FILTER_VALUE = "no_skus"
 
-# Juegos por página que puede elegir el visitante: se filtra sobre todos y solo se muestra la página actual.
+# Games per page the visitor can choose: filtering runs over all of them and only the current page is shown.
 PAGE_SIZES: tuple[int, ...] = (10, 20, 50)
 DEFAULT_PAGE_SIZE = 10
 
@@ -43,7 +43,7 @@ FORMAT_CSS_CLASSES: dict[Format, str] = {
     Format.UNKNOWN: "format-unknown",
 }
 
-# Etiquetas de los filtros, con la clave ya en texto: el filtro de formato añade un valor que no es un Format.
+# Filter labels keyed by plain text: the format filter adds a value that is not a Format.
 REGION_FILTER_LABELS: dict[str, LocalizedText] = {region.value: REGION_LABELS[region] for region in Region}
 EDITION_FILTER_LABELS: dict[str, LocalizedText] = {
     edition.value: EDITION_LABELS[edition] for edition in Edition
@@ -56,7 +56,7 @@ FORMAT_FILTER_LABELS: dict[str, LocalizedText] = {
 
 
 class SkuView(BaseModel):
-    """SKU regional traducido a etiquetas legibles, en cada idioma soportado."""
+    """Regional SKU translated to readable labels, in each supported language."""
 
     region: Region
     edition: Edition
@@ -71,7 +71,7 @@ class SkuView(BaseModel):
 
 
 class NoBoxView(BaseModel):
-    """Nota de un juego que nunca salió en caja, con la fuente que lo respalda."""
+    """Note for a game that never got a boxed release, with the source that backs it."""
 
     note: LocalizedText
     evidence_label: LocalizedText
@@ -79,7 +79,7 @@ class NoBoxView(BaseModel):
 
 
 class TitleView(BaseModel):
-    """Juego con sus SKUs agrupados y ordenados, listo para mostrar en la web."""
+    """Game with its SKUs grouped and sorted, ready to show on the site."""
 
     title_id: str
     name: str
@@ -93,7 +93,7 @@ class TitleView(BaseModel):
 
 
 def build_size_text(sku: Sku) -> LocalizedText:
-    """Compone el texto de tamaño del SKU (cartucho o descarga) en cada idioma."""
+    """Build the SKU size text (cartridge or download) in each language."""
     if sku.cart_size_gb is not None:
         return {lang: f"{sku.cart_size_gb} {UI_STRINGS['cart_suffix'][lang]}" for lang in LANGUAGES}
     if sku.download_size_gb is not None:
@@ -102,7 +102,7 @@ def build_size_text(sku: Sku) -> LocalizedText:
 
 
 def build_sku_view(sku: Sku) -> SkuView:
-    """Traduce un Sku a las etiquetas y el formato de texto que usa la plantilla."""
+    """Translate a Sku into the labels and text format the template uses."""
     return SkuView(
         region=sku.region,
         edition=sku.edition,
@@ -122,7 +122,7 @@ def build_sku_view(sku: Sku) -> SkuView:
 
 
 def format_release_date(release_date: str, lang: str) -> str:
-    """Escribe una fecha de salida (2026-08-20, 2026-08, 2026-Q3 o 2026) legible en el idioma."""
+    """Write a release date (2026-08-20, 2026-08, 2026-Q3 or 2026) readably in the language."""
     year, _, rest = release_date.partition("-")
     if rest.startswith("Q"):
         return RELEASE_DATE_TEMPLATES["quarter"][lang].format(quarter=rest[1:], year=year)
@@ -136,26 +136,26 @@ def format_release_date(release_date: str, lang: str) -> str:
 
 
 def build_release_date_text(release_date: str | None) -> LocalizedText | None:
-    """Compone la fecha de salida de un título en cada idioma; None si no se conoce."""
+    """Build a title's release date in each language; None if unknown."""
     if release_date is None:
         return None
     return {lang: format_release_date(release_date, lang) for lang in LANGUAGES}
 
 
 def build_search_text(title: Title, other_names: Sequence[str] = ()) -> str:
-    """Texto por el que se busca un título: nombre, publisher y otros nombres por los que se le conoce (sus
-    ediciones y los juegos fusionados en él), sin tildes y en minúsculas, como en el JS."""
+    """Text a title is searched by: name, publisher and other names it is known by (its editions
+    and the games merged into it), without accents and lowercased, as in the JS."""
     names = dict.fromkeys(filter(None, [title.name, title.publisher, *other_names]))
     return strip_accents(" ".join(names)).lower()
 
 
 def sku_sort_key(sku: Sku) -> tuple[str, str]:
-    """Ordena los SKUs de un título por región y luego por edición."""
+    """Sort a title's SKUs by region and then by edition."""
     return (sku.region.value, sku.edition.value)
 
 
 def group_skus_by_title(skus: list[Sku]) -> dict[str, list[Sku]]:
-    """Agrupa los SKUs por title_id, en el orden en que llegan."""
+    """Group the SKUs by title_id, in the order they arrive."""
     groups: defaultdict[str, list[Sku]] = defaultdict(list)
     for sku in skus:
         groups[sku.title_id].append(sku)
@@ -163,7 +163,7 @@ def group_skus_by_title(skus: list[Sku]) -> dict[str, list[Sku]]:
 
 
 def build_no_box_view(release: PhysicalRelease) -> NoBoxView:
-    """Traduce a la vista lo investigado sobre un juego que no llegó a tener caja."""
+    """Translate into the view what was found about a game that never got a box."""
     note_key = "no_box_note" if release.source_url else "no_box_unconfirmed_note"
     return NoBoxView(
         note=UI_STRINGS[note_key],
@@ -173,12 +173,12 @@ def build_no_box_view(release: PhysicalRelease) -> NoBoxView:
 
 
 def find_digital_only_releases(releases: list[PhysicalRelease]) -> dict[str, PhysicalRelease]:
-    """Indexa por title_id los juegos investigados que no salieron en caja en ninguna región."""
+    """Index by title_id the researched games that got no boxed release in any region."""
     return {release.title_id: release for release in releases if not release.has_physical_release}
 
 
 def group_merged_titles(excluded: Sequence[ExcludedTitle]) -> dict[str, list[ExcludedTitle]]:
-    """Agrupa por título destino los juegos fusionados en él, para mantener sus anclas y sus nombres."""
+    """Group merged games by their target title, to keep their anchors and names."""
     groups: defaultdict[str, list[ExcludedTitle]] = defaultdict(list)
     for entry in excluded:
         if entry.merged_into is not None and entry.former_title_id is not None:
@@ -193,7 +193,7 @@ def build_title_view(
     digital_only: dict[str, PhysicalRelease],
     merged_titles: dict[str, list[ExcludedTitle]],
 ) -> TitleView:
-    """Construye la vista de un título con sus SKUs ordenados, o con su nota de "no salió en caja"."""
+    """Build a title's view with its sorted SKUs, or with its "no boxed release" note."""
     title_skus = sorted(skus_by_title.get(title.title_id, []), key=sku_sort_key)
     release = digital_only.get(title.title_id)
     merged = merged_titles.get(title.title_id, [])
@@ -219,8 +219,8 @@ def build_title_views(
     releases: list[PhysicalRelease],
     excluded: Sequence[ExcludedTitle] = (),
 ) -> list[TitleView]:
-    """Agrupa los SKUs por título y devuelve las vistas ordenadas por nombre, para todos los títulos. De
-    los juegos excluidos solo se usan las fusiones, para que sus anclas viejas lleven al título nuevo."""
+    """Group the SKUs by title and return the views sorted by name, for every title. Of the excluded
+    games only the merges are used, so their old anchors lead to the new title."""
     skus_by_title = group_skus_by_title(skus)
     diverging_title_ids = {title_id for title_id, _ in find_format_divergences(skus)}
     digital_only = find_digital_only_releases(releases)
@@ -233,5 +233,5 @@ def build_title_views(
 
 
 def build_footer_text(generated_at: str) -> LocalizedText:
-    """Compone el texto del pie de página con la fecha de generación, en cada idioma."""
+    """Build the footer text with the generation date, in each language."""
     return {lang: text.format(date=generated_at) for lang, text in UI_STRINGS["footer"].items()}

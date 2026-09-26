@@ -12,7 +12,7 @@ WriteYaml = Callable[[str, Sequence[object]], Path]
 
 @pytest.fixture
 def docs_dir(mocker: MockerFixture, tmp_path: Path) -> Path:
-    """Redirige data/ a tmp_path y docs/ a tmp_path/docs para no tocar el repo, sin juegos excluidos."""
+    """Point data/ at tmp_path and docs/ at tmp_path/docs so the repo is untouched, with no excluded games."""
     output_dir = tmp_path / "docs"
     mocker.patch("scripts.build_site.DATA_DIR", tmp_path)
     mocker.patch("scripts.build_site.DOCS_DIR", output_dir)

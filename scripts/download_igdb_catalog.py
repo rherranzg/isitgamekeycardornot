@@ -13,13 +13,13 @@ logger = Logger(service="switch2db-download-igdb-catalog")
 
 
 def main() -> None:
-    """Descarga de IGDB todos los juegos de Switch 2 a data/igdb_catalog.yaml para elegir las semillas."""
+    """Download every Switch 2 game from IGDB into data/igdb_catalog.yaml to pick the seeds from."""
     client_id = read_required_env("TWITCH_CLIENT_ID")
     access_token = get_access_token(client_id, read_required_env("TWITCH_CLIENT_SECRET"))
     platform_id = find_platform_id(PLATFORM_NAME_FRAGMENT, access_token, client_id)
     catalog = build_catalog(fetch_platform_games(platform_id, access_token, client_id), platform_id)
     write_catalog(DATA_DIR / "igdb_catalog.yaml", catalog)
-    logger.info("Catálogo de IGDB descargado", extra={"platform_id": platform_id, "game_count": len(catalog)})
+    logger.info("IGDB catalog downloaded", extra={"platform_id": platform_id, "game_count": len(catalog)})
 
 
 if __name__ == "__main__":

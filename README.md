@@ -65,7 +65,7 @@ affiliated with or endorsed by Nintendo.
 
 ## For maintainers
 
-The detailed working flow, from a new game to the site, is in [`WORKFLOW.md`](WORKFLOW.md) (in Spanish).
+The working flow, from a new game to the site, is in [`WORKFLOW.md`](WORKFLOW.md) ([Spanish version](WORKFLOW.es.md)).
 
 ### Setup
 

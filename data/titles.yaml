@@ -1,12 +1,12 @@
-# Juegos de Switch 2 conocidos. Los añade scripts/add_titles.py desde data/igdb_catalog.yaml.
-# name, publisher y release_date vienen de IGDB; a mano se edita status (la web publica todos).
-# release_date es la salida en Switch 2 con la precisión conocida (2026-08-20, 2026-08, 2026-Q3,
-# 2026) o null; add_titles la refresca mientras no sea un día exacto ya pasado. Si IGDB no la tiene,
-# se escribe a mano con fuente comprobada, y un null de IGDB no la borra.
+# Known Switch 2 games. Added by scripts/add_titles.py from data/igdb_catalog.yaml.
+# name, publisher and release_date come from IGDB; status is edited by hand (the site shows all).
+# release_date is the Switch 2 release with the known precision (2026-08-20, 2026-08, 2026-Q3,
+# 2026) or null; add_titles refreshes it unless it is an exact day already past. If IGDB lacks it,
+# it is written by hand with a checked source, and a null from IGDB does not erase it.
 # status:
-#   new      = del catálogo y sin investigar (lo pone add_titles)
-#   pending  = investigado sin confirmar la edición de la caja ni encontrar fuente
-#   reviewed = investigado y comprobado
+#   new      = from the catalog, not researched (set by add_titles)
+#   pending  = researched without confirming the boxed edition or finding a source
+#   reviewed = researched and checked
 - title_id: mario-kart-world
   igdb_id: 338067
   name: Mario Kart World

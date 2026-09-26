@@ -6,7 +6,7 @@ FormatsByRegion = dict[Region, Format]
 
 
 def group_known_formats(skus: list[Sku]) -> dict[tuple[str, Edition], FormatsByRegion]:
-    """Agrupa por juego y edición el formato conocido de cada región, ignorando los unknown."""
+    """Group the known format of each region by game and edition, ignoring unknown ones."""
     groups: defaultdict[tuple[str, Edition], FormatsByRegion] = defaultdict(dict)
     for sku in skus:
         if sku.format != Format.UNKNOWN:
@@ -15,7 +15,7 @@ def group_known_formats(skus: list[Sku]) -> dict[tuple[str, Edition], FormatsByR
 
 
 def find_format_divergences(skus: list[Sku]) -> dict[tuple[str, Edition], FormatsByRegion]:
-    """Devuelve los pares juego-edición cuyo formato conocido cambia entre regiones."""
+    """Return the game-edition pairs whose known format differs between regions."""
     return {
         key: formats_by_region
         for key, formats_by_region in group_known_formats(skus).items()

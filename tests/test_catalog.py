@@ -18,7 +18,7 @@ SWITCH2_PLATFORM_ID = 508
 
 
 def build_game(igdb_id: int, name: str, game_type: str) -> IgdbGame:
-    """Juego de IGDB con el tipo indicado, tal como llega de la API."""
+    """IGDB game with the given type, as it comes from the API."""
     return IgdbGame.model_validate({"id": igdb_id, "name": name, "game_type": {"id": 0, "type": game_type}})
 
 
@@ -71,7 +71,7 @@ def test_convert_unix_timestamp_to_date_success() -> None:
 def build_release(
     date_format: str, *, platform: int = SWITCH2_PLATFORM_ID, timestamp: int | None = 1787184000
 ) -> IgdbReleaseDate:
-    """Lanzamiento de IGDB del 20-08-2026 (año 2026, mes 8) con la precisión indicada."""
+    """IGDB release on 2026-08-20 (year 2026, month 8) with the given precision."""
     return IgdbReleaseDate.model_validate(
         {
             "platform": platform,
