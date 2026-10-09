@@ -1,4 +1,4 @@
-from datetime import date
+from datetime import UTC, date, datetime
 
 from switch2db.models import PhysicalRelease, Region, Sku, Title, TitleStatus
 from switch2db.worklist import (
@@ -44,6 +44,23 @@ def test_list_titles_to_complete_puts_the_least_recently_checked_first(title: Ti
         "never-game",
         "older-game",
         "example-game",
+    ]
+
+
+def test_list_titles_to_complete_orders_checks_with_time_after_day_only_checks_of_earlier_days(
+    title: Title,
+) -> None:
+    with_time = title.model_copy(
+        update={"title_id": "timed-game", "last_checked_at": datetime(2026, 9, 13, 10, 0, tzinfo=UTC)}
+    )
+    earlier_time = title.model_copy(
+        update={"title_id": "early-game", "last_checked_at": datetime(2026, 9, 13, 9, 0, tzinfo=UTC)}
+    )
+
+    assert list_titles_to_complete([with_time, title, earlier_time]) == [
+        "example-game",
+        "early-game",
+        "timed-game",
     ]
 
 

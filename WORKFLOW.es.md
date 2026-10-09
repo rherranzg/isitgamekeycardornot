@@ -52,9 +52,9 @@ identidad, no evidencias, así que no tienen status propio.
 Si un juego no va a tener caja en una región (allí solo sale en digital), se anota en `physical_release.yaml`
 con esa `region`, `has_physical_release: false` y su fuente. Con fuente, la región cuenta como respondida.
 
-Un SKU está completo cuando tiene `source_url`, su `format` no es `unknown` y tiene `distributor`, `release_date`,
-`includes_download_code` y `ean`, más `edition_name` si no es la estándar, `cart_size_gb` si es `full_cart` y
-`download_size_gb` si es game-key card o code in box. Si falta cualquiera de esas cosas, el título se queda en
+Un SKU está completo cuando tiene `source_url`, su `format` no es `unknown` y tiene `distributor` y `release_date`, más
+`edition_name` si no es la estándar y `download_size_gb` si es game-key card o code in box.
+`cart_size_gb`, `includes_download_code` y `ean` se escriben si se conocen, pero no se exigen. Si falta cualquiera de esas cosas, el título se queda en
 `pending`. `validate_data` falla si un título `completed` no lo cumple.
 
 Los SKUs no tienen status. Un SKU con formato conocido lleva siempre un `source_url` que se ha abierto y dice
@@ -155,7 +155,7 @@ Se busca en fuentes públicas (fichas oficiales, prensa, tiendas, fotos de la ca
    el comentario: `(leída)`, `(listado)` o `(API)`. `verified_at` es el día en que se abrió la fuente. Lo
    buscado sin fuente queda con `format: unknown` y `source_url: null`, apuntado para buscarlo a fondo. Cada edición con caja (Deluxe, Collector's, SteelBook...) es su propio SKU.
 5. **Pone el título en `completed`** si no falta nada, o en `pending` si falta algo, con `last_checked_at`
-   de hoy. Un `pending` pasa de `titles_to_research` a `titles_to_complete`.
+   al momento actual (fecha, hora y zona horaria: `2026-10-09T19:42:10+02:00`). Un `pending` pasa de `titles_to_research` a `titles_to_complete`.
 
 ### Paso 4 bis — Repasar lo que quede marcado · MANUAL (opcional)
 

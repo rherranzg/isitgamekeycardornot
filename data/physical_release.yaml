@@ -1949,3 +1949,161 @@
   evidence: "unconfirmed"  # búsqueda web: solo eShop, ningún listado físico; (leída) Nintendo Store CA: "Version | Nintendo Switch 2 | Edition | Digital"
   source_url: null
   checked_at: "2026-10-09"
+
+# Tanda del 2026-10-09: regiones sin caja (region) de títulos con caja en otras regiones.
+# JP: (API) search.nintendo.jp con pprice: null en un juego ya lanzado, y el juego no está en la lista de
+# meisakugame (que sí recoge cajas anunciadas que la API aún no registra, como Outbound o Starship Troopers).
+# (API) search.nintendo.jp: "1000xRESIST (サウザンド　タイムズ　レジスト) – Nintendo Switch 2 Edition", sdate "2026.8.20", pprice: null, sform: BEE_DL; sin entrada BEE_CARD. fangamer.jp (la tienda japonesa de Fangamer) no vende su caja de Switch 2.
+- title_id: "1000xresist"
+  has_physical_release: false
+  region: "JP"
+  evidence: "official"
+  source_url: "https://search.nintendo.jp/nintendo_soft/search.json?q=1000xResist&limit=50"
+  checked_at: "2026-10-09"
+# (API) search.nintendo.jp: "Bubsy 4D (やまねこバブジー 4D)", sdate "2026.5.28", pprice: null, sform: BEE_DL; sin entrada BEE_CARD.
+- title_id: "bubsy-4d"
+  has_physical_release: false
+  region: "JP"
+  evidence: "official"
+  source_url: "https://search.nintendo.jp/nintendo_soft/search.json?q=Bubsy%204D&limit=50"
+  checked_at: "2026-10-09"
+# (API) search.nintendo.jp: "ChromaGun 2: Dye Hard", sdate "2026.2.12", pprice: null, sform: BEE_DL; sin entrada BEE_CARD.
+- title_id: "chromagun-2-dye-hard"
+  has_physical_release: false
+  region: "JP"
+  evidence: "official"
+  source_url: "https://search.nintendo.jp/nintendo_soft/search.json?q=ChromaGun%202%3A%20Dye%20Hard&limit=50"
+  checked_at: "2026-10-09"
+# (API) search.nintendo.jp: "Citizen Sleeper 2: Starward Vector – Nintendo Switch 2 Edition", sdate "2026.6.25", pprice: null, sform: BEE_DL; sin entrada BEE_CARD. fangamer.jp (la tienda japonesa de Fangamer) no vende su caja de Switch 2.
+- title_id: "citizen-sleeper-2-starward-vector"
+  has_physical_release: false
+  region: "JP"
+  evidence: "official"
+  source_url: "https://search.nintendo.jp/nintendo_soft/search.json?q=Citizen%20Sleeper%202%3A%20Starward%20Vector&limit=50"
+  checked_at: "2026-10-09"
+# (API) search.nintendo.jp: "Hollow Knight（ホロウナイト）– Nintendo Switch 2 Edition", sdate "2026.2.6", pprice: null, sform: BEE_DL; sin entrada BEE_CARD. fangamer.jp (la tienda japonesa de Fangamer) no vende su caja de Switch 2.
+- title_id: "hollow-knight"
+  has_physical_release: false
+  region: "JP"
+  evidence: "official"
+  source_url: "https://search.nintendo.jp/nintendo_soft/search.json?q=Hollow%20Knight&limit=50"
+  checked_at: "2026-10-09"
+# (API) search.nintendo.jp: "Layers of Fear: The Final Masterpiece Edition", sdate "2025.12.19", pprice: null, sform: BEE_DL; sin entrada BEE_CARD.
+- title_id: "layers-of-fear-the-final-masterpiece-edition"
+  has_physical_release: false
+  region: "JP"
+  evidence: "official"
+  source_url: "https://search.nintendo.jp/nintendo_soft/search.json?q=Layers%20of%20Fear%3A%20The%20Final%20Masterpiece%20Edition&limit=50"
+  checked_at: "2026-10-09"
+# (API) search.nintendo.jp: "Police Simulator: Patrol Officers", sdate "2026.6.4", pprice: null, sform: BEE_DL; sin entrada BEE_CARD.
+- title_id: "police-simulator-patrol-officers"
+  has_physical_release: false
+  region: "JP"
+  evidence: "official"
+  source_url: "https://search.nintendo.jp/nintendo_soft/search.json?q=Police%20Simulator%3A%20Patrol%20Officers&limit=50"
+  checked_at: "2026-10-09"
+# (API) search.nintendo.jp: "Smalland: Survive the Wilds", sdate "2026.5.15", pprice: null, sform: BEE_DL; sin entrada BEE_CARD.
+- title_id: "smalland-survive-the-wilds"
+  has_physical_release: false
+  region: "JP"
+  evidence: "official"
+  source_url: "https://search.nintendo.jp/nintendo_soft/search.json?q=Smalland%3A%20Survive%20the%20Wilds&limit=50"
+  checked_at: "2026-10-09"
+# (API) search.nintendo.jp: "Stardew Valley: Nintendo Switch 2 Edition", sdate "2026.3.19", pprice: null, sform: BEE_DL; sin entrada BEE_CARD. fangamer.jp (la tienda japonesa de Fangamer) no vende su caja de Switch 2.
+- title_id: "stardew-valley"
+  has_physical_release: false
+  region: "JP"
+  evidence: "official"
+  source_url: "https://search.nintendo.jp/nintendo_soft/search.json?q=Stardew%20Valley&limit=50"
+  checked_at: "2026-10-09"
+# (API) search.nintendo.jp: "Teenage Mutant Ninja Turtles スプリンターの運命 Nintendo Switch 2 Edition", sdate "2025.12.18", pprice: null, sform: BEE_DL; sin entrada BEE_CARD.
+- title_id: "teenage-mutant-ninja-turtles-splintered-fate"
+  has_physical_release: false
+  region: "JP"
+  evidence: "official"
+  source_url: "https://search.nintendo.jp/nintendo_soft/search.json?q=Teenage%20Mutant%20Ninja%20Turtles%3A%20Splintered%20Fate&limit=50"
+  checked_at: "2026-10-09"
+# (API) search.nintendo.jp: "Virtua Fighter 5 R.E.V.O. World Stage", sdate "2026.3.26", pprice: null, sform: BEE_DL; sin entrada BEE_CARD.
+- title_id: "virtua-fighter-5-r-e-v-o"
+  has_physical_release: false
+  region: "JP"
+  evidence: "official"
+  source_url: "https://search.nintendo.jp/nintendo_soft/search.json?q=Virtua%20Fighter%205%20R.E.V.O.&limit=50"
+  checked_at: "2026-10-09"
+# (API) search.nintendo.jp: "Wanderstop", sdate "2026.6.23", pprice: null, sform: BEE_DL; sin entrada BEE_CARD.
+- title_id: "wanderstop"
+  has_physical_release: false
+  region: "JP"
+  evidence: "official"
+  source_url: "https://search.nintendo.jp/nintendo_soft/search.json?q=Wanderstop&limit=50"
+  checked_at: "2026-10-09"
+# (API) search.nintendo.jp: "Warhammer 40,000: Rogue Trader", sdate "2025.12.11", pprice: null, sform: BEE_DL; sin entrada BEE_CARD.
+- title_id: "warhammer-40-000-rogue-trader"
+  has_physical_release: false
+  region: "JP"
+  evidence: "official"
+  source_url: "https://search.nintendo.jp/nintendo_soft/search.json?q=Warhammer%2040%2C000%3A%20Rogue%20Trader&limit=50"
+  checked_at: "2026-10-09"
+# (API) search.nintendo.jp: "Yooka-Replaylee", sdate "2025.10.9", pprice: null, sform: BEE_DL; sin entrada BEE_CARD.
+- title_id: "yooka-replaylee"
+  has_physical_release: false
+  region: "JP"
+  evidence: "official"
+  source_url: "https://search.nintendo.jp/nintendo_soft/search.json?q=Yooka-Replaylee&limit=50"
+  checked_at: "2026-10-09"
+# (leída) Perfectly Nintendo: "Retail (Japan-only): 10,406 Yen."
+- title_id: "a-train-all-aboard-tourism-nintendo-switch-2-edition"
+  has_physical_release: false
+  region: "EU"
+  evidence: "press_report"
+  source_url: "https://www.perfectly-nintendo.com/a-train-all-aboard-tourism-nintendo-switch-2-edition-announced-for-december-release/"
+  checked_at: "2026-10-09"
+# (leída) Perfectly Nintendo: "Retail (Japan-only): 10,406 Yen."
+- title_id: "a-train-all-aboard-tourism-nintendo-switch-2-edition"
+  has_physical_release: false
+  region: "NA"
+  evidence: "press_report"
+  source_url: "https://www.perfectly-nintendo.com/a-train-all-aboard-tourism-nintendo-switch-2-edition-announced-for-december-release/"
+  checked_at: "2026-10-09"
+# (leída) Perfectly Nintendo: "Retail (Japan-only): 10,406 Yen."
+- title_id: "a-train-all-aboard-tourism-nintendo-switch-2-edition"
+  has_physical_release: false
+  region: "KR"
+  evidence: "press_report"
+  source_url: "https://www.perfectly-nintendo.com/a-train-all-aboard-tourism-nintendo-switch-2-edition-announced-for-december-release/"
+  checked_at: "2026-10-09"
+# (leída) Perfectly Nintendo: "Retail (Japan-only): 10,406 Yen."
+- title_id: "a-train-all-aboard-tourism-nintendo-switch-2-edition"
+  has_physical_release: false
+  region: "ASIA"
+  evidence: "press_report"
+  source_url: "https://www.perfectly-nintendo.com/a-train-all-aboard-tourism-nintendo-switch-2-edition-announced-for-december-release/"
+  checked_at: "2026-10-09"
+# (leída) Konami, ficha del producto: "対応機種 | Nintendo Switch 2 / Nintendo Switch | 販売地域 | 日本"
+- title_id: "momotaro-dentetsu-2-anata-no-machi-mo-kitto-aru"
+  has_physical_release: false
+  region: "EU"
+  evidence: "official"
+  source_url: "https://www.konami.com/games/momotetsu/2/products.php"
+  checked_at: "2026-10-09"
+# (leída) Konami, ficha del producto: "対応機種 | Nintendo Switch 2 / Nintendo Switch | 販売地域 | 日本"
+- title_id: "momotaro-dentetsu-2-anata-no-machi-mo-kitto-aru"
+  has_physical_release: false
+  region: "NA"
+  evidence: "official"
+  source_url: "https://www.konami.com/games/momotetsu/2/products.php"
+  checked_at: "2026-10-09"
+# (leída) Konami, ficha del producto: "対応機種 | Nintendo Switch 2 / Nintendo Switch | 販売地域 | 日本"
+- title_id: "momotaro-dentetsu-2-anata-no-machi-mo-kitto-aru"
+  has_physical_release: false
+  region: "KR"
+  evidence: "official"
+  source_url: "https://www.konami.com/games/momotetsu/2/products.php"
+  checked_at: "2026-10-09"
+# (leída) Konami, ficha del producto: "対応機種 | Nintendo Switch 2 / Nintendo Switch | 販売地域 | 日本"
+- title_id: "momotaro-dentetsu-2-anata-no-machi-mo-kitto-aru"
+  has_physical_release: false
+  region: "ASIA"
+  evidence: "official"
+  source_url: "https://www.konami.com/games/momotetsu/2/products.php"
+  checked_at: "2026-10-09"

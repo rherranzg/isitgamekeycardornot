@@ -17,8 +17,9 @@ from switch2db.models import (
 from switch2db.worklist import list_missing_regions
 
 # Sku fields a completed title must have filled in every SKU; the ones that only apply to some SKUs
-# (edition_name, cart_size_gb, download_size_gb) are checked apart.
-COMPLETED_SKU_FIELDS = ("distributor", "release_date", "includes_download_code", "ean")
+# (edition_name, download_size_gb) are checked apart. cart_size_gb, includes_download_code and ean are kept
+# when known, but a title can be completed without them.
+COMPLETED_SKU_FIELDS = ("distributor", "release_date")
 
 
 def find_duplicates(values: list[str]) -> list[str]:
@@ -169,7 +170,7 @@ def find_last_checked_errors(
             errors.append(
                 f"titles.yaml: '{title.title_id}' has sources checked on {checked_at}, but no last_checked_at"
             )
-        elif title.last_checked_at < checked_at:
+        elif title.last_checked_day is not None and title.last_checked_day < checked_at:
             errors.append(
                 f"titles.yaml: '{title.title_id}' last_checked_at {title.last_checked_at} is earlier than a "
                 f"source checked on {checked_at}"
@@ -186,8 +187,6 @@ def list_missing_sku_data(sku: Sku) -> list[str]:
     missing += [field_name for field_name in COMPLETED_SKU_FIELDS if getattr(sku, field_name) is None]
     if sku.edition != Edition.STANDARD and sku.edition_name is None:
         missing.append("edition_name")
-    if sku.format == Format.FULL_CART and sku.cart_size_gb is None:
-        missing.append("cart_size_gb")
     if sku.format in DOWNLOAD_FORMATS and sku.download_size_gb is None:
         missing.append("download_size_gb")
     return missing

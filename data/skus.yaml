@@ -1727,6 +1727,22 @@
   evidence: "press_report"  # (leída) a4at.com: "comes as the full game on cartridge, not as a Game Key Card"
   source_url: "https://www.a4at.com/2026/02/19/blueys-quest-for-the-gold-pen-launches-may-28-with-digital-release-and-physical-edition-thats-perfect-for-families"
   verified_at: "2026-09-17"
+# Caja japonesa (full_cart) encontrada el 2026-10-09 en la lista de meisakugame; fecha de la API de Nintendo JP.
+- sku_id: "jp-bluey-s-quest-for-the-gold-pen-standard"
+  title_id: "bluey-s-quest-for-the-gold-pen"
+  region: "JP"
+  edition: "standard"
+  edition_name: null
+  distributor: "SOFTSOURCE"  # (leída) meisakugame, cabecera "【SOFTSOURCE】"
+  release_date: "2026-07-30"  # (API) search.nintendo.jp: BEE_CARD, sdate 2026.7.30
+  format: "full_cart"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) meisakugame: "Bluey’s Quest for the Gold Pen | 2専 | -"
+  source_url: "https://meisakugame.garyoutensei.com/data/switch2packagekey.html"
+  verified_at: "2026-10-09"
 # Coffee Talk: Tokyo: cartucho completo en NA, distribuido por PM Studios.
 - sku_id: "na-coffee-talk-tokyo-standard"
   title_id: "coffee-talk-tokyo"
@@ -1743,6 +1759,22 @@
   evidence: "press_report"  # (leída) Nintendo Everything: "the Nintendo Switch 2 version will be offered on a full cartridge. It will not be a game-key card release"
   source_url: "https://nintendoeverything.com/coffee-talk-tokyo-reveals-nintendo-switch-2-and-switch-physical-release-pre-orders-open/"
   verified_at: "2026-09-17"
+# Caja japonesa (full_cart) encontrada el 2026-10-09 en la lista de meisakugame; fecha de la API de Nintendo JP.
+- sku_id: "jp-coffee-talk-tokyo-standard"
+  title_id: "coffee-talk-tokyo"
+  region: "JP"
+  edition: "standard"
+  edition_name: null
+  distributor: "SOFTSOURCE"  # (leída) meisakugame, cabecera "【SOFTSOURCE】"
+  release_date: "2026-08-27"  # (API) search.nintendo.jp: BEE_CARD, sdate 2026.8.27
+  format: "full_cart"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) meisakugame: "コーヒートーク トーキョー | 2専 | -"
+  source_url: "https://meisakugame.garyoutensei.com/data/switch2packagekey.html"
+  verified_at: "2026-10-09"
 # Brigandine Abyss: cartucho completo en ASIA; game-key card en EU y NA (NIS America).
 - sku_id: "asia-brigandine-abyss-standard"
   title_id: "brigandine-abyss"
@@ -3221,6 +3253,22 @@
   evidence: "press_report"  # (leída) RPG Site: "The physical Switch 2 edition is a full release on cartridge, and not a Game-Key Card."
   source_url: "https://www.rpgsite.net/news/21337-eternal-anima-release-date-switch-2-physical"
   verified_at: "2026-09-17"
+# Caja japonesa (game_key_card) encontrada el 2026-10-09 en la lista de meisakugame; fecha de la API de Nintendo JP.
+- sku_id: "jp-eternal-anima-standard"
+  title_id: "eternal-anima"
+  region: "JP"
+  edition: "standard"
+  edition_name: null
+  distributor: "Marvelous"  # (leída) meisakugame, cabecera "【マーベラス】"
+  release_date: "2027-03-04"  # (API) search.nintendo.jp: BEE_DOWNLOADABLE (caja y descarga), sdate 2027.3.4, pprice 7678
+  format: "game_key_card"
+  cart_size_gb: null
+  download_size_gb: 16  # (leída) meisakugame, columna 容量
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) meisakugame: "ETERNAL ANIMA（エターナルアニマ） | Key | 16GB"
+  source_url: "https://meisakugame.garyoutensei.com/data/switch2packagekey.html"
+  verified_at: "2026-10-09"
 
 # FZ: Formation Z (Clear River Games): Japón, cartucho completo confirmado por Nintendo Life ("It'll
 # arrive in both digital and physical forms, and the physical isn't a Game-Key Card, either."). Formato
@@ -3455,6 +3503,22 @@
   evidence: "press_report"  # (leída) "will contain the game on the cartridge and won't be a Game-Key Card"
   source_url: "https://mynintendonews.com/2025/09/13/hades-2-physical-will-contain-game-on-cartridge-on-nintendo-switch-2/"
   verified_at: "2026-09-17"
+# Caja japonesa (full_cart) encontrada el 2026-10-09 en la lista de meisakugame; fecha de la API de Nintendo JP.
+- sku_id: "jp-hades-ii-standard"
+  title_id: "hades-ii"
+  region: "JP"
+  edition: "standard"
+  edition_name: null
+  distributor: "Supergiant Games"  # (leída) meisakugame, cabecera "【Supergiant Games】"
+  release_date: "2025-11-20"  # (API) search.nintendo.jp: BEE_CARD, sdate 2025.11.20
+  format: "full_cart"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) meisakugame: "HADES II SW2 Edition | 12兼 | -"
+  source_url: "https://meisakugame.garyoutensei.com/data/switch2packagekey.html"
+  verified_at: "2026-10-09"
 
 # Harvest Moon: Echoes of Teradea — ficha de Nintendo Life (EU): "Standard Game Card".
 - sku_id: "eu-harvest-moon-echoes-of-teradea-standard"
@@ -4231,6 +4295,23 @@
   evidence: "official"  # (leída) X/@Dragami_Games: "パッケージ版は、いずれもキーカードではなくゲームカードでの発売となります。"
   source_url: "https://x.com/Dragami_Games/status/2011390290230460594"
   verified_at: "2026-09-17"
+# Caja coreana encontrada el 2026-10-09, sin cita del formato. El catálogo oficial de Nintendo Corea solo lo da como 다운로드 버전: falso negativo de esa API.
+# (leída) Inven Global (https://www.invenglobal.com/articles/21237/korean-version-of-zombie-action-game-lollipop-chainsaw-repop-available-for-pre-order-starting-the-24th): "Arc System Works Asia announced that the Korean physical edition of DRAGAMI GAMES' zombie action title 'Lollipop Chainsaw RePOP' (for Nintendo Switch 2 and PlayStation 5) is set to launch on Thursday, May 28."
+- sku_id: "kr-lollipop-chainsaw-repop-nintendo-switch-2-edition-standard"
+  title_id: "lollipop-chainsaw-repop-nintendo-switch-2-edition"
+  region: "KR"
+  edition: "standard"
+  edition_name: null
+  distributor: "Arc System Works Asia"  # (leída) Inven Global, ver arriba
+  release_date: "2026-05-28"  # (leída) Inven Global, ver arriba
+  format: "unknown"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "unconfirmed"  # la nota no dice si es cartucho completo o key card
+  source_url: null
+  verified_at: "2026-10-09"
 
 # LoveR Kiss: Endless Memories — Nintendo Switch 2 Edition, solo confirmado en Japón (no aparece en el
 # catálogo EU). Misma aclaración oficial de Dragami Games que Lollipop Chainsaw RePOP.
@@ -4483,6 +4564,22 @@
   evidence: "press_report"  # (leída) TheGamer: "Tribute and Dotemu have confirmed the full game will be on the card"
   source_url: "https://www.thegamer.com/marvel-comsic-invasion-physical-release/"
   verified_at: "2026-09-17"
+# Caja japonesa (full_cart) encontrada el 2026-10-09 en la lista de meisakugame; fecha de la API de Nintendo JP.
+- sku_id: "jp-marvel-cosmic-invasion-standard"
+  title_id: "marvel-cosmic-invasion"
+  region: "JP"
+  edition: "standard"
+  edition_name: null
+  distributor: "H2 Interactive"  # (leída) meisakugame, cabecera "【H2 Interactive】"
+  release_date: "2026-03-26"  # (API) search.nintendo.jp: BEE_CARD, sdate 2026.3.26
+  format: "full_cart"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) meisakugame: "MARVEL Cosmic Invasion | 2専 | -"
+  source_url: "https://meisakugame.garyoutensei.com/data/switch2packagekey.html"
+  verified_at: "2026-10-09"
 
 # Marvel's Guardians of the Galaxy: Encore Edition (Square Enix): puerto nativo Switch 2, 5 nov 2026.
 # IGDB no tiene una entrada propia de la Encore Edition en Switch 2 (comprobado 22-09-2026): el title_id del
@@ -5098,6 +5195,22 @@
   evidence: "press_report"  # (leída) Gamereactor: "this included as an on-cartridge product for Switch 2 and not a Game-Key Card"
   source_url: "https://www.gamereactor.eu/mouse-pi-for-hire-physical-and-digital-editions-announced-switch-2-includes-on-cartridge-game-1696233/"
   verified_at: "2026-09-18"
+# Caja japonesa (full_cart) encontrada el 2026-10-09 en la lista de meisakugame; fecha de la API de Nintendo JP.
+- sku_id: "jp-mouse-p-i-for-hire-standard"
+  title_id: "mouse-p-i-for-hire"
+  region: "JP"
+  edition: "standard"
+  edition_name: null
+  distributor: "U&I Entertainment Japan"  # (leída) meisakugame, cabecera "【U&I エンターテイメントジャパン】"
+  release_date: "2026-07-09"  # (API) search.nintendo.jp: BEE_CARD, sdate 2026.7.9
+  format: "full_cart"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) meisakugame: "MOUSE：やとわれの探偵 | 2専 | -"
+  source_url: "https://meisakugame.garyoutensei.com/data/switch2packagekey.html"
+  verified_at: "2026-10-09"
 
 # Muramasa: Revenant Blades (XSEED Games / Marvelous USA): confirmado por RPG Site que Norteamérica tiene el
 # juego completo en el cartucho, mientras Europa y Japón reciben Game-Key Card.
@@ -5930,6 +6043,22 @@
   evidence: "press_report"  # (leída) gonintendo.com: "the Nintendo Switch 2 edition will be a full cartridge release"
   source_url: "https://gonintendo.com/contents/55946-outbound-getting-physical-release-on-switch-and-switch-2"
   verified_at: "2026-09-18"
+# Caja japonesa (game_key_card) encontrada el 2026-10-09 en la lista de meisakugame; fecha de la API de Nintendo JP.
+- sku_id: "jp-outbound-standard"
+  title_id: "outbound"
+  region: "JP"
+  edition: "standard"
+  edition_name: null
+  distributor: "Silver Lining Interactive"  # (leída) meisakugame, cabecera "【Silver Lining】"
+  release_date: null  # (API) search.nintendo.jp: solo la entrada digital (pprice: null): la caja aún no está registrada
+  format: "game_key_card"
+  cart_size_gb: null
+  download_size_gb: 16  # (leída) meisakugame, columna 容量
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) meisakugame: "Outbound | Key | 16GB"
+  source_url: "https://meisakugame.garyoutensei.com/data/switch2packagekey.html"
+  verified_at: "2026-10-09"
 
 # Orbitals: Nintendo Central confirma cartucho físico completo junto al lanzamiento digital; la web
 # oficial (orbitalsgame.com) lista minoristas físicos en EU (Fnac, MediaMarkt, El Corte Inglés...) y NA
@@ -6276,6 +6405,22 @@
   evidence: "press_report"  # (leída) nintendolife.com, guía de cartuchos completos: "R-Type Dimensions III (Switch 2) | 19th May 2026 / ININ Games / KK3"
   source_url: "https://www.nintendolife.com/guides/every-nintendo-switch-2-physical-release-with-the-full-game-on-the-cart"
   verified_at: "2026-09-19"
+# Caja japonesa (full_cart) encontrada el 2026-10-09 en la lista de meisakugame; fecha de la API de Nintendo JP.
+- sku_id: "jp-r-type-dimensions-iii-standard"
+  title_id: "r-type-dimensions-iii"
+  region: "JP"
+  edition: "standard"
+  edition_name: null
+  distributor: "Tozai Games"  # (leída) meisakugame, cabecera "【Tozai Games】"
+  release_date: "2026-07-02"  # (API) search.nintendo.jp: BEE_DOWNLOADABLE (caja y descarga), sdate 2026.7.2, pprice 6930
+  format: "full_cart"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) meisakugame: "R-Type Dimensions III | 2専 | -"
+  source_url: "https://meisakugame.garyoutensei.com/data/switch2packagekey.html"
+  verified_at: "2026-10-09"
 
 # Pool Room Billiard: en Japón sale como SIMPLE Series for Nintendo Switch 2 Vol.2 THE Billiard, en game-key card.
 # EU/NA (24-09-2026): sin caja. (leída) GoNintendo: "available digitally Jan. 22nd, 2026, with a physical edition
@@ -6536,6 +6681,22 @@
       checked_at: "2026-10-09"
       fields: ["release_date"]
   verified_at: "2026-09-19"
+# Caja japonesa (full_cart) encontrada el 2026-10-09 en la lista de meisakugame; fecha de la API de Nintendo JP.
+- sku_id: "jp-ratatan-standard"
+  title_id: "ratatan"
+  region: "JP"
+  edition: "standard"
+  edition_name: null
+  distributor: "Game Source Entertainment"  # (leída) meisakugame, cabecera "【Game Source Entertainment】"
+  release_date: "2026-10-15"  # (API) search.nintendo.jp: BEE_DOWNLOADABLE (caja y descarga), sdate 2026.10.15, pprice 7018
+  format: "full_cart"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) meisakugame: "Ratatan | 2専 | -"
+  source_url: "https://meisakugame.garyoutensei.com/data/switch2packagekey.html"
+  verified_at: "2026-10-09"
 
 # SHINOBI: Art of Vengeance: game-key card en EU (guía de Nintendo Life).
 - sku_id: "eu-shinobi-art-of-vengeance-standard"
@@ -6570,6 +6731,22 @@
   evidence: "press_report"  # (leída) nintendolife.com, guía de game-key cards: "SnowRunner (Switch 2) | 9th Jun 2026 / Focus Entertainment"
   source_url: "https://www.nintendolife.com/guides/every-nintendo-switch-2-game-key-card-release"
   verified_at: "2026-09-19"
+# Caja japonesa (game_key_card) encontrada el 2026-10-09 en la lista de meisakugame; fecha de la API de Nintendo JP.
+- sku_id: "jp-snowrunner-standard"
+  title_id: "snowrunner"
+  region: "JP"
+  edition: "standard"
+  edition_name: null
+  distributor: "PLAION"  # (leída) meisakugame, cabecera "【PLAION】"
+  release_date: "2026-07-16"  # (API) search.nintendo.jp: BEE_CARD, sdate 2026.7.16
+  format: "game_key_card"
+  cart_size_gb: null
+  download_size_gb: 50  # (leída) meisakugame, columna 容量
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) meisakugame: "SnowRunner | Key | 50GB"
+  source_url: "https://meisakugame.garyoutensei.com/data/switch2packagekey.html"
+  verified_at: "2026-10-09"
 
 # Sonic Frontiers: game-key card en EU (guía de Nintendo Life).
 - sku_id: "eu-sonic-frontiers-standard"
@@ -6738,6 +6915,22 @@
   evidence: "press_report"  # (leída) nintendolife.com, guía de game-key cards: "SpongeBob SquarePants: Titans of the Tide (Switch 2) | 18th Nov 2025 / THQ Nordic / Purple Lamp Studios"
   source_url: "https://www.nintendolife.com/guides/every-nintendo-switch-2-game-key-card-release"
   verified_at: "2026-09-19"
+# Caja japonesa (game_key_card) encontrada el 2026-10-09 en la lista de meisakugame; fecha de la API de Nintendo JP.
+- sku_id: "jp-spongebob-squarepants-titans-of-the-tide-standard"
+  title_id: "spongebob-squarepants-titans-of-the-tide"
+  region: "JP"
+  edition: "standard"
+  edition_name: null
+  distributor: "THQ Nordic Japan"  # (leída) meisakugame, cabecera "【THQジャパン】"
+  release_date: "2025-11-18"  # (API) search.nintendo.jp: BEE_DOWNLOADABLE (caja y descarga), sdate 2025.11.18, pprice 5720
+  format: "game_key_card"
+  cart_size_gb: null
+  download_size_gb: 12  # (leída) meisakugame, columna 容量
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) meisakugame: "スポンジ・ボブ：海の荒神たち | Key | 12GB"
+  source_url: "https://meisakugame.garyoutensei.com/data/switch2packagekey.html"
+  verified_at: "2026-10-09"
 - sku_id: "eu-starship-troopers-ultimate-bug-war-standard"
   title_id: "starship-troopers-ultimate-bug-war"
   region: "EU"
@@ -6753,6 +6946,22 @@
   evidence: "press_report"  # (leída) nintendolife.com, guía de game-key cards: "Starship Troopers: Ultimate Bug War! (Switch 2) | 16th Mar 2026 / Dotemu / Auroch Digital"
   source_url: "https://www.nintendolife.com/guides/every-nintendo-switch-2-game-key-card-release"
   verified_at: "2026-09-19"
+# Caja japonesa (game_key_card) encontrada el 2026-10-09 en la lista de meisakugame; fecha de la API de Nintendo JP.
+- sku_id: "jp-starship-troopers-ultimate-bug-war-standard"
+  title_id: "starship-troopers-ultimate-bug-war"
+  region: "JP"
+  edition: "standard"
+  edition_name: null
+  distributor: "Game Source Entertainment"  # (leída) meisakugame, cabecera "【Game Source Entertainment】"
+  release_date: null  # (API) search.nintendo.jp: solo la entrada digital (pprice: null): la caja aún no está registrada
+  format: "game_key_card"
+  cart_size_gb: null
+  download_size_gb: 7  # (leída) meisakugame, columna 容量
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) meisakugame: "★スターシップ・トゥルーパーズ：アルティメット・バグ・ウォー | Key | 7GB"
+  source_url: "https://meisakugame.garyoutensei.com/data/switch2packagekey.html"
+  verified_at: "2026-10-09"
 - sku_id: "eu-survival-kids-standard"
   title_id: "survival-kids"
   region: "EU"
@@ -6768,6 +6977,22 @@
   evidence: "press_report"  # (leída) nintendolife.com, guía de game-key cards: "Survival Kids (Switch 2) | 5th Jun 2025 / Konami / Unity Games"
   source_url: "https://www.nintendolife.com/guides/every-nintendo-switch-2-game-key-card-release"
   verified_at: "2026-09-19"
+# Caja japonesa (game_key_card) encontrada el 2026-10-09 en la lista de meisakugame; fecha de la API de Nintendo JP.
+- sku_id: "jp-survival-kids-standard"
+  title_id: "survival-kids"
+  region: "JP"
+  edition: "standard"
+  edition_name: null
+  distributor: "Konami"  # (leída) meisakugame, cabecera "【KONAMI】"
+  release_date: "2025-06-05"  # (API) search.nintendo.jp: BEE_DOWNLOADABLE (caja y descarga), sdate 2025.6.5, pprice 7480
+  format: "game_key_card"
+  cart_size_gb: null
+  download_size_gb: 3  # (leída) meisakugame, columna 容量
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) meisakugame: "サバイバルキッズ | Key | 3GB"
+  source_url: "https://meisakugame.garyoutensei.com/data/switch2packagekey.html"
+  verified_at: "2026-10-09"
 - sku_id: "eu-tales-of-arise-standard"
   title_id: "tales-of-arise"
   region: "EU"
@@ -7099,6 +7324,22 @@
   evidence: "press_report"  # (leída) nintendolife.com, guía de game-key cards: "Rogue Prince of Persia (Switch 2) | 16th Dec 2025 / Ubisoft / Evil Empire"
   source_url: "https://www.nintendolife.com/guides/every-nintendo-switch-2-game-key-card-release"
   verified_at: "2026-09-19"
+# Caja japonesa (game_key_card) encontrada el 2026-10-09 en la lista de meisakugame; fecha de la API de Nintendo JP.
+- sku_id: "jp-the-rogue-prince-of-persia-standard"
+  title_id: "the-rogue-prince-of-persia"
+  region: "JP"
+  edition: "standard"
+  edition_name: null
+  distributor: "Ubisoft"  # (leída) meisakugame, cabecera "【Ubisoft】"
+  release_date: "2026-04-09"  # (API) search.nintendo.jp: BEE_CARD, sdate 2026.4.9
+  format: "game_key_card"
+  cart_size_gb: null
+  download_size_gb: 1  # (leída) meisakugame, columna 容量
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) meisakugame: "ザ・ローグ：プリンス オブ ペルシャ | Key | 1GB"
+  source_url: "https://meisakugame.garyoutensei.com/data/switch2packagekey.html"
+  verified_at: "2026-10-09"
 - sku_id: "eu-the-walking-dead-streets-of-survival-standard"
   title_id: "the-walking-dead-streets-of-survival"
   region: "EU"
@@ -7357,6 +7598,22 @@
   evidence: "press_report"  # (leída) nintendolife.com, guía de cartuchos completos: "Truxton Extreme (Switch 2) | 30th Jul 2026 / Clear River Games / Tatsujin"
   source_url: "https://www.nintendolife.com/guides/every-nintendo-switch-2-physical-release-with-the-full-game-on-the-cart"
   verified_at: "2026-09-19"
+# Caja japonesa (full_cart) encontrada el 2026-10-09 en la lista de meisakugame; fecha de la API de Nintendo JP.
+- sku_id: "jp-truxton-extreme-standard"
+  title_id: "truxton-extreme"
+  region: "JP"
+  edition: "standard"
+  edition_name: null
+  distributor: "THQ Nordic Japan"  # (leída) meisakugame, cabecera "【THQジャパン】"
+  release_date: null  # (API) search.nintendo.jp: sin ficha del juego base en Switch 2 (solo un DLC de TATSUJIN EXTREME)
+  format: "full_cart"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) meisakugame: "TATSUJIN EXTREME | 2専 | -"
+  source_url: "https://meisakugame.garyoutensei.com/data/switch2packagekey.html"
+  verified_at: "2026-10-09"
 - sku_id: "eu-xenoblade-chronicles-2-nintendo-switch-2-edition-standard"
   title_id: "xenoblade-chronicles-2-nintendo-switch-2-edition"
   region: "EU"
@@ -7372,6 +7629,22 @@
   evidence: "press_report"  # (leída) nintendolife.com, guía de cartuchos completos: "Xenoblade Chronicles 2 - Nintendo Switch 2 Edition (Switch 2) | 30th Jul 2026 / Nintendo / Monolith Soft"
   source_url: "https://www.nintendolife.com/guides/every-nintendo-switch-2-physical-release-with-the-full-game-on-the-cart"
   verified_at: "2026-09-19"
+# Caja japonesa (full_cart) encontrada el 2026-10-09 en la lista de meisakugame; fecha de la API de Nintendo JP.
+- sku_id: "jp-xenoblade-chronicles-2-nintendo-switch-2-edition-standard"
+  title_id: "xenoblade-chronicles-2-nintendo-switch-2-edition"
+  region: "JP"
+  edition: "standard"
+  edition_name: null
+  distributor: "Nintendo"  # (leída) meisakugame, cabecera "【任天堂・Nintendo Switch 2 Edition】"
+  release_date: "2026-10-01"  # (API) search.nintendo.jp: BEE_CARD, sdate 2026.10.1
+  format: "full_cart"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) meisakugame: "Xenoblade2 SW2 Edition | 12兼 | -"
+  source_url: "https://meisakugame.garyoutensei.com/data/switch2packagekey.html"
+  verified_at: "2026-10-09"
 - sku_id: "eu-xenoblade-chronicles-3-nintendo-switch-2-edition-standard"
   title_id: "xenoblade-chronicles-3-nintendo-switch-2-edition"
   region: "EU"
@@ -7387,6 +7660,22 @@
   evidence: "press_report"  # (leída) nintendolife.com, guía de cartuchos completos: "Xenoblade Chronicles 3 - Nintendo Switch 2 Edition (Switch 2) | 3rd Dec 2026 / Nintendo / Monolith Soft"
   source_url: "https://www.nintendolife.com/guides/every-nintendo-switch-2-physical-release-with-the-full-game-on-the-cart"
   verified_at: "2026-09-19"
+# Caja japonesa (full_cart) encontrada el 2026-10-09 en la lista de meisakugame; fecha de la API de Nintendo JP.
+- sku_id: "jp-xenoblade-chronicles-3-nintendo-switch-2-edition-standard"
+  title_id: "xenoblade-chronicles-3-nintendo-switch-2-edition"
+  region: "JP"
+  edition: "standard"
+  edition_name: null
+  distributor: "Nintendo"  # (leída) meisakugame, cabecera "【任天堂・Nintendo Switch 2 Edition】"
+  release_date: "2026-12-03"  # (API) search.nintendo.jp: BEE_DOWNLOADABLE (caja y descarga), sdate 2026.12.3, pprice 9778
+  format: "full_cart"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) meisakugame: "Xenoblade3 SW2 Edition | 12兼 | -"
+  source_url: "https://meisakugame.garyoutensei.com/data/switch2packagekey.html"
+  verified_at: "2026-10-09"
 - sku_id: "eu-xenoblade-chronicles-x-definitive-edition-standard"
   title_id: "xenoblade-chronicles-x-definitive-edition"
   region: "EU"
@@ -7402,6 +7691,22 @@
   evidence: "press_report"  # (leída) nintendolife.com, guía de cartuchos completos: "Xenoblade Chronicles X: Definitive Edition - Nintendo Switch 2 Edition (Switch 2) | 19th Feb 2026 / Nintendo / Monolith Soft"
   source_url: "https://www.nintendolife.com/guides/every-nintendo-switch-2-physical-release-with-the-full-game-on-the-cart"
   verified_at: "2026-09-19"
+# Caja japonesa (full_cart) encontrada el 2026-10-09 en la lista de meisakugame; fecha de la API de Nintendo JP.
+- sku_id: "jp-xenoblade-chronicles-x-definitive-edition-standard"
+  title_id: "xenoblade-chronicles-x-definitive-edition"
+  region: "JP"
+  edition: "standard"
+  edition_name: null
+  distributor: "Nintendo"  # (leída) meisakugame, cabecera "【任天堂・Nintendo Switch 2 Edition】"
+  release_date: "2026-04-16"  # (API) search.nintendo.jp: BEE_CARD, sdate 2026.4.16
+  format: "full_cart"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) meisakugame: "XenobladeX Definitive Edition SW2 Edition | 12兼 | -"
+  source_url: "https://meisakugame.garyoutensei.com/data/switch2packagekey.html"
+  verified_at: "2026-10-09"
 - sku_id: "eu-xenoblade-chronicles-definitive-edition-nintendo-switch-2-edition-standard"
   title_id: "xenoblade-chronicles-definitive-edition-nintendo-switch-2-edition"
   region: "EU"
@@ -7417,6 +7722,22 @@
   evidence: "press_report"  # (leída) nintendolife.com, guía de cartuchos completos: "Xenoblade Chronicles: Definitive Edition - Nintendo Switch 2 Edition (Switch 2) | 9th Jun 2026 / Nintendo / Monolith Soft"
   source_url: "https://www.nintendolife.com/guides/every-nintendo-switch-2-physical-release-with-the-full-game-on-the-cart"
   verified_at: "2026-09-19"
+# Caja japonesa (full_cart) encontrada el 2026-10-09 en la lista de meisakugame; fecha de la API de Nintendo JP.
+- sku_id: "jp-xenoblade-chronicles-definitive-edition-nintendo-switch-2-edition-standard"
+  title_id: "xenoblade-chronicles-definitive-edition-nintendo-switch-2-edition"
+  region: "JP"
+  edition: "standard"
+  edition_name: null
+  distributor: "Nintendo"  # (leída) meisakugame, cabecera "【任天堂・Nintendo Switch 2 Edition】"
+  release_date: "2026-07-30"  # (API) search.nintendo.jp: BEE_CARD, sdate 2026.7.30
+  format: "full_cart"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) meisakugame: "Xenoblade Definitive Edition SW2 Edition | 12兼 | -"
+  source_url: "https://meisakugame.garyoutensei.com/data/switch2packagekey.html"
+  verified_at: "2026-10-09"
 # Yooka-Replaylee: fecha de Nintendo EU (2025-10-08); la guía pone el 9-10-2025.
 - sku_id: "eu-yooka-replaylee-standard"
   title_id: "yooka-replaylee"
@@ -11502,6 +11823,23 @@
   evidence: "press_report"  # (leída) meisakugame: "空の軌跡 the 2nd SW2 Edition | 12兼"
   source_url: "https://meisakugame.garyoutensei.com/data/switch2packagekey.html"
   verified_at: "2026-10-09"
+# Caja coreana encontrada el 2026-10-09, sin cita del formato. El catálogo oficial de Nintendo Corea lo marca con 패키지 버전.
+# (leída) Inven Global (https://www.invenglobal.com/articles/26095/trails-in-the-sky-the-2nd-physical-edition-officially-launches-in-korea-on-september-17): "Gamepia (CEO Jung Jong-hun) officially released the physical edition of Nihon Falcom Corporation's (CEO Toshihiro Kondo) story RPG Trails in the Sky the 2nd in Korea on September 17."
+- sku_id: "kr-trails-in-the-sky-2nd-chapter-standard"
+  title_id: "trails-in-the-sky-2nd-chapter"
+  region: "KR"
+  edition: "standard"
+  edition_name: null
+  distributor: "Gamepia"  # (leída) Inven Global, ver arriba
+  release_date: "2026-09-17"  # (leída) Inven Global, ver arriba
+  format: "unknown"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "unconfirmed"  # la nota no dice si es cartucho completo o key card
+  source_url: null
+  verified_at: "2026-10-09"
 
 # It Takes Two: game-key card en KR (Gamepia, salida el 15-10-2026).
 - sku_id: "kr-it-takes-two-standard"
@@ -11602,4 +11940,20 @@
   ean: null
   evidence: "press_report"  # (leída) Nintendo Everything: "Both are full cartridge titles. With The Séance of Blake Manor, you don’t have to worry about it being a game-key card."
   source_url: "https://nintendoeverything.com/the-seance-of-blake-manor-getting-nintendo-switch-2-physical-release-morsels-switch-1-physical-release/"
+  verified_at: "2026-10-09"
+# Armatus: game-key card en ASIA (DataBlitz, Filipinas). Sin caja localizada en EU, NA, JP ni KR.
+- sku_id: "asia-armatus-standard"
+  title_id: "armatus"
+  region: "ASIA"
+  edition: "standard"
+  edition_name: null
+  distributor: null
+  release_date: "2027-01-07"  # (leída) datablitz.com.ph: "Tentative release dates**: January 7, 2027"
+  format: "game_key_card"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "retailer_listing"  # (listado) título del producto en el buscador: "Nintendo Switch 2 Armatus (Game-Key Card) Pre-Order Downpayment"; la URL conserva "armatus-game-key-card". La ficha leída hoy ya titula "Nintendo Switch 2 Armatus Pre-Order Downpayment" (renombrada)
+  source_url: "https://ecommerce.datablitz.com.ph/products/nintendo-switch-2-armatus-game-key-card-pre-order-downpayment"
   verified_at: "2026-10-09"

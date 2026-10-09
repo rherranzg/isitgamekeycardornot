@@ -22,8 +22,10 @@ TITLES_HEADER = (
     "#   refresh   = research every region again; what is there is a starting point to check\n"
     "#   pending   = what is there is trusted: research only what is missing\n"
     "#   completed = every region answered (a SKU or a sourced no-box entry) and every SKU field filled\n"
-    "# last_checked_at is the last date the title was researched or refreshed, edited by hand along with\n"
-    "# status: null while new, and never earlier than the verified_at of its SKUs or its physical_release.\n"
+    "# last_checked_at is the last time the title was researched or refreshed, with date, time and UTC\n"
+    "# offset (2026-10-09T19:42:10+02:00; older checks only kept the day). It is edited by hand along with\n"
+    "# status: null while new, and its day is never earlier than the verified_at of its SKUs or its\n"
+    "# physical_release.\n"
 )
 CATALOG_HEADER = "# Switch 2 games on IGDB (scripts/download_igdb_catalog.py). Local, not versioned.\n"
 STORE_SNAPSHOT_HEADER = (

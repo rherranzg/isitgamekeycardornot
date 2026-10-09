@@ -48,14 +48,15 @@ otherwise. If `name`, `publisher` or `igdb_id` turn out wrong, fix them by hand 
 When a game will have no box in one region (only digital there), write it in `physical_release.yaml` with
 that `region`, `has_physical_release: false` and its source. With a source, the region counts as answered.
 
-A SKU is complete when it has a `source_url`, its `format` is known and it has `distributor`, `release_date`,
-`includes_download_code` and `ean`, plus `edition_name` (non-standard editions), `cart_size_gb` (`full_cart`)
-or `download_size_gb` (game-key card, code in box). If anything is missing, the title stays `pending`;
+A SKU is complete when it has a `source_url`, its `format` is known and it has `distributor` and `release_date`,
+plus `edition_name` (non-standard editions) and `download_size_gb` (game-key card, code in box).
+`cart_size_gb`, `includes_download_code` and `ean` are written when known, but are not required. If anything is missing, the title stays `pending`;
 `validate_data` fails on a `completed` title that is not.
 
-Each time a title is researched or refreshed, its `last_checked_at` is set to that day, along with the status.
+Each time a title is researched or refreshed, its `last_checked_at` is set to that moment, with date, time and
+UTC offset (`2026-10-09T19:42:10+02:00`), along with the status. Older checks only kept the day.
 It is `null` while the title is `new`, and also on titles researched before the field existed that left no
-SKU or `physical_release.yaml` entry to date them. `validate_data` fails if it is missing or older than the
+SKU or `physical_release.yaml` entry to date them. `validate_data` fails if it is missing or its day is older than the
 `verified_at` of one of its SKUs, the `checked_at` of one of their `updates` or of its `physical_release.yaml`
 entry.
 
@@ -129,7 +130,7 @@ Shows the work queue. **Start with `titles_to_research`** (titles in `new`). Oth
    quote and how it was read: `(leída)`, `(listado)` or `(API)`. Without a source → `format: unknown`,
    `source_url: null`. Each boxed edition is its own SKU.
 4. **Set the title to `completed`** if nothing is missing, or to `pending` if something is, and
-   `last_checked_at` to today.
+   `last_checked_at` to the current date and time.
 
 To fix a wrong value later, edit `skus.yaml`.
 

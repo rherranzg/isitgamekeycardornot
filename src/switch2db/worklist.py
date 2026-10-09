@@ -1,4 +1,4 @@
-from datetime import date
+from datetime import UTC, datetime
 
 from pydantic import BaseModel, Field
 
@@ -37,7 +37,8 @@ def list_titles_by_status(titles: list[Title], status: TitleStatus) -> list[str]
 def list_titles_to_complete(titles: list[Title]) -> list[str]:
     """Return the pending title_ids, least recently checked first (never checked before any date)."""
     pending = [title for title in titles if title.status == TitleStatus.PENDING]
-    return [title.title_id for title in sorted(pending, key=lambda title: title.last_checked_at or date.min)]
+    never = datetime.min.replace(tzinfo=UTC)
+    return [title.title_id for title in sorted(pending, key=lambda title: title.last_checked_moment or never)]
 
 
 def list_skus_without_source(skus: list[Sku]) -> list[str]:

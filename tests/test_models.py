@@ -1,4 +1,4 @@
-from datetime import date
+from datetime import date, datetime, timedelta, timezone
 
 import pytest
 from pydantic import ValidationError
@@ -164,6 +164,26 @@ def test_title_model_validate_accepts_last_checked_at_on_a_researched_title(
     title = Title.model_validate({**title_row, "last_checked_at": "2026-10-09"})
 
     assert title.last_checked_at == date(2026, 10, 9)
+
+
+def test_title_model_validate_accepts_last_checked_at_with_time_and_offset(
+    title_row: dict[str, object],
+) -> None:
+    title = Title.model_validate({**title_row, "last_checked_at": "2026-10-09T19:42:10+02:00"})
+
+    assert title.last_checked_at == datetime(2026, 10, 9, 19, 42, 10, tzinfo=timezone(timedelta(hours=2)))
+    assert title.last_checked_day == date(2026, 10, 9)
+
+
+def test_title_model_validate_raises_when_last_checked_at_has_no_offset(title_row: dict[str, object]) -> None:
+    with pytest.raises(ValidationError, match="last_checked_at"):
+        Title.model_validate({**title_row, "last_checked_at": "2026-10-09T19:42:10"})
+
+
+def test_title_model_dump_keeps_the_time_and_offset_of_last_checked_at(title_row: dict[str, object]) -> None:
+    title = Title.model_validate({**title_row, "last_checked_at": "2026-10-09T19:42:10+02:00"})
+
+    assert title.model_dump(mode="json")["last_checked_at"] == "2026-10-09T19:42:10+02:00"
 
 
 def test_title_model_validate_raises_when_a_new_title_has_last_checked_at(

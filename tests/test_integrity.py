@@ -1,4 +1,4 @@
-from datetime import date
+from datetime import date, datetime, timedelta, timezone
 
 import pytest
 
@@ -34,10 +34,9 @@ from switch2db.models import (
 
 
 def build_complete_skus(sku: Sku) -> list[Sku]:
-    """The given SKU, with every field filled, copied to every region."""
-    complete = sku.model_copy(update={"includes_download_code": False})
+    """The given SKU, with every field completed requires, copied to every region."""
     return [
-        complete.model_copy(update={"region": region, "sku_id": f"{region.lower()}-example-game-standard"})
+        sku.model_copy(update={"region": region, "sku_id": f"{region.lower()}-example-game-standard"})
         for region in Region
     ]
 
@@ -104,6 +103,16 @@ def test_find_orphan_sku_errors_returns_empty_list_when_title_is_known(
     title: Title, eu_key_card_sku: Sku
 ) -> None:
     assert find_orphan_sku_errors([title], [eu_key_card_sku]) == []
+
+
+def test_find_last_checked_errors_compares_the_day_of_a_check_with_time(
+    title: Title, eu_key_card_sku: Sku
+) -> None:
+    checked = title.model_copy(
+        update={"last_checked_at": datetime(2026, 9, 13, 8, 30, tzinfo=timezone(timedelta(hours=2)))}
+    )
+
+    assert find_last_checked_errors([checked], [eu_key_card_sku], []) == []
 
 
 def test_find_last_checked_errors_reports_researched_title_without_date(
@@ -421,21 +430,29 @@ def test_find_merged_title_errors_returns_empty_list_for_a_valid_merge(title: Ti
 
 
 def test_list_missing_sku_data_returns_empty_list_for_a_complete_sku(eu_key_card_sku: Sku) -> None:
-    complete = eu_key_card_sku.model_copy(update={"includes_download_code": False})
+    assert list_missing_sku_data(eu_key_card_sku) == []
 
-    assert list_missing_sku_data(complete) == []
+
+def test_list_missing_sku_data_does_not_require_cart_size_download_code_nor_ean(
+    asia_full_cart_sku: Sku,
+) -> None:
+    without_optional = asia_full_cart_sku.model_copy(
+        update={"cart_size_gb": None, "includes_download_code": None, "ean": None}
+    )
+
+    assert list_missing_sku_data(without_optional) == []
 
 
 def test_list_missing_sku_data_lists_source_format_and_null_fields(sku_without_source: Sku) -> None:
-    assert list_missing_sku_data(sku_without_source) == ["source_url", "format", "includes_download_code"]
+    no_distributor = sku_without_source.model_copy(update={"distributor": None})
+
+    assert list_missing_sku_data(no_distributor) == ["source_url", "format", "distributor"]
 
 
-def test_list_missing_sku_data_requires_the_fields_that_apply_to_the_sku(asia_full_cart_sku: Sku) -> None:
-    deluxe = asia_full_cart_sku.model_copy(
-        update={"edition": Edition.DELUXE, "cart_size_gb": None, "includes_download_code": True}
-    )
+def test_list_missing_sku_data_requires_the_fields_that_apply_to_the_sku(eu_key_card_sku: Sku) -> None:
+    deluxe = eu_key_card_sku.model_copy(update={"edition": Edition.DELUXE, "download_size_gb": None})
 
-    assert list_missing_sku_data(deluxe) == ["edition_name", "cart_size_gb"]
+    assert list_missing_sku_data(deluxe) == ["edition_name", "download_size_gb"]
 
 
 def test_find_completed_title_errors_accepts_every_region_with_complete_skus(
@@ -451,11 +468,11 @@ def test_find_completed_title_errors_reports_missing_regions_and_incomplete_skus
 ) -> None:
     completed = title.model_copy(update={"status": TitleStatus.COMPLETED})
     skus = build_complete_skus(eu_key_card_sku)[:2]
-    skus[1] = skus[1].model_copy(update={"ean": None})
+    skus[1] = skus[1].model_copy(update={"distributor": None})
 
     assert find_completed_title_errors([completed], skus, []) == [
         "titles.yaml: 'example-game' is completed but no SKU nor sourced no-box entry in JP, KR, ASIA",
-        "titles.yaml: 'example-game' is completed but 'na-example-game-standard' lacks ean",
+        "titles.yaml: 'example-game' is completed but 'na-example-game-standard' lacks distributor",
     ]
 
 

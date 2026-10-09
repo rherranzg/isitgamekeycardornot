@@ -1,8 +1,8 @@
-from datetime import date
+from datetime import UTC, date, datetime, time
 from enum import StrEnum
 from typing import Self
 
-from pydantic import BaseModel, ConfigDict, Field, HttpUrl, field_validator, model_validator
+from pydantic import AwareDatetime, BaseModel, ConfigDict, Field, HttpUrl, field_validator, model_validator
 
 from switch2db.slug import slugify
 
@@ -114,9 +114,10 @@ class Title(BaseModel):
         "oldest first",
     )
     status: TitleStatus = Field(..., description="Research status of the title")
-    last_checked_at: date | None = Field(
+    last_checked_at: date | AwareDatetime | None = Field(
         None,
-        description="Last date the title was researched or refreshed; null if never (new) or not on record",
+        description="Last time the title was researched or refreshed, as an ISO 8601 date and time with its "
+        "UTC offset; older checks only kept the day. Null if never (new) or not on record",
     )
 
     @model_validator(mode="after")
@@ -125,6 +126,22 @@ class Title(BaseModel):
         if self.status == TitleStatus.NEW and self.last_checked_at is not None:
             raise ValueError("a new title has no last_checked_at: nobody has researched it yet")
         return self
+
+    @property
+    def last_checked_day(self) -> date | None:
+        """Day of last_checked_at, to compare it with the day-only dates of the sources."""
+        if isinstance(self.last_checked_at, datetime):
+            return self.last_checked_at.date()
+        return self.last_checked_at
+
+    @property
+    def last_checked_moment(self) -> datetime | None:
+        """last_checked_at as a UTC moment, to order titles; a day-only check counts as that day's start."""
+        if isinstance(self.last_checked_at, datetime):
+            return self.last_checked_at.astimezone(UTC)
+        if self.last_checked_at is None:
+            return None
+        return datetime.combine(self.last_checked_at, time.min, tzinfo=UTC)
 
 
 class ExcludedTitle(BaseModel):
