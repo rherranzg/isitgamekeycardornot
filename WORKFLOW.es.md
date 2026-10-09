@@ -188,7 +188,7 @@ Errores:
 Avisos:
 
 - Título `reviewed` o `pending` sin SKUs ni entrada en `physical_release.yaml`.
-- `cart_size_gb` en un SKU que no es `full_cart`, o `download_size_gb` en uno `full_cart`.
+- `cart_size_gb` en un SKU que no es `full_cart`, o `download_size_gb` en uno que no es `game_key_card` ni `code_in_box` (el tamaño de la eShop es el de la versión digital: solo es la descarga de la caja cuando esta es key card o code in box).
 - SKUs cuyo título no está `reviewed`; SKUs en `new`, `pending` o `refresh`.
 - Juego con edición física confirmada sin ningún SKU.
 - Filas de `skus.yaml` que **omiten** una clave opcional en vez de escribirla como `null`.

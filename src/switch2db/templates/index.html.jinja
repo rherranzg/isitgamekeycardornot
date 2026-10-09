@@ -312,7 +312,7 @@
     }
     table.skus {
       width: 100%;
-      min-width: 480px;
+      min-width: 600px;
       border-collapse: collapse;
       margin-top: 0;
       font-size: 0.85rem;
@@ -331,9 +331,12 @@
     }
     table.skus tr:last-child td { border-bottom: none; }
     table.skus td:first-child,
-    table.skus td:nth-child(5) {
+    table.skus td:nth-child(5),
+    table.skus td:nth-child(6) {
       font-variant-numeric: tabular-nums;
     }
+    table.skus .nowrap { white-space: nowrap; }
+    [data-i18n][title] { cursor: help; }
     .badge {
       display: inline-block;
       border-radius: 6px;
@@ -380,6 +383,9 @@
 <body>
   {% macro i18n(pair) -%}
   <span data-i18n="es">{{ pair.es }}</span><span data-i18n="en" hidden>{{ pair.en }}</span>
+  {%- endmacro %}
+  {% macro i18n_hint(pair, hint) -%}
+  <span data-i18n="es" title="{{ hint.es }}">{{ pair.es }}</span><span data-i18n="en" title="{{ hint.en }}" hidden>{{ pair.en }}</span>
   {%- endmacro %}
   {% macro filter_dropdown(title, class_name, labels, unchecked=[]) -%}
   <div class="filter-dropdown">
@@ -460,7 +466,8 @@
             <span class="divergence-flag">{{ i18n(t.divergence_flag) }}</span>
             {% endif %}
             {% if title.release_date_text %}
-            <span class="release-date">{{ i18n(title.release_date_text) }}</span>
+            {% set title_date = {"es": t.title_release_date_prefix.es ~ " " ~ title.release_date_text.es, "en": t.title_release_date_prefix.en ~ " " ~ title.release_date_text.en} %}
+            <span class="release-date">{{ i18n_hint(title_date, t.title_release_date_hint) }}</span>
             {% endif %}
           </div>
           {% endif %}
@@ -482,6 +489,7 @@
                 <th>{{ i18n(t.col_edition) }}</th>
                 <th>{{ i18n(t.col_format) }}</th>
                 <th>{{ i18n(t.col_distributor) }}</th>
+                <th class="nowrap">{{ i18n_hint(t.col_release_date, t.col_release_date_hint) }}</th>
                 <th>{{ i18n(t.col_size) }}</th>
                 <th>{{ i18n(t.col_source) }}</th>
               </tr>
@@ -493,6 +501,7 @@
                 <td>{{ i18n(sku.edition_label) }}</td>
                 <td><span class="badge {{ sku.format_css_class }}">{{ i18n(sku.format_label) }}</span></td>
                 <td>{{ sku.distributor or "—" }}</td>
+                <td class="nowrap">{{ i18n(sku.release_date_text) }}</td>
                 <td>{{ i18n(sku.size_text) }}</td>
                 <td>
                   {% if sku.source_url %}

@@ -93,6 +93,7 @@ def jp_unknown_sku(sku_row: dict[str, object]) -> Sku:
             "sku_id": "jp-example-game-standard",
             "region": "JP",
             "format": "unknown",
+            "download_size_gb": None,
             "evidence": "unconfirmed",
             "source_url": None,
         }

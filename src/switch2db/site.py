@@ -65,6 +65,7 @@ class SkuView(BaseModel):
     format_css_class: str
     edition_label: LocalizedText
     distributor: str | None
+    release_date_text: LocalizedText
     size_text: LocalizedText
     evidence_label: LocalizedText
     source_url: str | None
@@ -101,6 +102,13 @@ def build_size_text(sku: Sku) -> LocalizedText:
     return dict.fromkeys(LANGUAGES, "—")
 
 
+def build_sku_release_date_text(sku: Sku) -> LocalizedText:
+    """Build the date the SKU's box goes on sale in its market, in each language; a dash if unknown."""
+    if sku.release_date is None:
+        return dict.fromkeys(LANGUAGES, "—")
+    return {lang: format_release_date(sku.release_date.isoformat(), lang) for lang in LANGUAGES}
+
+
 def build_sku_view(sku: Sku) -> SkuView:
     """Translate a Sku into the labels and text format the template uses."""
     return SkuView(
@@ -115,6 +123,7 @@ def build_sku_view(sku: Sku) -> SkuView:
             else EDITION_LABELS[sku.edition]
         ),
         distributor=sku.distributor,
+        release_date_text=build_sku_release_date_text(sku),
         size_text=build_size_text(sku),
         evidence_label=EVIDENCE_LABELS[sku.evidence],
         source_url=str(sku.source_url) if sku.source_url else None,

@@ -43,6 +43,14 @@ def test_compute_field_fill_rate_measures_conditional_field_only_where_it_applie
     assert compute_field_fill_rate([eu_key_card_sku, asia_full_cart_sku], "cart_size_gb") == 100.0
 
 
+def test_compute_field_fill_rate_measures_download_size_only_where_a_download_is_needed(
+    eu_key_card_sku: Sku, asia_full_cart_sku: Sku, jp_unknown_sku: Sku
+) -> None:
+    skus = [eu_key_card_sku, asia_full_cart_sku, jp_unknown_sku]
+
+    assert compute_field_fill_rate(skus, "download_size_gb") == 100.0
+
+
 def test_compute_field_fill_rate_returns_none_when_field_applies_to_no_sku(eu_key_card_sku: Sku) -> None:
     assert compute_field_fill_rate([eu_key_card_sku], "cart_size_gb") is None
 

@@ -46,6 +46,20 @@ def test_build_sku_view_size_text_is_dash_when_no_size_known(eu_key_card_sku: Sk
     assert view.size_text == {"es": "—", "en": "—"}
 
 
+def test_build_sku_view_writes_the_physical_release_date(eu_key_card_sku: Sku) -> None:
+    view = build_sku_view(eu_key_card_sku)
+
+    assert view.release_date_text == {"es": "12 mar 2026", "en": "Mar 12, 2026"}
+
+
+def test_build_sku_view_release_date_is_dash_when_unknown(eu_key_card_sku: Sku) -> None:
+    undated_sku = eu_key_card_sku.model_copy(update={"release_date": None})
+
+    view = build_sku_view(undated_sku)
+
+    assert view.release_date_text == {"es": "—", "en": "—"}
+
+
 def test_build_sku_view_keeps_source_url_none_when_missing(jp_unknown_sku: Sku) -> None:
     assert build_sku_view(jp_unknown_sku).source_url is None
 

@@ -40,6 +40,10 @@ class Format(StrEnum):
     UNKNOWN = "unknown"
 
 
+# Formats whose box needs a download to play; download_size_gb only makes sense for them.
+DOWNLOAD_FORMATS = frozenset({Format.GAME_KEY_CARD, Format.CODE_IN_BOX})
+
+
 class Evidence(StrEnum):
     """Level of evidence backing a SKU's format."""
 
@@ -167,7 +171,7 @@ class Sku(BaseModel):
     format: Format = Field(..., description="Physical format of the SKU")
     cart_size_gb: int | None = Field(None, gt=0, description="Cartridge capacity in GB")
     download_size_gb: float | None = Field(
-        None, ge=0, description="Required download in GB; approximate, changes with patches"
+        None, ge=0, description="Download the box needs in GB (key card / code in box); approximate"
     )
     includes_download_code: bool | None = Field(
         None, description="True if the box also includes a download code besides the game (DLC, pass...)"

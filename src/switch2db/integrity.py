@@ -2,7 +2,16 @@ from collections import Counter
 from collections.abc import Sequence
 
 from switch2db.data_store import describe_row
-from switch2db.models import ExcludedTitle, Format, PhysicalRelease, Sku, SkuStatus, Title, TitleStatus
+from switch2db.models import (
+    DOWNLOAD_FORMATS,
+    ExcludedTitle,
+    Format,
+    PhysicalRelease,
+    Sku,
+    SkuStatus,
+    Title,
+    TitleStatus,
+)
 
 # A title in these states has been researched: it must have left SKUs or a physical_release.yaml
 # entry saying there is no box.
@@ -134,11 +143,14 @@ def find_cart_size_warnings(skus: list[Sku]) -> list[str]:
 
 
 def find_download_size_warnings(skus: list[Sku]) -> list[str]:
-    """Warn about full_cart SKUs with download_size_gb: the game is on the cartridge, there is no download."""
+    """Warn about download_size_gb on a SKU whose box is not a game-key card or code in box.
+
+    A full_cart needs no download; on an unknown format the eShop size is the digital one's, not the box's.
+    """
     return [
         f"skus.yaml: '{sku.sku_id}' has download_size_gb with format '{sku.format}'"
         for sku in skus
-        if sku.download_size_gb is not None and sku.format == Format.FULL_CART
+        if sku.download_size_gb is not None and sku.format not in DOWNLOAD_FORMATS
     ]
 
 

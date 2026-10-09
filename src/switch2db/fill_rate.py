@@ -1,6 +1,6 @@
 from collections.abc import Callable, Mapping
 
-from switch2db.models import Edition, Format, Sku
+from switch2db.models import DOWNLOAD_FORMATS, Edition, Format, Sku
 
 # Kept even when below the threshold. Decided on 2026-09-13: the distributor is internal data.
 FIELDS_KEPT_REGARDLESS_OF_FILL = frozenset({"distributor"})
@@ -11,6 +11,11 @@ def is_full_cart(sku: Sku) -> bool:
     return sku.format == Format.FULL_CART
 
 
+def needs_download(sku: Sku) -> bool:
+    """Tell whether the SKU's box needs a download to play (game-key card or code in box)."""
+    return sku.format in DOWNLOAD_FORMATS
+
+
 def is_special_edition(sku: Sku) -> bool:
     """Tell whether the SKU is a non-standard edition, the only kind that has a commercial name."""
     return sku.edition != Edition.STANDARD
@@ -19,6 +24,7 @@ def is_special_edition(sku: Sku) -> bool:
 # Fields that only apply to some SKUs: their fill rate is measured only over those rows.
 FIELD_APPLICABILITY: dict[str, Callable[[Sku], bool]] = {
     "cart_size_gb": is_full_cart,
+    "download_size_gb": needs_download,
     "edition_name": is_special_edition,
 }
 

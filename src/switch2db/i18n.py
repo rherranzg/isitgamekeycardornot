@@ -49,6 +49,22 @@ UI_STRINGS: dict[str, dict[str, str]] = {
     "col_edition": {"es": "Edición", "en": "Edition"},
     "col_format": {"es": "Formato", "en": "Format"},
     "col_distributor": {"es": "Distribuidora", "en": "Distributor"},
+    "col_release_date": {"es": "Salida de la caja", "en": "Box release"},
+    "col_release_date_hint": {
+        "es": "Día en que esta caja sale a la venta en su región.",
+        "en": "Date this box goes on sale in its region.",
+    },
+    "title_release_date_prefix": {"es": "Switch 2:", "en": "Switch 2:"},
+    "title_release_date_hint": {
+        "es": (
+            "Primera salida del juego en Switch 2, digital o en caja. "
+            "La caja de cada región puede salir más tarde: mira la columna «Salida de la caja»."
+        ),
+        "en": (
+            "First release of the game on Switch 2, digital or boxed. "
+            'Each region\'s box may come out later: see the "Box release" column.'
+        ),
+    },
     "col_size": {"es": "Tamaño", "en": "Size"},
     "col_source": {"es": "Fuente", "en": "Source"},
     "cart_suffix": {"es": "GB (cartucho)", "en": "GB (cartridge)"},

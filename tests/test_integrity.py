@@ -123,6 +123,14 @@ def test_find_download_size_warnings_reports_download_size_on_full_cart(asia_ful
     ]
 
 
+def test_find_download_size_warnings_reports_download_size_on_unknown_format(jp_unknown_sku: Sku) -> None:
+    sku_with_eshop_size = jp_unknown_sku.model_copy(update={"download_size_gb": 38.9})
+
+    assert find_download_size_warnings([sku_with_eshop_size]) == [
+        "skus.yaml: 'jp-example-game-standard' has download_size_gb with format 'unknown'"
+    ]
+
+
 def test_find_download_size_warnings_returns_empty_list_for_game_key_card(eu_key_card_sku: Sku) -> None:
     assert find_download_size_warnings([eu_key_card_sku]) == []
 
