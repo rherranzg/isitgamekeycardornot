@@ -677,7 +677,7 @@
   igdb_id: 332314
   name: Baptiste
   publisher: Firenut Games
-  release_date: '2026'
+  release_date: '2026-10-31'
   status: pending
 - title_id: barbie-horse-ride-rescue
   igdb_id: 398424
@@ -699,9 +699,9 @@
   status: reviewed
 - title_id: beyond-the-dark-nightwatch
   igdb_id: 403828
-  name: Beyond the Dark Nightwatch
-  publisher: null
-  release_date: '2026'
+  name: 'Beyond the Dark: Nightwatch'
+  publisher: Atlantis Studio
+  release_date: '2026-10-22'
   status: pending
 - title_id: big-brain-academy-brain-vs-brain
   igdb_id: 166489
@@ -893,7 +893,7 @@
   igdb_id: 403310
   name: 'Call of Duty: Modern Warfare 4'
   publisher: Activision
-  release_date: '2026-08-28'
+  release_date: '2026-10-16'
   status: reviewed
 - title_id: call-of-the-elder-gods
   igdb_id: 347882
@@ -1662,7 +1662,7 @@
   name: Echo Weaver
   publisher: Akupara Games
   release_date: '2026-10-08'
-  status: pending
+  status: reviewed
 - title_id: efootball-kick-off
   igdb_id: 388431
   name: eFootball Kick-Off!
@@ -1871,7 +1871,7 @@
   igdb_id: 375218
   name: Five More Minutes
   publisher: ZUGALU ENTERTAINMENT
-  release_date: 2026-Q3
+  release_date: 2027-Q1
   status: pending
 - title_id: forever-ago
   igdb_id: 136299
@@ -2034,7 +2034,7 @@
   name: Graveyard Keeper II
   publisher: tinyBuild
   release_date: '2026-09-22'
-  status: pending
+  status: reviewed
 - title_id: grid-legends-deluxe-edition
   igdb_id: 186228
   name: 'Grid Legends: Deluxe Edition'
@@ -2116,7 +2116,7 @@
 - title_id: hell-is-us
   igdb_id: 196954
   name: Hell is Us
-  publisher: Nacon
+  publisher: Nacon / 3goo
   release_date: '2026-09-24'
   status: reviewed
 - title_id: hello-kitty-island-adventure
@@ -2586,7 +2586,7 @@
   name: Maestro
   publisher: Double Jack
   release_date: '2026-09-17'
-  status: pending
+  status: reviewed
 - title_id: magical-blush
   igdb_id: 378222
   name: Magical Blush
@@ -2850,7 +2850,7 @@
   name: Moros Protocol
   publisher: Super Rare Originals
   release_date: '2026-10-01'
-  status: pending
+  status: reviewed
 - title_id: moss-the-forgotten-relic
   igdb_id: 401893
   name: 'Moss: The Forgotten Relic'
@@ -3114,7 +3114,7 @@
   name: Order of the Sinking Star
   publisher: Arc Games
   release_date: '2026-10-08'
-  status: pending
+  status: reviewed
 - title_id: otonari-no-tenshi-sama-ni-itsu-no-ma-ni-ka-dame-ningen-ni-sareteita-ken-memorial-vacation
   igdb_id: 411387
   name: 'Otonari no Tenshi-sama ni itsu no ma ni ka Dame Ningen ni Sareteita ken:
@@ -3550,10 +3550,10 @@
   status: reviewed
 - title_id: retrospace
   igdb_id: 231488
-  name: RetroSpace
+  name: Retrospace
   publisher: Kwalee
   release_date: '2026-10-01'
-  status: pending
+  status: reviewed
 - title_id: riichi-mahjong
   igdb_id: 403729
   name: Riichi Mahjong
@@ -3661,7 +3661,7 @@
   name: Scritchy Scratchy
   publisher: Lunch Money Games
   release_date: '2026-09-28'
-  status: pending
+  status: reviewed
 - title_id: sea-of-stars
   igdb_id: 131890
   name: Sea of Stars
@@ -3882,7 +3882,7 @@
   igdb_id: 405412
   name: 'Spyder: Agent 8'
   publisher: PQube Games
-  release_date: '2026'
+  release_date: '2027-02-11'
   status: reviewed
 - title_id: spyro-a-realm-beyond
   igdb_id: 405090
@@ -4406,7 +4406,7 @@
   name: The Séance of Blake Manor
   publisher: Raw Fury
   release_date: '2026-10-27'
-  status: pending
+  status: reviewed
 - title_id: the-touryst-deluxe
   igdb_id: 368773
   name: 'The Touryst: Deluxe'
@@ -4423,14 +4423,14 @@
   igdb_id: 278824
   name: The Witch's Bakery
   publisher: Sunny Lab Games
-  release_date: '2026-10-16'
+  release_date: '2026-10-14'
   status: reviewed
 - title_id: the-witcher-3-wild-hunt-remastered
-  igdb_id: 415005
+  igdb_id: 1942
   name: 'The Witcher 3: Wild Hunt Remastered'
   publisher: CD Projekt RED
   release_date: '2026-09-29'
-  status: pending
+  status: reviewed
 - title_id: the-wolf-among-us-2
   igdb_id: 51523
   name: The Wolf Among Us 2
@@ -4535,7 +4535,7 @@
   status: reviewed
 - title_id: toy-story-retro-roundup-toy-story-3-complete-edition-double-pack
   igdb_id: 404114
-  name: 'Toy Story: Retro Roundup! + Toy Story 3 Complete Edition Double Pack'
+  name: 'Toy Story: Retro Roundup! + Toy Story 3: Complete Edition Double Pack'
   publisher: Atari
   release_date: '2026-10-15'
   status: reviewed
@@ -4718,7 +4718,7 @@
   igdb_id: 376145
   name: Warhammer Survivors
   publisher: Auroch Digital
-  release_date: '2026'
+  release_date: '2026-11-10'
   status: pending
 - title_id: warota-i-live-next-to-the-demon-king-s-castle-lol
   igdb_id: 399887
@@ -4873,7 +4873,7 @@
 - title_id: yobarai-detective-miasma-breaker
   igdb_id: 324241
   name: 'Yobarai Detective: Miasma Breaker'
-  publisher: mebius
+  publisher: Mebius
   release_date: '2025-10-30'
   status: reviewed
 - title_id: yooka-replaylee
@@ -4948,3 +4948,237 @@
   publisher: Megabit Publishing
   release_date: '2027'
   status: pending
+- title_id: among-us-story-on-guard
+  igdb_id: 404707
+  name: 'Among Us Story: On Guard'
+  publisher: Innersloth
+  release_date: '2027-02-17'
+  status: new
+- title_id: arcade-archives-2-crazy-balloon
+  igdb_id: 421093
+  name: 'Arcade Archives 2: Crazy Balloon'
+  publisher: Hamster Corporation
+  release_date: '2026-10-01'
+  status: reviewed
+- title_id: arcade-archives-2-dacholer
+  igdb_id: 419602
+  name: 'Arcade Archives 2: Dacholer'
+  publisher: Hamster Corporation
+  release_date: '2026-09-17'
+  status: reviewed
+- title_id: arcade-archives-2-mr-do-s-castle
+  igdb_id: 420638
+  name: 'Arcade Archives 2: Mr.Do!''s Castle'
+  publisher: Hamster Corporation
+  release_date: '2026-09-17'
+  status: reviewed
+- title_id: banchou-tactics-lion-heart
+  igdb_id: 418327
+  name: 'Banchou Tactics: Lion Heart'
+  publisher: CORECELL
+  release_date: '2026-09-10'
+  status: reviewed
+- title_id: caves-of-qud
+  igdb_id: 24054
+  name: Caves of Qud
+  publisher: Freehold Games / Kitfox Games
+  release_date: null
+  status: new
+- title_id: chit-chat-party
+  igdb_id: 420680
+  name: Chit Chat Party!
+  publisher: GungHo Online Entertainment
+  release_date: '2026-09-16'
+  status: reviewed
+- title_id: chivalware
+  igdb_id: 403821
+  name: Chivalware
+  publisher: Dotemu
+  release_date: '2026-11-05'
+  status: pending
+- title_id: console-archives-chackn-pop
+  igdb_id: 422202
+  name: 'Console Archives: Chack’n Pop'
+  publisher: Hamster Corporation
+  release_date: '2026-10-01'
+  status: reviewed
+- title_id: console-archives-karate-champ
+  igdb_id: 420803
+  name: 'Console Archives: Karate Champ'
+  publisher: Hamster Corporation
+  release_date: '2026-09-24'
+  status: reviewed
+- title_id: crankles
+  igdb_id: 419817
+  name: Crankles
+  publisher: null
+  release_date: null
+  status: new
+- title_id: dawngazer
+  igdb_id: 419735
+  name: Dawngazer
+  publisher: Good Smile Company
+  release_date: '2028'
+  status: new
+- title_id: deadpact
+  igdb_id: 407818
+  name: Deadpact
+  publisher: Low Health Games
+  release_date: null
+  status: new
+- title_id: deck-of-haunts
+  igdb_id: 320726
+  name: Deck of Haunts
+  publisher: DANGEN Entertainment
+  release_date: '2026-10-08'
+  status: reviewed
+- title_id: deep-rock-galactic-survivor
+  igdb_id: 240556
+  name: 'Deep Rock Galactic: Survivor'
+  publisher: Ghost Ship Publishing
+  release_date: '2026-10-07'
+  status: reviewed
+- title_id: desolus
+  igdb_id: 58718
+  name: Desolus
+  publisher: The Quantum Astrophysicists Guild
+  release_date: '2026-10-15'
+  status: pending
+- title_id: dicevaders
+  igdb_id: 386448
+  name: Dicevaders
+  publisher: Pengonauts
+  release_date: '2026-09-29'
+  status: reviewed
+- title_id: dunecrawl
+  igdb_id: 318505
+  name: DuneCrawl
+  publisher: Alientrap
+  release_date: 2026-Q4
+  status: new
+- title_id: fountains
+  igdb_id: 203752
+  name: Fountains
+  publisher: Crunching Koalas
+  release_date: null
+  status: new
+- title_id: foxy-dumplings
+  igdb_id: 386440
+  name: Foxy Dumplings
+  publisher: null
+  release_date: '2026-12-31'
+  status: new
+- title_id: heartworm
+  igdb_id: 132711
+  name: Heartworm
+  publisher: DreadXP
+  release_date: '2026-10-01'
+  status: reviewed
+- title_id: party-party-time-3-nintendo-switch-2-edition
+  igdb_id: 420710
+  name: 'Party Party Time 3: Nintendo Switch 2 Edition'
+  publisher: SAT-BOX
+  release_date: '2026-09-18'
+  status: reviewed
+- title_id: picross-s-climax
+  igdb_id: 418138
+  name: Picross S Climax
+  publisher: Jupiter Corporation
+  release_date: '2026-12-10'
+  status: new
+- title_id: pixel-washer
+  igdb_id: 263778
+  name: Pixel Washer
+  publisher: Acclaim
+  release_date: '2027'
+  status: new
+- title_id: queen-s-domain
+  igdb_id: 258775
+  name: Queen's Domain
+  publisher: Future Friends Games
+  release_date: '2026-10-30'
+  status: pending
+- title_id: rockbeasts
+  igdb_id: 333047
+  name: RockBeasts
+  publisher: Team17
+  release_date: 2027-01
+  status: new
+- title_id: rogue-reigns
+  igdb_id: 361052
+  name: Rogue Reigns
+  publisher: Venn Studios
+  release_date: '2026-10-28'
+  status: pending
+- title_id: shape-of-dreams
+  igdb_id: 293572
+  name: Shape of Dreams
+  publisher: Neowiz / Lizard Smoothie
+  release_date: '2026-09-17'
+  status: reviewed
+- title_id: signal-veil
+  igdb_id: 421169
+  name: Signal Veil
+  publisher: Serafini Productions
+  release_date: null
+  status: new
+- title_id: sky-dust
+  igdb_id: 307180
+  name: Sky Dust
+  publisher: Orbit Studio
+  release_date: null
+  status: new
+- title_id: spirit-valor
+  igdb_id: 319702
+  name: Spirit Valor
+  publisher: Kemco
+  release_date: '2026-09-17'
+  status: reviewed
+- title_id: sulfur
+  igdb_id: 233970
+  name: Sulfur
+  publisher: Perfect Random
+  release_date: '2026-10-28'
+  status: pending
+- title_id: the-bagman
+  igdb_id: 345888
+  name: The Bagman
+  publisher: Glowstick Entertainment
+  release_date: '2027'
+  status: new
+- title_id: the-escapists-3
+  igdb_id: 422261
+  name: The Escapists 3
+  publisher: Team17
+  release_date: '2027'
+  status: new
+- title_id: toem-2
+  igdb_id: 325182
+  name: Toem 2
+  publisher: Popagenda / Something We Made
+  release_date: '2026-09-29'
+  status: reviewed
+- title_id: trinity-trigger-dx
+  igdb_id: 420686
+  name: Trinity Trigger DX
+  publisher: FuRyu
+  release_date: '2026-09-14'
+  status: reviewed
+- title_id: truck-kun-is-supporting-me-from-another-world
+  igdb_id: 400104
+  name: Truck-Kun Is Supporting Me From Another World?!
+  publisher: Frosty Pop Games Inc.
+  release_date: '2026-09-14'
+  status: reviewed
+- title_id: twofold
+  igdb_id: 202559
+  name: Twofold
+  publisher: Studio Élan
+  release_date: '2026-09-17'
+  status: reviewed
+- title_id: waltz-and-jam
+  igdb_id: 288479
+  name: Waltz and Jam
+  publisher: Flyway Games
+  release_date: '2026-12-03'
+  status: new

@@ -110,7 +110,7 @@
   edition: "standard"
   edition_name: null
   distributor: null
-  release_date: null
+  release_date: "2025-06-05"  # (API) Algolia NA: releaseDate 2025-06-05
   format: "game_key_card"
   cart_size_gb: null
   download_size_gb: null
@@ -126,7 +126,7 @@
   edition: "standard"
   edition_name: null
   distributor: null
-  release_date: null
+  release_date: "2025-06-05"  # (API) Nintendo Japón: sdate 2025.6.5, パッケージ版 5.940 yenes
   format: "game_key_card"
   cart_size_gb: null
   download_size_gb: null
@@ -870,7 +870,7 @@
   release_date: "2026-03-31"  # (API) Nintendo EU
   format: "unknown"
   cart_size_gb: null
-  download_size_gb: 38.9  # (API) Nintendo EU: datasize_readable_txt "38.9 GB"
+  download_size_gb: null
   includes_download_code: null
   ean: null
   evidence: "unconfirmed"  # buscado en la ficha de Nintendo Life (nintendolife.com/games/nintendo-switch-2/afl-26): sin campo Physical Release
@@ -909,7 +909,7 @@
   release_date: "2026-04-30"  # (API) Nintendo EU
   format: "unknown"
   cart_size_gb: null
-  download_size_gb: 19.9  # (API) Nintendo EU: datasize_readable_txt "19.9 GB"
+  download_size_gb: null
   includes_download_code: null
   ean: null
   evidence: "unconfirmed"  # buscado en la ficha de Nintendo Life (nintendolife.com/games/nintendo-switch-2/amnesia-rebirth): sin campo Physical Release con formato
@@ -1190,17 +1190,17 @@
   region: "EU"
   edition: "standard"
   edition_name: null
-  distributor: null
-  release_date: null
-  format: "unknown"
+  distributor: "Gameloft"  # (API) eu.json catálogo Nintendo EU
+  release_date: "2026-10-15"
+  format: "game_key_card"
   cart_size_gb: null
-  download_size_gb: null
+  download_size_gb: 2.8
   includes_download_code: null
   ean: null
-  evidence: "unconfirmed"  # (leída) ficha de Nintendo Life sin campo "Physical Release"
-  source_url: null
-  verified_at: "2026-09-17"
-  status: "pending"
+  evidence: "press_report"  # (leída) nintendolife.com, guía de game-key cards (09-10-2026): "Bluey's Happy Snaps (Switch 2) | 15th Oct 2026 / Gameloft"
+  source_url: "https://www.nintendolife.com/guides/every-nintendo-switch-2-game-key-card-release"
+  verified_at: "2026-10-09"
+  status: "reviewed"
 # Atelier Karia: game-key card en NA, edición estándar física anunciada por NIS America.
 - sku_id: "na-atelier-karia-the-night-kingdom-the-guide-of-memories-standard"
   title_id: "atelier-karia-the-night-kingdom-the-guide-of-memories"
@@ -1352,7 +1352,7 @@
   source_url: "https://www.gematsu.com/2025/10/back-to-the-dawn-for-switch-2-switch-launches-march-5-2026"
   verified_at: "2026-09-24"
   status: "reviewed"
-# Bang! Bang! Bandits: edición física confirmada en Japón, pero sin cita del tipo de cartucho.
+# Bang! Bang! Bandits: edición física en Japón, con el juego completo en la tarjeta según meisakugame.
 # EU/NA (24-09-2026): solo eShop (Algolia, eu.json); VideoGamesPlus.ca solo tiene la importación JP. Sin cita de caja
 # occidental.
 - sku_id: "jp-bang-bang-bandits-standard"
@@ -1367,9 +1367,9 @@
   download_size_gb: null
   includes_download_code: null
   ean: null
-  evidence: "press_report"  # (leída) gamecartdb.com: "Bang Bandits Nintendo Switch 2 Edition | Completo en cartucho Importación con inglés"; perfectly-nintendo.com lo lista sin la marca [Game Key Card]: "Bang! Bang! Bandits! Nintendo Switch 2 Edition (Nippon Columbia): 6,930 Yen"
-  source_url: "https://gamecartdb.com/releases/rel-import_english-bang-bang-bandits-nintendo-switch-2-edition"
-  verified_at: "2026-09-24"
+  evidence: "press_report"  # (leída) meisakugame: "バン！バン！バンディッツ SW2 Edition | 12兼 | -"; perfectly-nintendo.com lo lista sin la marca [Game Key Card]: "Bang! Bang! Bandits! Nintendo Switch 2 Edition (Nippon Columbia): 6,930 Yen"
+  source_url: "https://meisakugame.garyoutensei.com/data/switch2packagekey.html"
+  verified_at: "2026-09-27"
   status: "reviewed"
 # Borderlands 4 (estándar y Deluxe): game-key card en EU y NA, confirmado tras el lanzamiento.
 - sku_id: "eu-borderlands-4-standard"
@@ -1501,7 +1501,8 @@
   source_url: "https://www.nintendolife.com/news/2026/08/psa-modern-warfare-4s-switch-2-retail-version-is-apparently-a-code-in-a-box"
   verified_at: "2026-09-17"
   status: "reviewed"
-# Crisis Core -Final Fantasy VII- Reunion: listado físico en Play-Asia (ASIA), pero sin cita firme del tipo de cartucho.
+# Crisis Core -Final Fantasy VII- Reunion: game-key card en ASIA (toyorgame, 09-10-2026); antes solo había el listado de
+# Play-Asia, sin cita firme del tipo de cartucho.
 # EU/NA (24-09-2026): sin caja. La tienda de Square Enix NA y EU (crisis-core-_final-fantasy-vii_-reunion) solo ofrece
 # Nintendo Switch, PS4, PS5 y Xbox, sin Nintendo Switch 2 (sí la ofrece en FF VII Revelation y Romancing SaGa 3).
 - sku_id: "asia-crisis-core-final-fantasy-vii-reunion-standard"
@@ -1511,15 +1512,15 @@
   edition_name: null
   distributor: null
   release_date: "2026-09-23"
-  format: "unknown"
+  format: "game_key_card"
   cart_size_gb: null
   download_size_gb: null
   includes_download_code: null
   ean: null
-  evidence: "unconfirmed"  # (leída) la prensa solo especula "expected to be another Game-Key Card... could also be a placeholder"
-  source_url: null
-  verified_at: "2026-09-17"
-  status: "pending"
+  evidence: "retailer_listing"  # (leída) toyorgame.com.sg, investigado el 09-10-2026: "NS2 Crisis Core -Final Fantasy VII- Reunion (Game-Key Card) (NC16)", variante "(Asia) Standard Edition"
+  source_url: "https://toyorgame.com.sg/products/ns2-crisis-core-final-fantasy-vii-reunion-game-key-card"
+  verified_at: "2026-10-09"
+  status: "reviewed"
 # Dave the Diver: cartucho completo en NA, distribuido por Silver Lining Interactive.
 - sku_id: "na-dave-the-diver-standard"
   title_id: "dave-the-diver"
@@ -1659,7 +1660,7 @@
   edition: "standard"
   edition_name: null
   distributor: null
-  release_date: null
+  release_date: "2027-01-14"  # (leída) Nintendo Life: "Physical Release | Game-Key Card | Release Date | Nintendo Switch 2 | [US] 14th Jan 2027 | [EU] 14th Jan 2027"
   format: "game_key_card"
   cart_size_gb: null
   download_size_gb: null
@@ -1675,7 +1676,7 @@
   edition: "standard"
   edition_name: null
   distributor: null
-  release_date: null
+  release_date: "2027-01-14"  # (leída) Nintendo Life: "Physical Release | Game-Key Card | Release Date | Nintendo Switch 2 | [US] 14th Jan 2027 | [EU] 14th Jan 2027"
   format: "game_key_card"
   cart_size_gb: null
   download_size_gb: null
@@ -2021,9 +2022,9 @@
   download_size_gb: null
   includes_download_code: null
   ean: null
-  evidence: "press_report"  # (leída) gamecartdb.com: "Card-en-Ciel Nintendo Switch 2 Edition | Completo en cartucho Importación con inglés"; perfectly-nintendo.com lo lista sin la marca [Game Key Card]: "Card-en-Ciel Nintendo Switch 2 Edition (Inti Creates): 5,940 Yen"
-  source_url: "https://gamecartdb.com/releases/rel-import_english-card-en-ciel-nintendo-switch-2-edition"
-  verified_at: "2026-09-24"
+  evidence: "press_report"  # (leída) meisakugame, 【インティ・クリエイツ】: "カルドアンシェル SW2 Edition | 12兼 | -"; perfectly-nintendo.com lo lista sin la marca [Game Key Card]: "Card-en-Ciel Nintendo Switch 2 Edition (Inti Creates): 5,940 Yen"
+  source_url: "https://meisakugame.garyoutensei.com/data/switch2packagekey.html"
+  verified_at: "2026-09-27"
   status: "reviewed"
 - sku_id: "na-bubsy-4d-collectors"
   title_id: "bubsy-4d"
@@ -2589,7 +2590,7 @@
   edition: "standard"
   edition_name: null
   distributor: "Koei Tecmo"
-  release_date: null
+  release_date: "2026-01-22"  # (API) Nintendo Japón: sdate 2026.1.22, パッケージ版 8.580 yenes
   format: "game_key_card"
   cart_size_gb: null
   download_size_gb: null
@@ -2859,7 +2860,7 @@
   edition: "standard"
   edition_name: null
   distributor: "LEVEL-5"
-  release_date: null
+  release_date: "2025-08-07"  # (API) Nintendo Japón: entrada BEE_CARD, sdate 2025.8.7 (la digital salió el 2025.6.5), パッケージ版 7.978 yenes
   format: "full_cart"
   cart_size_gb: null
   download_size_gb: null
@@ -3499,7 +3500,7 @@
   edition: "standard"
   edition_name: null
   distributor: "Outright Games"
-  release_date: null
+  release_date: "2026-11-06"  # (API) Algolia NA: releaseDate 2026-11-06 (caja del propio publisher), consultado el 09-10-2026
   format: "game_key_card"
   cart_size_gb: null
   download_size_gb: null
@@ -3535,7 +3536,7 @@
   edition: "standard"
   edition_name: null
   distributor: "Nacon"
-  release_date: null
+  release_date: "2026-10-08"  # (API) Algolia NA: releaseDate 2026-10-08 (caja del propio publisher), consultado el 09-10-2026
   format: "game_key_card"
   cart_size_gb: null
   download_size_gb: null
@@ -3554,7 +3555,7 @@
   edition: "standard"
   edition_name: null
   distributor: "Bandai Namco Entertainment"
-  release_date: null
+  release_date: "2026-10-29"  # (API) Algolia NA: releaseDate 2026-10-29 (caja del propio publisher), consultado el 09-10-2026
   format: "game_key_card"
   cart_size_gb: null
   download_size_gb: null
@@ -3647,15 +3648,15 @@
   edition_name: null
   distributor: "Fangamer"
   release_date: "2026-10-16"  # (leída) fangamer.com: "This is a preorder item which will not ship until October 16, 2026!"
-  format: "unknown"
+  format: "full_cart"
   cart_size_gb: null
   download_size_gb: null
   includes_download_code: null
   ean: null
-  evidence: "unconfirmed"  # buscado en fangamer.com, Nintendo Everything, GoNintendo, Nintendo Life (noticia y guías): sin frase de formato
-  source_url: null
-  verified_at: "2026-09-24"
-  status: "pending"
+  evidence: "press_report"  # (leída) Final Weapon, investigado el 09-10-2026: "The physical edition of Hollow Knight can be pre-ordered too for PlayStation 5 ($35) and Nintendo Switch 2 ($39), with the Switch 2 Edition also capable of running out-of-the-box on Nintendo Switch. Similarly, contained will be a disc or cartridge with the game"
+  source_url: "https://finalweapon.net/2026/05/29/hollow-knight-silksong-physical-editions-launch-in-october/"
+  verified_at: "2026-10-09"
+  status: "reviewed"
 
 # Hollow Knight: Silksong (Nintendo Switch 2 Edition): cartucho completo según la guía de Nintendo Life; es la
 # misma caja de Fangamer en las tres tiendas (EU, NA y JP), con fechas de envío distintas. El DLC Sea of Sorrow
@@ -3893,7 +3894,7 @@
   edition: "standard"
   edition_name: null
   distributor: null
-  release_date: null
+  release_date: "2025-11-06"  # (API) Nintendo EU Solr: dates_released_dts "2025-11-06T00:00:00Z"
   format: "full_cart"
   cart_size_gb: null
   download_size_gb: null
@@ -3909,7 +3910,7 @@
   edition: "standard"
   edition_name: null
   distributor: null
-  release_date: null
+  release_date: "2025-11-06"  # (API) Algolia NA: releaseDate 2025-11-06
   format: "full_cart"
   cart_size_gb: null
   download_size_gb: null
@@ -3959,8 +3960,8 @@
   verified_at: "2026-09-17"
   status: "reviewed"
 
-# It Takes Two (EA): tiene edición física confirmada en Switch 2 (lanzado 15-10-2026), pero no se ha
-# encontrado cita que diga si es Game Card o Game-Key Card. Pendiente de refresh.
+# It Takes Two (EA): tiene edición física confirmada en Switch 2 (sale el 15-10-2026). EU sin cita del formato;
+# NA en game-key card según VideoGamesPlus.ca (09-10-2026). JP y KR, más abajo.
 - sku_id: "eu-it-takes-two-standard"
   title_id: "it-takes-two"
   region: "EU"
@@ -3984,15 +3985,15 @@
   edition_name: null
   distributor: null
   release_date: null
-  format: "unknown"
+  format: "game_key_card"
   cart_size_gb: null
   download_size_gb: null
   includes_download_code: null
   ean: null
-  evidence: "unconfirmed"
-  source_url: null
-  verified_at: "2026-09-17"
-  status: "pending"
+  evidence: "retailer_listing"  # (listado) videogamesplus.ca, investigado el 09-10-2026: "It Takes Two Remastered [Game-Key Card] - Nintendo Switch 2 (PRE-ORDER)"
+  source_url: "https://videogamesplus.ca/products/it-takes-two-nintendo-switch-2-pre-order"
+  verified_at: "2026-10-09"
+  status: "reviewed"
 
 # inKONBINI: One Store. Many Stories: hay edición física en ASIA (ya a la venta) y en NA (anunciada para
 # septiembre 2026, vía Serenity Forge), pero ninguna fuente abierta dice si es cartucho completo o
@@ -4570,7 +4571,7 @@
   edition: "standard"
   edition_name: null
   distributor: null
-  release_date: null
+  release_date: "2027-01-28"  # (API) Algolia NA: releaseDate 2027-01-28
   format: "unknown"
   cart_size_gb: null
   download_size_gb: null
@@ -4586,7 +4587,7 @@
   edition: "standard"
   edition_name: null
   distributor: null
-  release_date: null
+  release_date: "2027-01-28"  # (API) Nintendo Japón: sdate 2027.1.28, パッケージ版 8.980 yenes
   format: "unknown"
   cart_size_gb: null
   download_size_gb: null
@@ -4618,7 +4619,7 @@
   edition: "standard"
   edition_name: null
   distributor: null
-  release_date: null
+  release_date: "2027-01-28"  # (leída) calendario de Nintendo HK: "2027.1.28 | 盒裝版 / 下載版 | 密特羅德 絕境嗜生 | Nintendo"
   format: "full_cart"
   cart_size_gb: null
   download_size_gb: null
@@ -4933,7 +4934,7 @@
   edition: "standard"
   edition_name: null
   distributor: "Capcom"  # (leída) la FAQ es de capcom.co.jp
-  release_date: null
+  release_date: "2026-03-13"  # (API) Nintendo Japón: sdate 2026.3.13, パッケージ版 9.889 yenes
   format: "game_key_card"
   cart_size_gb: null
   download_size_gb: null
@@ -5041,7 +5042,7 @@
   edition: "standard"
   edition_name: null
   distributor: null
-  release_date: null
+  release_date: "2026-07-09"  # (API) Nintendo Japón: sdate 2026.7.9, パッケージ版 5.940 yenes
   format: "full_cart"
   cart_size_gb: null
   download_size_gb: null
@@ -5069,7 +5070,7 @@
   status: "pending"
 
 # Moonlighter 2: The Endless Vault (Silver Lining Interactive / Digital Sun): en Europa se distribuye en
-# cartucho completo según la cuenta de seguimiento "Is Game Key Card?"; Norteamérica sin confirmar el formato.
+# cartucho completo según la ficha de Just For Games (caja PEGI); Norteamérica sin confirmar el formato.
 - sku_id: "eu-moonlighter-2-the-endless-vault-standard"
   title_id: "moonlighter-2-the-endless-vault"
   region: "EU"
@@ -5082,9 +5083,9 @@
   download_size_gb: null
   includes_download_code: null
   ean: null
-  evidence: "press_report"  # (leída) "Is Game Key Card?" (X): "Moonlighter 2: The Endless Vault will be distributed as a real Game Cartridge in EUR. #Switch2 #SilverLiningInteractive #GameCard"
-  source_url: "https://x.com/IsGameKeyCard/status/2085287058050883995"
-  verified_at: "2026-09-18"
+  evidence: "retailer_listing"  # (leída) Just For Games: "ÉDITEUR SILVER LINING | ... | SUPPORT Jeu vidéo sur cartouche | PLATEFORME Nintendo Switch 2" y "CLASSE D'ÂGE PEGI 12" (las game-key cards las marca "SUPPORT Game-Key Card")
+  source_url: "https://www.shop-justforgames.com/products/moonlighter-2-the-endless-vault-switch-2"
+  verified_at: "2026-09-27"
   status: "reviewed"
 - sku_id: "na-moonlighter-2-the-endless-vault-standard"
   title_id: "moonlighter-2-the-endless-vault"
@@ -5354,7 +5355,7 @@
   edition: "standard"
   edition_name: null
   distributor: null
-  release_date: null
+  release_date: "2025-12-05"  # (API) Algolia NA: releaseDate 2025-12-05
   format: "game_key_card"
   cart_size_gb: null
   download_size_gb: null
@@ -5543,24 +5544,24 @@
   region: "JP"
   edition: "standard"
   edition_name: null
-  distributor: null
-  release_date: null
-  format: "unknown"
+  distributor: "Nintendo"  # (API) Nintendo Japón: maker 任天堂
+  release_date: "2026-10-22"  # (API) Nintendo Japón: sdate 2026.10.22, パッケージ版 6.980 yenes
+  format: "full_cart"
   cart_size_gb: null
   download_size_gb: null
   includes_download_code: null
   ean: null
-  evidence: "unconfirmed"
-  source_url: null
-  verified_at: "2026-09-18"
-  status: "pending"
+  evidence: "press_report"  # (leída) meisakugame, investigado el 09-10-2026: "Nintendo Switch Sports Resort | 2専"
+  source_url: "https://meisakugame.garyoutensei.com/data/switch2packagekey.html"
+  verified_at: "2026-10-09"
+  status: "reviewed"
 - sku_id: "kr-nintendo-switch-sports-resort-standard"
   title_id: "nintendo-switch-sports-resort"
   region: "KR"
   edition: "standard"
   edition_name: null
   distributor: null
-  release_date: null
+  release_date: "2026-10-22"  # (leída) Nintendo Korea: "발매일 2026년 10월 22일 (목)", 패키지 버전 68.000 wones; Danawa: "출시일: 2026.10.22."
   format: "full_cart"
   cart_size_gb: null
   download_size_gb: null
@@ -5576,7 +5577,7 @@
   edition: "standard"
   edition_name: null
   distributor: null
-  release_date: null
+  release_date: "2026-10-22"  # (leída) Nintendo SG: "Release Date: 22 October 2026"
   format: "full_cart"
   cart_size_gb: null
   download_size_gb: null
@@ -5648,7 +5649,7 @@
   edition: "standard"
   edition_name: null
   distributor: "スパイク・チュンソフト"  # (leída) meisakugame lo lista bajo 【スパイク・チュンソフト】
-  release_date: null
+  release_date: "2025-07-25"  # (API) Nintendo Japón: sdate 2025.7.25, パッケージ版 5.478 yenes
   format: "game_key_card"
   cart_size_gb: null
   download_size_gb: null
@@ -5845,7 +5846,7 @@
   edition: "standard"
   edition_name: null
   distributor: null
-  release_date: null
+  release_date: "2025-12-04"  # (API) Algolia NA: releaseDate 2025-12-04
   format: "game_key_card"
   cart_size_gb: null
   download_size_gb: null
@@ -5949,7 +5950,7 @@
   edition: "standard"
   edition_name: null
   distributor: null
-  release_date: null
+  release_date: "2026-09-04"  # (API) Nintendo Japón: sdate 2026.9.4, パッケージ版 8.990 yenes
   format: "game_key_card"
   cart_size_gb: null
   download_size_gb: null
@@ -6091,7 +6092,7 @@
   edition: "standard"
   edition_name: null
   distributor: null
-  release_date: null
+  release_date: "2025-10-23"  # (API) Nintendo Japón: sdate 2025.10.23, パッケージ版 7.678 yenes
   format: "game_key_card"
   cart_size_gb: null
   download_size_gb: null
@@ -6298,7 +6299,7 @@
   edition: "standard"
   edition_name: null
   distributor: null
-  release_date: null
+  release_date: "2026-04-17"  # (API) Algolia NA: releaseDate 2026-04-17
   format: "game_key_card"
   cart_size_gb: null
   download_size_gb: null
@@ -6447,7 +6448,7 @@
   edition: "standard"
   edition_name: null
   distributor: "Ubisoft"
-  release_date: null
+  release_date: "2026-12-03"  # (API) Algolia NA: releaseDate 2026-12-03
   format: "game_key_card"
   cart_size_gb: null
   download_size_gb: null
@@ -7902,8 +7903,8 @@
   verified_at: "2026-09-22"
   status: "reviewed"
 
-# Marvel's Guardians of the Galaxy: Encore Edition: caja en EU (The Game Collection, "Media Format | Physical",
-# 5 nov 2026), sin cita del formato para EU → pending. El NA (game-key card) está más arriba.
+# Marvel's Guardians of the Galaxy: Encore Edition: game-key card en EU (guía de Nintendo Life, 09-10-2026). El NA
+# (game-key card) está más arriba.
 - sku_id: "eu-marvel-s-guardians-of-the-galaxy-standard"
   title_id: "marvel-s-guardians-of-the-galaxy"
   region: "EU"
@@ -7911,15 +7912,15 @@
   edition_name: null
   distributor: "CDE Entertainment"  # (API) eu.json: publisher "CDE Entertainment"
   release_date: "2026-11-05"  # (API) eu.json: "Marvel's Guardians of the Galaxy: Encore Edition", dates_released_dts
-  format: "unknown"
+  format: "game_key_card"
   cart_size_gb: null
-  download_size_gb: null
+  download_size_gb: 46.3
   includes_download_code: null
   ean: null
-  evidence: "unconfirmed"
-  source_url: null
-  verified_at: "2026-09-22"
-  status: "pending"
+  evidence: "press_report"  # (leída) nintendolife.com, guía de game-key cards: "Guardians of the Galaxy: Encore Edition (Switch 2) | 5th Nov 2026 / CDE"
+  source_url: "https://www.nintendolife.com/guides/every-nintendo-switch-2-game-key-card-release"
+  verified_at: "2026-10-09"
+  status: "reviewed"
 
 # Little Nightmares II: Enhanced Edition (Bandai Namco): caja en EU (The Game Collection: "Media Format |
 # Physical", "Release Date | 29 May 2026"); su etiqueta "Cartridge" no es cita del formato. Game-key card por el
@@ -8108,7 +8109,7 @@
   verified_at: "2026-09-22"
   status: "reviewed"
 
-# Psyvariar 3 (SUCCESS / Red Art Games): caja de Switch 2 en Japón (API: pprice 6380) sin cita del formato. En
+# Psyvariar 3 (SUCCESS / Red Art Games): caja de Switch 2 en Japón (API: pprice 6380) con el juego completo. En
 # Europa la caja es solo de PS5 (Red Art Games: "Standard and Deluxe physical editions on PS5 in Europe").
 - sku_id: "jp-psyvariar-3-standard"
   title_id: "psyvariar-3"
@@ -8122,9 +8123,9 @@
   download_size_gb: null
   includes_download_code: null
   ean: null
-  evidence: "press_report"  # (leída) gamecartdb.com: "Psyvariar 3 | Completo en cartucho Importación con inglés"; perfectly-nintendo.com lo lista sin la marca [Game Key Card]: "Psyvariar3 (Success): 6,380 Yen"
-  source_url: "https://gamecartdb.com/releases/rel-import_english-psyvariar-3"
-  verified_at: "2026-09-24"
+  evidence: "official"  # (leída) SUCCESS: "※3.Nintendo Switch 2版パッケージソフトは「ゲームカード」となります。（「キーカード」ではありません）"
+  source_url: "https://psyvariar.success-corp.co.jp/3rd/"
+  verified_at: "2026-09-27"
   status: "reviewed"
 
 # Resident Evil (Capcom) en Japón: las cajas de Switch 2 de RE:2, RE:3, RE:4, RE7 y Village son todas
@@ -8313,7 +8314,7 @@
   edition: "standard"
   edition_name: null
   distributor: "Clear River Games"
-  release_date: null
+  release_date: "2026-03-19"  # (leída) GoNintendo: "locked in for a March 19th, 2026, release, and the Switch 2 physical version comes on a traditional Game Card"
   format: "full_cart"
   cart_size_gb: null
   download_size_gb: null
@@ -8366,32 +8367,32 @@
   region: "EU"
   edition: "standard"
   edition_name: null
-  distributor: "Game Source Entertainment"  # (leída) el tuit lleva "#GameSourceEntertainment"
+  distributor: "Game Source Entertainment"  # (leída) Just For Games: "PUBLISHER Game Source Entertainment"
   release_date: null
   format: "full_cart"
   cart_size_gb: null
   download_size_gb: null
   includes_download_code: null
   ean: null
-  evidence: "press_report"  # (leída) Is Game Key Card? (X): "Starsand Island will be distributed as a real Game Cartridge in EUR."
-  source_url: "https://x.com/IsGameKeyCard/status/2083157898855596398"
-  verified_at: "2026-09-23"
+  evidence: "retailer_listing"  # (leída) Just For Games: "MEDIUM Cartridge video game | PLATFORM Nintendo Switch 2 | LANGUAGES English, Japanese | AGE RATING PEGI 12" (las game-key cards las marca "SUPPORT Game-Key Card")
+  source_url: "https://www.shop-justforgames.eu/products/starsand-island-switch-2"
+  verified_at: "2026-09-27"
   status: "reviewed"
 - sku_id: "na-starsand-island-standard"
   title_id: "starsand-island"
   region: "NA"
   edition: "standard"
   edition_name: null
-  distributor: "Game Source Entertainment"  # (leída) el tuit lleva "#GameSourceEntertainment"
+  distributor: "Game Source Entertainment"  # (leída) Physical Forever: "on November 12, 2026 by Game Source Entertainment"
   release_date: "2026-11-12"  # (leída) Nintendo Everything: "Boxed copies will be available on November 12, 2026."
   format: "full_cart"
   cart_size_gb: null
   download_size_gb: null
   includes_download_code: null
   ean: null
-  evidence: "press_report"  # (leída) Is Game Key Card? (X): "Starsand Island will be distributed as a real Game Cartridge in USA."
-  source_url: "https://x.com/IsGameKeyCard/status/2082864682390503856"
-  verified_at: "2026-09-23"
+  evidence: "press_report"  # (leída) Physical Forever: "physical release on Nintendo Switch 2 and PlayStation 5 on November 12, 2026 by Game Source Entertainment ! Switch 2 is all on cartridge! DLC Included!"
+  source_url: "https://physicalforever.substack.com/p/starsand-island-is-coming-to-nintendo"
+  verified_at: "2026-09-27"
   status: "reviewed"
 - sku_id: "jp-starsand-island-standard"
   title_id: "starsand-island"
@@ -8625,7 +8626,10 @@
   verified_at: "2026-09-23"
   status: "pending"
 
-# The Legend of Zelda: Ocarina of Time (Nintendo): cartucho completo en EU, NA, ASIA y JP; sale el 05-11-2026.
+# The Legend of Zelda: Ocarina of Time (Nintendo): cartucho completo en JP (meisakugame) y ASIA (Play-Asia); sale el
+# 05-11-2026. EU/NA (27-09-2026): ni la guía de cartuchos completos de Nintendo Life, ni su ficha, ni sus notas de
+# precio y reservas, ni Nintendo Everything dan el formato; solo hay comentarios de lectores ("I can't see a game key
+# card tag in the corner!!").
 - sku_id: "eu-the-legend-of-zelda-ocarina-of-time-standard"
   title_id: "the-legend-of-zelda-ocarina-of-time"
   region: "EU"
@@ -8633,15 +8637,15 @@
   edition_name: null
   distributor: null
   release_date: "2026-11-05"  # (API) Nintendo EU: dates_released_dts 2026-11-05
-  format: "full_cart"
+  format: "unknown"
   cart_size_gb: null
   download_size_gb: null
   includes_download_code: null
   ean: null
-  evidence: "press_report"  # (leída) Is Game Key Card? (X): "The Legend of Zelda: Ocarina of Time will be distributed as a real Game Cartridge in EUR, USA, ASIA and JAPAN."
-  source_url: "https://x.com/IsGameKeyCard/status/2097656220253380826"
-  verified_at: "2026-09-23"
-  status: "reviewed"
+  evidence: "unconfirmed"
+  source_url: null
+  verified_at: "2026-09-27"
+  status: "pending"
 - sku_id: "na-the-legend-of-zelda-ocarina-of-time-standard"
   title_id: "the-legend-of-zelda-ocarina-of-time"
   region: "NA"
@@ -8649,15 +8653,15 @@
   edition_name: null
   distributor: null
   release_date: "2026-11-05"  # (API) Algolia NA: releaseDate 2026-11-05
-  format: "full_cart"
+  format: "unknown"
   cart_size_gb: null
   download_size_gb: null
   includes_download_code: null
   ean: null
-  evidence: "press_report"  # (leída) Is Game Key Card? (X): "The Legend of Zelda: Ocarina of Time will be distributed as a real Game Cartridge in EUR, USA, ASIA and JAPAN."
-  source_url: "https://x.com/IsGameKeyCard/status/2097656220253380826"
-  verified_at: "2026-09-23"
-  status: "reviewed"
+  evidence: "unconfirmed"
+  source_url: null
+  verified_at: "2026-09-27"
+  status: "pending"
 - sku_id: "jp-the-legend-of-zelda-ocarina-of-time-standard"
   title_id: "the-legend-of-zelda-ocarina-of-time"
   region: "JP"
@@ -8670,9 +8674,9 @@
   download_size_gb: null
   includes_download_code: null
   ean: null
-  evidence: "press_report"  # (leída) Is Game Key Card? (X): "The Legend of Zelda: Ocarina of Time will be distributed as a real Game Cartridge in EUR, USA, ASIA and JAPAN."
-  source_url: "https://x.com/IsGameKeyCard/status/2097656220253380826"
-  verified_at: "2026-09-23"
+  evidence: "press_report"  # (leída) meisakugame, 【任天堂】: "ゼルダの伝説 時のオカリナ | 2専 | -"
+  source_url: "https://meisakugame.garyoutensei.com/data/switch2packagekey.html"
+  verified_at: "2026-09-27"
   status: "reviewed"
 - sku_id: "asia-the-legend-of-zelda-ocarina-of-time-standard"
   title_id: "the-legend-of-zelda-ocarina-of-time"
@@ -8680,15 +8684,15 @@
   edition: "standard"
   edition_name: null
   distributor: null
-  release_date: null
+  release_date: "2026-11-05"  # (leída) calendario de Nintendo HK: "2026.11.5 | 盒裝版 / 下載版 | 薩爾達傳說 時之笛 | Nintendo"
   format: "full_cart"
   cart_size_gb: null
   download_size_gb: null
   includes_download_code: null
   ean: null
-  evidence: "press_report"  # (leída) Is Game Key Card? (X): "The Legend of Zelda: Ocarina of Time will be distributed as a real Game Cartridge in EUR, USA, ASIA and JAPAN."
-  source_url: "https://x.com/IsGameKeyCard/status/2097656220253380826"
-  verified_at: "2026-09-23"
+  evidence: "retailer_listing"  # (listado) Play-Asia: "The Legend of Zelda: Ocarina of Time (Multi-Language) Game Cart (Cover - Asian) for Nintendo Switch 2"
+  source_url: "https://www.play-asia.com/en/the-legend-of-zelda-ocarina-of-time-multi-language/13/70k1i7"
+  verified_at: "2026-09-27"
   status: "reviewed"
 
 # The Midnight Walk (Fast Travel Games): cartucho completo, edición física de Super Rare Games (Sw2#02,
@@ -9075,7 +9079,7 @@
   edition: "standard"
   edition_name: null
   distributor: null
-  release_date: null
+  release_date: "2025-11-06"  # (leída) Danawa: "출시일: 2025.11.06."
   format: "full_cart"
   cart_size_gb: null
   download_size_gb: null
@@ -9128,7 +9132,7 @@
   edition: "standard"
   edition_name: null
   distributor: null
-  release_date: null
+  release_date: "2026-02-05"  # (leída) Danawa: "출시일: 2026.02.05."
   format: "game_key_card"
   cart_size_gb: null
   download_size_gb: null
@@ -9178,7 +9182,7 @@
   edition: "standard"
   edition_name: null
   distributor: null
-  release_date: null
+  release_date: "2026-01-22"  # (leída) Danawa: "출시일: 2026.01.22."
   format: "game_key_card"
   cart_size_gb: null
   download_size_gb: null
@@ -9232,7 +9236,7 @@
   edition: "standard"
   edition_name: null
   distributor: null
-  release_date: null
+  release_date: "2025-10-30"  # (leída) Danawa: "출시일: 2025.10.30."
   format: "game_key_card"
   cart_size_gb: null
   download_size_gb: null
@@ -9298,7 +9302,7 @@
   edition: "standard"
   edition_name: null
   distributor: null
-  release_date: null
+  release_date: "2026-09-23"  # (leída) Danawa: "출시일: 2026.09.23."
   format: "game_key_card"
   cart_size_gb: null
   download_size_gb: null
@@ -9331,7 +9335,7 @@
   edition: "standard"
   edition_name: null
   distributor: null
-  release_date: null
+  release_date: "2026-06-03"  # (leída) Danawa: "출시일: 2026.06.03."
   format: "game_key_card"
   cart_size_gb: null
   download_size_gb: null
@@ -9463,7 +9467,7 @@
   edition: "standard"
   edition_name: null
   distributor: null
-  release_date: null
+  release_date: "2026-06-18"  # (leída) Danawa: "출시일: 2026.06.18."
   format: "game_key_card"
   cart_size_gb: null
   download_size_gb: null
@@ -9568,7 +9572,7 @@
   edition: "standard"
   edition_name: null
   distributor: null
-  release_date: null
+  release_date: "2025-06-05"  # (leída) Danawa: "출시일: 2025.06.05."
   format: "game_key_card"
   cart_size_gb: null
   download_size_gb: null
@@ -9618,7 +9622,7 @@
   edition: "standard"
   edition_name: null
   distributor: null
-  release_date: null
+  release_date: "2026-09-24"  # (leída) Danawa: "출시일: 2026.09.24."
   format: "game_key_card"
   cart_size_gb: null
   download_size_gb: null
@@ -9651,7 +9655,7 @@
   edition: "standard"
   edition_name: null
   distributor: null
-  release_date: null
+  release_date: "2025-06-05"  # (leída) Danawa: "출시일: 2025.06.05."
   format: "game_key_card"
   cart_size_gb: null
   download_size_gb: null
@@ -9684,7 +9688,7 @@
   edition: "standard"
   edition_name: null
   distributor: null
-  release_date: null
+  release_date: "2026-09-17"  # (leída) Danawa: "출시일: 2026.09.17."
   format: "game_key_card"
   cart_size_gb: null
   download_size_gb: null
@@ -9717,7 +9721,7 @@
   edition: "standard"
   edition_name: null
   distributor: null
-  release_date: null
+  release_date: "2026-03-26"  # (leída) Danawa: "출시일: 2026.03.26."
   format: "full_cart"
   cart_size_gb: null
   download_size_gb: null
@@ -9750,7 +9754,7 @@
   edition: "standard"
   edition_name: null
   distributor: null
-  release_date: null
+  release_date: "2025-11-13"  # (leída) Danawa: "출시일: 2025.11.13."
   format: "game_key_card"
   cart_size_gb: null
   download_size_gb: null
@@ -9783,7 +9787,7 @@
   edition: "standard"
   edition_name: null
   distributor: null
-  release_date: null
+  release_date: "2025-11-13"  # (leída) Danawa: "출시일: 2025.11.13."
   format: "game_key_card"
   cart_size_gb: null
   download_size_gb: null
@@ -9816,7 +9820,7 @@
   edition: "standard"
   edition_name: null
   distributor: null
-  release_date: null
+  release_date: "2026-02-12"  # (leída) Danawa: "출시일: 2026.02.12."
   format: "game_key_card"
   cart_size_gb: null
   download_size_gb: null
@@ -9882,7 +9886,7 @@
   edition: "standard"
   edition_name: null
   distributor: null
-  release_date: null
+  release_date: "2026-07-09"  # (leída) Danawa: "출시일: 2026.07.09."
   format: "game_key_card"
   cart_size_gb: null
   download_size_gb: null
@@ -9915,7 +9919,7 @@
   edition: "standard"
   edition_name: null
   distributor: null
-  release_date: null
+  release_date: "2025-11-13"  # (leída) Danawa: "출시일: 2025.11.13."
   format: "game_key_card"
   cart_size_gb: null
   download_size_gb: null
@@ -9948,7 +9952,7 @@
   edition: "standard"
   edition_name: null
   distributor: null
-  release_date: null
+  release_date: "2026-05-21"  # (leída) Danawa: "출시일: 2026.05.21."
   format: "game_key_card"
   cart_size_gb: null
   download_size_gb: null
@@ -9981,7 +9985,7 @@
   edition: "standard"
   edition_name: null
   distributor: null
-  release_date: null
+  release_date: "2025-10-10"  # (leída) Danawa: "출시일: 2025.10.10."
   format: "game_key_card"
   cart_size_gb: null
   download_size_gb: null
@@ -10014,7 +10018,7 @@
   edition: "standard"
   edition_name: null
   distributor: null
-  release_date: null
+  release_date: "2026-08-28"  # (leída) Danawa: "출시일: 2026.08.28."
   format: "game_key_card"
   cart_size_gb: null
   download_size_gb: null
@@ -10047,7 +10051,7 @@
   edition: "standard"
   edition_name: null
   distributor: null
-  release_date: null
+  release_date: "2026-10-09"  # (leída) Danawa: "출시일: 2026.10.09."
   format: "game_key_card"
   cart_size_gb: null
   download_size_gb: null
@@ -10080,7 +10084,7 @@
   edition: "standard"
   edition_name: null
   distributor: null
-  release_date: null
+  release_date: "2026-04-24"  # (leída) Danawa: "출시일: 2026.04.24."
   format: "game_key_card"
   cart_size_gb: null
   download_size_gb: null
@@ -10113,7 +10117,7 @@
   edition: "standard"
   edition_name: null
   distributor: null
-  release_date: null
+  release_date: "2025-07-25"  # (leída) Danawa: "출시일: 2025.07.25."
   format: "game_key_card"
   cart_size_gb: null
   download_size_gb: null
@@ -10146,7 +10150,7 @@
   edition: "standard"
   edition_name: null
   distributor: null
-  release_date: null
+  release_date: "2026-09-03"  # (leída) Danawa: "출시일: 2026.09.03."
   format: "game_key_card"
   cart_size_gb: null
   download_size_gb: null
@@ -10165,7 +10169,7 @@
   edition: "standard"
   edition_name: null
   distributor: null
-  release_date: null
+  release_date: "2026-09-24"  # (leída) web de Sega Asia: "2026.09.24 -Nintendo Switch™2 Version Available Now!"
   format: "game_key_card"
   cart_size_gb: null
   download_size_gb: null
@@ -10379,7 +10383,7 @@
   edition: "standard"
   edition_name: null
   distributor: null
-  release_date: null
+  release_date: "2025-11-20"  # (leída) Nintendo Korea: "발매일 2025년 11월 20일 (목)", 패키지 버전 88.000 wones; Danawa: "출시일: 2025.11.20."
   format: "full_cart"
   cart_size_gb: null
   download_size_gb: null
@@ -10395,7 +10399,7 @@
   edition: "standard"
   edition_name: null
   distributor: null
-  release_date: null
+  release_date: "2025-11-20"  # (leída) Nintendo HK: "發售日 2025年11月20日（四）", 盒裝版 499 HKD
   format: "full_cart"
   cart_size_gb: null
   download_size_gb: null
@@ -10428,7 +10432,7 @@
   edition: "standard"
   edition_name: null
   distributor: null
-  release_date: null
+  release_date: "2025-08-28"  # (leída) Nintendo Korea: "발매일 2025년 8월 28일 (목)", 패키지 버전 84.800 wones; Danawa: "출시일: 2025.08.28."
   format: "full_cart"
   cart_size_gb: null
   download_size_gb: null
@@ -10444,7 +10448,7 @@
   edition: "standard"
   edition_name: null
   distributor: null
-  release_date: null
+  release_date: "2025-08-28"  # (leída) Nintendo HK: "發售日 2025年8月28日（四）", 盒裝版 429 HKD
   format: "full_cart"
   cart_size_gb: null
   download_size_gb: null
@@ -10477,7 +10481,7 @@
   edition: "standard"
   edition_name: null
   distributor: null
-  release_date: null
+  release_date: "2026-02-12"  # (leída) Nintendo Korea: "발매일 2026년 2월 12일 (목)", 패키지 버전 88.000 wones; Danawa: "출시일: 2026.02.12."
   format: "full_cart"
   cart_size_gb: null
   download_size_gb: null
@@ -10493,7 +10497,7 @@
   edition: "standard"
   edition_name: null
   distributor: null
-  release_date: null
+  release_date: "2026-02-12"  # (leída) Nintendo SG: "Release Date: 12 February 2026"
   format: "full_cart"
   cart_size_gb: null
   download_size_gb: null
@@ -10526,7 +10530,7 @@
   edition: "standard"
   edition_name: null
   distributor: null
-  release_date: null
+  release_date: "2025-10-16"  # (leída) Danawa: "출시일: 2025.10.16."
   format: "full_cart"
   cart_size_gb: null
   download_size_gb: null
@@ -10575,7 +10579,7 @@
   edition: "standard"
   edition_name: null
   distributor: null
-  release_date: null
+  release_date: "2026-03-05"  # (leída) Danawa: "출시일: 2026.03.05."
   format: "game_key_card"
   cart_size_gb: null
   download_size_gb: null
@@ -10591,7 +10595,7 @@
   edition: "standard"
   edition_name: null
   distributor: null
-  release_date: null
+  release_date: "2026-03-05"  # (leída) Nintendo SG: "Release Date: 5 March 2026"
   format: "game_key_card"
   cart_size_gb: null
   download_size_gb: null
@@ -10624,7 +10628,7 @@
   edition: "standard"
   edition_name: null
   distributor: null
-  release_date: null
+  release_date: "2026-07-23"  # (leída) Nintendo Korea: "발매일 2026년 7월 23일 (목)", 패키지 버전 73.000 wones; Danawa: "출시일: 2026.07.23."
   format: "full_cart"
   cart_size_gb: null
   download_size_gb: null
@@ -10640,7 +10644,7 @@
   edition: "standard"
   edition_name: null
   distributor: null
-  release_date: null
+  release_date: "2026-07-23"  # (leída) Nintendo HK: "發售日 2026年7月23日（四）", 盒裝版 429 HKD
   format: "full_cart"
   cart_size_gb: null
   download_size_gb: null
@@ -10673,7 +10677,7 @@
   edition: "standard"
   edition_name: null
   distributor: null
-  release_date: null
+  release_date: "2026-07-02"  # (leída) Danawa: "출시일: 2026.07.02."
   format: "full_cart"
   cart_size_gb: null
   download_size_gb: null
@@ -10691,7 +10695,7 @@
   edition: "standard"
   edition_name: null
   distributor: null
-  release_date: null
+  release_date: "2026-06-25"  # (leída) Nintendo SG: "Release Date: 25 June 2026"
   format: "full_cart"
   cart_size_gb: null
   download_size_gb: null
@@ -10724,7 +10728,7 @@
   edition: "standard"
   edition_name: null
   distributor: null
-  release_date: null
+  release_date: "2026-03-26"  # (leída) Nintendo Korea: "발매일 2026년 3월 26일 (목)", 패키지 버전 84.800 wones; Danawa: "출시일: 2026.03.26."
   format: "full_cart"
   cart_size_gb: null
   download_size_gb: null
@@ -10742,7 +10746,7 @@
   edition: "standard"
   edition_name: null
   distributor: null
-  release_date: null
+  release_date: "2026-03-26"  # (leída) Nintendo HK: "發售日 2026年3月26日（四）", 盒裝版 429 HKD
   format: "full_cart"
   cart_size_gb: null
   download_size_gb: null
@@ -10775,7 +10779,7 @@
   edition: "standard"
   edition_name: null
   distributor: null
-  release_date: null
+  release_date: "2025-07-24"  # (leída) Nintendo Korea: "발매일 2025년 7월 24일 (목)", 패키지 버전 84.800 wones; Danawa: "출시일: 2025.07.24."
   format: "full_cart"
   cart_size_gb: null
   download_size_gb: null
@@ -10793,7 +10797,7 @@
   edition: "standard"
   edition_name: null
   distributor: null
-  release_date: null
+  release_date: "2025-07-24"  # (leída) Nintendo SG: "Release date 24 July 2025"
   format: "full_cart"
   cart_size_gb: null
   download_size_gb: null
@@ -10826,7 +10830,7 @@
   edition: "standard"
   edition_name: null
   distributor: null
-  release_date: null
+  release_date: "2025-06-05"  # (leída) Danawa: "출시일: 2025.06.05."
   format: "full_cart"
   cart_size_gb: null
   download_size_gb: null
@@ -10910,7 +10914,7 @@
   edition: "standard"
   edition_name: null
   distributor: null
-  release_date: null
+  release_date: "2026-05-21"  # (leída) Nintendo Korea: "발매일 2026년 5월 21일 (목)", 패키지 버전 78.000 wones; Danawa: "출시일: 2026.05.21."
   format: "full_cart"
   cart_size_gb: null
   download_size_gb: null
@@ -10926,7 +10930,7 @@
   edition: "standard"
   edition_name: null
   distributor: null
-  release_date: null
+  release_date: "2026-05-21"  # (leída) Nintendo HK: "發售日 2026年5月21日（四）", 盒裝版 449 HKD
   format: "full_cart"
   cart_size_gb: null
   download_size_gb: null
@@ -11026,7 +11030,7 @@
   edition: "standard"
   edition_name: null
   distributor: null
-  release_date: null
+  release_date: "2026-02-13"  # (leída) Danawa: "출시일: 2026.02.13."
   format: "full_cart"
   cart_size_gb: null
   download_size_gb: null
@@ -11077,7 +11081,7 @@
   edition: "standard"
   edition_name: null
   distributor: null
-  release_date: null
+  release_date: "2026-06-10"  # (leída) Danawa: "출시일: 2026.06.10."
   format: "full_cart"
   cart_size_gb: null
   download_size_gb: null
@@ -11128,7 +11132,7 @@
   edition: "standard"
   edition_name: null
   distributor: null
-  release_date: null
+  release_date: "2026-07-09"  # (leída) Danawa: "출시일: 2026.07.09."
   format: "game_key_card"
   cart_size_gb: null
   download_size_gb: null
@@ -11177,7 +11181,7 @@
   edition: "standard"
   edition_name: null
   distributor: null
-  release_date: null
+  release_date: "2025-10-28"  # (leída) Danawa: "출시일: 2025.10.28."
   format: "game_key_card"
   cart_size_gb: null
   download_size_gb: null
@@ -11304,15 +11308,15 @@
   edition: "standard"
   edition_name: null
   distributor: "Limited Run Games"  # (leída) GoNintendo: "Limited Run Games has announced that they're giving Full Metal Schoolgirl a physical Switch 2 release"
-  release_date: null  # gamecartdb.com: "Fecha de lanzamiento por confirmar"
+  release_date: null
   format: "full_cart"
   cart_size_gb: null
   download_size_gb: null
   includes_download_code: null
   ean: null
-  evidence: "press_report"  # (leída) gamecartdb.com: "Full Metal Schoolgirl | Completo en cartucho Edición limitada Inglés | ... Norteamérica ✓ · Limited Run Games"; GoNintendo: "includes a box, instruction booklet, Game Card and all DLC"
-  source_url: "https://gamecartdb.com/releases/rel-limited-full-metal-schoolgirl"
-  verified_at: "2026-09-24"
+  evidence: "press_report"  # (leída) GoNintendo: "There's just one standard edition of the game, priced at $50, which includes a box, instruction booklet, Game Card and all DLC."
+  source_url: "https://gonintendo.com/contents/63514-full-metal-schoolgirl-getting-physical-switch-2-release"
+  verified_at: "2026-09-27"
   status: "reviewed"
 
 # Octopath Traveler + Octopath Traveler II Bundle (Square Enix): en Japón es la única caja de los dos juegos
@@ -11425,4 +11429,485 @@
   evidence: "press_report"  # (leída) GamesRadar: "The new $49.99 (via Best Buy) Switch 2 Cozy Edition is not even a game-key card release, and remains a download code in a box like the version before it."
   source_url: "https://www.gamesradar.com/games/disneys-dreamlight-valley-switch-2-cozy-edition-is-up-for-pre-order-but-its-cheaper-to-stick-with-the-magic-of-the-og/"
   verified_at: "2026-09-26"
+  status: "reviewed"
+
+# Clive Barker's Hellraiser: Revival: game-key card en EU (guía de Nintendo Life, 09-10-2026).
+- sku_id: "eu-clive-barker-s-hellraiser-revival-standard"
+  title_id: "clive-barker-s-hellraiser-revival"
+  region: "EU"
+  edition: "standard"
+  edition_name: null
+  distributor: "Saber Interactive"  # (API) eu.json catálogo Nintendo EU
+  release_date: "2026-10-08"
+  format: "game_key_card"
+  cart_size_gb: null
+  download_size_gb: 42.1
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) nintendolife.com, guía de game-key cards: "Clive Barker's Hellraiser: Revival (Switch 2) | 8th Oct 2026 / Saber Interactive"
+  source_url: "https://www.nintendolife.com/guides/every-nintendo-switch-2-game-key-card-release"
+  verified_at: "2026-10-09"
+  status: "reviewed"
+
+# Hell is Us: game-key card en EU (guía de Nintendo Life) y en JP, donde 3goo la saca como Special Edition el
+# 24-09-2026, antes que en Occidente. (API) Nintendo Japón: la entrada con pprice (caja) es "ヘル・イズ・アス", icode ABTUB.
+- sku_id: "eu-hell-is-us-standard"
+  title_id: "hell-is-us"
+  region: "EU"
+  edition: "standard"
+  edition_name: null
+  distributor: "Nacon"  # (API) eu.json catálogo Nintendo EU
+  release_date: "2026-10-08"
+  format: "game_key_card"
+  cart_size_gb: null
+  download_size_gb: 23.7
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) nintendolife.com, guía de game-key cards: "Hell Is Us (Switch 2) | 8th Oct 2026 / Nacon / Rogue Factor"
+  source_url: "https://www.nintendolife.com/guides/every-nintendo-switch-2-game-key-card-release"
+  verified_at: "2026-10-09"
+  status: "reviewed"
+- sku_id: "jp-hell-is-us-collectors"
+  title_id: "hell-is-us"
+  region: "JP"
+  edition: "collectors"
+  edition_name: "Special Edition"  # (leída) meisakugame: "スペシャルエディション"
+  distributor: "3goo"  # (API) Nintendo Japón: maker 3goo
+  release_date: "2026-09-24"  # (API) Nintendo Japón: sdate 2026.9.24
+  format: "game_key_card"
+  cart_size_gb: null
+  download_size_gb: 24  # (leída) meisakugame, columna 容量
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) meisakugame: "ヘル・イズ・アス スペシャルエディション | Key | 24GB"
+  source_url: "https://meisakugame.garyoutensei.com/data/switch2packagekey.html"
+  verified_at: "2026-10-09"
+  status: "reviewed"
+
+# LEGO Batman: Legacy of the Dark Knight: game-key card en EU (guía de Nintendo Life) y en JP (meisakugame).
+- sku_id: "eu-lego-batman-legacy-of-the-dark-knight-standard"
+  title_id: "lego-batman-legacy-of-the-dark-knight"
+  region: "EU"
+  edition: "standard"
+  edition_name: null
+  distributor: "WB Games"  # (API) eu.json catálogo Nintendo EU
+  release_date: "2026-09-18"
+  format: "game_key_card"
+  cart_size_gb: null
+  download_size_gb: 23.7
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) nintendolife.com, guía de game-key cards: "LEGO Batman: Legacy of the Dark Knight (Switch 2) | 18th Sep 2026 / Warner Bros Games / TT Games"
+  source_url: "https://www.nintendolife.com/guides/every-nintendo-switch-2-game-key-card-release"
+  verified_at: "2026-10-09"
+  status: "reviewed"
+- sku_id: "jp-lego-batman-legacy-of-the-dark-knight-standard"
+  title_id: "lego-batman-legacy-of-the-dark-knight"
+  region: "JP"
+  edition: "standard"
+  edition_name: null
+  distributor: "WB Games"  # (API) Nintendo Japón: maker WB Games
+  release_date: "2026-09-18"  # (API) Nintendo Japón: sdate 2026.9.18, icode AA2EA
+  format: "game_key_card"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) meisakugame: "レゴ®バットマン レガシー・オブ・ザ・ダークナイト | Key"
+  source_url: "https://meisakugame.garyoutensei.com/data/switch2packagekey.html"
+  verified_at: "2026-10-09"
+  status: "reviewed"
+
+# Hasbro Games Junior Collection: game-key card en EU (guía de Nintendo Life). eu.json da 66.0 MB de descarga, que no
+# cuadra con una recopilación: no se escribe.
+- sku_id: "eu-hasbro-games-junior-collection-standard"
+  title_id: "hasbro-games-junior-collection"
+  region: "EU"
+  edition: "standard"
+  edition_name: null
+  distributor: "Outright Games"  # (API) eu.json catálogo Nintendo EU
+  release_date: "2026-11-06"
+  format: "game_key_card"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) nintendolife.com, guía de game-key cards: "Hasbro Games Junior Collection (Switch 2) | 6th Nov 2026 / Outright Games / Casual Brothers"
+  source_url: "https://www.nintendolife.com/guides/every-nintendo-switch-2-game-key-card-release"
+  verified_at: "2026-10-09"
+  status: "reviewed"
+
+# The Crew Motorfest: game-key card en NA (lista de Nintendo Everything) y en JP (meisakugame).
+- sku_id: "na-the-crew-motorfest-standard"
+  title_id: "the-crew-motorfest"
+  region: "NA"
+  edition: "standard"
+  edition_name: null
+  distributor: "Ubisoft"
+  release_date: "2026-10-08"  # (API) Algolia NA: releaseDate 2026-10-08 (caja del propio Ubisoft)
+  format: "game_key_card"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) aparece en la lista de Nintendo Everything de game-key cards: "The Crew Motorfest"
+  source_url: "https://nintendoeverything.com/list-of-all-nintendo-switch-2-games-with-a-game-key-card-release/"
+  verified_at: "2026-10-09"
+  status: "reviewed"
+- sku_id: "jp-the-crew-motorfest-standard"
+  title_id: "the-crew-motorfest"
+  region: "JP"
+  edition: "standard"
+  edition_name: null
+  distributor: "Ubisoft"  # (API) Nintendo Japón: maker ユービーアイソフト
+  release_date: "2026-10-08"  # (API) Nintendo Japón: sdate 2026.10.8, icode AA2UA
+  format: "game_key_card"
+  cart_size_gb: null
+  download_size_gb: 52  # (leída) meisakugame, columna 容量
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) meisakugame: "ザ クルー：モーターフェス | Key | 52GB"
+  source_url: "https://meisakugame.garyoutensei.com/data/switch2packagekey.html"
+  verified_at: "2026-10-09"
+  status: "reviewed"
+
+# Village in the Shade: game-key card en NA (lista de Nintendo Everything) y en JP, donde salió antes como ほの暮しの庭
+# (RPG Site: "Village in the Shade launched last month in Japan for the same platforms").
+- sku_id: "na-village-in-the-shade-standard"
+  title_id: "village-in-the-shade"
+  region: "NA"
+  edition: "standard"
+  edition_name: null
+  distributor: "NIS America"
+  release_date: "2026-10-27"  # (API) Algolia NA: releaseDate 2026-10-27 (caja de NIS America)
+  format: "game_key_card"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) aparece en la lista de Nintendo Everything de game-key cards: "Village in the Shade"
+  source_url: "https://nintendoeverything.com/list-of-all-nintendo-switch-2-games-with-a-game-key-card-release/"
+  verified_at: "2026-10-09"
+  status: "reviewed"
+- sku_id: "jp-village-in-the-shade-standard"
+  title_id: "village-in-the-shade"
+  region: "JP"
+  edition: "standard"
+  edition_name: null
+  distributor: "Nippon Ichi Software"  # (API) Nintendo Japón: maker 日本一ソフトウェア
+  release_date: "2026-07-30"  # (API) Nintendo Japón: sdate 2026.7.30, icode AA5VA, pprice 9020
+  format: "game_key_card"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) meisakugame: "ほの暮しの庭 | Key"
+  source_url: "https://meisakugame.garyoutensei.com/data/switch2packagekey.html"
+  verified_at: "2026-10-09"
+  status: "reviewed"
+
+# Call of the Elder Gods y Sonic Frontiers: game-key card en NA (lista de Nintendo Everything). Sin fecha de la caja
+# NA: en EU la caja de Call of the Elder Gods salió meses después de la digital.
+- sku_id: "na-call-of-the-elder-gods-standard"
+  title_id: "call-of-the-elder-gods"
+  region: "NA"
+  edition: "standard"
+  edition_name: null
+  distributor: null
+  release_date: null
+  format: "game_key_card"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) aparece en la lista de Nintendo Everything de game-key cards: "Call of the Elder Gods"
+  source_url: "https://nintendoeverything.com/list-of-all-nintendo-switch-2-games-with-a-game-key-card-release/"
+  verified_at: "2026-10-09"
+  status: "reviewed"
+- sku_id: "na-sonic-frontiers-standard"
+  title_id: "sonic-frontiers"
+  region: "NA"
+  edition: "standard"
+  edition_name: null
+  distributor: "Sega"
+  release_date: null
+  format: "game_key_card"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) aparece en la lista de Nintendo Everything de game-key cards: "Sonic Frontiers: Definitive Edition"
+  source_url: "https://nintendoeverything.com/list-of-all-nintendo-switch-2-games-with-a-game-key-card-release/"
+  verified_at: "2026-10-09"
+  status: "reviewed"
+
+# Lies of P: Complete Edition: cartucho completo en EU (guía de cartuchos completos de Nintendo Life). Sin fecha de la caja.
+- sku_id: "eu-lies-of-p-standard"
+  title_id: "lies-of-p"
+  region: "EU"
+  edition: "standard"
+  edition_name: null
+  distributor: null
+  release_date: null
+  format: "full_cart"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) nintendolife.com, guía de cartuchos completos: "Lies of P: Complete Edition (Switch 2) | 6th Aug 2026 / Neowiz"
+  source_url: "https://www.nintendolife.com/guides/every-nintendo-switch-2-physical-release-with-the-full-game-on-the-cart"
+  verified_at: "2026-10-09"
+  status: "reviewed"
+
+# Cajas japonesas de la lista de meisakugame (09-10-2026) de juegos que salen o han salido en estos días.
+- sku_id: "jp-call-of-duty-modern-warfare-4-standard"
+  title_id: "call-of-duty-modern-warfare-4"
+  region: "JP"
+  edition: "standard"
+  edition_name: null
+  distributor: "Activision"  # (API) Nintendo Japón: maker Activision
+  release_date: null
+  format: "code_in_box"
+  cart_size_gb: null
+  download_size_gb: 87  # (leída) meisakugame, columna 容量
+  includes_download_code: true  # (leída) meisakugame: "「DL」は、ゲームカードなし、ダウンロードコード付属のもの"
+  ean: null
+  evidence: "press_report"  # (leída) meisakugame: "Call of Duty Modern Warfare 4 | DL | 87GB"
+  source_url: "https://meisakugame.garyoutensei.com/data/switch2packagekey.html"
+  verified_at: "2026-10-09"
+  status: "reviewed"
+- sku_id: "jp-minecraft-standard"
+  title_id: "minecraft"
+  region: "JP"
+  edition: "standard"
+  edition_name: null
+  distributor: "Microsoft"  # (API) Nintendo Japón: maker Mojang/日本マイクロソフト
+  release_date: "2026-10-28"  # (API) Nintendo Japón: sdate 2026.10.28, icode ABZVA
+  format: "game_key_card"
+  cart_size_gb: null
+  download_size_gb: 3  # (leída) meisakugame, columna 容量
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) meisakugame: "Minecraft | Key | 3GB"
+  source_url: "https://meisakugame.garyoutensei.com/data/switch2packagekey.html"
+  verified_at: "2026-10-09"
+  status: "reviewed"
+- sku_id: "jp-minecraft-dungeons-ii-standard"
+  title_id: "minecraft-dungeons-ii"
+  region: "JP"
+  edition: "standard"
+  edition_name: null
+  distributor: "Microsoft"  # (API) Nintendo Japón: maker Mojang/日本マイクロソフト
+  release_date: "2026-09-30"  # (API) Nintendo Japón: sdate 2026.9.30 de la entrada BEE_CARD (la digital es del 2026.9.29)
+  format: "game_key_card"
+  cart_size_gb: null
+  download_size_gb: 12  # (leída) meisakugame, columna 容量
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) meisakugame: "Minecraft Dungeons II | Key | 12GB"
+  source_url: "https://meisakugame.garyoutensei.com/data/switch2packagekey.html"
+  verified_at: "2026-10-09"
+  status: "reviewed"
+- sku_id: "jp-ea-sports-fc-27-standard"
+  title_id: "ea-sports-fc-27"
+  region: "JP"
+  edition: "standard"
+  edition_name: null
+  distributor: "Electronic Arts"  # (API) Nintendo Japón: maker エレクトロニック・アーツ
+  release_date: "2026-09-25"  # (API) Nintendo Japón: sdate 2026.9.25, icode ABJUA
+  format: "game_key_card"
+  cart_size_gb: null
+  download_size_gb: 66  # (leída) meisakugame, columna 容量
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) meisakugame: "EA SPORTS FC 27 | Key | 66GB"
+  source_url: "https://meisakugame.garyoutensei.com/data/switch2packagekey.html"
+  verified_at: "2026-10-09"
+  status: "reviewed"
+- sku_id: "jp-it-takes-two-standard"
+  title_id: "it-takes-two"
+  region: "JP"
+  edition: "standard"
+  edition_name: null
+  distributor: "Electronic Arts"  # (leída) meisakugame: sección 【エレクトロニック・アーツ】
+  release_date: null
+  format: "game_key_card"
+  cart_size_gb: null
+  download_size_gb: 38  # (leída) meisakugame, columna 容量
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) meisakugame: "It Takes Two | Key | 38GB"
+  source_url: "https://meisakugame.garyoutensei.com/data/switch2packagekey.html"
+  verified_at: "2026-10-09"
+  status: "reviewed"
+- sku_id: "jp-one-piece-grand-gourmet-standard"
+  title_id: "one-piece-grand-gourmet"
+  region: "JP"
+  edition: "standard"
+  edition_name: null
+  distributor: "Bandai Namco Entertainment"  # (API) Nintendo Japón: maker バンダイナムコエンターテインメント
+  release_date: "2026-10-22"  # (API) Nintendo Japón: sdate 2026.10.22, icode ABK6A, pprice 3960
+  format: "game_key_card"
+  cart_size_gb: null
+  download_size_gb: 0.3  # (leída) meisakugame, columna 容量
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) meisakugame: "ONE PIECE 海のごちそうレストラン | Key | 300MB"
+  source_url: "https://meisakugame.garyoutensei.com/data/switch2packagekey.html"
+  verified_at: "2026-10-09"
+  status: "reviewed"
+- sku_id: "jp-stellar-blade-standard"
+  title_id: "stellar-blade"
+  region: "JP"
+  edition: "standard"
+  edition_name: null
+  distributor: "Shift Up"  # (API) Nintendo Japón: maker SHIFT UP
+  release_date: "2026-11-06"  # (API) Nintendo Japón: sdate 2026.11.6, icode AB86A
+  format: "full_cart"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) meisakugame: "Stellar Blade コンプリートエディション | 2専"
+  source_url: "https://meisakugame.garyoutensei.com/data/switch2packagekey.html"
+  verified_at: "2026-10-09"
+  status: "reviewed"
+- sku_id: "jp-dynasty-warriors-3-complete-edition-remastered-standard"
+  title_id: "dynasty-warriors-3-complete-edition-remastered"
+  region: "JP"
+  edition: "standard"
+  edition_name: null
+  distributor: "Koei Tecmo"  # (API) Nintendo Japón: maker コーエーテクモゲームス
+  release_date: "2026-10-01"  # (API) Nintendo Japón: sdate 2026.10.1, icode ABCVA
+  format: "game_key_card"
+  cart_size_gb: null
+  download_size_gb: 32  # (leída) meisakugame, columna 容量
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) meisakugame: "真・三國無双２ with 猛将伝 Remastered | Key | 32GB"
+  source_url: "https://meisakugame.garyoutensei.com/data/switch2packagekey.html"
+  verified_at: "2026-10-09"
+  status: "reviewed"
+- sku_id: "jp-trails-in-the-sky-2nd-chapter-standard"
+  title_id: "trails-in-the-sky-2nd-chapter"
+  region: "JP"
+  edition: "standard"
+  edition_name: null
+  distributor: "Nihon Falcom"  # (API) Nintendo Japón: maker 日本ファルコム
+  release_date: "2026-09-17"  # (API) Nintendo Japón: sdate 2026.9.17, icode BTWMA, pprice 8950
+  format: "full_cart"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) meisakugame: "空の軌跡 the 2nd SW2 Edition | 12兼"
+  source_url: "https://meisakugame.garyoutensei.com/data/switch2packagekey.html"
+  verified_at: "2026-10-09"
+  status: "reviewed"
+
+# It Takes Two: game-key card en KR (Gamepia, salida el 15-10-2026).
+- sku_id: "kr-it-takes-two-standard"
+  title_id: "it-takes-two"
+  region: "KR"
+  edition: "standard"
+  edition_name: null
+  distributor: "Gamepia"  # (leída) Inven Global: "Gamepia will begin pre-orders for the physical Nintendo Switch 2 edition"
+  release_date: "2026-10-15"  # (leída) Inven Global: "The official release date in Korea is October 15"
+  format: "game_key_card"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) Inven Global: "includes a game card (keycard)"
+  source_url: "https://www.invenglobal.com/articles/26562/it-takes-two-nintendo-switch-2-version-pre-orders-open-september-30"
+  verified_at: "2026-10-09"
+  status: "reviewed"
+
+# The Crew Motorfest: game-key card en ASIA (toyorgame).
+- sku_id: "asia-the-crew-motorfest-standard"
+  title_id: "the-crew-motorfest"
+  region: "ASIA"
+  edition: "standard"
+  edition_name: null
+  distributor: null
+  release_date: null
+  format: "game_key_card"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "retailer_listing"  # (leída) toyorgame.com.sg: "NS2 The Crew Motorfest (Game-Key Card)", variante "(Asia) Standard Edition"
+  source_url: "https://toyorgame.com.sg/products/ns2-the-crew-motorfest-game-key-card"
+  verified_at: "2026-10-09"
+  status: "reviewed"
+
+# Crymelight y Bluey's Happy Snaps: game-key card en JP (meisakugame, 09-10-2026).
+- sku_id: "jp-crymelight-standard"
+  title_id: "crymelight"
+  region: "JP"
+  edition: "standard"
+  edition_name: null
+  distributor: "FuRyu"  # (API) Nintendo Japón: maker フリュー
+  release_date: "2026-11-05"  # (API) Nintendo Japón: sdate 2026.11.5, icode ACCAA, pprice 4378
+  format: "game_key_card"
+  cart_size_gb: null
+  download_size_gb: 16  # (leída) meisakugame, columna 容量
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) meisakugame: "クライムライト | Key | 16GB"
+  source_url: "https://meisakugame.garyoutensei.com/data/switch2packagekey.html"
+  verified_at: "2026-10-09"
+  status: "reviewed"
+- sku_id: "jp-bluey-s-happy-snaps-standard"
+  title_id: "bluey-s-happy-snaps"
+  region: "JP"
+  edition: "standard"
+  edition_name: null
+  distributor: "Gameloft"  # (API) Nintendo Japón: maker ゲームロフト
+  release_date: "2026-11-26"  # (API) Nintendo Japón: sdate 2026.11.26 de la entrada BEE_CARD (la digital es del 2026.10.15)
+  format: "game_key_card"
+  cart_size_gb: null
+  download_size_gb: 5  # (leída) meisakugame, columna 容量
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) meisakugame: "ブルーイのハッピースナップ | Key | 5GB"
+  source_url: "https://meisakugame.garyoutensei.com/data/switch2packagekey.html"
+  verified_at: "2026-10-09"
+  status: "reviewed"
+
+# Lies of P: Complete Edition: cartucho completo en JP (meisakugame, 09-10-2026).
+- sku_id: "jp-lies-of-p-standard"
+  title_id: "lies-of-p"
+  region: "JP"
+  edition: "standard"
+  edition_name: null
+  distributor: "U&I Entertainment Japan"  # (leída) meisakugame: sección 【U&I エンターテイメントジャパン】
+  release_date: "2026-10-02"  # (API) Nintendo Japón: sdate 2026.10.2 de la entrada BEE_CARD, icode AA8UA (la digital es del 2026.8.6)
+  format: "full_cart"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) meisakugame: "Lies of P: Complete Edition | 2専"
+  source_url: "https://meisakugame.garyoutensei.com/data/switch2packagekey.html"
+  verified_at: "2026-10-09"
+  status: "reviewed"
+
+# The Séance of Blake Manor (Raw Fury): cartucho completo en EU, caja de Lost in Cult anunciada el 30-09-2026. El enlace de
+# reserva de la nota va a VideoGamesPlus.ca (vendor "Lost in Cult", sin marca de importación): no basta para un SKU NA.
+- sku_id: "eu-the-seance-of-blake-manor-standard"
+  title_id: "the-seance-of-blake-manor"
+  region: "EU"
+  edition: "standard"
+  edition_name: null
+  distributor: "Lost in Cult"  # (leída) Nintendo Everything: "Lost in Cult has announced a couple of new physical releases with The Séance of Blake Manor on Nintendo Switch 2"
+  release_date: null
+  format: "full_cart"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) Nintendo Everything: "Both are full cartridge titles. With The Séance of Blake Manor, you don’t have to worry about it being a game-key card."
+  source_url: "https://nintendoeverything.com/the-seance-of-blake-manor-getting-nintendo-switch-2-physical-release-morsels-switch-1-physical-release/"
+  verified_at: "2026-10-09"
   status: "reviewed"

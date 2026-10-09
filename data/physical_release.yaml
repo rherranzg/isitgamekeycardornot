@@ -1805,3 +1805,137 @@
   evidence: "official"
   source_url: "https://search.nintendo.jp/nintendo_soft/search.json?q=%E9%A3%9B%E7%A9%BA%E8%89%87%E3%82%AF%E3%82%A8%E3%82%B9%E3%83%88%E5%B3%B6&limit=40"
   checked_at: "2026-09-24"
+
+# Títulos de salida reciente buscados de nuevo el 09-10-2026, sin caja de Switch 2.
+- title_id: "maestro"
+  has_physical_release: false
+  evidence: "official"  # (leída) nota de prensa de Double Jack en Game Developer: "Maestro is coming to Nintendo Switch 1 & 2 on September 17, 2026 , with digital releases on both platforms and a physical edition release confirmed for Nintendo Switch 1." La caja es de Switch 1; (API) search.nintendo.jp: "Maestro (マエストロ)", icode ACLZA, pprice: null
+  source_url: "https://www.gamedeveloper.com/press-release/maestro-launches-on-nintendo-switch-1-2-on-september-17"
+  checked_at: "2026-10-09"
+- title_id: "graveyard-keeper-ii"
+  has_physical_release: false
+  evidence: "unconfirmed"  # búsqueda web: solo eShop, ningún listado físico (también buscado el 24-09-2026); (API) search.nintendo.jp: "Graveyard Keeper 2", icode ACAJA, sdate "2026.9.23", pprice: null
+  source_url: null
+  checked_at: "2026-10-09"
+- title_id: "the-witcher-3-wild-hunt-remastered"
+  has_physical_release: false
+  evidence: "unconfirmed"  # búsqueda web: en Switch 2 es una mejora gratuita de la versión de Switch 1 (Nintendo Life, RPG Site), sin caja propia de Switch 2; (API) search.nintendo.jp: "ウィッチャー３ ワイルドハント リマスター", icode ACJTB, sdate "2026.9.29", pprice: null
+  source_url: null
+  checked_at: "2026-10-09"
+- title_id: "scritchy-scratchy"
+  has_physical_release: false
+  evidence: "unconfirmed"  # búsqueda web: solo eShop, ningún listado físico
+  source_url: null
+  checked_at: "2026-10-09"
+- title_id: "retrospace"
+  has_physical_release: false
+  evidence: "unconfirmed"  # búsqueda web: solo eShop y webs de claves, ningún listado físico
+  source_url: null
+  checked_at: "2026-10-09"
+- title_id: "echo-weaver"
+  has_physical_release: false
+  evidence: "unconfirmed"  # búsqueda web: solo eShop y webs de claves, ningún listado físico
+  source_url: null
+  checked_at: "2026-10-09"
+- title_id: "moros-protocol"
+  has_physical_release: false
+  evidence: "unconfirmed"  # búsqueda web: solo la ficha de eShop; ningún anuncio de caja de Super Rare Games para Switch 2
+  source_url: null
+  checked_at: "2026-10-09"
+- title_id: "order-of-the-sinking-star"
+  has_physical_release: false
+  evidence: "unconfirmed"  # búsqueda web: solo eShop y webs de claves, ningún listado físico
+  source_url: null
+  checked_at: "2026-10-09"
+
+# Títulos new de salida reciente, investigados el 09-10-2026: ya salidos y sin caja de Switch 2.
+- title_id: "banchou-tactics-lion-heart"
+  has_physical_release: false
+  evidence: "unconfirmed"  # búsqueda web: solo eShop (Gematsu: "now available for Switch 2"); (API) search.nintendo.jp: "Banchou Tactics: Lion Heart", sdate "2026.9.10", maker CORECELL, pprice: null
+  source_url: null
+  checked_at: "2026-10-09"
+- title_id: "trinity-trigger-dx"
+  has_physical_release: false
+  evidence: "unconfirmed"  # búsqueda web: RPG Site, "It is now available self-published on the eShop for Switch 2"; ningún listado físico
+  source_url: null
+  checked_at: "2026-10-09"
+- title_id: "truck-kun-is-supporting-me-from-another-world"
+  has_physical_release: false
+  evidence: "unconfirmed"  # búsqueda web: solo eShop, ningún listado físico
+  source_url: null
+  checked_at: "2026-10-09"
+- title_id: "chit-chat-party"
+  has_physical_release: false
+  evidence: "unconfirmed"  # búsqueda web: Gematsu, "available now via Nintendo eShop"; ningún listado físico
+  source_url: null
+  checked_at: "2026-10-09"
+- title_id: "arcade-archives-2-dacholer"
+  has_physical_release: false
+  evidence: "unconfirmed"  # (API) search.nintendo.jp: "アーケードアーカイブス2 ダチョラー", icode ACNXA, sdate "2026.9.17", sform BEE_DL, pprice: null
+  source_url: null
+  checked_at: "2026-10-09"
+- title_id: "arcade-archives-2-mr-do-s-castle"
+  has_physical_release: false
+  evidence: "unconfirmed"  # (API) search.nintendo.jp: "アーケードアーカイブス2 ミスター・ドゥ対ユニコーン", icode ACR7A, sdate "2026.9.17", sform BEE_DL, pprice: null
+  source_url: null
+  checked_at: "2026-10-09"
+- title_id: "shape-of-dreams"
+  has_physical_release: false
+  evidence: "unconfirmed"  # búsqueda web: solo eShop, ningún listado físico; (API) search.nintendo.jp: "Shape of Dreams", icode ABX8A, sform BEE_DL, pprice: null
+  source_url: null
+  checked_at: "2026-10-09"
+- title_id: "spirit-valor"
+  has_physical_release: false
+  evidence: "unconfirmed"  # búsqueda web: solo eShop y el pack de mejora, ningún listado físico
+  source_url: null
+  checked_at: "2026-10-09"
+- title_id: "twofold"
+  has_physical_release: false
+  evidence: "unconfirmed"  # búsqueda web: solo eShop, ningún listado físico; (API) search.nintendo.jp: "Twofold – Nintendo Switch 2 Edition", icode BL3HA, sform BEE_DL, pprice: null
+  source_url: null
+  checked_at: "2026-10-09"
+- title_id: "party-party-time-3-nintendo-switch-2-edition"
+  has_physical_release: false
+  evidence: "unconfirmed"  # búsqueda web: solo eShop y el pack de mejora; (API) search.nintendo.jp: "Party Party Time 3（パーティパーティタイム3） Nintendo Switch 2 Edition", sdate "2026.9.18", maker SAT-BOX, pprice: null
+  source_url: null
+  checked_at: "2026-10-09"
+- title_id: "console-archives-karate-champ"
+  has_physical_release: false
+  evidence: "unconfirmed"  # (API) search.nintendo.jp: "コンソールアーカイブス カラテ・チャンプ", icode ACAQA, sdate "2026.9.24", sform BEE_DL, pprice: null
+  source_url: null
+  checked_at: "2026-10-09"
+- title_id: "dicevaders"
+  has_physical_release: false
+  evidence: "unconfirmed"  # búsqueda web: solo eShop, ningún listado físico; (API) search.nintendo.jp: "Dicevaders", sdate "2026.9.30", pprice: null
+  source_url: null
+  checked_at: "2026-10-09"
+- title_id: "toem-2"
+  has_physical_release: false
+  evidence: "unconfirmed"  # búsqueda web: solo eShop; la caja de iam8bit es del primer TOEM, de Switch 1
+  source_url: null
+  checked_at: "2026-10-09"
+- title_id: "arcade-archives-2-crazy-balloon"
+  has_physical_release: false
+  evidence: "unconfirmed"  # (API) search.nintendo.jp: "アーケードアーカイブス2 クレイジーバルーン", icode ACNZA, sdate "2026.10.1", sform BEE_DL, pprice: null
+  source_url: null
+  checked_at: "2026-10-09"
+- title_id: "console-archives-chackn-pop"
+  has_physical_release: false
+  evidence: "unconfirmed"  # (API) search.nintendo.jp: "コンソールアーカイブス ちゃっくんぽっぷ", icode ACX7A, sdate "2026.10.1", sform BEE_DL, pprice: null
+  source_url: null
+  checked_at: "2026-10-09"
+- title_id: "heartworm"
+  has_physical_release: false
+  evidence: "unconfirmed"  # búsqueda web: solo eShop, ningún listado físico; (API) search.nintendo.jp: "Heartworm", sdate "2026.10.8", pprice: null
+  source_url: null
+  checked_at: "2026-10-09"
+- title_id: "deep-rock-galactic-survivor"
+  has_physical_release: false
+  evidence: "unconfirmed"  # búsqueda web: solo eShop; la edición física que se anuncia es de PS5
+  source_url: null
+  checked_at: "2026-10-09"
+- title_id: "deck-of-haunts"
+  has_physical_release: false
+  evidence: "unconfirmed"  # búsqueda web: solo eShop, ningún listado físico
+  source_url: null
+  checked_at: "2026-10-09"
