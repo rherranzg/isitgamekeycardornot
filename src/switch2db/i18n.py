@@ -95,6 +95,12 @@ UI_STRINGS: dict[str, dict[str, str]] = {
     "no_data": {"es": "Todavía sin SKUs documentados.", "en": "No SKUs documented yet."},
     "no_box_filter": {"es": "Sin edición física", "en": "No physical edition"},
     "no_skus_filter": {"es": "Sin SKUs todavía", "en": "No SKUs yet"},
+    "upcoming_heading": {"es": "Próximos lanzamientos", "en": "Coming soon"},
+    "recent_heading": {"es": "Recién salidos", "en": "Just released"},
+    "highlights_hint": {
+        "es": "Juegos con edición en caja, por su primera salida en Switch 2.",
+        "en": "Boxed games, by their first release on Switch 2.",
+    },
     "pagination_label": {"es": "Páginas", "en": "Pages"},
     "page_size_label": {"es": "Juegos por página", "en": "Games per page"},
     "pagination_previous": {"es": "‹ Anterior", "en": "‹ Previous"},
@@ -121,6 +127,15 @@ RELEASE_DATE_TEMPLATES: dict[str, dict[str, str]] = {
     "month": {"es": "{month} {year}", "en": "{month} {year}"},
     "quarter": {"es": "T{quarter} {year}", "en": "Q{quarter} {year}"},
     "year": {"es": "{year}", "en": "{year}"},
+}
+
+# Distance from the visitor's today to a release date, written by the browser; {days} is always 2 or more.
+RELATIVE_DAY_TEMPLATES: dict[str, dict[str, str]] = {
+    "today": {"es": "Hoy", "en": "Today"},
+    "tomorrow": {"es": "Mañana", "en": "Tomorrow"},
+    "yesterday": {"es": "Ayer", "en": "Yesterday"},
+    "in_days": {"es": "En {days} días", "en": "In {days} days"},
+    "days_ago": {"es": "Hace {days} días", "en": "{days} days ago"},
 }
 
 SHOWING_COUNT_TEMPLATES: dict[str, str] = {

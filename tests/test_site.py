@@ -15,6 +15,7 @@ from switch2db.site import (
     NO_BOX_FILTER_VALUE,
     NO_SKUS_FILTER_VALUE,
     build_release_date_text,
+    build_release_highlights,
     build_search_text,
     build_sku_view,
     build_title_views,
@@ -258,3 +259,55 @@ def test_build_title_views_finds_a_title_by_its_editions_and_merged_names(
     view = build_title_views([title], [gold], [], [merged])[0]
 
     assert view.search_text == "example game example publisher example game: tarnished edition gold edition"
+
+
+def test_build_release_highlights_keeps_boxed_titles_with_an_exact_date_sorted_by_date_and_name(
+    title: Title, eu_key_card_sku: Sku
+) -> None:
+    dated = [
+        title.model_copy(update={"title_id": title_id, "name": name, "release_date": release_date})
+        for title_id, name, release_date in [
+            ("zelda", "zelda", "2026-10-15"),
+            ("animal-crossing", "Animal Crossing", "2026-10-15"),
+            ("earlier-game", "Earlier Game", "2026-10-01"),
+            ("quarter-game", "Quarter Game", "2026-Q4"),
+            ("undated-game", "Undated Game", None),
+            ("digital-game", "Digital Game", "2026-10-02"),
+        ]
+    ]
+    skus = [
+        eu_key_card_sku.model_copy(
+            update={"sku_id": f"eu-{view.title_id}-standard", "title_id": view.title_id}
+        )
+        for view in dated
+        if view.title_id != "digital-game"
+    ]
+
+    highlights = build_release_highlights(build_title_views(dated, skus, []))
+
+    assert [highlight.title_id for highlight in highlights] == ["earlier-game", "animal-crossing", "zelda"]
+    assert highlights[0].release_date == "2026-10-01"
+    assert highlights[0].release_date_text == {"es": "1 oct 2026", "en": "Oct 1, 2026"}
+
+
+def test_build_release_highlights_summarizes_the_known_formats_in_order(
+    title: Title, eu_key_card_sku: Sku, asia_full_cart_sku: Sku, jp_unknown_sku: Sku
+) -> None:
+    dated = title.model_copy(update={"release_date": "2026-10-15"})
+
+    highlight = build_release_highlights(
+        build_title_views([dated], [eu_key_card_sku, jp_unknown_sku, asia_full_cart_sku], [])
+    )[0]
+
+    assert [badge.css_class for badge in highlight.formats] == ["format-full-cart", "format-game-key-card"]
+    assert highlight.formats[0].label == {"es": "Cartucho completo", "en": "Full cartridge"}
+
+
+def test_build_release_highlights_shows_unknown_when_no_format_is_known(
+    title: Title, jp_unknown_sku: Sku
+) -> None:
+    dated = title.model_copy(update={"release_date": "2026-10-15"})
+
+    highlight = build_release_highlights(build_title_views([dated], [jp_unknown_sku], []))[0]
+
+    assert [badge.css_class for badge in highlight.formats] == ["format-unknown"]

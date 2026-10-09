@@ -1,3 +1,4 @@
+import re
 from collections import defaultdict
 from collections.abc import Sequence
 
@@ -30,6 +31,12 @@ NO_SKUS_FILTER_VALUE = "no_skus"
 # Games per page the visitor can choose: filtering runs over all of them and only the current page is shown.
 PAGE_SIZES: tuple[int, ...] = (10, 20, 50)
 DEFAULT_PAGE_SIZE = 10
+
+# Games in each top block (coming soon and just released), picked by the browser against its own today.
+RELEASE_HIGHLIGHT_COUNT = 5
+
+# Only exact days can be placed before or after today; a month, quarter or year cannot.
+EXACT_DAY_PATTERN = re.compile(r"\d{4}-\d{2}-\d{2}")
 
 REPO_URL = "https://github.com/rherranzg/isitgamekeycardornot"
 DATA_LICENSE_URL = f"{REPO_URL}/blob/main/data/LICENSE"
@@ -85,12 +92,31 @@ class TitleView(BaseModel):
     title_id: str
     name: str
     publisher: str | None
+    release_date: str | None
     release_date_text: LocalizedText | None
     search_text: str
     skus: list[SkuView]
     has_divergence: bool
     no_box: NoBoxView | None
     former_title_ids: list[str]
+
+
+class FormatBadgeView(BaseModel):
+    """Format badge with its label in each language and its CSS class."""
+
+    label: LocalizedText
+    css_class: str
+
+
+class ReleaseHighlightView(BaseModel):
+    """Boxed game with an exact Switch 2 release date: a candidate for the coming soon and just released
+    blocks, which the browser fills against the visitor's today."""
+
+    title_id: str
+    name: str
+    release_date: str
+    release_date_text: LocalizedText
+    formats: list[FormatBadgeView]
 
 
 def build_size_text(sku: Sku) -> LocalizedText:
@@ -213,6 +239,7 @@ def build_title_view(
         title_id=title.title_id,
         name=title.name,
         publisher=title.publisher,
+        release_date=title.release_date,
         release_date_text=build_release_date_text(title.release_date),
         search_text=build_search_text(title, other_names),
         skus=[build_sku_view(sku) for sku in title_skus],
@@ -239,6 +266,35 @@ def build_title_views(
         for title in titles
     ]
     return sorted(views, key=lambda view: view.name.casefold())
+
+
+def summarize_formats(skus: Sequence[SkuView]) -> list[FormatBadgeView]:
+    """Distinct formats of a title's SKUs, in Format order; unknown only when no format is known."""
+    present = {sku.format for sku in skus}
+    known = [format_ for format_ in Format if format_ in present and format_ is not Format.UNKNOWN]
+    formats = known or [format_ for format_ in Format if format_ in present]
+    return [
+        FormatBadgeView(label=FORMAT_LABELS[format_], css_class=FORMAT_CSS_CLASSES[format_])
+        for format_ in formats
+    ]
+
+
+def build_release_highlights(title_views: Sequence[TitleView]) -> list[ReleaseHighlightView]:
+    """Titles with SKUs and an exact release date, sorted by date and then by name: the browser takes the
+    first ones from today on and the last ones before it. A digital-only game or one with no SKUs yet says
+    nothing about its box, so it stays out."""
+    highlights = [
+        ReleaseHighlightView(
+            title_id=view.title_id,
+            name=view.name,
+            release_date=view.release_date,
+            release_date_text={lang: format_release_date(view.release_date, lang) for lang in LANGUAGES},
+            formats=summarize_formats(view.skus),
+        )
+        for view in title_views
+        if view.skus and view.release_date is not None and EXACT_DAY_PATTERN.fullmatch(view.release_date)
+    ]
+    return sorted(highlights, key=lambda highlight: (highlight.release_date, highlight.name.casefold()))
 
 
 def build_footer_text(generated_at: str) -> LocalizedText:

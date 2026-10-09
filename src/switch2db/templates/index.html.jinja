@@ -99,6 +99,57 @@
     }
     .stats strong { color: var(--text); }
 
+    .release-highlights {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
+      gap: 14px;
+      margin-top: 20px;
+    }
+    .release-highlights[hidden],
+    .highlight-block[hidden] { display: none; }
+    .highlight-block {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 12px 14px;
+      min-width: 0;
+    }
+    .highlight-block h2 {
+      font-size: 0.95rem;
+      margin: 0 0 6px;
+    }
+    .highlight-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .highlight-list li + li { border-top: 1px solid var(--border); }
+    .highlight-item {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+      padding: 7px 0;
+      color: inherit;
+      text-decoration: none;
+    }
+    .highlight-item:hover .highlight-name { text-decoration: underline; }
+    .highlight-name {
+      font-weight: 600;
+      font-size: 0.9rem;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .highlight-meta {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 6px;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+    .highlight-when { margin-right: 2px; }
+
     .toolbar {
       position: sticky;
       top: 0;
@@ -415,6 +466,18 @@
       </div>
     </header>
 
+    {# Lo rellena el JS con la fecha del visitante: la web no se regenera cada día. Sin JS queda oculto. #}
+    <section class="release-highlights" id="release-highlights" hidden>
+      <div class="highlight-block" id="upcoming-block">
+        <h2>{{ i18n_hint(t.upcoming_heading, t.highlights_hint) }}</h2>
+        <ol class="highlight-list" id="upcoming-list"></ol>
+      </div>
+      <div class="highlight-block" id="recent-block">
+        <h2>{{ i18n_hint(t.recent_heading, t.highlights_hint) }}</h2>
+        <ol class="highlight-list" id="recent-list"></ol>
+      </div>
+    </section>
+
     <div class="stats">
       <span><strong id="stat-titles-count">{{ title_count }}</strong> {{ i18n(t.stat_titles) }}</span>
       <span><strong id="stat-skus-count">{{ sku_count }}</strong> {{ i18n(t.stat_skus) }}</span>
@@ -552,9 +615,14 @@
 
   <script>
     var SHOWING_COUNT_TEMPLATES = {{ showing_count_templates|tojson }};
+    // Juegos con caja y fecha exacta, ordenados por fecha y nombre (build_release_highlights en site.py).
+    var RELEASE_HIGHLIGHTS = {{ release_highlights|tojson }};
+    var RELEASE_HIGHLIGHT_COUNT = {{ release_highlight_count }};
+    var RELATIVE_DAY_TEMPLATES = {{ relative_day_templates|tojson }};
 
 
     var currentLang = "es";
+    var hasReleaseHighlights = false;
     var lastVisibleCount = 0;
     var lastTotalCount = 0;
     // Fichas que pasan el buscador y los filtros, en orden; de ellas solo se muestra la página actual.
@@ -683,7 +751,115 @@
       renderShowingCount();
       document.getElementById("stat-titles-count").textContent = matchingCards.length;
       document.getElementById("stat-skus-count").textContent = visibleSkuCount;
+      updateReleaseHighlightsVisibility();
       renderPage();
+    }
+
+    // Fecha de hoy del visitante (no la UTC), como "2026-10-09", para compararla con las fechas de los juegos.
+    function localIsoDate(date) {
+      return date.getFullYear()
+        + "-" + String(date.getMonth() + 1).padStart(2, "0")
+        + "-" + String(date.getDate()).padStart(2, "0");
+    }
+
+    function daysBetween(fromIsoDate, toIsoDate) {
+      var from = fromIsoDate.split("-").map(Number);
+      var to = toIsoDate.split("-").map(Number);
+      return Math.round((Date.UTC(to[0], to[1] - 1, to[2]) - Date.UTC(from[0], from[1] - 1, from[2])) / 86400000);
+    }
+
+    function relativeDayText(days, lang) {
+      if (days === 0) {
+        return RELATIVE_DAY_TEMPLATES.today[lang];
+      }
+      if (days === 1) {
+        return RELATIVE_DAY_TEMPLATES.tomorrow[lang];
+      }
+      if (days === -1) {
+        return RELATIVE_DAY_TEMPLATES.yesterday[lang];
+      }
+      var key = days > 0 ? "in_days" : "days_ago";
+      return RELATIVE_DAY_TEMPLATES[key][lang].replace("{days}", Math.abs(days));
+    }
+
+    // Un <span data-i18n> por idioma, como la macro i18n de la plantilla, para que applyLanguage los cambie.
+    function appendI18nSpans(parent, texts) {
+      Object.keys(texts).forEach(function (lang) {
+        var span = document.createElement("span");
+        span.dataset.i18n = lang;
+        span.textContent = texts[lang];
+        span.hidden = lang !== currentLang;
+        parent.appendChild(span);
+      });
+    }
+
+    function buildHighlightItem(highlight, today) {
+      var days = daysBetween(today, highlight.release_date);
+      var link = document.createElement("a");
+      link.className = "highlight-item";
+      link.href = "#" + highlight.title_id;
+
+      var name = document.createElement("span");
+      name.className = "highlight-name";
+      name.textContent = highlight.name;
+      name.title = highlight.name;
+      link.appendChild(name);
+
+      var meta = document.createElement("span");
+      meta.className = "highlight-meta";
+      var when = document.createElement("span");
+      when.className = "highlight-when";
+      var whenTexts = {};
+      Object.keys(highlight.release_date_text).forEach(function (lang) {
+        whenTexts[lang] = relativeDayText(days, lang) + " · " + highlight.release_date_text[lang];
+      });
+      appendI18nSpans(when, whenTexts);
+      meta.appendChild(when);
+      highlight.formats.forEach(function (format) {
+        var badge = document.createElement("span");
+        badge.className = "badge " + format.css_class;
+        appendI18nSpans(badge, format.label);
+        meta.appendChild(badge);
+      });
+      link.appendChild(meta);
+
+      var item = document.createElement("li");
+      item.appendChild(link);
+      return item;
+    }
+
+    function fillHighlightBlock(blockId, listId, highlights, today) {
+      var list = document.getElementById(listId);
+      list.replaceChildren.apply(list, highlights.map(function (highlight) {
+        return buildHighlightItem(highlight, today);
+      }));
+      document.getElementById(blockId).hidden = highlights.length === 0;
+    }
+
+    // Los que salen hoy cuentan como próximos. Los recién salidos van del más reciente al más antiguo y, a
+    // igual fecha, por nombre: sort es estable y RELEASE_HIGHLIGHTS ya viene ordenado por nombre dentro de cada fecha.
+    function renderReleaseHighlights() {
+      var today = localIsoDate(new Date());
+      var upcoming = RELEASE_HIGHLIGHTS.filter(function (highlight) {
+        return highlight.release_date >= today;
+      }).slice(0, RELEASE_HIGHLIGHT_COUNT);
+      var recent = RELEASE_HIGHLIGHTS.filter(function (highlight) {
+        return highlight.release_date < today;
+      }).sort(function (a, b) {
+        return a.release_date < b.release_date ? 1 : (a.release_date > b.release_date ? -1 : 0);
+      }).slice(0, RELEASE_HIGHLIGHT_COUNT);
+      fillHighlightBlock("upcoming-block", "upcoming-list", upcoming, today);
+      fillHighlightBlock("recent-block", "recent-list", recent, today);
+      hasReleaseHighlights = upcoming.length + recent.length > 0;
+    }
+
+    // Los bloques solo se ven con la lista tal cual se carga: con una búsqueda o un filtro cambiado estorban.
+    // defaultChecked es la casilla marcada en el HTML, aunque el navegador haya restaurado otra al volver atrás.
+    function updateReleaseHighlightsVisibility() {
+      var filtersChanged = Array.from(document.querySelectorAll(".filter-panel input[type=checkbox]")).some(
+        function (checkbox) { return checkbox.checked !== checkbox.defaultChecked; }
+      );
+      document.getElementById("release-highlights").hidden = !hasReleaseHighlights || Boolean(state.search) || filtersChanged;
     }
 
     function pageCount() {
@@ -798,6 +974,14 @@
       renderPage();
     });
     window.addEventListener("hashchange", showHashTarget);
+    // Volver a pulsar el juego que ya está en la URL no dispara hashchange: se le lleva igualmente.
+    document.getElementById("release-highlights").addEventListener("click", function (event) {
+      var link = event.target.closest("a.highlight-item");
+      if (link && link.hash === location.hash) {
+        event.preventDefault();
+        showHashTarget();
+      }
+    });
 
     bindFilter("region-filter", "regions");
     bindFilter("format-filter", "formats");
@@ -825,6 +1009,7 @@
       }
       var preferred = saved || (navigator.language && navigator.language.startsWith("en") ? "en" : "es");
       state.search = normalizeText(searchInput.value.trim());
+      renderReleaseHighlights();
       applyLanguage(preferred);
       applyFilters();
       showHashTarget();

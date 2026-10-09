@@ -5,7 +5,7 @@ from aws_lambda_powertools import Logger
 from jinja2 import Environment, FileSystemLoader
 
 from switch2db.data_store import load_excluded_titles, load_physical_releases, load_skus, load_titles
-from switch2db.i18n import SHOWING_COUNT_TEMPLATES, UI_STRINGS
+from switch2db.i18n import RELATIVE_DAY_TEMPLATES, SHOWING_COUNT_TEMPLATES, UI_STRINGS
 from switch2db.paths import DATA_DIR, DOCS_DIR, TEMPLATES_DIR
 from switch2db.site import (
     DATA_LICENSE_URL,
@@ -17,10 +17,12 @@ from switch2db.site import (
     NO_SKUS_FILTER_VALUE,
     PAGE_SIZES,
     REGION_FILTER_LABELS,
+    RELEASE_HIGHLIGHT_COUNT,
     REPO_URL,
     REPORT_ISSUE_URL,
     TitleView,
     build_footer_text,
+    build_release_highlights,
     build_title_views,
 )
 
@@ -46,6 +48,9 @@ def render_index(title_views: list[TitleView], generated_at: str) -> str:
         page_sizes=PAGE_SIZES,
         default_page_size=DEFAULT_PAGE_SIZE,
         showing_count_templates=SHOWING_COUNT_TEMPLATES,
+        release_highlights=[highlight.model_dump() for highlight in build_release_highlights(title_views)],
+        release_highlight_count=RELEASE_HIGHLIGHT_COUNT,
+        relative_day_templates=RELATIVE_DAY_TEMPLATES,
         repo_url=REPO_URL,
         data_license_url=DATA_LICENSE_URL,
         report_issue_url=REPORT_ISSUE_URL,
