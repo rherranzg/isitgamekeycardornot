@@ -2,7 +2,7 @@
 
 An open database of the physical format of Nintendo Switch 2 games, region by region and edition by edition.
 
-**Browse it: https://rherranzg.github.io/isitgamekeycardornot/**
+**Browse it: https://isitgamekeycardornot.com/**
 
 For every boxed release it records which of these you get:
 
