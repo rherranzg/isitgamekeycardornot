@@ -5,7 +5,7 @@ import pytest
 from pytest_mock import MockerFixture
 
 from scripts.build_site import main
-from switch2db.site import DEFAULT_PAGE_SIZE, PAGE_SIZES, RELEASE_HIGHLIGHT_COUNT
+from switch2db.site import DEFAULT_PAGE_SIZE, PAGE_SIZES, RECENT_RELEASE_DAYS, RELEASE_HIGHLIGHT_COUNT
 
 WriteYaml = Callable[[str, Sequence[object]], Path]
 
@@ -161,13 +161,17 @@ def test_main_writes_the_pagination_with_a_page_size_selector(
     assert f'<option value="{DEFAULT_PAGE_SIZE}" selected>' in html
 
 
-def test_main_embeds_the_dated_boxed_titles_for_the_release_blocks(
+def test_main_embeds_the_dated_boxes_and_the_region_selector_for_the_release_blocks(
     docs_dir: Path, write_yaml: WriteYaml, title_row: dict[str, object], sku_row: dict[str, object]
 ) -> None:
-    dated = {**title_row, "release_date": "2026-10-15"}
-    undated = {**title_row, "title_id": "undated-game", "name": "Undated Game"}
-    undated_sku = {**sku_row, "sku_id": "eu-undated-game-standard", "title_id": "undated-game"}
-    write_yaml("titles.yaml", [dated, undated])
+    undated_title = {**title_row, "title_id": "undated-game", "name": "Undated Game"}
+    undated_sku = {
+        **sku_row,
+        "sku_id": "eu-undated-game-standard",
+        "title_id": "undated-game",
+        "release_date": None,
+    }
+    write_yaml("titles.yaml", [title_row, undated_title])
     write_yaml("skus.yaml", [sku_row, undated_sku])
     write_yaml("physical_release.yaml", [])
 
@@ -175,9 +179,13 @@ def test_main_embeds_the_dated_boxed_titles_for_the_release_blocks(
 
     html = (docs_dir / "index.html").read_text(encoding="utf-8")
     assert 'id="release-highlights" hidden' in html
+    assert 'id="box-region-select"' in html
+    assert '<option value="JP" data-label-es="Japón (JP)" data-label-en="Japan (JP)">' in html
     assert "Próximos lanzamientos" in html
-    assert "Just released" in html
+    assert f"Ninguna caja en los últimos {RECENT_RELEASE_DAYS} días." in html
     assert '"title_id": "example-game"' in html
-    assert '"release_date": "2026-10-15"' in html
+    assert '"region": "EU"' in html
+    assert '"release_date": "2026-03-12"' in html
     assert '"title_id": "undated-game"' not in html
     assert f"var RELEASE_HIGHLIGHT_COUNT = {RELEASE_HIGHLIGHT_COUNT};" in html
+    assert f"var RECENT_RELEASE_DAYS = {RECENT_RELEASE_DAYS};" in html

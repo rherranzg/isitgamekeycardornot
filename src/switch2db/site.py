@@ -1,6 +1,6 @@
-import re
 from collections import defaultdict
 from collections.abc import Sequence
+from datetime import date
 
 from pydantic import BaseModel
 
@@ -32,11 +32,11 @@ NO_SKUS_FILTER_VALUE = "no_skus"
 PAGE_SIZES: tuple[int, ...] = (10, 20, 50)
 DEFAULT_PAGE_SIZE = 10
 
-# Games in each top block (coming soon and just released), picked by the browser against its own today.
+# Boxes in each top block (coming soon and just released), picked by the browser against its own today.
 RELEASE_HIGHLIGHT_COUNT = 5
 
-# Only exact days can be placed before or after today; a month, quarter or year cannot.
-EXACT_DAY_PATTERN = re.compile(r"\d{4}-\d{2}-\d{2}")
+# How far back a box still counts as just released; older ones leave the block even if it has room.
+RECENT_RELEASE_DAYS = 30
 
 REPO_URL = "https://github.com/rherranzg/isitgamekeycardornot"
 DATA_LICENSE_URL = f"{REPO_URL}/blob/main/data/LICENSE"
@@ -72,6 +72,7 @@ class SkuView(BaseModel):
     format_css_class: str
     edition_label: LocalizedText
     distributor: str | None
+    release_date: date | None
     release_date_text: LocalizedText
     size_text: LocalizedText
     evidence_label: LocalizedText
@@ -92,7 +93,6 @@ class TitleView(BaseModel):
     title_id: str
     name: str
     publisher: str | None
-    release_date: str | None
     release_date_text: LocalizedText | None
     search_text: str
     skus: list[SkuView]
@@ -108,13 +108,14 @@ class FormatBadgeView(BaseModel):
     css_class: str
 
 
-class ReleaseHighlightView(BaseModel):
-    """Boxed game with an exact Switch 2 release date: a candidate for the coming soon and just released
-    blocks, which the browser fills against the visitor's today."""
+class BoxReleaseView(BaseModel):
+    """Boxes of a game that go on sale in a region on the same day: a candidate for the coming soon and
+    just released blocks, which the browser fills for the visitor's region and today."""
 
     title_id: str
     name: str
-    release_date: str
+    region: Region
+    release_date: date
     release_date_text: LocalizedText
     formats: list[FormatBadgeView]
 
@@ -149,6 +150,7 @@ def build_sku_view(sku: Sku) -> SkuView:
             else EDITION_LABELS[sku.edition]
         ),
         distributor=sku.distributor,
+        release_date=sku.release_date,
         release_date_text=build_sku_release_date_text(sku),
         size_text=build_size_text(sku),
         evidence_label=EVIDENCE_LABELS[sku.evidence],
@@ -239,7 +241,6 @@ def build_title_view(
         title_id=title.title_id,
         name=title.name,
         publisher=title.publisher,
-        release_date=title.release_date,
         release_date_text=build_release_date_text(title.release_date),
         search_text=build_search_text(title, other_names),
         skus=[build_sku_view(sku) for sku in title_skus],
@@ -279,22 +280,34 @@ def summarize_formats(skus: Sequence[SkuView]) -> list[FormatBadgeView]:
     ]
 
 
-def build_release_highlights(title_views: Sequence[TitleView]) -> list[ReleaseHighlightView]:
-    """Titles with SKUs and an exact release date, sorted by date and then by name: the browser takes the
-    first ones from today on and the last ones before it. A digital-only game or one with no SKUs yet says
-    nothing about its box, so it stays out."""
-    highlights = [
-        ReleaseHighlightView(
-            title_id=view.title_id,
-            name=view.name,
-            release_date=view.release_date,
-            release_date_text={lang: format_release_date(view.release_date, lang) for lang in LANGUAGES},
-            formats=summarize_formats(view.skus),
+def build_box_releases(title_views: Sequence[TitleView]) -> list[BoxReleaseView]:
+    """One entry per game, region and box release date, sorted by date and then by name: the browser keeps
+    the visitor's region and takes the first ones from today on and the last ones before it. A SKU with no
+    date cannot be placed, and the game's first Switch 2 release does not stand in for it: that date may be
+    the digital one or another region's box."""
+    groups: defaultdict[tuple[str, Region, date], list[SkuView]] = defaultdict(list)
+    names: dict[str, str] = {}
+    for view in title_views:
+        names[view.title_id] = view.name
+        for sku in view.skus:
+            if sku.release_date is not None:
+                groups[(view.title_id, sku.region, sku.release_date)].append(sku)
+    releases = [
+        BoxReleaseView(
+            title_id=title_id,
+            name=names[title_id],
+            region=region,
+            release_date=release_date,
+            release_date_text={
+                lang: format_release_date(release_date.isoformat(), lang) for lang in LANGUAGES
+            },
+            formats=summarize_formats(skus),
         )
-        for view in title_views
-        if view.skus and view.release_date is not None and EXACT_DAY_PATTERN.fullmatch(view.release_date)
+        for (title_id, region, release_date), skus in groups.items()
     ]
-    return sorted(highlights, key=lambda highlight: (highlight.release_date, highlight.name.casefold()))
+    return sorted(
+        releases, key=lambda release: (release.release_date, release.name.casefold(), release.region.value)
+    )
 
 
 def build_footer_text(generated_at: str) -> LocalizedText:

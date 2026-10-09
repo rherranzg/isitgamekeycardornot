@@ -98,8 +98,18 @@ UI_STRINGS: dict[str, dict[str, str]] = {
     "upcoming_heading": {"es": "Próximos lanzamientos", "en": "Coming soon"},
     "recent_heading": {"es": "Recién salidos", "en": "Just released"},
     "highlights_hint": {
-        "es": "Juegos con edición en caja, por su primera salida en Switch 2.",
-        "en": "Boxed games, by their first release on Switch 2.",
+        "es": "Día en que la caja sale a la venta en la región elegida.",
+        "en": "Date the box goes on sale in the chosen region.",
+    },
+    "box_region_label": {"es": "Cajas en", "en": "Boxes in"},
+    "upcoming_empty": {
+        "es": "Ninguna caja con fecha anunciada.",
+        "en": "No boxes with an announced date.",
+    },
+    # {days} is RECENT_RELEASE_DAYS.
+    "recent_empty": {
+        "es": "Ninguna caja en los últimos {days} días.",
+        "en": "No boxes in the last {days} days.",
     },
     "pagination_label": {"es": "Páginas", "en": "Pages"},
     "page_size_label": {"es": "Juegos por página", "en": "Games per page"},

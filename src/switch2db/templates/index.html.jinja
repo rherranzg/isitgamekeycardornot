@@ -99,14 +99,31 @@
     }
     .stats strong { color: var(--text); }
 
-    .release-highlights {
+    .release-highlights { margin-top: 20px; }
+    .release-highlights[hidden] { display: none; }
+    .highlights-bar {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 8px;
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+    .highlights-bar select {
+      background: var(--surface);
+      color: var(--text);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 4px 8px;
+      font-size: 0.85rem;
+      font-family: inherit;
+      min-width: 0;
+    }
+    .highlight-blocks {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
       gap: 14px;
-      margin-top: 20px;
     }
-    .release-highlights[hidden],
-    .highlight-block[hidden] { display: none; }
     .highlight-block {
       background: var(--surface);
       border: 1px solid var(--border);
@@ -149,6 +166,11 @@
       color: var(--muted);
     }
     .highlight-when { margin-right: 2px; }
+    .highlight-empty {
+      margin: 4px 0;
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
 
     .toolbar {
       position: sticky;
@@ -466,15 +488,28 @@
       </div>
     </header>
 
-    {# Lo rellena el JS con la fecha del visitante: la web no se regenera cada día. Sin JS queda oculto. #}
+    {# Lo rellena el JS con la región y la fecha del visitante: la web no se regenera cada día. Sin JS queda oculto. #}
+    {% set recent_empty = {"es": t.recent_empty.es | replace("{days}", recent_release_days), "en": t.recent_empty.en | replace("{days}", recent_release_days)} %}
     <section class="release-highlights" id="release-highlights" hidden>
-      <div class="highlight-block" id="upcoming-block">
-        <h2>{{ i18n_hint(t.upcoming_heading, t.highlights_hint) }}</h2>
-        <ol class="highlight-list" id="upcoming-list"></ol>
+      <div class="highlights-bar">
+        <label for="box-region-select">{{ i18n(t.box_region_label) }}</label>
+        <select id="box-region-select">
+          {% for region, label in region_labels.items() %}
+          <option value="{{ region }}" data-label-es="{{ label.es }}" data-label-en="{{ label.en }}">{{ label.es }}</option>
+          {% endfor %}
+        </select>
       </div>
-      <div class="highlight-block" id="recent-block">
-        <h2>{{ i18n_hint(t.recent_heading, t.highlights_hint) }}</h2>
-        <ol class="highlight-list" id="recent-list"></ol>
+      <div class="highlight-blocks">
+        <div class="highlight-block">
+          <h2>{{ i18n_hint(t.upcoming_heading, t.highlights_hint) }}</h2>
+          <ol class="highlight-list" id="upcoming-list"></ol>
+          <p class="highlight-empty" id="upcoming-empty" hidden>{{ i18n(t.upcoming_empty) }}</p>
+        </div>
+        <div class="highlight-block">
+          <h2>{{ i18n_hint(t.recent_heading, t.highlights_hint) }}</h2>
+          <ol class="highlight-list" id="recent-list"></ol>
+          <p class="highlight-empty" id="recent-empty" hidden>{{ i18n(recent_empty) }}</p>
+        </div>
       </div>
     </section>
 
@@ -615,14 +650,36 @@
 
   <script>
     var SHOWING_COUNT_TEMPLATES = {{ showing_count_templates|tojson }};
-    // Juegos con caja y fecha exacta, ordenados por fecha y nombre (build_release_highlights en site.py).
-    var RELEASE_HIGHLIGHTS = {{ release_highlights|tojson }};
+    // Cajas de cada juego por región y día, ordenadas por fecha y nombre (build_box_releases en site.py).
+    var BOX_RELEASES = {{ box_releases|tojson }};
     var RELEASE_HIGHLIGHT_COUNT = {{ release_highlight_count }};
+    var RECENT_RELEASE_DAYS = {{ recent_release_days }};
+    // Región de las cajas según la zona horaria del navegador (no hace falta pedir la ubicación ni un servicio
+    // externo). Se mira en orden y gana el primer prefijo que encaja; fuera de todos, EU: Oriente Medio, África,
+    // India y Oceanía reciben cajas PAL, y AU no es una región del modelo.
+    var TIME_ZONE_REGIONS = [
+      ["Asia/Tokyo", "JP"],
+      ["Asia/Seoul", "KR"],
+      ["Asia/Hong_Kong", "ASIA"],
+      ["Asia/Macau", "ASIA"],
+      ["Asia/Taipei", "ASIA"],
+      ["Asia/Shanghai", "ASIA"],
+      ["Asia/Singapore", "ASIA"],
+      ["Asia/Kuala_Lumpur", "ASIA"],
+      ["Asia/Bangkok", "ASIA"],
+      ["Asia/Manila", "ASIA"],
+      ["Asia/Jakarta", "ASIA"],
+      ["Asia/Ho_Chi_Minh", "ASIA"],
+      ["America/", "NA"],
+      ["US/", "NA"],
+      ["Canada/", "NA"],
+      ["Pacific/Honolulu", "NA"]
+    ];
+    var DEFAULT_BOX_REGION = "EU";
     var RELATIVE_DAY_TEMPLATES = {{ relative_day_templates|tojson }};
 
 
     var currentLang = "es";
-    var hasReleaseHighlights = false;
     var lastVisibleCount = 0;
     var lastTotalCount = 0;
     // Fichas que pasan el buscador y los filtros, en orden; de ellas solo se muestra la página actual.
@@ -633,6 +690,7 @@
       page: 1,
       pageSize: readPageSize(),
       search: "",
+      boxRegion: readBoxRegion(),
       regions: readCheckedValues("region-filter"),
       formats: readCheckedValues("format-filter"),
       editions: readCheckedValues("edition-filter")
@@ -682,6 +740,9 @@
       searchInput.setAttribute("aria-label", placeholder);
       var pagination = document.getElementById("pagination");
       pagination.setAttribute("aria-label", pagination.dataset["label" + (lang === "en" ? "En" : "Es")]);
+      document.querySelectorAll("#box-region-select option").forEach(function (option) {
+        option.textContent = option.dataset["label" + (lang === "en" ? "En" : "Es")];
+      });
       renderShowingCount();
     }
 
@@ -828,29 +889,56 @@
       return item;
     }
 
-    function fillHighlightBlock(blockId, listId, highlights, today) {
+    function fillHighlightBlock(listId, emptyId, releases, today) {
       var list = document.getElementById(listId);
-      list.replaceChildren.apply(list, highlights.map(function (highlight) {
-        return buildHighlightItem(highlight, today);
+      list.replaceChildren.apply(list, releases.map(function (release) {
+        return buildHighlightItem(release, today);
       }));
-      document.getElementById(blockId).hidden = highlights.length === 0;
+      document.getElementById(emptyId).hidden = releases.length > 0;
     }
 
-    // Los que salen hoy cuentan como próximos. Los recién salidos van del más reciente al más antiguo y, a
-    // igual fecha, por nombre: sort es estable y RELEASE_HIGHLIGHTS ya viene ordenado por nombre dentro de cada fecha.
+    function detectBoxRegion() {
+      var timeZone = "";
+      try {
+        timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone || "";
+      } catch (error) {
+        timeZone = "";
+      }
+      var match = TIME_ZONE_REGIONS.find(function (entry) { return timeZone.indexOf(entry[0]) === 0; });
+      return match ? match[1] : DEFAULT_BOX_REGION;
+    }
+
+    // La región elegida a mano manda; si no hay (o ya no es una opción), la de la zona horaria.
+    function readBoxRegion() {
+      var select = document.getElementById("box-region-select");
+      var saved = null;
+      try {
+        saved = localStorage.getItem("boxRegion");
+      } catch (error) {
+        saved = null;
+      }
+      select.value = saved && select.querySelector('option[value="' + saved + '"]') ? saved : detectBoxRegion();
+      return select.value;
+    }
+
+    // Las que salen hoy cuentan como próximas. Las recién salidas son las de los últimos RECENT_RELEASE_DAYS
+    // días, de la más reciente a la más antigua y, a igual fecha, por nombre: sort es estable y BOX_RELEASES
+    // ya viene ordenado por nombre dentro de cada fecha.
     function renderReleaseHighlights() {
       var today = localIsoDate(new Date());
-      var upcoming = RELEASE_HIGHLIGHTS.filter(function (highlight) {
-        return highlight.release_date >= today;
+      var regionReleases = BOX_RELEASES.filter(function (release) {
+        return release.region === state.boxRegion;
+      });
+      var upcoming = regionReleases.filter(function (release) {
+        return release.release_date >= today;
       }).slice(0, RELEASE_HIGHLIGHT_COUNT);
-      var recent = RELEASE_HIGHLIGHTS.filter(function (highlight) {
-        return highlight.release_date < today;
+      var recent = regionReleases.filter(function (release) {
+        return release.release_date < today && daysBetween(release.release_date, today) <= RECENT_RELEASE_DAYS;
       }).sort(function (a, b) {
         return a.release_date < b.release_date ? 1 : (a.release_date > b.release_date ? -1 : 0);
       }).slice(0, RELEASE_HIGHLIGHT_COUNT);
-      fillHighlightBlock("upcoming-block", "upcoming-list", upcoming, today);
-      fillHighlightBlock("recent-block", "recent-list", recent, today);
-      hasReleaseHighlights = upcoming.length + recent.length > 0;
+      fillHighlightBlock("upcoming-list", "upcoming-empty", upcoming, today);
+      fillHighlightBlock("recent-list", "recent-empty", recent, today);
     }
 
     // Los bloques solo se ven con la lista tal cual se carga: con una búsqueda o un filtro cambiado estorban.
@@ -859,7 +947,7 @@
       var filtersChanged = Array.from(document.querySelectorAll(".filter-panel input[type=checkbox]")).some(
         function (checkbox) { return checkbox.checked !== checkbox.defaultChecked; }
       );
-      document.getElementById("release-highlights").hidden = !hasReleaseHighlights || Boolean(state.search) || filtersChanged;
+      document.getElementById("release-highlights").hidden = Boolean(state.search) || filtersChanged;
     }
 
     function pageCount() {
@@ -974,6 +1062,15 @@
       renderPage();
     });
     window.addEventListener("hashchange", showHashTarget);
+    document.getElementById("box-region-select").addEventListener("change", function (event) {
+      state.boxRegion = event.target.value;
+      try {
+        localStorage.setItem("boxRegion", state.boxRegion);
+      } catch (error) {
+        /* almacenamiento no disponible: la región solo dura la sesión */
+      }
+      renderReleaseHighlights();
+    });
     // Volver a pulsar el juego que ya está en la URL no dispara hashchange: se le lleva igualmente.
     document.getElementById("release-highlights").addEventListener("click", function (event) {
       var link = event.target.closest("a.highlight-item");

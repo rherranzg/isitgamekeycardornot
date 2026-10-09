@@ -1,9 +1,12 @@
+from datetime import date
+
 import pytest
 
 from switch2db.models import (
     Edition,
     Evidence,
     ExcludedTitle,
+    Format,
     PhysicalRelease,
     Region,
     Sku,
@@ -14,8 +17,8 @@ from switch2db.site import (
     FORMAT_FILTER_LABELS,
     NO_BOX_FILTER_VALUE,
     NO_SKUS_FILTER_VALUE,
+    build_box_releases,
     build_release_date_text,
-    build_release_highlights,
     build_search_text,
     build_sku_view,
     build_title_views,
@@ -261,53 +264,77 @@ def test_build_title_views_finds_a_title_by_its_editions_and_merged_names(
     assert view.search_text == "example game example publisher example game: tarnished edition gold edition"
 
 
-def test_build_release_highlights_keeps_boxed_titles_with_an_exact_date_sorted_by_date_and_name(
+def test_build_box_releases_gives_one_entry_per_title_region_and_date_sorted_by_date_and_name(
     title: Title, eu_key_card_sku: Sku
 ) -> None:
-    dated = [
-        title.model_copy(update={"title_id": title_id, "name": name, "release_date": release_date})
-        for title_id, name, release_date in [
-            ("zelda", "zelda", "2026-10-15"),
-            ("animal-crossing", "Animal Crossing", "2026-10-15"),
-            ("earlier-game", "Earlier Game", "2026-10-01"),
-            ("quarter-game", "Quarter Game", "2026-Q4"),
-            ("undated-game", "Undated Game", None),
-            ("digital-game", "Digital Game", "2026-10-02"),
-        ]
-    ]
+    other_title = title.model_copy(update={"title_id": "animal-crossing", "name": "Animal Crossing"})
     skus = [
+        eu_key_card_sku.model_copy(update={"release_date": date(2026, 10, 15)}),
         eu_key_card_sku.model_copy(
-            update={"sku_id": f"eu-{view.title_id}-standard", "title_id": view.title_id}
-        )
-        for view in dated
-        if view.title_id != "digital-game"
+            update={
+                "sku_id": "eu-example-game-deluxe",
+                "edition": Edition.DELUXE,
+                "release_date": date(2026, 10, 15),
+            }
+        ),
+        eu_key_card_sku.model_copy(
+            update={
+                "sku_id": "jp-example-game-standard",
+                "region": Region.JP,
+                "release_date": date(2026, 9, 24),
+            }
+        ),
+        eu_key_card_sku.model_copy(
+            update={"sku_id": "na-example-game-standard", "region": Region.NA, "release_date": None}
+        ),
+        eu_key_card_sku.model_copy(
+            update={
+                "sku_id": "eu-animal-crossing-standard",
+                "title_id": "animal-crossing",
+                "release_date": date(2026, 10, 15),
+            }
+        ),
     ]
 
-    highlights = build_release_highlights(build_title_views(dated, skus, []))
+    releases = build_box_releases(build_title_views([title, other_title], skus, []))
 
-    assert [highlight.title_id for highlight in highlights] == ["earlier-game", "animal-crossing", "zelda"]
-    assert highlights[0].release_date == "2026-10-01"
-    assert highlights[0].release_date_text == {"es": "1 oct 2026", "en": "Oct 1, 2026"}
+    assert [(release.title_id, release.region, release.release_date) for release in releases] == [
+        ("example-game", Region.JP, date(2026, 9, 24)),
+        ("animal-crossing", Region.EU, date(2026, 10, 15)),
+        ("example-game", Region.EU, date(2026, 10, 15)),
+    ]
+    assert releases[0].release_date_text == {"es": "24 sep 2026", "en": "Sep 24, 2026"}
 
 
-def test_build_release_highlights_summarizes_the_known_formats_in_order(
-    title: Title, eu_key_card_sku: Sku, asia_full_cart_sku: Sku, jp_unknown_sku: Sku
+def test_build_box_releases_ignores_the_title_release_date(title: Title, eu_key_card_sku: Sku) -> None:
+    dated_title = title.model_copy(update={"release_date": "2026-01-01"})
+    undated_sku = eu_key_card_sku.model_copy(update={"release_date": None})
+
+    assert build_box_releases(build_title_views([dated_title], [undated_sku], [])) == []
+
+
+def test_build_box_releases_summarizes_the_known_formats_in_order(
+    title: Title, eu_key_card_sku: Sku, jp_unknown_sku: Sku
 ) -> None:
-    dated = title.model_copy(update={"release_date": "2026-10-15"})
+    same_day = [
+        eu_key_card_sku,
+        eu_key_card_sku.model_copy(
+            update={
+                "sku_id": "eu-example-game-collectors",
+                "edition": Edition.COLLECTORS,
+                "format": Format.FULL_CART,
+            }
+        ),
+        jp_unknown_sku.model_copy(update={"region": Region.EU, "sku_id": "eu-example-game-deluxe"}),
+    ]
 
-    highlight = build_release_highlights(
-        build_title_views([dated], [eu_key_card_sku, jp_unknown_sku, asia_full_cart_sku], [])
-    )[0]
+    release = build_box_releases(build_title_views([title], same_day, []))[0]
 
-    assert [badge.css_class for badge in highlight.formats] == ["format-full-cart", "format-game-key-card"]
-    assert highlight.formats[0].label == {"es": "Cartucho completo", "en": "Full cartridge"}
+    assert [badge.css_class for badge in release.formats] == ["format-full-cart", "format-game-key-card"]
+    assert release.formats[0].label == {"es": "Cartucho completo", "en": "Full cartridge"}
 
 
-def test_build_release_highlights_shows_unknown_when_no_format_is_known(
-    title: Title, jp_unknown_sku: Sku
-) -> None:
-    dated = title.model_copy(update={"release_date": "2026-10-15"})
+def test_build_box_releases_shows_unknown_when_no_format_is_known(title: Title, jp_unknown_sku: Sku) -> None:
+    release = build_box_releases(build_title_views([title], [jp_unknown_sku], []))[0]
 
-    highlight = build_release_highlights(build_title_views([dated], [jp_unknown_sku], []))[0]
-
-    assert [badge.css_class for badge in highlight.formats] == ["format-unknown"]
+    assert [badge.css_class for badge in release.formats] == ["format-unknown"]
