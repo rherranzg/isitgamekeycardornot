@@ -54,7 +54,6 @@ UI_STRINGS: dict[str, dict[str, str]] = {
         "es": "Día en que esta caja sale a la venta en su región.",
         "en": "Date this box goes on sale in its region.",
     },
-    "title_release_date_prefix": {"es": "Switch 2:", "en": "Switch 2:"},
     "title_release_date_hint": {
         "es": (
             "Primera salida del juego en Switch 2, digital o en caja. "

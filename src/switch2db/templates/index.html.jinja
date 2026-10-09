@@ -564,8 +564,7 @@
             <span class="divergence-flag">{{ i18n(t.divergence_flag) }}</span>
             {% endif %}
             {% if title.release_date_text %}
-            {% set title_date = {"es": t.title_release_date_prefix.es ~ " " ~ title.release_date_text.es, "en": t.title_release_date_prefix.en ~ " " ~ title.release_date_text.en} %}
-            <span class="release-date">{{ i18n_hint(title_date, t.title_release_date_hint) }}</span>
+            <span class="release-date">{{ i18n_hint(title.release_date_text, t.title_release_date_hint) }}</span>
             {% endif %}
           </div>
           {% endif %}
