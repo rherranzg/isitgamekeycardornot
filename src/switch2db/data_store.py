@@ -7,6 +7,7 @@ from pydantic import BaseModel, ValidationError
 
 from switch2db.catalog import CatalogEntry
 from switch2db.models import ExcludedTitle, PhysicalRelease, Sku, Title
+from switch2db.nintendo_store import StoreEntry
 
 ModelT = TypeVar("ModelT", bound=BaseModel)
 
@@ -17,11 +18,18 @@ TITLES_HEADER = (
     "# 2026) or null; add_titles refreshes it unless it is an exact day already past. If IGDB lacks it,\n"
     "# it is written by hand with a checked source, and a null from IGDB does not erase it.\n"
     "# status:\n"
-    "#   new      = from the catalog, not researched (set by add_titles)\n"
-    "#   pending  = researched without confirming the boxed edition or finding a source\n"
-    "#   reviewed = researched and checked\n"
+    "#   new       = from the catalog, nothing researched: research every region (set by add_titles)\n"
+    "#   refresh   = research every region again; what is there is a starting point to check\n"
+    "#   pending   = what is there is trusted: research only what is missing\n"
+    "#   completed = every region answered (a SKU or a sourced no-box entry) and every SKU field filled\n"
+    "# last_checked_at is the last date the title was researched or refreshed, edited by hand along with\n"
+    "# status: null while new, and never earlier than the verified_at of its SKUs or its physical_release.\n"
 )
 CATALOG_HEADER = "# Switch 2 games on IGDB (scripts/download_igdb_catalog.py). Local, not versioned.\n"
+STORE_SNAPSHOT_HEADER = (
+    "# Switch 2 games in the Nintendo EU, NA and JP stores (scripts/check_store_dates.py --save).\n"
+    "# Local, not versioned: the next run compares the stores against it.\n"
+)
 
 
 def read_yaml_rows(path: Path) -> list[object]:
@@ -97,10 +105,27 @@ def write_generated_yaml(path: Path, rows: list[dict[str, object]], header: str)
 
 
 def write_titles(path: Path, titles: list[Title]) -> None:
-    """Rewrite the titles file keeping each title's status, with the enum as plain text."""
-    write_generated_yaml(path, [title.model_dump(mode="json") for title in titles], TITLES_HEADER)
+    """Rewrite the titles file keeping each title's status and update links, with the enum as plain text.
+    A title without updates leaves the empty list out, as almost none has any."""
+    rows = [title.model_dump(mode="json", exclude=None if title.updates else {"updates"}) for title in titles]
+    write_generated_yaml(path, rows, TITLES_HEADER)
 
 
 def write_catalog(path: Path, entries: list[CatalogEntry]) -> None:
     """Rewrite the local IGDB games catalog, with ISO dates."""
     write_generated_yaml(path, [entry.model_dump(mode="json") for entry in entries], CATALOG_HEADER)
+
+
+def load_store_snapshot(path: Path) -> list[StoreEntry]:
+    """Load the last saved snapshot of the Nintendo stores; empty if there is none yet."""
+    if not path.exists():
+        return []
+    return [StoreEntry.model_validate(row) for row in read_yaml_rows(path)]
+
+
+def write_store_snapshot(path: Path, entries: list[StoreEntry]) -> None:
+    """Rewrite the snapshot of the Nintendo stores, sorted by region and product."""
+    rows = [
+        entry.model_dump(mode="json") for entry in sorted(entries, key=lambda e: (e.region, e.product_id))
+    ]
+    write_generated_yaml(path, rows, STORE_SNAPSHOT_HEADER)

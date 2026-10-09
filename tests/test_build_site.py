@@ -23,17 +23,23 @@ def docs_dir(mocker: MockerFixture, tmp_path: Path) -> Path:
 def test_main_publishes_every_title_regardless_of_status(
     docs_dir: Path, write_yaml: WriteYaml, title_row: dict[str, object], sku_row: dict[str, object]
 ) -> None:
-    reviewed = {**title_row, "status": "reviewed"}
-    reviewed_without_skus = {
+    to_refresh = {**title_row, "status": "refresh"}
+    refresh_without_skus = {
         **title_row,
         "title_id": "empty-game",
         "name": "Empty Game",
-        "status": "reviewed",
+        "status": "refresh",
     }
     pending_with_skus = {**title_row, "title_id": "pending-game", "name": "Pending Game"}
     pending_sku = {**sku_row, "sku_id": "eu-pending-game-standard", "title_id": "pending-game"}
-    new_title = {**title_row, "title_id": "new-game", "name": "New Game", "status": "new"}
-    write_yaml("titles.yaml", [reviewed, reviewed_without_skus, pending_with_skus, new_title])
+    new_title = {
+        **title_row,
+        "title_id": "new-game",
+        "name": "New Game",
+        "status": "new",
+        "last_checked_at": None,
+    }
+    write_yaml("titles.yaml", [to_refresh, refresh_without_skus, pending_with_skus, new_title])
     write_yaml("skus.yaml", [sku_row, pending_sku])
     write_yaml("physical_release.yaml", [])
 
@@ -55,7 +61,7 @@ def test_main_publishes_every_title_regardless_of_status(
 def test_main_escapes_html_in_title_names(
     docs_dir: Path, write_yaml: WriteYaml, title_row: dict[str, object], sku_row: dict[str, object]
 ) -> None:
-    write_yaml("titles.yaml", [{**title_row, "name": "<script>alert(1)</script>", "status": "reviewed"}])
+    write_yaml("titles.yaml", [{**title_row, "name": "<script>alert(1)</script>", "status": "refresh"}])
     write_yaml("skus.yaml", [sku_row])
     write_yaml("physical_release.yaml", [])
 
@@ -104,9 +110,9 @@ def test_main_publishes_games_without_a_boxed_edition(
         **title_row,
         "title_id": "digital-game",
         "name": "Digital Game",
-        "status": "reviewed",
+        "status": "refresh",
     }
-    write_yaml("titles.yaml", [{**title_row, "status": "reviewed"}, digital_game])
+    write_yaml("titles.yaml", [{**title_row, "status": "refresh"}, digital_game])
     write_yaml("skus.yaml", [sku_row])
     write_yaml("physical_release.yaml", [{**digital_only_row, "title_id": "digital-game"}])
 
@@ -124,7 +130,7 @@ def test_main_publishes_games_without_a_boxed_edition(
 def test_main_keeps_the_anchor_of_a_title_merged_into_another(
     docs_dir: Path, write_yaml: WriteYaml, title_row: dict[str, object], sku_row: dict[str, object]
 ) -> None:
-    write_yaml("titles.yaml", [{**title_row, "status": "reviewed"}])
+    write_yaml("titles.yaml", [{**title_row, "status": "refresh"}])
     write_yaml("skus.yaml", [sku_row])
     write_yaml("physical_release.yaml", [])
     merged = {

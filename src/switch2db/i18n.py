@@ -1,4 +1,4 @@
-from switch2db.models import Edition, Evidence, Format, Region
+from switch2db.models import Edition, Evidence, Format, Region, UpdatedField
 
 LANGUAGES: tuple[str, ...] = ("es", "en")
 
@@ -30,6 +30,24 @@ EVIDENCE_LABELS: dict[Evidence, dict[str, str]] = {
     Evidence.PRESS_REPORT: {"es": "Prensa", "en": "Press report"},
     Evidence.UNCONFIRMED: {"es": "Sin confirmar", "en": "Unconfirmed"},
 }
+
+# What each kind of update changes, to name the link ("Actualización de fecha"); OTHER has no noun and the
+# link is just "Actualización".
+UPDATED_FIELD_NOUNS: dict[UpdatedField, dict[str, str]] = {
+    UpdatedField.RELEASE_DATE: {"es": "fecha", "en": "date"},
+    UpdatedField.FORMAT: {"es": "formato", "en": "format"},
+    UpdatedField.EDITION: {"es": "edición", "en": "edition"},
+    UpdatedField.DISTRIBUTOR: {"es": "distribuidora", "en": "distributor"},
+    UpdatedField.SIZE: {"es": "tamaño", "en": "size"},
+}
+
+# Link to a later source of a SKU; {nouns} are the UPDATED_FIELD_NOUNS joined with "y" / "and".
+UPDATE_LINK_TEMPLATES: dict[str, dict[str, str]] = {
+    "named": {"es": "Actualización de {nouns}", "en": "{nouns} update"},
+    "generic": {"es": "Actualización", "en": "Update"},
+}
+
+LIST_CONJUNCTIONS: dict[str, str] = {"es": "y", "en": "and"}
 
 UI_STRINGS: dict[str, dict[str, str]] = {
     "tagline": {
@@ -68,7 +86,6 @@ UI_STRINGS: dict[str, dict[str, str]] = {
     "col_source": {"es": "Fuente", "en": "Source"},
     "cart_suffix": {"es": "GB (cartucho)", "en": "GB (cartridge)"},
     "download_suffix": {"es": "GB (descarga)", "en": "GB (download)"},
-    "footer": {"es": "Generado el {date}.", "en": "Generated on {date}."},
     "footer_repo": {"es": "Código y datos en GitHub", "en": "Code and data on GitHub"},
     "footer_license": {"es": "Datos bajo licencia ODbL 1.0", "en": "Data licensed under ODbL 1.0"},
     "footer_report": {"es": "Reportar una corrección", "en": "Report a correction"},

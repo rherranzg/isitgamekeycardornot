@@ -1,21 +1,24 @@
 from collections import Counter
 from collections.abc import Sequence
+from datetime import date
 
 from switch2db.data_store import describe_row
 from switch2db.models import (
     DOWNLOAD_FORMATS,
+    SKU_SOURCE_LIST_FIELDS,
+    Edition,
     ExcludedTitle,
     Format,
     PhysicalRelease,
     Sku,
-    SkuStatus,
     Title,
     TitleStatus,
 )
+from switch2db.worklist import list_missing_regions
 
-# A title in these states has been researched: it must have left SKUs or a physical_release.yaml
-# entry saying there is no box.
-RESEARCHED_TITLE_STATUSES = {TitleStatus.PENDING, TitleStatus.REVIEWED}
+# Sku fields a completed title must have filled in every SKU; the ones that only apply to some SKUs
+# (edition_name, cart_size_gb, download_size_gb) are checked apart.
+COMPLETED_SKU_FIELDS = ("distributor", "release_date", "includes_download_code", "ean")
 
 
 def find_duplicates(values: list[str]) -> list[str]:
@@ -88,12 +91,17 @@ def find_merged_title_errors(titles: list[Title], excluded: list[ExcludedTitle])
 def find_physical_release_errors(
     titles: list[Title], releases: list[PhysicalRelease], skus: list[Sku]
 ) -> list[str]:
-    """Detect duplicate or unknown title_ids and digital-only games that have SKUs."""
+    """Detect repeated entries, unknown title_ids, and no-box entries contradicted by a SKU or by the
+    whole-game entry."""
     known_title_ids = {title.title_id for title in titles}
     title_ids_with_skus = {sku.title_id for sku in skus}
+    sku_regions = {(sku.title_id, sku.region) for sku in skus}
+    whole_game_title_ids = {release.title_id for release in releases if release.region is None}
     errors = [
-        f"physical_release.yaml: title_id repetido '{title_id}'"
-        for title_id in find_duplicates([release.title_id for release in releases])
+        f"physical_release.yaml: entrada repetida '{key}'"
+        for key in find_duplicates(
+            [f"{release.title_id} {release.region or ''}".strip() for release in releases]
+        )
     ]
     errors += [
         f"physical_release.yaml: '{release.title_id}' is not in titles.yaml"
@@ -103,8 +111,117 @@ def find_physical_release_errors(
     errors += [
         f"physical_release.yaml: '{release.title_id}' says there is no physical edition, but it has SKUs"
         for release in releases
-        if not release.has_physical_release and release.title_id in title_ids_with_skus
+        if release.region is None
+        and not release.has_physical_release
+        and release.title_id in title_ids_with_skus
     ]
+    errors += [
+        f"physical_release.yaml: '{release.title_id}' says there is no box in {release.region}, "
+        "but it has a SKU there"
+        for release in releases
+        if (release.title_id, release.region) in sku_regions
+    ]
+    errors += [
+        f"physical_release.yaml: '{release.title_id}' has an entry for {release.region} "
+        "and one for the whole game"
+        for release in releases
+        if release.region is not None and release.title_id in whole_game_title_ids
+    ]
+    return errors
+
+
+def find_new_title_errors(titles: list[Title], skus: list[Sku], releases: list[PhysicalRelease]) -> list[str]:
+    """Detect titles marked new that already have SKUs or physical_release entries: new means empty."""
+    researched_title_ids = {sku.title_id for sku in skus} | {release.title_id for release in releases}
+    return [
+        f"titles.yaml: '{title.title_id}' is new but has SKUs or physical_release.yaml entries; use refresh"
+        for title in titles
+        if title.status == TitleStatus.NEW and title.title_id in researched_title_ids
+    ]
+
+
+def latest_check_dates(
+    titles: list[Title], skus: list[Sku], releases: list[PhysicalRelease]
+) -> dict[str, date]:
+    """Latest date each title had a source checked: its own update dates, verified_at and update dates of
+    its SKUs, and the checked_at of its physical_release entry."""
+    latest: dict[str, date] = {}
+    checks = [(title.title_id, update.checked_at) for title in titles for update in title.updates]
+    checks += [(sku.title_id, sku.verified_at) for sku in skus]
+    checks += [(sku.title_id, update.checked_at) for sku in skus for update in sku.updates]
+    checks += [(release.title_id, release.checked_at) for release in releases]
+    for title_id, checked_at in checks:
+        latest[title_id] = max(checked_at, latest.get(title_id, checked_at))
+    return latest
+
+
+def find_last_checked_errors(
+    titles: list[Title], skus: list[Sku], releases: list[PhysicalRelease]
+) -> list[str]:
+    """Detect researched titles whose last_checked_at is missing or older than a source checked for them."""
+    latest = latest_check_dates(titles, skus, releases)
+    errors = []
+    for title in titles:
+        checked_at = latest.get(title.title_id)
+        if title.status == TitleStatus.NEW or checked_at is None:
+            continue
+        if title.last_checked_at is None:
+            errors.append(
+                f"titles.yaml: '{title.title_id}' has sources checked on {checked_at}, but no last_checked_at"
+            )
+        elif title.last_checked_at < checked_at:
+            errors.append(
+                f"titles.yaml: '{title.title_id}' last_checked_at {title.last_checked_at} is earlier than a "
+                f"source checked on {checked_at}"
+            )
+    return errors
+
+
+def list_missing_sku_data(sku: Sku) -> list[str]:
+    """Return what a SKU still lacks to count as complete: its source, its format if unknown, and every
+    field that applies to it but is null."""
+    missing = ["source_url"] if sku.source_url is None else []
+    if sku.format == Format.UNKNOWN:
+        missing.append("format")
+    missing += [field_name for field_name in COMPLETED_SKU_FIELDS if getattr(sku, field_name) is None]
+    if sku.edition != Edition.STANDARD and sku.edition_name is None:
+        missing.append("edition_name")
+    if sku.format == Format.FULL_CART and sku.cart_size_gb is None:
+        missing.append("cart_size_gb")
+    if sku.format in DOWNLOAD_FORMATS and sku.download_size_gb is None:
+        missing.append("download_size_gb")
+    return missing
+
+
+def list_completed_title_gaps(title_id: str, skus: list[Sku], releases: list[PhysicalRelease]) -> list[str]:
+    """Return what keeps a title from being complete. A digital-only game is complete with its sourced
+    physical_release entry; a boxed one needs every region answered (a SKU, or a sourced "no box in that
+    region" entry) and every SKU complete."""
+    whole_game = next(
+        (release for release in releases if release.title_id == title_id and release.region is None), None
+    )
+    if whole_game is not None and not whole_game.has_physical_release:
+        return [] if whole_game.source_url is not None else ["physical_release.yaml entry without source_url"]
+    title_skus = [sku for sku in skus if sku.title_id == title_id]
+    missing_regions = list_missing_regions(title_id, skus, releases)
+    gaps = [f"no SKU nor sourced no-box entry in {', '.join(missing_regions)}"] if missing_regions else []
+    for sku in title_skus:
+        missing = list_missing_sku_data(sku)
+        if missing:
+            gaps.append(f"'{sku.sku_id}' lacks {', '.join(missing)}")
+    return gaps
+
+
+def find_completed_title_errors(
+    titles: list[Title], skus: list[Sku], releases: list[PhysicalRelease]
+) -> list[str]:
+    """Detect titles marked completed that still lack a region, a SKU field or a sourced answer."""
+    errors = []
+    for title in titles:
+        if title.status != TitleStatus.COMPLETED:
+            continue
+        gaps = list_completed_title_gaps(title.title_id, skus, releases)
+        errors += [f"titles.yaml: '{title.title_id}' is completed but {gap}" for gap in gaps]
     return errors
 
 
@@ -115,21 +232,6 @@ def find_missing_sku_warnings(releases: list[PhysicalRelease], skus: list[Sku]) 
         f"physical_release.yaml: '{release.title_id}' has a physical edition but no SKU yet"
         for release in releases
         if release.has_physical_release and release.title_id not in title_ids_with_skus
-    ]
-
-
-def find_unresearched_title_warnings(
-    titles: list[Title], skus: list[Sku], releases: list[PhysicalRelease]
-) -> list[str]:
-    """Warn about titles marked as researched that left neither SKUs nor a physical-release entry."""
-    title_ids_with_skus = {sku.title_id for sku in skus}
-    researched_title_ids = {release.title_id for release in releases}
-    return [
-        f"titles.yaml: '{title.title_id}' is {title.status} but has no SKU nor a physical_release.yaml entry"
-        for title in titles
-        if title.status in RESEARCHED_TITLE_STATUSES
-        and title.title_id not in title_ids_with_skus
-        and title.title_id not in researched_title_ids
     ]
 
 
@@ -154,34 +256,13 @@ def find_download_size_warnings(skus: list[Sku]) -> list[str]:
     ]
 
 
-def find_sku_status_warnings(skus: list[Sku]) -> list[str]:
-    """Warn about SKUs awaiting work: not searched, searched without a source, and flagged for refresh."""
-    new_counts = Counter(sku.title_id for sku in skus if sku.status == SkuStatus.NEW)
-    pending_counts = Counter(sku.title_id for sku in skus if sku.status == SkuStatus.PENDING)
-    refresh_counts = Counter(sku.title_id for sku in skus if sku.status == SkuStatus.REFRESH)
-    warnings = [
-        f"skus.yaml: '{title_id}' has {count} SKU(s) with status new, not shown on the site"
-        for title_id, count in new_counts.items()
-    ]
-    warnings += [
-        f"skus.yaml: '{title_id}' has {count} SKU(s) with no source found (status pending): "
-        "shown as unknown format, they need a deeper search"
-        for title_id, count in pending_counts.items()
-    ]
-    warnings += [
-        f"skus.yaml: '{title_id}' has {count} SKU(s) flagged to be checked again (status refresh)"
-        for title_id, count in refresh_counts.items()
-    ]
-    return warnings
-
-
-def find_unpublished_sku_warnings(titles: list[Title], skus: list[Sku]) -> list[str]:
-    """Warn about games with SKUs that are not on the site because their title is not reviewed."""
-    reviewed_title_ids = {title.title_id for title in titles if title.status == TitleStatus.REVIEWED}
-    unpublished_counts = Counter(sku.title_id for sku in skus if sku.title_id not in reviewed_title_ids)
+def find_sourceless_sku_warnings(skus: list[Sku]) -> list[str]:
+    """Warn about SKUs searched without finding a source: they need a deeper search."""
+    counts = Counter(sku.title_id for sku in skus if sku.source_url is None)
     return [
-        f"skus.yaml: '{title_id}' has {count} unpublished SKU(s) because its title is not reviewed"
-        for title_id, count in unpublished_counts.items()
+        f"skus.yaml: '{title_id}' has {count} SKU(s) with no source: shown as unknown format, "
+        "they need a deeper search"
+        for title_id, count in counts.items()
     ]
 
 
@@ -192,7 +273,7 @@ def list_omitted_optional_sku_fields(row: object) -> list[str]:
     return [
         field_name
         for field_name, field in Sku.model_fields.items()
-        if not field.is_required() and field_name not in row
+        if not field.is_required() and field_name not in row and field_name not in SKU_SOURCE_LIST_FIELDS
     ]
 
 
@@ -218,6 +299,9 @@ def collect_integrity_errors(
         *find_excluded_title_errors(titles, excluded),
         *find_orphan_sku_errors(titles, skus),
         *find_physical_release_errors(titles, releases, skus),
+        *find_new_title_errors(titles, skus, releases),
+        *find_last_checked_errors(titles, skus, releases),
+        *find_completed_title_errors(titles, skus, releases),
     ]
 
 
@@ -229,11 +313,9 @@ def collect_integrity_warnings(
 ) -> list[str]:
     """Collect the warnings that do not invalidate the data; sku_rows are the raw skus.yaml rows."""
     return [
-        *find_unresearched_title_warnings(titles, skus, releases),
         *find_cart_size_warnings(skus),
         *find_download_size_warnings(skus),
-        *find_unpublished_sku_warnings(titles, skus),
         *find_missing_sku_warnings(releases, skus),
-        *find_sku_status_warnings(skus),
+        *find_sourceless_sku_warnings(skus),
         *find_omitted_sku_field_warnings(sku_rows),
     ]

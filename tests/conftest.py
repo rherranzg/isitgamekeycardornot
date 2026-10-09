@@ -31,6 +31,7 @@ def title_row() -> dict[str, object]:
         "publisher": "Example Publisher",
         "release_date": None,
         "status": "pending",
+        "last_checked_at": "2026-09-13",
     }
 
 
@@ -59,7 +60,6 @@ def sku_row() -> dict[str, object]:
         "evidence": "box_photo",
         "source_url": "https://example.com/eu",
         "verified_at": "2026-09-13",
-        "status": "reviewed",
     }
 
 
@@ -101,24 +101,7 @@ def jp_unknown_sku(sku_row: dict[str, object]) -> Sku:
 
 
 @pytest.fixture
-def new_sku(sku_row: dict[str, object]) -> Sku:
-    """Freshly written, unreviewed SKU: shown on the site as unknown format."""
-    return Sku.model_validate(
-        {
-            **sku_row,
-            "sku_id": "na-example-game-standard",
-            "region": "NA",
-            "format": "unknown",
-            "download_size_gb": None,
-            "evidence": "unconfirmed",
-            "source_url": None,
-            "status": "new",
-        }
-    )
-
-
-@pytest.fixture
-def pending_sku(sku_row: dict[str, object]) -> Sku:
+def sku_without_source(sku_row: dict[str, object]) -> Sku:
     """SKU searched without finding a source: shown on the site as unknown format."""
     return Sku.model_validate(
         {
@@ -129,7 +112,6 @@ def pending_sku(sku_row: dict[str, object]) -> Sku:
             "download_size_gb": None,
             "evidence": "unconfirmed",
             "source_url": None,
-            "status": "pending",
         }
     )
 
@@ -201,3 +183,55 @@ def write_yaml(tmp_path: Path) -> Callable[[str, Sequence[object]], Path]:
         return path
 
     return _write_yaml
+
+
+@pytest.fixture
+def rss_feed() -> str:
+    """RSS page with a news item about a box, a review, and an item without a date."""
+    return """<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <item>
+      <title>Example Game &amp; friends get a physical release on Switch 2</title>
+      <link>https://news.example.com/example-game-physical</link>
+      <pubDate>Thu, 08 Oct 2026 10:00:00 +0000</pubDate>
+      <category><![CDATA[Switch 2]]></category>
+      <description><![CDATA[<p>The boxed version is a <strong>game-key card</strong>.</p>]]></description>
+      <content:encoded><![CDATA[<p>Pre-orders open now.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Other Game review</title>
+      <link>https://news.example.com/other-game-review</link>
+      <pubDate>Mon, 05 Oct 2026 10:00:00 -0000</pubDate>
+      <description>A fine game.</description>
+    </item>
+    <item>
+      <title>Undated item</title>
+      <link>https://news.example.com/undated</link>
+    </item>
+  </channel>
+</rss>"""
+
+
+@pytest.fixture
+def eu_store_doc() -> dict[str, object]:
+    """Switch 2 game as the EU store (Solr) returns it."""
+    return {"fs_id": "2785803", "title": "Example Game™", "dates_released_dts": ["2026-11-05T00:00:00Z"]}
+
+
+@pytest.fixture
+def na_store_hit() -> dict[str, object]:
+    """Switch 2 game as the NA store (Algolia) returns it."""
+    return {
+        "objectID": "abc",
+        "nsuid": "70010000095431",
+        "title": "Example Game - Nintendo Switch™ 2 Edition",
+        "releaseDate": "2026-11-05T00:00:00.000Z",
+        "isUpgrade": False,
+    }
+
+
+@pytest.fixture
+def jp_store_item() -> dict[str, object]:
+    """Switch 2 game with a boxed version as the JP store returns it."""
+    return {"id": "70010000131656", "title": "ゲーム", "sform": "BEE_DOWNLOADABLE", "sdate": "2027.5.20"}

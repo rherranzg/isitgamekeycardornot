@@ -423,6 +423,8 @@
     .format-code-in-box { background: var(--code-in-box-bg); color: var(--code-in-box-text); }
     .format-unknown { background: var(--unknown-bg); color: var(--unknown-text); }
     .source-link { color: inherit; }
+    .update-link { display: block; font-size: 0.85em; }
+    .title-badges .update-link { align-self: center; font-size: 0.78rem; white-space: nowrap; }
     footer {
       margin-top: 32px;
       color: var(--muted);
@@ -565,6 +567,9 @@
             {% endif %}
             {% if title.release_date_text %}
             <span class="release-date">{{ i18n_hint(title.release_date_text, t.title_release_date_hint) }}</span>
+            {%- for update in title.release_date_updates %}
+            <a class="source-link update-link" href="{{ update.url }}" target="_blank" rel="noopener noreferrer">{{ i18n(update.label) }}</a>
+            {%- endfor %}
             {% endif %}
           </div>
           {% endif %}
@@ -603,9 +608,12 @@
                 <td>
                   {% if sku.source_url %}
                   <a class="source-link" href="{{ sku.source_url }}" target="_blank" rel="noopener noreferrer">{{ i18n(sku.evidence_label) }}</a>
-                  {% else %}
+                  {% elif not sku.updates %}
                   —
                   {% endif %}
+                  {%- for update in sku.updates %}
+                  <a class="source-link update-link" href="{{ update.url }}" target="_blank" rel="noopener noreferrer">{{ i18n(update.label) }}</a>
+                  {%- endfor %}
                 </td>
               </tr>
               {% endfor %}
@@ -636,7 +644,6 @@
 
     <footer>
       <p>{{ i18n(t.footer_accuracy) }}</p>
-      <p>{{ i18n(footer) }}</p>
       <p>
         <a href="{{ repo_url }}">{{ i18n(t.footer_repo) }}</a> ·
         <a href="{{ data_license_url }}">{{ i18n(t.footer_license) }}</a> ·

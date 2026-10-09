@@ -3,7 +3,7 @@ from datetime import date
 import pytest
 
 from switch2db.catalog import CatalogEntry
-from switch2db.models import ExcludedTitle, Title, TitleStatus
+from switch2db.models import ExcludedTitle, SourceUpdate, Title, TitleStatus
 from switch2db.title_selection import (
     build_new_title,
     is_settled_release_date,
@@ -122,6 +122,16 @@ def test_refresh_release_dates_keeps_a_manual_date_when_the_catalog_has_none(tit
     catalog = [build_entry(title.igdb_id, title.name, release_date=None)]
 
     assert refresh_release_dates(titles, catalog, TODAY)[0].release_date == "2026-11-05"
+
+
+def test_refresh_release_dates_keeps_a_date_backed_by_an_update_link(title: Title) -> None:
+    update = SourceUpdate.model_validate(
+        {"url": "https://example.com/date", "checked_at": "2026-09-20", "fields": ["release_date"]}
+    )
+    titles = [title.model_copy(update={"release_date": "2026-11-04", "updates": [update]})]
+    catalog = [build_entry(title.igdb_id, title.name, release_date="2026-11-05")]
+
+    assert refresh_release_dates(titles, catalog, TODAY)[0].release_date == "2026-11-04"
 
 
 def test_refresh_release_dates_keeps_titles_missing_from_the_catalog(title: Title) -> None:

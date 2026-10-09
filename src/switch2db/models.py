@@ -40,6 +40,10 @@ class Format(StrEnum):
     UNKNOWN = "unknown"
 
 
+# Sku fields that list later sources rather than data: an empty list may be left out of the YAML and they
+# do not count towards the fill rates.
+SKU_SOURCE_LIST_FIELDS = frozenset({"updates"})
+
 # Formats whose box needs a download to play; download_size_gb only makes sense for them.
 DOWNLOAD_FORMATS = frozenset({Format.GAME_KEY_CARD, Format.CODE_IN_BOX})
 
@@ -54,21 +58,38 @@ class Evidence(StrEnum):
     UNCONFIRMED = "unconfirmed"
 
 
-class SkuStatus(StrEnum):
-    """Review status of a SKU. The site publishes every status."""
-
-    NEW = "new"  # draft nobody has searched yet: shown as unknown format
-    PENDING = "pending"  # searched without finding a source: shown as unknown format, needs a deeper search
-    REVIEWED = "reviewed"  # checked by opening the source: shown with its source
-    REFRESH = "refresh"  # has a source, but evidence must be searched for again on the web; still published
-
-
 class TitleStatus(StrEnum):
     """Research status of a title. The site publishes every status."""
 
-    NEW = "new"  # taken from the IGDB catalog, not researched
-    PENDING = "pending"  # researched without confirming the boxed edition or finding a source
-    REVIEWED = "reviewed"  # researched: igdb_id is the game's (not an edition's) and the rest checks out
+    NEW = "new"  # taken from the IGDB catalog, nothing researched: research every region from scratch
+    REFRESH = (
+        "refresh"  # research every region again; what is there is a starting point to check, not trusted
+    )
+    PENDING = "pending"  # what is there is trusted: research only what is missing
+    COMPLETED = "completed"  # every region answered and every SKU field filled: no more searching
+
+
+class UpdatedField(StrEnum):
+    """Kind of update a later source brings (a delay, a format change...). OTHER covers a kind that has no
+    value of its own yet; when one shows up more than once, it gets its own value and label."""
+
+    RELEASE_DATE = "release_date"
+    FORMAT = "format"
+    EDITION = "edition"
+    DISTRIBUTOR = "distributor"
+    SIZE = "size"
+    OTHER = "other"
+
+
+class SourceUpdate(BaseModel):
+    """Later source (news, store listing...) that updates some data of a SKU after its original source, or
+    some data of a title after IGDB."""
+
+    model_config = ConfigDict(extra="forbid")
+
+    url: HttpUrl = Field(..., description="Source with the update")
+    checked_at: date = Field(..., description="Date the update was read in the source")
+    fields: list[UpdatedField] = Field(..., min_length=1, description="SKU data the source updates")
 
 
 class Title(BaseModel):
@@ -87,7 +108,23 @@ class Title(BaseModel):
         pattern=RELEASE_DATE_PATTERN,
         description="Switch 2 release according to IGDB, with whatever precision is known; null if unknown",
     )
+    updates: list[SourceUpdate] = Field(
+        default_factory=list,
+        description="Sources that changed the title's data by hand (a release date IGDB lacks or has wrong), "
+        "oldest first",
+    )
     status: TitleStatus = Field(..., description="Research status of the title")
+    last_checked_at: date | None = Field(
+        None,
+        description="Last date the title was researched or refreshed; null if never (new) or not on record",
+    )
+
+    @model_validator(mode="after")
+    def check_new_was_never_checked(self) -> Self:
+        """Fail if a `new` title has a check date: `new` means nobody has researched it yet."""
+        if self.status == TitleStatus.NEW and self.last_checked_at is not None:
+            raise ValueError("a new title has no last_checked_at: nobody has researched it yet")
+        return self
 
 
 class ExcludedTitle(BaseModel):
@@ -116,13 +153,16 @@ class ExcludedTitle(BaseModel):
 
 
 class PhysicalRelease(BaseModel):
-    """Result of researching whether a game ever got a boxed edition in any region."""
+    """Result of researching whether a game got a boxed edition: in any region (region null) or in one."""
 
     model_config = ConfigDict(extra="forbid")
 
     title_id: str = Field(..., pattern=SLUG_PATTERN, description="Researched game")
     has_physical_release: bool = Field(
         ..., description="True if a boxed edition exists in some region; False if digital only"
+    )
+    region: Region | None = Field(
+        None, description="Region the finding is about; null for the whole game (every region)"
     )
     evidence: Evidence = Field(..., description="Level of evidence of the finding")
     source_url: HttpUrl | None = Field(None, description="Source that backs it")
@@ -133,6 +173,13 @@ class PhysicalRelease(BaseModel):
         """Fail if something is claimed without a source; unconfirmed ('searched, not found') needs none."""
         if self.evidence != Evidence.UNCONFIRMED and self.source_url is None:
             raise ValueError(f"source_url is required when evidence is '{self.evidence}'")
+        return self
+
+    @model_validator(mode="after")
+    def check_region_entry_says_no_box(self) -> Self:
+        """Fail if a region entry claims a box: a box in a region is written as a SKU."""
+        if self.region is not None and self.has_physical_release:
+            raise ValueError("a region entry only records that there is no box in it; a box is a SKU")
         return self
 
 
@@ -181,10 +228,13 @@ class Sku(BaseModel):
     )
     evidence: Evidence = Field(..., description="Level of evidence for the format")
     source_url: HttpUrl | None = Field(None, description="Source that backs the format")
-    verified_at: date = Field(
-        ..., description="Last date the source was checked; for `pending`, the date of the search"
+    updates: list[SourceUpdate] = Field(
+        default_factory=list,
+        description="Later sources that update the SKU (new date, format change...), oldest first",
     )
-    status: SkuStatus = Field(..., description="Review status of the SKU; the site publishes all of them")
+    verified_at: date = Field(
+        ..., description="Last date the source was checked; without source_url, the date of the search"
+    )
 
     @field_validator("ean")
     @classmethod
@@ -214,8 +264,11 @@ class Sku(BaseModel):
         return self
 
     @model_validator(mode="after")
-    def check_pending_has_no_source(self) -> Self:
-        """Fail if a `pending` SKU has a source: `pending` means it was searched for and not found."""
-        if self.status == SkuStatus.PENDING and self.source_url is not None:
-            raise ValueError("status 'pending' is for SKUs without a source; with source_url use 'reviewed'")
+    def check_updates_are_new_sources(self) -> Self:
+        """Fail if an update repeats the original source or another update: each one is a different page."""
+        urls = [str(update.url) for update in self.updates]
+        if self.source_url is not None and str(self.source_url) in urls:
+            raise ValueError("an update repeats source_url; updates are later sources")
+        if len(urls) != len(set(urls)):
+            raise ValueError("two updates share the same url")
         return self

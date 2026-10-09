@@ -17,11 +17,11 @@ data/igdb_catalog.yaml            (local, no se versiona)
 data/titles.yaml                  (el único fichero de títulos)
    │  [AUTO] scripts.next_work         → qué falta por investigar
    │  [MANUAL] investigar el formato   → busca según publisher y región,
-   │                                     escribe la fuente, deja el SKU en reviewed y
-   │                                     confirma la edición → título reviewed
+   │                                     escribe el SKU con su fuente y
+   │                                     → título completed, o pending si falta algo
    ▼
 data/physical_release.yaml        (¿hay caja? si no, el juego sale como "sin edición física")
-data/skus.yaml                    (un SKU por región y edición, con su status)
+data/skus.yaml                    (un SKU por región y edición, con su fuente)
    │  [AUTO] scripts.validate_data     → errores, avisos e informe
    │  [AUTO] scripts.build_site        → docs/index.html
    ▼
@@ -31,35 +31,42 @@ docs/  ──[MANUAL] git commit + push──▶  GitHub Pages
 Regla general: **lo automático trae metadatos y candidatos; la investigación se cierra donde hay fuente**.
 Ninguna fuente estructurada dice si un juego es game-key card o cartucho completo, así que cada dato se
 respalda con la **cita textual** anotada en el YAML junto a su `source_url`. Sin cita no hay dato; con cita,
-el SKU queda en `reviewed`, sin revisión intermedia.
+el SKU queda escrito, sin revisión intermedia.
 
 **La web publica todos los títulos de `titles.yaml`, sea cual sea su `status`, y todos sus SKUs.** El status
-solo gobierna la cola de trabajo y cómo se muestra cada SKU.
+del título solo gobierna la cola de trabajo.
 
 Estados de un título:
 
 | status | Qué significa |
 |---|---|
-| `new` | lo ha traído `add_titles` del catálogo y nadie lo ha investigado |
-| `pending` | investigado sin poder confirmar la edición ni encontrar fuente |
-| `reviewed` | investigado: el `igdb_id` es el del juego (no el de una de sus ediciones, salvo la excepción del paso 2) y nombre y publisher son correctos |
+| `new` | lo ha traído `add_titles` del catálogo y no hay nada investigado: se investigan todas las regiones. No puede tener SKUs ni entradas en `physical_release.yaml` |
+| `refresh` | se vuelven a investigar todas las regiones. Lo que hay es un punto de partida que se comprueba, no se da por bueno: lo nuevo sustituye a lo antiguo (una fuente que sigue diciendo lo mismo se conserva, con sus `updates`) |
+| `pending` | lo que hay se da por bueno: solo se investiga lo que falta (regiones, SKUs sin fuente, campos vacíos) |
+| `completed` | no falta nada: cada región respondida (un SKU con fuente o un "sin caja en esta región" con fuente) y cada SKU con todos sus datos, o "sin edición física" con fuente. No hace falta volver a buscar nada |
 
-Un título `reviewed` o `pending` debe tener SKUs o una entrada en `physical_release.yaml` que diga que no hay
-caja (`validate_data` avisa si no). Si `name`, `publisher` o `igdb_id` quedan mal, se corrigen a mano en
-`titles.yaml`: son datos de identidad, no evidencias, así que no tienen status propio.
+Investigar un título `new`, `refresh` o `pending` acaba en `completed` si no falta nada y en `pending` si falta
+algo. Si `name`, `publisher` o `igdb_id` quedan mal, se corrigen a mano en `titles.yaml`: son datos de
+identidad, no evidencias, así que no tienen status propio.
 
-Estados de un SKU:
+Si un juego no va a tener caja en una región (allí solo sale en digital), se anota en `physical_release.yaml`
+con esa `region`, `has_physical_release: false` y su fuente. Con fuente, la región cuenta como respondida.
 
-| status | Qué significa | En la web |
-|---|---|---|
-| `new` | borrador que nadie ha buscado todavía | formato desconocido |
-| `pending` | ya se buscó su fuente y no apareció; falta buscarla a fondo | formato desconocido |
-| `reviewed` | su fuente se ha abierto y dice lo que dice el SKU | su formato |
-| `refresh` | tiene fuente, pero hay que volver a buscar evidencias (dato viejo, fuente caída, región nueva) | su formato, igual que `reviewed` |
+Un SKU está completo cuando tiene `source_url`, su `format` no es `unknown` y tiene `distributor`, `release_date`,
+`includes_download_code` y `ean`, más `edition_name` si no es la estándar, `cart_size_gb` si es `full_cart` y
+`download_size_gb` si es game-key card o code in box. Si falta cualquiera de esas cosas, el título se queda en
+`pending`. `validate_data` falla si un título `completed` no lo cumple.
 
-Un SKU `pending` no lleva `source_url` (el modelo lo rechaza) y su `format` es `unknown`, y nunca hay
-`reviewed` sin `source_url`. La web no muestra marcas de verificación ni `verified_at`, que solo sale en el
+Los SKUs no tienen status. Un SKU con formato conocido lleva siempre un `source_url` que se ha abierto y dice
+lo que dice el SKU. Un SKU buscado sin encontrar fuente lleva `source_url: null` y `format: unknown`: sale en
+la web como formato desconocido y queda pendiente de una búsqueda a fondo. La web no muestra marcas de verificación ni `verified_at`, que solo sale en el
 informe de `validate_data`.
+
+Nada de lo que enseña la web cambia sin su enlace. Una fuente posterior que actualiza un SKU (un retraso, un
+cambio de formato) no sustituye a `source_url`: va a la lista `updates` del SKU con los `fields` que actualiza, y
+la web la enlaza junto a la fuente. Lo mismo un dato que se rellena desde otra fuente (una fecha que era `null`).
+La fecha de un título escrita a mano lleva su fuente en `updates` del título, y `add_titles` ya no la sustituye
+por la de IGDB.
 
 ## 2. Paso a paso
 
@@ -121,12 +128,11 @@ Calcula la cola leyendo solo los ficheros locales (sin red):
 
 | Lista | Qué es |
 |---|---|
-| `titles_to_review` | títulos `pending`: investigados sin confirmar la edición ni encontrar fuente |
 | `titles_to_research` | títulos `new`: nadie los ha mirado. **Por aquí se empieza** |
-| `titles_missing_regions` | títulos ya empezados y las regiones que les faltan |
-| `new_skus` | SKUs `new`: sin fuente buscada |
-| `skus_without_source` | SKUs `pending`: buscados sin fuente, pendientes de búsqueda a fondo |
-| `skus_to_refresh` | SKUs `refresh`: hay que volver a comprobarlos |
+| `titles_to_refresh` | títulos `refresh`: se vuelven a investigar desde cero |
+| `titles_to_complete` | títulos `pending`: solo falta lo que no hay, del comprobado hace más tiempo al más reciente |
+| `titles_missing_regions` | títulos ya empezados y las regiones sin SKU ni "sin caja" con fuente |
+| `skus_without_source` | SKUs sin `source_url`: buscados sin fuente, pendientes de búsqueda a fondo |
 
 ### Paso 4 — Investigar el formato · MANUAL
 
@@ -134,7 +140,8 @@ Se busca en fuentes públicas (fichas oficiales, prensa, tiendas, fotos de la ca
 
 1. **Paso cero: ¿existe edición física?** En la mayoría de los indies, no. Si no hay caja en ninguna región,
    no se escriben SKUs: se anota en `data/physical_release.yaml` (`has_physical_release: false`, con fuente y
-   fecha) y el juego no se vuelve a investigar.
+   fecha) y el juego no se vuelve a investigar. Si solo faltan cajas en algunas regiones, una entrada por
+   región (`region: KR`...), con fuente.
 2. **Enruta la búsqueda por publisher**, que es lo que mejor predice el formato:
    - Nintendo first-party → casi siempre `full_cart`; listas de "full game on the cart" por región.
    - Third-party japonés → API de Nintendo JP (`icode`, `maker`, `pprice`), las webs oficiales asiáticas con
@@ -144,13 +151,11 @@ Se busca en fuentes públicas (fichas oficiales, prensa, tiendas, fotos de la ca
    - Indies → la web y la tienda del distribuidor especializado que saca la edición física.
 3. **Exige cita textual** para cada dato: si la fuente no trae la frase, el dato no existe. Sin fuente, `null`;
    sin fuente del formato, `format: unknown`.
-4. **Escribe los SKUs con su fuente y en `status: reviewed`**, con todas las claves y la etiqueta de acceso en
+4. **Escribe los SKUs con su fuente**, con todas las claves y la etiqueta de acceso en
    el comentario: `(leída)`, `(listado)` o `(API)`. `verified_at` es el día en que se abrió la fuente. Lo
-   buscado sin fuente queda en `pending`, con `format: unknown` y `source_url: null`, apuntado para buscarlo
-   a fondo. Cada edición con caja (Deluxe, Collector's, SteelBook...) es su propio SKU.
-5. **Pone el título en `reviewed`** si se confirma su edición (el `igdb_id` es el del juego) y que nombre y
-   publisher son correctos. Si no, queda en `pending`, que sale de `titles_to_research` y pasa a
-   `titles_to_review`.
+   buscado sin fuente queda con `format: unknown` y `source_url: null`, apuntado para buscarlo a fondo. Cada edición con caja (Deluxe, Collector's, SteelBook...) es su propio SKU.
+5. **Pone el título en `completed`** si no falta nada, o en `pending` si falta algo, con `last_checked_at`
+   de hoy. Un `pending` pasa de `titles_to_research` a `titles_to_complete`.
 
 ### Paso 4 bis — Repasar lo que quede marcado · MANUAL (opcional)
 
@@ -158,9 +163,7 @@ No hay puerta de revisión: todo se publica. Lo que queda en la cola de `next_wo
 
 | Lo que ves | Qué hacer |
 |---|---|
-| SKU en `new` | buscarlo; mientras, sale como formato desconocido |
-| SKU en `pending` | buscar a fondo (otra región, prensa, caja) y, si aparece, pasarlo a `reviewed` con su `format` |
-| SKU en `refresh` | volver a buscar evidencias, actualizar la fuente y `verified_at` |
+| SKU sin `source_url` | buscar a fondo (otra región, prensa, caja) y, si aparece, escribir su `source_url` y su `format` |
 | un dato erróneo | corregirlo en `skus.yaml`, o borrar la entrada |
 
 Las reglas de escritura de `skus.yaml` (todas las claves, `null` lo desconocido, `sku_id` canónico,
@@ -181,20 +184,23 @@ Errores:
 - `title_id` o `igdb_id` repetidos en `titles.yaml`; `sku_id` repetido en SKUs.
 - `igdb_id` repetido en `excluded_titles.yaml`, o un título de `titles.yaml` cuyo `igdb_id` está excluido.
 - SKU cuyo `title_id` no está en `titles.yaml`.
-- En `physical_release.yaml`: `title_id` repetido o inexistente, o un juego sin edición física que tiene SKUs.
+- En `physical_release.yaml`: entrada repetida (por título y región) o con `title_id` inexistente, un juego
+  sin edición física que tiene SKUs, una región "sin caja" con un SKU en esa región o junto a una entrada del
+  juego entero.
+- Título `new` con SKUs o entradas en `physical_release.yaml` (debería ser `refresh`).
+- Título `completed` al que le falta una región, el `source_url` de un SKU o un dato (ver "Estados de un título").
 - Fallos de esquema: slug inválido, `sku_id` no canónico, `format` conocido sin `source_url`, EAN/UPC con
   dígito de control incorrecto, claves de más (`extra="forbid"`), tipos o rangos.
 
 Avisos:
 
-- Título `reviewed` o `pending` sin SKUs ni entrada en `physical_release.yaml`.
 - `cart_size_gb` en un SKU que no es `full_cart`, o `download_size_gb` en uno que no es `game_key_card` ni `code_in_box` (el tamaño de la eShop es el de la versión digital: solo es la descarga de la caja cuando esta es key card o code in box).
-- SKUs cuyo título no está `reviewed`; SKUs en `new`, `pending` o `refresh`.
+- SKUs sin `source_url`.
 - Juego con edición física confirmada sin ningún SKU.
 - Filas de `skus.yaml` que **omiten** una clave opcional en vez de escribirla como `null`.
 
-Informe (`Informe de datos`): recuento de títulos y SKUs; reparto por status de título, región, formato y
-status de SKU; `pending_review_titles`; `fill_rates` por campo (los condicionales solo donde aplican:
+Informe (`Informe de datos`): recuento de títulos y SKUs; reparto por status de título, región y
+formato de SKU; `fill_rates` por campo (los condicionales solo donde aplican:
 `cart_size_gb` sobre `full_cart`); `low_fill_fields` (≤ 60 %, salvo `distributor`, que se conserva por
 decisión del 13-09-2026) y `format_divergences` (juego-edición cuyo formato conocido cambia entre regiones,
 ignorando los `unknown`).
@@ -207,8 +213,8 @@ uv run python -m scripts.build_site
 
 - Renderiza `docs/index.html` (ES/EN, buscador por juego o publisher, filtros de región/formato/edición) desde
   `titles.yaml` + `skus.yaml` + `physical_release.yaml`, y toca `docs/.nojekyll`.
-- **Publica todos los títulos de `titles.yaml`, sea cual sea su `status`, con todos sus SKUs**: los `new` y
-  `pending`, como formato desconocido. A la derecha del título va `release_date` como etiqueta, con su
+- **Publica todos los títulos de `titles.yaml`, sea cual sea su `status`, con todos sus SKUs**: los que no
+  tienen fuente, como formato desconocido. A la derecha del título va `release_date` como etiqueta, con su
   precisión ("20 ago 2026", "T3 2026"), y nada si es `null`.
 - Un juego confirmado sin edición física y sin SKUs sale con la nota "no salió en caja en ninguna región" y su
   fuente, sin tabla, y tiene su valor en el filtro de formato, "Sin edición física". Un título sin ningún SKU
@@ -242,8 +248,8 @@ uv run python -m scripts.validate_data
 | 2. Añadir títulos y generar slugs | **AUTO** `add_titles` | `igdb_catalog.yaml` → `titles.yaml` (`new`) |
 | 3. Cola de trabajo | **AUTO** `next_work` | los ficheros de datos → qué falta |
 | 4a. ¿Existe edición física? | **MANUAL** | fuentes → `physical_release.yaml` |
-| 4b. Buscar el formato por región | **MANUAL** (enrutado por publisher) | fuentes → `skus.yaml` en `reviewed` (con cita) |
-| 4c. Confirmar la edición del título | **MANUAL** | `titles.yaml` (solo `status`) |
+| 4b. Buscar el formato por región | **MANUAL** (enrutado por publisher) | fuentes → `skus.yaml` (con cita) |
+| 4c. Confirmar la edición del título | **MANUAL** | `titles.yaml` (solo `status` y `last_checked_at`) |
 | 5. Validar e informar | **AUTO** `validate_data` | los YAML → errores/avisos/informe |
 | 6. Generar la web | **AUTO** `build_site` | `titles.yaml` + `skus.yaml` + `physical_release.yaml` → `docs/index.html` |
 | 7. Publicar | **MANUAL** | `git commit` + `push` → GitHub Pages |
@@ -253,12 +259,12 @@ Quién escribe cada fichero:
 | Fichero | Lo escribe | Se edita a mano |
 |---|---|---|
 | `data/igdb_catalog.yaml` | `download_igdb_catalog` (reescribe todo) | no (y no se versiona) |
-| `data/titles.yaml` | `add_titles` (añade al final y reescribe conservando el `status`) | solo `status`; el `title_id` mientras esté `new` y sin SKUs |
-| `data/skus.yaml` | a mano, con fuente y en `reviewed` | sí: corregir datos y estados |
+| `data/titles.yaml` | `add_titles` (añade al final y reescribe conservando el `status`) | solo `status` y `last_checked_at`; el `title_id` mientras esté `new` y sin SKUs |
+| `data/skus.yaml` | a mano, con fuente | sí: corregir datos |
 | `data/physical_release.yaml` | a mano | sí |
 | `docs/index.html` | `build_site` | no |
 
-Lo que no se hace nunca: escribir un dato sin la cita que lo respalde, ni dejar en `reviewed` un SKU sin
+Lo que no se hace nunca: escribir un dato sin la cita que lo respalde, ni un `format` conocido sin
 `source_url`.
 
 ## 4. Rutas rápidas
@@ -267,7 +273,7 @@ Lo que no se hace nunca: escribir un dato sin la cita que lo respalde, ni dejar 
 
 ```bash
 uv run python -m scripts.next_work --limit 10   # qué toca
-# investigar esos juegos                       → SKUs con fuente en reviewed (+ physical_release.yaml)
+# investigar esos juegos                       → SKUs con fuente (+ physical_release.yaml)
 uv run python -m scripts.validate_data
 uv run python -m scripts.build_site
 # a mano: commit + push de data/ y docs/
@@ -281,13 +287,24 @@ uv run python -m scripts.add_titles --count 20                   # o --all; entr
 # luego el ciclo normal: next_work los saca en titles_to_research
 ```
 
+**Ponerse al día con las noticias** de los últimos días (retrasos, cajas nuevas, cambios de formato):
+
+```bash
+uv run python -m scripts.news_candidates --days 7          # noticias que nombran un título conocido
+uv run python -m scripts.check_store_dates --days 7 --save # qué ha cambiado en las tiendas de Nintendo
+# leer cada pista; un cambio confirmado va a `updates` del SKU con su cita
+uv run python -m scripts.validate_data
+uv run python -m scripts.build_site
+```
+
+Los dos scripts solo señalan qué mirar: los datos se cambian a mano, con cita, como cualquier otra
+actualización. Los juegos que aún no están en `titles.yaml` se ignoran; entran con la siguiente importación
+del catálogo.
+
 **Corregir los metadatos de un juego**: editar `name`, `publisher` o `igdb_id` a mano en `titles.yaml`. Si
-eso pone en duda la edición confirmada, bajar el `status` a `pending` para que vuelva a `titles_to_review`.
+eso pone en duda lo investigado, pasar el `status` a `refresh` para que se vuelva a investigar.
 Los SKUs no se tocan: cuelgan del `title_id`, no del `igdb_id`.
 
-**Volver a comprobar un dato viejo**: poner `status: refresh` en el SKU. Sigue publicándose igual y aparece
-en `skus_to_refresh`.
-
 **Un juego que resultó ser solo digital**: sin SKUs; se anota en `physical_release.yaml` y el título pasa a
-`reviewed`. Sale de `titles_to_research` y en la web pasa de la tabla vacía a "sin edición física", con su
+`completed` si la entrada tiene fuente, o a `pending` si no. Sale de `titles_to_research` y en la web pasa de la tabla vacía a "sin edición física", con su
 fuente: es una respuesta, no un hueco.

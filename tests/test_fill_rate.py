@@ -64,7 +64,7 @@ def test_compute_fill_rates_success(
 ) -> None:
     fill_rates = compute_fill_rates([eu_key_card_sku, asia_full_cart_sku, jp_unknown_sku])
 
-    assert list(fill_rates) == list(Sku.model_fields)
+    assert list(fill_rates) == [field for field in Sku.model_fields if field != "updates"]
     assert fill_rates["sku_id"] == 100.0
     assert fill_rates["source_url"] == 66.7
     assert fill_rates["cart_size_gb"] == 100.0

@@ -24,13 +24,13 @@ def test_main_returns_zero_for_valid_data(
     assert main() == 0
 
 
-def test_main_reports_titles_pending_review(
+def test_main_reports_titles_by_status(
     mocker: MockerFixture, tmp_path: Path, write_yaml: WriteYaml, title_row: dict[str, object]
 ) -> None:
     mocker.patch("scripts.validate_data.DATA_DIR", tmp_path)
     mock_logger = mocker.patch("scripts.validate_data.logger")
-    reviewed_row = {**title_row, "title_id": "reviewed-game", "igdb_id": 67890, "status": "reviewed"}
-    write_yaml("titles.yaml", [title_row, reviewed_row])
+    refresh_row = {**title_row, "title_id": "refresh-game", "igdb_id": 67890, "status": "refresh"}
+    write_yaml("titles.yaml", [title_row, refresh_row])
     write_yaml("physical_release.yaml", [])
     write_yaml("excluded_titles.yaml", [])
     write_yaml("skus.yaml", [])
@@ -39,8 +39,7 @@ def test_main_reports_titles_pending_review(
 
     report = mock_logger.info.call_args_list[0].kwargs["extra"]
     assert exit_code == 0
-    assert report["titles_by_status"] == {"pending": 1, "reviewed": 1}
-    assert report["pending_review_titles"] == ["example-game"]
+    assert report["titles_by_status"] == {"pending": 1, "refresh": 1}
 
 
 def test_main_returns_one_and_logs_every_invalid_row(
@@ -69,7 +68,7 @@ def test_main_returns_one_and_logs_every_invalid_row(
     assert "'eu-example-game-standard' references title_id 'example-game'" in logged_errors[1]
 
 
-def test_main_warns_about_omitted_keys_and_unpublished_skus(
+def test_main_warns_about_omitted_keys(
     mocker: MockerFixture,
     tmp_path: Path,
     write_yaml: WriteYaml,
@@ -89,6 +88,3 @@ def test_main_warns_about_omitted_keys_and_unpublished_skus(
     logged_warnings = [call.args[0] for call in mock_logger.warning.call_args_list]
     assert exit_code == 0
     assert any("missing keys ['ean']" in warning for warning in logged_warnings)
-    assert any(
-        "unpublished SKU(s) because its title is not reviewed" in warning for warning in logged_warnings
-    )

@@ -10,12 +10,24 @@ from switch2db.i18n import (
     EVIDENCE_LABELS,
     FORMAT_LABELS,
     LANGUAGES,
+    LIST_CONJUNCTIONS,
     MONTH_ABBREVIATIONS,
     REGION_LABELS,
     RELEASE_DATE_TEMPLATES,
     UI_STRINGS,
+    UPDATE_LINK_TEMPLATES,
+    UPDATED_FIELD_NOUNS,
 )
-from switch2db.models import Edition, ExcludedTitle, Format, PhysicalRelease, Region, Sku, Title
+from switch2db.models import (
+    Edition,
+    ExcludedTitle,
+    Format,
+    PhysicalRelease,
+    Region,
+    Sku,
+    SourceUpdate,
+    Title,
+)
 from switch2db.slug import strip_accents
 
 LocalizedText = dict[str, str]
@@ -25,7 +37,7 @@ LocalizedText = dict[str, str]
 NO_BOX_FILTER_VALUE = "no_box"
 
 # Same as NO_BOX_FILTER_VALUE, but for titles that have no documented SKU yet
-# (status new/pending, not researched).
+# (not researched yet, or researched without finding anything).
 NO_SKUS_FILTER_VALUE = "no_skus"
 
 # Games per page the visitor can choose: filtering runs over all of them and only the current page is shown.
@@ -62,6 +74,13 @@ FORMAT_FILTER_LABELS: dict[str, LocalizedText] = {
 }
 
 
+class UpdateLinkView(BaseModel):
+    """Link to a later source of a SKU, labelled with what it updates and when it was read."""
+
+    label: LocalizedText
+    url: str
+
+
 class SkuView(BaseModel):
     """Regional SKU translated to readable labels, in each supported language."""
 
@@ -77,6 +96,7 @@ class SkuView(BaseModel):
     size_text: LocalizedText
     evidence_label: LocalizedText
     source_url: str | None
+    updates: list[UpdateLinkView]
 
 
 class NoBoxView(BaseModel):
@@ -94,6 +114,7 @@ class TitleView(BaseModel):
     name: str
     publisher: str | None
     release_date_text: LocalizedText | None
+    release_date_updates: list[UpdateLinkView]
     search_text: str
     skus: list[SkuView]
     has_divergence: bool
@@ -155,7 +176,31 @@ def build_sku_view(sku: Sku) -> SkuView:
         size_text=build_size_text(sku),
         evidence_label=EVIDENCE_LABELS[sku.evidence],
         source_url=str(sku.source_url) if sku.source_url else None,
+        updates=[build_update_link_view(update) for update in reversed(sku.updates)],
     )
+
+
+def join_words(words: Sequence[str], lang: str) -> str:
+    """Join words as a list in the language: "fecha", "fecha y formato", "fecha, formato y edición"."""
+    if len(words) <= 1:
+        return "".join(words)
+    return f"{', '.join(words[:-1])} {LIST_CONJUNCTIONS[lang]} {words[-1]}"
+
+
+def build_update_link_label(update: SourceUpdate, lang: str) -> str:
+    """Name a later source by the kind of update it brings ("Actualización de fecha"), or generically if it
+    is only of the OTHER kind."""
+    nouns = [UPDATED_FIELD_NOUNS[field][lang] for field in update.fields if field in UPDATED_FIELD_NOUNS]
+    if not nouns:
+        return UPDATE_LINK_TEMPLATES["generic"][lang]
+    label = UPDATE_LINK_TEMPLATES["named"][lang].format(nouns=join_words(nouns, lang))
+    return label[0].upper() + label[1:]
+
+
+def build_update_link_view(update: SourceUpdate) -> UpdateLinkView:
+    """Label a later source with the kind of update it brings, in each language."""
+    label = {lang: build_update_link_label(update, lang) for lang in LANGUAGES}
+    return UpdateLinkView(label=label, url=str(update.url))
 
 
 def format_release_date(release_date: str, lang: str) -> str:
@@ -210,8 +255,13 @@ def build_no_box_view(release: PhysicalRelease) -> NoBoxView:
 
 
 def find_digital_only_releases(releases: list[PhysicalRelease]) -> dict[str, PhysicalRelease]:
-    """Index by title_id the researched games that got no boxed release in any region."""
-    return {release.title_id: release for release in releases if not release.has_physical_release}
+    """Index by title_id the researched games that got no boxed release in any region (the whole-game
+    entries; a "no box in one region" entry is not shown)."""
+    return {
+        release.title_id: release
+        for release in releases
+        if release.region is None and not release.has_physical_release
+    }
 
 
 def group_merged_titles(excluded: Sequence[ExcludedTitle]) -> dict[str, list[ExcludedTitle]]:
@@ -242,6 +292,7 @@ def build_title_view(
         name=title.name,
         publisher=title.publisher,
         release_date_text=build_release_date_text(title.release_date),
+        release_date_updates=[build_update_link_view(update) for update in reversed(title.updates)],
         search_text=build_search_text(title, other_names),
         skus=[build_sku_view(sku) for sku in title_skus],
         has_divergence=title.title_id in diverging_title_ids,
@@ -308,8 +359,3 @@ def build_box_releases(title_views: Sequence[TitleView]) -> list[BoxReleaseView]
     return sorted(
         releases, key=lambda release: (release.release_date, release.name.casefold(), release.region.value)
     )
-
-
-def build_footer_text(generated_at: str) -> LocalizedText:
-    """Build the footer text with the generation date, in each language."""
-    return {lang: text.format(date=generated_at) for lang, text in UI_STRINGS["footer"].items()}

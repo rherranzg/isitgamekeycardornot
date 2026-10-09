@@ -12,14 +12,17 @@ from switch2db.data_store import (
     describe_row,
     format_validation_error,
     load_skus,
+    load_store_snapshot,
     load_titles,
     parse_rows,
     read_yaml_rows,
     require_valid,
     write_catalog,
+    write_store_snapshot,
     write_titles,
 )
-from switch2db.models import Sku, Title, TitleStatus
+from switch2db.models import Region, Sku, Title, TitleStatus
+from switch2db.nintendo_store import StoreEntry
 
 WriteYaml = Callable[[str, Sequence[object]], Path]
 
@@ -113,6 +116,30 @@ def test_write_titles_round_trips_with_load_titles(tmp_path: Path, title: Title)
     assert load_titles(path) == ([title], [])
 
 
+def test_write_titles_leaves_out_empty_updates(tmp_path: Path, title: Title) -> None:
+    path = tmp_path / "titles.yaml"
+
+    write_titles(path, [title])
+
+    assert "updates" not in path.read_text(encoding="utf-8")
+
+
+def test_write_titles_keeps_the_update_links(tmp_path: Path, title: Title) -> None:
+    path = tmp_path / "titles.yaml"
+    updated = Title.model_validate(
+        {
+            **title.model_dump(mode="json"),
+            "updates": [
+                {"url": "https://example.com/date", "checked_at": "2026-09-13", "fields": ["release_date"]}
+            ],
+        }
+    )
+
+    write_titles(path, [updated])
+
+    assert load_titles(path) == ([updated], [])
+
+
 def test_write_titles_writes_empty_list(tmp_path: Path) -> None:
     path = tmp_path / "titles.yaml"
 
@@ -123,11 +150,11 @@ def test_write_titles_writes_empty_list(tmp_path: Path) -> None:
 
 def test_write_titles_keeps_the_status_of_every_title(tmp_path: Path, title: Title) -> None:
     path = tmp_path / "titles.yaml"
-    reviewed = title.model_copy(update={"title_id": "reviewed-game", "status": TitleStatus.REVIEWED})
+    to_refresh = title.model_copy(update={"title_id": "refresh-game", "status": TitleStatus.REFRESH})
 
-    write_titles(path, [title, reviewed])
+    write_titles(path, [title, to_refresh])
 
-    assert [row.status for row in load_titles(path)[0]] == [title.status, reviewed.status]
+    assert [row.status for row in load_titles(path)[0]] == [title.status, to_refresh.status]
 
 
 def test_write_catalog_writes_header_and_release_date(tmp_path: Path) -> None:
@@ -154,3 +181,20 @@ def test_write_catalog_writes_header_and_release_date(tmp_path: Path) -> None:
             "version_parent": None,
         }
     ]
+
+
+def test_write_store_snapshot_round_trips_sorted(tmp_path: Path) -> None:
+    path = tmp_path / "nintendo_store_catalog.yaml"
+    jp_entry = StoreEntry(
+        region=Region.JP, product_id="2", name="箱", release_date="2027.春", has_package=True
+    )
+    eu_entry = StoreEntry(region=Region.EU, product_id="1", name="Example Game", release_date="2026-11-05")
+
+    write_store_snapshot(path, [jp_entry, eu_entry])
+
+    assert load_store_snapshot(path) == [eu_entry, jp_entry]
+    assert "箱" in path.read_text(encoding="utf-8")
+
+
+def test_load_store_snapshot_returns_empty_list_when_missing(tmp_path: Path) -> None:
+    assert load_store_snapshot(tmp_path / "missing.yaml") == []

@@ -10,6 +10,7 @@ from switch2db.models import (
     PhysicalRelease,
     Region,
     Sku,
+    SourceUpdate,
     Title,
     TitleStatus,
 )
@@ -22,6 +23,7 @@ from switch2db.site import (
     build_search_text,
     build_sku_view,
     build_title_views,
+    build_update_link_view,
 )
 
 
@@ -34,6 +36,55 @@ def test_build_sku_view_translates_labels(eu_key_card_sku: Sku) -> None:
     assert view.evidence_label == {"es": "Foto de la caja", "en": "Box photo"}
     assert view.size_text == {"es": "~20.5 GB (descarga)", "en": "~20.5 GB (download)"}
     assert view.source_url == "https://example.com/eu"
+
+
+def test_build_sku_view_has_no_update_links_without_updates(eu_key_card_sku: Sku) -> None:
+    assert build_sku_view(eu_key_card_sku).updates == []
+
+
+def test_build_sku_view_lists_the_update_links_newest_first(eu_key_card_sku: Sku) -> None:
+    sku = eu_key_card_sku.model_copy(
+        update={
+            "updates": [
+                SourceUpdate.model_validate(
+                    {"url": "https://example.com/old", "checked_at": "2026-09-01", "fields": ["release_date"]}
+                ),
+                SourceUpdate.model_validate(
+                    {
+                        "url": "https://example.com/new",
+                        "checked_at": "2026-10-09",
+                        "fields": ["release_date", "format"],
+                    }
+                ),
+            ]
+        }
+    )
+
+    updates = build_sku_view(sku).updates
+
+    assert [update.url for update in updates] == ["https://example.com/new", "https://example.com/old"]
+    assert updates[0].label == {"es": "Actualización de fecha y formato", "en": "Date and format update"}
+    assert updates[1].label == {"es": "Actualización de fecha", "en": "Date update"}
+
+
+@pytest.mark.parametrize(
+    "fields,expected",
+    [
+        (["release_date"], {"es": "Actualización de fecha", "en": "Date update"}),
+        (
+            ["release_date", "format", "edition"],
+            {"es": "Actualización de fecha, formato y edición", "en": "Date, format and edition update"},
+        ),
+        (["other"], {"es": "Actualización", "en": "Update"}),
+        (["other", "size"], {"es": "Actualización de tamaño", "en": "Size update"}),
+    ],
+)
+def test_build_update_link_view_names_the_kind_of_update(fields: list[str], expected: dict[str, str]) -> None:
+    update = SourceUpdate.model_validate(
+        {"url": "https://example.com/u", "checked_at": "2026-10-09", "fields": fields}
+    )
+
+    assert build_update_link_view(update).label == expected
 
 
 def test_build_sku_view_size_text_prefers_cart_size(asia_full_cart_sku: Sku) -> None:
@@ -104,6 +155,31 @@ def test_build_title_views_no_divergence_when_formats_agree(title: Title, eu_key
     assert views[0].has_divergence is False
 
 
+def test_build_title_views_lists_the_release_date_update_links_newest_first(title: Title) -> None:
+    updated = Title.model_validate(
+        {
+            **title.model_dump(mode="json"),
+            "release_date": "2026-11-04",
+            "updates": [
+                {"url": "https://example.com/old", "checked_at": "2026-09-01", "fields": ["release_date"]},
+                {"url": "https://example.com/new", "checked_at": "2026-09-10", "fields": ["release_date"]},
+            ],
+        }
+    )
+
+    view = build_title_views([updated], [], [])[0]
+
+    assert [link.url for link in view.release_date_updates] == [
+        "https://example.com/new",
+        "https://example.com/old",
+    ]
+    assert view.release_date_updates[0].label == {"es": "Actualización de fecha", "en": "Date update"}
+
+
+def test_build_title_views_has_no_release_date_links_without_updates(title: Title) -> None:
+    assert build_title_views([title], [], [])[0].release_date_updates == []
+
+
 def test_build_title_views_includes_titles_without_skus(title: Title) -> None:
     views = build_title_views([title], [], [])
 
@@ -129,19 +205,23 @@ def test_build_title_views_sorts_by_name_case_insensitive() -> None:
 
 
 def test_build_title_views_includes_titles_of_every_status(title: Title) -> None:
-    new_title = title.model_copy(update={"title_id": "new-game", "status": TitleStatus.NEW})
+    new_title = title.model_copy(
+        update={"title_id": "new-game", "status": TitleStatus.NEW, "last_checked_at": None}
+    )
     pending_title = title.model_copy(update={"title_id": "pending-game", "status": TitleStatus.PENDING})
-    reviewed_title = title.model_copy(update={"title_id": "reviewed-game", "status": TitleStatus.REVIEWED})
+    refresh_title = title.model_copy(update={"title_id": "refresh-game", "status": TitleStatus.REFRESH})
 
-    views = build_title_views([new_title, pending_title, reviewed_title], [], [])
+    views = build_title_views([new_title, pending_title, refresh_title], [], [])
 
-    assert {view.title_id for view in views} == {"new-game", "pending-game", "reviewed-game"}
+    assert {view.title_id for view in views} == {"new-game", "pending-game", "refresh-game"}
 
 
-def test_build_title_views_includes_new_skus(title: Title, eu_key_card_sku: Sku, new_sku: Sku) -> None:
-    views = build_title_views([title], [eu_key_card_sku, new_sku], [])
+def test_build_title_views_includes_skus_without_source(
+    title: Title, eu_key_card_sku: Sku, sku_without_source: Sku
+) -> None:
+    views = build_title_views([title], [eu_key_card_sku, sku_without_source], [])
 
-    assert [sku.region for sku in views[0].skus] == [Region.EU, Region.NA]
+    assert [sku.region for sku in views[0].skus] == [Region.EU, Region.KR]
 
 
 def test_build_title_views_shows_the_no_box_note_with_its_source(

@@ -1,7 +1,7 @@
 from datetime import date
 
 from switch2db.catalog import CatalogEntry, is_catalog_candidate
-from switch2db.models import ExcludedTitle, Title, TitleStatus
+from switch2db.models import ExcludedTitle, Title, TitleStatus, UpdatedField
 from switch2db.slug import make_unique_slug
 
 
@@ -49,15 +49,26 @@ def is_settled_release_date(release_date: str | None, today: date) -> bool:
     return date.fromisoformat(release_date) <= today
 
 
+def has_release_date_update(title: Title) -> bool:
+    """True if a source written by hand backs the title's release date."""
+    return any(UpdatedField.RELEASE_DATE in update.fields for update in title.updates)
+
+
 def refresh_release_dates(titles: list[Title], catalog: list[CatalogEntry], today: date) -> list[Title]:
     """Update from the catalog the release date of titles whose date can still change (unknown, without
-    an exact day, or in the future). Past dates and titles missing from the catalog are left alone, and a
-    catalog entry without a date does not erase one written by hand with a source when IGDB had none."""
+    an exact day, or in the future). Past dates and titles missing from the catalog are left alone, a
+    catalog entry without a date does not erase one written by hand, and a date backed by an update link
+    is kept: the site shows that link next to the date, so IGDB cannot replace it."""
     catalog_by_igdb_id = {entry.igdb_id: entry for entry in catalog}
     refreshed: list[Title] = []
     for title in titles:
         entry = catalog_by_igdb_id.get(title.igdb_id)
-        if entry is None or entry.release_date is None or is_settled_release_date(title.release_date, today):
+        if (
+            entry is None
+            or entry.release_date is None
+            or is_settled_release_date(title.release_date, today)
+            or has_release_date_update(title)
+        ):
             refreshed.append(title)
         else:
             refreshed.append(title.model_copy(update={"release_date": entry.release_date}))

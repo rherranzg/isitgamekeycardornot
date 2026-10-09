@@ -1,5 +1,4 @@
 import sys
-from datetime import UTC, datetime
 
 from aws_lambda_powertools import Logger
 from jinja2 import Environment, FileSystemLoader
@@ -23,14 +22,13 @@ from switch2db.site import (
     REPORT_ISSUE_URL,
     TitleView,
     build_box_releases,
-    build_footer_text,
     build_title_views,
 )
 
 logger = Logger(service="switch2db-build-site")
 
 
-def render_index(title_views: list[TitleView], generated_at: str) -> str:
+def render_index(title_views: list[TitleView]) -> str:
     """Render the single-page site, with search and filters, from the titles."""
     # autoescape=True, not select_autoescape(): that one only escapes .html/.htm/.xml, and this is .jinja.
     environment = Environment(loader=FileSystemLoader(TEMPLATES_DIR), autoescape=True)
@@ -40,7 +38,6 @@ def render_index(title_views: list[TitleView], generated_at: str) -> str:
         title_count=len(title_views),
         sku_count=sum(len(title.skus) for title in title_views),
         t=UI_STRINGS,
-        footer=build_footer_text(generated_at),
         region_labels=REGION_FILTER_LABELS,
         format_labels=FORMAT_FILTER_LABELS,
         edition_labels=EDITION_FILTER_LABELS,
@@ -73,12 +70,11 @@ def main() -> int:
         return 1
 
     title_views = build_title_views(titles, skus, releases, excluded)
-    generated_at = datetime.now(UTC).strftime("%Y-%m-%d %H:%M UTC")
 
     DOCS_DIR.mkdir(exist_ok=True)
     (DOCS_DIR / ".nojekyll").touch()
     output_path = DOCS_DIR / "index.html"
-    output_path.write_text(render_index(title_views, generated_at), encoding="utf-8")
+    output_path.write_text(render_index(title_views), encoding="utf-8")
     logger.info(
         "Site generated",
         extra={

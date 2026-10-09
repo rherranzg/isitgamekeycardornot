@@ -74,26 +74,41 @@ uv sync
 ```
 
 IGDB (Twitch) credentials are only needed for `download_igdb_catalog`, the single entry point to IGDB. Copy
-`.env.example` to `.env` and fill in `TWITCH_CLIENT_ID` / `TWITCH_CLIENT_SECRET`. Every other script works
-offline on the local YAML files. `data/igdb_catalog.yaml`, the local IGDB dump that `add_titles` draws from,
+`.env.example` to `.env` and fill in `TWITCH_CLIENT_ID` / `TWITCH_CLIENT_SECRET`. No other script needs
+credentials; only `fetch_quote`, `news_candidates` and `check_store_dates` use the network. `data/igdb_catalog.yaml`, the local IGDB dump that `add_titles` draws from,
 is git-ignored.
 
-### Statuses
+### Sources and statuses
 
-Every SKU carries a `status`. The site publishes all of them:
+Every SKU with a known format carries a `source_url` that was opened and says what the SKU claims. A SKU
+researched without finding a source has `source_url: null` and `format: unknown`: the site shows it as
+unknown format, and it waits for a deeper search.
 
-| status | Meaning | On the site |
-|---|---|---|
-| `new` | draft nobody has researched yet | unknown format |
-| `pending` | researched, but no source turned up | unknown format |
-| `reviewed` | its source was opened and says what the SKU claims | its format and source |
-| `refresh` | has a source, but needs re-checking (stale data, dead link, new region) | its format and source |
+`source_url` is the original source that backs the format. When a later source updates the SKU (a delay, a
+new date, a format change), it goes in `updates`, oldest first, with the kind of update in `fields`
+(`release_date`, `format`, `edition`, `distributor`, `size`, or `other` for a kind that has no value yet) and
+the date it was read. The site links each one next to the source, newest first, named by its kind ("Date
+update"; just "Update" for `other`). `source_url` only changes if it stops backing the format. Nothing shown on
+the site changes without its link: any value that comes from a source other than `source_url` (a date that was
+`null`, a distributor) has its source in `updates` too.
 
-A SKU is only `reviewed` with a `source_url`, and a `pending` SKU has none (the model rejects it).
+A title's `release_date` comes from IGDB. When it is written by hand (IGDB has none, or a wrong one), its source
+goes in the title's own `updates` in `titles.yaml`, the site links it next to the date, and `add_titles` keeps
+that date instead of IGDB's.
 
-Titles carry `new` (from the IGDB catalog, not researched), `pending` (researched without confirming the
-boxed edition) or `reviewed` (confirmed that the `igdb_id` is the game's, and that the name and publisher
-are right). The site publishes every title whatever its status; a title with no SKUs shows an empty table.
+```yaml
+  source_url: "https://www.nintendolife.com/guides/..."
+  updates:
+    - url: "https://www.fangamer.com/products/..."  # (read) "will not ship until November 10, 2026"
+      checked_at: "2026-10-09"
+      fields: ["release_date"]
+```
+
+Titles carry `new` (from the IGDB catalog, nothing researched: research every region), `refresh` (research
+every region again; the data already there is only a starting point to check, and what is found replaces
+it), `pending` (the data already there is trusted: research only what is missing) or `completed` (every region
+answered, by a sourced SKU or a sourced "no box in this region", with every field that applies filled in, or
+a sourced "no physical edition": nothing left to search for; `validate_data` checks it). The site publishes every title whatever its status; a title with no SKUs shows an empty table.
 
 If `name`, `publisher` or `igdb_id` turn out wrong, fix them by hand in `titles.yaml`. A title's `title_id` is
 frozen once a SKU points at it: it is part of every `sku_id` and the site's `#<title_id>` anchor. When a
@@ -117,6 +132,8 @@ uv run --env-file .env python -m scripts.download_igdb_catalog   # refresh the I
 uv run python -m scripts.add_titles --count 10      # add the next games from the catalog (or --all)
 uv run python -m scripts.add_titles --dates-only    # only refresh release dates
 uv run python -m scripts.fetch_quote <url-or-file> '<regex>' [--context 120] [--max 5] [--raw]
+uv run python -m scripts.news_candidates --days 7    # Switch 2 box and date news of the last days (network)
+uv run python -m scripts.check_store_dates --days 7 [--save]   # Nintendo EU/NA/JP store dates (network)
 uv run python -m scripts.validate_data              # schema, integrity and fill-rate report
 uv run python -m scripts.build_site                 # regenerate docs/index.html
 ```
@@ -130,6 +147,14 @@ publisher or the press); a refresh never replaces it with IGDB's `null`, only wi
 `fetch_quote` downloads a page, identifying itself with the project's User-Agent (or reads a local file), strips
 scripts and tags, and prints only the fragments that match: the literal quote a SKU comment needs. A site that
 answers 403 is not retried by other means.
+
+`news_candidates` reads the RSS feeds of several news sites (paging back where the feed allows it) and lists the
+Switch 2 news items of the window that talk about a box or a release date, matched to `titles.yaml` by name. It
+also says how far back each feed reached, so the gaps can be covered by searching. `check_store_dates` downloads
+the Switch 2 games of the Nintendo EU, NA and JP stores and lists what changed since the last snapshot saved with
+`--save` (new products, new dates, a JP game that now lists a boxed version) and the title and SKU dates that no
+longer agree with the EU and NA stores. The snapshot, `data/nintendo_store_catalog.yaml`, is git-ignored. Neither
+script writes the data files: they point at what to check.
 
 GitHub Pages serves `docs/` from `main`, so publishing means committing the regenerated `docs/` with the data.
 

@@ -1,6 +1,6 @@
 from collections.abc import Callable, Mapping
 
-from switch2db.models import DOWNLOAD_FORMATS, Edition, Format, Sku
+from switch2db.models import DOWNLOAD_FORMATS, SKU_SOURCE_LIST_FIELDS, Edition, Format, Sku
 
 # Kept even when below the threshold. Decided on 2026-09-13: the distributor is internal data.
 FIELDS_KEPT_REGARDLESS_OF_FILL = frozenset({"distributor"})
@@ -50,7 +50,11 @@ def compute_fill_rates(skus: list[Sku]) -> dict[str, float | None]:
     """Compute the fill rate of each Sku field, measuring conditional fields only where they apply."""
     if not skus:
         return {}
-    return {field_name: compute_field_fill_rate(skus, field_name) for field_name in Sku.model_fields}
+    return {
+        field_name: compute_field_fill_rate(skus, field_name)
+        for field_name in Sku.model_fields
+        if field_name not in SKU_SOURCE_LIST_FIELDS
+    }
 
 
 def find_low_fill_fields(fill_rates: Mapping[str, float | None], threshold: float) -> list[str]:

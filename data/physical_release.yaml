@@ -1,14 +1,19 @@
 # Qué se sabe sobre la existencia de edición en caja de cada juego, investigado a mano.
 # Sirve para distinguir "sin edición física" de "aún sin investigar": un juego sin SKUs y sin entrada aquí
-# es que todavía no lo ha mirado nadie. Los detalles por región van en skus.yaml.
+# es que todavía no lo ha mirado nadie. Las cajas que existen van en skus.yaml.
 # Validar con: uv run python -m scripts.validate_data
 #
 # Formato (ejemplo ficticio, no es un dato real):
 # - title_id: "example-game"        # debe existir en titles.yaml
 #   has_physical_release: false     # true si hay caja en alguna región; false si es solo digital
+#   region: null                    # null = el juego entero; EU | NA | JP | KR | ASIA = solo esa región
 #   evidence: "official"            # official | box_photo | retailer_listing | press_report | unconfirmed
 #   source_url: "https://..."       # obligatorio salvo evidence: unconfirmed (buscado y no encontrado)
 #   checked_at: "2026-09-16"
+#
+# Una entrada con region dice que en esa región no hay ni habrá caja (has_physical_release: false); el juego
+# sí tiene caja en otras, que van como SKUs. Con fuente, la región cuenta como respondida para que el título
+# sea completed; sin fuente, sigue pendiente. No puede haber SKU en esa región ni entrada del juego entero.
 - title_id: "all-hands-on-deck"
   has_physical_release: false
   evidence: "unconfirmed"  # búsqueda web: solo aparece como juego de Switch 1 en eShop; sin ficha de Switch 2 ni caja
@@ -1937,5 +1942,10 @@
 - title_id: "deck-of-haunts"
   has_physical_release: false
   evidence: "unconfirmed"  # búsqueda web: solo eShop, ningún listado físico
+  source_url: null
+  checked_at: "2026-10-09"
+- title_id: "montabi"
+  has_physical_release: false
+  evidence: "unconfirmed"  # búsqueda web: solo eShop, ningún listado físico; (leída) Nintendo Store CA: "Version | Nintendo Switch 2 | Edition | Digital"
   source_url: null
   checked_at: "2026-10-09"

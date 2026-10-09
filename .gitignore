@@ -15,5 +15,8 @@ dist/
 # Catálogo completo de IGDB: solo para elegir semillas, no se republica
 data/igdb_catalog.yaml
 
+# Copia de los catálogos de las tiendas de Nintendo: solo sirve para ver qué cambia entre ejecuciones
+data/nintendo_store_catalog.yaml
+
 # Sistema
 .DS_Store

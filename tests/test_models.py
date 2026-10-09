@@ -9,9 +9,9 @@ from switch2db.models import (
     PhysicalRelease,
     Region,
     Sku,
-    SkuStatus,
     Title,
     TitleStatus,
+    UpdatedField,
     build_sku_id,
     has_valid_gtin_check_digit,
 )
@@ -138,12 +138,14 @@ def test_title_model_validate_raises_on_invalid_release_date(
         Title.model_validate({**title_row, "release_date": release_date})
 
 
-@pytest.mark.parametrize("status", ["new", "pending", "reviewed"])
+@pytest.mark.parametrize("status", ["new", "refresh", "pending", "completed"])
 def test_title_model_validate_success(title_row: dict[str, object], status: str) -> None:
-    assert Title.model_validate({**title_row, "status": status}).status == TitleStatus(status)
+    row = {**title_row, "status": status, "last_checked_at": None}
+
+    assert Title.model_validate(row).status == TitleStatus(status)
 
 
-@pytest.mark.parametrize("status", ["done", "PENDING", None])
+@pytest.mark.parametrize("status", ["done", "reviewed", "PENDING", None])
 def test_title_model_validate_raises_on_invalid_status(title_row: dict[str, object], status: object) -> None:
     with pytest.raises(ValidationError):
         Title.model_validate({**title_row, "status": status})
@@ -156,31 +158,54 @@ def test_title_model_validate_raises_when_status_is_missing(title_row: dict[str,
         Title.model_validate(row)
 
 
-@pytest.mark.parametrize("status", ["new", "reviewed", "refresh"])
-def test_sku_model_validate_accepts_every_status_with_source(sku_row: dict[str, object], status: str) -> None:
-    assert Sku.model_validate({**sku_row, "status": status}).status == SkuStatus(status)
+def test_title_model_validate_accepts_last_checked_at_on_a_researched_title(
+    title_row: dict[str, object],
+) -> None:
+    title = Title.model_validate({**title_row, "last_checked_at": "2026-10-09"})
+
+    assert title.last_checked_at == date(2026, 10, 9)
 
 
-def test_sku_model_validate_accepts_pending_without_source(sku_row: dict[str, object]) -> None:
-    """`pending` means the source was searched for and not found: no source_url and unknown format."""
-    sku = Sku.model_validate(
-        {**sku_row, "format": "unknown", "evidence": "unconfirmed", "source_url": None, "status": "pending"}
-    )
+def test_title_model_validate_raises_when_a_new_title_has_last_checked_at(
+    title_row: dict[str, object],
+) -> None:
+    with pytest.raises(ValidationError, match="last_checked_at"):
+        Title.model_validate({**title_row, "status": "new", "last_checked_at": "2026-10-09"})
 
-    assert sku.status == SkuStatus.PENDING
+
+def test_sku_model_validate_accepts_unknown_format_without_source(sku_row: dict[str, object]) -> None:
+    sku = Sku.model_validate({**sku_row, "format": "unknown", "evidence": "unconfirmed", "source_url": None})
+
     assert sku.source_url is None
 
 
-def test_sku_model_validate_raises_when_pending_has_source_url(sku_row: dict[str, object]) -> None:
-    with pytest.raises(ValidationError, match="status 'pending' is for SKUs without a source"):
-        Sku.model_validate({**sku_row, "status": "pending"})
+def test_physical_release_model_validate_accepts_a_no_box_region() -> None:
+    release = PhysicalRelease.model_validate(
+        {
+            "title_id": "example-game",
+            "has_physical_release": False,
+            "region": "KR",
+            "evidence": "official",
+            "source_url": "https://example.com/kr",
+            "checked_at": "2026-10-09",
+        }
+    )
+
+    assert release.region == Region.KR
 
 
-def test_sku_model_validate_raises_when_status_is_missing(sku_row: dict[str, object]) -> None:
-    row = {field: value for field, value in sku_row.items() if field != "status"}
-
-    with pytest.raises(ValidationError, match="status"):
-        Sku.model_validate(row)
+def test_physical_release_model_validate_raises_when_a_region_entry_claims_a_box() -> None:
+    with pytest.raises(ValidationError, match="a box is a SKU"):
+        PhysicalRelease.model_validate(
+            {
+                "title_id": "example-game",
+                "has_physical_release": True,
+                "region": "KR",
+                "evidence": "unconfirmed",
+                "source_url": None,
+                "checked_at": "2026-10-09",
+            }
+        )
 
 
 def test_physical_release_model_validate_allows_unconfirmed_without_source() -> None:
@@ -249,3 +274,41 @@ def test_sku_rejects_a_suffix_that_is_not_the_edition_name(sku_row: dict[str, ob
 
     with pytest.raises(ValidationError, match="should be 'eu-example-game-deluxe'"):
         Sku.model_validate(row)
+
+
+UPDATE_URL = "https://example.com/eu-delay"
+
+
+def test_sku_model_validate_accepts_later_updates(sku_row: dict[str, object]) -> None:
+    sku_row["updates"] = [{"url": UPDATE_URL, "checked_at": "2026-10-09", "fields": ["release_date"]}]
+
+    sku = Sku.model_validate(sku_row)
+
+    assert [str(update.url) for update in sku.updates] == [UPDATE_URL]
+    assert sku.updates[0].fields == [UpdatedField.RELEASE_DATE]
+
+
+def test_sku_model_validate_defaults_updates_to_empty_list(sku_row: dict[str, object]) -> None:
+    assert Sku.model_validate(sku_row).updates == []
+
+
+def test_sku_model_validate_raises_when_an_update_repeats_source_url(sku_row: dict[str, object]) -> None:
+    sku_row["updates"] = [{"url": sku_row["source_url"], "checked_at": "2026-10-09", "fields": ["format"]}]
+
+    with pytest.raises(ValidationError, match="repeats source_url"):
+        Sku.model_validate(sku_row)
+
+
+def test_sku_model_validate_raises_when_two_updates_share_a_url(sku_row: dict[str, object]) -> None:
+    update = {"url": UPDATE_URL, "checked_at": "2026-10-09", "fields": ["release_date"]}
+    sku_row["updates"] = [update, {**update, "fields": ["format"]}]
+
+    with pytest.raises(ValidationError, match="share the same url"):
+        Sku.model_validate(sku_row)
+
+
+def test_sku_model_validate_raises_when_an_update_names_no_field(sku_row: dict[str, object]) -> None:
+    sku_row["updates"] = [{"url": UPDATE_URL, "checked_at": "2026-10-09", "fields": []}]
+
+    with pytest.raises(ValidationError, match="fields"):
+        Sku.model_validate(sku_row)
