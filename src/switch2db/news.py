@@ -33,6 +33,8 @@ TOPIC_PATTERNS = {
 }
 # Only these topics are reported for news that names no known title (Japanese names, renamed games).
 UNMATCHED_TOPICS = frozenset({"format"})
+# Headlines that are noise unless they also talk about the box: a launch trailer is for a game already dated.
+NOISE_HEADLINE = re.compile(r"launch trailer", re.IGNORECASE)
 
 
 class Feed(BaseModel):
@@ -193,6 +195,12 @@ def find_topics(text: str) -> list[str]:
     return [topic for topic, pattern in TOPIC_PATTERNS.items() if pattern.search(text)]
 
 
+def is_noise_headline(headline: str) -> bool:
+    """True if the headline is a kind of news that never brings a new box or date (a launch trailer),
+    unless the headline itself talks about the box."""
+    return NOISE_HEADLINE.search(headline) is not None and "format" not in find_topics(headline)
+
+
 def is_capitalized_word_in(word: str, text: str) -> bool:
     """True if the word appears as a whole word starting with a capital letter or digit: a game called
     "Stray" or "Dispatch" should not match every lowercase "stray" or "dispatch" in the news."""
@@ -234,7 +242,7 @@ def build_news_candidates(
     unmatched: list[UnmatchedNews] = []
     for item in items:
         topics = find_topics(item.text)
-        if not topics or not mentions_switch_2(item.text):
+        if not topics or not mentions_switch_2(item.text) or is_noise_headline(item.headline):
             continue
         title_ids = match_titles(item.text, names_by_title_id)
         headline_title_ids = set(match_titles(item.headline, names_by_title_id))

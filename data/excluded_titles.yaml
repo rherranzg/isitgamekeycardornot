@@ -403,3 +403,13 @@
   reason: "Nombre japonés de Hyperdimension Neptunia Unlimited (IGDB 400492): mismo juego (Idea Factory, 27-08-2026), con dos entradas en IGDB"
   former_title_id: "chou-shin-jikuu-geimu-neptune-unlimited"
   merged_into: "hyperdimension-neptunia-unlimited"
+- igdb_id: 95855
+  name: "RollerCoaster Tycoon on Nintendo Switch"
+  reason: "Segunda entrada de IGDB de RollerCoaster Tycoon Classic (IGDB 26589): mismo publisher (Atari) y misma fecha (28-05-2026); la única ficha de Switch 2 es RollerCoaster Tycoon Classic – Nintendo Switch 2 Edition (https://www.nintendo.com/us/store/products/rollercoaster-tycoon-classic-nintendo-switch-2-edition-switch-2/)"
+  former_title_id: "rollercoaster-tycoon-on-nintendo-switch"
+  merged_into: "rollercoaster-tycoon-classic"
+
+# Juegos de Switch 1 que IGDB pone en Switch 2 por retrocompatibilidad (sin versión de Switch 2 propia).
+- igdb_id: 347867
+  name: "Upin & Ipin Universe"
+  reason: "Solo Switch 1 (https://www.nintendo-insider.com/upin-ipin-universe-out-on-nintendo-switch-next-week/: \"will be released digitally on the Nintendo eShop for Nintendo Switch worldwide on 17 July 2025\"); en Switch 2 solo por retrocompatibilidad y sin ficha de Switch 2 en los catálogos de Nintendo EU, NA ni JP (13-10-2026)"

@@ -36,14 +36,14 @@
   checked_at: "2026-09-26"
 - title_id: "arcade-archives-2-ace-driver"
   has_physical_release: false
-  evidence: "unconfirmed"
-  source_url: null
-  checked_at: "2026-09-17"
+  evidence: "official"  # (leída) ficha oficial de Nintendo: "Arcade Archives 2 ACE DRIVER | Version | Nintendo Switch 2 | Edition | Digital"; (API) search.nintendo.jp: "アーケードアーカイブス2 エースドライバー", icode AAZBA, sdate "2026.5.28", sform BEE_DL, pprice: null
+  source_url: "https://www.nintendo.com/us/store/products/arcade-archives-2-ace-driver-switch-2/"
+  checked_at: "2026-10-13"
 - title_id: "arcade-archives-2-adventure-canoe"
   has_physical_release: false
-  evidence: "unconfirmed"
-  source_url: null
-  checked_at: "2026-09-17"
+  evidence: "official"  # (leída) ficha oficial de Nintendo: "Arcade Archives 2 ADVENTURE CANOE | Version | Nintendo Switch 2 | Edition | Digital"; (API) search.nintendo.jp: "アーケードアーカイブス2 アドベンチャーカヌー", icode ABTGA, sdate "2026.2.19", sform BEE_DL, pprice: null
+  source_url: "https://www.nintendo.com/us/store/products/arcade-archives-2-adventure-canoe-switch-2/"
+  checked_at: "2026-10-13"
 - title_id: "arcade-archives-2-air-combat-22"
   has_physical_release: false
   evidence: "press_report"
@@ -51,49 +51,49 @@
   checked_at: "2026-09-17"
 - title_id: "arcade-archives-2-aqua-jet"
   has_physical_release: false
-  evidence: "unconfirmed"
-  source_url: null
-  checked_at: "2026-09-17"
+  evidence: "official"  # (leída) ficha oficial de Nintendo: "Arcade Archives 2 AQUA JET | Version | Nintendo Switch 2 | Edition | Digital"; (API) search.nintendo.jp: "アーケードアーカイブス2 アクアジェット", icode AAZCA, sdate "2025.8.14", sform BEE_DL, pprice: null
+  source_url: "https://www.nintendo.com/us/store/products/arcade-archives-2-aqua-jet-switch-2/"
+  checked_at: "2026-10-13"
 - title_id: "arcade-archives-2-arkanoid"
   has_physical_release: false
-  evidence: "unconfirmed"
-  source_url: null
-  checked_at: "2026-09-17"
+  evidence: "official"  # (leída) ficha oficial de Nintendo: "Arcade Archives 2 ARKANOID | Version | Nintendo Switch 2 | Edition | Digital"; (API) search.nintendo.jp: "アーケードアーカイブス2 アルカノイド", icode ABFVA, sdate "2026.5.7", sform BEE_DL, pprice: null
+  source_url: "https://www.nintendo.com/us/store/products/arcade-archives-2-arkanoid-switch-2/"
+  checked_at: "2026-10-13"
 - title_id: "arcade-archives-2-arkanoid-revenge-of-doh"
   has_physical_release: false
-  evidence: "unconfirmed"
-  source_url: null
-  checked_at: "2026-09-17"
+  evidence: "official"  # (leída) ficha oficial de Nintendo: "Arcade Archives 2 ARKANOID REVENGE OF DOH | Version | Nintendo Switch 2 | Edition | Digital"; (API) search.nintendo.jp: "アーケードアーカイブス2 アルカノイド リベンジオブDOH", icode ACLSA, sdate "2026.9.3", sform BEE_DL, pprice: null
+  source_url: "https://www.nintendo.com/us/store/products/arcade-archives-2-arkanoid-revenge-of-doh-switch-2/"
+  checked_at: "2026-10-13"
 - title_id: "arcade-archives-2-armadillo-racing"
   has_physical_release: false
-  evidence: "unconfirmed"
-  source_url: null
-  checked_at: "2026-09-17"
+  evidence: "official"  # (leída) ficha oficial de Nintendo: "Arcade Archives 2 ARMADILLO RACING | Version | Nintendo Switch 2 | Edition | Digital"; (API) search.nintendo.jp: "アーケードアーカイブス2 アルマジロレーシング", icode AB8GA, sdate "2026.7.23", sform BEE_DL, pprice: null
+  source_url: "https://www.nintendo.com/us/store/products/arcade-archives-2-armadillo-racing-switch-2/"
+  checked_at: "2026-10-13"
 - title_id: "arcade-archives-2-battlantis"
   has_physical_release: false
-  evidence: "unconfirmed"
-  source_url: null
-  checked_at: "2026-09-17"
+  evidence: "official"  # (leída) ficha oficial de Nintendo: "Arcade Archives 2 BATTLANTIS | Version | Nintendo Switch 2 | Edition | Digital"; (API) search.nintendo.jp: "アーケードアーカイブス2 バトランティス", icode AA8HA, sdate "2025.10.9", sform BEE_DL, pprice: null
+  source_url: "https://www.nintendo.com/us/store/products/arcade-archives-2-battlantis-switch-2/"
+  checked_at: "2026-10-13"
 - title_id: "arcade-archives-2-bomb-bee"
   has_physical_release: false
-  evidence: "unconfirmed"
-  source_url: null
-  checked_at: "2026-09-17"
+  evidence: "official"  # (leída) ficha oficial de Nintendo: "Arcade Archives 2 BOMB BEE | Version | Nintendo Switch 2 | Edition | Digital"; (API) search.nintendo.jp: "アーケードアーカイブス2 ボムビー", icode ABBVA, sdate "2025.11.20", sform BEE_DL, pprice: null
+  source_url: "https://www.nintendo.com/us/store/products/arcade-archives-2-bomb-bee-switch-2/"
+  checked_at: "2026-10-13"
 - title_id: "arcade-archives-2-bomb-jack-twin"
   has_physical_release: false
-  evidence: "unconfirmed"
-  source_url: null
-  checked_at: "2026-09-17"
+  evidence: "official"  # (leída) ficha oficial de Nintendo: "Arcade Archives 2 BOMB JACK TWIN | Version | Nintendo Switch 2 | Edition | Digital"; (API) search.nintendo.jp: "アーケードアーカイブス2 ボンジャックツイン", icode ABKJA, sdate "2026.1.15", sform BEE_DL, pprice: null
+  source_url: "https://www.nintendo.com/us/store/products/arcade-archives-2-bomb-jack-twin-switch-2/"
+  checked_at: "2026-10-13"
 - title_id: "arcade-archives-2-cameltry"
   has_physical_release: false
-  evidence: "unconfirmed"
-  source_url: null
-  checked_at: "2026-09-17"
+  evidence: "official"  # (leída) ficha oficial de Nintendo: "Arcade Archives 2 CAMELTRY | Version | Nintendo Switch 2 | Edition | Digital"; (API) search.nintendo.jp: "アーケードアーカイブス2 キャメルトライ", icode ABGQA, sdate "2026.6.4", sform BEE_DL, pprice: null
+  source_url: "https://www.nintendo.com/us/store/products/arcade-archives-2-cameltry-switch-2/"
+  checked_at: "2026-10-13"
 - title_id: "arcade-archives-2-combat-school"
   has_physical_release: false
-  evidence: "unconfirmed"
-  source_url: null
-  checked_at: "2026-09-17"
+  evidence: "official"  # (leída) ficha oficial de Nintendo: "Arcade Archives 2 COMBAT SCHOOL | Version | Nintendo Switch 2 | Edition | Digital"; (API) search.nintendo.jp: "アーケードアーカイブス2 コンバットスクール", icode ABUUA, sdate "2026.8.6", sform BEE_DL, pprice: null
+  source_url: "https://www.nintendo.com/us/store/products/arcade-archives-2-combat-school-switch-2/"
+  checked_at: "2026-10-13"
 - title_id: "arcade-archives-2-cyber-commando"
   has_physical_release: false
   evidence: "press_report"
@@ -101,24 +101,24 @@
   checked_at: "2026-09-17"
 - title_id: "arcade-archives-2-cyber-cycles"
   has_physical_release: false
-  evidence: "unconfirmed"
-  source_url: null
-  checked_at: "2026-09-17"
+  evidence: "official"  # (leída) ficha oficial de Nintendo: "Arcade Archives 2 CYBER CYCLES | Version | Nintendo Switch 2 | Edition | Digital"; (API) search.nintendo.jp: "アーケードアーカイブス2 サイバーサイクルズ", icode ACBTA, sdate "2026.8.20", sform BEE_DL, pprice: null
+  source_url: "https://www.nintendo.com/us/store/products/arcade-archives-2-cyber-cycles-switch-2/"
+  checked_at: "2026-10-13"
 - title_id: "arcade-archives-2-devastators"
   has_physical_release: false
-  evidence: "unconfirmed"
-  source_url: null
-  checked_at: "2026-09-17"
+  evidence: "official"  # (leída) ficha oficial de Nintendo: "Arcade Archives 2 DEVASTATORS | Version | Nintendo Switch 2 | Edition | Digital"; (API) search.nintendo.jp: "アーケードアーカイブス2 餓流禍", icode ABWCA, sdate "2026.3.19", sform BEE_DL, pprice: null
+  source_url: "https://www.nintendo.com/us/store/products/arcade-archives-2-devastators-switch-2/"
+  checked_at: "2026-10-13"
 - title_id: "arcade-archives-2-final-lap"
   has_physical_release: false
-  evidence: "unconfirmed"
-  source_url: null
-  checked_at: "2026-09-17"
+  evidence: "official"  # (leída) ficha oficial de Nintendo: "Arcade Archives 2 FINAL LAP | Version | Nintendo Switch 2 | Edition | Digital"; (API) search.nintendo.jp: "アーケードアーカイブス2 ファイナルラップ", icode ABUVA, sdate "2026.3.26", sform BEE_DL, pprice: null
+  source_url: "https://www.nintendo.com/us/store/products/arcade-archives-2-final-lap-switch-2/"
+  checked_at: "2026-10-13"
 - title_id: "arcade-archives-2-galactic-warriors"
   has_physical_release: false
-  evidence: "unconfirmed"
-  source_url: null
-  checked_at: "2026-09-17"
+  evidence: "official"  # (leída) ficha oficial de Nintendo: "Arcade Archives 2 GALACTIC WARRIORS | Version | Nintendo Switch 2 | Edition | Digital"; (API) search.nintendo.jp: "アーケードアーカイブス2 ギャラクティックウォーリアーズ", icode ABFAA, sdate "2025.11.13", sform BEE_DL, pprice: null
+  source_url: "https://www.nintendo.com/us/store/products/arcade-archives-2-galactic-warriors-switch-2/"
+  checked_at: "2026-10-13"
 - title_id: "arcade-archives-2-gee-bee"
   has_physical_release: false
   evidence: "press_report"
@@ -2107,3 +2107,403 @@
   evidence: "official"
   source_url: "https://www.konami.com/games/momotetsu/2/products.php"
   checked_at: "2026-10-09"
+# Tanda del 13-10-2026 (títulos new).
+- title_id: "among-us-story-on-guard"
+  has_physical_release: false
+  evidence: "press_report"  # (leída) Nintendo Everything: "the game is hitting both systems on February 17, 2027" ... "The title will be distributed as a digital download."
+  source_url: "https://nintendoeverything.com/?p=926638"
+  checked_at: "2026-10-13"
+- title_id: "fountains"
+  has_physical_release: false
+  evidence: "press_report"  # (leída) Nintendo Life ficha: "Upgrade Path | Via FOUNTAINS (Switch eShop) | Free — Free — Free"
+  source_url: "https://www.nintendolife.com/games/nintendo-switch-2/fountains-nintendo-switch-2-edition"
+  checked_at: "2026-10-13"
+- title_id: "arcade-archives-2-xevious-3d-g"
+  has_physical_release: false
+  evidence: "official"  # (leída) ficha oficial de Nintendo: "Version | Nintendo Switch 2 | Edition | Digital"; (API) search.nintendo.jp: "アーケードアーカイブス2 ゼビウス3D/G", icode ACMHA, sdate "2026.9.24", sform BEE_DL, pprice: null
+  source_url: "https://www.nintendo.com/us/store/products/arcade-archives-2-xevious-3d-g-switch-2/"
+  checked_at: "2026-10-13"
+- title_id: "waltz-and-jam"
+  has_physical_release: false
+  region: "NA"
+  evidence: "official"  # (leída) ficha oficial de Nintendo: "Version | Nintendo Switch 2 | Edition | Digital"
+  source_url: "https://www.nintendo.com/us/store/products/waltz-and-jam-switch-2/"
+  checked_at: "2026-10-13"
+# Completado del 13-10-2026 (los 10 pending más antiguos).
+- title_id: "citizen-sleeper"
+  has_physical_release: false
+  evidence: "press_report"  # (leída) Nintendo Life ficha: "Upgrade Path | Via Citizen Sleeper (Switch eShop) | Free — Free — Free"; la caja de Fangamer es de Switch 1
+  source_url: "https://www.nintendolife.com/games/nintendo-switch-2/citizen-sleeper-nintendo-switch-2-edition"
+  checked_at: "2026-10-13"
+- title_id: "constance"
+  has_physical_release: false
+  evidence: "press_report"  # (leída) Nintendo Life ficha: "Upgrade Path | Via Constance (Switch eShop) | Free — Free — Free"
+  source_url: "https://www.nintendolife.com/games/nintendo-switch-2/constance"
+  checked_at: "2026-10-13"
+- title_id: "crazy-taxi-world-tour"
+  has_physical_release: false
+  evidence: "press_report"  # (leída) Nintendo Insider: "Crazy Taxi: World Tour will be released digitally on the Nintendo eShop for Nintendo Switch 2 worldwide in 2027."
+  source_url: "https://www.nintendo-insider.com/crazy-taxi-world-tour-announced/"
+  checked_at: "2026-10-13"
+# (API) search.nintendo.jp: "ハッピールートを終わらせて Nintendo Switch 2 Edition", icode BP8DA, sdate "2026.1.29", pprice: null, sform: BEE_DL; sin entrada BEE_CARD ni fila en meisakugame.
+- title_id: "ending-the-happy-route"
+  has_physical_release: false
+  region: "JP"
+  evidence: "official"
+  source_url: "https://search.nintendo.jp/nintendo_soft/search.json?q=%E3%83%8F%E3%83%83%E3%83%94%E3%83%BC%E3%83%AB%E3%83%BC%E3%83%88&limit=50"
+  checked_at: "2026-10-13"
+# Completado del 13-10-2026 (los 10 pending siguientes, de Everbloom a Garden Souls).
+- title_id: "exstetra"
+  has_physical_release: false
+  region: "NA"
+  evidence: "official"  # (leída) ficha oficial de Nintendo: "Version | Nintendo Switch 2 | Select an edition | Digital -", "Release date | September 2, 2026"
+  source_url: "https://www.nintendo.com/us/store/products/exstetra-switch-2/"
+  checked_at: "2026-10-13"
+# (API) search.nintendo.jp: "エクステトラ", icode ACFFA, sdate "2026.9.3", maker "フリュー", pprice: null, sform: BEE_DL; sin entrada BEE_CARD ni fila en meisakugame.
+- title_id: "exstetra"
+  has_physical_release: false
+  region: "JP"
+  evidence: "official"
+  source_url: "https://search.nintendo.jp/nintendo_soft/search.json?q=%E3%82%A8%E3%82%AF%E3%82%B9%E3%83%86%E3%83%88%E3%83%A9&limit=50"
+  checked_at: "2026-10-13"
+# (API) search.nintendo.jp: "Hello Kitty Island Adventure Nintendo Switch 2 Edition", icode BELHA, sdate "2025.11.14", maker "Sunblink", pprice: null, sform: BEE_DL; sin entrada BEE_CARD ni fila en meisakugame (ni del Friendship Bundle).
+- title_id: "hello-kitty-island-adventure"
+  has_physical_release: false
+  region: "JP"
+  evidence: "official"
+  source_url: "https://search.nintendo.jp/nintendo_soft/search.json?q=Hello%20Kitty&limit=50"
+  checked_at: "2026-10-13"
+
+# Novedades del 03-10 al 13-10-2026.
+- title_id: "warhammer-survivors"
+  has_physical_release: false
+  evidence: "press_report"  # (leída) Nintendo Everything: "The fast-paced roguelite bullet heaven title is hitting Nintendo Switch 2 and Switch on November 10, 2026." ... "The game will be sold digitally for $7.99 with a 10 percent launch and pre-order discount."
+  source_url: "https://nintendoeverything.com/warhammer-survivors-sets-nintendo-switch-2-and-switch-release-date-new-trailer/"
+  checked_at: "2026-10-13"
+- title_id: "pardon-my-french-toast"
+  has_physical_release: false
+  evidence: "press_report"  # (leída) Nintendo Insider: "Pardon My French Toast will be released digitally on the Nintendo eShop for Nintendo Switch 2 and Nintendo Switch worldwide on 29 October 2026."
+  source_url: "https://www.nintendo-insider.com/pardon-my-french-toast-out-on-nintendo-switch-2-this-month/"
+  checked_at: "2026-10-13"
+
+# Completado el 13-10-2026 (títulos pending sin investigar).
+- title_id: "i-am-your-beast"
+  has_physical_release: false
+  evidence: "press_report"  # (leída) Nintendo Insider: "I Am Your Beast will be released digitally on the Nintendo eShop for Nintendo Switch 2 and Nintendo Switch worldwide on 20 October 2026."
+  source_url: "https://www.nintendo-insider.com/i-am-your-beast-out-on-nintendo-switch-2-this-month/"
+  checked_at: "2026-10-13"
+- title_id: "human-fall-flat-2"
+  has_physical_release: false
+  evidence: "press_report"  # (leída) Nintendo Insider: "Human Fall Flat 2 will be released digitally on the Nintendo eShop for Nintendo Switch 2 worldwide."
+  source_url: "https://www.nintendo-insider.com/human-fall-flat-2-coming-soon-to-nintendo-switch-2/"
+  checked_at: "2026-10-13"
+- title_id: "jujutsu-kaisen-rumble-survivaton"
+  has_physical_release: false
+  evidence: "press_report"  # (leída) Nintendo Insider: "Jujutsu Kaisen Rumble: Survivaton will be released digitally on the Nintendo eShop for Nintendo Switch 2 worldwide in 2026."
+  source_url: "https://www.nintendo-insider.com/jujutsu-kaisen-rumble-survivaton-announced/"
+  checked_at: "2026-10-13"
+# Into the Dead: Our Darkest Days: solo digital en Occidente según Nintendo Insider; en Japón lo vende Spike
+# Chunsoft (Famitsu, "販売： スパイク・チュンソフト", "希望小売価格：価格未定"), sin decir aún si habrá パッケージ版:
+# JP queda sin responder.
+- title_id: "into-the-dead-our-darkest-days"
+  has_physical_release: false
+  region: "EU"
+  evidence: "press_report"  # (leída) Nintendo Insider: "Into The Dead: Our Darkest Days will be released digitally on the Nintendo eShop for Nintendo Switch 2 worldwide in March 2027."
+  source_url: "https://www.nintendo-insider.com/scavenge-to-survive-in-into-the-dead-our-darkest-days-on-nintendo-switch-2/"
+  checked_at: "2026-10-13"
+- title_id: "into-the-dead-our-darkest-days"
+  has_physical_release: false
+  region: "NA"
+  evidence: "press_report"  # (leída) Nintendo Insider: "Into The Dead: Our Darkest Days will be released digitally on the Nintendo eShop for Nintendo Switch 2 worldwide in March 2027."
+  source_url: "https://www.nintendo-insider.com/scavenge-to-survive-in-into-the-dead-our-darkest-days-on-nintendo-switch-2/"
+  checked_at: "2026-10-13"
+- title_id: "into-the-dead-our-darkest-days"
+  has_physical_release: false
+  region: "KR"
+  evidence: "press_report"  # (leída) Nintendo Insider: "Into The Dead: Our Darkest Days will be released digitally on the Nintendo eShop for Nintendo Switch 2 worldwide in March 2027."
+  source_url: "https://www.nintendo-insider.com/scavenge-to-survive-in-into-the-dead-our-darkest-days-on-nintendo-switch-2/"
+  checked_at: "2026-10-13"
+- title_id: "into-the-dead-our-darkest-days"
+  has_physical_release: false
+  region: "ASIA"
+  evidence: "press_report"  # (leída) Nintendo Insider: "Into The Dead: Our Darkest Days will be released digitally on the Nintendo eShop for Nintendo Switch 2 worldwide in March 2027."
+  source_url: "https://www.nintendo-insider.com/scavenge-to-survive-in-into-the-dead-our-darkest-days-on-nintendo-switch-2/"
+  checked_at: "2026-10-13"
+
+# Completado el 13-10-2026 (segunda tanda de títulos pending sin investigar).
+- title_id: "lego-skylines"
+  has_physical_release: false
+  evidence: "press_report"  # (leída) Nintendo Insider: "LEGO Skylines will be released digitally on the Nintendo eShop for Nintendo Switch 2 worldwide, with a release date or window unspecified."
+  source_url: "https://www.nintendo-insider.com/build-your-dream-city-in-lego-skylines-on-nintendo-switch-2/"
+  checked_at: "2026-10-13"
+- title_id: "lightsup"
+  has_physical_release: false
+  evidence: "press_report"  # (leída) Nintendo Insider: "LightSup! will be released digitally on the Nintendo eShop for Nintendo Switch 2 worldwide in 2026."
+  source_url: "https://www.nintendo-insider.com/free-the-lumineia-kingdom-in-lightsup-on-nintendo-switch-2/"
+  checked_at: "2026-10-13"
+- title_id: "mechborn"
+  has_physical_release: false
+  evidence: "press_report"  # (leída) Nintendo Insider: "MECHBORN will be released digitally on the Nintendo eShop for Nintendo Switch 2 and Nintendo Switch worldwide in late 2026."
+  source_url: "https://www.nintendo-insider.com/slay-kaiju-in-mechborn-on-nintendo-switch-2/"
+  checked_at: "2026-10-13"
+- title_id: "n-plus-infinity-times-two"
+  has_physical_release: false
+  evidence: "press_report"  # (leída) Nintendo Insider: "N Plus Infinity Times Two will be released digitally on the Nintendo eShop for Nintendo Switch 2 worldwide in 2027."
+  source_url: "https://www.nintendo-insider.com/n-plus-infinity-times-two-announced/"
+  checked_at: "2026-10-13"
+- title_id: "lego-voyagers"
+  has_physical_release: false
+  region: "NA"
+  evidence: "official"  # (leída) tienda de Nintendo US: "LEGO® Voyagers | Version | Nintendo Switch 2 | Select an edition | Digital -"
+  source_url: "https://www.nintendo.com/us/store/products/lego-voyagers-switch-2/"
+  checked_at: "2026-10-13"
+- title_id: "lego-voyagers"
+  has_physical_release: false
+  region: "JP"
+  evidence: "official"  # (API) search.nintendo.jp: "LEGO® Voyagers", icode ABBNA, sdate "2025.9.15", pprice: null, sform: BEE_DL; sin entrada BEE_CARD ni fila en meisakugame
+  source_url: "https://search.nintendo.jp/nintendo_soft/search.json?q=LEGO%C2%AE%20Voyagers&limit=40"
+  checked_at: "2026-10-13"
+- title_id: "marupoyo-the-round-chick-s-adventure"
+  has_physical_release: false
+  region: "NA"
+  evidence: "official"  # (leída) tienda de Nintendo US: "Marupoyo: The Round Chick's Adventure | Version | Nintendo Switch 2 | Edition | Digital"
+  source_url: "https://www.nintendo.com/us/store/products/marupoyo-the-round-chicks-adventure-switch-2/"
+  checked_at: "2026-10-13"
+- title_id: "mina-the-hollower"
+  has_physical_release: false
+  region: "JP"
+  evidence: "official"  # (API) search.nintendo.jp: "Mina the Hollower - Nintendo Switch 2 Edition", icode BJGVA, sdate "2026.5.29", maker "ヨットクラブゲームズ", pprice: null, sform: BEE_DL; sin entrada BEE_CARD ni fila en meisakugame
+  source_url: "https://search.nintendo.jp/nintendo_soft/search.json?q=Mina%20the%20Hollower&limit=40"
+  checked_at: "2026-10-13"
+
+# Completado el 13-10-2026 (tercera tanda de títulos pending sin investigar).
+- title_id: "out-of-words"
+  has_physical_release: false
+  evidence: "press_report"  # (leída) Nintendo Insider: "Out of Words will be released digitally on the Nintendo eShop for Nintendo Switch 2 worldwide in 2026."
+  source_url: "https://www.nintendo-insider.com/out-of-words-coming-to-nintendo-switch-2/"
+  checked_at: "2026-10-13"
+- title_id: "overcooked-2"
+  has_physical_release: false
+  evidence: "press_report"  # (leída) Nintendo Insider: "Overcooked! 2 Nintendo Switch 2 Edition will be released digitally on the Nintendo eShop for Nintendo Switch 2 worldwide in Winter 2025."
+  source_url: "https://www.nintendo-insider.com/overcooked-2-nintendo-switch-2-edition-out-this-winter/"
+  checked_at: "2026-10-13"
+- title_id: "phasmophobia"
+  has_physical_release: false
+  evidence: "press_report"  # (leída) Nintendo Insider: "Phasmophobia will be released digitally on the Nintendo eShop for Nintendo Switch 2 worldwide in 2026."
+  source_url: "https://www.nintendo-insider.com/hunt-ghosts-in-phasmophobia-on-nintendo-switch-2/"
+  checked_at: "2026-10-13"
+- title_id: "pikuniku-2"
+  has_physical_release: false
+  evidence: "press_report"  # (leída) Nintendo Insider: "Pikuniku 2 will be released digitally on the Nintendo eShop for Nintendo Switch 2 worldwide in 2027."
+  source_url: "https://www.nintendo-insider.com/pikuniku-2-gets-wonderfully-weird-on-nintendo-switch-2-next-year/"
+  checked_at: "2026-10-13"
+- title_id: "powerwash-simulator-2"
+  has_physical_release: false
+  evidence: "press_report"  # (leída) Nintendo Insider: "PowerWash Simulator 2 will be released digitally on the Nintendo eShop for Nintendo Switch 2 worldwide on 23 October 2025."
+  source_url: "https://www.nintendo-insider.com/powerwash-simulator-2-release-date-makes-a-splash/"
+  checked_at: "2026-10-13"
+- title_id: "precognition"
+  has_physical_release: false
+  evidence: "press_report"  # (leída) Nintendo Insider: "PRECOGNITION will be released digitally on the Nintendo eShop for Nintendo Switch 2 worldwide in Spring 2028."
+  source_url: "https://www.nintendo-insider.com/explore-visions-in-precognition-on-nintendo-switch-2/"
+  checked_at: "2026-10-13"
+- title_id: "rogue-fortune"
+  has_physical_release: false
+  evidence: "press_report"  # (leída) Nintendo Insider: "Rogue Fortune will be released digitally on the Nintendo eShop for Nintendo Switch 2 and Nintendo Switch worldwide in 2027."
+  source_url: "https://www.nintendo-insider.com/gamble-your-gold-in-rogue-fortune-on-nintendo-switch-2/"
+  checked_at: "2026-10-13"
+- title_id: "people-of-note"
+  has_physical_release: false
+  region: "NA"
+  evidence: "official"  # (leída) tienda de Nintendo US: "People of Note | Version | Nintendo Switch 2 | Edition | Digital"
+  source_url: "https://www.nintendo.com/us/store/products/people-of-note-switch-2/"
+  checked_at: "2026-10-13"
+- title_id: "quest-of-dungeons"
+  has_physical_release: false
+  region: "NA"
+  evidence: "official"  # (leída) tienda de Nintendo US: "Quest of Dungeons | Version | Nintendo Switch 2 | Edition | Digital"
+  source_url: "https://www.nintendo.com/us/store/products/quest-of-dungeons-switch-2/"
+  checked_at: "2026-10-13"
+- title_id: "riichi-mahjong"
+  has_physical_release: false
+  region: "NA"
+  evidence: "official"  # (leída) tienda de Nintendo US: "RIICHI MAHJONG | Version | Nintendo Switch 2 | Edition | Digital"
+  source_url: "https://www.nintendo.com/us/store/products/riichi-mahjong-switch-2/"
+  checked_at: "2026-10-13"
+- title_id: "rollercoaster-tycoon-classic"
+  has_physical_release: false
+  region: "NA"
+  evidence: "official"  # (leída) tienda de Nintendo US: "RollerCoaster Tycoon® Classic – Nintendo Switch™ 2 Edition | Select a version | Nintendo Switch 2 | Nintendo Switch | Upgrade Pack | ... | Edition | Digital"; la caja de Atari es de Switch 1
+  source_url: "https://www.nintendo.com/us/store/products/rollercoaster-tycoon-classic-nintendo-switch-2-edition-switch-2/"
+  checked_at: "2026-10-13"
+- title_id: "rollercoaster-tycoon-classic"
+  has_physical_release: false
+  region: "JP"
+  evidence: "official"  # (API) search.nintendo.jp: "RollerCoaster Tycoon® Classic™ Nintendo Switch 2 Edition", icode BKPGA, sdate "2026.6.4", pprice: null, sform: BEE_DL; sin entrada BEE_CARD ni fila en meisakugame
+  source_url: "https://search.nintendo.jp/nintendo_soft/search.json?q=RollerCoaster%20Tycoon&limit=40"
+  checked_at: "2026-10-13"
+- title_id: "possessor-s"
+  has_physical_release: false
+  region: "JP"
+  evidence: "official"  # (API) search.nintendo.jp: "Possessor(s)", icode ABBJA, sdate "2026.4.30", pprice: null, sform: BEE_DL; sin entrada BEE_CARD ni fila en meisakugame
+  source_url: "https://search.nintendo.jp/nintendo_soft/search.json?q=Possessor&limit=40"
+  checked_at: "2026-10-13"
+- title_id: "romancing-saga-2-revenge-of-the-seven"
+  has_physical_release: false
+  evidence: "press_report"  # (leída) Nintendo Insider: "Romancing Saga 2: Revenge of the Seven Nintendo Switch 2 Edition is now available digitally on the Nintendo eShop for Nintendo Switch 2 worldwide."
+  source_url: "https://www.nintendo-insider.com/save-your-empire-in-romancing-saga-2-revenge-of-the-seven-nintendo-switch-2-edition/"
+  checked_at: "2026-10-13"
+- title_id: "rotwood"
+  has_physical_release: false
+  evidence: "press_report"  # (leída) Nintendo Insider: "Rotwood is now available as a console exclusive digitally on the Nintendo eShop for Nintendo Switch 2 worldwide."
+  source_url: "https://www.nintendo-insider.com/battle-frenzied-beasts-in-rotwood-on-nintendo-switch-2/"
+  checked_at: "2026-10-13"
+- title_id: "seina-a-tale-of-spirits"
+  has_physical_release: false
+  evidence: "press_report"  # (leída) Nintendo Insider: "Seina: A Tale of Spirits will be released digitally on the Nintendo eShop for Nintendo Switch 2 worldwide in 2026."
+  source_url: "https://www.nintendo-insider.com/seina-a-tale-of-spirits-coming-to-nintendo-switch-2/"
+  checked_at: "2026-10-13"
+- title_id: "shadow-tactics-blades-of-the-shogun"
+  has_physical_release: false
+  evidence: "press_report"  # (leída) Nintendo Insider: "Shadow Tactics: Blades of the Shogun will be released digitally on the Nintendo eShop for Nintendo Switch 2 worldwide on 18 March 2026."
+  source_url: "https://www.nintendo-insider.com/shadow-tactics-blades-of-the-shogun-out-on-nintendo-switch-2-next-month/"
+  checked_at: "2026-10-13"
+- title_id: "shellbound"
+  has_physical_release: false
+  evidence: "press_report"  # (leída) Nintendo Insider: "Shellbound will be released digitally on the Nintendo eShop for Nintendo Switch 2 worldwide in Summer 2028."
+  source_url: "https://www.nintendo-insider.com/unleash-parasitic-powers-in-shellbound-on-nintendo-switch-2/"
+  checked_at: "2026-10-13"
+- title_id: "skate-story"
+  has_physical_release: false
+  evidence: "press_report"  # (leída) Nintendo Insider: "Skate Story will be released digitally on the Nintendo eShop for Nintendo Switch 2 worldwide on 8 December 2025."
+  source_url: "https://www.nintendo-insider.com/kickflip-through-the-underworld-in-skate-story-on-nintendo-switch-2/"
+  checked_at: "2026-10-13"
+- title_id: "skatesterre"
+  has_physical_release: false
+  evidence: "press_report"  # (leída) Nintendo Insider: "Skatesterre will be released digitally on the Nintendo eShop for Nintendo Switch 2 worldwide on 13 August 2026."
+  source_url: "https://www.nintendo-insider.com/skatesterre-out-on-nintendo-switch-2-next-month/"
+  checked_at: "2026-10-13"
+- title_id: "sonic-pico-park"
+  has_physical_release: false
+  evidence: "press_report"  # (leída) Nintendo Insider: "Sonic Pico Park will be released digitally on the Nintendo eShop for Nintendo Switch 2 and Nintendo Switch worldwide on 12 November 2026."
+  source_url: "https://www.nintendo-insider.com/2d-puzzler-sonic-pico-park-out-this-november/"
+  checked_at: "2026-10-13"
+- title_id: "stage-fright"
+  has_physical_release: false
+  evidence: "press_report"  # (leída) Nintendo Insider: "Stage Fright will be released digitally on the Nintendo eShop for Nintendo Switch 2 and Nintendo Switch worldwide in 2027."
+  source_url: "https://www.nintendo-insider.com/work-together-in-stage-fright-on-nintendo-switch-2/"
+  checked_at: "2026-10-13"
+- title_id: "star-trek-shadow-frontier"
+  has_physical_release: false
+  evidence: "press_report"  # (leída) Nintendo Insider: "Star Trek: Shadow Frontier will be released digitally on the Nintendo eShop for Nintendo Switch 2 worldwide in 2027."
+  source_url: "https://www.nintendo-insider.com/star-trek-shadow-frontier-announced/"
+  checked_at: "2026-10-13"
+- title_id: "the-florist"
+  has_physical_release: false
+  evidence: "press_report"  # (leída) Nintendo Insider: "The Florist will be released digitally on the Nintendo eShop for Nintendo Switch 2 worldwide, with a release date or window unspecified."
+  source_url: "https://www.nintendo-insider.com/cure-a-lethal-affliction-in-the-florist-on-nintendo-switch-2/"
+  checked_at: "2026-10-13"
+- title_id: "the-shadow-syndicate"
+  has_physical_release: false
+  evidence: "press_report"  # (leída) Nintendo Insider: "The Shadow Syndicate will be released digitally on the Nintendo eShop for Nintendo Switch 2 worldwide in 2026."
+  source_url: "https://www.nintendo-insider.com/uncover-a-conspiracy-in-the-shadow-syndicate-on-nintendo-switch-2/"
+  checked_at: "2026-10-13"
+- title_id: "the-sinking-city-2"
+  has_physical_release: false
+  evidence: "press_report"  # (leída) Nintendo Insider: "The Sinking City 2 will be released digitally on the Nintendo eShop for Nintendo Switch 2 worldwide in 2027."
+  source_url: "https://www.nintendo-insider.com/fight-to-survive-in-the-sinking-city-2-on-nintendo-switch-2/"
+  checked_at: "2026-10-13"
+- title_id: "tomo-endless-blue"
+  has_physical_release: false
+  evidence: "press_report"  # (leída) Nintendo Insider: "Tomo: Endless Blue will be released digitally on the Nintendo eShop for Nintendo Switch 2 worldwide, with a release date or window unspecified."
+  source_url: "https://www.nintendo-insider.com/monster-taming-rpg-tomo-endless-blue-coming-to-nintendo-switch-2/"
+  checked_at: "2026-10-13"
+- title_id: "warhammer-age-of-sigmar-deathmaster"
+  has_physical_release: false
+  evidence: "press_report"  # (leída) Nintendo Insider: "Warhammer Age of Sigmar: Deathmaster will be released digitally on the Nintendo eShop for Nintendo Switch 2 worldwide in 2027."
+  source_url: "https://www.nintendo-insider.com/warhammer-age-of-sigmar-deathmaster-announced/"
+  checked_at: "2026-10-13"
+- title_id: "witchbrook"
+  has_physical_release: false
+  evidence: "press_report"  # (leída) Nintendo Insider: "Witchbrook will be released digitally on the Nintendo eShop for both Nintendo Switch and Nintendo Switch 2 worldwide in 2026."
+  source_url: "https://www.nintendo-insider.com/witchbrook-delayed-into-next-year/"
+  checked_at: "2026-10-13"
+- title_id: "vaewolf"
+  has_physical_release: false
+  evidence: "press_report"  # (leída) Nintendo Insider: "Vaewolf will be released digitally on the Nintendo eShop for Nintendo Switch 2 worldwide in 2027."
+  source_url: "https://www.nintendo-insider.com/seek-your-revenge-in-vaewolf-on-nintendo-switch-2/"
+  checked_at: "2026-10-13"
+- title_id: "royal-revolt-survivors"
+  has_physical_release: false
+  region: "NA"
+  evidence: "official"  # (leída) tienda de Nintendo US: "Royal Revolt Survivors | Version | Nintendo Switch 2 | Edition | Digital"
+  source_url: "https://www.nintendo.com/us/store/products/royal-revolt-survivors-switch-2/"
+  checked_at: "2026-10-13"
+- title_id: "royal-revolt-survivors"
+  has_physical_release: false
+  region: "JP"
+  evidence: "official"  # (API) search.nintendo.jp: "Royal Revolt Survivors", icode ABY6A, sdate "2026.3.17", pprice: null, sform: BEE_DL; sin entrada BEE_CARD ni fila en meisakugame
+  source_url: "https://search.nintendo.jp/nintendo_soft/search.json?q=Royal%20Revolt%20Survivors&limit=40"
+  checked_at: "2026-10-13"
+- title_id: "rugby-league-26"
+  has_physical_release: false
+  region: "NA"
+  evidence: "official"  # (leída) tienda de Nintendo US: "Rugby League 26 | Version | Nintendo Switch 2 | Edition | Digital"
+  source_url: "https://www.nintendo.com/us/store/products/rugby-league-26-switch-2/"
+  checked_at: "2026-10-13"
+- title_id: "scott-pilgrim-ex"
+  has_physical_release: false
+  region: "NA"
+  evidence: "official"  # (leída) tienda de Nintendo US: "Scott Pilgrim EX | Version | Nintendo Switch 2 | Edition | Digital"; las cajas de Limited Run Games e iam8bit son de Switch 1
+  source_url: "https://www.nintendo.com/us/store/products/scott-pilgrim-ex-switch-2/"
+  checked_at: "2026-10-13"
+- title_id: "scott-pilgrim-ex"
+  has_physical_release: false
+  region: "JP"
+  evidence: "official"  # (API) search.nintendo.jp: "Scott Pilgrim EX", icode ABJ4A, sdate "2026.3.5", pprice: null, sform: BEE_DL; sin entrada BEE_CARD ni fila en meisakugame
+  source_url: "https://search.nintendo.jp/nintendo_soft/search.json?q=Scott%20Pilgrim%20EX&limit=40"
+  checked_at: "2026-10-13"
+- title_id: "sektori"
+  has_physical_release: false
+  region: "NA"
+  evidence: "official"  # (leída) tienda de Nintendo US: "Sektori | Version | Nintendo Switch 2 | Edition | Digital"
+  source_url: "https://www.nintendo.com/us/store/products/sektori-switch-2/"
+  checked_at: "2026-10-13"
+- title_id: "sektori"
+  has_physical_release: false
+  region: "JP"
+  evidence: "official"  # (API) search.nintendo.jp: "Sektori", icode ABY5A, sdate "2026.5.14", pprice: null, sform: BEE_DL; sin entrada BEE_CARD ni fila en meisakugame
+  source_url: "https://search.nintendo.jp/nintendo_soft/search.json?q=Sektori&limit=40"
+  checked_at: "2026-10-13"
+- title_id: "shadow-tactics-blades-of-the-shogun-aikos-choice"
+  has_physical_release: false
+  region: "NA"
+  evidence: "official"  # (leída) tienda de Nintendo US: "Shadow Tactics: Blades of the Shogun - Aiko's Choice | Version | Nintendo Switch 2 | Edition | Digital"
+  source_url: "https://www.nintendo.com/us/store/products/shadow-tactics-blades-of-the-shogun-aikos-choice-switch-2/"
+  checked_at: "2026-10-13"
+- title_id: "shadow-tactics-blades-of-the-shogun-aikos-choice"
+  has_physical_release: false
+  region: "JP"
+  evidence: "official"  # (API) search.nintendo.jp: " Shadow Tactics: Blades of the Shogun - Aiko's Choice", icode ABJCA, sdate "2026.3.19", pprice: null, sform: BEE_DL; sin entrada BEE_CARD ni fila en meisakugame
+  source_url: "https://search.nintendo.jp/nintendo_soft/search.json?q=Shadow%20Tactics&limit=40"
+  checked_at: "2026-10-13"
+- title_id: "sombras-negative-frames"
+  has_physical_release: false
+  evidence: "press_report"  # (leída) Gematsu: "SOMBRAS: negative frames ... will launch for PlayStation 5 , Xbox Series , Switch 2 , and PC via Steam on December 3, Entalto Publishing and developer Maboroshi Artworks announced. A physical edition will be available for PlayStation 5."
+  source_url: "https://www.gematsu.com/2026/07/sombras-negative-frames-launches-december-3"
+  checked_at: "2026-10-13"
+# Completado del 13-10-2026 (los 30 pending con la revisión más antigua).
+# (leída) Gematsu: "ANOMALITH is due out digitally for PlayStation 5, Switch 2, and PC via Steam on October 29 worldwide, as well as physically for PlayStation 5 and Switch 2 (game-key card) in Japan." y "NIS America will release a physical edition of [...] ANOMALITH for PlayStation 5 in the west on November 12"
+- title_id: "anomalith"
+  has_physical_release: false
+  region: "EU"
+  evidence: "press_report"
+  source_url: "https://www.gematsu.com/2026/08/anomalith-physical-edition-for-ps5-launches-november-12-in-the-west"
+  checked_at: "2026-10-13"
+# (leída) misma nota de Gematsu; además, ficha oficial de Nintendo US: "ANOMALITH | Releases 10/28/26 | Version | Nintendo Switch 2 | Edition | Digital"
+- title_id: "anomalith"
+  has_physical_release: false
+  region: "NA"
+  evidence: "press_report"
+  source_url: "https://www.gematsu.com/2026/08/anomalith-physical-edition-for-ps5-launches-november-12-in-the-west"
+  checked_at: "2026-10-13"

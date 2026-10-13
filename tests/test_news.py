@@ -184,3 +184,22 @@ def test_build_news_candidates_skips_news_without_switch_2_or_topic(title: Title
     ]
 
     assert build_news_candidates(items, [title]) == ([], [])
+
+
+def test_build_news_candidates_skips_launch_trailers(title: Title) -> None:
+    item = build_news_item(
+        "Example Game launch trailer", "Example Game launch trailer | Out now on Switch 2, release date today"
+    )
+
+    assert build_news_candidates([item], [title]) == ([], [])
+
+
+def test_build_news_candidates_keeps_launch_trailers_about_the_box(title: Title) -> None:
+    item = build_news_item(
+        "Example Game launch trailer and physical edition",
+        "Example Game launch trailer and physical edition | Switch 2",
+    )
+
+    candidates, _ = build_news_candidates([item], [title])
+
+    assert [candidate.title_id for candidate in candidates] == ["example-game"]

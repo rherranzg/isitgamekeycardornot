@@ -17,36 +17,36 @@
   name: Mario Kart World
   publisher: Nintendo
   release_date: '2025-06-05'
-  status: pending
-  last_checked_at: '2026-09-16'
+  status: completed
+  last_checked_at: '2026-10-13T23:00:26+02:00'
 - title_id: donkey-kong-bananza
   igdb_id: 338106
   name: Donkey Kong Bananza
   publisher: Nintendo
   release_date: '2025-07-17'
-  status: pending
-  last_checked_at: '2026-09-15'
+  status: completed
+  last_checked_at: '2026-10-13T23:00:26+02:00'
 - title_id: metroid-prime-4-beyond
   igdb_id: 37136
   name: 'Metroid Prime 4: Beyond'
   publisher: Nintendo
   release_date: '2025-12-04'
   status: pending
-  last_checked_at: '2026-09-16'
+  last_checked_at: '2026-10-13T23:00:26+02:00'
 - title_id: street-fighter-6
   igdb_id: 343673
   name: Street Fighter 6
   publisher: Capcom
   release_date: '2025-06-05'
   status: pending
-  last_checked_at: '2026-09-13'
+  last_checked_at: '2026-10-13T23:00:26+02:00'
 - title_id: yakuza-0-directors-cut
   igdb_id: 338084
   name: 'Yakuza 0: Director''s Cut'
   publisher: Sega
   release_date: '2025-06-05'
   status: pending
-  last_checked_at: '2026-09-13'
+  last_checked_at: '2026-10-13T23:00:26+02:00'
 - title_id: bravely-default-flying-fairy-hd-remaster
   igdb_id: 338083
   name: 'Bravely Default: Flying Fairy - HD Remaster'
@@ -67,21 +67,21 @@
   publisher: CD Projekt RED
   release_date: '2025-06-05'
   status: pending
-  last_checked_at: '2026-09-13'
+  last_checked_at: '2026-10-13T23:00:26+02:00'
 - title_id: hitman-world-of-assassination-signature-edition
   igdb_id: 338082
   name: 'Hitman World of Assassination: Signature Edition'
   publisher: IO Interactive
   release_date: '2025-06-05'
   status: pending
-  last_checked_at: '2026-09-16'
+  last_checked_at: '2026-10-13T23:00:26+02:00'
 - title_id: split-fiction
   igdb_id: 325594
   name: Split Fiction
   publisher: Electronic Arts
   release_date: '2025-06-05'
   status: pending
-  last_checked_at: '2026-09-13'
+  last_checked_at: '2026-10-13T23:00:26+02:00'
 - title_id: kingdom-come-deliverance-ii
   igdb_id: 298526
   name: 'Kingdom Come: Deliverance II'
@@ -95,7 +95,7 @@
   publisher: IO Interactive
   release_date: 2027-03
   status: pending
-  last_checked_at: '2026-09-15'
+  last_checked_at: '2026-10-13T23:00:26+02:00'
 - title_id: 1000xresist
   igdb_id: 218282
   name: 1000xResist
@@ -137,7 +137,7 @@
   publisher: Nacon
   release_date: '2026-04-07'
   status: pending
-  last_checked_at: '2026-09-16'
+  last_checked_at: '2026-10-13T23:00:26+02:00'
 - title_id: after-the-wane
   igdb_id: 387356
   name: After the Wane
@@ -165,7 +165,7 @@
   publisher: IzanagiGames
   release_date: '2026-09-17'
   status: pending
-  last_checked_at: '2026-09-15'
+  last_checked_at: '2026-10-13T23:00:26+02:00'
 - title_id: alien-isolation-2
   igdb_id: 319082
   name: 'Alien: Isolation 2'
@@ -179,7 +179,7 @@
   publisher: Survios
   release_date: '2026-04-21'
   status: pending
-  last_checked_at: '2026-09-16'
+  last_checked_at: '2026-10-13T23:00:26+02:00'
 - title_id: all-hands-on-deck
   igdb_id: 216465
   name: All Hands on Deck
@@ -200,7 +200,7 @@
   publisher: Frictional Games
   release_date: '2026-04-30'
   status: pending
-  last_checked_at: '2026-09-17'
+  last_checked_at: '2026-10-13T23:00:26+02:00'
 - title_id: and-roger
   igdb_id: 324784
   name: And Roger
@@ -213,8 +213,8 @@
   name: 'Animal Crossing: New Horizons - Nintendo Switch 2 Edition'
   publisher: Nintendo
   release_date: '2026-01-15'
-  status: pending
-  last_checked_at: '2026-09-17'
+  status: completed
+  last_checked_at: '2026-10-13T23:00:26+02:00'
 - title_id: animula-nook
   igdb_id: 369856
   name: Animula Nook
@@ -228,7 +228,7 @@
   publisher: FuRyu
   release_date: '2026-10-28'
   status: pending
-  last_checked_at: '2026-09-17'
+  last_checked_at: '2026-10-13T23:00:26+02:00'
 - title_id: another-eden-begins
   igdb_id: 388448
   name: Another Eden Begins
@@ -248,15 +248,15 @@
   name: 'Arcade Archives 2: Ace Driver'
   publisher: Hamster Corporation
   release_date: '2026-05-28'
-  status: pending
-  last_checked_at: '2026-09-17'
+  status: completed
+  last_checked_at: '2026-10-13T23:00:26+02:00'
 - title_id: arcade-archives-2-adventure-canoe
   igdb_id: 392764
   name: 'Arcade Archives 2: Adventure Canoe'
   publisher: null
   release_date: '2026-02-19'
-  status: pending
-  last_checked_at: '2026-09-17'
+  status: completed
+  last_checked_at: '2026-10-13T23:00:26+02:00'
 - title_id: arcade-archives-2-air-combat-22
   igdb_id: 352492
   name: 'Arcade Archives 2: Air Combat 22'
@@ -269,64 +269,64 @@
   name: 'Arcade Archives 2: Aqua Jet'
   publisher: Hamster Corporation
   release_date: '2025-08-14'
-  status: pending
-  last_checked_at: '2026-09-17'
+  status: completed
+  last_checked_at: '2026-10-13T23:00:26+02:00'
 - title_id: arcade-archives-2-arkanoid
   igdb_id: 400781
   name: 'Arcade Archives 2: Arkanoid'
   publisher: Hamster Corporation
   release_date: '2026-05-07'
-  status: pending
-  last_checked_at: '2026-09-17'
+  status: completed
+  last_checked_at: '2026-10-13T23:00:26+02:00'
 - title_id: arcade-archives-2-arkanoid-revenge-of-doh
   igdb_id: 417315
   name: 'Arcade Archives 2: Arkanoid - Revenge of Doh'
   publisher: null
   release_date: '2026-09-03'
-  status: pending
-  last_checked_at: '2026-09-17'
+  status: completed
+  last_checked_at: '2026-10-13T23:00:26+02:00'
 - title_id: arcade-archives-2-armadillo-racing
   igdb_id: 411154
   name: 'Arcade Archives 2: Armadillo Racing'
   publisher: Hamster Corporation
   release_date: '2026-07-23'
-  status: pending
-  last_checked_at: '2026-09-17'
+  status: completed
+  last_checked_at: '2026-10-13T23:00:26+02:00'
 - title_id: arcade-archives-2-battlantis
   igdb_id: 373375
   name: 'Arcade Archives 2: Battlantis'
   publisher: Hamster Corporation
   release_date: '2025-10-09'
-  status: pending
-  last_checked_at: '2026-09-17'
+  status: completed
+  last_checked_at: '2026-10-13T23:00:26+02:00'
 - title_id: arcade-archives-2-bomb-bee
   igdb_id: 378489
   name: 'Arcade Archives 2: Bomb Bee'
   publisher: Hamster Corporation
   release_date: '2025-11-20'
-  status: pending
-  last_checked_at: '2026-09-17'
+  status: completed
+  last_checked_at: '2026-10-13T23:00:26+02:00'
 - title_id: arcade-archives-2-bomb-jack-twin
   igdb_id: 386175
   name: 'Arcade Archives 2: Bomb Jack Twin'
   publisher: Hamster Corporation
   release_date: '2026-01-15'
-  status: pending
-  last_checked_at: '2026-09-17'
+  status: completed
+  last_checked_at: '2026-10-13T23:00:26+02:00'
 - title_id: arcade-archives-2-cameltry
   igdb_id: 404379
   name: 'Arcade Archives 2: Cameltry'
   publisher: Hamster Corporation
   release_date: '2026-06-04'
-  status: pending
-  last_checked_at: '2026-09-17'
+  status: completed
+  last_checked_at: '2026-10-13T23:00:26+02:00'
 - title_id: arcade-archives-2-combat-school
   igdb_id: 412762
   name: 'Arcade Archives 2: Combat School'
   publisher: Hamster Corporation
   release_date: '2026-08-06'
-  status: pending
-  last_checked_at: '2026-09-17'
+  status: completed
+  last_checked_at: '2026-10-13T23:00:26+02:00'
 - title_id: arcade-archives-2-cyber-commando
   igdb_id: 400162
   name: 'Arcade Archives 2: Cyber Commando'
@@ -339,29 +339,29 @@
   name: 'Arcade Archives 2: Cyber Cycles'
   publisher: Hamster Corporation
   release_date: '2026-08-20'
-  status: pending
-  last_checked_at: '2026-09-17'
+  status: completed
+  last_checked_at: '2026-10-13T23:00:26+02:00'
 - title_id: arcade-archives-2-devastators
   igdb_id: 395646
   name: 'Arcade Archives 2: Devastators'
   publisher: Hamster Corporation
   release_date: '2026-03-19'
-  status: pending
-  last_checked_at: '2026-09-17'
+  status: completed
+  last_checked_at: '2026-10-13T23:00:26+02:00'
 - title_id: arcade-archives-2-final-lap
   igdb_id: 396094
   name: 'Arcade Archives 2: Final Lap'
   publisher: Hamster Corporation
   release_date: '2026-03-26'
-  status: pending
-  last_checked_at: '2026-09-17'
+  status: completed
+  last_checked_at: '2026-10-13T23:00:26+02:00'
 - title_id: arcade-archives-2-galactic-warriors
   igdb_id: 377686
   name: 'Arcade Archives 2: Galactic Warriors'
   publisher: Hamster Corporation
   release_date: '2025-11-13'
-  status: pending
-  last_checked_at: '2026-09-17'
+  status: completed
+  last_checked_at: '2026-10-13T23:00:26+02:00'
 - title_id: arcade-archives-2-gee-bee
   igdb_id: 371415
   name: 'Arcade Archives 2: Gee Bee'
@@ -1040,14 +1040,19 @@
   publisher: Nextale Games
   release_date: 2026-Q4
   status: pending
-  last_checked_at: null
+  last_checked_at: '2026-10-13T17:54:45+02:00'
 - title_id: call-of-duty-modern-warfare-4
   igdb_id: 403310
   name: 'Call of Duty: Modern Warfare 4'
   publisher: Activision
   release_date: '2026-10-16'
+  updates:
+  - url: https://www.nintendo.com/us/store/products/call-of-duty-modern-warfare-4-standard-edition-switch-2/
+    checked_at: '2026-10-13'
+    fields:
+    - release_date
   status: pending
-  last_checked_at: '2026-10-09'
+  last_checked_at: '2026-10-13T16:25:08+02:00'
 - title_id: call-of-the-elder-gods
   igdb_id: 347882
   name: Call of the Elder Gods
@@ -1089,7 +1094,7 @@
   publisher: MicroProse
   release_date: null
   status: pending
-  last_checked_at: null
+  last_checked_at: '2026-10-13T17:54:45+02:00'
 - title_id: cassette-beasts-2002
   igdb_id: 404378
   name: Cassette Beasts 2002
@@ -1110,7 +1115,7 @@
   publisher: Ogre Pixel
   release_date: null
   status: pending
-  last_checked_at: null
+  last_checked_at: '2026-10-13T17:54:45+02:00'
 - title_id: cats-away
   igdb_id: 352180
   name: Cats Away
@@ -1151,8 +1156,8 @@
   name: Citizen Sleeper
   publisher: Fellow Traveller
   release_date: '2026-06-25'
-  status: pending
-  last_checked_at: null
+  status: completed
+  last_checked_at: '2026-10-13T17:54:45+02:00'
 - title_id: citizen-sleeper-2-starward-vector
   igdb_id: 252853
   name: 'Citizen Sleeper 2: Starward Vector'
@@ -1417,8 +1422,8 @@
   name: Constance
   publisher: Blue Backpack
   release_date: '2026-07-30'
-  status: pending
-  last_checked_at: null
+  status: completed
+  last_checked_at: '2026-10-13T17:54:45+02:00'
 - title_id: content-warning
   igdb_id: 294661
   name: Content Warning
@@ -1459,8 +1464,8 @@
   name: 'Crazy Taxi: World Tour'
   publisher: Sega
   release_date: '2027'
-  status: pending
-  last_checked_at: null
+  status: completed
+  last_checked_at: '2026-10-13T17:54:45+02:00'
 - title_id: crisis-core-final-fantasy-vii-reunion
   igdb_id: 205201
   name: 'Crisis Core: Final Fantasy VII - Reunion'
@@ -1502,7 +1507,7 @@
   publisher: null
   release_date: null
   status: pending
-  last_checked_at: null
+  last_checked_at: '2026-10-13T17:54:45+02:00'
 - title_id: d-topia
   igdb_id: 369840
   name: D-topia
@@ -1572,7 +1577,7 @@
   publisher: Brain Jar Games
   release_date: null
   status: pending
-  last_checked_at: null
+  last_checked_at: '2026-10-13T17:54:45+02:00'
 - title_id: deadzone-rogue
   igdb_id: 316979
   name: 'Deadzone: Rogue'
@@ -1593,7 +1598,7 @@
   publisher: LEVEL-5
   release_date: '2027'
   status: pending
-  last_checked_at: null
+  last_checked_at: '2026-10-13T17:54:45+02:00'
 - title_id: deltarune
   igdb_id: 171233
   name: Deltarune
@@ -1612,9 +1617,14 @@
   igdb_id: 369843
   name: Demi and the Fractured Dream
   publisher: Annapurna Interactive
-  release_date: 2027-02
+  release_date: '2027-02-27'
+  updates:
+  - url: https://essential-japan.com/news/demi-and-the-fractured-dream-pushed-back-to-february-2027/
+    checked_at: '2026-10-13'
+    fields:
+    - release_date
   status: pending
-  last_checked_at: null
+  last_checked_at: '2026-10-13T17:54:45+02:00'
 - title_id: demon-slayer-kimetsu-no-yaiba-the-hinokami-chronicles-2
   igdb_id: 337907
   name: 'Demon Slayer: Kimetsu no Yaiba - The Hinokami Chronicles 2'
@@ -1628,7 +1638,7 @@
   publisher: Ysbryd Games
   release_date: '2026'
   status: pending
-  last_checked_at: null
+  last_checked_at: '2026-10-13T18:04:02+02:00'
 - title_id: denshattack
   igdb_id: 361826
   name: Denshattack!
@@ -1642,7 +1652,7 @@
   publisher: Kemco
   release_date: '2026'
   status: pending
-  last_checked_at: null
+  last_checked_at: '2026-10-13T18:04:02+02:00'
 - title_id: derby-stallion-2
   igdb_id: 405468
   name: Derby Stallion 2
@@ -1677,7 +1687,7 @@
   publisher: MVRX games
   release_date: null
   status: pending
-  last_checked_at: null
+  last_checked_at: '2026-10-13T18:04:02+02:00'
 - title_id: digimon-story-time-stranger
   igdb_id: 331188
   name: 'Digimon Story: Time Stranger'
@@ -1859,14 +1869,14 @@
   publisher: PlaySide
   release_date: '2026'
   status: pending
-  last_checked_at: null
+  last_checked_at: '2026-10-13T18:04:02+02:00'
 - title_id: dumbriel-magnificent-adventure-in-hell
   igdb_id: 260404
   name: 'Dumbriel: Magnificent Adventure in Hell'
   publisher: MadMoa
   release_date: null
   status: pending
-  last_checked_at: null
+  last_checked_at: '2026-10-13T18:04:02+02:00'
 - title_id: duskfade
   igdb_id: 310665
   name: Duskfade
@@ -1880,7 +1890,7 @@
   publisher: Studio Betonika
   release_date: null
   status: pending
-  last_checked_at: null
+  last_checked_at: '2026-10-13T18:04:02+02:00'
 - title_id: dynasty-warriors-3-complete-edition-remastered
   igdb_id: 369991
   name: 'Dynasty Warriors 3: Complete Edition Remastered'
@@ -1934,9 +1944,14 @@
   igdb_id: 137427
   name: Earth Defense Force 6
   publisher: D3Publisher
-  release_date: 2026-Q4
+  release_date: '2027-01-28'
+  updates:
+  - url: https://finalweapon.net/2026/09/16/earth-defense-force-6-is-coming-to-switch-2-on-january-28-2027/
+    checked_at: '2026-10-13'
+    fields:
+    - release_date
   status: pending
-  last_checked_at: null
+  last_checked_at: '2026-10-13T18:04:02+02:00'
 - title_id: echo-weaver
   igdb_id: 290107
   name: Echo Weaver
@@ -1957,14 +1972,14 @@
   publisher: Kemco
   release_date: '2026-01-29'
   status: pending
-  last_checked_at: null
+  last_checked_at: '2026-10-13T18:04:02+02:00'
 - title_id: enter-the-gungeon-2
   igdb_id: 338088
   name: Enter the Gungeon 2
   publisher: Devolver Digital
   release_date: '2026'
   status: pending
-  last_checked_at: null
+  last_checked_at: '2026-10-13T18:04:02+02:00'
 - title_id: epic-mickey-rebrushed
   igdb_id: 287849
   name: 'Epic Mickey: Rebrushed'
@@ -1978,7 +1993,7 @@
   publisher: Nordcurrent Labs
   release_date: '2026-12-03'
   status: pending
-  last_checked_at: null
+  last_checked_at: '2026-10-13T18:04:02+02:00'
 - title_id: escape-the-backrooms
   igdb_id: 197202
   name: Escape the Backrooms
@@ -1999,7 +2014,7 @@
   publisher: Fictions
   release_date: 2027-Q2
   status: pending
-  last_checked_at: null
+  last_checked_at: '2026-10-13T18:24:50+02:00'
 - title_id: exit-lab-15-rooms
   igdb_id: 390525
   name: Exit Lab 15 Rooms
@@ -2013,7 +2028,7 @@
   publisher: FuRyu
   release_date: '2026-09-03'
   status: pending
-  last_checked_at: null
+  last_checked_at: '2026-10-13T18:24:50+02:00'
 - title_id: factorio
   igdb_id: 7046
   name: Factorio
@@ -2034,7 +2049,7 @@
   publisher: Hibernian Workshop
   release_date: null
   status: pending
-  last_checked_at: null
+  last_checked_at: '2026-10-13T18:24:50+02:00'
 - title_id: fallout-4-anniversary-edition
   igdb_id: 375089
   name: 'Fallout 4: Anniversary Edition'
@@ -2062,14 +2077,14 @@
   publisher: Ubisoft Entertainment
   release_date: 2027-Q2
   status: pending
-  last_checked_at: null
+  last_checked_at: '2026-10-13T18:24:50+02:00'
 - title_id: far-cry-3-classic-edition
   igdb_id: 86389
   name: 'Far Cry 3: Classic Edition'
   publisher: Ubisoft Entertainment
   release_date: 2027-Q2
   status: pending
-  last_checked_at: null
+  last_checked_at: '2026-10-13T18:24:50+02:00'
 - title_id: farming-simulator-signature-edition
   igdb_id: 372308
   name: 'Farming Simulator: Signature Edition'
@@ -2111,7 +2126,7 @@
   publisher: Celery Emblem
   release_date: null
   status: pending
-  last_checked_at: null
+  last_checked_at: '2026-10-13T18:24:50+02:00'
 - title_id: fight-life-vanguard
   igdb_id: 318193
   name: 'Fight Life: Vanguard'
@@ -2188,7 +2203,7 @@
   publisher: ZUGALU ENTERTAINMENT
   release_date: 2027-Q1
   status: pending
-  last_checked_at: null
+  last_checked_at: '2026-10-13T18:24:50+02:00'
 - title_id: forever-ago
   igdb_id: 136299
   name: Forever Ago
@@ -2209,7 +2224,7 @@
   publisher: Komodo Range Studio
   release_date: null
   status: pending
-  last_checked_at: null
+  last_checked_at: '2026-10-13T18:24:50+02:00'
 - title_id: full-metal-schoolgirl
   igdb_id: 352205
   name: Full Metal Schoolgirl
@@ -2272,14 +2287,14 @@
   publisher: MicroProse
   release_date: 2026-Q2
   status: pending
-  last_checked_at: null
+  last_checked_at: '2026-10-13T18:24:50+02:00'
 - title_id: garden-souls
   igdb_id: 409750
   name: Garden Souls
   publisher: Nuntius Games
   release_date: null
   status: pending
-  last_checked_at: null
+  last_checked_at: '2026-10-13T18:24:50+02:00'
 - title_id: gear-club-unlimited-3
   igdb_id: 381154
   name: Gear.Club Unlimited 3
@@ -2293,14 +2308,14 @@
   publisher: PLAYISM
   release_date: '2026'
   status: pending
-  last_checked_at: null
+  last_checked_at: '2026-10-13T18:30:03+02:00'
 - title_id: gnomonic
   igdb_id: 219797
   name: Gnomonic
   publisher: NOKOGODO / Studio Kumiho
   release_date: 2028-12
   status: pending
-  last_checked_at: null
+  last_checked_at: '2026-10-13T18:30:03+02:00'
 - title_id: go-go-town
   igdb_id: 244178
   name: Go-Go Town!
@@ -2328,7 +2343,7 @@
   publisher: Team17
   release_date: '2027'
   status: pending
-  last_checked_at: null
+  last_checked_at: '2026-10-13T18:30:03+02:00'
 - title_id: godzilla-destroy-all-monsters-melee-remastered
   igdb_id: 404939
   name: 'Godzilla: Destroy All Monsters Melee Remastered'
@@ -2370,7 +2385,7 @@
   publisher: null
   release_date: null
   status: pending
-  last_checked_at: null
+  last_checked_at: '2026-10-13T18:30:03+02:00'
 - title_id: graveyard-keeper-ii
   igdb_id: 397817
   name: Graveyard Keeper II
@@ -2405,7 +2420,7 @@
   publisher: Inti Creates
   release_date: '2027'
   status: pending
-  last_checked_at: null
+  last_checked_at: '2026-10-13T18:30:03+02:00'
 - title_id: hades-ii
   igdb_id: 228525
   name: Hades II
@@ -2447,14 +2462,14 @@
   publisher: Good Smile Company
   release_date: '2027'
   status: pending
-  last_checked_at: null
+  last_checked_at: '2026-10-13T18:30:03+02:00'
 - title_id: haunted-paws
   igdb_id: 302983
   name: Haunted Paws
   publisher: LazyFlock
   release_date: null
   status: pending
-  last_checked_at: null
+  last_checked_at: '2026-10-13T18:30:03+02:00'
 - title_id: heave-ho-2
   igdb_id: 393563
   name: Heave Ho 2
@@ -2482,7 +2497,7 @@
   publisher: Sunblink
   release_date: '2025-11-13'
   status: pending
-  last_checked_at: null
+  last_checked_at: '2026-10-13T18:30:03+02:00'
 - title_id: hello-kitty-party-land
   igdb_id: 405453
   name: 'Hello Kitty: Party Land'
@@ -2510,7 +2525,7 @@
   publisher: Awaken Realms
   release_date: '2027'
   status: pending
-  last_checked_at: null
+  last_checked_at: '2026-10-13T18:30:03+02:00'
 - title_id: hogwarts-legacy
   igdb_id: 136625
   name: Hogwarts Legacy
@@ -2538,21 +2553,21 @@
   publisher: LEVEL-5
   release_date: '2027'
   status: pending
-  last_checked_at: null
+  last_checked_at: '2026-10-13T18:30:03+02:00'
 - title_id: homura-hime
   igdb_id: 199055
   name: Homura Hime
   publisher: PLAYISM
   release_date: '2027'
   status: pending
-  last_checked_at: null
+  last_checked_at: '2026-10-13T19:02:55+02:00'
 - title_id: hoshin-engi-re-surrection
   igdb_id: 417189
   name: Hoshin Engi Re:surrection
   publisher: Shueisha Games
   release_date: '2027'
   status: pending
-  last_checked_at: null
+  last_checked_at: '2026-10-13T19:02:55+02:00'
 - title_id: hot-wheels-infinite-rush
   igdb_id: 404710
   name: Hot Wheels Infinite Rush
@@ -2572,8 +2587,8 @@
   name: Human Fall Flat 2
   publisher: Devolver Digital
   release_date: '2026'
-  status: pending
-  last_checked_at: null
+  status: completed
+  last_checked_at: '2026-10-13T19:02:55+02:00'
 - title_id: human-fall-flat
   igdb_id: 16992
   name: 'Human: Fall Flat'
@@ -2587,7 +2602,7 @@
   publisher: null
   release_date: null
   status: pending
-  last_checked_at: null
+  last_checked_at: '2026-10-13T19:02:55+02:00'
 - title_id: hyperdimension-neptunia-unlimited
   igdb_id: 400492
   name: Hyperdimension Neptunia Unlimited
@@ -2614,15 +2629,15 @@
   name: I Am Your Beast
   publisher: Strange Scaffold / Frosty Pop Games Inc.
   release_date: '2026-10-20'
-  status: pending
-  last_checked_at: null
+  status: completed
+  last_checked_at: '2026-10-13T19:02:55+02:00'
 - title_id: inazuma-eleven-re
   igdb_id: 317592
   name: Inazuma Eleven Re
   publisher: LEVEL-5
   release_date: '2026'
   status: pending
-  last_checked_at: null
+  last_checked_at: '2026-10-13T19:02:55+02:00'
 - title_id: inazuma-eleven-victory-road
   igdb_id: 72812
   name: 'Inazuma Eleven: Victory Road'
@@ -2643,7 +2658,7 @@
   publisher: null
   release_date: '2026'
   status: pending
-  last_checked_at: null
+  last_checked_at: '2026-10-13T19:02:55+02:00'
 - title_id: inkonbini-one-store-many-stories
   igdb_id: 294592
   name: 'Inkonbini: One Store. Many Stories'
@@ -2657,7 +2672,7 @@
   publisher: PikPok / Boltray Games
   release_date: '2027'
   status: pending
-  last_checked_at: null
+  last_checked_at: '2026-10-13T19:02:55+02:00'
 - title_id: ira
   igdb_id: 166044
   name: Ira
@@ -2691,8 +2706,8 @@
   name: 'Jujutsu Kaisen Rumble: Survivaton'
   publisher: Shueisha Games
   release_date: '2027'
-  status: pending
-  last_checked_at: null
+  status: completed
+  last_checked_at: '2026-10-13T19:02:55+02:00'
 - title_id: junkster
   igdb_id: 376970
   name: Junkster
@@ -2727,7 +2742,7 @@
   publisher: Square Enix / The Walt Disney Company
   release_date: 2027-Q4
   status: pending
-  last_checked_at: null
+  last_checked_at: '2026-10-13T19:02:55+02:00'
 - title_id: kingdom-hearts-collection-i-iii
   igdb_id: 405459
   name: Kingdom Hearts Collection [I-III]
@@ -2783,7 +2798,7 @@
   publisher: Nintendo
   release_date: 2027-Q2
   status: pending
-  last_checked_at: null
+  last_checked_at: '2026-10-13T19:38:52+02:00'
 - title_id: kitaria-fables-2
   igdb_id: 398521
   name: Kitaria Fables 2
@@ -2866,15 +2881,15 @@
   name: LEGO Skylines
   publisher: Paradox Interactive
   release_date: '2027-12-31'
-  status: pending
-  last_checked_at: null
+  status: completed
+  last_checked_at: '2026-10-13T19:38:52+02:00'
 - title_id: lego-voyagers
   igdb_id: 347646
   name: LEGO Voyagers
   publisher: Annapurna Interactive
   release_date: '2025-09-15'
   status: pending
-  last_checked_at: null
+  last_checked_at: '2026-10-13T19:38:52+02:00'
 - title_id: let-s-sing-presents-abba
   igdb_id: 412641
   name: 'Let''s Sing Presents: Abba'
@@ -2895,21 +2910,21 @@
   publisher: GoGo Games Interactive / Orube Game Studio
   release_date: null
   status: pending
-  last_checked_at: null
+  last_checked_at: '2026-10-13T19:38:52+02:00'
 - title_id: lifted
   igdb_id: 309518
   name: Lifted
   publisher: Adventure Works
   release_date: 2026-Q3
   status: pending
-  last_checked_at: null
+  last_checked_at: '2026-10-13T19:38:52+02:00'
 - title_id: lightsup
   igdb_id: 259021
   name: LightSup!
   publisher: Red Dunes Games
   release_date: '2026'
-  status: pending
-  last_checked_at: null
+  status: completed
+  last_checked_at: '2026-10-13T19:38:52+02:00'
 - title_id: little-nightmares-ii-enhanced-edition
   igdb_id: 323947
   name: 'Little Nightmares II: Enhanced Edition'
@@ -2944,7 +2959,7 @@
   publisher: Clear River Games / Dragami Games
   release_date: '2026-05-28'
   status: pending
-  last_checked_at: null
+  last_checked_at: '2026-10-13T19:38:52+02:00'
 - title_id: lollipop-chainsaw-repop-nintendo-switch-2-edition
   igdb_id: 401101
   name: 'Lollipop Chainsaw RePop: Nintendo Switch 2 Edition'
@@ -2958,7 +2973,7 @@
   publisher: CI Games
   release_date: 2027-Q1
   status: pending
-  last_checked_at: null
+  last_checked_at: '2026-10-13T19:38:52+02:00'
 - title_id: lorelei-and-the-laser-eyes
   igdb_id: 206806
   name: Lorelei and the Laser Eyes
@@ -2972,7 +2987,7 @@
   publisher: Happinet Corporation
   release_date: 2027-Q2
   status: pending
-  last_checked_at: null
+  last_checked_at: '2026-10-13T19:38:52+02:00'
 - title_id: lou-s-lagoon
   igdb_id: 214706
   name: Lou's Lagoon
@@ -2986,7 +3001,7 @@
   publisher: SNR Interactive
   release_date: null
   status: pending
-  last_checked_at: null
+  last_checked_at: '2026-10-13T19:38:52+02:00'
 - title_id: lover-kiss-endless-memories
   igdb_id: 355544
   name: 'LoveR Kiss: Endless Memories'
@@ -3028,7 +3043,7 @@
   publisher: DANGEN Entertainment
   release_date: null
   status: pending
-  last_checked_at: null
+  last_checked_at: '2026-10-13T19:38:52+02:00'
 - title_id: magika-bounce
   igdb_id: 408295
   name: Magika Bounce
@@ -3063,7 +3078,7 @@
   publisher: Casual Brothers
   release_date: '2026-11-26'
   status: pending
-  last_checked_at: null
+  last_checked_at: '2026-10-13T19:38:52+02:00'
 - title_id: marvel-cosmic-invasion
   igdb_id: 337035
   name: Marvel Cosmic Invasion
@@ -3077,7 +3092,7 @@
   publisher: NetEase Games / Marvel Games
   release_date: null
   status: pending
-  last_checked_at: null
+  last_checked_at: '2026-10-13T19:38:52+02:00'
 - title_id: marvel-s-guardians-of-the-galaxy
   igdb_id: 152249
   name: Marvel's Guardians of the Galaxy
@@ -3091,7 +3106,7 @@
   publisher: Sol Brothers
   release_date: '2026'
   status: pending
-  last_checked_at: null
+  last_checked_at: '2026-10-13T19:38:52+02:00'
 - title_id: meccha-chameleon
   igdb_id: 405028
   name: Meccha Chameleon
@@ -3104,8 +3119,8 @@
   name: Mechborn
   publisher: Curve Games
   release_date: 2026-Q4
-  status: pending
-  last_checked_at: null
+  status: completed
+  last_checked_at: '2026-10-13T19:38:52+02:00'
 - title_id: mechcrisis
   igdb_id: 243562
   name: MechCrisis
@@ -3119,21 +3134,21 @@
   publisher: Capcom
   release_date: 2027-Q2
   status: pending
-  last_checked_at: null
+  last_checked_at: '2026-10-13T19:38:52+02:00'
 - title_id: melty-blood-twi-lumina
   igdb_id: 400268
   name: 'Melty Blood: Twi-Lumina'
   publisher: Aniplex of America / Aniplex
   release_date: '2027-04-22'
   status: pending
-  last_checked_at: null
+  last_checked_at: '2026-10-13T19:38:52+02:00'
 - title_id: meme-wars
   igdb_id: 366827
   name: Meme Wars
   publisher: YoYo Studios
   release_date: null
   status: pending
-  last_checked_at: null
+  last_checked_at: '2026-10-13T19:38:52+02:00'
 - title_id: memory-of-memorie-a-chill-story
   igdb_id: 409654
   name: 'Memory of Memorie: A Chill Story'
@@ -3147,14 +3162,14 @@
   publisher: Konami
   release_date: '2026-02-12'
   status: pending
-  last_checked_at: null
+  last_checked_at: '2026-10-13T19:38:52+02:00'
 - title_id: metal-gear-solid-3-snake-eater-master-collection-version
   igdb_id: 383391
   name: 'Metal Gear Solid 3: Snake Eater - Master Collection Version'
   publisher: Konami
   release_date: '2026-02-12'
   status: pending
-  last_checked_at: null
+  last_checked_at: '2026-10-13T19:38:52+02:00'
 - title_id: metal-gear-solid-master-collection-volume-2
   igdb_id: 389433
   name: 'Metal Gear Solid Master Collection: Volume 2'
@@ -3189,21 +3204,21 @@
   publisher: Tides Studio
   release_date: null
   status: pending
-  last_checked_at: null
+  last_checked_at: '2026-10-13T19:38:52+02:00'
 - title_id: mighty-cuphead-adventure
   igdb_id: 404676
   name: Mighty Cuphead Adventure
   publisher: Studio MDHR
   release_date: null
   status: pending
-  last_checked_at: null
+  last_checked_at: '2026-10-13T19:38:52+02:00'
 - title_id: mina-the-hollower
   igdb_id: 189781
   name: Mina the Hollower
   publisher: Yacht Club Games
   release_date: '2026-05-29'
   status: pending
-  last_checked_at: null
+  last_checked_at: '2026-10-13T19:38:52+02:00'
 - title_id: mind-diver
   igdb_id: 236519
   name: Mind Diver
@@ -3252,7 +3267,7 @@
   publisher: FuRyu
   release_date: '2026-08-26'
   status: pending
-  last_checked_at: null
+  last_checked_at: '2026-10-13T19:38:52+02:00'
 - title_id: model-debut4
   igdb_id: 415392
   name: Model Debut4
@@ -3355,7 +3370,7 @@
   publisher: Nitrome
   release_date: null
   status: pending
-  last_checked_at: null
+  last_checked_at: '2026-10-13T19:38:52+02:00'
 - title_id: mouse-p-i-for-hire
   igdb_id: 249324
   name: 'Mouse: P.I. For Hire'
@@ -3369,7 +3384,7 @@
   publisher: Wired Productions
   release_date: null
   status: pending
-  last_checked_at: null
+  last_checked_at: '2026-10-13T19:38:52+02:00'
 - title_id: muramasa-revenant-blades
   igdb_id: 405445
   name: 'Muramasa: Revenant Blades'
@@ -3390,14 +3405,14 @@
   publisher: Pathea Games
   release_date: null
   status: pending
-  last_checked_at: null
+  last_checked_at: '2026-10-13T19:38:52+02:00'
 - title_id: n-plus-infinity-times-two
   igdb_id: 404728
   name: N Plus Infinity Times Two
   publisher: Metanet Software
   release_date: '2027'
-  status: pending
-  last_checked_at: null
+  status: completed
+  last_checked_at: '2026-10-13T19:38:52+02:00'
 - title_id: namco-legendary-mountains
   igdb_id: 405904
   name: Namco Legendary Mountains
@@ -3432,7 +3447,7 @@
   publisher: G-MODE
   release_date: '2027'
   status: pending
-  last_checked_at: null
+  last_checked_at: '2026-10-13T19:38:52+02:00'
 - title_id: nicktoons-the-dice-of-destiny
   igdb_id: 347647
   name: Nicktoons & The Dice of Destiny
@@ -3446,7 +3461,7 @@
   publisher: Red Dunes Games
   release_date: '2026'
   status: pending
-  last_checked_at: null
+  last_checked_at: '2026-10-13T19:38:52+02:00'
 - title_id: ninja-baseball-league-man-bases-loaded
   igdb_id: 414245
   name: 'Ninja Baseball League-Man: Bases Loaded'
@@ -3579,7 +3594,7 @@
   publisher: Bandai Namco Entertainment
   release_date: '2027'
   status: pending
-  last_checked_at: null
+  last_checked_at: '2026-10-13T19:55:42+02:00'
 - title_id: one-military-camp
   igdb_id: 176551
   name: One Military Camp
@@ -3621,7 +3636,7 @@
   publisher: Bloober Team
   release_date: '2027'
   status: pending
-  last_checked_at: null
+  last_checked_at: '2026-10-13T19:55:42+02:00'
 - title_id: opus-prism-peak
   igdb_id: 234662
   name: 'Opus: Prism Peak'
@@ -3657,14 +3672,14 @@
   publisher: Two Cakes Studio
   release_date: null
   status: pending
-  last_checked_at: null
+  last_checked_at: '2026-10-13T19:55:42+02:00'
 - title_id: out-of-words
   igdb_id: 347645
   name: Out of Words
   publisher: Epic Games Publishing
   release_date: 2027-Q1
-  status: pending
-  last_checked_at: null
+  status: completed
+  last_checked_at: '2026-10-13T19:55:42+02:00'
 - title_id: outbound
   igdb_id: 286869
   name: Outbound
@@ -3678,7 +3693,7 @@
   publisher: indie.io
   release_date: null
   status: pending
-  last_checked_at: null
+  last_checked_at: '2026-10-13T19:55:42+02:00'
 - title_id: outlanders
   igdb_id: 127983
   name: Outlanders
@@ -3699,21 +3714,21 @@
   publisher: Top Hat Studios
   release_date: '2026-09-08'
   status: pending
-  last_checked_at: null
+  last_checked_at: '2026-10-13T19:55:42+02:00'
 - title_id: over-the-hill
   igdb_id: 329124
   name: Over the Hill
   publisher: Funselektor Labs / Serenity Forge
   release_date: '2027'
   status: pending
-  last_checked_at: null
+  last_checked_at: '2026-10-13T19:55:42+02:00'
 - title_id: overcooked-2
   igdb_id: 103341
   name: Overcooked! 2
   publisher: Team17
   release_date: '2025-11-06'
-  status: pending
-  last_checked_at: null
+  status: completed
+  last_checked_at: '2026-10-13T19:55:42+02:00'
 - title_id: overwatch
   igdb_id: 125174
   name: Overwatch
@@ -3727,7 +3742,7 @@
   publisher: WildSphere / Tesura Games
   release_date: null
   status: pending
-  last_checked_at: null
+  last_checked_at: '2026-10-13T19:55:42+02:00'
 - title_id: pac-man-world-2-re-pac
   igdb_id: 358530
   name: Pac-Man World 2 Re-Pac
@@ -3755,7 +3770,7 @@
   publisher: Annapurna Interactive
   release_date: '2026-04-07'
   status: pending
-  last_checked_at: null
+  last_checked_at: '2026-10-13T19:55:42+02:00'
 - title_id: persona-3-reload
   igdb_id: 252647
   name: Persona 3 Reload
@@ -3776,7 +3791,7 @@
   publisher: Atlus / Sega
   release_date: null
   status: pending
-  last_checked_at: null
+  last_checked_at: '2026-10-13T19:55:42+02:00'
 - title_id: pga-tour-2k25
   igdb_id: 328079
   name: PGA Tour 2K25
@@ -3789,8 +3804,8 @@
   name: Phasmophobia
   publisher: Kinetic Games
   release_date: '2026'
-  status: pending
-  last_checked_at: null
+  status: completed
+  last_checked_at: '2026-10-13T19:55:42+02:00'
 - title_id: pikmin-3-deluxe
   igdb_id: 136498
   name: Pikmin 3 Deluxe
@@ -3810,8 +3825,8 @@
   name: Pikuniku 2
   publisher: Devolver Digital
   release_date: '2027'
-  status: pending
-  last_checked_at: null
+  status: completed
+  last_checked_at: '2026-10-13T19:55:42+02:00'
 - title_id: pipistrello-and-the-cursed-yoyo
   igdb_id: 292157
   name: Pipistrello and the Cursed Yoyo
@@ -3881,14 +3896,14 @@
   publisher: The Pokémon Company / Nintendo
   release_date: '2027'
   status: pending
-  last_checked_at: null
+  last_checked_at: '2026-10-13T19:55:42+02:00'
 - title_id: pokemon-winds
   igdb_id: 393105
   name: Pokémon Winds
   publisher: The Pokémon Company / Nintendo
   release_date: '2027'
   status: pending
-  last_checked_at: null
+  last_checked_at: '2026-10-13T19:55:42+02:00'
 - title_id: police-simulator-patrol-officers
   igdb_id: 152297
   name: 'Police Simulator: Patrol Officers'
@@ -3909,21 +3924,21 @@
   publisher: Noodlecake Studios / Lucid Labs
   release_date: 2026-Q1
   status: pending
-  last_checked_at: null
+  last_checked_at: '2026-10-13T19:55:42+02:00'
 - title_id: possessor-s
   igdb_id: 305042
   name: Possessor(s)
   publisher: Devolver Digital
   release_date: '2026-04-29'
   status: pending
-  last_checked_at: null
+  last_checked_at: '2026-10-13T19:55:42+02:00'
 - title_id: powerwash-simulator-2
   igdb_id: 335439
   name: PowerWash Simulator 2
   publisher: FuturLab
   release_date: '2025-10-23'
-  status: pending
-  last_checked_at: null
+  status: completed
+  last_checked_at: '2026-10-13T19:55:42+02:00'
 - title_id: pragmata
   igdb_id: 134612
   name: Pragmata
@@ -3936,8 +3951,8 @@
   name: Precognition
   publisher: Kinetic Publishing
   release_date: 2028-Q2
-  status: pending
-  last_checked_at: null
+  status: completed
+  last_checked_at: '2026-10-13T19:55:42+02:00'
 - title_id: prinny-party-going-overboard
   igdb_id: 394548
   name: 'Prinny Party: Going Overboard!'
@@ -3958,7 +3973,7 @@
   publisher: LEVEL-5
   release_date: '2027'
   status: pending
-  last_checked_at: null
+  last_checked_at: '2026-10-13T19:55:42+02:00'
 - title_id: professor-layton-and-the-new-world-of-steam
   igdb_id: 236665
   name: Professor Layton and the New World of Steam
@@ -3972,7 +3987,7 @@
   publisher: null
   release_date: '2027'
   status: pending
-  last_checked_at: null
+  last_checked_at: '2026-10-13T19:55:42+02:00'
 - title_id: psyvariar-3
   igdb_id: 379262
   name: Psyvariar 3
@@ -4000,7 +4015,7 @@
   publisher: null
   release_date: '2026-08-27'
   status: pending
-  last_checked_at: null
+  last_checked_at: '2026-10-13T19:55:42+02:00'
 - title_id: r-type-dimensions-iii
   igdb_id: 381109
   name: R-Type Dimensions III
@@ -4021,7 +4036,7 @@
   publisher: Playstack
   release_date: '2026'
   status: pending
-  last_checked_at: null
+  last_checked_at: '2026-10-13T19:55:42+02:00'
 - title_id: raidou-remastered-the-mystery-of-the-soulless-army
   igdb_id: 337024
   name: 'Raidou Remastered: The Mystery of the Soulless Army'
@@ -4056,7 +4071,7 @@
   publisher: Ubisoft Entertainment
   release_date: '2026-12-03'
   status: pending
-  last_checked_at: null
+  last_checked_at: '2026-10-13T19:55:42+02:00'
 - title_id: reanimal
   igdb_id: 314265
   name: Reanimal
@@ -4070,7 +4085,7 @@
   publisher: Against Gravity
   release_date: null
   status: pending
-  last_checked_at: null
+  last_checked_at: '2026-10-13T19:55:42+02:00'
 - title_id: red-dead-redemption
   igdb_id: 260735
   name: Red Dead Redemption
@@ -4084,7 +4099,7 @@
   publisher: Rockstar Games
   release_date: '2025-12-02'
   status: pending
-  last_checked_at: null
+  last_checked_at: '2026-10-13T19:55:42+02:00'
 - title_id: remothered-red-nun-s-legacy
   igdb_id: 394670
   name: 'Remothered: Red Nun''s Legacy'
@@ -4140,7 +4155,7 @@
   publisher: Capcom
   release_date: '2027'
   status: pending
-  last_checked_at: null
+  last_checked_at: '2026-10-13T19:55:42+02:00'
 - title_id: resident-evil-village
   igdb_id: 55163
   name: Resident Evil Village
@@ -4161,7 +4176,7 @@
   publisher: null
   release_date: '2026-05-28'
   status: pending
-  last_checked_at: null
+  last_checked_at: '2026-10-13T19:55:42+02:00'
 - title_id: ripple-island-kyle-and-cals-restaurant
   igdb_id: 367815
   name: 'Ripple Island: Kyle and Cal’s Restaurant'
@@ -4174,29 +4189,22 @@
   name: Rogue Fortune
   publisher: Glowmade
   release_date: '2027'
-  status: pending
-  last_checked_at: null
+  status: completed
+  last_checked_at: '2026-10-13T19:55:42+02:00'
 - title_id: rollercoaster-tycoon-classic
   igdb_id: 26589
   name: RollerCoaster Tycoon Classic
   publisher: Atari, Inc.
   release_date: '2026-05-28'
   status: pending
-  last_checked_at: null
-- title_id: rollercoaster-tycoon-on-nintendo-switch
-  igdb_id: 95855
-  name: RollerCoaster Tycoon on Nintendo Switch
-  publisher: Atari, Inc.
-  release_date: '2026-05-28'
-  status: pending
-  last_checked_at: null
+  last_checked_at: '2026-10-13T19:55:42+02:00'
 - title_id: romancing-saga-2-revenge-of-the-seven
   igdb_id: 306154
   name: 'Romancing SaGa 2: Revenge of the Seven'
   publisher: Square Enix
   release_date: '2025-07-31'
-  status: pending
-  last_checked_at: null
+  status: completed
+  last_checked_at: '2026-10-13T20:35:08+02:00'
 - title_id: romancing-saga-3-destinies-united
   igdb_id: 415836
   name: 'Romancing SaGa 3: Destinies United'
@@ -4209,29 +4217,29 @@
   name: Rotwood
   publisher: Klei Entertainment
   release_date: '2026-03-03'
-  status: pending
-  last_checked_at: null
+  status: completed
+  last_checked_at: '2026-10-13T20:35:08+02:00'
 - title_id: rover-s-tale
   igdb_id: 320052
   name: Rover's Tale
   publisher: null
   release_date: '2027'
   status: pending
-  last_checked_at: null
+  last_checked_at: '2026-10-13T20:35:08+02:00'
 - title_id: royal-revolt-survivors
   igdb_id: 309810
   name: Royal Revolt Survivors
   publisher: Headup Games
   release_date: '2026-03-16'
   status: pending
-  last_checked_at: null
+  last_checked_at: '2026-10-13T20:35:08+02:00'
 - title_id: rugby-league-26
   igdb_id: 355082
   name: Rugby League 26
   publisher: Nacon
   release_date: '2026-06-05'
   status: pending
-  last_checked_at: null
+  last_checked_at: '2026-10-13T20:35:08+02:00'
 - title_id: rune-factory-guardians-of-azuma
   igdb_id: 250922
   name: 'Rune Factory: Guardians of Azuma'
@@ -4245,7 +4253,7 @@
   publisher: Jagex
   release_date: '2026-09-15'
   status: pending
-  last_checked_at: null
+  last_checked_at: '2026-10-13T20:35:08+02:00'
 - title_id: rushing-beat-x-return-of-brawl-brothers
   igdb_id: 345566
   name: 'Rushing Beat X: Return of Brawl Brothers'
@@ -4273,7 +4281,7 @@
   publisher: Tribute Games
   release_date: '2026-03-03'
   status: pending
-  last_checked_at: null
+  last_checked_at: '2026-10-13T20:35:08+02:00'
 - title_id: scritchy-scratchy
   igdb_id: 371567
   name: Scritchy Scratchy
@@ -4287,21 +4295,21 @@
   publisher: Sabotage / Playdigious
   release_date: '2026-06-08'
   status: pending
-  last_checked_at: null
+  last_checked_at: '2026-10-13T20:35:08+02:00'
 - title_id: seina-a-tale-of-spirits
   igdb_id: 380792
   name: 'Seina: a Tale Of Spirits'
   publisher: null
   release_date: '2026'
-  status: pending
-  last_checked_at: null
+  status: completed
+  last_checked_at: '2026-10-13T20:35:08+02:00'
 - title_id: sektori
   igdb_id: 217363
   name: Sektori
   publisher: Kimmo Factor
   release_date: '2026-05-14'
   status: pending
-  last_checked_at: null
+  last_checked_at: '2026-10-13T20:35:08+02:00'
 - title_id: shadow-labyrinth
   igdb_id: 325583
   name: Shadow Labyrinth
@@ -4314,22 +4322,22 @@
   name: 'Shadow Tactics: Blades of the Shogun'
   publisher: Daedalic Entertainment / Kalypso
   release_date: '2026-03-18'
-  status: pending
-  last_checked_at: null
+  status: completed
+  last_checked_at: '2026-10-13T20:35:08+02:00'
 - title_id: shadow-tactics-blades-of-the-shogun-aikos-choice
   igdb_id: 145060
   name: 'Shadow Tactics: Blades of the Shogun - Aiko’s Choice'
   publisher: Daedalic Entertainment
   release_date: '2026-03-18'
   status: pending
-  last_checked_at: null
+  last_checked_at: '2026-10-13T20:35:08+02:00'
 - title_id: shellbound
   igdb_id: 339592
   name: Shellbound
   publisher: Kinetic Publishing
   release_date: '2028'
-  status: pending
-  last_checked_at: null
+  status: completed
+  last_checked_at: '2026-10-13T20:35:08+02:00'
 - title_id: shenmue-iii-enhanced
   igdb_id: 361664
   name: Shenmue III Enhanced
@@ -4343,7 +4351,7 @@
   publisher: CFK
   release_date: null
   status: pending
-  last_checked_at: null
+  last_checked_at: '2026-10-13T20:35:08+02:00'
 - title_id: shine-post-be-your-idol
   igdb_id: 217964
   name: 'Shine Post: Be Your Idol!'
@@ -4364,7 +4372,7 @@
   publisher: COLOPL, Inc.
   release_date: '2027'
   status: pending
-  last_checked_at: null
+  last_checked_at: '2026-10-13T20:35:08+02:00'
 - title_id: shuten-order
   igdb_id: 344468
   name: Shuten Order
@@ -4391,22 +4399,22 @@
   name: Skate Story
   publisher: Devolver Digital
   release_date: '2025-12-08'
-  status: pending
-  last_checked_at: null
+  status: completed
+  last_checked_at: '2026-10-13T20:35:08+02:00'
 - title_id: skatesterre
   igdb_id: 404911
   name: Skatesterre
   publisher: Headup
   release_date: '2026-08-13'
-  status: pending
-  last_checked_at: null
+  status: completed
+  last_checked_at: '2026-10-13T20:35:08+02:00'
 - title_id: sky-the-scraper
   igdb_id: 256338
   name: Sky the Scraper
   publisher: Toydium / HYPER REAL
   release_date: null
   status: pending
-  last_checked_at: null
+  last_checked_at: '2026-10-13T20:35:08+02:00'
 - title_id: skyship-quest-story
   igdb_id: 400170
   name: Skyship Quest Story
@@ -4427,7 +4435,7 @@
   publisher: LEVEL-5
   release_date: '2027'
   status: pending
-  last_checked_at: null
+  last_checked_at: '2026-10-13T20:35:08+02:00'
 - title_id: snoopy-the-great-mystery-club
   igdb_id: 360904
   name: Snoopy & The Great Mystery Club
@@ -4448,14 +4456,14 @@
   publisher: rokaplay / Metaroot
   release_date: '2026-06-08'
   status: pending
-  last_checked_at: null
+  last_checked_at: '2026-10-13T20:35:08+02:00'
 - title_id: sombras-negative-frames
   igdb_id: 406115
   name: 'Sombras: Negative Frames'
   publisher: Entalto Publishing
   release_date: '2026-12-03'
-  status: pending
-  last_checked_at: null
+  status: completed
+  last_checked_at: '2026-10-13T21:49:27+02:00'
 - title_id: sonic-frontiers
   igdb_id: 150010
   name: Sonic Frontiers
@@ -4468,15 +4476,15 @@
   name: Sonic Pico Park
   publisher: null
   release_date: '2026-11-12'
-  status: pending
-  last_checked_at: null
+  status: completed
+  last_checked_at: '2026-10-13T20:35:08+02:00'
 - title_id: sonic-racing-crossworlds
   igdb_id: 325608
   name: 'Sonic Racing: CrossWorlds'
   publisher: Sega
   release_date: '2025-12-04'
   status: pending
-  last_checked_at: '2026-09-24'
+  last_checked_at: '2026-10-13T18:32:20+02:00'
 - title_id: sonic-x-shadow-generations-day-one-edition
   igdb_id: 381127
   name: 'Sonic X Shadow Generations: Day One Edition'
@@ -4504,7 +4512,7 @@
   publisher: Nekki
   release_date: null
   status: pending
-  last_checked_at: null
+  last_checked_at: '2026-10-13T20:35:08+02:00'
 - title_id: splatoon-3
   igdb_id: 143613
   name: Splatoon 3
@@ -4546,7 +4554,7 @@
   publisher: Activision
   release_date: 2027-Q2
   status: pending
-  last_checked_at: null
+  last_checked_at: '2026-10-13T20:35:08+02:00'
 - title_id: squirrel-with-a-gun
   igdb_id: 213473
   name: Squirrel with a Gun
@@ -4559,8 +4567,8 @@
   name: Stage Fright
   publisher: Hello Games
   release_date: '2027'
-  status: pending
-  last_checked_at: null
+  status: completed
+  last_checked_at: '2026-10-13T20:35:08+02:00'
 - title_id: stage-tour
   igdb_id: 393269
   name: Stage Tour
@@ -4587,8 +4595,8 @@
   name: 'Star Trek: Shadow Frontier'
   publisher: Paramount Games Studios
   release_date: '2027'
-  status: pending
-  last_checked_at: null
+  status: completed
+  last_checked_at: '2026-10-13T20:35:08+02:00'
 - title_id: star-trek-voyager-across-the-unknown
   igdb_id: 362088
   name: 'Star Trek: Voyager - Across the Unknown'
@@ -4651,7 +4659,7 @@
   publisher: 5pb.
   release_date: 2026-11
   status: pending
-  last_checked_at: null
+  last_checked_at: '2026-10-13T20:35:08+02:00'
 - title_id: stellar-blade
   igdb_id: 117170
   name: Stellar Blade
@@ -4665,14 +4673,14 @@
   publisher: Two Cakes Studio
   release_date: null
   status: pending
-  last_checked_at: null
+  last_checked_at: '2026-10-13T20:35:08+02:00'
 - title_id: step-theater
   igdb_id: 395007
   name: Step Theater
   publisher: null
   release_date: '2026-12-03'
   status: pending
-  last_checked_at: null
+  last_checked_at: '2026-10-13T20:35:08+02:00'
 - title_id: storm-lancers
   igdb_id: 362635
   name: Storm Lancers
@@ -4735,7 +4743,7 @@
   publisher: Oro Interactive
   release_date: 2026-Q3
   status: pending
-  last_checked_at: null
+  last_checked_at: '2026-10-13T20:35:08+02:00'
 - title_id: super-mario-3d-world
   igdb_id: 229339
   name: Super Mario 3D World
@@ -4820,7 +4828,7 @@
   publisher: Prime Matter
   release_date: '2025-12-18'
   status: pending
-  last_checked_at: null
+  last_checked_at: '2026-10-13T20:35:08+02:00'
 - title_id: system-shock-2-25th-anniversary-remaster
   igdb_id: 143964
   name: 'System Shock 2: 25th Anniversary Remaster'
@@ -4862,7 +4870,7 @@
   publisher: Crazy Goat Games
   release_date: '2026'
   status: pending
-  last_checked_at: null
+  last_checked_at: '2026-10-13T20:35:08+02:00'
 - title_id: tayutama-it-s-happy-days
   igdb_id: 362212
   name: 'Tayutama: It''s happy days'
@@ -4918,7 +4926,7 @@
   publisher: Koei Tecmo
   release_date: '2027'
   status: pending
-  last_checked_at: null
+  last_checked_at: '2026-10-13T20:35:08+02:00'
 - title_id: the-crew-motorfest
   igdb_id: 234256
   name: 'The Crew: Motorfest'
@@ -4932,7 +4940,7 @@
   publisher: FromSoftware / Nintendo
   release_date: '2026'
   status: pending
-  last_checked_at: null
+  last_checked_at: '2026-10-13T20:35:08+02:00'
 - title_id: the-elder-scrolls-iv-oblivion-remastered
   igdb_id: 267306
   name: 'The Elder Scrolls IV: Oblivion Remastered'
@@ -4953,7 +4961,7 @@
   publisher: NIS America
   release_date: '2027'
   status: pending
-  last_checked_at: null
+  last_checked_at: '2026-10-13T20:35:08+02:00'
 - title_id: the-exit-8
   igdb_id: 275404
   name: The Exit 8
@@ -4966,8 +4974,8 @@
   name: The Florist
   publisher: Unclear Games
   release_date: '2026'
-  status: pending
-  last_checked_at: null
+  status: completed
+  last_checked_at: '2026-10-13T20:35:08+02:00'
 - title_id: the-fox-s-way-home
   igdb_id: 308875
   name: The Fox's Way Home
@@ -5051,7 +5059,7 @@
   publisher: Aspyr Media
   release_date: '2026-08-11'
   status: pending
-  last_checked_at: null
+  last_checked_at: '2026-10-13T20:35:08+02:00'
 - title_id: the-mermaid-mask
   igdb_id: 279369
   name: The Mermaid Mask
@@ -5100,7 +5108,7 @@
   publisher: Flashpoint Games
   release_date: null
   status: pending
-  last_checked_at: null
+  last_checked_at: '2026-10-13T20:35:08+02:00'
 - title_id: the-relic-first-guardian
   igdb_id: 165397
   name: 'The Relic: First Guardian'
@@ -5144,15 +5152,15 @@
   name: The Shadow Syndicate
   publisher: KillaSoft
   release_date: '2026'
-  status: pending
-  last_checked_at: null
+  status: completed
+  last_checked_at: '2026-10-13T20:35:08+02:00'
 - title_id: the-sinking-city-2
   igdb_id: 289696
   name: The Sinking City 2
   publisher: Frogwares
   release_date: '2027'
-  status: pending
-  last_checked_at: null
+  status: completed
+  last_checked_at: '2026-10-13T20:35:08+02:00'
 - title_id: the-seance-of-blake-manor
   igdb_id: 335833
   name: The Séance of Blake Manor
@@ -5194,14 +5202,14 @@
   publisher: PM Studios
   release_date: '2027'
   status: pending
-  last_checked_at: null
+  last_checked_at: '2026-10-13T20:35:08+02:00'
 - title_id: thermocline
   igdb_id: 403383
   name: Thermocline
   publisher: null
   release_date: null
   status: pending
-  last_checked_at: null
+  last_checked_at: '2026-10-13T20:35:08+02:00'
 - title_id: they-are-billions
   igdb_id: 36616
   name: They Are Billions
@@ -5215,21 +5223,21 @@
   publisher: Atari
   release_date: 2026-Q4
   status: pending
-  last_checked_at: null
+  last_checked_at: '2026-10-13T20:35:08+02:00'
 - title_id: tianji-shadow-of-the-ancients
   igdb_id: 416886
   name: 'Tianji: Shadow of the Ancients'
   publisher: null
   release_date: '2027'
   status: pending
-  last_checked_at: null
+  last_checked_at: '2026-10-13T20:35:08+02:00'
 - title_id: tidal-rush
   igdb_id: 363200
   name: Tidal Rush
   publisher: null
   release_date: null
   status: pending
-  last_checked_at: null
+  last_checked_at: '2026-10-13T20:35:08+02:00'
 - title_id: to-a-t
   igdb_id: 255090
   name: To a T
@@ -5270,8 +5278,8 @@
   name: 'Tomo: Endless Blue'
   publisher: Onibi
   release_date: '2026'
-  status: pending
-  last_checked_at: null
+  status: completed
+  last_checked_at: '2026-10-13T20:35:08+02:00'
 - title_id: tony-hawk-s-pro-skater-3-4
   igdb_id: 334243
   name: Tony Hawk's Pro Skater 3+4
@@ -5335,7 +5343,7 @@
   publisher: Cooldown Games
   release_date: '2027-03-04'
   status: pending
-  last_checked_at: null
+  last_checked_at: '2026-10-13T20:35:08+02:00'
 - title_id: truxton-extreme
   igdb_id: 287620
   name: Truxton Extreme
@@ -5356,7 +5364,7 @@
   publisher: Saber Interactive
   release_date: 2027-Q2
   status: pending
-  last_checked_at: null
+  last_checked_at: '2026-10-13T20:35:08+02:00'
 - title_id: two-point-hospital
   igdb_id: 82117
   name: Two Point Hospital
@@ -5377,7 +5385,7 @@
   publisher: Ultimate Games S.A.
   release_date: null
   status: pending
-  last_checked_at: null
+  last_checked_at: '2026-10-13T20:35:08+02:00'
 - title_id: ultimate-sheep-raccoon
   igdb_id: 325276
   name: Ultimate Sheep Raccoon
@@ -5405,7 +5413,7 @@
   publisher: Annapurna Interactive
   release_date: '2027'
   status: pending
-  last_checked_at: null
+  last_checked_at: '2026-10-13T20:35:08+02:00'
 - title_id: under-par-golf-architect
   igdb_id: 334365
   name: Under Par Golf Architect
@@ -5427,13 +5435,6 @@
   release_date: '2026-06-11'
   status: pending
   last_checked_at: '2026-09-26'
-- title_id: upin-ipin-universe
-  igdb_id: 347867
-  name: Upin & Ipin Universe
-  publisher: Streamline Media Group
-  release_date: null
-  status: pending
-  last_checked_at: null
 - title_id: utawarerumono-past-and-present-rediscovered
   igdb_id: 387541
   name: 'Utawarerumono: Past and Present Rediscovered'
@@ -5510,28 +5511,28 @@
   publisher: Focus Entertainment
   release_date: 2026-Q4
   status: pending
-  last_checked_at: null
+  last_checked_at: '2026-10-13T20:35:08+02:00'
 - title_id: warhammer-age-of-sigmar-deathmaster
   igdb_id: 402516
   name: 'Warhammer Age of Sigmar: Deathmaster'
   publisher: DotEmu
   release_date: '2027'
-  status: pending
-  last_checked_at: null
+  status: completed
+  last_checked_at: '2026-10-13T20:35:08+02:00'
 - title_id: warhammer-survivors
   igdb_id: 376145
   name: Warhammer Survivors
   publisher: Auroch Digital
   release_date: '2026-11-10'
-  status: pending
-  last_checked_at: null
+  status: completed
+  last_checked_at: '2026-10-13T18:32:20+02:00'
 - title_id: warota-i-live-next-to-the-demon-king-s-castle-lol
   igdb_id: 399887
   name: 'Warota: I Live Next to The Demon King''s Castle LOL'
   publisher: OneorEight
   release_date: '2027'
   status: pending
-  last_checked_at: null
+  last_checked_at: '2026-10-13T20:35:08+02:00'
 - title_id: warrior-cats-clans-of-the-forest
   igdb_id: 412520
   name: 'Warrior Cats: Clans of the Forest'
@@ -5552,7 +5553,7 @@
   publisher: PixelHeart
   release_date: null
   status: pending
-  last_checked_at: null
+  last_checked_at: '2026-10-13T20:35:08+02:00'
 - title_id: wild-hearts-s
   igdb_id: 338090
   name: Wild Hearts S
@@ -5572,15 +5573,15 @@
   name: Witchbrook
   publisher: Chucklefish Games
   release_date: '2026'
-  status: pending
-  last_checked_at: null
+  status: completed
+  last_checked_at: '2026-10-13T20:35:08+02:00'
 - title_id: wo-long-2-wings-of-ember
   igdb_id: 405070
   name: 'Wo Long 2: Wings of Ember'
   publisher: Koei Tecmo
   release_date: '2027-03-04'
   status: pending
-  last_checked_at: null
+  last_checked_at: '2026-10-13T20:35:08+02:00'
 - title_id: wo-long-fallen-dynasty
   igdb_id: 204628
   name: 'Wo Long: Fallen Dynasty'
@@ -5601,7 +5602,7 @@
   publisher: null
   release_date: '2028'
   status: pending
-  last_checked_at: null
+  last_checked_at: '2026-10-13T20:35:08+02:00'
 - title_id: woodo
   igdb_id: 145078
   name: Woodo
@@ -5615,7 +5616,7 @@
   publisher: Team 17
   release_date: '2027'
   status: pending
-  last_checked_at: null
+  last_checked_at: '2026-10-13T20:35:08+02:00'
 - title_id: wwe-2k25
   igdb_id: 329690
   name: WWE 2K25
@@ -5671,7 +5672,7 @@
   publisher: Nintendo
   release_date: '2027'
   status: pending
-  last_checked_at: null
+  last_checked_at: '2026-10-13T20:35:08+02:00'
 - title_id: yakuza-kiwami
   igdb_id: 12595
   name: Yakuza Kiwami
@@ -5699,7 +5700,7 @@
   publisher: LEVEL-5
   release_date: null
   status: pending
-  last_checked_at: null
+  last_checked_at: '2026-10-13T20:35:08+02:00'
 - title_id: yobarai-detective-miasma-breaker
   igdb_id: 324241
   name: 'Yobarai Detective: Miasma Breaker'
@@ -5768,36 +5769,36 @@
   name: Pardon My French Toast
   publisher: ReRolled Studio
   release_date: '2026-10-29'
-  status: pending
-  last_checked_at: null
+  status: completed
+  last_checked_at: '2026-10-13T18:32:20+02:00'
 - title_id: the-sky-project-land-of-noris
   igdb_id: 418547
   name: 'The Sky Project: Land of Noris'
   publisher: null
   release_date: null
   status: pending
-  last_checked_at: null
+  last_checked_at: '2026-10-13T20:35:08+02:00'
 - title_id: tropico-7
   igdb_id: 362040
   name: Tropico 7
   publisher: Kalypso Media
   release_date: '2027-01-28'
   status: pending
-  last_checked_at: null
+  last_checked_at: '2026-10-13T20:35:08+02:00'
 - title_id: vaewolf
   igdb_id: 415294
   name: Vaewolf
   publisher: Megabit Publishing
   release_date: '2027'
-  status: pending
-  last_checked_at: null
+  status: completed
+  last_checked_at: '2026-10-13T20:35:08+02:00'
 - title_id: among-us-story-on-guard
   igdb_id: 404707
   name: 'Among Us Story: On Guard'
   publisher: Innersloth
   release_date: '2027-02-17'
-  status: new
-  last_checked_at: null
+  status: completed
+  last_checked_at: '2026-10-13T17:35:08+02:00'
 - title_id: arcade-archives-2-crazy-balloon
   igdb_id: 421093
   name: 'Arcade Archives 2: Crazy Balloon'
@@ -5831,8 +5832,8 @@
   name: Caves of Qud
   publisher: Freehold Games / Kitfox Games
   release_date: null
-  status: new
-  last_checked_at: null
+  status: pending
+  last_checked_at: '2026-10-13T17:35:08+02:00'
 - title_id: chit-chat-party
   igdb_id: 420680
   name: Chit Chat Party!
@@ -5866,22 +5867,22 @@
   name: Crankles
   publisher: null
   release_date: null
-  status: new
-  last_checked_at: null
+  status: pending
+  last_checked_at: '2026-10-13T17:35:08+02:00'
 - title_id: dawngazer
   igdb_id: 419735
   name: Dawngazer
   publisher: Good Smile Company
   release_date: '2028'
-  status: new
-  last_checked_at: null
+  status: pending
+  last_checked_at: '2026-10-13T17:35:08+02:00'
 - title_id: deadpact
   igdb_id: 407818
   name: Deadpact
   publisher: Low Health Games
   release_date: null
-  status: new
-  last_checked_at: null
+  status: pending
+  last_checked_at: '2026-10-13T17:35:08+02:00'
 - title_id: deck-of-haunts
   igdb_id: 320726
   name: Deck of Haunts
@@ -5915,22 +5916,27 @@
   name: DuneCrawl
   publisher: Alientrap
   release_date: 2026-Q4
-  status: new
-  last_checked_at: null
+  status: pending
+  last_checked_at: '2026-10-13T17:35:08+02:00'
 - title_id: fountains
   igdb_id: 203752
   name: Fountains
   publisher: Crunching Koalas
-  release_date: null
-  status: new
-  last_checked_at: null
+  release_date: '2026-09-24'
+  updates:
+  - url: https://www.nintendo.com/us/store/products/fountains-nintendo-switch-2-edition-switch-2/
+    checked_at: '2026-10-13'
+    fields:
+    - release_date
+  status: completed
+  last_checked_at: '2026-10-13T17:35:08+02:00'
 - title_id: foxy-dumplings
   igdb_id: 386440
   name: Foxy Dumplings
   publisher: null
   release_date: '2026-12-31'
-  status: new
-  last_checked_at: null
+  status: pending
+  last_checked_at: '2026-10-13T17:35:08+02:00'
 - title_id: heartworm
   igdb_id: 132711
   name: Heartworm
@@ -5950,15 +5956,15 @@
   name: Picross S Climax
   publisher: Jupiter Corporation
   release_date: '2026-12-10'
-  status: new
-  last_checked_at: null
+  status: pending
+  last_checked_at: '2026-10-13T17:35:08+02:00'
 - title_id: pixel-washer
   igdb_id: 263778
   name: Pixel Washer
   publisher: Acclaim
   release_date: '2027'
-  status: new
-  last_checked_at: null
+  status: pending
+  last_checked_at: '2026-10-13T17:35:08+02:00'
 - title_id: queen-s-domain
   igdb_id: 258775
   name: Queen's Domain
@@ -5971,8 +5977,8 @@
   name: RockBeasts
   publisher: Team17
   release_date: 2027-01
-  status: new
-  last_checked_at: null
+  status: pending
+  last_checked_at: '2026-10-13T17:35:08+02:00'
 - title_id: rogue-reigns
   igdb_id: 361052
   name: Rogue Reigns
@@ -5992,15 +5998,15 @@
   name: Signal Veil
   publisher: Serafini Productions
   release_date: null
-  status: new
-  last_checked_at: null
+  status: pending
+  last_checked_at: '2026-10-13T17:35:08+02:00'
 - title_id: sky-dust
   igdb_id: 307180
   name: Sky Dust
   publisher: Orbit Studio
   release_date: null
-  status: new
-  last_checked_at: null
+  status: pending
+  last_checked_at: '2026-10-13T17:35:08+02:00'
 - title_id: spirit-valor
   igdb_id: 319702
   name: Spirit Valor
@@ -6020,15 +6026,15 @@
   name: The Bagman
   publisher: Glowstick Entertainment
   release_date: '2027'
-  status: new
-  last_checked_at: null
+  status: pending
+  last_checked_at: '2026-10-13T17:35:08+02:00'
 - title_id: the-escapists-3
   igdb_id: 422261
   name: The Escapists 3
   publisher: Team17
   release_date: '2027'
-  status: new
-  last_checked_at: null
+  status: pending
+  last_checked_at: '2026-10-13T17:35:08+02:00'
 - title_id: toem-2
   igdb_id: 325182
   name: Toem 2
@@ -6062,5 +6068,19 @@
   name: Waltz and Jam
   publisher: Flyway Games
   release_date: '2026-12-03'
-  status: new
-  last_checked_at: null
+  status: pending
+  last_checked_at: '2026-10-13T17:35:08+02:00'
+- title_id: arcade-archives-2-xevious-3d-g
+  igdb_id: 422770
+  name: 'Arcade Archives 2: Xevious 3D/G'
+  publisher: Hamster Corporation
+  release_date: '2026-09-24'
+  status: completed
+  last_checked_at: '2026-10-13T17:35:08+02:00'
+- title_id: becrowned
+  igdb_id: 235901
+  name: Becrowned
+  publisher: Top Hat Studios
+  release_date: 2027-Q1
+  status: pending
+  last_checked_at: '2026-10-13T17:35:08+02:00'
