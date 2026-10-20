@@ -413,3 +413,28 @@
 - igdb_id: 347867
   name: "Upin & Ipin Universe"
   reason: "Solo Switch 1 (https://www.nintendo-insider.com/upin-ipin-universe-out-on-nintendo-switch-next-week/: \"will be released digitally on the Nintendo eShop for Nintendo Switch worldwide on 17 July 2025\"); en Switch 2 solo por retrocompatibilidad y sin ficha de Switch 2 en los catálogos de Nintendo EU, NA ni JP (13-10-2026)"
+- igdb_id: 374668
+  name: "Arcade Archives 2: Munch Mobile"
+  reason: "Es el Arcade Archives de Switch 1, no un Arcade Archives 2 (https://www.nintendo.com/us/store/products/arcade-archives-munch-mobile-switch/: \"Arcade Archives MUNCH MOBILE\", solo Nintendo Switch, 16-10-2025; en JP \"アーケードアーカイブス ジョイフルロード\", hard 1_HAC); sin ficha de Switch 2 en los catálogos de Nintendo EU, NA ni JP (14-10-2026)"
+- igdb_id: 222390
+  name: "Arcade Archives: Touki Denshou Angel Eyes"
+  reason: "Es el Arcade Archives de Switch 1 (https://www.nintendo.com/us/store/products/arcade-archives-touki-denshou-angel-eyes-switch/: \"Arcade Archives TOUKI DENSHOU ANGEL EYES\", solo Nintendo Switch, 20-10-2022); IGDB le pone la fecha de Switch 2 (13-08-2026) de Console Archives TOUKI DENSHOU ANGEL EYES, que es el juego de Switch 2 (14-10-2026)"
+  former_title_id: "arcade-archives-touki-denshou-angel-eyes"
+  merged_into: "console-archives-touki-denshou-angel-eyes"
+- igdb_id: 355970
+  name: "Kuukiyomi: Consider It World - Thailand Ver."
+  reason: "Solo Switch 1: en la API de Nintendo JP es \"みんなで空気読み。ワールド タイVer.\" (icode BVKQA, hard 1_HAC, 2026.5.21) y no tiene ficha de Switch 2 en los catálogos de Nintendo EU, NA ni JP (14-10-2026)"
+- igdb_id: 361880
+  name: "Zero Parades: For Dead Spies"
+  reason: "En Switch 2 solo se vende como Zero Parades: Director's Cut (https://www.gematsu.com/2026/10/zero-parades-directors-cut-coming-to-switch-2-on-november-3-alongside-ps5-version: \"ZA/UM will release a Switch 2 version of espionage RPG ZERO PARADES: Director’s Cut\", 20-10-2026)"
+- igdb_id: 415392
+  name: "Model Debut4"
+  reason: "Duplicado de Model Debut 4 (378505); IGDB lo quitó de Switch 2 en el catálogo del 20-10-2026"
+  former_title_id: "model-debut4"
+  merged_into: "model-debut-4"
+- igdb_id: 389423
+  name: "Legacy of Kain: Defiance Remastered"
+  reason: "IGDB lo quitó de Switch 2 en el catálogo del 20-10-2026, sin entrada que lo sustituya"
+- igdb_id: 379670
+  name: "Love: Fall in Death"
+  reason: "IGDB lo quitó de Switch 2 en el catálogo del 20-10-2026, sin entrada que lo sustituya"
