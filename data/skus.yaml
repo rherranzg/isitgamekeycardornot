@@ -468,7 +468,7 @@
   edition: "standard"
   edition_name: null
   distributor: null
-  release_date: null
+  release_date: "2027-03-18"
   format: "game_key_card"
   cart_size_gb: null
   download_size_gb: null
@@ -476,6 +476,10 @@
   ean: "884095225025"  # UPC del listado de Target
   evidence: "retailer_listing"  # (leída) Target: formato "Game-Key Card"
   source_url: "https://www.target.com/p/007-first-light-nintendo-switch-2/-/A-94948513"
+  updates:
+    - url: "https://nintendoeverything.com/nintendo-pre-order-updates-october-25-2026/"  # (listado) reservas de EE. UU. de la semana del 25-10-2026, Switch 2: "007 First Light – March 18 – Amazon , Best Buy , GameStop" (la del 18-10 decía "TBA 2027")
+      checked_at: "2026-10-28"
+      fields: ["release_date"]
   verified_at: "2026-09-15"
 - sku_id: "jp-007-first-light-standard"
   title_id: "007-first-light"
@@ -6721,7 +6725,7 @@
   edition: "standard"
   edition_name: null
   distributor: null
-  release_date: null
+  release_date: "2027-02-04"
   format: "game_key_card"
   cart_size_gb: null
   download_size_gb: null
@@ -6729,6 +6733,10 @@
   ean: null
   evidence: "press_report"  # (leída) RPG Site: "The EU and other region listings have it as a Game-Key Card right now."
   source_url: "https://www.rpgsite.net/feature/17453-nintendo-switch-2-rpg-physical-release-cartridge-no-game-key-card-list"
+  updates:
+    - url: "https://www.nintendo-insider.com/muramasa-revenant-blades-release-date-locked-in/"  # (leída) Nintendo Insider, 24-10-2026: "will be released at retail and digitally on the Nintendo eShop for Nintendo Switch 2 and Nintendo Switch worldwide on 4 February 2027."
+      checked_at: "2026-10-28"
+      fields: ["release_date"]
   verified_at: "2026-09-18"
 - sku_id: "jp-muramasa-revenant-blades-standard"
   title_id: "muramasa-revenant-blades"
@@ -11968,7 +11976,7 @@
   edition: "standard"
   edition_name: null
   distributor: "Alliance Arts"  # (leída) meisakugame, cabecera "【アライアンス・アーツ】"
-  release_date: null
+  release_date: "2026-12-17"
   format: "full_cart"
   cart_size_gb: null
   download_size_gb: null
@@ -11976,6 +11984,10 @@
   ean: null
   evidence: "press_report"  # (leída) meisakugame: "東方紅魔郷：New Classic ～ the Embodiment of Scarlet Devil | 2専 | -"; (API) search.nintendo.jp: icode ACG5A, sform BEE_DL, sdate "2026.9.10", pprice: null (sin fecha de la caja)
   source_url: "https://meisakugame.garyoutensei.com/data/switch2packagekey.html"
+  updates:
+    - url: "https://nintendoeverything.com/touhou-koumakyou-new-classic-switch-2-switch-physical/"  # (leída) Nintendo Everything, 23-10-2026: "will have a physical release on Nintendo Switch 2 and Switch ... It will be available on December 17, 2026. | Currently the boxed versions have only been announced for Japan."
+      checked_at: "2026-10-28"
+      fields: ["release_date"]
   verified_at: "2026-10-16"
 
 # Lies of P: Complete Edition (Neowiz): caja en Switch 2 con el juego en el cartucho, vía iam8bit.
@@ -15755,16 +15767,31 @@
   region: "JP"
   edition: "standard"
   edition_name: null
-  distributor: null
-  release_date: null
-  format: "unknown"
+  distributor: "G-MODE"  # (leída) Gematsu: "publisher G-MODE Corporation"
+  release_date: "2027-03-04"  # (leída) Gematsu: "will launch for Switch 2, Switch, and PC via Steam on March 4, 2027 in Japan"
+  format: "game_key_card"
   cart_size_gb: null
   download_size_gb: null
   includes_download_code: null
   ean: null
-  evidence: "unconfirmed"
-  source_url: null
-  verified_at: "2026-10-13"
+  evidence: "press_report"  # (leída) Gematsu, 22-10-2026: "Physical Editions | Standard Edition (Switch 2, Switch) – 7,678 yen | A copy of the game (game-key card on Switch 2)"; meisakugame: "★続ポートピア連続殺人事件:忘却の埋葬 | Key"
+  source_url: "https://www.gematsu.com/2026/10/next-the-portopia-serial-murder-case-launches-march-4-2027-in-japan"
+  verified_at: "2026-10-28"
+- sku_id: "jp-next-the-portopia-serial-murder-case-collectors"
+  title_id: "next-the-portopia-serial-murder-case"
+  region: "JP"
+  edition: "collectors"
+  edition_name: "Limited Edition"
+  distributor: "G-MODE"  # (leída) Gematsu: "publisher G-MODE Corporation"
+  release_date: "2027-03-04"  # (leída) Gematsu: "will launch for Switch 2, Switch, and PC via Steam on March 4, 2027 in Japan"
+  format: "game_key_card"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) Gematsu, 22-10-2026: "Limited Edition (Switch 2, Switch) – 9,878 yen | A copy of the game (game-key card on Switch 2) | Deluxe box | A5-size booklet | Original soundtrack CD"
+  source_url: "https://www.gematsu.com/2026/10/next-the-portopia-serial-murder-case-launches-march-4-2027-in-japan"
+  verified_at: "2026-10-28"
 
 # Mega Man: Dual Override (Capcom): caja japonesa prevista sin formato. (API) search.nintendo.jp: "ロックマン: デュアル
 # オーバーライド", sdate "2027.春", maker "カプコン", sform BEE_DOWNLOADABLE. Nintendo Insider dice "will be released digitally
@@ -16282,7 +16309,7 @@
       fields: ["distributor"]
   verified_at: "2026-10-13"
 
-# The Apothecary Diaries: The False Imperial Brother (Koei Tecmo): caja confirmada sin formato. (leída) Nintendo Insider: "The Apothecary Diaries: The False Imperial Brother will be released at retail and digitally on the Nintendo eShop for Nintendo Switch 2 and Nintendo Switch worldwide in early 2027."
+# The Apothecary Diaries: The False Imperial Brother (Koei Tecmo): game-key card en Switch 2 (Inven Global, 21-10-2026). (leída) Nintendo Insider: "The Apothecary Diaries: The False Imperial Brother will be released at retail and digitally on the Nintendo eShop for Nintendo Switch 2 and Nintendo Switch worldwide in early 2027."
 # (https://www.nintendo-insider.com/the-apothecary-diaries-the-false-imperial-brother-announced/).
 - sku_id: "eu-the-apothecary-diaries-the-false-imperial-brother-standard"
   title_id: "the-apothecary-diaries-the-false-imperial-brother"
@@ -16291,29 +16318,33 @@
   edition_name: null
   distributor: null
   release_date: null
-  format: "unknown"
+  format: "game_key_card"
   cart_size_gb: null
   download_size_gb: null
   includes_download_code: null
   ean: null
-  evidence: "unconfirmed"
-  source_url: null
-  verified_at: "2026-10-13"
+  evidence: "press_report"  # (leída) Inven Global, 21-10-2026: "Physical copies are planned for Switch 2 and PS5, though the Switch 2 version is sold only as a Game-Key Card."
+  source_url: "https://www.invenglobal.com/articles/27498/the-apothecary-diaries-the-false-imperial-brother-launches-march-18th-2027"
+  verified_at: "2026-10-28"
 - sku_id: "na-the-apothecary-diaries-the-false-imperial-brother-standard"
   title_id: "the-apothecary-diaries-the-false-imperial-brother"
   region: "NA"
   edition: "standard"
   edition_name: null
   distributor: null
-  release_date: null
-  format: "unknown"
+  release_date: "2027-03-18"
+  format: "game_key_card"
   cart_size_gb: null
   download_size_gb: null
   includes_download_code: null
   ean: null
-  evidence: "unconfirmed"
-  source_url: null
-  verified_at: "2026-10-13"
+  evidence: "press_report"  # (leída) Inven Global, 21-10-2026: "Physical copies are planned for Switch 2 and PS5, though the Switch 2 version is sold only as a Game-Key Card."
+  source_url: "https://www.invenglobal.com/articles/27498/the-apothecary-diaries-the-false-imperial-brother-launches-march-18th-2027"
+  updates:
+    - url: "https://nintendoeverything.com/nintendo-pre-order-updates-october-25-2026/"  # (listado) reservas de EE. UU. de la semana del 25-10-2026, Switch 2: "The Apothecary Diaries: The False Imperial Brother (new) – March 18 – Amazon"
+      checked_at: "2026-10-28"
+      fields: ["release_date"]
+  verified_at: "2026-10-28"
 - sku_id: "jp-the-apothecary-diaries-the-false-imperial-brother-standard"
   title_id: "the-apothecary-diaries-the-false-imperial-brother"
   region: "JP"
@@ -16321,18 +16352,18 @@
   edition_name: null
   distributor: "コーエーテクモゲームス"
   release_date: null
-  format: "unknown"
+  format: "game_key_card"
   cart_size_gb: null
   download_size_gb: null
   includes_download_code: null
   ean: null
-  evidence: "unconfirmed"
-  source_url: null
+  evidence: "press_report"  # (leída) meisakugame, cabecera de Koei Tecmo: "薬屋のひとりごと ～偽りの皇弟～ | Key"; Inven Global: "the Switch 2 version is sold only as a Game-Key Card"
+  source_url: "https://meisakugame.garyoutensei.com/data/switch2packagekey.html"
   updates:
     - url: "https://search.nintendo.jp/nintendo_soft/search.json?q=%E8%96%AC%E5%B1%8B%E3%81%AE%E3%81%B2%E3%81%A8%E3%82%8A%E3%81%94%E3%81%A8&limit=40"  # (API) search.nintendo.jp: "薬屋のひとりごと ～偽りの皇弟～", sform BEE_DOWNLOADABLE, maker "コーエーテクモゲームス", sdate "2027.初頭"
       checked_at: "2026-10-13"
       fields: ["distributor"]
-  verified_at: "2026-10-13"
+  verified_at: "2026-10-28"
 
 # The Eminence in Shadow: Phantom Echoes (NIS America): caja confirmada sin formato. (leída) Nintendo Insider: "The Eminence in Shadow: Phantom Echoes will be released at retail and digitally on the Nintendo eShop for Nintendo Switch 2 worldwide in 2027."
 # (https://www.nintendo-insider.com/the-eminence-in-shadow-phantom-echoes-announced/).
@@ -16636,3 +16667,135 @@
   evidence: "press_report"  # (leída) https://nintendoeverything.com/go-go-town-reveals-nintendo-switch-2-physical-release/: "The full game is included on the cartridge."
   source_url: "https://nintendoeverything.com/go-go-town-reveals-nintendo-switch-2-physical-release/"
   verified_at: "2026-10-20"
+
+# Novedades del 28-10-2026: cajas nuevas de Hitman: Absolution (Limited Run Games), Haste (Super Rare Games, sin formato),
+# Order of the Sinking Star (PM Studios), la Legendary Edition de TMNT: Splintered Fate, Kitaria Fables 2 en NA y la caja
+# japonesa de Hello Kitty Party Land.
+- sku_id: "na-hitman-absolution-standard"
+  title_id: "hitman-absolution"
+  region: "NA"
+  edition: "standard"
+  edition_name: null
+  distributor: "Limited Run Games"  # (leída) https://nintendoeverything.com/hitman-absolution-nintendo-switch-2-edition-physical-release-confirmed/: "Hitman: Absolution – Nintendo Switch 2 Edition will have a physical release. That’s according to Limited Run Games"
+  release_date: null  # (leída) solo el anuncio; la descarga salió el 22-10
+  format: "full_cart"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) https://nintendoeverything.com/hitman-absolution-nintendo-switch-2-edition-physical-release-confirmed/: "This is the entire game on the cartridge. Not only are you getting the Nintendo Switch 2 Edition, but also the Switch 1 version which works on that console."
+  source_url: "https://nintendoeverything.com/hitman-absolution-nintendo-switch-2-edition-physical-release-confirmed/"
+  verified_at: "2026-10-28"
+- sku_id: "eu-haste-standard"
+  title_id: "haste"
+  region: "EU"
+  edition: "standard"
+  edition_name: null
+  distributor: "Super Rare Games"  # (leída) https://nintendoeverything.com/haste-reveals-nintendo-switch-2-physical-release/: "Super Rare Games is in charge of new boxed versions. | 5,000 standard copies and 2,000 special edition units will be made available."
+  release_date: null
+  format: "unknown"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "unconfirmed"  # buscado en Nintendo Everything, GamingTrend ("5000 Standard Switch 2 copies, and 2000 Special Edition copies") y búsqueda web de la nota de Super Rare Games: ninguna dice si es cartucho completo
+  source_url: null
+  verified_at: "2026-10-28"
+- sku_id: "eu-haste-collectors"
+  title_id: "haste"
+  region: "EU"
+  edition: "collectors"
+  edition_name: "Special Edition"
+  distributor: "Super Rare Games"  # (leída) https://nintendoeverything.com/haste-reveals-nintendo-switch-2-physical-release/: "The latter includes a slipcover, exclusive sticker, Zoe split-ring, four character sticker sheets, a full set of trading cards (including the rare shiny card), and a premium clamshell collector’s box"
+  release_date: null
+  format: "unknown"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "unconfirmed"  # buscado en Nintendo Everything, GamingTrend y búsqueda web de la nota de Super Rare Games: ninguna dice si es cartucho completo
+  source_url: null
+  verified_at: "2026-10-28"
+- sku_id: "na-order-of-the-sinking-star-standard"
+  title_id: "order-of-the-sinking-star"
+  region: "NA"
+  edition: "standard"
+  edition_name: null
+  distributor: "PM Studios"  # (leída) https://nintendoeverything.com/order-of-the-sinking-star-confirms-nintendo-switch-2-physical-release/: "PM Studios will be distributing the title at retail in 2027."
+  release_date: null  # (listado) https://nintendoeverything.com/nintendo-pre-order-updates-october-25-2026/: "Order of the Sinking Star (new) – TBA 2027 – Amazon"
+  format: "full_cart"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) https://nintendoeverything.com/order-of-the-sinking-star-confirms-nintendo-switch-2-physical-release/: "Everything will be included on the cartridge. This will not be a game-key card, so it’s a proper physical release."
+  source_url: "https://nintendoeverything.com/order-of-the-sinking-star-confirms-nintendo-switch-2-physical-release/"
+  verified_at: "2026-10-28"
+- sku_id: "na-teenage-mutant-ninja-turtles-splintered-fate-deluxe"
+  title_id: "teenage-mutant-ninja-turtles-splintered-fate"
+  region: "NA"
+  edition: "deluxe"
+  edition_name: "Legendary Edition"
+  distributor: null
+  release_date: "2026-10-27"  # (leída) GoNintendo, 27-10-2026: "Starting today, North American players can pick up their physical ‘Legendary Edition’"
+  format: "full_cart"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) https://www.gonintendo.com/contents/66518-tmnt-splintered-fate-physical-legendary-edition-available-for-switch-2-today: "featuring all DLC characters and free content updates included right on the cartridge, as well as an exclusive digital art book"
+  source_url: "https://www.gonintendo.com/contents/66518-tmnt-splintered-fate-physical-legendary-edition-available-for-switch-2-today"
+  verified_at: "2026-10-28"
+- sku_id: "eu-teenage-mutant-ninja-turtles-splintered-fate-deluxe"
+  title_id: "teenage-mutant-ninja-turtles-splintered-fate"
+  region: "EU"
+  edition: "deluxe"
+  edition_name: "Legendary Edition"
+  distributor: null
+  release_date: "2026-11-17"  # (leída) GoNintendo, 27-10-2026: "with European physical copies to follow on November 17"
+  format: "full_cart"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) https://www.gonintendo.com/contents/66518-tmnt-splintered-fate-physical-legendary-edition-available-for-switch-2-today: "featuring all DLC characters and free content updates included right on the cartridge ... with European physical copies to follow on November 17"
+  source_url: "https://www.gonintendo.com/contents/66518-tmnt-splintered-fate-physical-legendary-edition-available-for-switch-2-today"
+  verified_at: "2026-10-28"
+- sku_id: "na-kitaria-fables-2-standard"
+  title_id: "kitaria-fables-2"
+  region: "NA"
+  edition: "standard"
+  edition_name: null
+  distributor: null
+  release_date: "2027-04-21"
+  format: "game_key_card"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) https://nintendoeverything.com/list-of-all-nintendo-switch-2-games-with-a-game-key-card-release/: "Every Nintendo Switch 2 game with a game-key card release | ... | Kitaria Fables 2 | ..." (sin región)
+  source_url: "https://nintendoeverything.com/list-of-all-nintendo-switch-2-games-with-a-game-key-card-release/"
+  updates:
+    - url: "https://nintendoeverything.com/nintendo-pre-order-updates-october-25-2026/"  # (listado) reservas de EE. UU. de la semana del 25-10-2026, Switch 2: "Kitaria Fables 2 (new) – April 21 – Amazon , Best Buy"
+      checked_at: "2026-10-28"
+      fields: ["release_date"]
+  verified_at: "2026-10-28"
+- sku_id: "jp-hello-kitty-party-land-standard"
+  title_id: "hello-kitty-party-land"
+  region: "JP"
+  edition: "standard"
+  edition_name: null
+  distributor: "サンリオゲームズ"  # (leída) meisakugame, cabecera "【サンリオゲームズ】"
+  release_date: "2026-10-29"
+  format: "full_cart"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) meisakugame: "【サンリオゲームズ】 | ... | サンリオ パーティランド | 2専 | -"; Nintendo Everything, 25-10-2026 (calendario japonés de la semana del 29-10): "Switch 2 Retail | Anomalith | Demon Slayer ... | Hello Kitty Party Land"
+  source_url: "https://meisakugame.garyoutensei.com/data/switch2packagekey.html"
+  updates:
+    - url: "https://store-jp.nintendo.com/item/software/D70010000117872"  # (API) search.nintendo.jp: "サンリオ パーティランド", icode ABWWA, sdate "2026.10.29", sform BEE_DOWNLOADABLE, maker "サンリオ", pprice 6380
+      checked_at: "2026-10-28"
+      fields: ["release_date"]
+  verified_at: "2026-10-28"

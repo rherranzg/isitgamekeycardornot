@@ -10,6 +10,7 @@ from switch2db.nintendo_store import (
     StoreEntry,
     classify_title_date,
     collect_store_dates,
+    collect_store_pages,
     diff_snapshots,
     fetch_jp_entries,
     fetch_na_entries,
@@ -47,7 +48,11 @@ def test_read_store_day_success(timestamp: str | None, expected: str | None) -> 
 
 def test_parse_eu_doc_success(eu_store_doc: dict[str, object]) -> None:
     assert parse_eu_doc(eu_store_doc) == StoreEntry(
-        region=Region.EU, product_id="2785803", name="Example Game™", release_date="2026-11-05"
+        region=Region.EU,
+        product_id="2785803",
+        name="Example Game™",
+        release_date="2026-11-05",
+        page_url="https://www.nintendo.com/en-gb/Games/Nintendo-Switch-2-games/Example-Game-2785803.html",
     )
 
 
@@ -59,6 +64,7 @@ def test_parse_na_hit_success(na_store_hit: dict[str, object]) -> None:
     entry = parse_na_hit(na_store_hit)
 
     assert (entry.region, entry.product_id, entry.release_date) == (Region.NA, "70010000095431", "2026-11-05")
+    assert entry.page_url == "https://www.nintendo.com/us/store/products/example-game-switch-2/"
 
 
 def test_fetch_na_entries_pages_and_skips_upgrade_packs(
@@ -111,6 +117,23 @@ def test_parse_jp_item_success(
     assert (entry.release_date, entry.has_package) == ("2027-05-20", expected)
 
 
+@pytest.mark.parametrize(
+    "url,expected",
+    [
+        (
+            "https://www.nintendo.com/jp/games/switch2/aaaca/index.html",
+            "https://www.nintendo.com/jp/games/switch2/aaaca/index.html",
+        ),
+        (None, "https://store-jp.nintendo.com/item/software/D70010000131656"),
+    ],
+)
+def test_parse_jp_item_page_url(jp_store_item: dict[str, object], url: str | None, expected: str) -> None:
+    entry = parse_jp_item({**jp_store_item, "url": url})
+
+    assert entry is not None
+    assert entry.page_url == expected
+
+
 @pytest.mark.parametrize("sform", ["DLC", "DL_DLC", "BEE_GC", "hard"])
 def test_parse_jp_item_returns_none_for_non_games(jp_store_item: dict[str, object], sform: str) -> None:
     assert parse_jp_item({**jp_store_item, "sform": sform}) is None
@@ -155,7 +178,13 @@ def test_diff_snapshots_reports_new_products_dates_and_boxes() -> None:
         StoreEntry(region=Region.NA, product_id="3", name="Same", release_date="2026-10-20"),
     ]
     current = [
-        StoreEntry(region=Region.EU, product_id="1", name="Delayed", release_date="2026-11-20"),
+        StoreEntry(
+            region=Region.EU,
+            product_id="1",
+            name="Delayed",
+            release_date="2026-11-20",
+            page_url="https://www.nintendo.com/en-gb/Games/Delayed-1.html",
+        ),
         StoreEntry(region=Region.JP, product_id="2", name="箱", release_date="2026.冬", has_package=True),
         StoreEntry(region=Region.NA, product_id="3", name="Same", release_date="2026-10-20"),
         StoreEntry(region=Region.NA, product_id="4", name="Brand New", release_date=None),
@@ -163,6 +192,7 @@ def test_diff_snapshots_reports_new_products_dates_and_boxes() -> None:
 
     changes = diff_snapshots(previous, current, {(Region.EU, "1"): "delayed"})
 
+    assert changes[0].page_url == "https://www.nintendo.com/en-gb/Games/Delayed-1.html"
     assert [(change.kind, change.before, change.after, change.title_id) for change in changes] == [
         (ChangeKind.RELEASE_DATE, "2026-10-20", "2026-11-20", "delayed"),
         (ChangeKind.PACKAGE, False, True, None),
@@ -175,6 +205,17 @@ def test_collect_store_dates_keeps_only_days() -> None:
     title_ids = {(Region.EU, "EU-1"): "example-game", (Region.NA, "NA-1"): "example-game"}
 
     assert collect_store_dates(entries, title_ids) == {"example-game": {"EU": "2026-11-05"}}
+
+
+def test_collect_store_pages_skips_unmatched_and_pageless_entries() -> None:
+    entries = [
+        build_entry(Region.EU, "2026-11-05").model_copy(update={"page_url": "https://www.nintendo.com/eu"}),
+        build_entry(Region.NA, "2026-11-05"),
+        build_entry(Region.JP, "2026-11-05").model_copy(update={"page_url": "https://www.nintendo.com/jp"}),
+    ]
+    title_ids = {(Region.EU, "EU-1"): "example-game", (Region.NA, "NA-1"): "example-game"}
+
+    assert collect_store_pages(entries, title_ids) == {"example-game": {"EU": "https://www.nintendo.com/eu"}}
 
 
 @pytest.mark.parametrize(
@@ -198,11 +239,15 @@ def test_classify_title_date_success(
 
 def test_find_title_date_findings_success(title: Title) -> None:
     findings = find_title_date_findings(
-        [title], {"example-game": {"EU": "2026-11-05"}, "other-game": {"EU": "2026-11-05"}}, SINCE, TODAY
+        [title],
+        {"example-game": {"EU": "2026-11-05"}, "other-game": {"EU": "2026-11-05"}},
+        {"example-game": {"EU": "https://www.nintendo.com/eu", "NA": "https://www.nintendo.com/us"}},
+        SINCE,
+        TODAY,
     )
 
-    assert [(finding.title_id, finding.reason) for finding in findings] == [
-        ("example-game", DateMismatch.MISSING)
+    assert [(finding.title_id, finding.reason, finding.store_pages) for finding in findings] == [
+        ("example-game", DateMismatch.MISSING, {"EU": "https://www.nintendo.com/eu"})
     ]
 
 
@@ -215,9 +260,12 @@ def test_find_sku_date_findings_reports_only_later_store_days(
 ) -> None:
     sku = eu_key_card_sku.model_copy(update={"release_date": date(2026, 10, 20)})
 
-    findings = find_sku_date_findings([sku], {"example-game": {"EU": store_date}}, SINCE)
+    pages = {"example-game": {"EU": "https://www.nintendo.com/eu"}}
+
+    findings = find_sku_date_findings([sku], {"example-game": {"EU": store_date}}, pages, SINCE)
 
     assert [finding.sku_id for finding in findings] == expected
+    assert all(finding.store_page == "https://www.nintendo.com/eu" for finding in findings)
 
 
 def test_find_sku_date_findings_skips_undated_and_asian_skus(
@@ -226,4 +274,4 @@ def test_find_sku_date_findings_skips_undated_and_asian_skus(
     undated = eu_key_card_sku.model_copy(update={"release_date": None})
     asia = asia_full_cart_sku.model_copy(update={"release_date": date(2026, 10, 20)})
 
-    assert find_sku_date_findings([undated, asia], {"example-game": {"EU": "2026-11-20"}}, SINCE) == []
+    assert find_sku_date_findings([undated, asia], {"example-game": {"EU": "2026-11-20"}}, {}, SINCE) == []

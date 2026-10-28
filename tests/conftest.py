@@ -216,7 +216,12 @@ def rss_feed() -> str:
 @pytest.fixture
 def eu_store_doc() -> dict[str, object]:
     """Switch 2 game as the EU store (Solr) returns it."""
-    return {"fs_id": "2785803", "title": "Example Game™", "dates_released_dts": ["2026-11-05T00:00:00Z"]}
+    return {
+        "fs_id": "2785803",
+        "title": "Example Game™",
+        "dates_released_dts": ["2026-11-05T00:00:00Z"],
+        "url": "/en-gb/Games/Nintendo-Switch-2-games/Example-Game-2785803.html",
+    }
 
 
 @pytest.fixture
@@ -227,6 +232,7 @@ def na_store_hit() -> dict[str, object]:
         "nsuid": "70010000095431",
         "title": "Example Game - Nintendo Switch™ 2 Edition",
         "releaseDate": "2026-11-05T00:00:00.000Z",
+        "url": "/us/store/products/example-game-switch-2/",
         "isUpgrade": False,
     }
 
@@ -234,4 +240,11 @@ def na_store_hit() -> dict[str, object]:
 @pytest.fixture
 def jp_store_item() -> dict[str, object]:
     """Switch 2 game with a boxed version as the JP store returns it."""
-    return {"id": "70010000131656", "title": "ゲーム", "sform": "BEE_DOWNLOADABLE", "sdate": "2027.5.20"}
+    return {
+        "id": "70010000131656",
+        "nsuid": "70010000131656",
+        "title": "ゲーム",
+        "sform": "BEE_DOWNLOADABLE",
+        "sdate": "2027.5.20",
+        "url": None,
+    }

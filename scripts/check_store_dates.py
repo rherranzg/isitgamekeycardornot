@@ -13,6 +13,7 @@ from switch2db.data_store import (
 )
 from switch2db.nintendo_store import (
     collect_store_dates,
+    collect_store_pages,
     diff_snapshots,
     fetch_eu_entries,
     fetch_jp_entries,
@@ -60,6 +61,7 @@ def main() -> None:
     entries = fetch_eu_entries() + fetch_na_entries() + fetch_jp_entries()
     title_ids = match_entries_to_titles(entries, titles)
     store_dates = collect_store_dates(entries, title_ids)
+    store_pages = collect_store_pages(entries, title_ids)
     changes = diff_snapshots(previous, entries, title_ids) if previous else []
     if args.save:
         write_store_snapshot(snapshot_path, entries)
@@ -75,11 +77,11 @@ def main() -> None:
             "changes": [change.model_dump(mode="json") for change in changes],
             "title_findings": [
                 finding.model_dump(mode="json")
-                for finding in find_title_date_findings(titles, store_dates, since, date.today())
+                for finding in find_title_date_findings(titles, store_dates, store_pages, since, date.today())
             ],
             "sku_findings": [
                 finding.model_dump(mode="json")
-                for finding in find_sku_date_findings(skus, store_dates, since)
+                for finding in find_sku_date_findings(skus, store_dates, store_pages, since)
             ],
         },
     )

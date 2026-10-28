@@ -48,6 +48,9 @@ JP_EXACT_DATE = re.compile(r"^(\d{4})\.(\d{1,2})\.(\d{1,2})$")
 JP_UNDECIDED = "未定"
 EXACT_DATE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
 COMPARED_REGIONS = (Region.EU, Region.NA)
+# Store pages a person can open; they are what gets cited for an (API) value, never the API URL.
+NINTENDO_SITE = "https://www.nintendo.com"
+JP_STORE_PAGE = "https://store-jp.nintendo.com/item/software/D{nsuid}"
 
 
 class StoreEntry(BaseModel):
@@ -62,6 +65,7 @@ class StoreEntry(BaseModel):
     has_package: bool | None = Field(
         None, description="JP only: True if the store lists a boxed version (パッケージ版)"
     )
+    page_url: str | None = Field(None, description="Product page in the store, for a person to read")
 
 
 class ChangeKind(StrEnum):
@@ -82,6 +86,7 @@ class StoreChange(BaseModel):
     before: str | bool | None = Field(None, description="Previous value (null for a new product)")
     after: str | bool | None = Field(None, description="Current value")
     title_id: str | None = Field(None, description="Title it matches by name (EU and NA only)")
+    page_url: str | None = Field(None, description="Product page in the store, for a person to read")
 
 
 class DateMismatch(StrEnum):
@@ -100,6 +105,7 @@ class TitleDateFinding(BaseModel):
     name: str = Field(..., description="Title name")
     title_date: str | None = Field(None, description="release_date in titles.yaml")
     store_dates: dict[str, str] = Field(..., description="Day in each store that lists it (EU, NA)")
+    store_pages: dict[str, str] = Field(..., description="Product page in each of those stores")
     reason: DateMismatch = Field(..., description="How they disagree")
 
 
@@ -110,6 +116,7 @@ class SkuDateFinding(BaseModel):
     title_id: str = Field(..., description="Title of the SKU")
     sku_date: str = Field(..., description="release_date of the SKU")
     store_date: str = Field(..., description="Day in the store of the SKU's region")
+    store_page: str | None = Field(None, description="Product page in the store of the SKU's region")
 
 
 def read_store_day(timestamp: object) -> str | None:
@@ -123,6 +130,11 @@ def read_store_day(timestamp: object) -> str | None:
     return day[:4] if day.endswith(YEAR_ONLY_SUFFIX) else day
 
 
+def build_site_page(path: object) -> str | None:
+    """Turn the relative page path of an EU or NA product ('/en-gb/Games/...') into its nintendo.com URL."""
+    return f"{NINTENDO_SITE}{path}" if path else None
+
+
 def parse_eu_doc(doc: dict[str, object]) -> StoreEntry:
     """Turn an EU Solr document into an entry; the first released date is the game's."""
     dates = doc.get("dates_released_dts") or []
@@ -131,6 +143,7 @@ def parse_eu_doc(doc: dict[str, object]) -> StoreEntry:
         product_id=str(doc["fs_id"]),
         name=str(doc["title"]),
         release_date=read_store_day(dates[0]) if isinstance(dates, list) and dates else None,
+        page_url=build_site_page(doc.get("url")),
     )
 
 
@@ -139,7 +152,7 @@ def fetch_eu_entries() -> list[StoreEntry]:
     params = {
         "q": "*",
         "fq": ["type:GAME", "playable_on_txt:BEE"],
-        "fl": "fs_id,title,dates_released_dts",
+        "fl": "fs_id,title,dates_released_dts,url",
         "rows": EU_MAX_ROWS,
         "wt": "json",
     }
@@ -162,6 +175,7 @@ def parse_na_hit(hit: dict[str, object]) -> StoreEntry:
         product_id=str(hit.get("nsuid") or hit["objectID"]),
         name=str(hit["title"]),
         release_date=read_store_day(hit.get("releaseDate")),
+        page_url=build_site_page(hit.get("url")),
     )
 
 
@@ -196,6 +210,15 @@ def parse_jp_date(sdate: str | None) -> str | None:
     return date(year, month, day).isoformat()
 
 
+def build_jp_page(item: dict[str, object]) -> str | None:
+    """Return the page of a JP product: Nintendo's own page when it has one (only the games it publishes),
+    otherwise the My Nintendo Store page."""
+    if item.get("url"):
+        return str(item["url"])
+    nsuid = item.get("nsuid")
+    return JP_STORE_PAGE.format(nsuid=nsuid) if nsuid else None
+
+
 def parse_jp_item(item: dict[str, object]) -> StoreEntry | None:
     """Turn a JP item into an entry; None if it is not a game (DLC, bundle, hardware, GameCube)."""
     form = item.get("sform")
@@ -208,6 +231,7 @@ def parse_jp_item(item: dict[str, object]) -> StoreEntry | None:
         name=str(item["title"]),
         release_date=parse_jp_date(str(sdate) if sdate else None),
         has_package=JP_PACKAGE_BY_FORM[form if isinstance(form, str) else None],
+        page_url=build_jp_page(item),
     )
 
 
@@ -266,6 +290,7 @@ def diff_snapshots(
             "product_id": entry.product_id,
             "name": entry.name,
             "title_id": title_ids.get(entry_key(entry)),
+            "page_url": entry.page_url,
         }
         if before is None:
             changes.append(StoreChange(**common, kind=ChangeKind.NEW, after=entry.release_date))
@@ -300,6 +325,18 @@ def collect_store_dates(
     return dates
 
 
+def collect_store_pages(
+    entries: Iterable[StoreEntry], title_ids: dict[tuple[Region, str], str]
+) -> dict[str, dict[str, str]]:
+    """Return, per title, the product page in each store (EU, NA) that lists it."""
+    pages: dict[str, dict[str, str]] = {}
+    for entry in entries:
+        title_id = title_ids.get(entry_key(entry))
+        if title_id is not None and entry.page_url is not None:
+            pages.setdefault(title_id, {})[entry.region.value] = entry.page_url
+    return pages
+
+
 def classify_title_date(
     title_date: str | None, store_dates: dict[str, str], since: date, today: date
 ) -> DateMismatch | None:
@@ -321,9 +358,14 @@ def classify_title_date(
 
 
 def find_title_date_findings(
-    titles: Sequence[Title], store_dates: dict[str, dict[str, str]], since: date, today: date
+    titles: Sequence[Title],
+    store_dates: dict[str, dict[str, str]],
+    store_pages: dict[str, dict[str, str]],
+    since: date,
+    today: date,
 ) -> list[TitleDateFinding]:
-    """Return the titles whose date does not agree with the EU and NA stores, from `since` on."""
+    """Return the titles whose date does not agree with the EU and NA stores, from `since` on, with the
+    store pages that back the store days."""
     findings: list[TitleDateFinding] = []
     for title in titles:
         dates = store_dates.get(title.title_id)
@@ -337,6 +379,11 @@ def find_title_date_findings(
                     name=title.name,
                     title_date=title.release_date,
                     store_dates=dates,
+                    store_pages={
+                        region: page
+                        for region, page in store_pages.get(title.title_id, {}).items()
+                        if region in dates
+                    },
                     reason=reason,
                 )
             )
@@ -344,7 +391,10 @@ def find_title_date_findings(
 
 
 def find_sku_date_findings(
-    skus: Sequence[Sku], store_dates: dict[str, dict[str, str]], since: date
+    skus: Sequence[Sku],
+    store_dates: dict[str, dict[str, str]],
+    store_pages: dict[str, dict[str, str]],
+    since: date,
 ) -> list[SkuDateFinding]:
     """Return the dated EU and NA SKUs whose region's store now gives a later day, from `since` on: the
     game may have been delayed. An earlier store day is not reported, since boxes often come out after the
@@ -358,6 +408,12 @@ def find_sku_date_findings(
         if store_date is None or store_date <= sku_date or store_date < since.isoformat():
             continue
         findings.append(
-            SkuDateFinding(sku_id=sku.sku_id, title_id=sku.title_id, sku_date=sku_date, store_date=store_date)
+            SkuDateFinding(
+                sku_id=sku.sku_id,
+                title_id=sku.title_id,
+                sku_date=sku_date,
+                store_date=store_date,
+                store_page=store_pages.get(sku.title_id, {}).get(sku.region.value),
+            )
         )
     return findings
