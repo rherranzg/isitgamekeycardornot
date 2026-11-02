@@ -24,6 +24,9 @@ Not covered by this license
   data/igdb_catalog.yaml) contain metadata from IGDB (https://www.igdb.com): ids, names, publishers and
   release dates. It is not this project's data; it is subject to the terms of IGDB and Twitch Developer
   Services and is not relicensed under the ODbL.
+- Box covers. data/covers.yaml lists box images (stored in docs/covers/) taken from retailer pages, with the
+  page each one comes from. The images belong to their publishers and are not relicensed under the ODbL; the
+  entries only record where they come from. They are removed on request.
 - Quoted excerpts. The comments in the YAML files quote short passages from third-party sources (press
   articles, official pages, retailer listings) to show what backs each entry. Those passages belong to
   their authors, are included only as citations, and are not relicensed under the ODbL.

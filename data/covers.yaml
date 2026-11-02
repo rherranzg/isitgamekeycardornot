@@ -1,0 +1,35 @@
+# Box fronts of the SKUs (scripts/download_covers.py), stored as docs/covers/<sku_id>.webp.
+# source_url is the page the image comes from; image_url, the image downloaded; checked_at, when it
+# was downloaded and checked to be a Switch 2 box. The images belong to their owners (data/LICENSE).
+- sku_id: eu-danganronpa-2x2-standard
+  source_url: https://www.mediamarkt.es/es/product/_nintendo-switch-2-danganronpa-2x2-1624841.html
+  image_url: https://assets.mmsrg.com/isr/166325/c1/-/ASSET_MMS_183992416?x=1000&y=1000&format=jpg&quality=90
+  checked_at: '2026-10-29'
+- sku_id: eu-dragon-quest-monsters-the-withered-world-standard
+  source_url: https://www.mediamarkt.es/es/product/_nintendo-switch-2-dragon-quest-monsters-the-withered-world-1668392.html
+  image_url: https://assets.mmsrg.com/isr/166325/c1/-/ASSET_MMS_178130876?x=1000&y=1000&format=jpg&quality=90
+  checked_at: '2026-10-29'
+- sku_id: eu-final-fantasy-vii-revelation-standard
+  source_url: https://www.mediamarkt.es/es/product/_nintendo-switch-2-final-fantasy-vii-revelation-game-key-card-magic-card-edition-1673662.html
+  image_url: https://assets.mmsrg.com/isr/166325/c1/-/ASSET_MMS_183222022?x=1000&y=1000&format=jpg&quality=90
+  checked_at: '2026-10-29'
+- sku_id: eu-metroid-ravenous-standard
+  source_url: https://www.mediamarkt.es/es/product/_nintendo-switch-2-metroid-ravenous-1674609.html
+  image_url: https://assets.mmsrg.com/isr/166325/c1/-/ASSET_MMS_183640444?x=1000&y=1000&format=jpg&quality=90
+  checked_at: '2026-10-29'
+- sku_id: eu-nintendo-switch-sports-resort-standard
+  source_url: https://www.mediamarkt.es/es/product/_nintendo-switch-2-sports-resort-1668365.html
+  image_url: https://assets.mmsrg.com/isr/166325/c1/-/ASSET_MMS_178143901?x=1000&y=1000&format=jpg&quality=90
+  checked_at: '2026-10-29'
+- sku_id: eu-octopath-traveler-0-standard
+  source_url: https://www.mediamarkt.es/es/product/_nintendo-switch-2-octopath-traveler-0-1604413.html
+  image_url: https://assets.mmsrg.com/isr/166325/c1/-/ASSET_MMS_159412237?x=1000&y=1000&format=jpg&quality=90
+  checked_at: '2026-10-29'
+- sku_id: eu-xenoblade-chronicles-2-nintendo-switch-2-edition-standard
+  source_url: https://www.mediamarkt.es/es/product/_nintendo-switch-2-xenoblade-chronicles-2-1668364.html
+  image_url: https://assets.mmsrg.com/isr/166325/c1/-/ASSET_MMS_178143786?x=1000&y=1000&format=jpg&quality=90
+  checked_at: '2026-10-29'
+- sku_id: eu-xenoblade-chronicles-x-definitive-edition-standard
+  source_url: https://www.mediamarkt.es/es/product/_nintendo-switch-2-xenoblade-chronicles-x-definitive-edition-1621296.html
+  image_url: https://assets.mmsrg.com/isr/166325/c1/-/ASSET_MMS_171872455?x=1000&y=1000&format=jpg&quality=90
+  checked_at: '2026-10-29'

@@ -6,7 +6,7 @@ import yaml
 from pydantic import BaseModel, ValidationError
 
 from switch2db.catalog import CatalogEntry
-from switch2db.models import ExcludedTitle, PhysicalRelease, Sku, Title
+from switch2db.models import Cover, ExcludedTitle, PhysicalRelease, Sku, Title
 from switch2db.nintendo_store import StoreEntry
 
 ModelT = TypeVar("ModelT", bound=BaseModel)
@@ -28,6 +28,11 @@ TITLES_HEADER = (
     "# physical_release.\n"
 )
 CATALOG_HEADER = "# Switch 2 games on IGDB (scripts/download_igdb_catalog.py). Local, not versioned.\n"
+COVERS_HEADER = (
+    "# Box fronts of the SKUs (scripts/download_covers.py), stored as docs/covers/<sku_id>.webp.\n"
+    "# source_url is the page the image comes from; image_url, the image downloaded; checked_at, when it\n"
+    "# was downloaded and checked to be a Switch 2 box. The images belong to their owners (data/LICENSE).\n"
+)
 STORE_SNAPSHOT_HEADER = (
     "# Switch 2 games in the Nintendo EU, NA and JP stores (scripts/check_store_dates.py --save).\n"
     "# Local, not versioned: the next run compares the stores against it.\n"
@@ -131,3 +136,16 @@ def write_store_snapshot(path: Path, entries: list[StoreEntry]) -> None:
         entry.model_dump(mode="json") for entry in sorted(entries, key=lambda e: (e.region, e.product_id))
     ]
     write_generated_yaml(path, rows, STORE_SNAPSHOT_HEADER)
+
+
+def load_covers(path: Path) -> tuple[list[Cover], list[str]]:
+    """Load and validate the downloaded box fronts; empty if there are none yet."""
+    if not path.exists():
+        return [], []
+    return parse_rows(read_yaml_rows(path), Cover, path.name)
+
+
+def write_covers(path: Path, covers: list[Cover]) -> None:
+    """Rewrite the box fronts file, sorted by sku_id."""
+    rows = [cover.model_dump(mode="json") for cover in sorted(covers, key=lambda cover: cover.sku_id)]
+    write_generated_yaml(path, rows, COVERS_HEADER)

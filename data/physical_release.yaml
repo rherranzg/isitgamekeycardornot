@@ -2364,6 +2364,11 @@
   evidence: "press_report"  # (leída) Nintendo Insider: "Witchbrook will be released digitally on the Nintendo eShop for both Nintendo Switch and Nintendo Switch 2 worldwide in 2026."
   source_url: "https://www.nintendo-insider.com/witchbrook-delayed-into-next-year/"
   checked_at: "2026-10-13"
+- title_id: "super-battle-golf"
+  has_physical_release: false
+  evidence: "press_report"  # (leída) Nintendo Insider, 01-11-2026: "Super Battle Golf will be released digitally on the Nintendo eShop for Nintendo Switch 2 worldwide on 25 March 2027."
+  source_url: "https://www.nintendo-insider.com/sabotage-your-competition-in-super-battle-golf-on-nintendo-switch-2/"
+  checked_at: "2026-11-02"
 - title_id: "vaewolf"
   has_physical_release: false
   evidence: "press_report"  # (leída) Nintendo Insider: "Vaewolf will be released digitally on the Nintendo eShop for Nintendo Switch 2 worldwide in 2027."
@@ -2868,3 +2873,24 @@
   evidence: "press_report"
   source_url: "https://cogconnected.com/2026/06/inkonbini-arrives-in-physical-edition-for-switch-and-ps5-in-japan-and-asia/"
   checked_at: "2026-10-20"
+- title_id: "arcade-archives-2-balloon-bomber"
+  has_physical_release: false
+  evidence: "official"  # (leída) ficha oficial de Nintendo: "Arcade Archives 2 BALLOON BOMBER | Version | Nintendo Switch 2 | Edition | Digital"; (API) search.nintendo.jp: "アーケードアーカイブス2 バルーンボンバー", icode ACVQA, sdate "2026.10.1", sform BEE_DL, pprice: null
+  source_url: "https://www.nintendo.com/us/store/products/arcade-archives-2-balloon-bomber-switch-2/"
+  checked_at: "2026-11-02"
+- title_id: "arcade-archives-2-stinger"
+  has_physical_release: false
+  evidence: "official"  # (leída) ficha oficial de Nintendo: "Arcade Archives 2 STINGER | Version | Nintendo Switch 2 | Edition | Digital"; (API) search.nintendo.jp: "アーケードアーカイブス2 スティンガー", icode ACS2A, sdate "2026.10.15", sform BEE_DL, pprice: null
+  source_url: "https://www.nintendo.com/us/store/products/arcade-archives-2-stinger-switch-2/"
+  checked_at: "2026-11-02"
+- title_id: "arcade-archives-2-thundercade"
+  has_physical_release: false
+  evidence: "official"  # (leída) ficha oficial de Nintendo: "Arcade Archives 2 THUNDERCADE | Version | Nintendo Switch 2 | Edition | Digital"
+  source_url: "https://www.nintendo.com/us/store/products/arcade-archives-2-thundercade-switch-2/"
+  checked_at: "2026-11-02"
+# (leída) https://www.gematsu.com/2026/10/peak-coming-to-ps5-xbox-series-and-switch-2-on-october-22: "PlayStation 5 physical edition also planned." / "Skybound Games will also distribute a physical edition of PEAK for PlayStation 5 for $19.99 / €19.99 / £14.99"; (leída) https://www.nintendo.com/us/store/products/peak-switch-2/: "PEAK | Version | Nintendo Switch 2 | Edition | Digital"; (API) search.nintendo.jp: "PEAK", icode ABP2A, sdate "2026.10.23", sform BEE_DL, pprice: null; sin fila en meisakugame.
+- title_id: "peak"
+  has_physical_release: false
+  evidence: "press_report"
+  source_url: "https://www.gematsu.com/2026/10/peak-coming-to-ps5-xbox-series-and-switch-2-on-october-22"
+  checked_at: "2026-11-02"

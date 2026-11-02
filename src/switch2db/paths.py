@@ -6,3 +6,5 @@ DATA_DIR = PROJECT_ROOT / "data"
 # docs/, not site/: it is the folder GitHub Pages can serve straight from main.
 DOCS_DIR = PROJECT_ROOT / "docs"
 TEMPLATES_DIR = Path(__file__).resolve().parent / "templates"
+# Inside docs/ so GitHub Pages serves them; one <sku_id>.webp per SKU.
+COVERS_DIR = DOCS_DIR / "covers"

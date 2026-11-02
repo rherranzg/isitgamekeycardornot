@@ -289,3 +289,14 @@ class Sku(BaseModel):
         if len(urls) != len(set(urls)):
             raise ValueError("two updates share the same url")
         return self
+
+
+class Cover(BaseModel):
+    """Front of a SKU's box, downloaded as a thumbnail to docs/covers/<sku_id>.webp."""
+
+    model_config = ConfigDict(extra="forbid")
+
+    sku_id: str = Field(..., description="SKU whose box it is")
+    source_url: HttpUrl = Field(..., description="Page the image comes from, for a person to open")
+    image_url: HttpUrl = Field(..., description="Image that was downloaded")
+    checked_at: date = Field(..., description="Date the image was downloaded and checked")

@@ -3,10 +3,11 @@ from pathlib import Path
 
 import pytest
 import yaml
+from PIL import Image
 
 from switch2db.catalog import CatalogEntry
 from switch2db.igdb_models import IgdbGame
-from switch2db.models import PhysicalRelease, Sku, Title
+from switch2db.models import Cover, PhysicalRelease, Sku, Title
 
 
 @pytest.fixture
@@ -248,3 +249,57 @@ def jp_store_item() -> dict[str, object]:
         "sdate": "2027.5.20",
         "url": None,
     }
+
+
+@pytest.fixture
+def mediamarkt_product_page() -> str:
+    """MediaMarkt product page with the product wrapped in a BuyAction, as the store serves it."""
+    return (
+        '<html><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org/",'
+        '"@type":"BuyAction","object":{"@type":"ProductGroup","name":"Nintendo Switch 2 Example Game&#x2122; '
+        '(Game Key Card)","gtin13":"0045496123451","image":["https://assets.mmsrg.com/isr/166325/c1/-/'
+        'ASSET_MMS_178048931/fee_786_587_png"],"hasVariant":[{"@type":"Product","gtin13":"1"}]}}</script>'
+        '<script type="application/ld+json">{"@type":"BreadcrumbList"}</script></html>'
+    )
+
+
+@pytest.fixture
+def mediamarkt_search_page() -> str:
+    """MediaMarkt search results mixing the game with a console pack and another platform."""
+    return (
+        '<a href="/es/product/_consola-nintendo-switch-2-juego-example-game-1.html"></a>'
+        '<a href="/es/product/_playstation-5-example-game-2.html"></a>'
+        '<a href="/es/product/_nintendo-switch-2-example-game-game-key-card-3.html"></a>'
+        '<a href="/es/product/_nintendo-switch-2-example-game-game-key-card-3.html"></a>'
+    )
+
+
+@pytest.fixture
+def switch2_box() -> Image.Image:
+    """Box on a white background: white margin, red Switch 2 header and artwork below."""
+    image = Image.new("RGB", (400, 700), (255, 255, 255))
+    image.paste((230, 0, 18), (50, 50, 350, 110))
+    image.paste((40, 90, 160), (50, 110, 350, 650))
+    return image
+
+
+@pytest.fixture
+def other_platform_box() -> Image.Image:
+    """Box with a blue header (another platform) on a white background."""
+    image = Image.new("RGB", (400, 700), (255, 255, 255))
+    image.paste((0, 60, 200), (50, 50, 350, 110))
+    image.paste((40, 90, 160), (50, 110, 350, 650))
+    return image
+
+
+@pytest.fixture
+def cover() -> Cover:
+    """Cover of the EU SKU of the example game."""
+    return Cover.model_validate(
+        {
+            "sku_id": "eu-example-game-standard",
+            "source_url": "https://www.mediamarkt.es/es/product/_nintendo-switch-2-example-game-3.html",
+            "image_url": "https://assets.mmsrg.com/isr/166325/c1/-/ASSET_MMS_178048931",
+            "checked_at": "2026-10-29",
+        }
+    )

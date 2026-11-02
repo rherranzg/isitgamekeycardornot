@@ -1,11 +1,21 @@
 from collections.abc import Callable, Sequence
 from pathlib import Path
 
+import pytest
 from pytest_mock import MockerFixture
 
 from scripts.validate_data import main
 
 WriteYaml = Callable[[str, Sequence[object]], Path]
+
+
+@pytest.fixture(autouse=True)
+def covers_dir(mocker: MockerFixture, tmp_path: Path) -> Path:
+    """Empty covers folder, so the real docs/covers/ does not leak into the tests."""
+    path = tmp_path / "covers"
+    path.mkdir()
+    mocker.patch("scripts.validate_data.COVERS_DIR", path)
+    return path
 
 
 def test_main_returns_zero_for_valid_data(
@@ -88,3 +98,25 @@ def test_main_warns_about_omitted_keys(
     logged_warnings = [call.args[0] for call in mock_logger.warning.call_args_list]
     assert exit_code == 0
     assert any("missing keys ['ean']" in warning for warning in logged_warnings)
+
+
+def test_main_returns_one_for_an_image_without_cover_entry(
+    mocker: MockerFixture,
+    tmp_path: Path,
+    covers_dir: Path,
+    write_yaml: WriteYaml,
+    title_row: dict[str, object],
+    sku_row: dict[str, object],
+) -> None:
+    mocker.patch("scripts.validate_data.DATA_DIR", tmp_path)
+    mock_logger = mocker.patch("scripts.validate_data.logger")
+    write_yaml("titles.yaml", [title_row])
+    write_yaml("physical_release.yaml", [])
+    write_yaml("excluded_titles.yaml", [])
+    write_yaml("skus.yaml", [sku_row])
+    (covers_dir / "eu-example-game-standard.webp").write_bytes(b"")
+
+    assert main() == 1
+    mock_logger.error.assert_called_once_with(
+        "docs/covers/eu-example-game-standard.webp is not in covers.yaml"
+    )

@@ -11,6 +11,7 @@ from switch2db.data_store import (
     TITLES_HEADER,
     describe_row,
     format_validation_error,
+    load_covers,
     load_skus,
     load_store_snapshot,
     load_titles,
@@ -18,10 +19,11 @@ from switch2db.data_store import (
     read_yaml_rows,
     require_valid,
     write_catalog,
+    write_covers,
     write_store_snapshot,
     write_titles,
 )
-from switch2db.models import Region, Sku, Title, TitleStatus
+from switch2db.models import Cover, Region, Sku, Title, TitleStatus
 from switch2db.nintendo_store import StoreEntry
 
 WriteYaml = Callable[[str, Sequence[object]], Path]
@@ -198,3 +200,23 @@ def test_write_store_snapshot_round_trips_sorted(tmp_path: Path) -> None:
 
 def test_load_store_snapshot_returns_empty_list_when_missing(tmp_path: Path) -> None:
     assert load_store_snapshot(tmp_path / "missing.yaml") == []
+
+
+def test_write_covers_success(tmp_path: Path, cover: Cover) -> None:
+    other = cover.model_copy(update={"sku_id": "eu-another-game-standard"})
+    path = tmp_path / "covers.yaml"
+
+    write_covers(path, [cover, other])
+
+    assert load_covers(path) == ([other, cover], [])
+
+
+def test_load_covers_returns_empty_list_without_file(tmp_path: Path) -> None:
+    assert load_covers(tmp_path / "covers.yaml") == ([], [])
+
+
+def test_load_covers_collects_invalid_rows(write_yaml: Callable[[str, Sequence[object]], Path]) -> None:
+    covers, errors = load_covers(write_yaml("covers.yaml", [{"sku_id": "eu-example-game-standard"}]))
+
+    assert covers == []
+    assert len(errors) == 1

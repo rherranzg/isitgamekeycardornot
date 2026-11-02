@@ -47,6 +47,8 @@ The data is plain YAML in [`data/`](data/):
   size, barcode, evidence type and source URL.
 - `physical_release.yaml` — games checked for a boxed edition that has not turned up, with their source when
   there is one.
+- `covers.yaml` — the European box front of each standard SKU that has one, stored as
+  `docs/covers/<sku_id>.webp`, with the page it comes from.
 - `excluded_titles.yaml` — IGDB entries deliberately not listed (editions covered by their base game, games
   only sold inside a compilation...).
 
@@ -57,6 +59,8 @@ Each file documents its fields at the top. Each game on the site can be linked w
 - Code: MIT (see [`LICENSE`](LICENSE)).
 - Data: [ODbL 1.0](https://opendatacommons.org/licenses/odbl/1-0/), except the IGDB metadata and the quoted
   excerpts (see [`data/LICENSE`](data/LICENSE)).
+- Box covers (`docs/covers/`): they belong to their publishers and are not covered by either license; each one
+  links to the page it comes from. If you own one and want it removed, open an issue.
 
 Nintendo, Nintendo Switch 2 and Game-Key Card are trademarks of Nintendo. This is an independent project, not
 affiliated with or endorsed by Nintendo.
@@ -75,7 +79,7 @@ uv sync
 
 IGDB (Twitch) credentials are only needed for `download_igdb_catalog`, the single entry point to IGDB. Copy
 `.env.example` to `.env` and fill in `TWITCH_CLIENT_ID` / `TWITCH_CLIENT_SECRET`. No other script needs
-credentials; only `fetch_quote`, `news_candidates` and `check_store_dates` use the network. `data/igdb_catalog.yaml`, the local IGDB dump that `add_titles` draws from,
+credentials; only `fetch_quote`, `news_candidates`, `check_store_dates` and `download_covers` use the network. `data/igdb_catalog.yaml`, the local IGDB dump that `add_titles` draws from,
 is git-ignored.
 
 ### Sources and statuses
@@ -128,12 +132,15 @@ title and the base game goes to `excluded_titles.yaml`.
 
 ```bash
 uv run python -m scripts.next_work [--limit 10]     # what is left to research (offline)
+uv run python -m scripts.next_work --upcoming 10    # next 10 titles to come out (offline)
+uv run python -m scripts.next_work --upcoming 10 --skip-checked-days 7   # minus those checked in the last 7 days
 uv run --env-file .env python -m scripts.download_igdb_catalog   # refresh the IGDB catalog (network)
 uv run python -m scripts.add_titles --count 10      # add the next games from the catalog (or --all)
 uv run python -m scripts.add_titles --dates-only    # only refresh release dates
 uv run python -m scripts.fetch_quote <url-or-file> '<regex>' [--context 120] [--max 5] [--raw]
 uv run python -m scripts.news_candidates --days 7    # Switch 2 box and date news of the last days (network)
 uv run python -m scripts.check_store_dates --days 7 [--save]   # Nintendo EU/NA/JP store dates (network)
+uv run python -m scripts.download_covers [--titles ID ...] [--random N] [--refresh]   # EU box fronts (network)
 uv run python -m scripts.validate_data              # schema, integrity and fill-rate report
 uv run python -m scripts.build_site                 # regenerate docs/index.html
 ```
@@ -155,6 +162,14 @@ the Switch 2 games of the Nintendo EU, NA and JP stores and lists what changed s
 `--save` (new products, new dates, a JP game that now lists a boxed version) and the title and SKU dates that no
 longer agree with the EU and NA stores. The snapshot, `data/nintendo_store_catalog.yaml`, is git-ignored. Neither
 script writes the data files: they point at what to check.
+
+`download_covers` looks for the European box of each standard EU SKU without a cover on MediaMarkt Spain: it
+takes the first Switch 2 product whose name, without platform, format or genre, is exactly the game's (so a
+special edition or another game of the series is not taken), rejects it if its barcode differs from the SKU's,
+and keeps the image only if it has the red Nintendo Switch 2 header across its top (another platform's box or
+promotional art does not). It stores a 300 px wide WebP in `docs/covers/<sku_id>.webp` and its source in
+`data/covers.yaml`; `--refresh` downloads again the ones already there. It stops at the first network error and
+keeps what it got. `validate_data` checks that every image has its entry and every entry its image.
 
 GitHub Pages serves `docs/` from `main`, so publishing means committing the regenerated `docs/` with the data.
 

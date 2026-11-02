@@ -6,6 +6,7 @@ from switch2db.data_store import describe_row
 from switch2db.models import (
     DOWNLOAD_FORMATS,
     SKU_SOURCE_LIST_FIELDS,
+    Cover,
     Edition,
     ExcludedTitle,
     Format,
@@ -50,6 +51,25 @@ def find_orphan_sku_errors(titles: list[Title], skus: list[Sku]) -> list[str]:
         f"skus.yaml: '{sku.sku_id}' references title_id '{sku.title_id}', which is not in titles.yaml"
         for sku in skus
         if sku.title_id not in known_title_ids
+    ]
+
+
+def find_cover_errors(covers: list[Cover], skus: list[Sku], cover_files: set[str]) -> list[str]:
+    """Detect covers of unknown SKUs, covers without their image and images without their cover entry;
+    cover_files are the sku_ids that have a file in docs/covers/."""
+    known_sku_ids = {sku.sku_id for sku in skus}
+    recorded = {cover.sku_id for cover in covers}
+    return [
+        *(
+            f"covers.yaml: '{sku_id}' appears more than once"
+            for sku_id in find_duplicates([cover.sku_id for cover in covers])
+        ),
+        *(f"covers.yaml: '{sku_id}' is not in skus.yaml" for sku_id in sorted(recorded - known_sku_ids)),
+        *(
+            f"covers.yaml: '{sku_id}' has no image in docs/covers/"
+            for sku_id in sorted(recorded - cover_files)
+        ),
+        *(f"docs/covers/{sku_id}.webp is not in covers.yaml" for sku_id in sorted(cover_files - recorded)),
     ]
 
 

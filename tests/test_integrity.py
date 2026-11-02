@@ -7,6 +7,7 @@ from switch2db.integrity import (
     collect_integrity_warnings,
     find_cart_size_warnings,
     find_completed_title_errors,
+    find_cover_errors,
     find_download_size_warnings,
     find_duplicates,
     find_excluded_title_errors,
@@ -23,6 +24,7 @@ from switch2db.integrity import (
     list_omitted_optional_sku_fields,
 )
 from switch2db.models import (
+    Cover,
     Edition,
     ExcludedTitle,
     PhysicalRelease,
@@ -523,3 +525,20 @@ def test_find_completed_title_errors_ignores_titles_not_completed(
     title: Title, sku_without_source: Sku
 ) -> None:
     assert find_completed_title_errors([title], [sku_without_source], []) == []
+
+
+def test_find_cover_errors_returns_empty_list_when_consistent(eu_key_card_sku: Sku, cover: Cover) -> None:
+    assert find_cover_errors([cover], [eu_key_card_sku], {"eu-example-game-standard"}) == []
+
+
+def test_find_cover_errors_reports_every_inconsistency(eu_key_card_sku: Sku, cover: Cover) -> None:
+    unknown = cover.model_copy(update={"sku_id": "eu-unknown-game-standard"})
+
+    assert find_cover_errors(
+        [cover, cover, unknown], [eu_key_card_sku], {"eu-example-game-standard", "eu-stray"}
+    ) == [
+        "covers.yaml: 'eu-example-game-standard' appears more than once",
+        "covers.yaml: 'eu-unknown-game-standard' is not in skus.yaml",
+        "covers.yaml: 'eu-unknown-game-standard' has no image in docs/covers/",
+        "docs/covers/eu-stray.webp is not in covers.yaml",
+    ]

@@ -1,4 +1,4 @@
-from datetime import UTC, datetime
+from datetime import UTC, date, datetime, timedelta
 
 from pydantic import BaseModel, Field
 
@@ -68,6 +68,40 @@ def find_titles_missing_regions(
         if title.title_id in title_ids_with_skus
     }
     return {title_id: regions for title_id, regions in missing_by_title.items() if regions}
+
+
+def release_period_end(release_date: str) -> date:
+    """Last day a release date can fall on: the day itself, or the end of its month, quarter or year."""
+    if len(release_date) == len("YYYY-MM-DD"):
+        return date.fromisoformat(release_date)
+    year, _, period = release_date.partition("-")
+    if not period:
+        last_month = 12
+    elif period.startswith("Q"):
+        last_month = int(period[1:]) * 3
+    else:
+        last_month = int(period)
+    first_of_next_month = date(int(year) + last_month // 12, last_month % 12 + 1, 1)
+    return first_of_next_month - timedelta(days=1)
+
+
+def list_upcoming_titles(titles: list[Title], today: date, limit: int) -> list[Title]:
+    """Return the next `limit` titles to come out (any status), soonest first: a date counts until the end of
+    its period (2026-11 until 30 November), and on the same last day the more precise date goes first."""
+    upcoming = [
+        title
+        for title in titles
+        if title.release_date is not None and release_period_end(title.release_date) >= today
+    ]
+    return sorted(
+        upcoming,
+        key=lambda title: (release_period_end(title.release_date or ""), -len(title.release_date or "")),
+    )[:limit]
+
+
+def drop_checked_since(titles: list[Title], since: date) -> list[Title]:
+    """Drop the titles researched or refreshed on `since` or later, keeping the order of the rest."""
+    return [title for title in titles if title.last_checked_day is None or title.last_checked_day < since]
 
 
 def build_work_queue(titles: list[Title], skus: list[Sku], releases: list[PhysicalRelease]) -> WorkQueue:

@@ -6744,7 +6744,7 @@
   edition: "standard"
   edition_name: null
   distributor: null
-  release_date: null
+  release_date: "2027-02-04"
   format: "game_key_card"
   cart_size_gb: null
   download_size_gb: null
@@ -6752,6 +6752,10 @@
   ean: null
   evidence: "press_report"  # (leída) RPG Site: "The EU and JP versions are Game-Key Cards."
   source_url: "https://www.rpgsite.net/feature/17453-nintendo-switch-2-rpg-physical-release-cartridge-no-game-key-card-list"
+  updates:
+    - url: "https://www.nintendo-insider.com/muramasa-revenant-blades-release-date-locked-in/"  # (leída) Nintendo Insider, 24-10-2026: "will be released at retail and digitally on the Nintendo eShop for Nintendo Switch 2 and Nintendo Switch worldwide on 4 February 2027."; (API) Nintendo Japón, 02-11-2026: "朧村正怪奇譚", sdate "2027.初頭" → "2027.2.4", sform BEE_DOWNLOADABLE
+      checked_at: "2026-11-02"
+      fields: ["release_date"]
   verified_at: "2026-09-18"
 
 # My Hero Academia: All's Justice (Bandai Namco): ficha de Nintendo Life confirma Game-Key Card en EU y NA a
@@ -12745,6 +12749,25 @@
   evidence: "retailer_listing"  # (leída) toyorgame.com.sg: "NS2 Marvels Guardians of the Galaxy (Game-Key Card) [Encore Edition]", variante "(Asia) Encore Edition / Deposit"
   source_url: "https://toyorgame.com.sg/products/ns2-marvels-guardians-of-the-galaxy-game-key-card-encore-edition"
   verified_at: "2026-09-24"
+- sku_id: "jp-marvel-s-guardians-of-the-galaxy-standard"
+  title_id: "marvel-s-guardians-of-the-galaxy"
+  region: "JP"
+  edition: "standard"
+  edition_name: null
+  distributor: "CDE Entertainment"  # (API) Nintendo Japón: maker "CDE Entertainment" (en meisakugame va bajo la cabecera "【PLAION】")
+  release_date: "2026-11-05"
+  format: "game_key_card"
+  cart_size_gb: null
+  download_size_gb: 50
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) meisakugame: "【PLAION】 | 形式 | 容量 | SnowRunner | Key | 50GB | 天地創造 | 2専 | - | Marvel’s Guardians of the Galaxy: Encore Edition | Key | 50GB"
+  source_url: "https://meisakugame.garyoutensei.com/data/switch2packagekey.html"
+  updates:
+    - url: "https://store-jp.nintendo.com/item/software/D70010000119219"  # (API) Nintendo Japón, 02-11-2026: "Marvel's Guardians of the Galaxy: Encore Edition", icode AA2TA, sdate "2026.11.5", sform BEE_DOWNLOADABLE, pprice 7986. (leída) Nintendo Everything, 01-11-2026 (calendario japonés de la semana del 05-11): "Switch 2 Retail | Crymelight | Marvel’s Guardians of the Galaxy: Encore Edition"
+      checked_at: "2026-11-02"
+      fields: ["release_date", "distributor"]
+  verified_at: "2026-11-02"
 
 # ---------------------------------------------------------------------------------------------------------
 # JP y KR de 20 títulos de Sega/Atlus, Bandai Namco, Capcom y Koei Tecmo (24-09-2026). JP: lista de
@@ -15514,6 +15537,25 @@
   evidence: "retailer_listing"  # (listado) título del producto en el buscador: "Nintendo Switch 2 Armatus (Game-Key Card) Pre-Order Downpayment"; la URL conserva "armatus-game-key-card". La ficha leída hoy ya titula "Nintendo Switch 2 Armatus Pre-Order Downpayment" (renombrada)
   source_url: "https://ecommerce.datablitz.com.ph/products/nintendo-switch-2-armatus-game-key-card-pre-order-downpayment"
   verified_at: "2026-10-09"
+- sku_id: "jp-armatus-standard"
+  title_id: "armatus"
+  region: "JP"
+  edition: "standard"
+  edition_name: null
+  distributor: "Fictions"
+  release_date: "2027-01-07"
+  format: "unknown"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "unconfirmed"  # buscado en meisakugame (02-11-2026): no está en la lista
+  source_url: null
+  updates:
+    - url: "https://store-jp.nintendo.com/item/software/D70010000112021"  # (API) Nintendo Japón, 02-11-2026: entrada de la caja "Armatus", id "70010000112021-2", sform BEE_CARD, maker "Fictions", sdate "2027.1.7", pprice 5980 (la descarga, BEE_DL, sale el 2027.1.8)
+      checked_at: "2026-11-02"
+      fields: ["release_date", "distributor"]
+  verified_at: "2026-11-02"
 
 # Caves of Qud: edición física de Switch 2 de Lost in Cult (Reino Unido, 1.500 copias); la Switch 2 Edition es
 # mejora gratuita de la versión de Switch 1. Sin cita del formato ni fecha de envío.
@@ -15556,7 +15598,7 @@
   edition: "standard"
   edition_name: null
   distributor: "D3 PUBLISHER"  # (leída) meisakugame, cabecera "【D3 PUBLISHER】"
-  release_date: null  # (API) search.nintendo.jp: "地球防衛軍6 for Nintendo Switch 2", sdate "今冬", sform BEE_DOWNLOADABLE
+  release_date: "2027-01-28"
   format: "game_key_card"
   cart_size_gb: null
   download_size_gb: null
@@ -15564,6 +15606,10 @@
   ean: null
   evidence: "press_report"  # (leída) meisakugame: "地球防衛軍6 for Nintendo Switch 2 | Key | 50GB"
   source_url: "https://meisakugame.garyoutensei.com/data/switch2packagekey.html"
+  updates:
+    - url: "https://finalweapon.net/2026/09/16/earth-defense-force-6-is-coming-to-switch-2-on-january-28-2027/"  # (leída) Final Weapon cita el anuncio de D3 Publisher: "『地球防衛軍6 for Nintendo Switch 2』 | 2027年1月28日発売決定！"; (API) Nintendo Japón, 02-11-2026: sdate "今冬" → "2027.1.28", sform BEE_DOWNLOADABLE (caja y descarga el mismo día)
+      checked_at: "2026-11-02"
+      fields: ["release_date"]
   verified_at: "2026-10-13"
 
 # Hello Kitty Island Adventure: la única caja de Switch 2 es el "Friendship Bundle" (Nintendo Switch 2 Edition con las
@@ -16799,3 +16845,62 @@
       checked_at: "2026-10-28"
       fields: ["release_date"]
   verified_at: "2026-10-28"
+
+# LEGO Harry Potter Collection (Warner Bros. Games): caja como game-key card en Europa, Norteamérica y Japón.
+- sku_id: "eu-lego-harry-potter-collection-standard"
+  title_id: "lego-harry-potter-collection"
+  region: "EU"
+  edition: "standard"
+  edition_name: null
+  distributor: "Warner Bros. Games"  # (leída) nota de prensa: "Warner Bros. Games, TT Games and the LEGO Group today announced LEGO® Harry Potter™ Collection is now available for Nintendo Switch™ 2"
+  release_date: "2026-10-16"  # (leída) nota de prensa: "Press release | 16/10/2026 | Warner Bros. Games Launches LEGO® Harry Potter ™ Collection for Nintendo Switch™ 2"
+  format: "game_key_card"
+  cart_size_gb: null
+  download_size_gb: 12.6
+  includes_download_code: null
+  ean: null
+  evidence: "official"  # (leída) nota de prensa de Warner Bros. Games: "The Nintendo Switch 2 version of the collection is available for both physical and digital, with the Physical Edition including both games on one key card."
+  source_url: "https://www.gamespress.com/Warner-Bros-Games-Launches-LEGO-Harry-Potter-Collection-for-Nint-98799"
+  updates:
+    - url: "https://www.nintendo.com/en-gb/Games/Nintendo-Switch-2-games/LEGO-Harry-Potter-Collection-3186579.html"  # (API) Nintendo EU: "LEGO® Harry Potter™ Collection", datasize_readable_txt "12.6 GB"
+      checked_at: "2026-11-02"
+      fields: ["size"]
+  verified_at: "2026-11-02"
+- sku_id: "na-lego-harry-potter-collection-standard"
+  title_id: "lego-harry-potter-collection"
+  region: "NA"
+  edition: "standard"
+  edition_name: null
+  distributor: "Warner Bros. Games"  # (leída) Gematsu: "Publisher Warner Bros. Games and developers TT Games , Double Eleven , and Cast Iron Games will release"
+  release_date: "2026-10-16"  # (leída) Gematsu: "will release LEGO Harry Potter Collection for Switch 2 on October 16 for $49.99"
+  format: "game_key_card"
+  cart_size_gb: null
+  download_size_gb: 12.6
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) Gematsu: "It will be available physically and digitally, with the physical edition shipping on a game-key card."
+  source_url: "https://www.gematsu.com/2026/09/lego-harry-potter-collection-coming-to-switch-2-on-october-16"
+  updates:
+    - url: "https://www.nintendo.com/us/store/products/lego-harry-potter-collection-switch-2/"  # (leída) ficha de la tienda de Nintendo US: "Game file size | 12.6 GB"
+      checked_at: "2026-11-02"
+      fields: ["size"]
+  verified_at: "2026-11-02"
+- sku_id: "jp-lego-harry-potter-collection-standard"
+  title_id: "lego-harry-potter-collection"
+  region: "JP"
+  edition: "standard"
+  edition_name: null
+  distributor: "WB Games"  # (leída) meisakugame, cabecera "【WB Games】"
+  release_date: "2026-10-16"
+  format: "game_key_card"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) meisakugame: "【WB Games】 | 形式 | 容量 | ... | レゴ®ハリー・ポッター コレクション | Key | 14GB"
+  source_url: "https://meisakugame.garyoutensei.com/data/switch2packagekey.html"
+  updates:
+    - url: "https://store-jp.nintendo.com/item/software/D70010000106212"  # (API) search.nintendo.jp: "レゴ® ハリー・ポッター™ コレクション / LEGO® Harry Potter™ Collection", icode ABDGB, sdate "2026.10.16", sform BEE_DOWNLOADABLE, maker "WB Games", pprice 6578
+      checked_at: "2026-11-02"
+      fields: ["release_date"]
+  verified_at: "2026-11-02"

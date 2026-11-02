@@ -1,13 +1,18 @@
 from datetime import UTC, date, datetime
 
+import pytest
+
 from switch2db.models import PhysicalRelease, Region, Sku, Title, TitleStatus
 from switch2db.worklist import (
     build_work_queue,
+    drop_checked_since,
     find_titles_missing_regions,
     list_missing_regions,
     list_skus_without_source,
     list_titles_by_status,
     list_titles_to_complete,
+    list_upcoming_titles,
+    release_period_end,
 )
 
 
@@ -102,3 +107,49 @@ def test_build_work_queue_splits_titles_by_status_and_skus_by_source(
     assert queue.titles_to_refresh == ["refresh-game"]
     assert queue.titles_to_complete == ["example-game"]
     assert queue.skus_without_source == ["kr-example-game-standard"]
+
+
+@pytest.mark.parametrize(
+    ("release_date", "expected"),
+    [
+        ("2026-11-20", date(2026, 11, 20)),
+        ("2026-02", date(2026, 2, 28)),
+        ("2026-12", date(2026, 12, 31)),
+        ("2026-Q3", date(2026, 9, 30)),
+        ("2026-Q4", date(2026, 12, 31)),
+        ("2027", date(2027, 12, 31)),
+    ],
+)
+def test_release_period_end_returns_the_last_day_of_the_period(release_date: str, expected: date) -> None:
+    assert release_period_end(release_date) == expected
+
+
+def test_list_upcoming_titles_sorts_by_period_end_and_skips_past_and_undated_titles(title: Title) -> None:
+    def dated(title_id: str, release_date: str | None) -> Title:
+        return title.model_copy(update={"title_id": title_id, "release_date": release_date})
+
+    titles = [
+        dated("next-year", "2027"),
+        dated("this-month", "2026-11"),
+        dated("released", "2026-11-01"),
+        dated("undated", None),
+        dated("end-of-month", "2026-11-30"),
+        dated("today", "2026-11-02"),
+        dated("past-quarter", "2026-Q3"),
+    ]
+
+    upcoming = list_upcoming_titles(titles, date(2026, 11, 2), limit=3)
+
+    assert [upcoming_title.title_id for upcoming_title in upcoming] == ["today", "end-of-month", "this-month"]
+
+
+def test_drop_checked_since_drops_titles_checked_on_or_after_the_day(title: Title) -> None:
+    on_the_day = title.model_copy(
+        update={"title_id": "on-the-day", "last_checked_at": datetime(2026, 10, 26, 22, 0, tzinfo=UTC)}
+    )
+    before = title.model_copy(update={"title_id": "before", "last_checked_at": date(2026, 10, 25)})
+    never = title.model_copy(update={"title_id": "never", "last_checked_at": None})
+
+    kept = drop_checked_since([on_the_day, before, never], date(2026, 10, 26))
+
+    assert [kept_title.title_id for kept_title in kept] == ["before", "never"]

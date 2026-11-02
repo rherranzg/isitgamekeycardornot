@@ -122,6 +122,7 @@ Si para con `titles.yaml tiene N errores`, el fichero se editó a mano y quedó 
 ```bash
 uv run python -m scripts.next_work            # toda la cola
 uv run python -m scripts.next_work --limit 10 # por lotes
+uv run python -m scripts.next_work --upcoming 10 # los 10 próximos lanzamientos
 ```
 
 Calcula la cola leyendo solo los ficheros locales (sin red):
@@ -300,6 +301,18 @@ uv run python -m scripts.build_site
 Los dos scripts solo señalan qué mirar: los datos se cambian a mano, con cita, como cualquier otra
 actualización. Los juegos que aún no están en `titles.yaml` se ignoran; entran con la siguiente importación
 del catálogo.
+
+**Portadas** (caja europea de los SKUs estándar, ver el README):
+
+```bash
+uv run python -m scripts.download_covers                    # todos los SKUs EU sin portada
+uv run python -m scripts.download_covers --titles <id> ...  # solo esos juegos
+uv run python -m scripts.download_covers --refresh          # volver a bajarlas (una caja provisional cambiada)
+uv run python -m scripts.validate_data
+```
+
+`not_found` (MediaMarkt no vende la caja estándar), `ean_mismatch` y `not_a_switch2_box` dejan el SKU sin portada;
+se vuelve a buscar en la siguiente ejecución.
 
 **Corregir los metadatos de un juego**: editar `name`, `publisher` o `igdb_id` a mano en `titles.yaml`. Si
 eso pone en duda lo investigado, pasar el `status` a `refresh` para que se vuelva a investigar.

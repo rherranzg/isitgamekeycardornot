@@ -45,7 +45,7 @@ PAGE_SIZES: tuple[int, ...] = (10, 20, 50)
 DEFAULT_PAGE_SIZE = 10
 
 # Boxes in each top block (coming soon and just released), picked by the browser against its own today.
-RELEASE_HIGHLIGHT_COUNT = 5
+RELEASE_HIGHLIGHT_COUNT = 8
 
 # How far back a box still counts as just released; older ones leave the block even if it has room.
 RECENT_RELEASE_DAYS = 30

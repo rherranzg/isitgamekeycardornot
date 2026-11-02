@@ -203,4 +203,16 @@ uv run python -m scripts.build_site
 Both scripts only point at what to check: the data changes by hand, with a quote, like any other update. Games
 that are not in `titles.yaml` yet are skipped; they come in with the next catalog import.
 
+**Box covers** (European box of the standard SKUs, see the README):
+
+```bash
+uv run python -m scripts.download_covers                    # every EU SKU without a cover yet
+uv run python -m scripts.download_covers --titles <id> ...  # only these games
+uv run python -m scripts.download_covers --refresh          # download again (a provisional box replaced)
+uv run python -m scripts.validate_data
+```
+
+`not_found` (MediaMarkt does not sell the standard box), `ean_mismatch` and `not_a_switch2_box` leave the SKU
+without a cover; it is looked for again on the next run.
+
 **Never** write a value without a quote from its source, nor a known `format` without a `source_url`.
