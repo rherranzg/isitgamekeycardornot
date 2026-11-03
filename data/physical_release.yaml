@@ -566,24 +566,24 @@
   checked_at: "2026-10-21"
 - title_id: "cozy-grove"
   has_physical_release: false
-  evidence: "unconfirmed"  # búsqueda web: solo eShop, ningún listado físico; (API) search.nintendo.jp: "Cozy Grove – Nintendo Switch 2 Edition", icode A2FKC, sdate "2026.3.12", pprice: null
-  source_url: null
-  checked_at: "2026-09-26"
+  evidence: "official"  # (leída) ficha oficial de Nintendo: "Cozy Grove – Nintendo Switch™ 2 Edition | Select a version | Nintendo Switch 2 | Nintendo Switch | Upgrade Pack | What's an upgrade pack? | Edition | Digital"; (API) search.nintendo.jp: "Cozy Grove – Nintendo Switch 2 Edition", icode A2FKC, sdate "2026.3.12", sform BEE_DL, pprice: null; sin fila en meisakugame; Danawa sin caja de Switch 2; toyorgame y VideoGamesPlus.ca, ninguna
+  source_url: "https://www.nintendo.com/us/store/products/cozy-grove-nintendo-switch-2-edition-switch-2/"
+  checked_at: "2026-11-03"
 - title_id: "cozy-grove-camp-spirit"
   has_physical_release: false
-  evidence: "unconfirmed"  # búsqueda web: solo eShop, ningún listado físico; (API) search.nintendo.jp: "Cozy Grove: Camp Spirit – Nintendo Switch 2 Edition", icode BUZNC, sdate "2026.7.16", pprice: null
-  source_url: null
-  checked_at: "2026-09-26"
+  evidence: "official"  # (leída) ficha oficial de Nintendo: "Cozy Grove: Camp Spirit – Nintendo Switch™ 2 Edition | Select a version | Nintendo Switch 2 | Nintendo Switch | Upgrade Pack | What's an upgrade pack? | Edition | Digital"; (API) search.nintendo.jp: "Cozy Grove: Camp Spirit – Nintendo Switch 2 Edition", icode BUZNC, sdate "2026.7.16", sform BEE_DL, pprice: null; sin fila en meisakugame; Danawa sin caja de Switch 2; toyorgame y VideoGamesPlus.ca, ninguna
+  source_url: "https://www.nintendo.com/us/store/products/cozy-grove-camp-spirit-nintendo-switch-2-edition-switch-2/"
+  checked_at: "2026-11-03"
 - title_id: "content-warning"
   has_physical_release: false
-  evidence: "unconfirmed"  # búsqueda web: solo eShop, ningún listado físico
-  source_url: null
-  checked_at: "2026-09-26"
+  evidence: "official"  # (leída) ficha oficial de Nintendo: "Content Warning | Version | Nintendo Switch 2 | Edition | Digital"; (API) search.nintendo.jp: "コンテントワーニング", icode AA6FA, sdate "2026.4.2", sform BEE_DL, pprice: null; sin fila en meisakugame; Danawa sin caja de Switch 2; toyorgame y VideoGamesPlus.ca, ninguna
+  source_url: "https://www.nintendo.com/us/store/products/content-warning-switch-2/"
+  checked_at: "2026-11-03"
 - title_id: "cloverpit"
   has_physical_release: false
-  evidence: "unconfirmed"  # búsqueda web: solo eShop, ningún listado físico; (API) search.nintendo.jp: "CloverPit", icode ACKEA, sdate "2026.8.13", pprice: null
+  evidence: "unconfirmed"  # (leída) ficha US, https://www.nintendo.com/us/store/products/cloverpit-switch-2/: "Version | Nintendo Switch 2 | Select an edition | Digital -" (el selector no basta); (leída) Nintendo Everything, https://nintendoeverything.com/?p=920800: "The title will be sold as a digital download." (frase de plantilla); Nintendo Life sin campo "Physical Release"; (API) search.nintendo.jp: "CloverPit", icode ACKEA, sdate "2026.8.13", sform BEE_DL, pprice: null; Danawa sin caja de Switch 2; toyorgame y VideoGamesPlus.ca, ninguna
   source_url: null
-  checked_at: "2026-09-26"
+  checked_at: "2026-11-03"
 - title_id: "clive-barker-s-hellraiser-revival"
   has_physical_release: true
   evidence: "press_report"  # (leída) GoNintendo: "Those going the physical route may want to know that this is a Game-Key Card release."
@@ -596,9 +596,9 @@
   checked_at: "2026-10-21"
 - title_id: "core-keeper"
   has_physical_release: false
-  evidence: "unconfirmed"  # Nintendo Switch 2 Edition solo en eShop (actualización gratuita de la versión de Switch 1); ficha de Nintendo Life sin campo Physical Release
-  source_url: null
-  checked_at: "2026-09-26"
+  evidence: "official"  # (leída) ficha oficial de Nintendo: "Core Keeper – Nintendo Switch 2 Edition | Select a version | Nintendo Switch 2 | Nintendo Switch | Upgrade Pack | What's an upgrade pack? | Edition | Digital"; (API) search.nintendo.jp: "Core Keeper Nintendo Switch 2 Edition", icode BFBFA, sdate "2026.1.29", sform BEE_DL, pprice: null; sin fila en meisakugame; Danawa sin caja de Switch 2; toyorgame y VideoGamesPlus.ca, ninguna
+  source_url: "https://www.nintendo.com/us/store/products/core-keeper-nintendo-switch-2-edition-switch-2/"
+  checked_at: "2026-11-03"
 - title_id: "braid-anniversary-edition"
   has_physical_release: false
   evidence: "official"  # (leída) ficha oficial de Nintendo: "Braid, Anniversary Edition – Nintendo Switch 2 Edition | Select a version | Nintendo Switch 2 | Nintendo Switch | Upgrade Pack | What's an upgrade pack? | Edition | Digital"; (API) search.nintendo.jp: "Braid: アニバーサリーエディション Nintendo Switch 2 Edition", icode AP8SA, sdate "2026.2.12", sform BEE_DL, pprice: null
@@ -606,19 +606,19 @@
   checked_at: "2026-10-21"
 - title_id: "city-hunter"
   has_physical_release: false
-  evidence: "unconfirmed"  # las cajas de Red Art Games (Standard, Deluxe, XYZ) son de Switch 1; (leída) Noisy Pixel: "City Hunter launches digitally on PlayStation 5, Xbox Series, Nintendo Switch 2, Nintendo Switch"
-  source_url: null
-  checked_at: "2026-09-26"
+  evidence: "press_report"  # (leída) Final Weapon: "Physical copies of the City Hunter game will be sold on September 17 for Nintendo Switch and PlayStation 5 on the Red Art Games official store"; las cajas de Red Art Games (Standard, Deluxe, XYZ) son de Switch 1 y PS5; (API) search.nintendo.jp: "シティーハンター", icode ABLRA, sdate "2026.2.26", sform BEE_DL, pprice: null; sin fila en meisakugame (la ficha de Switch 1, BS9ZA, sí tiene pprice 3960); la ficha US de Switch 2 llega sin texto; Danawa sin caja de Switch 2; toyorgame y VideoGamesPlus.ca, ninguna
+  source_url: "https://finalweapon.net/2026/02/19/city-hunter-pc-engine-game-remaster-physical-editions-new-features/"
+  checked_at: "2026-11-03"
 - title_id: "dead-age-2"
   has_physical_release: false
-  evidence: "unconfirmed"  # (listado) Nintendo Everything: "Dead Age 2 gets surprise Nintendo Switch 2 release"; solo eShop
-  source_url: null
-  checked_at: "2026-09-26"
+  evidence: "official"  # (leída) ficha oficial de Nintendo: "Dead Age 2 | Version | Nintendo Switch 2 | Edition | Digital"; (API) search.nintendo.jp: "Dead Age 2", icode ACKKA, sdate "2026.8.27", sform BEE_DL, pprice: null; sin fila en meisakugame; Danawa sin caja de Switch 2; toyorgame y VideoGamesPlus.ca, ninguna
+  source_url: "https://www.nintendo.com/us/store/products/dead-age-2-switch-2/"
+  checked_at: "2026-11-03"
 - title_id: "citadelum"
   has_physical_release: false
-  evidence: "unconfirmed"  # búsqueda web: solo eShop; ningún listado físico
-  source_url: null
-  checked_at: "2026-09-26"
+  evidence: "official"  # (leída) ficha oficial de Nintendo: "Citadelum | Version | Nintendo Switch 2 | Edition | Digital"; (API) search.nintendo.jp: "シタデルム Citadelum", icode ABTBA, sdate "2026.1.22", sform BEE_DL, pprice: null; sin fila en meisakugame; Danawa sin caja de Switch 2; toyorgame y VideoGamesPlus.ca, ninguna
+  source_url: "https://www.nintendo.com/us/store/products/citadelum-switch-2/"
+  checked_at: "2026-11-03"
 - title_id: "carmageddon-rogue-shift"
   has_physical_release: false
   evidence: "unconfirmed"  # búsqueda web: solo eShop; ningún listado físico (toyorgame solo tiene la caja de PS5); Nintendo Life sin campo "Physical Release"; la ficha US no se pudo leer
@@ -626,9 +626,9 @@
   checked_at: "2026-10-21"
 - title_id: "cultic"
   has_physical_release: false
-  evidence: "unconfirmed"  # búsqueda web: solo eShop en Switch 2; la Complete Edition física de Atari no incluye Switch 2
+  evidence: "unconfirmed"  # (leída) Nintendo Everything, https://nintendoeverything.com/cultic-coming-to-nintendo-switch-2/: "Fans will be able to pick up the game as a digital download." (frase de plantilla, no cita); sin ficha de Switch 2 en los catálogos de Nintendo EU, NA ni JP (API) pese a la fecha del 23-07-2026; la Complete Edition física de Atari no incluye Switch 2; Danawa sin caja de Switch 2; toyorgame y VideoGamesPlus.ca, ninguna
   source_url: null
-  checked_at: "2026-09-26"
+  checked_at: "2026-11-03"
 - title_id: "brightfall"
   has_physical_release: false
   evidence: "unconfirmed"
@@ -636,19 +636,19 @@
   checked_at: "2026-09-17"
 - title_id: "colorbound"
   has_physical_release: false
-  evidence: "unconfirmed"  # búsqueda web: solo eShop, ningún listado físico
-  source_url: null
-  checked_at: "2026-09-26"
+  evidence: "official"  # (leída) ficha oficial de Nintendo: "Colorbound – Nintendo Switch™ 2 Edition | Select a version | Nintendo Switch 2 | Nintendo Switch | Upgrade Pack | What's an upgrade pack? | Edition | Digital"; (API) search.nintendo.jp: "Colorbound – Nintendo Switch 2 Edition", icode BS3SA, sdate "2026.10.15", sform BEE_DL, pprice: null; sin fila en meisakugame; Danawa sin caja de Switch 2; toyorgame y VideoGamesPlus.ca, ninguna
+  source_url: "https://www.nintendo.com/us/store/products/colorbound-nintendo-switch-2-edition-switch-2/"
+  checked_at: "2026-11-03"
 - title_id: "chillin-by-the-fire"
   has_physical_release: false
-  evidence: "unconfirmed"  # búsqueda web: solo eShop, ningún listado físico
-  source_url: null
-  checked_at: "2026-09-26"
+  evidence: "official"  # (leída) ficha oficial de Nintendo: "Chillin' by the Fire | Version | Nintendo Switch 2 | Edition | Digital"; (leída) Nintendo Life: "Physical Release | None (Digital Only) | Release Date | Nintendo eShop | 31st Jul 2025 — $14.99 | 31st Jul 2025 — £13.49" (https://www.nintendolife.com/games/nintendo-switch-2/chillin-by-the-fire); (API) search.nintendo.jp: "チルっと焚き火ソン", icode AAC7A, sdate "2025.7.31", sform BEE_DL, pprice: null; sin fila en meisakugame; Danawa sin caja de Switch 2; toyorgame y VideoGamesPlus.ca, ninguna
+  source_url: "https://www.nintendo.com/us/store/products/chillin-by-the-fire-switch-2/"
+  checked_at: "2026-11-03"
 - title_id: "cats-away"
   has_physical_release: false
-  evidence: "unconfirmed"  # búsqueda web: solo eShop (y en Switch 1)
-  source_url: null
-  checked_at: "2026-09-26"
+  evidence: "official"  # (leída) ficha oficial de Nintendo UK: "Cats Away | Nintendo Switch download software"; juego solo de Switch 1: sin ficha de Switch 2 en los catálogos de Nintendo EU (API), NA (API) ni JP (API); Danawa sin caja de Switch 2; toyorgame y VideoGamesPlus.ca, ninguna
+  source_url: "https://www.nintendo.com/en-gb/Games/Nintendo-Switch-download-software/Cats-Away-2864362.html"
+  checked_at: "2026-11-03"
 - title_id: "card-casino"
   has_physical_release: false
   evidence: "official"  # (leída) ficha oficial de Nintendo: "CARD&CASINO | Version | Nintendo Switch 2 | Edition | Digital"; (API) search.nintendo.jp: "SIMPLEシリーズ for Nintendo Switch 2 Vol.3 THE カード&カジノ", icode ABD5A, sdate "2026.4.23", sform BEE_DL, pprice: null
@@ -656,9 +656,9 @@
   checked_at: "2026-10-21"
 - title_id: "clean-up-earth"
   has_physical_release: false
-  evidence: "unconfirmed"  # búsqueda web: solo eShop, ningún listado físico (sin fecha en Switch 2)
+  evidence: "unconfirmed"  # (leída) Kickpush, https://kickpush.prezly.com/clean-up-earth-is-now-available-oaxaq3: "Clean Up Earth is now available on PC (Steam and Epic Games Store), PlayStation 5, and Xbox Series on April 2, 2026. A Nintendo Switch 2 version will be announced at a later date."; sin ficha de Switch 2 en los catálogos de Nintendo EU, NA ni JP (API); Danawa sin caja de Switch 2; toyorgame y VideoGamesPlus.ca, ninguna
   source_url: null
-  checked_at: "2026-09-26"
+  checked_at: "2026-11-03"
 - title_id: "cast-n-chill"
   has_physical_release: false
   evidence: "official"  # (leída) ficha oficial de Nintendo: "Cast n Chill - Nintendo Switch™ 2 Edition | Select a version | Nintendo Switch 2 | Nintendo Switch | Upgrade Pack | What's an upgrade pack? | Edition | Digital"; (leída) Nintendo Life: "Upgrade Path | Via Cast n Chill (Switch eShop) | Free — Free — Free"; (API) search.nintendo.jp: "Cast n Chill - Nintendo Switch 2 Edition", icode BRDZA, sdate "2025.12.18", sform BEE_DL, pprice: null
@@ -666,14 +666,14 @@
   checked_at: "2026-10-21"
 - title_id: "d-topia"
   has_physical_release: false
-  evidence: "unconfirmed"  # búsqueda web: solo eShop, ningún listado físico; (API) search.nintendo.jp: "D-topia", icode ABSLA, sdate "2026.7.14", pprice: null
-  source_url: null
-  checked_at: "2026-09-26"
+  evidence: "official"  # (leída) ficha oficial de Nintendo: "D-topia | Version | Nintendo Switch 2 | Edition | Digital"; (API) search.nintendo.jp: "D-topia", icode ABSLA, sdate "2026.7.14", sform BEE_DL, pprice: null; sin fila en meisakugame; Danawa sin caja de Switch 2; toyorgame y VideoGamesPlus.ca, ninguna
+  source_url: "https://www.nintendo.com/us/store/products/d-topia-switch-2/"
+  checked_at: "2026-11-03"
 - title_id: "chronoforge"
   has_physical_release: false
-  evidence: "unconfirmed"  # búsqueda web: ningún resultado de la versión de Switch 2
+  evidence: "unconfirmed"  # búsqueda web: solo PC, sin versión de Switch 2 anunciada ni ficha en los catálogos de Nintendo EU, NA ni JP (API); Danawa sin caja de Switch 2; toyorgame y VideoGamesPlus.ca, ninguna
   source_url: null
-  checked_at: "2026-09-26"
+  checked_at: "2026-11-03"
 - title_id: "arms"
   has_physical_release: false
   evidence: "official"  # (leída) Nintendo: "ARMS™ | Update available: June 5, 2025"; juego de Switch 1 con actualización gratuita para Switch 2: la única caja es la de Switch 1; (API) search.nintendo.jp no tiene ficha de Switch 2 (hard 05_BEE)
@@ -696,14 +696,14 @@
   checked_at: "2026-10-21"
 - title_id: "deadzone-rogue"
   has_physical_release: false
-  evidence: "unconfirmed"  # búsqueda web: solo eShop, ningún listado físico (Deluxe Edition solo digital); (API) search.nintendo.jp: "Deadzone: Rogue", icode ABAMA, sdate "2026.3.17", pprice: null
+  evidence: "unconfirmed"  # (leída) ficha US, https://www.nintendo.com/us/store/products/deadzone-rogue-switch-2/: "Version | Nintendo Switch 2 | Select an edition | Digital -" (el selector no basta; la Deluxe Edition es un pack digital); Nintendo Life sin campo "Physical Release"; Gematsu no habla de cajas; (API) search.nintendo.jp: "Deadzone: Rogue", icode ABAMA, sdate "2026.3.17", sform BEE_DL, pprice: null; Danawa sin caja de Switch 2; toyorgame y VideoGamesPlus.ca, ninguna
   source_url: null
-  checked_at: "2026-09-26"
+  checked_at: "2026-11-03"
 - title_id: "dear-me-i-was"
   has_physical_release: false
-  evidence: "unconfirmed"  # búsqueda web: solo eShop, ningún listado físico; (API) search.nintendo.jp: "Dear me, I was ...", icode AAW8A, sdate "2025.7.31", pprice: null
-  source_url: null
-  checked_at: "2026-09-26"
+  evidence: "official"  # (leída) ficha oficial de Nintendo: "Dear me, I was... | Version | Nintendo Switch 2 | Edition | Digital"; (API) search.nintendo.jp: "Dear me, I was ...", icode AAW8A, sdate "2025.7.31", sform BEE_DL, pprice: null; sin fila en meisakugame; Danawa sin caja de Switch 2; toyorgame y VideoGamesPlus.ca, ninguna
+  source_url: "https://www.nintendo.com/us/store/products/dear-me-i-was-switch-2/"
+  checked_at: "2026-11-03"
 - title_id: "deltarune"
   has_physical_release: false
   evidence: "press_report"
@@ -711,49 +711,44 @@
   checked_at: "2026-09-17"
 - title_id: "demeo-x-dungeons-dragons-battlemarked"
   has_physical_release: false
-  evidence: "unconfirmed"  # búsqueda web: solo eShop, ningún listado físico; (API) search.nintendo.jp: icode ABU3A, sdate "2026.6.16", pprice: null
-  source_url: null
-  checked_at: "2026-09-26"
+  evidence: "official"  # (leída) ficha oficial de Nintendo: "Demeo x Dungeons & Dragons: Battlemarked | Version | Nintendo Switch 2 | Edition | Digital"; (API) search.nintendo.jp: "デメオ×ダンジョンズ & ドラゴンズ：バトルマークド (Demeo x Dungeons & Dragons: Battlemarked)", icode ABU3A, sdate "2026.6.16", sform BEE_DL, pprice: null; sin fila en meisakugame; Danawa sin caja de Switch 2; toyorgame y VideoGamesPlus.ca, ninguna
+  source_url: "https://www.nintendo.com/us/store/products/demeo-x-dungeons-and-dragons-battlemarked-switch-2/"
+  checked_at: "2026-11-03"
 - title_id: "dinkum"
   has_physical_release: false
-  evidence: "unconfirmed"  # la caja es de Switch 1; (listado) Krafton: "released the Nintendo Switch 2 version (digital version)"
-  source_url: null
-  checked_at: "2026-09-26"
-- title_id: "disney-dreamlight-valley"
-  has_physical_release: true
-  evidence: "press_report"  # (leída) GamesRadar: "Switch 2 Cozy Edition is not even a game-key card release, and remains a download code in a box"
-  source_url: "https://www.gamesradar.com/games/disneys-dreamlight-valley-switch-2-cozy-edition-is-up-for-pre-order-but-its-cheaper-to-stick-with-the-magic-of-the-og/"
-  checked_at: "2026-09-26"
+  evidence: "official"  # (leída) ficha oficial de Nintendo: "Dinkum Nintendo Switch 2 Edition | Select a version | Nintendo Switch 2 | Nintendo Switch | Upgrade Pack | What's an upgrade pack? | Edition | Digital"; (API) search.nintendo.jp: "Dinkum(ディンカム) Nintendo Switch 2 Edition", icode BLZ5A, sdate "2026.4.23", sform BEE_DL, pprice: null; sin fila en meisakugame; Danawa sin caja de Switch 2; toyorgame y VideoGamesPlus.ca, ninguna
+  source_url: "https://www.nintendo.com/us/store/products/dinkum-nintendo-switch-2-edition-switch-2/"
+  checked_at: "2026-11-03"
 - title_id: "disney-speedstorm"
   has_physical_release: false
-  evidence: "unconfirmed"  # Nintendo Switch 2 Edition gratuita en eShop; (API) search.nintendo.jp: "ディズニー スピードストーム", icode A3JFA, sdate "2026.7.16", pprice: null
-  source_url: null
-  checked_at: "2026-09-26"
+  evidence: "official"  # (leída) ficha oficial de Nintendo: "Disney Speedstorm – Nintendo Switch 2 Edition | Select a version | Nintendo Switch 2 | Nintendo Switch | Upgrade Pack | What's an upgrade pack? | Edition | Digital"; (API) search.nintendo.jp: "ディズニー スピードストーム-- Disney Speedstorm Nintendo Switch 2 Edition", icode A3JFA, sdate "2026.7.16", sform BEE_DL, pprice: null; sin fila en meisakugame; Danawa sin caja de Switch 2; toyorgame y VideoGamesPlus.ca, ninguna
+  source_url: "https://www.nintendo.com/us/store/products/disney-speedstorm-nintendo-switch-2-edition-switch-2/"
+  checked_at: "2026-11-03"
 - title_id: "divinity-original-sin-ii-definitive-edition"
   has_physical_release: false
-  evidence: "unconfirmed"  # búsqueda web: solo eShop (Nintendo Switch 2 Edition); ningún listado físico
-  source_url: null
-  checked_at: "2026-09-26"
+  evidence: "press_report"  # (leída) Nintendo Life: "Upgrade Path | Via Divinity: Original Sin 2 - Definitive Edition (Switch eShop) | Free — Free — Free"; la caja de Limited Run Games es de Switch 1; la ficha US de Switch 2 llega sin texto; (API) search.nintendo.jp: "Divinity: Original Sin 2 Definitive Edition - Nintendo Switch 2 Edition", icode ASNMB, sdate "2025.12.16", sform BEE_DL, pprice: null; sin fila en meisakugame; Danawa sin caja de Switch 2; toyorgame y VideoGamesPlus.ca, ninguna
+  source_url: "https://www.nintendolife.com/games/nintendo-switch-2/divinity-original-sin-2-nintendo-switch-2-edition"
+  checked_at: "2026-11-03"
 - title_id: "dk-challenge"
   has_physical_release: false
-  evidence: "unconfirmed"  # evento de Nintendo Switch Online (09-06 a 01-09-2026), sin caja; el premio físico es un juego de cartas de My Nintendo, no el juego
-  source_url: null
-  checked_at: "2026-09-26"
+  evidence: "official"  # (leída) Nintendo Singapur: "DK Challenge is now available on Nintendo Switch Online * for the Nintendo Switch 2 system. Get ready for a unique limited-time event celebrating all things Donkey Kong until 1 September."; evento de Nintendo Switch Online, no un juego que se venda; el premio físico es un juego de cartas de My Nintendo, no el juego; Danawa sin caja de Switch 2; toyorgame y VideoGamesPlus.ca, ninguna
+  source_url: "https://www.nintendo.com/sg/news/article/6AHnDlmeoF4djZ99SZJCbU"
+  checked_at: "2026-11-03"
 - title_id: "dogpile"
   has_physical_release: false
-  evidence: "unconfirmed"  # búsqueda web: solo eShop, ningún listado físico; (API) search.nintendo.jp: "ドッグパイル (Dogpile)", icode ACEHA, sdate "2026.8.20", pprice: null
-  source_url: null
-  checked_at: "2026-09-26"
+  evidence: "official"  # (leída) ficha oficial de Nintendo: "Dogpile | Version | Nintendo Switch 2 | Edition | Digital"; (API) search.nintendo.jp: "ドッグパイル (Dogpile)", icode ACEHA, sdate "2026.8.20", sform BEE_DL, pprice: null; sin fila en meisakugame; Danawa sin caja de Switch 2; toyorgame y VideoGamesPlus.ca, ninguna
+  source_url: "https://www.nintendo.com/us/store/products/dogpile-switch-2/"
+  checked_at: "2026-11-03"
 - title_id: "donkey-kong-country-returns-hd"
   has_physical_release: false
-  evidence: "unconfirmed"  # la caja es la de Switch 1, con actualización gratuita para Switch 2; (API) search.nintendo.jp no tiene ficha de Switch 2
-  source_url: null
-  checked_at: "2026-09-26"
+  evidence: "official"  # (leída) Nintendo: "Donkey Kong Country™ Returns HD | Update available: January 20, 2026"; juego de Switch 1 con actualización gratuita para Switch 2: la única caja es la de Switch 1; (API) search.nintendo.jp no tiene ficha de Switch 2 (solo "ドンキーコング リターンズ HD", hard 1_HAC); Danawa sin caja de Switch 2; toyorgame y VideoGamesPlus.ca, ninguna
+  source_url: "https://www.nintendo.com/us/gaming-systems/switch-2/transfer-guide/games-with-free-updates/"
+  checked_at: "2026-11-03"
 - title_id: "dosa-divas"
   has_physical_release: false
-  evidence: "unconfirmed"  # búsqueda web: solo eShop, ningún listado físico; (API) search.nintendo.jp: "Dosa Divas", icode ABRXA, sdate "2026.4.14", pprice: null
-  source_url: null
-  checked_at: "2026-09-26"
+  evidence: "official"  # (leída) ficha oficial de Nintendo: "Dosa Divas | Version | Nintendo Switch 2 | Edition | Digital"; (API) search.nintendo.jp: "Dosa Divas", icode ABRXA, sdate "2026.4.14", sform BEE_DL, pprice: null; sin fila en meisakugame; Danawa sin caja de Switch 2; toyorgame y VideoGamesPlus.ca, ninguna
+  source_url: "https://www.nintendo.com/us/store/products/dosa-divas-switch-2/"
+  checked_at: "2026-11-03"
 - title_id: "drag-x-drive"
   has_physical_release: false
   evidence: "press_report"
@@ -761,24 +756,24 @@
   checked_at: "2026-09-17"
 - title_id: "dragon-quest-heroes-torneko-s-mystery-dungeon-classic-hd"
   has_physical_release: false
-  evidence: "unconfirmed"  # (listado) RPG Site: "shadow drops on Switch 1 & 2, PS5, Xbox, and PC"; lanzamiento solo digital
-  source_url: null
-  checked_at: "2026-09-26"
+  evidence: "official"  # (leída) ficha oficial de Nintendo: "Dragon Quest Heroes: Torneko‘s Mystery Dungeon -Classic HD- | Version | Nintendo Switch 2 | Edition | Digital"; (API) search.nintendo.jp: "トルネコの大冒険 不思議のダンジョン　ちょっとステキなリマスター", icode ABWKA, sdate "2026.9.10", sform BEE_DL, pprice: null; sin fila en meisakugame; Danawa sin caja de Switch 2; toyorgame y VideoGamesPlus.ca, ninguna
+  source_url: "https://www.nintendo.com/us/store/products/dragon-quest-heroes-tornekos-mystery-dungeon-classic-hd-switch-2/"
+  checked_at: "2026-11-03"
 - title_id: "dragon-quest-iii-hd-2d-remake"
   has_physical_release: false
-  evidence: "unconfirmed"  # búsqueda web: solo la caja de Switch 1 (RPG Site: se sigue tratando como juego de Switch 1); la key card de Switch 2 es la de Dragon Quest I & II HD-2D Remake
-  source_url: null
-  checked_at: "2026-09-26"
+  evidence: "official"  # (leída) ficha oficial de Nintendo: "The Nintendo Switch™ 2 version of the Erdrick Trilogy Collection includes the Nintendo Switch™ version of DRAGON QUEST III HD-2D Remake and the Nintendo Switch™ 2 version of DRAGON QUEST I & II HD-2D Remake."; la única caja es la de Switch 1 (ficha de Nintendo UK en "Nintendo Switch games", https://www.nintendo.com/en-gb/Games/Nintendo-Switch-games/DRAGON-QUEST-III-HD-2D-Remake-2639673.html); sin ficha de Switch 2 en los catálogos de Nintendo EU (API), NA (API) ni JP (API; solo "ドラゴンクエストIII　そして伝説へ…", hard 1_HAC); Danawa sin caja de Switch 2; toyorgame y VideoGamesPlus.ca, ninguna
+  source_url: "https://www.nintendo.com/us/store/products/dragon-quest-hd-2d-erdrick-trilogy-collection-switch-2/"
+  checked_at: "2026-11-03"
 - title_id: "draw-king"
   has_physical_release: false
-  evidence: "unconfirmed"  # búsqueda web: solo eShop, ningún listado físico
-  source_url: null
-  checked_at: "2026-09-26"
+  evidence: "official"  # (leída) ficha oficial de Nintendo: "Draw King | Version | Nintendo Switch 2 | Edition | Digital"; (API) search.nintendo.jp: "お絵かきキング", icode ABMSA, sdate "2026.2.5", sform BEE_DL, pprice: null; sin fila en meisakugame; Danawa sin caja de Switch 2; toyorgame y VideoGamesPlus.ca, ninguna
+  source_url: "https://www.nintendo.com/us/store/products/draw-king-switch-2/"
+  checked_at: "2026-11-03"
 - title_id: "drop-pop"
   has_physical_release: false
-  evidence: "unconfirmed"  # búsqueda web: solo aparece como juego de Switch 1 en eShop; sin ficha de Switch 2 ni caja
-  source_url: null
-  checked_at: "2026-09-26"
+  evidence: "official"  # (leída) ficha oficial de Nintendo UK: "Drop Pop | Nintendo Switch download software"; juego solo de Switch 1: sin ficha de Switch 2 en los catálogos de Nintendo EU (API), NA (API) ni JP (API; "Drop Pop", icode BTSMA, hard 1_HAC); Danawa sin caja de Switch 2; toyorgame y VideoGamesPlus.ca, ninguna
+  source_url: "https://www.nintendo.com/en-gb/Games/Nintendo-Switch-download-software/Drop-Pop-3012129.html"
+  checked_at: "2026-11-03"
 - title_id: "duskfade"
   has_physical_release: false
   evidence: "unconfirmed"  # (listado) cuenta oficial en X: una edición física "is something we'd love to do" tras la salida digital; (API) search.nintendo.jp: "ダスクフェード (DUSKFADE)", icode ACH3A, sdate "2026.8.13", pprice: null
@@ -2894,3 +2889,73 @@
   evidence: "press_report"
   source_url: "https://www.gematsu.com/2026/10/peak-coming-to-ps5-xbox-series-and-switch-2-on-october-22"
   checked_at: "2026-11-02"
+- title_id: "arcade-archives-2-ace-driver-victory-lap"
+  has_physical_release: false
+  evidence: "official"  # (leída) ficha oficial de Nintendo: "Arcade Archives 2 ACE DRIVER VICTORY LAP | Version | Nintendo Switch 2 | Edition | Digital"; (API) search.nintendo.jp: "アーケードアーカイブス2 エースドライバー・ビクトリーラップ", icode ACHCA, sdate "2026.10.22", sform BEE_DL, pprice: null
+  source_url: "https://www.nintendo.com/us/store/products/arcade-archives-2-ace-driver-victory-lap-switch-2/"
+  checked_at: "2026-11-02"
+- title_id: "arcade-archives-2-swimmer"
+  has_physical_release: false
+  evidence: "official"  # (leída) ficha oficial de Nintendo: "Arcade Archives 2 SWIMMER | Version | Nintendo Switch 2 | Edition | Digital"; (API) search.nintendo.jp: "アーケードアーカイブス2 スイマー", icode ACS3A, sdate "2026.10.29", sform BEE_DL, pprice: null
+  source_url: "https://www.nintendo.com/us/store/products/arcade-archives-2-swimmer-switch-2/"
+  checked_at: "2026-11-02"
+# (leída) https://www.nintendo.com/us/store/products/burggeist-for-nintendo-switch-2-switch-2/: "BURGGEIST for Nintendo Switch 2 | Version | Nintendo Switch 2 | Edition | Digital"; (API) search.nintendo.jp: "BURGGEIST for Nintendo Switch 2", icode ACY5A, sdate "2026.10.27", maker "グリーアンスタジオ", sform BEE_DL, pprice: null; sin fila en meisakugame ni en las listas de key cards y cartuchos.
+- title_id: "burggeist"
+  has_physical_release: false
+  evidence: "official"
+  source_url: "https://www.nintendo.com/us/store/products/burggeist-for-nintendo-switch-2-switch-2/"
+  checked_at: "2026-11-02"
+- title_id: "console-archives-marl-jong"
+  has_physical_release: false
+  evidence: "official"  # (leída) ficha oficial de Nintendo: "Console Archives MARL JONG | Version | Nintendo Switch 2 | Edition | Digital"; (API) search.nintendo.jp: "コンソールアーカイブス マールじゃん!!", icode ACHRA, sdate "2026.10.29", sform BEE_DL, pprice: null
+  source_url: "https://www.nintendo.com/us/store/products/console-archives-marl-jong-switch-2/"
+  checked_at: "2026-11-02"
+- title_id: "console-archives-raiden-project"
+  has_physical_release: false
+  evidence: "official"  # (leída) ficha oficial de Nintendo: "Console Archives RAIDEN PROJECT | Version | Nintendo Switch 2 | Edition | Digital"; (API) search.nintendo.jp: "コンソールアーカイブス 雷電プロジェクト", icode ACMGA, sdate "2026.10.22", sform BEE_DL, pprice: null
+  source_url: "https://www.nintendo.com/us/store/products/console-archives-raiden-project-switch-2/"
+  checked_at: "2026-11-02"
+- title_id: "console-archives-ripple-island"
+  has_physical_release: false
+  evidence: "official"  # (leída) ficha oficial de Nintendo: "Console Archives Ripple Island | Version | Nintendo Switch 2 | Edition | Digital"; (API) search.nintendo.jp: "コンソールアーカイブス リップルアイランド", icode ACHSA, sdate "2026.10.8", sform BEE_DL, pprice: null
+  source_url: "https://www.nintendo.com/us/store/products/console-archives-ripple-island-switch-2/"
+  checked_at: "2026-11-02"
+- title_id: "console-archives-the-drug-store"
+  has_physical_release: false
+  evidence: "official"  # (leída) ficha oficial de Nintendo: "Console Archives THE DRUG STORE | Version | Nintendo Switch 2 | Edition | Digital"; (API) search.nintendo.jp: "コンソールアーカイブス ザ・ドラッグストア", icode ABV4A, sdate "2026.10.15", sform BEE_DL, pprice: null
+  source_url: "https://www.nintendo.com/us/store/products/console-archives-the-drug-store-switch-2/"
+  checked_at: "2026-11-02"
+# (leída) nota de prensa de Hyper Games: "RETURN TO MOOMINVALLEY WHEN MOOMINTROLL: WINTER’S WARMTH COMES TO NINTENDO SWITCH 2 AND PS5 DIGITALLY ON SEPTEMBER 18 | Physical Editions for PS5 and Nintendo Switch also available on the same day" / "Physical editions from iam8bit for PlayStation 5 and Nintendo Switch will launch on the same day"; (leída) https://www.nintendo.com/us/store/products/moomintroll-winters-warmth-nintendo-switch-2-edition-switch-2/: "Edition | Digital"; (API) search.nintendo.jp: "ムーミントロール：冬のぬくもり Nintendo Switch 2 Edition", icode BT35A, sdate "2026.9.18", sform BEE_DL, pprice: null.
+- title_id: "moomintroll-winter-s-warmth"
+  has_physical_release: false
+  evidence: "official"
+  source_url: "https://www.gamespress.com/RETURN-TO-MOOMINVALLEY-WHEN-MOOMINTROLL-WINTERS-WARMTH-COMES-TO-NINTEN"
+  checked_at: "2026-11-02"
+- title_id: "one-turn-kill"
+  has_physical_release: false
+  evidence: "official"  # (leída) ficha oficial de Nintendo: "One Turn Kill | Version | Nintendo Switch 2 | Edition | Digital"; (API) search.nintendo.jp: "One Turn Kill", icode ACC6A, sdate "2026.10.29", maker "わくわくゲームズ", sform BEE_DL, pprice: null
+  source_url: "https://www.nintendo.com/us/store/products/one-turn-kill-switch-2/"
+  checked_at: "2026-11-02"
+- title_id: "sword-of-the-sea"
+  has_physical_release: false
+  evidence: "official"  # (leída) ficha oficial de Nintendo: "Sword of the Sea | Version | Nintendo Switch 2 | Edition | Digital"; (API) search.nintendo.jp: "Sword of the Sea", icode ACJUA, sdate "2026.10.30", maker "Fictions", sform BEE_DL, pprice: null
+  source_url: "https://www.nintendo.com/us/store/products/sword-of-the-sea-switch-2/"
+  checked_at: "2026-11-02"
+# (leída) https://news.denfaminicogamer.jp/news/2605132e, nota de ココフォリア株式会社: "Nintendo Switch 2 専用・ダウンロードソフト 「テーブルゲーム・ワールド CCFOLIA for Nintendo Switch 2」 を発表します。" / "販売形態：ダウンロード専用"; (API) search.nintendo.jp: "テーブルゲームワールド CCFOLIA for Nintendo Switch 2", icode AA8TA, sdate "2026.11.10", sform BEE_DL, pprice: null.
+- title_id: "table-game-world-ccfolia"
+  has_physical_release: false
+  evidence: "press_report"
+  source_url: "https://news.denfaminicogamer.jp/news/2605132e"
+  checked_at: "2026-11-02"
+- title_id: "the-spectrum-retreat-redux"
+  has_physical_release: false
+  evidence: "official"  # (leída) ficha oficial de Nintendo: "The Spectrum Retreat: Redux | Version | Nintendo Switch 2 | Edition | Digital"
+  source_url: "https://www.nintendo.com/us/store/products/the-spectrum-retreat-redux-switch-2/"
+  checked_at: "2026-11-02"
+# (API) search.nintendo.jp: "ディズニー ドリームライトバレー - Nintendo Switch 2 Edition", icode AZHDA, sdate "2026.3.26", pprice: null, sform: BEE_DL; sin entrada BEE_CARD ni fila en meisakugame.
+- title_id: "disney-dreamlight-valley"
+  has_physical_release: false
+  region: "JP"
+  evidence: "official"
+  source_url: "https://store-jp.nintendo.com/item/software/D70010000122448"
+  checked_at: "2026-11-03"

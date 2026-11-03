@@ -438,3 +438,11 @@
 - igdb_id: 379670
   name: "Love: Fall in Death"
   reason: "IGDB lo quitó de Switch 2 en el catálogo del 20-10-2026, sin entrada que lo sustituya"
+- igdb_id: 426412
+  name: "Arcade Archives 2: Prehistoric Isle"
+  reason: "Es el Arcade Archives de Switch 1, no un Arcade Archives 2 (Nintendo of America: \"Arcade Archives PREHISTORIC ISLE\", solo Nintendo Switch, 29-10-2026); sin ficha de Switch 2 en los catálogos de Nintendo EU, NA ni JP (02-11-2026)"
+- igdb_id: 27421
+  name: "Middle-earth: Shadow of War"
+  reason: "En Switch 2 solo tiene caja dentro de Middle-earth: The Shadow Bundle (middle-earth-the-shadow-bundle), con Shadow of Mordor (VideoGamesPlus.ca: \"Middle Earth: The Shadow Bundle [Game-Key Card] - Nintendo Switch 2\"); suelto se vende solo en digital como Definitive Edition (02-11-2026)"
+  former_title_id: "middle-earth-shadow-of-war"
+  merged_into: "middle-earth-the-shadow-bundle"

@@ -2346,7 +2346,9 @@
   evidence: "press_report"  # (leída) meisakugame: "Bluey’s Quest for the Gold Pen | 2専 | -"
   source_url: "https://meisakugame.garyoutensei.com/data/switch2packagekey.html"
   verified_at: "2026-10-09"
-# Coffee Talk: Tokyo: cartucho completo en NA, distribuido por PM Studios.
+# Coffee Talk: Tokyo: cartucho completo en NA (PM Studios) y JP (Soft Source, 17-12-2026). En EU hay caja de PM Studios
+# y en ASIA de Soft Source, las dos sin fuente del formato. KR (03-11-2026): sin caja coreana en Danawa (solo
+# importaciones "[해외]") y la API de Nintendo Corea solo trae "다운로드 버전".
 - sku_id: "na-coffee-talk-tokyo-standard"
   title_id: "coffee-talk-tokyo"
   region: "NA"
@@ -2361,15 +2363,14 @@
   ean: null
   evidence: "press_report"  # (leída) Nintendo Everything: "the Nintendo Switch 2 version will be offered on a full cartridge. It will not be a game-key card release"
   source_url: "https://nintendoeverything.com/coffee-talk-tokyo-reveals-nintendo-switch-2-and-switch-physical-release-pre-orders-open/"
-  verified_at: "2026-09-17"
-# Caja japonesa (full_cart) encontrada el 2026-10-09 en la lista de meisakugame; fecha de la API de Nintendo JP.
+  verified_at: "2026-11-03"  # (leída) Nintendo Everything: "Stores list it for September 4, 2026. PM Studios will be distributing."
 - sku_id: "jp-coffee-talk-tokyo-standard"
   title_id: "coffee-talk-tokyo"
   region: "JP"
   edition: "standard"
   edition_name: null
   distributor: "SOFTSOURCE"  # (leída) meisakugame, cabecera "【SOFTSOURCE】"
-  release_date: "2026-08-27"  # (API) search.nintendo.jp: BEE_CARD, sdate 2026.8.27
+  release_date: "2026-12-17"
   format: "full_cart"
   cart_size_gb: null
   download_size_gb: null
@@ -2377,7 +2378,49 @@
   ean: null
   evidence: "press_report"  # (leída) meisakugame: "コーヒートーク トーキョー | 2専 | -"
   source_url: "https://meisakugame.garyoutensei.com/data/switch2packagekey.html"
-  verified_at: "2026-10-09"
+  updates:
+    - url: "https://www.inside-games.jp/release/prtimes/20260909/305846.html"  # (leída) nota de prensa de Soft Source, 09-09-2026: "パッケージ版を2026年12月17日に日本国内のPlayStation 5、Nintendo Switch、Nintendo Switch 2向けに発売することを発表しました"
+      checked_at: "2026-11-03"
+      fields: ["release_date"]
+  verified_at: "2026-11-03"
+- sku_id: "eu-coffee-talk-tokyo-standard"
+  title_id: "coffee-talk-tokyo"
+  region: "EU"
+  edition: "standard"
+  edition_name: null
+  distributor: "PM Studios"
+  release_date: "2026-09-04"
+  format: "unknown"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: "5056635627292"
+  evidence: "unconfirmed"  # (listado) achatmoinscher y MediaMarkt ES confirman la caja de Switch 2; "Cartouche" y "Tarjeta de juego Nintendo Switch" no distinguen cartucho de key card
+  source_url: null
+  updates:
+    - url: "https://www.achatmoinscher.com/comparateur-de-prix-Jeux-video-Nintendo-Switch/coffee-talk-tokyo-jeu-nintendo-switch-2.html"  # (leída) "Code EAN | 5056635627292 | Date de sortie marché | 04/09/2026 ... Editeur | PM Studios"; MediaMarkt ES (https://www.mediamarkt.es/es/product/_nintendo-switch-2-coffee-talk-tokyo-1667037.html) da el mismo EAN, releaseDate "2026-09-04" y la marca "MERIDIEM"
+      checked_at: "2026-11-03"
+      fields: ["release_date", "distributor"]
+  verified_at: "2026-11-03"
+- sku_id: "asia-coffee-talk-tokyo-standard"
+  title_id: "coffee-talk-tokyo"
+  region: "ASIA"
+  edition: "standard"
+  edition_name: null
+  distributor: "Soft Source"
+  release_date: "2026-07-23"
+  format: "unknown"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "unconfirmed"  # (leída) la nota de Soft Source anuncia la caja asiática sin decir el tipo de cartucho
+  source_url: null
+  updates:
+    - url: "https://www.sakuraindex.jp/press-releases/coffee-talk-tokyo-will-get-a-physical-release-for-playstation-5-nintendo-switch-and-nintendo-switch-2-consoles/"  # (leída) nota de prensa de Soft Source, 18-06-2026: "Nintendo Switch and Nintendo Switch 2 versions of Coffee Talk Tokyo will be available 23 rd July 2026." y "Licensed to and Published by Soft Source Pte Ltd in ASIA"
+      checked_at: "2026-11-03"
+      fields: ["release_date", "distributor"]
+  verified_at: "2026-11-03"
 # Brigandine Abyss: cartucho completo en ASIA; game-key card en EU y NA (NIS America).
 - sku_id: "asia-brigandine-abyss-standard"
   title_id: "brigandine-abyss"
@@ -4549,6 +4592,44 @@
   evidence: "press_report"  # (leída) meisakugame: "HADES II SW2 Edition | 12兼 | -"
   source_url: "https://meisakugame.garyoutensei.com/data/switch2packagekey.html"
   verified_at: "2026-10-09"
+# EU (03-11-2026): caja con cartucho completo según Supergiant ("in stores worldwide"); Nintendo España la distribuye
+# (MediaMarkt ES). La ficha de Nintendo Life dice "Physical Release | Standard Game Card".
+- sku_id: "eu-hades-ii-standard"
+  title_id: "hades-ii"
+  region: "EU"
+  edition: "standard"
+  edition_name: null
+  distributor: "Nintendo"
+  release_date: "2025-11-20"
+  format: "full_cart"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: "0045496313289"
+  evidence: "official"  # (leída) Supergiant Games, 20-11-2025: "A retail version of Hades II on a standard physical game card is now available in stores worldwide for Nintendo Switch 2 and Nintendo Switch"
+  source_url: "https://www.supergiantgames.com/blog/hades-ii-retail-new-merch-out-now"
+  updates:
+    - url: "https://www.mediamarkt.es/es/product/_nintendo-switch-2-hades-2-1606691.html"  # (leída) MediaMarkt ES: "Nintendo Switch 2 Hades 2", brand "NINTENDO ESPAÑA S.A.(SOFTWARE)", releaseDate "2025-11-20", gtin13 "0045496313289"
+      checked_at: "2026-11-03"
+      fields: ["release_date", "distributor"]
+  verified_at: "2026-11-03"
+# ASIA (03-11-2026): hay caja asiática, sin formato. (listado) gamehouz.com (403): "(NS2) HADES II (ASIA/ENG/CHN)";
+# Play-Asia no salió en el buscador web.
+- sku_id: "asia-hades-ii-standard"
+  title_id: "hades-ii"
+  region: "ASIA"
+  edition: "standard"
+  edition_name: null
+  distributor: null
+  release_date: null
+  format: "unknown"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "unconfirmed"  # (listado) gamehouz.com: "(NS2) HADES II (ASIA/ENG/CHN)", sin tipo de cartucho
+  source_url: null
+  verified_at: "2026-11-03"
 
 # Harvest Moon: Echoes of Teradea — ficha de Nintendo Life (EU): "Standard Game Card".
 - sku_id: "eu-harvest-moon-echoes-of-teradea-standard"
@@ -16903,4 +16984,71 @@
     - url: "https://store-jp.nintendo.com/item/software/D70010000106212"  # (API) search.nintendo.jp: "レゴ® ハリー・ポッター™ コレクション / LEGO® Harry Potter™ Collection", icode ABDGB, sdate "2026.10.16", sform BEE_DOWNLOADABLE, maker "WB Games", pprice 6578
       checked_at: "2026-11-02"
       fields: ["release_date"]
+  verified_at: "2026-11-02"
+
+# 13Z: The Zodiac Trials (Clouded Leopard Entertainment): cartucho completo en Japón.
+- sku_id: "jp-13z-the-zodiac-trials-standard"
+  title_id: "13z-the-zodiac-trials"
+  region: "JP"
+  edition: "standard"
+  edition_name: null
+  distributor: "Clouded Leopard Entertainment"  # (leída) meisakugame, cabecera "【クラウディッドレパードエンタテインメント】"
+  release_date: null
+  format: "full_cart"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) meisakugame: "【クラウディッドレパードエンタテインメント】 | 形式 | 容量 | 13Z -十三座戦記- | 2専 | -"
+  source_url: "https://meisakugame.garyoutensei.com/data/switch2packagekey.html"
+  verified_at: "2026-11-02"
+
+# Seeker Eye (MAGES.): la versión de Switch 2 sale en caja como game-key card en Japón, estándar y limitada.
+- sku_id: "jp-seeker-eye-standard"
+  title_id: "seeker-eye"
+  region: "JP"
+  edition: "standard"
+  edition_name: null
+  distributor: "MAGES."  # (leída) Final Weapon: "MAGES. has revealed the opening movie for occult suspense visual novel Seeker Eye"
+  release_date: "2027-02-25"  # (leída) Final Weapon: "the game’s February 25, 2027 release date for Japan"
+  format: "game_key_card"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) Final Weapon: "The Nintendo Switch version will only be available as a digital download, with the Switch 2 version coming on a game key card. A standard edition, digital deluxe edition, and limited edition will be available."
+  source_url: "https://finalweapon.net/2026/10/30/seeker-eye-release-date/"
+  verified_at: "2026-11-02"
+- sku_id: "jp-seeker-eye-collectors"
+  title_id: "seeker-eye"
+  region: "JP"
+  edition: "collectors"
+  edition_name: "Limited Edition"  # (leída) Final Weapon: "Limited edition copies include a visual book and a soundtrack DVD."
+  distributor: "MAGES."
+  release_date: "2027-02-25"
+  format: "game_key_card"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) Final Weapon: "the Switch 2 version coming on a game key card. A standard edition, digital deluxe edition, and limited edition will be available."
+  source_url: "https://finalweapon.net/2026/10/30/seeker-eye-release-date/"
+  verified_at: "2026-11-02"
+
+# Middle-earth: The Shadow Bundle (Shadow of Mordor GOTY + Shadow of War Definitive): caja en Norteamérica como
+# game-key card. En Switch 2 Shadow of War no tiene caja propia.
+- sku_id: "na-middle-earth-the-shadow-bundle-standard"
+  title_id: "middle-earth-the-shadow-bundle"
+  region: "NA"
+  edition: "standard"
+  edition_name: null
+  distributor: "Deep Silver"  # (leída) VideoGamesPlus.ca: "Middle Earth: The Shadow Bundle [Game-Key Card] - Nintendo Switch 2 (PRE-ORDER) | by Deep Silver"
+  release_date: "2027-03-25"  # (leída) VideoGamesPlus.ca: "RELEASE DATE: MARCH 25, 2027"; Nintendo Everything, reservas de EE. UU. del 01-11-2026: "Middle Earth: The Shadow Bundle (new) – March 25 – Amazon"
+  format: "game_key_card"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "retailer_listing"  # (leída) VideoGamesPlus.ca: "Middle Earth: The Shadow Bundle [Game-Key Card] - Nintendo Switch 2 (PRE-ORDER)", "$89.99 CAD"
+  source_url: "https://videogamesplus.ca/products/middle-earth-the-shadow-bundle-game-ey-card-nintendo-switch-2-pre-order"
   verified_at: "2026-11-02"
