@@ -22,6 +22,16 @@ from switch2db.worklist import list_missing_regions
 # when known, but a title can be completed without them.
 COMPLETED_SKU_FIELDS = ("distributor", "release_date")
 
+# Search APIs and JSON feeds of the stores: a value read there keeps its (API) tag in the comment, but its
+# link on the site is the product page of the store, which a person can open.
+API_LINK_MARKERS = (
+    "search.nintendo.jp/",
+    "searching.nintendo-europe.com/",
+    "algolia.net/",
+    "nintendo.com/kr/api/",
+    "nintendo.com/hk/api/",
+)
+
 
 def find_duplicates(values: list[str]) -> list[str]:
     """Return, sorted, the values that appear more than once."""
@@ -158,6 +168,26 @@ def find_new_title_errors(titles: list[Title], skus: list[Sku], releases: list[P
         f"titles.yaml: '{title.title_id}' is new but has SKUs or physical_release.yaml entries; use refresh"
         for title in titles
         if title.status == TitleStatus.NEW and title.title_id in researched_title_ids
+    ]
+
+
+def is_api_link(url: object) -> bool:
+    """Whether a link points to a store search API or JSON feed instead of a page for a person."""
+    return url is not None and any(marker in str(url) for marker in API_LINK_MARKERS)
+
+
+def find_api_link_errors(titles: list[Title], skus: list[Sku], releases: list[PhysicalRelease]) -> list[str]:
+    """Detect source_url and updates links that point to an API: the site publishes them as links."""
+    links: list[tuple[str, object]] = [
+        (f"titles.yaml: '{title.title_id}'", update.url) for title in titles for update in title.updates
+    ]
+    links += [(f"skus.yaml: '{sku.sku_id}'", sku.source_url) for sku in skus]
+    links += [(f"skus.yaml: '{sku.sku_id}'", update.url) for sku in skus for update in sku.updates]
+    links += [(f"physical_release.yaml: '{release.title_id}'", release.source_url) for release in releases]
+    return [
+        f"{where} links to an API ({url}); use the store page or the article"
+        for where, url in links
+        if is_api_link(url)
     ]
 
 
@@ -318,6 +348,7 @@ def collect_integrity_errors(
         *find_excluded_title_errors(titles, excluded),
         *find_orphan_sku_errors(titles, skus),
         *find_physical_release_errors(titles, releases, skus),
+        *find_api_link_errors(titles, skus, releases),
         *find_new_title_errors(titles, skus, releases),
         *find_last_checked_errors(titles, skus, releases),
         *find_completed_title_errors(titles, skus, releases),

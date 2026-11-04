@@ -5,6 +5,7 @@ import pytest
 from switch2db.integrity import (
     collect_integrity_errors,
     collect_integrity_warnings,
+    find_api_link_errors,
     find_cart_size_warnings,
     find_completed_title_errors,
     find_cover_errors,
@@ -30,6 +31,7 @@ from switch2db.models import (
     PhysicalRelease,
     Region,
     Sku,
+    SourceUpdate,
     Title,
     TitleStatus,
 )
@@ -334,6 +336,35 @@ def test_find_physical_release_errors_reports_region_entry_next_to_whole_game_en
 
     assert find_physical_release_errors([title], releases, []) == [
         "physical_release.yaml: 'example-game' has an entry for KR and one for the whole game"
+    ]
+
+
+def test_find_api_link_errors_reports_api_links_and_accepts_store_pages(
+    title: Title, eu_key_card_sku: Sku
+) -> None:
+    api_update = SourceUpdate.model_validate(
+        {
+            "url": "https://searching.nintendo-europe.com/en/select?q=example&wt=json",
+            "checked_at": "2026-09-16",
+            "fields": ["release_date"],
+        }
+    )
+    page_update = api_update.model_copy(
+        update={"url": "https://www.nintendo.com/en-gb/Games/Nintendo-Switch-2-games/Example-1.html"}
+    )
+    sku = eu_key_card_sku.model_copy(update={"updates": [api_update, page_update]})
+    release = build_sourced_no_box("example-game", Region.JP).model_copy(
+        update={"source_url": "https://search.nintendo.jp/nintendo_soft/search.json?q=example"}
+    )
+
+    errors = find_api_link_errors([title], [sku], [release])
+
+    assert errors == [
+        "skus.yaml: 'eu-example-game-standard' links to an API "
+        "(https://searching.nintendo-europe.com/en/select?q=example&wt=json); "
+        "use the store page or the article",
+        "physical_release.yaml: 'example-game' links to an API "
+        "(https://search.nintendo.jp/nintendo_soft/search.json?q=example); use the store page or the article",
     ]
 
 

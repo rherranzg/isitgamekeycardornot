@@ -869,19 +869,19 @@
 - title_id: "g-mode-archives-shin-megami-tensei-tokyo-requiem"
   has_physical_release: false
   evidence: "official"
-  source_url: "https://search.nintendo.jp/nintendo_soft/search.json?q=%E6%9D%B1%E4%BA%AC%E3%83%AC%E3%82%AF%E3%82%A4%E3%82%A8%E3%83%A0&limit=40"
+  source_url: "https://store-jp.nintendo.com/item/software/D70010000100185"
   checked_at: "2026-09-19"
 # (API) search.nintendo.jp: "G-MODEアーカイブス+ ステラデウス 錬金術の時間" solo en Switch 1 (hard: 1_HAC), pprice: null, sform: HAC_DL.
 - title_id: "g-mode-archives-stella-deus-the-age-of-alchemy"
   has_physical_release: false
   evidence: "official"
-  source_url: "https://search.nintendo.jp/nintendo_soft/search.json?q=%E3%82%B9%E3%83%86%E3%83%A9%E3%83%87%E3%82%A6%E3%82%B9&limit=40"
+  source_url: "https://store-jp.nintendo.com/item/software/D70010000112360"
   checked_at: "2026-09-19"
 # (API) search.nintendo.jp: "G-MODEアーカイブス+ ステラデウス 漆黒の精霊" solo en Switch 1 (hard: 1_HAC), pprice: null, sform: HAC_DL.
 - title_id: "g-mode-archives-stella-deus-the-spirit-of-darkness"
   has_physical_release: false
   evidence: "official"
-  source_url: "https://search.nintendo.jp/nintendo_soft/search.json?q=%E3%82%B9%E3%83%86%E3%83%A9%E3%83%87%E3%82%A6%E3%82%B9&limit=40"
+  source_url: "https://store-jp.nintendo.com/item/software/D70010000104795"
   checked_at: "2026-09-19"
 - title_id: "goat-simulator-3"
   has_physical_release: false
@@ -1327,7 +1327,7 @@
 - title_id: "blue-reflection-second-light"
   has_physical_release: false
   evidence: "official"
-  source_url: "https://search.nintendo.jp/nintendo_soft/search.json?q=BLUE%20REFLECTION&limit=40"
+  source_url: "https://store-jp.nintendo.com/item/software/D70010000109873"
   checked_at: "2026-09-19"
 
 # Tanda del 22-09-2026 (lifted..mina-the-hollower).
@@ -1363,7 +1363,7 @@
 - title_id: "punyan-for-nintendo-switch-2"
   has_physical_release: false
   evidence: "official"
-  source_url: "https://search.nintendo.jp/nintendo_soft/search.json?q=PUNYAN&limit=50"
+  source_url: "https://store-jp.nintendo.com/item/software/D70010000105964"
   checked_at: "2026-09-22"
 
 # Pritto Prisoner - Nintendo Switch 2 Edition (PinCool): ya lanzado y sin caja en Japón.
@@ -1371,7 +1371,7 @@
 - title_id: "pritto-prisoner"
   has_physical_release: false
   evidence: "official"
-  source_url: "https://search.nintendo.jp/nintendo_soft/search.json?q=PRITTO&limit=50"
+  source_url: "https://store-jp.nintendo.com/item/software/D70010000103769"
   checked_at: "2026-09-22"
 
 # Switch 2 Editions que son solo una mejora gratuita del juego de Switch 1 (ficha de Nintendo Life,
@@ -1469,12 +1469,12 @@
 - title_id: "super-nodage-game-maker"
   has_physical_release: false
   evidence: "official"  # (API) search.nintendo.jp: "スーパー野田ゲーMAKER", hard 1_HAC, sdate "2024.12.19", pprice: null, sform HAC_DL
-  source_url: "https://search.nintendo.jp/nintendo_soft/search.json?q=%E3%83%8E%E3%83%80%E3%82%B2%E3%83%BC&limit=50"
+  source_url: "https://store-jp.nintendo.com/item/software/D70010000069810"
   checked_at: "2026-09-23"
 - title_id: "tayutama-it-s-happy-days"
   has_physical_release: false
   evidence: "official"  # (API) search.nintendo.jp: "タユタマ-It's happy days-", hard 1_HAC, sdate "2025.10.23", pprice: null, sform HAC_DL; (listado) Nintendo ZA: "Nintendo Switch download software"
-  source_url: "https://search.nintendo.jp/nintendo_soft/search.json?q=%E3%82%BF%E3%83%A6%E3%82%BF%E3%83%9E&limit=50"
+  source_url: "https://store-jp.nintendo.com/item/software/D70010000095544"
   checked_at: "2026-09-23"
 - title_id: "super-world-war"
   has_physical_release: false
@@ -1486,7 +1486,7 @@
 - title_id: "sushi-bar-moebius"
   has_physical_release: false
   evidence: "official"  # (API) search.nintendo.jp: "元祖 落とし寿司 めびうす for Nintendo Switch 2", icode ABSDA, sdate "2026.2.26", pprice: null, sform BEE_DL
-  source_url: "https://search.nintendo.jp/nintendo_soft/search.json?q=%E5%AF%BF%E5%8F%B8&limit=50"
+  source_url: "https://store-jp.nintendo.com/item/software/D70010000114733"
   checked_at: "2026-09-23"
 
 # Anuncio oficial: caja solo en PS5.
@@ -1549,32 +1549,32 @@
 - title_id: "the-fox-s-way-home"
   has_physical_release: false
   evidence: "official"  # (API) search.nintendo.jp: "狐のかえり道 Nintendo Switch 2 Edition", icode BMKJA, sdate "2026.2.26", pprice: null; Nintendo Life: "Upgrade Path | Via The Fox's Way Home (Switch eShop) | $2.99"
-  source_url: "https://search.nintendo.jp/nintendo_soft/search.json?q=%E3%82%AD%E3%83%84%E3%83%8D&limit=50"
+  source_url: "https://store-jp.nintendo.com/item/software/D70010000116246"
   checked_at: "2026-09-23"
 - title_id: "the-new-denpa-men"
   has_physical_release: false
   evidence: "official"  # (API) search.nintendo.jp: "New 電波人間のRPG FREE！", icode ABSEA, sdate "2026.4.6", pprice: null
-  source_url: "https://search.nintendo.jp/nintendo_soft/search.json?q=%E3%83%87%E3%83%B3%E3%83%91&limit=50"
+  source_url: "https://store-jp.nintendo.com/item/software/D70010000114740"
   checked_at: "2026-09-23"
 - title_id: "the-prince-of-tennis-doki-doki-survival-eternal-passion-tie-break-game"
   has_physical_release: false
   evidence: "official"  # (API) search.nintendo.jp: "テニスの王子様 ぎゅ～っと！ ドキドキサバイバル Tie break ♡ game Nintendo Switch 2 Edition", icode BRKZA, sdate "2026.7.30", pprice: null
-  source_url: "https://search.nintendo.jp/nintendo_soft/search.json?q=%E3%83%86%E3%83%8B%E3%82%B9%E3%81%AE%E7%8E%8B%E5%AD%90%E6%A7%98&limit=50"
+  source_url: "https://store-jp.nintendo.com/item/software/D70010000124121"
   checked_at: "2026-09-23"
 - title_id: "the-prince-of-tennis-sweet-school-festival-0-40-and-more"
   has_physical_release: false
   evidence: "official"  # (API) search.nintendo.jp: "テニスの王子様 も～っと 学園祭の王子様 ♡-40 and more... Nintendo Switch 2 Edition", icode BRKXA, sdate "2026.7.30", pprice: null
-  source_url: "https://search.nintendo.jp/nintendo_soft/search.json?q=%E3%83%86%E3%83%8B%E3%82%B9%E3%81%AE%E7%8E%8B%E5%AD%90%E6%A7%98&limit=50"
+  source_url: "https://store-jp.nintendo.com/item/software/D70010000121183"
   checked_at: "2026-09-23"
 - title_id: "the-rumble-fish-2-nintendo-switch-2-edition"
   has_physical_release: false
   evidence: "official"  # (API) search.nintendo.jp: "ザ・ランブルフィッシュ２- Nintendo Switch 2 Edition", icode A828A, sdate "2026.1.22", pprice: null; Nintendo Life: "Upgrade Path | Via The Rumble Fish 2 (Switch eShop) | $4.99"
-  source_url: "https://search.nintendo.jp/nintendo_soft/search.json?q=%E3%83%A9%E3%83%B3%E3%83%96%E3%83%AB%E3%83%95%E3%82%A3%E3%83%83%E3%82%B7%E3%83%A5&limit=50"
+  source_url: "https://store-jp.nintendo.com/item/software/D70010000105102"
   checked_at: "2026-09-23"
 - title_id: "touhou-yukkuri-mountain"
   has_physical_release: false
   evidence: "official"  # (API) search.nintendo.jp: "東方ゆっくりマウンテン Nintendo Switch 2 Edition", icode BVFXA, sdate "2026.5.28", pprice: null; Nintendo Life: "Upgrade Path | Via Touhou Yukkuri Mountain (Switch eShop) | $1.49"
-  source_url: "https://search.nintendo.jp/nintendo_soft/search.json?q=%E6%9D%B1%E6%96%B9&limit=50"
+  source_url: "https://store-jp.nintendo.com/item/software/D70010000126102"
   checked_at: "2026-09-23"
 
 # Juegos de Switch 1 (compatibilidad o actualización gratuita), sin caja propia de Switch 2.
@@ -1744,7 +1744,7 @@
 - title_id: "skyship-quest-story"
   has_physical_release: false
   evidence: "official"
-  source_url: "https://search.nintendo.jp/nintendo_soft/search.json?q=%E9%A3%9B%E7%A9%BA%E8%89%87%E3%82%AF%E3%82%A8%E3%82%B9%E3%83%88%E5%B3%B6&limit=40"
+  source_url: "https://store-jp.nintendo.com/item/software/D70010000125689"
   checked_at: "2026-09-24"
 
 # Títulos de salida reciente buscados de nuevo el 09-10-2026, sin caja de Switch 2.
@@ -1889,98 +1889,98 @@
   has_physical_release: false
   region: "JP"
   evidence: "official"
-  source_url: "https://search.nintendo.jp/nintendo_soft/search.json?q=1000xResist&limit=50"
+  source_url: "https://store-jp.nintendo.com/item/software/D70010000132495"
   checked_at: "2026-10-09"
 # (API) search.nintendo.jp: "Bubsy 4D (やまねこバブジー 4D)", sdate "2026.5.28", pprice: null, sform: BEE_DL; sin entrada BEE_CARD.
 - title_id: "bubsy-4d"
   has_physical_release: false
   region: "JP"
   evidence: "official"
-  source_url: "https://search.nintendo.jp/nintendo_soft/search.json?q=Bubsy%204D&limit=50"
+  source_url: "https://store-jp.nintendo.com/item/software/D70010000105508"
   checked_at: "2026-10-09"
 # (API) search.nintendo.jp: "ChromaGun 2: Dye Hard", sdate "2026.2.12", pprice: null, sform: BEE_DL; sin entrada BEE_CARD.
 - title_id: "chromagun-2-dye-hard"
   has_physical_release: false
   region: "JP"
   evidence: "official"
-  source_url: "https://search.nintendo.jp/nintendo_soft/search.json?q=ChromaGun%202%3A%20Dye%20Hard&limit=50"
+  source_url: "https://store-jp.nintendo.com/item/software/D70010000105910"
   checked_at: "2026-10-09"
 # (API) search.nintendo.jp: "Citizen Sleeper 2: Starward Vector – Nintendo Switch 2 Edition", sdate "2026.6.25", pprice: null, sform: BEE_DL; sin entrada BEE_CARD. fangamer.jp (la tienda japonesa de Fangamer) no vende su caja de Switch 2.
 - title_id: "citizen-sleeper-2-starward-vector"
   has_physical_release: false
   region: "JP"
   evidence: "official"
-  source_url: "https://search.nintendo.jp/nintendo_soft/search.json?q=Citizen%20Sleeper%202%3A%20Starward%20Vector&limit=50"
+  source_url: "https://store-jp.nintendo.com/item/software/D70010000125793"
   checked_at: "2026-10-09"
 # (API) search.nintendo.jp: "Hollow Knight（ホロウナイト）– Nintendo Switch 2 Edition", sdate "2026.2.6", pprice: null, sform: BEE_DL; sin entrada BEE_CARD. fangamer.jp (la tienda japonesa de Fangamer) no vende su caja de Switch 2.
 - title_id: "hollow-knight"
   has_physical_release: false
   region: "JP"
   evidence: "official"
-  source_url: "https://search.nintendo.jp/nintendo_soft/search.json?q=Hollow%20Knight&limit=50"
+  source_url: "https://store-jp.nintendo.com/item/software/D70010000117088"
   checked_at: "2026-10-09"
 # (API) search.nintendo.jp: "Layers of Fear: The Final Masterpiece Edition", sdate "2025.12.19", pprice: null, sform: BEE_DL; sin entrada BEE_CARD.
 - title_id: "layers-of-fear-the-final-masterpiece-edition"
   has_physical_release: false
   region: "JP"
   evidence: "official"
-  source_url: "https://search.nintendo.jp/nintendo_soft/search.json?q=Layers%20of%20Fear%3A%20The%20Final%20Masterpiece%20Edition&limit=50"
+  source_url: "https://store-jp.nintendo.com/item/software/D70010000110576"
   checked_at: "2026-10-09"
 # (API) search.nintendo.jp: "Police Simulator: Patrol Officers", sdate "2026.6.4", pprice: null, sform: BEE_DL; sin entrada BEE_CARD.
 - title_id: "police-simulator-patrol-officers"
   has_physical_release: false
   region: "JP"
   evidence: "official"
-  source_url: "https://search.nintendo.jp/nintendo_soft/search.json?q=Police%20Simulator%3A%20Patrol%20Officers&limit=50"
+  source_url: "https://store-jp.nintendo.com/item/software/D70010000121320"
   checked_at: "2026-10-09"
 # (API) search.nintendo.jp: "Smalland: Survive the Wilds", sdate "2026.5.15", pprice: null, sform: BEE_DL; sin entrada BEE_CARD.
 - title_id: "smalland-survive-the-wilds"
   has_physical_release: false
   region: "JP"
   evidence: "official"
-  source_url: "https://search.nintendo.jp/nintendo_soft/search.json?q=Smalland%3A%20Survive%20the%20Wilds&limit=50"
+  source_url: "https://store-jp.nintendo.com/item/software/D70010000110338"
   checked_at: "2026-10-09"
 # (API) search.nintendo.jp: "Stardew Valley: Nintendo Switch 2 Edition", sdate "2026.3.19", pprice: null, sform: BEE_DL; sin entrada BEE_CARD. fangamer.jp (la tienda japonesa de Fangamer) no vende su caja de Switch 2.
 - title_id: "stardew-valley"
   has_physical_release: false
   region: "JP"
   evidence: "official"
-  source_url: "https://search.nintendo.jp/nintendo_soft/search.json?q=Stardew%20Valley&limit=50"
+  source_url: "https://store-jp.nintendo.com/item/software/D70010000105952"
   checked_at: "2026-10-09"
 # (API) search.nintendo.jp: "Teenage Mutant Ninja Turtles スプリンターの運命 Nintendo Switch 2 Edition", sdate "2025.12.18", pprice: null, sform: BEE_DL; sin entrada BEE_CARD.
 - title_id: "teenage-mutant-ninja-turtles-splintered-fate"
   has_physical_release: false
   region: "JP"
   evidence: "official"
-  source_url: "https://search.nintendo.jp/nintendo_soft/search.json?q=Teenage%20Mutant%20Ninja%20Turtles%3A%20Splintered%20Fate&limit=50"
+  source_url: "https://store-jp.nintendo.com/item/software/D70010000112488"
   checked_at: "2026-10-09"
 # (API) search.nintendo.jp: "Virtua Fighter 5 R.E.V.O. World Stage", sdate "2026.3.26", pprice: null, sform: BEE_DL; sin entrada BEE_CARD.
 - title_id: "virtua-fighter-5-r-e-v-o"
   has_physical_release: false
   region: "JP"
   evidence: "official"
-  source_url: "https://search.nintendo.jp/nintendo_soft/search.json?q=Virtua%20Fighter%205%20R.E.V.O.&limit=50"
+  source_url: "https://store-jp.nintendo.com/item/software/D70010000102124"
   checked_at: "2026-10-09"
 # (API) search.nintendo.jp: "Wanderstop", sdate "2026.6.23", pprice: null, sform: BEE_DL; sin entrada BEE_CARD.
 - title_id: "wanderstop"
   has_physical_release: false
   region: "JP"
   evidence: "official"
-  source_url: "https://search.nintendo.jp/nintendo_soft/search.json?q=Wanderstop&limit=50"
+  source_url: "https://store-jp.nintendo.com/item/software/D70010000114426"
   checked_at: "2026-10-09"
 # (API) search.nintendo.jp: "Warhammer 40,000: Rogue Trader", sdate "2025.12.11", pprice: null, sform: BEE_DL; sin entrada BEE_CARD.
 - title_id: "warhammer-40-000-rogue-trader"
   has_physical_release: false
   region: "JP"
   evidence: "official"
-  source_url: "https://search.nintendo.jp/nintendo_soft/search.json?q=Warhammer%2040%2C000%3A%20Rogue%20Trader&limit=50"
+  source_url: "https://store-jp.nintendo.com/item/software/D70010000099780"
   checked_at: "2026-10-09"
 # (API) search.nintendo.jp: "Yooka-Replaylee", sdate "2025.10.9", pprice: null, sform: BEE_DL; sin entrada BEE_CARD.
 - title_id: "yooka-replaylee"
   has_physical_release: false
   region: "JP"
   evidence: "official"
-  source_url: "https://search.nintendo.jp/nintendo_soft/search.json?q=Yooka-Replaylee&limit=50"
+  source_url: "https://store-jp.nintendo.com/item/software/D70010000106662"
   checked_at: "2026-10-09"
 # (leída) Perfectly Nintendo: "Retail (Japan-only): 10,406 Yen."
 - title_id: "a-train-all-aboard-tourism-nintendo-switch-2-edition"
@@ -2081,7 +2081,7 @@
   has_physical_release: false
   region: "JP"
   evidence: "official"
-  source_url: "https://search.nintendo.jp/nintendo_soft/search.json?q=%E3%83%8F%E3%83%83%E3%83%94%E3%83%BC%E3%83%AB%E3%83%BC%E3%83%88&limit=50"
+  source_url: "https://store-jp.nintendo.com/item/software/D70010000106371"
   checked_at: "2026-10-13"
 # Completado del 13-10-2026 (los 10 pending siguientes, de Everbloom a Garden Souls).
 - title_id: "exstetra"
@@ -2095,14 +2095,14 @@
   has_physical_release: false
   region: "JP"
   evidence: "official"
-  source_url: "https://search.nintendo.jp/nintendo_soft/search.json?q=%E3%82%A8%E3%82%AF%E3%82%B9%E3%83%86%E3%83%88%E3%83%A9&limit=50"
+  source_url: "https://store-jp.nintendo.com/item/software/D70010000126590"
   checked_at: "2026-10-13"
 # (API) search.nintendo.jp: "Hello Kitty Island Adventure Nintendo Switch 2 Edition", icode BELHA, sdate "2025.11.14", maker "Sunblink", pprice: null, sform: BEE_DL; sin entrada BEE_CARD ni fila en meisakugame (ni del Friendship Bundle).
 - title_id: "hello-kitty-island-adventure"
   has_physical_release: false
   region: "JP"
   evidence: "official"
-  source_url: "https://search.nintendo.jp/nintendo_soft/search.json?q=Hello%20Kitty&limit=50"
+  source_url: "https://store-jp.nintendo.com/item/software/D70010000109855"
   checked_at: "2026-10-13"
 
 # Novedades del 03-10 al 13-10-2026.
@@ -2192,7 +2192,7 @@
   has_physical_release: false
   region: "JP"
   evidence: "official"  # (API) search.nintendo.jp: "LEGO® Voyagers", icode ABBNA, sdate "2025.9.15", pprice: null, sform: BEE_DL; sin entrada BEE_CARD ni fila en meisakugame
-  source_url: "https://search.nintendo.jp/nintendo_soft/search.json?q=LEGO%C2%AE%20Voyagers&limit=40"
+  source_url: "https://store-jp.nintendo.com/item/software/D70010000105067"
   checked_at: "2026-10-13"
 - title_id: "marupoyo-the-round-chick-s-adventure"
   has_physical_release: false
@@ -2204,7 +2204,7 @@
   has_physical_release: false
   region: "JP"
   evidence: "official"  # (API) search.nintendo.jp: "Mina the Hollower - Nintendo Switch 2 Edition", icode BJGVA, sdate "2026.5.29", maker "ヨットクラブゲームズ", pprice: null, sform: BEE_DL; sin entrada BEE_CARD ni fila en meisakugame
-  source_url: "https://search.nintendo.jp/nintendo_soft/search.json?q=Mina%20the%20Hollower&limit=40"
+  source_url: "https://store-jp.nintendo.com/item/software/D70010000127973"
   checked_at: "2026-10-13"
 
 # Completado el 13-10-2026 (tercera tanda de títulos pending sin investigar).
@@ -2271,13 +2271,13 @@
   has_physical_release: false
   region: "JP"
   evidence: "official"  # (API) search.nintendo.jp: "RollerCoaster Tycoon® Classic™ Nintendo Switch 2 Edition", icode BKPGA, sdate "2026.6.4", pprice: null, sform: BEE_DL; sin entrada BEE_CARD ni fila en meisakugame
-  source_url: "https://search.nintendo.jp/nintendo_soft/search.json?q=RollerCoaster%20Tycoon&limit=40"
+  source_url: "https://store-jp.nintendo.com/item/software/D70010000127475"
   checked_at: "2026-10-13"
 - title_id: "possessor-s"
   has_physical_release: false
   region: "JP"
   evidence: "official"  # (API) search.nintendo.jp: "Possessor(s)", icode ABBJA, sdate "2026.4.30", pprice: null, sform: BEE_DL; sin entrada BEE_CARD ni fila en meisakugame
-  source_url: "https://search.nintendo.jp/nintendo_soft/search.json?q=Possessor&limit=40"
+  source_url: "https://store-jp.nintendo.com/item/software/D70010000104908"
   checked_at: "2026-10-13"
 - title_id: "romancing-saga-2-revenge-of-the-seven"
   has_physical_release: false
@@ -2379,7 +2379,7 @@
   has_physical_release: false
   region: "JP"
   evidence: "official"  # (API) search.nintendo.jp: "Royal Revolt Survivors", icode ABY6A, sdate "2026.3.17", pprice: null, sform: BEE_DL; sin entrada BEE_CARD ni fila en meisakugame
-  source_url: "https://search.nintendo.jp/nintendo_soft/search.json?q=Royal%20Revolt%20Survivors&limit=40"
+  source_url: "https://store-jp.nintendo.com/item/software/D70010000119055"
   checked_at: "2026-10-13"
 - title_id: "rugby-league-26"
   has_physical_release: false
@@ -2397,7 +2397,7 @@
   has_physical_release: false
   region: "JP"
   evidence: "official"  # (API) search.nintendo.jp: "Scott Pilgrim EX", icode ABJ4A, sdate "2026.3.5", pprice: null, sform: BEE_DL; sin entrada BEE_CARD ni fila en meisakugame
-  source_url: "https://search.nintendo.jp/nintendo_soft/search.json?q=Scott%20Pilgrim%20EX&limit=40"
+  source_url: "https://store-jp.nintendo.com/item/software/D70010000110273"
   checked_at: "2026-10-13"
 - title_id: "sektori"
   has_physical_release: false
@@ -2409,7 +2409,7 @@
   has_physical_release: false
   region: "JP"
   evidence: "official"  # (API) search.nintendo.jp: "Sektori", icode ABY5A, sdate "2026.5.14", pprice: null, sform: BEE_DL; sin entrada BEE_CARD ni fila en meisakugame
-  source_url: "https://search.nintendo.jp/nintendo_soft/search.json?q=Sektori&limit=40"
+  source_url: "https://store-jp.nintendo.com/item/software/D70010000119977"
   checked_at: "2026-10-13"
 - title_id: "shadow-tactics-blades-of-the-shogun-aikos-choice"
   has_physical_release: false
@@ -2421,7 +2421,7 @@
   has_physical_release: false
   region: "JP"
   evidence: "official"  # (API) search.nintendo.jp: " Shadow Tactics: Blades of the Shogun - Aiko's Choice", icode ABJCA, sdate "2026.3.19", pprice: null, sform: BEE_DL; sin entrada BEE_CARD ni fila en meisakugame
-  source_url: "https://search.nintendo.jp/nintendo_soft/search.json?q=Shadow%20Tactics&limit=40"
+  source_url: "https://store-jp.nintendo.com/item/software/D70010000109932"
   checked_at: "2026-10-13"
 - title_id: "sombras-negative-frames"
   has_physical_release: false
@@ -2449,21 +2449,21 @@
   has_physical_release: false
   region: "JP"
   evidence: "official"
-  source_url: "https://search.nintendo.jp/nintendo_soft/search.json?q=Bandit%20Trap&limit=40"
+  source_url: "https://store-jp.nintendo.com/item/software/D70010000115540"
   checked_at: "2026-10-14"
 # (API) search.nintendo.jp: "違う冬のぼくら", icode ABPZA, maker "講談社", sdate "2026.7.30", pprice: null, sform: BEE_DL; sin entrada BEE_CARD ni fila en meisakugame.
 - title_id: "bokura"
   has_physical_release: false
   region: "JP"
   evidence: "official"
-  source_url: "https://search.nintendo.jp/nintendo_soft/search.json?q=%E9%81%95%E3%81%86%E5%86%AC%E3%81%AE%E3%81%BC%E3%81%8F%E3%82%89&limit=40"
+  source_url: "https://store-jp.nintendo.com/item/software/D70010000113814"
   checked_at: "2026-10-14"
 # (API) search.nintendo.jp: "違う星のぼくら", icode AA6EA, maker "講談社", sdate "2025.8.7", pprice: null, sform: BEE_DL; sin entrada BEE_CARD ni fila en meisakugame.
 - title_id: "bokura-planet"
   has_physical_release: false
   region: "JP"
   evidence: "official"
-  source_url: "https://search.nintendo.jp/nintendo_soft/search.json?q=%E9%81%95%E3%81%86%E6%98%9F%E3%81%AE%E3%81%BC%E3%81%8F%E3%82%89&limit=40"
+  source_url: "https://store-jp.nintendo.com/item/software/D70010000102087"
   checked_at: "2026-10-14"
 # (leída) Nintendo Life ficha: "Physical Release | None (Digital Only) | Release Date | Nintendo eShop | 7th Aug 2025 — $5.49 | 7th Aug 2025 — £4.64"
 - title_id: "bokura-planet"
@@ -2485,42 +2485,42 @@
   has_physical_release: false
   region: "JP"
   evidence: "official"
-  source_url: "https://search.nintendo.jp/nintendo_soft/search.json?q=Darwin&limit=40"
+  source_url: "https://store-jp.nintendo.com/item/software/D70010000104258"
   checked_at: "2026-10-14"
 # (API) search.nintendo.jp: "デストロイ オール ヒューマンズ！", icode ABSBB, maker "THQ Nordic ジャパン", sdate "2026.6.23", pprice: null, sform: BEE_DL; sin entrada BEE_CARD ni fila en meisakugame.
 - title_id: "destroy-all-humans"
   has_physical_release: false
   region: "JP"
   evidence: "official"
-  source_url: "https://search.nintendo.jp/nintendo_soft/search.json?q=%E3%83%87%E3%82%B9%E3%83%88%E3%83%AD%E3%82%A4&limit=40"
+  source_url: "https://store-jp.nintendo.com/item/software/D70010000121351"
   checked_at: "2026-10-14"
 # (API) search.nintendo.jp: "Destroy All Humans! 2 - Reprobed", icode ABSCB, maker "THQ Nordic ジャパン", sdate "2026.9.17", pprice: null, sform: BEE_DL; sin entrada BEE_CARD ni fila en meisakugame.
 - title_id: "destroy-all-humans-2-reprobed"
   has_physical_release: false
   region: "JP"
   evidence: "official"
-  source_url: "https://search.nintendo.jp/nintendo_soft/search.json?q=Destroy%20All%20Humans&limit=40"
+  source_url: "https://store-jp.nintendo.com/item/software/D70010000121375"
   checked_at: "2026-10-14"
 # (API) search.nintendo.jp: "Fallout 4: Anniversary Edition", icode AA4FA, maker "ベセスダ・ソフトワークス", sdate "2026.2.25", pprice: null, sform: BEE_DL; sin entrada BEE_CARD ni fila en meisakugame.
 - title_id: "fallout-4-anniversary-edition"
   has_physical_release: false
   region: "JP"
   evidence: "official"
-  source_url: "https://search.nintendo.jp/nintendo_soft/search.json?q=Fallout%204&limit=40"
+  source_url: "https://store-jp.nintendo.com/item/software/D70010000101069"
   checked_at: "2026-10-14"
 # (API) search.nintendo.jp: "グッドナイト・ユニバース", icode AAVZA, maker "Skybound Games", sdate "2025.11.11", pprice: null, sform: BEE_DL; sin entrada BEE_CARD ni fila en meisakugame.
 - title_id: "goodnight-universe"
   has_physical_release: false
   region: "JP"
   evidence: "official"
-  source_url: "https://search.nintendo.jp/nintendo_soft/search.json?q=%E3%82%B0%E3%83%83%E3%83%89%E3%83%8A%E3%82%A4%E3%83%88&limit=40"
+  source_url: "https://store-jp.nintendo.com/item/software/D70010000098179"
   checked_at: "2026-10-14"
 # (API) search.nintendo.jp: "Grim Trials", icode AB3KA, maker "SOFT SOURCE", sdate "2026.8.20", pprice: null, sform: BEE_DL; sin entrada BEE_CARD ni fila en meisakugame.
 - title_id: "grim-trials"
   has_physical_release: false
   region: "JP"
   evidence: "official"
-  source_url: "https://search.nintendo.jp/nintendo_soft/search.json?q=Grim%20Trials&limit=40"
+  source_url: "https://store-jp.nintendo.com/item/software/D70010000120231"
   checked_at: "2026-10-14"
 # Completado del 14-10-2026 (de Hela a Moonlight Peaks).
 # (API) search.nintendo.jp: "HOT WHEELS™ Infinite Rush", icode ABMKA, maker "マイルストーン", sdate "2026.9.10", pprice: null, sform: BEE_DL; sin entrada BEE_CARD ni fila en meisakugame.
@@ -2528,49 +2528,49 @@
   has_physical_release: false
   region: "JP"
   evidence: "official"
-  source_url: "https://search.nintendo.jp/nintendo_soft/search.json?q=HOT%20WHEELS&limit=40"
+  source_url: "https://store-jp.nintendo.com/item/software/D70010000112371"
   checked_at: "2026-10-14"
 # (API) search.nintendo.jp: "Little Nightmares-リトルナイトメア- Complete Edition", icode AAMTA, maker "バンダイナムコエンターテインメント", sdate "2025.10.10", pprice: null, sform: BEE_DL; sin entrada BEE_CARD ni fila en meisakugame.
 - title_id: "little-nightmares-enhanced-edition"
   has_physical_release: false
   region: "JP"
   evidence: "official"
-  source_url: "https://search.nintendo.jp/nintendo_soft/search.json?q=%E3%83%AA%E3%83%88%E3%83%AB%E3%83%8A%E3%82%A4%E3%83%88%E3%83%A1%E3%82%A2&limit=40"
+  source_url: "https://store-jp.nintendo.com/item/software/D70010000095784"
   checked_at: "2026-10-14"
 # (API) search.nintendo.jp: "EA SPORTS™ Madden NFL 26", icode AACNA, maker "エレクトロニック・アーツ", sdate "2025.8.15", pprice: null, sform: BEE_DL; sin entrada BEE_CARD ni fila en meisakugame.
 - title_id: "madden-nfl-26"
   has_physical_release: false
   region: "JP"
   evidence: "official"
-  source_url: "https://search.nintendo.jp/nintendo_soft/search.json?q=Madden&limit=40"
+  source_url: "https://store-jp.nintendo.com/item/software/D70010000097533"
   checked_at: "2026-10-14"
 # (API) search.nintendo.jp: "EA SPORTS™ Madden NFL 27", icode ABCQA, maker "エレクトロニック・アーツ", sdate "2026.8.14", pprice: null, sform: BEE_DL; sin entrada BEE_CARD ni fila en meisakugame.
 - title_id: "madden-nfl-27"
   has_physical_release: false
   region: "JP"
   evidence: "official"
-  source_url: "https://search.nintendo.jp/nintendo_soft/search.json?q=Madden&limit=40"
+  source_url: "https://store-jp.nintendo.com/item/software/D70010000105636"
   checked_at: "2026-10-14"
 # (API) search.nintendo.jp: "MIO: Memories in Orbit", icode AA8DA, maker "Focus Entertainment", sdate "2026.1.21", pprice: null, sform: BEE_DL; sin entrada BEE_CARD ni fila en meisakugame.
 - title_id: "mio-memories-in-orbit"
   has_physical_release: false
   region: "JP"
   evidence: "official"
-  source_url: "https://search.nintendo.jp/nintendo_soft/search.json?q=MIO&limit=40"
+  source_url: "https://store-jp.nintendo.com/item/software/D70010000112959"
   checked_at: "2026-10-14"
 # (API) search.nintendo.jp: "Minishoot' Adventures Nintendo Switch 2 Edition", icode BKP5A, maker "Seaven Studio", sdate "2026.3.4", pprice: null, sform: BEE_DL; sin entrada BEE_CARD ni fila en meisakugame.
 - title_id: "minishoot-adventures"
   has_physical_release: false
   region: "JP"
   evidence: "official"
-  source_url: "https://search.nintendo.jp/nintendo_soft/search.json?q=Minishoot&limit=40"
+  source_url: "https://store-jp.nintendo.com/item/software/D70010000115827"
   checked_at: "2026-10-14"
 # (API) search.nintendo.jp: "Momento", icode AB8UA, maker "Silver Lining", sdate "2026.7.2", pprice: null, sform: BEE_DL; sin entrada BEE_CARD ni fila en meisakugame.
 - title_id: "momento"
   has_physical_release: false
   region: "JP"
   evidence: "official"
-  source_url: "https://search.nintendo.jp/nintendo_soft/search.json?q=Momento&limit=40"
+  source_url: "https://store-jp.nintendo.com/item/software/D70010000123110"
   checked_at: "2026-10-14"
 # (leída) Nintendo Life ficha: "Physical Release | None (Digital Only) | Release Date | Nintendo Switch 2 | 5th Jun 2025 — £32.99"
 - title_id: "kunitsu-gami-path-of-the-goddess"
@@ -2598,7 +2598,7 @@
   has_physical_release: false
   region: "JP"
   evidence: "official"
-  source_url: "https://search.nintendo.jp/nintendo_soft/search.json?q=MotoGP&limit=40"
+  source_url: "https://store-jp.nintendo.com/item/software/D70010000102812"
   checked_at: "2026-10-16"
 # (leída) ficha oficial de Nintendo: "OBAKEIDORO 2: Chase & Seek | Version | Nintendo Switch 2 | Edition | Digital"; la caja es solo japonesa (Free Style).
 - title_id: "obakeidoro-2-chase-seek"
@@ -2612,28 +2612,28 @@
   has_physical_release: false
   region: "JP"
   evidence: "official"
-  source_url: "https://search.nintendo.jp/nintendo_soft/search.json?q=%E3%82%AA%E3%82%AF%E3%83%88%E3%83%91%E3%82%B9&limit=40"
+  source_url: "https://store-jp.nintendo.com/item/software/D70010000108545"
   checked_at: "2026-10-16"
 # (API) search.nintendo.jp: "オクトパストラベラー II", icode ABHAA, sdate "2026.7.13", pprice: null, sform: BEE_DL; en meisakugame solo está el bundle con Octopath Traveler (título `octopath-traveler-octopath-traveler-ii-bundle`).
 - title_id: "octopath-traveler-ii"
   has_physical_release: false
   region: "JP"
   evidence: "official"
-  source_url: "https://search.nintendo.jp/nintendo_soft/search.json?q=%E3%82%AA%E3%82%AF%E3%83%88%E3%83%91%E3%82%B9&limit=40"
+  source_url: "https://store-jp.nintendo.com/item/software/D70010000108550"
   checked_at: "2026-10-16"
 # (API) search.nintendo.jp: "パックマンワールド2 リ・パック", icode AAWLA, sdate "2025.9.25", pprice: null, sform: BEE_DL; sin entrada BEE_CARD ni fila en meisakugame.
 - title_id: "pac-man-world-2-re-pac"
   has_physical_release: false
   region: "JP"
   evidence: "official"
-  source_url: "https://search.nintendo.jp/nintendo_soft/search.json?q=%E3%83%91%E3%83%83%E3%82%AF%E3%83%9E%E3%83%B3%E3%83%AF%E3%83%BC%E3%83%AB%E3%83%892&limit=40"
+  source_url: "https://store-jp.nintendo.com/item/software/D70010000100031"
   checked_at: "2026-10-16"
 # (API) search.nintendo.jp: "Disney Epic Mickey: Rebrushed", icode ABVPB, maker "THQ Nordic ジャパン", sdate "2026.10.8", pprice: null, sform: BEE_DL; sin entrada BEE_CARD ni fila en meisakugame.
 - title_id: "epic-mickey-rebrushed"
   has_physical_release: false
   region: "JP"
   evidence: "official"
-  source_url: "https://search.nintendo.jp/nintendo_soft/search.json?q=Epic%20Mickey&limit=40"
+  source_url: "https://store-jp.nintendo.com/item/software/D70010000121359"
   checked_at: "2026-10-16"
 # (leída) ficha oficial de Nintendo: "POOL ROOM BILLIARD | Version | Nintendo Switch 2 | Edition | Digital"; la caja es solo japonesa (D3 Publisher, SIMPLEシリーズ).
 - title_id: "pool-room-billiard"
@@ -2697,28 +2697,28 @@
   has_physical_release: false
   region: "JP"
   evidence: "official"
-  source_url: "https://search.nintendo.jp/nintendo_soft/search.json?q=Skyrim&limit=40"
+  source_url: "https://store-jp.nintendo.com/item/software/D70010000103195"
   checked_at: "2026-10-16"
 # (API) search.nintendo.jp: "トニー・ホーク™ プロ・スケーター™ 3+4", icode AAWGA, maker "Activision", sdate "2025.7.11", pprice: null, sform: BEE_DL; sin fila en meisakugame.
 - title_id: "tony-hawk-s-pro-skater-3-4"
   has_physical_release: false
   region: "JP"
   evidence: "official"
-  source_url: "https://search.nintendo.jp/nintendo_soft/search.json?q=%E3%83%88%E3%83%8B%E3%83%BC%E3%83%BB%E3%83%9B%E3%83%BC%E3%82%AF&limit=40"
+  source_url: "https://store-jp.nintendo.com/item/software/D70010000098341"
   checked_at: "2026-10-16"
 # (API) search.nintendo.jp: "Tormented Souls 2 (苦悶の魂２)", icode ACM4A, maker "PQube", sdate "2026.10.15", pprice: null, sform: BEE_DL, ya a la venta; sin fila en meisakugame.
 - title_id: "tormented-souls-ii"
   has_physical_release: false
   region: "JP"
   evidence: "official"
-  source_url: "https://search.nintendo.jp/nintendo_soft/search.json?q=Tormented%20Souls&limit=40"
+  source_url: "https://store-jp.nintendo.com/item/software/D70010000130221"
   checked_at: "2026-10-16"
 # (API) search.nintendo.jp: "『WWE 2K25』通常版", icode AAMBA, maker "2K", sdate "2025.7.23", pprice: null, sform: BEE_DL; sin fila en meisakugame (la de 【Take-Two Interactive】 solo trae NBA y Borderlands).
 - title_id: "wwe-2k25"
   has_physical_release: false
   region: "JP"
   evidence: "official"
-  source_url: "https://search.nintendo.jp/nintendo_soft/search.json?q=WWE%202K25&limit=40"
+  source_url: "https://store-jp.nintendo.com/item/software/D70010000099119"
   checked_at: "2026-10-16"
 # (leída) RPG Site: "The Western release will be available physically on PS5, PS4, and Switch with other platforms digital-only."
 - title_id: "r-type-tactics-i-ii-cosmos"
@@ -2746,14 +2746,14 @@
   has_physical_release: false
   region: "JP"
   evidence: "official"
-  source_url: "https://search.nintendo.jp/nintendo_soft/search.json?q=Squirrel%20with%20a%20Gun&limit=40"
+  source_url: "https://store-jp.nintendo.com/item/software/D70010000103975"
   checked_at: "2026-10-16"
 # (API) search.nintendo.jp: "Star Trek: Voyager - Across the Unknown", icode ABG3A, maker "Daedalic Entertainment", sdate "2026.2.19", pprice: null, sform: BEE_DL; sin fila en meisakugame.
 - title_id: "star-trek-voyager-across-the-unknown"
   has_physical_release: false
   region: "JP"
   evidence: "official"
-  source_url: "https://search.nintendo.jp/nintendo_soft/search.json?q=Star%20Trek&limit=40"
+  source_url: "https://store-jp.nintendo.com/item/software/D70010000115999"
   checked_at: "2026-10-16"
 # (leída) ficha oficial de Nintendo: "Stray | Version | Nintendo Switch 2 | Edition | Digital"; la caja occidental de Skybound Games es de Switch 1 y la de Happinet es solo japonesa.
 - title_id: "stray"
@@ -2767,7 +2767,7 @@
   has_physical_release: false
   region: "JP"
   evidence: "official"
-  source_url: "https://search.nintendo.jp/nintendo_soft/search.json?q=Midnight%20Walk&limit=40"
+  source_url: "https://store-jp.nintendo.com/item/software/D70010000110857"
   checked_at: "2026-10-16"
 # (leída) Nintendo Everything, lista de game-key cards: "Shine Post: Be Your Idol [game only available in Japan]". (leída, 24-09-2026) Nintendo Wire (Wayback, 10-02-2026): "Digital exclusive outside of Japan."
 - title_id: "shine-post-be-your-idol"
@@ -2832,7 +2832,7 @@
   has_physical_release: false
   region: "JP"
   evidence: "official"
-  source_url: "https://search.nintendo.jp/nintendo_soft/search.json?q=%E3%83%AA%E3%83%88%E3%83%AB%E3%83%8A%E3%82%A4%E3%83%88%E3%83%A1%E3%82%A22&limit=40"
+  source_url: "https://store-jp.nintendo.com/item/software/D70010000120609"
   checked_at: "2026-10-16"
 # (leída) ficha oficial de Nintendo: "OCTOPATH TRAVELER + OCTOPATH TRAVELER II Bundle | Version | Nintendo Switch 2 | Edition | Digital"; en NA las cajas son las de cada juego suelto (`octopath-traveler`, `octopath-traveler-ii`).
 - title_id: "octopath-traveler-octopath-traveler-ii-bundle"
@@ -2846,7 +2846,7 @@
   has_physical_release: false
   region: "JP"
   evidence: "official"
-  source_url: "https://search.nintendo.jp/nintendo_soft/search.json?q=%E3%83%AC%E3%83%83%E3%83%89%E3%83%BB%E3%83%87%E3%83%83%E3%83%89&limit=40"
+  source_url: "https://store-jp.nintendo.com/item/software/D70010000112870"
   checked_at: "2026-10-16"
 # (leída) https://www.gematsu.com/2026/10/villion-code-launches-january-26-2027-in-the-west: "Physical editions will be available for PlayStation 5, PlayStation 4, and Switch in North America, and for PlayStation 5 in Europe." En Occidente no hay caja de Switch 2 (la de NA es de Switch 1).
 - title_id: "villion-code"

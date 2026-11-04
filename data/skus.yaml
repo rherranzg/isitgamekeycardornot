@@ -46,7 +46,7 @@
   evidence: "press_report"  # (leída) VGC cita a CD Projekt: "contained entirely on the cartridge"
   source_url: "https://www.videogameschronicle.com/news/every-physical-third-party-switch-2-game-seen-in-japan-so-far-is-a-game-key-card-requiring-a-download/"
   updates:
-    - url: "https://searching.nintendo-europe.com/en/select?q=cyberpunk%202077&fq=type:GAME&fq=playable_on_txt:BEE&rows=5&wt=json"  # (API) eu.json: "Cyberpunk 2077: Ultimate Edition", publisher "CD PROJEKT RED"
+    - url: "https://www.nintendo.com/en-gb/Games/Nintendo-Switch-2-games/Cyberpunk-2077-Ultimate-Edition-2791954.html"  # (API) eu.json: "Cyberpunk 2077: Ultimate Edition", publisher "CD PROJEKT RED"
       checked_at: "2026-10-13"
       fields: ["distributor"]
   verified_at: "2026-09-13"
@@ -186,7 +186,7 @@
   evidence: "press_report"  # (leída) nintendolife.com, guía de game-key cards: "Yakuza 0: Director's Cut (Switch 2) | 5th Jun 2025 / SEGA / RGG Studio"
   source_url: "https://www.nintendolife.com/guides/every-nintendo-switch-2-game-key-card-release"
   updates:
-    - url: "https://searching.nintendo-europe.com/en/select?q=yakuza%200&fq=type:GAME&fq=playable_on_txt:BEE&rows=5&wt=json"  # (API) eu.json: "Yakuza 0 Director’s Cut", publisher "SEGA", datasize_readable_txt "46.6 GB"
+    - url: "https://www.nintendo.com/en-gb/Games/Nintendo-Switch-2-games/Yakuza-0-Director-s-Cut-2792121.html"  # (API) eu.json: "Yakuza 0 Director’s Cut", publisher "SEGA", datasize_readable_txt "46.6 GB"
       checked_at: "2026-10-13"
       fields: ["size"]
   verified_at: "2026-10-13"
@@ -223,7 +223,7 @@
   evidence: "press_report"  # (leída) VGC: "confirmed that Street Fighter 6 ... will be Game-Key Cards in the West"
   source_url: "https://www.videogameschronicle.com/news/every-physical-third-party-switch-2-game-seen-in-japan-so-far-is-a-game-key-card-requiring-a-download/"
   updates:
-    - url: "https://searching.nintendo-europe.com/en/select?q=street%20fighter%206&fq=type:GAME&fq=playable_on_txt:BEE&rows=5&wt=json"  # (API) eu.json: "Street Fighter™ 6", publisher "CAPCOM", dates_released_dts 2025-06-05, datasize_readable_txt "63.3 GB"
+    - url: "https://www.nintendo.com/en-gb/Games/Nintendo-Switch-2-games/Street-Fighter-6-2792834.html"  # (API) eu.json: "Street Fighter™ 6", publisher "CAPCOM", dates_released_dts 2025-06-05, datasize_readable_txt "63.3 GB"
       checked_at: "2026-10-13"
       fields: ["release_date", "size", "distributor"]
   verified_at: "2026-09-13"
@@ -264,7 +264,7 @@
     - url: "https://meisakugame.garyoutensei.com/data/switch2packagekey.html"  # (leída) meisakugame, cabecera "【カプコン】": "Street Fighter 6Years 1-2 ファイターズエディション | Key | 50GB"
       checked_at: "2026-10-13"
       fields: ["distributor", "size"]
-    - url: "https://search.nintendo.jp/nintendo_soft/search.json?q=Street%20Fighter%206&limit=40"  # (API) search.nintendo.jp: "Street Fighter 6", sform BEE_DOWNLOADABLE, maker "カプコン", sdate "2025.6.5"
+    - url: "https://store-jp.nintendo.com/item/software/D70010000095202"  # (API) search.nintendo.jp: "Street Fighter 6", sform BEE_DOWNLOADABLE, maker "カプコン", sdate "2025.6.5"
       checked_at: "2026-10-13"
       fields: ["release_date"]
   verified_at: "2026-09-13"
@@ -315,7 +315,7 @@
   evidence: "press_report"  # (listado) Famitsu: la パッケージ版 se vende como キーカード
   source_url: "https://www.famitsu.com/article/202506/43937"
   updates:
-    - url: "https://search.nintendo.jp/nintendo_soft/search.json?q=%E3%83%96%E3%83%AC%E3%82%A4%E3%83%96%E3%83%AA%E3%83%BC%E3%83%87%E3%83%95%E3%82%A9%E3%83%AB%E3%83%88&limit=40"  # (API) search.nintendo.jp: "ブレイブリーデフォルト フライングフェアリー HDリマスター", icode AAC4A, maker "スクウェア・エニックス", pprice 4950
+    - url: "https://store-jp.nintendo.com/item/software/D70010000095238"  # (API) search.nintendo.jp: "ブレイブリーデフォルト フライングフェアリー HDリマスター", icode AAC4A, maker "スクウェア・エニックス", pprice 4950
       checked_at: "2026-10-16"
       fields: ["distributor"]
   verified_at: "2026-09-13"
@@ -356,7 +356,7 @@
   evidence: "retailer_listing"  # (leída) achatmoinscher: "Split Fiction Code in a Box Nintendo Switch 2"; "Support du produit | Download | ... | Version | Code dans la boîte"; "PEGI - Public | 16+"
   source_url: "https://www.achatmoinscher.com/comparateur-de-prix-Jeux-video-Nintendo-Switch/split-fiction-code-in-a-box-nintendo-switch-2.html"
   updates:
-    - url: "https://searching.nintendo-europe.com/en/select?q=split%20fiction&fq=type:GAME&fq=playable_on_txt:BEE&rows=5&wt=json"  # (API) eu.json: "SPLIT FICTION", publisher "Electronic Arts", datasize_readable_txt "69.2 GB"
+    - url: "https://www.nintendo.com/en-gb/Games/Nintendo-Switch-2-games/SPLIT-FICTION-2792072.html"  # (API) eu.json: "SPLIT FICTION", publisher "Electronic Arts", datasize_readable_txt "69.2 GB"
       checked_at: "2026-10-13"
       fields: ["size"]
   verified_at: "2026-10-13"
@@ -375,7 +375,7 @@
   evidence: "press_report"  # (leída) meisakugame: "Split Fiction | DL | 75GB" (DL = código de descarga sin tarjeta)
   source_url: "https://meisakugame.garyoutensei.com/data/switch2packagekey.html"
   updates:
-    - url: "https://search.nintendo.jp/nintendo_soft/search.json?q=%E3%82%B9%E3%83%97%E3%83%AA%E3%83%83%E3%83%88%E3%83%BB%E3%83%95%E3%82%A3%E3%82%AF%E3%82%B7%E3%83%A7%E3%83%B3&limit=40"  # (API) search.nintendo.jp: "スプリット・フィクション", sform BEE_CARD, maker "エレクトロニック・アーツ", sdate "2025.7.10", pprice 6900
+    - url: "https://store-jp.nintendo.com/item/software/D70010000096944"  # (API) search.nintendo.jp: "スプリット・フィクション", sform BEE_CARD, maker "エレクトロニック・アーツ", sdate "2025.7.10", pprice 6900
       checked_at: "2026-10-13"
       fields: ["release_date"]
   verified_at: "2026-10-13"
@@ -458,7 +458,7 @@
   evidence: "retailer_listing"  # (leída) WOG (Suiza, caja en alemán): "007 First Light (Game-Key Card)"
   source_url: "https://www.wog.ch/en/index.cfm/details/product/220906-007-First-Light-Game-Key-Card"
   updates:
-    - url: "https://searching.nintendo-europe.com/en/select?q=007%20first%20light&fq=type:GAME&fq=playable_on_txt:BEE&rows=5&wt=json"  # (API) eu.json: "007 First Light", publisher "IO Interactive", dates_released_dts 2050-12-31 (por anunciar)
+    - url: "https://www.nintendo.com/en-gb/Games/Nintendo-Switch-2-games/007-First-Light-Deluxe-Edition-2792136.html"  # (API) eu.json: "007 First Light - Deluxe Edition", publisher "IO Interactive" (la ficha de la edición estándar ya no está en la tienda europea)
       checked_at: "2026-10-13"
       fields: ["distributor"]
   verified_at: "2026-09-15"
@@ -496,7 +496,7 @@
   evidence: "press_report"  # (leída) AllKeyShop, sobre el listado de Amazon Japan: "The retail box includes a Game-Key Card"
   source_url: "https://www.allkeyshop.com/blog/007-first-light-nintendo-switch-2-release-date-leaked-news-r/"
   updates:
-    - url: "https://search.nintendo.jp/nintendo_soft/search.json?q=007&limit=40"  # (API) search.nintendo.jp: "007 ファースト・ライト", sform BEE_CARD, maker "H2 INTERACTIVE", sdate "未定"; meisakugame la pone bajo "【H2 Interactive】"
+    - url: "https://www.nintendo.com/jp/search/index.html?q=007+%E3%83%95%E3%82%A1%E3%83%BC%E3%82%B9%E3%83%88%E3%83%BB%E3%83%A9%E3%82%A4%E3%83%88"  # (API) search.nintendo.jp: "007 ファースト・ライト", sform BEE_CARD, maker "H2 INTERACTIVE", sdate "未定"; meisakugame la pone bajo "【H2 Interactive】"
       checked_at: "2026-10-13"
       fields: ["distributor"]
   verified_at: "2026-09-15"
@@ -593,7 +593,7 @@
   evidence: "press_report"  # (leída) meisakugame: "Absolum | 2専 | -"
   source_url: "https://meisakugame.garyoutensei.com/data/switch2packagekey.html"
   updates:
-    - url: "https://search.nintendo.jp/nintendo_soft/search.json?q=Absolum&limit=40"  # (API) search.nintendo.jp: "Absolum（アブソラム）Nintendo Switch 2 Edition", icode BN47B, sform BEE_DOWNLOADABLE, maker "アークシステムワークス", sdate "2026.9.17", pprice 4510
+    - url: "https://store-jp.nintendo.com/item/software/D70010000132653"  # (API) search.nintendo.jp: "Absolum（アブソラム）Nintendo Switch 2 Edition", icode BN47B, sform BEE_DOWNLOADABLE, maker "アークシステムワークス", sdate "2026.9.17", pprice 4510
       checked_at: "2026-10-16"
       fields: ["release_date"]
   verified_at: "2026-10-16"
@@ -635,7 +635,7 @@
   evidence: "press_report"  # (leída) Nintendo Life lo lista entre los juegos con el juego completo en el cartucho
   source_url: "https://www.nintendolife.com/guides/every-nintendo-switch-2-physical-release-with-the-full-game-on-the-cart"
   updates:
-    - url: "https://searching.nintendo-europe.com/en/select?q=bananza&fq=type:GAME&fq=playable_on_txt:BEE&rows=5&wt=json"  # (API) eu.json: publisher "Nintendo"
+    - url: "https://www.nintendo.com/en-gb/Games/Nintendo-Switch-2-games/Donkey-Kong-Bananza-2785804.html"  # (API) eu.json: publisher "Nintendo"
       checked_at: "2026-10-13"
       fields: ["distributor"]
   verified_at: "2026-09-15"
@@ -734,7 +734,7 @@
   evidence: "press_report"  # (leída) Nintendo Life lo lista en "Confirmed 'Real' Nintendo Switch 2 Physical Games": "Mario Kart World (Switch 2) 5th Jun 2025 / Nintendo"
   source_url: "https://www.nintendolife.com/guides/every-nintendo-switch-2-physical-release-with-the-full-game-on-the-cart"
   updates:
-    - url: "https://searching.nintendo-europe.com/en/select?q=mario%20kart%20world&fq=type:GAME&fq=playable_on_txt:BEE&rows=5&wt=json"  # (API) eu.json: publisher "Nintendo"
+    - url: "https://www.nintendo.com/en-gb/Games/Nintendo-Switch-2-games/Mario-Kart-World-2790000.html"  # (API) eu.json: publisher "Nintendo"
       checked_at: "2026-10-13"
       fields: ["distributor"]
   verified_at: "2026-09-16"
@@ -828,7 +828,7 @@
   evidence: "press_report"  # (leída) Nintendo Life lo lista en "Confirmed 'Real' Nintendo Switch 2 Physical Games": "Metroid Prime 4: Beyond - Nintendo Switch 2 Edition (Switch 2) 4th Dec 2025 / Nintendo / Retro Studios"
   source_url: "https://www.nintendolife.com/guides/every-nintendo-switch-2-physical-release-with-the-full-game-on-the-cart"
   updates:
-    - url: "https://searching.nintendo-europe.com/en/select?q=metroid%20prime%204&fq=type:GAME&fq=playable_on_txt:BEE&rows=5&wt=json"  # (API) eu.json: publisher "Nintendo"
+    - url: "https://www.nintendo.com/en-gb/Games/Nintendo-Switch-2-Edition/Metroid-Prime-4-Beyond-Nintendo-Switch-2-Edition-2790001.html"  # (API) eu.json: publisher "Nintendo"
       checked_at: "2026-10-13"
       fields: ["distributor"]
   verified_at: "2026-09-16"
@@ -922,7 +922,7 @@
   evidence: "press_report"  # (leída) Nintendo Life ficha: "Physical Release" / "Game-Key Card"
   source_url: "https://www.nintendolife.com/games/nintendo-switch-2/hitman-world-of-assassination-signature-edition"
   updates:
-    - url: "https://searching.nintendo-europe.com/en/select?q=hitman&fq=type:GAME&fq=playable_on_txt:BEE&rows=5&wt=json"  # (API) eu.json: "HITMAN World of Assassination – Signature Edition", publisher "IO Interactive"
+    - url: "https://www.nintendo.com/en-gb/Games/Nintendo-Switch-2-games/HITMAN-World-of-Assassination-Signature-Edition-2792849.html"  # (API) eu.json: "HITMAN World of Assassination – Signature Edition", publisher "IO Interactive"
       checked_at: "2026-10-13"
       fields: ["distributor"]
   verified_at: "2026-09-16"
@@ -1170,7 +1170,7 @@
   evidence: "press_report"  # (leída) ficha de Nintendo Life: "Physical Release | Standard Game Card"
   source_url: "https://www.nintendolife.com/games/nintendo-switch-2/animal-crossing-new-horizons-nintendo-switch-2-edition"
   updates:
-    - url: "https://searching.nintendo-europe.com/en/select?q=animal%20crossing&fq=type:GAME&fq=playable_on_txt:BEE&rows=5&wt=json"  # (API) eu.json: publisher "Nintendo"
+    - url: "https://www.nintendo.com/en-gb/Games/Nintendo-Switch-2-Edition/Animal-Crossing-New-Horizons-Nintendo-Switch-2-Edition-2950861.html"  # (API) eu.json: publisher "Nintendo"
       checked_at: "2026-10-13"
       fields: ["distributor"]
   verified_at: "2026-09-17"
@@ -1378,7 +1378,7 @@
   evidence: "press_report"  # (leída) GamesRadar cita el comunicado de Ubisoft: "physical edition including a Nintendo Switch 2 game-key card" ($59.99/£49.99)
   source_url: "https://www.gamesradar.com/games/assassin-s-creed/assassins-creed-shadows-finally-hits-switch-2-in-december-but-you-can-probably-already-guess-the-bad-news-ubisoft-is-sticking-with-game-key-cards-over-real-physical-releases/"
   updates:
-    - url: "https://searching.nintendo-europe.com/en/select?q=assassin%27s%20creed%20shadows&fq=type:GAME&fq=playable_on_txt:BEE&rows=5&wt=json"  # (API) eu.json: "Assassin's Creed Shadows", publisher "Ubisoft", datasize_readable_txt "69.0 GB"
+    - url: "https://www.nintendo.com/en-gb/Games/Nintendo-Switch-2-games/Assassin-s-Creed-Shadows-2967695.html"  # (API) eu.json: "Assassin's Creed Shadows", publisher "Ubisoft", datasize_readable_txt "69.0 GB"
       checked_at: "2026-10-14"
       fields: ["size", "distributor"]
   verified_at: "2026-09-17"
@@ -1417,7 +1417,7 @@
   evidence: "press_report"  # (leída) meisakugame: "アサシン クリード シャドウズ | Key | 75GB"
   source_url: "https://meisakugame.garyoutensei.com/data/switch2packagekey.html"
   updates:
-    - url: "https://search.nintendo.jp/nintendo_soft/search.json?q=%E3%82%A2%E3%82%B5%E3%82%B7%E3%83%B3%20%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%89%20%E3%82%B7%E3%83%A3%E3%83%89%E3%82%A6%E3%82%BA&limit=40"  # (API) search.nintendo.jp: "アサシン クリード シャドウズ", icode AAG9B, sform BEE_DOWNLOADABLE, maker "ユービーアイソフト", sdate "2025.12.2", pprice 7150
+    - url: "https://store-jp.nintendo.com/item/software/D70010000100067"  # (API) search.nintendo.jp: "アサシン クリード シャドウズ", icode AAG9B, sform BEE_DOWNLOADABLE, maker "ユービーアイソフト", sdate "2025.12.2", pprice 7150
       checked_at: "2026-10-14"
       fields: ["release_date"]
   verified_at: "2026-10-14"
@@ -1513,7 +1513,7 @@
   evidence: "press_report"  # (leída) meisakugame: "進撃の巨人３ | Key | 72GB"
   source_url: "https://meisakugame.garyoutensei.com/data/switch2packagekey.html"
   updates:
-    - url: "https://search.nintendo.jp/nintendo_soft/search.json?q=%E9%80%B2%E6%92%83%E3%81%AE%E5%B7%A8%E4%BA%BA&limit=40"  # (API) search.nintendo.jp: "進撃の巨人3", sform BEE_DOWNLOADABLE, maker "コーエーテクモゲームス", sdate "2026.12.10"
+    - url: "https://store-jp.nintendo.com/item/software/D70010000104378"  # (API) search.nintendo.jp: "進撃の巨人3", sform BEE_DOWNLOADABLE, maker "コーエーテクモゲームス", sdate "2026.12.10"
       checked_at: "2026-10-16"
       fields: ["release_date"]
   verified_at: "2026-10-16"
@@ -2075,7 +2075,7 @@
     - url: "https://www.nintendolife.com/games/nintendo-switch-2/daemon-x-machina-titanic-scion"  # (leída) Nintendo Life: "Physical Release | Standard Game Card | Release Date | Nintendo Switch 2 | 5th Sep 2025 — $69.99 | 5th Sep 2025 — £59.99"
       checked_at: "2026-10-16"
       fields: ["release_date"]
-    - url: "https://searching.nintendo-europe.com/en/select?q=Daemon%20X%20Machina&fq=type:GAME&fq=playable_on_txt:BEE&rows=5&wt=json"  # (API) Nintendo EU Solr: "Daemon X Machina: Titanic Scion", publisher "Marvelous Europe"
+    - url: "https://www.nintendo.com/en-gb/Games/Nintendo-Switch-2-games/Daemon-X-Machina-Titanic-Scion-2849025.html"  # (API) Nintendo EU Solr: "Daemon X Machina: Titanic Scion", publisher "Marvelous Europe"
       checked_at: "2026-10-16"
       fields: ["distributor"]
   verified_at: "2026-09-17"
@@ -2134,7 +2134,7 @@
     - url: "https://meisakugame.garyoutensei.com/data/switch2packagekey.html"  # (leída) meisakugame, cabecera "【マーベラス】": "DAEMON X MACHINA TITANIC SCION | Key | 24GB"
       checked_at: "2026-10-16"
       fields: ["distributor", "size"]
-    - url: "https://search.nintendo.jp/nintendo_soft/search.json?q=DAEMON%20X%20MACHINA&limit=40"  # (API) search.nintendo.jp: "DAEMON X MACHINA TITANIC SCION", icode AAG6A, sform BEE_DOWNLOADABLE, maker "マーベラス", sdate "2025.9.5", pprice 8800
+    - url: "https://store-jp.nintendo.com/item/software/D70010000096316"  # (API) search.nintendo.jp: "DAEMON X MACHINA TITANIC SCION", icode AAG6A, sform BEE_DOWNLOADABLE, maker "マーベラス", sdate "2025.9.5", pprice 8800
       checked_at: "2026-10-16"
       fields: ["release_date"]
   verified_at: "2026-09-17"
@@ -2154,7 +2154,7 @@
   evidence: "unconfirmed"  # (API) Nintendo Corea: "DAEMON X MACHINA TITANIC SCION", category ["패키지 버전","다운로드 버전","체험판"]; Danawa sin resultado
   source_url: null
   updates:
-    - url: "https://www.nintendo.com/kr/api/search?k=DAEMON&directory=software&size=48"  # (API) Nintendo Corea: publisher "Marvelous Entertainment", 패키지 버전
+    - url: "https://store.nintendo.co.kr/70010000096317"  # (API) Nintendo Corea: publisher "Marvelous Entertainment", 패키지 버전
       checked_at: "2026-10-16"
       fields: ["distributor"]
   verified_at: "2026-10-16"
@@ -2225,7 +2225,7 @@
   evidence: "press_report"  # (leída) Nintendo Life ficha: "Physical Release | Game-Key Card"
   source_url: "https://www.nintendolife.com/games/nintendo-switch-2/cronos-the-new-dawn"
   updates:
-    - url: "https://searching.nintendo-europe.com/en/select?q=cronos&fq=type:GAME&fq=playable_on_txt:BEE&rows=5&wt=json"  # (API) eu.json: "Cronos: The New Dawn", publisher "Bloober Team", datasize_readable_txt "17.4 GB"
+    - url: "https://www.nintendo.com/en-gb/Games/Nintendo-Switch-2-games/Cronos-The-New-Dawn-2883430.html"  # (API) eu.json: "Cronos: The New Dawn", publisher "Bloober Team", datasize_readable_txt "17.4 GB"
       checked_at: "2026-10-14"
       fields: ["size", "distributor"]
   verified_at: "2026-10-14"
@@ -2244,7 +2244,7 @@
   evidence: "press_report"  # (leída) meisakugame: "Cronos: The New Dawn | Key | 25GB"
   source_url: "https://meisakugame.garyoutensei.com/data/switch2packagekey.html"
   updates:
-    - url: "https://search.nintendo.jp/nintendo_soft/search.json?q=Cronos&limit=40"  # (API) search.nintendo.jp: "Cronos: The New Dawn", icode AA2WA, sform BEE_CARD, sdate "2025.12.11", pprice 7950 (la versión digital, BEE_DL, del 2025.9.5)
+    - url: "https://store-jp.nintendo.com/item/software/D70010000100074"  # (API) search.nintendo.jp: "Cronos: The New Dawn", icode AA2WA, sform BEE_CARD, sdate "2025.12.11", pprice 7950 (la versión digital, BEE_DL, del 2025.9.5)
       checked_at: "2026-10-14"
       fields: ["release_date"]
   verified_at: "2026-10-14"
@@ -2452,7 +2452,7 @@
   evidence: "press_report"  # (leída) Nintendo Everything: "the western release from NIS America is a game-key card"
   source_url: "https://nintendoeverything.com/brigandine-abyss-announced-for-nintendo-switch-2/"
   updates:
-    - url: "https://searching.nintendo-europe.com/en/select?q=brigandine&fq=type:GAME&fq=playable_on_txt:BEE&rows=5&wt=json"  # (API) eu.json: "BRIGANDINE ABYSS", datasize_readable_txt "6.7 GB"
+    - url: "https://www.nintendo.com/en-gb/Games/Nintendo-Switch-2-games/BRIGANDINE-ABYSS-3137766.html"  # (API) eu.json: "BRIGANDINE ABYSS", datasize_readable_txt "6.7 GB"
       checked_at: "2026-10-14"
       fields: ["size"]
   verified_at: "2026-09-17"
@@ -2491,7 +2491,7 @@
   evidence: "press_report"  # (leída) meisakugame: "ブリガンダイン アビス | Key | 9GB"
   source_url: "https://meisakugame.garyoutensei.com/data/switch2packagekey.html"
   updates:
-    - url: "https://search.nintendo.jp/nintendo_soft/search.json?q=%E3%83%96%E3%83%AA%E3%82%AC%E3%83%B3%E3%83%80%E3%82%A4%E3%83%B3&limit=40"  # (API) search.nintendo.jp: "ブリガンダイン アビス", icode AAXHA, sform BEE_DOWNLOADABLE, maker "ハピネット", sdate "2026.8.27", pprice 9020
+    - url: "https://store-jp.nintendo.com/item/software/D70010000098184"  # (API) search.nintendo.jp: "ブリガンダイン アビス", icode AAXHA, sform BEE_DOWNLOADABLE, maker "ハピネット", sdate "2026.8.27", pprice 9020
       checked_at: "2026-10-14"
       fields: ["release_date"]
   verified_at: "2026-10-14"
@@ -2514,7 +2514,7 @@
     - url: "https://www.nintendolife.com/games/nintendo-switch-2/culdcept-begins-nintendo-switch-2-edition"  # (leída) Nintendo Life ficha: "Physical Release | Standard Game Card | Release Date | Nintendo Switch 2 | 16th Jul 2026 — £44.99"
       checked_at: "2026-10-14"
       fields: ["release_date"]
-    - url: "https://searching.nintendo-europe.com/en/select?q=culdcept&fq=type:GAME&fq=playable_on_txt:BEE&rows=5&wt=json"  # (API) eu.json: "Culdcept BEGINS - Nintendo Switch™ 2 Edition", publisher "neos"
+    - url: "https://www.nintendo.com/en-gb/Games/Nintendo-Switch-2-Edition/Culdcept-BEGINS-Nintendo-Switch-2-Edition-3116877.html"  # (API) eu.json: "Culdcept BEGINS - Nintendo Switch™ 2 Edition", publisher "neos"
       checked_at: "2026-10-14"
       fields: ["distributor"]
   verified_at: "2026-09-17"
@@ -2556,7 +2556,7 @@
   evidence: "press_report"  # (leída) meisakugame: "カルドセプト ビギンズ SW2 Edition | 12兼" (tarjeta con los datos de Switch 1 y Switch 2)
   source_url: "https://meisakugame.garyoutensei.com/data/switch2packagekey.html"
   updates:
-    - url: "https://search.nintendo.jp/nintendo_soft/search.json?q=%E3%82%AB%E3%83%AB%E3%83%89%E3%82%BB%E3%83%97%E3%83%88&limit=40"  # (API) search.nintendo.jp: "カルドセプト ビギンズ Nintendo Switch 2 Edition", icode BQ4PA, sform BEE_DOWNLOADABLE, maker "ネオス", sdate "2026.7.16", pprice 7480
+    - url: "https://store-jp.nintendo.com/item/software/D70010000117472"  # (API) search.nintendo.jp: "カルドセプト ビギンズ Nintendo Switch 2 Edition", icode BQ4PA, sform BEE_DOWNLOADABLE, maker "ネオス", sdate "2026.7.16", pprice 7480
       checked_at: "2026-10-14"
       fields: ["release_date"]
   verified_at: "2026-10-14"
@@ -2861,7 +2861,7 @@
   evidence: "press_report"
   source_url: "https://www.nintendolife.com/games/nintendo-switch-2/destroy-all-humans"
   updates:
-    - url: "https://searching.nintendo-europe.com/en/select?q=destroy%20all%20humans&fq=type:GAME&fq=playable_on_txt:BEE&rows=5&wt=json"  # (API) eu.json: "Destroy All Humans!", datasize_readable_txt "9.0 GB"
+    - url: "https://www.nintendo.com/en-gb/Games/Nintendo-Switch-2-games/Destroy-All-Humans--3127148.html"  # (API) eu.json: "Destroy All Humans!", datasize_readable_txt "9.0 GB"
       checked_at: "2026-10-14"
       fields: ["size"]
   verified_at: "2026-09-17"
@@ -2901,7 +2901,7 @@
   evidence: "press_report"
   source_url: "https://www.nintendolife.com/games/nintendo-switch-2/destroy-all-humans-2-reprobed"
   updates:
-    - url: "https://searching.nintendo-europe.com/en/select?q=destroy%20all%20humans&fq=type:GAME&fq=playable_on_txt:BEE&rows=5&wt=json"  # (API) eu.json: "Destroy All Humans! 2 - Reprobed", datasize_readable_txt "20.4 GB"
+    - url: "https://www.nintendo.com/en-gb/Games/Nintendo-Switch-2-games/Destroy-All-Humans-2-Reprobed-3170631.html"  # (API) eu.json: "Destroy All Humans! 2 - Reprobed", datasize_readable_txt "20.4 GB"
       checked_at: "2026-10-14"
       fields: ["size"]
   verified_at: "2026-09-17"
@@ -2944,7 +2944,7 @@
   evidence: "press_report"
   source_url: "https://www.nintendolife.com/games/nintendo-switch-2/devil-may-cry-5-devil-hunter-edition"
   updates:
-    - url: "https://searching.nintendo-europe.com/en/select?q=Devil%20May%20Cry%205&fq=type:GAME&fq=playable_on_txt:BEE&rows=5&wt=json"  # (API) Nintendo EU Solr: "Devil May Cry 5 Devil Hunter Edition", datasize_readable_txt "27.9 GB"
+    - url: "https://www.nintendo.com/en-gb/Games/Nintendo-Switch-2-games/Devil-May-Cry-5-Devil-Hunter-Edition-3109582.html"  # (API) Nintendo EU Solr: "Devil May Cry 5 Devil Hunter Edition", datasize_readable_txt "27.9 GB"
       checked_at: "2026-10-16"
       fields: ["size"]
   verified_at: "2026-09-17"
@@ -2965,7 +2965,7 @@
   evidence: "press_report"
   source_url: "https://www.nintendolife.com/games/nintendo-switch-2/digimon-story-time-stranger"
   updates:
-    - url: "https://searching.nintendo-europe.com/en/select?q=Digimon&fq=type:GAME&fq=playable_on_txt:BEE&rows=5&wt=json"  # (API) Nintendo EU Solr: "Digimon Story Time Stranger", datasize_readable_txt "13.8 GB"
+    - url: "https://www.nintendo.com/en-gb/Games/Nintendo-Switch-2-games/Digimon-Story-Time-Stranger-3016718.html"  # (API) Nintendo EU Solr: "Digimon Story Time Stranger", datasize_readable_txt "13.8 GB"
       checked_at: "2026-10-16"
       fields: ["size"]
   verified_at: "2026-09-17"
@@ -3028,7 +3028,7 @@
   evidence: "press_report"  # (leída) Nintendo Life ficha: "Physical Release | Game-Key Card"
   source_url: "https://www.nintendolife.com/games/nintendo-switch-2/disgaea-7-complete"
   updates:
-    - url: "https://searching.nintendo-europe.com/en/select?q=disgaea&fq=type:GAME&fq=playable_on_txt:BEE&rows=5&wt=json"  # (API) eu.json: "Disgaea 7 Complete", publisher "NIS America", datasize_readable_txt "7.7 GB"
+    - url: "https://www.nintendo.com/en-gb/Games/Nintendo-Switch-2-games/Disgaea-7-Complete-2896549.html"  # (API) eu.json: "Disgaea 7 Complete", publisher "NIS America", datasize_readable_txt "7.7 GB"
       checked_at: "2026-10-14"
       fields: ["size", "distributor"]
   verified_at: "2026-10-14"
@@ -3071,7 +3071,7 @@
   evidence: "press_report"  # (leída) Nintendo Life ficha: "Physical Release | Game-Key Card"
   source_url: "https://www.nintendolife.com/games/nintendo-switch-2/disgaea-mayhem"
   updates:
-    - url: "https://searching.nintendo-europe.com/en/select?q=disgaea&fq=type:GAME&fq=playable_on_txt:BEE&rows=5&wt=json"  # (API) eu.json: "Disgaea Mayhem", publisher "NIS America", datasize_readable_txt "2.3 GB"
+    - url: "https://www.nintendo.com/en-gb/Games/Nintendo-Switch-2-games/Disgaea-Mayhem-3137759.html"  # (API) eu.json: "Disgaea Mayhem", publisher "NIS America", datasize_readable_txt "2.3 GB"
       checked_at: "2026-10-14"
       fields: ["size", "distributor"]
   verified_at: "2026-10-14"
@@ -3125,7 +3125,7 @@
   evidence: "press_report"
   source_url: "https://www.nintendolife.com/games/nintendo-switch-2/dragon-ball-sparking-zero"
   updates:
-    - url: "https://searching.nintendo-europe.com/en/select?q=Sparking&fq=type:GAME&fq=playable_on_txt:BEE&rows=5&wt=json"  # (API) Nintendo EU Solr: "DRAGON BALL: Sparking! ZERO", datasize_readable_txt "12.0 GB"
+    - url: "https://www.nintendo.com/en-gb/Games/Nintendo-Switch-2-games/DRAGON-BALL-Sparking-ZERO-2882381.html"  # (API) Nintendo EU Solr: "DRAGON BALL: Sparking! ZERO", datasize_readable_txt "12.0 GB"
       checked_at: "2026-10-16"
       fields: ["size"]
   verified_at: "2026-09-17"
@@ -3165,7 +3165,7 @@
   evidence: "press_report"
   source_url: "https://www.nintendolife.com/games/nintendo-switch-2/dragon-quest-i-and-ii-hd-2d-remake"
   updates:
-    - url: "https://searching.nintendo-europe.com/en/select?q=DRAGON%20QUEST%20I%20%26%20II&fq=type:GAME&fq=playable_on_txt:BEE&rows=5&wt=json"  # (API) Nintendo EU Solr: "DRAGON QUEST I & II HD-2D Remake", datasize_readable_txt "16.3 GB"
+    - url: "https://www.nintendo.com/en-gb/Games/Nintendo-Switch-2-games/DRAGON-QUEST-I-II-HD-2D-Remake-2909901.html"  # (API) Nintendo EU Solr: "DRAGON QUEST I & II HD-2D Remake", datasize_readable_txt "16.3 GB"
       checked_at: "2026-10-16"
       fields: ["size"]
   verified_at: "2026-09-17"
@@ -3235,7 +3235,7 @@
   evidence: "press_report"
   source_url: "https://www.nintendolife.com/games/nintendo-switch-2/dragon-quest-vii-reimagined"
   updates:
-    - url: "https://searching.nintendo-europe.com/en/select?q=DRAGON%20QUEST%20VII&fq=type:GAME&fq=playable_on_txt:BEE&rows=5&wt=json"  # (API) Nintendo EU Solr: "DRAGON QUEST VII Reimagined", datasize_readable_txt "6.0 GB"
+    - url: "https://www.nintendo.com/en-gb/Games/Nintendo-Switch-2-games/DRAGON-QUEST-VII-Reimagined-2915159.html"  # (API) Nintendo EU Solr: "DRAGON QUEST VII Reimagined", datasize_readable_txt "6.0 GB"
       checked_at: "2026-10-16"
       fields: ["size"]
   verified_at: "2026-09-17"
@@ -3275,7 +3275,7 @@
   evidence: "press_report"
   source_url: "https://www.nintendolife.com/games/nintendo-switch-2/dragon-quest-xi-s-echoes-of-an-elusive-age-definitive-edition"
   updates:
-    - url: "https://searching.nintendo-europe.com/en/select?q=DRAGON%20QUEST%20XI&fq=type:GAME&fq=playable_on_txt:BEE&rows=5&wt=json"  # (API) Nintendo EU Solr: "DRAGON QUEST XI S: Echoes of an Elusive Age - Definitive Edition", datasize_readable_txt "23.2 GB"
+    - url: "https://www.nintendo.com/en-gb/Games/Nintendo-Switch-2-games/DRAGON-QUEST-XI-S-Echoes-of-an-Elusive-Age-Definitive-Edition-3108411.html"  # (API) Nintendo EU Solr: "DRAGON QUEST XI S: Echoes of an Elusive Age - Definitive Edition", datasize_readable_txt "23.2 GB"
       checked_at: "2026-10-16"
       fields: ["size"]
   verified_at: "2026-09-17"
@@ -3315,7 +3315,7 @@
   evidence: "press_report"
   source_url: "https://www.nintendolife.com/games/nintendo-switch-2/dragons-dogma-2-dark-arisen"
   updates:
-    - url: "https://searching.nintendo-europe.com/en/select?q=Dragon%27s%20Dogma&fq=type:GAME&fq=playable_on_txt:BEE&rows=5&wt=json"  # (API) Nintendo EU Solr: "Dragon's Dogma 2: Dark Arisen", datasize_readable_txt "49.6 GB"
+    - url: "https://www.nintendo.com/en-gb/Games/Nintendo-Switch-2-games/Dragon-s-Dogma-2-Dark-Arisen-3110779.html"  # (API) Nintendo EU Solr: "Dragon's Dogma 2: Dark Arisen", datasize_readable_txt "49.6 GB"
       checked_at: "2026-10-16"
       fields: ["size"]
   verified_at: "2026-09-17"
@@ -3388,7 +3388,7 @@
   evidence: "press_report"  # (leída) Nintendo Life: "Physical Release | Game-Key Card | Release Date | Nintendo Switch 2 | 22nd Jan 2026 — £54.99"
   source_url: "https://www.nintendolife.com/games/nintendo-switch-2/dynasty-warriors-origins"
   updates:
-    - url: "https://searching.nintendo-europe.com/en/select?q=dynasty%20warriors%20origins&fq=type:GAME&fq=playable_on_txt:BEE&rows=5&wt=json"  # (API) eu.json: "DYNASTY WARRIORS: ORIGINS", datasize_readable_txt "21.6 GB"
+    - url: "https://www.nintendo.com/en-gb/Games/Nintendo-Switch-2-games/DYNASTY-WARRIORS-ORIGINS-2987854.html"  # (API) eu.json: "DYNASTY WARRIORS: ORIGINS", datasize_readable_txt "21.6 GB"
       checked_at: "2026-10-14"
       fields: ["size"]
   verified_at: "2026-09-17"
@@ -3497,7 +3497,7 @@
   evidence: "press_report"  # (leída) meisakugame: "EA SPORTS FC 26 | Key | 66GB"
   source_url: "https://meisakugame.garyoutensei.com/data/switch2packagekey.html"
   updates:
-    - url: "https://search.nintendo.jp/nintendo_soft/search.json?q=EA%20SPORTS%20FC&limit=40"  # (API) search.nintendo.jp: "EA SPORTS FC™ 26", icode AAJSA, sform BEE_DOWNLOADABLE, maker "エレクトロニック・アーツ", sdate "2025.9.26", pprice 8600
+    - url: "https://store-jp.nintendo.com/item/software/D70010000100269"  # (API) search.nintendo.jp: "EA SPORTS FC™ 26", icode AAJSA, sform BEE_DOWNLOADABLE, maker "エレクトロニック・アーツ", sdate "2025.9.26", pprice 8600
       checked_at: "2026-10-14"
       fields: ["release_date"]
   verified_at: "2026-10-14"
@@ -3553,7 +3553,7 @@
     - url: "https://meisakugame.garyoutensei.com/data/switch2packagekey.html"  # (leída) meisakugame, cabecera "【D3 PUBLISHER】": "地球防衛軍5 for Nintendo Switch 2 | Key | 25GB"
       checked_at: "2026-10-14"
       fields: ["distributor", "size"]
-    - url: "https://search.nintendo.jp/nintendo_soft/search.json?q=%E5%9C%B0%E7%90%83%E9%98%B2%E8%A1%9B%E8%BB%8D5&limit=40"  # (API) search.nintendo.jp: "地球防衛軍5 for Nintendo Switch 2", icode AB4YA, sform BEE_DOWNLOADABLE, maker "ディースリー・パブリッシャー", sdate "2026.10.8", pprice 3980
+    - url: "https://store-jp.nintendo.com/item/software/D70010000120968"  # (API) search.nintendo.jp: "地球防衛軍5 for Nintendo Switch 2", icode AB4YA, sform BEE_DOWNLOADABLE, maker "ディースリー・パブリッシャー", sdate "2026.10.8", pprice 3980
       checked_at: "2026-10-14"
       fields: ["release_date"]
   verified_at: "2026-09-17"
@@ -3690,7 +3690,7 @@
   evidence: "press_report"  # (leída) Nintendo Life: "Physical Release | Code In Box | Release Date | Nintendo Switch 2 | 24th Feb 2026 — £52.99"
   source_url: "https://www.nintendolife.com/games/nintendo-switch-2/fallout-4-anniversary-edition"
   updates:
-    - url: "https://searching.nintendo-europe.com/en/select?q=fallout%204&fq=type:GAME&fq=playable_on_txt:BEE&rows=5&wt=json"  # (API) eu.json: "Fallout 4: Anniversary Edition", datasize_readable_txt "64.2 GB"
+    - url: "https://www.nintendo.com/en-gb/Games/Nintendo-Switch-2-games/Fallout-4-Anniversary-Edition-3016467.html"  # (API) eu.json: "Fallout 4: Anniversary Edition", datasize_readable_txt "64.2 GB"
       checked_at: "2026-10-14"
       fields: ["size"]
   verified_at: "2026-09-17"
@@ -3809,7 +3809,7 @@
   evidence: "press_report"  # (leída) Nintendo Life: "Physical Release | Game-Key Card | ... 9th Dec 2025 — £52.99"
   source_url: "https://www.nintendolife.com/games/nintendo-switch-2/farming-simulator-signature-edition"
   updates:
-    - url: "https://searching.nintendo-europe.com/en/select?q=farming%20simulator&fq=type:GAME&fq=playable_on_txt:BEE&rows=5&wt=json"  # (API) eu.json: "Farming Simulator: Signature Edition", datasize_readable_txt "22.5 GB"
+    - url: "https://www.nintendo.com/en-gb/Games/Nintendo-Switch-2-games/Farming-Simulator-Signature-Edition-2933918.html"  # (API) eu.json: "Farming Simulator: Signature Edition", datasize_readable_txt "22.5 GB"
       checked_at: "2026-10-14"
       fields: ["size"]
   verified_at: "2026-09-17"
@@ -3848,7 +3848,7 @@
   evidence: "press_report"  # (leída) meisakugame: "Farming Simulator : Signature Edition | Key | 25GB"
   source_url: "https://meisakugame.garyoutensei.com/data/switch2packagekey.html"
   updates:
-    - url: "https://search.nintendo.jp/nintendo_soft/search.json?q=Farming%20Simulator&limit=40"  # (API) search.nintendo.jp: "Farming Simulator: Signature Edition", icode AA2MA, sform BEE_DOWNLOADABLE, maker "GIANTS Software", sdate "2026.1.22", pprice 6578
+    - url: "https://store-jp.nintendo.com/item/software/D70010000099922"  # (API) search.nintendo.jp: "Farming Simulator: Signature Edition", icode AA2MA, sform BEE_DOWNLOADABLE, maker "GIANTS Software", sdate "2026.1.22", pprice 6578
       checked_at: "2026-10-14"
       fields: ["release_date"]
   verified_at: "2026-10-14"
@@ -3884,7 +3884,7 @@
   evidence: "press_report"  # (leída) Gematsu: "A physical edition will be available for consoles worldwide, with the Switch 2 version shipping on a game-key card."
   source_url: "https://www.gematsu.com/2025/11/fatal-frame-ii-crimson-butterfly-remake-launches-march-12-2026"
   updates:
-    - url: "https://searching.nintendo-europe.com/en/select?q=fatal%20frame&fq=type:GAME&fq=playable_on_txt:BEE&rows=5&wt=json"  # (API) eu.json: "FATAL FRAME II: Crimson Butterfly REMAKE", datasize_readable_txt "27.3 GB"
+    - url: "https://www.nintendo.com/en-gb/Games/Nintendo-Switch-2-games/FATAL-FRAME-II-Crimson-Butterfly-REMAKE--3014309.html"  # (API) eu.json: "FATAL FRAME II: Crimson Butterfly REMAKE", datasize_readable_txt "27.3 GB"
       checked_at: "2026-10-14"
       fields: ["size"]
   verified_at: "2026-09-17"
@@ -4020,7 +4020,7 @@
   evidence: "press_report"  # (leída) Nintendo Life: "Physical Release | Game-Key Card | ... 3rd Jun 2026 — £49.99"
   source_url: "https://www.nintendolife.com/games/nintendo-switch-2/final-fantasy-vii-rebirth"
   updates:
-    - url: "https://searching.nintendo-europe.com/en/select?q=FINAL%20FANTASY%20VII%20REBIRTH&fq=type:GAME&fq=playable_on_txt:BEE&rows=5&wt=json"  # (API) Nintendo EU Solr: "FINAL FANTASY VII REBIRTH", datasize_readable_txt "91.5 GB"
+    - url: "https://www.nintendo.com/en-gb/Games/Nintendo-Switch-2-games/FINAL-FANTASY-VII-REBIRTH-3016562.html"  # (API) Nintendo EU Solr: "FINAL FANTASY VII REBIRTH", datasize_readable_txt "91.5 GB"
       checked_at: "2026-10-16"
       fields: ["size"]
   verified_at: "2026-09-17"
@@ -4060,7 +4060,7 @@
   evidence: "press_report"  # (leída) Nintendo Life: "Also Known As | Final Fantasy 7 Remake Intergrade | ... Physical Release | Game-Key Card | ... 22nd Jan 2026 — £39.99"
   source_url: "https://www.nintendolife.com/games/nintendo-switch-2/final-fantasy-vii-remake-intergrade"
   updates:
-    - url: "https://searching.nintendo-europe.com/en/select?q=FINAL%20FANTASY%20VII%20REMAKE&fq=type:GAME&fq=playable_on_txt:BEE&rows=5&wt=json"  # (API) Nintendo EU Solr: "FINAL FANTASY VII REMAKE INTERGRADE", datasize_readable_txt "90.4 GB"
+    - url: "https://www.nintendo.com/en-gb/Games/Nintendo-Switch-2-games/FINAL-FANTASY-VII-REMAKE-INTERGRADE-2789733.html"  # (API) Nintendo EU Solr: "FINAL FANTASY VII REMAKE INTERGRADE", datasize_readable_txt "90.4 GB"
       checked_at: "2026-10-16"
       fields: ["size"]
   verified_at: "2026-09-17"
@@ -4170,7 +4170,7 @@
   evidence: "press_report"  # (leída) Nintendo Life: "Physical Release | Game-Key Card | ... 22nd Oct 2026 — £49.99"
   source_url: "https://www.nintendolife.com/games/nintendo-switch-2/final_fantasy_resonance"
   updates:
-    - url: "https://searching.nintendo-europe.com/en/select?q=FINAL%20FANTASY%20RESONANCE&fq=type:GAME&fq=playable_on_txt:BEE&rows=5&wt=json"  # (API) Nintendo EU Solr: "FINAL FANTASY RESONANCE", datasize_readable_txt "11.9 GB"
+    - url: "https://www.nintendo.com/en-gb/Games/Nintendo-Switch-2-games/FINAL-FANTASY-RESONANCE-3112375.html"  # (API) Nintendo EU Solr: "FINAL FANTASY RESONANCE", datasize_readable_txt "11.9 GB"
       checked_at: "2026-10-16"
       fields: ["size"]
   verified_at: "2026-09-17"
@@ -4363,7 +4363,7 @@
   evidence: "unconfirmed"  # (API) Nintendo Corea: "FZ : 포메이션 Z (FZ : Formation Z)", category ["패키지 버전","다운로드 버전"]; Danawa sin resultado
   source_url: null
   updates:
-    - url: "https://www.nintendo.com/kr/api/search?k=FZ&directory=software&size=48"  # (API) Nintendo Corea: publisher "H2 INTERACTIVE", 패키지 버전
+    - url: "https://store.nintendo.co.kr/70010000107350"  # (API) Nintendo Corea: publisher "H2 INTERACTIVE", 패키지 버전
       checked_at: "2026-10-16"
       fields: ["distributor"]
   verified_at: "2026-10-16"
@@ -4385,7 +4385,7 @@
   evidence: "press_report"  # (leída) Nintendo Life: "Physical Release | Game-Key Card"
   source_url: "https://www.nintendolife.com/games/nintendo-switch-2/gear-club-unlimited-3"
   updates:
-    - url: "https://searching.nintendo-europe.com/en/select?q=gear%20club&fq=type:GAME&fq=playable_on_txt:BEE&rows=5&wt=json"  # (API) eu.json: "Gear.Club Unlimited 3", datasize_readable_txt "45.2 GB"
+    - url: "https://www.nintendo.com/en-gb/Games/Nintendo-Switch-2-games/Gear-Club-Unlimited-3-2986004.html"  # (API) eu.json: "Gear.Club Unlimited 3", datasize_readable_txt "45.2 GB"
       checked_at: "2026-10-14"
       fields: ["size"]
   verified_at: "2026-09-17"
@@ -4459,7 +4459,7 @@
   evidence: "press_report"  # (leída) Nintendo Life: "Physical Release | Game-Key Card"
   source_url: "https://www.nintendolife.com/games/nintendo-switch-2/goodnight-universe"
   updates:
-    - url: "https://searching.nintendo-europe.com/en/select?q=goodnight%20universe&fq=type:GAME&fq=playable_on_txt:BEE&rows=5&wt=json"  # (API) eu.json: "Goodnight Universe", datasize_readable_txt "4.7 GB"
+    - url: "https://www.nintendo.com/en-gb/Games/Nintendo-Switch-2-games/Goodnight-Universe-2941764.html"  # (API) eu.json: "Goodnight Universe", datasize_readable_txt "4.7 GB"
       checked_at: "2026-10-14"
       fields: ["size"]
   verified_at: "2026-09-17"
@@ -4501,7 +4501,7 @@
   evidence: "press_report"  # (leída) Nintendo Life: "Physical Release | Game-Key Card"
   source_url: "https://www.nintendolife.com/games/nintendo-switch-2/granblue-fantasy-relink-endless-ragnarok"
   updates:
-    - url: "https://searching.nintendo-europe.com/en/select?q=Granblue%20Fantasy%3A%20Relink&fq=type:GAME&fq=playable_on_txt:BEE&rows=5&wt=json"  # (API) Nintendo EU Solr: "Granblue Fantasy: Relink - Endless Ragnarok", datasize_readable_txt "38.8 GB"
+    - url: "https://www.nintendo.com/en-gb/Games/Nintendo-Switch-2-games/Granblue-Fantasy-Relink-Endless-Ragnarok-3017587.html"  # (API) Nintendo EU Solr: "Granblue Fantasy: Relink - Endless Ragnarok", datasize_readable_txt "38.8 GB"
       checked_at: "2026-10-16"
       fields: ["size"]
   verified_at: "2026-09-17"
@@ -4819,7 +4819,7 @@
   evidence: "press_report"  # (leída) Nintendo Life ficha: "Physical Release | Game-Key Card"
   source_url: "https://www.nintendolife.com/games/nintendo-switch-2/high-on-life-2"
   updates:
-    - url: "https://searching.nintendo-europe.com/en/select?q=high%20on%20life%202&fq=type:GAME&fq=playable_on_txt:BEE&rows=5&wt=json"  # (API) eu.json: "High On Life 2", publisher "Squanch Games", datasize_readable_txt "39.4 GB"
+    - url: "https://www.nintendo.com/en-gb/Games/Nintendo-Switch-2-games/High-On-Life-2-3027965.html"  # (API) eu.json: "High On Life 2", publisher "Squanch Games", datasize_readable_txt "39.4 GB"
       checked_at: "2026-10-14"
       fields: ["size", "distributor"]
   verified_at: "2026-10-14"
@@ -4880,7 +4880,7 @@
   evidence: "press_report"  # (leída) Nintendo Life ficha: "Physical Release | Game-Key Card"
   source_url: "https://www.nintendolife.com/games/nintendo-switch-2/hogwarts-legacy"
   updates:
-    - url: "https://searching.nintendo-europe.com/en/select?q=hogwarts&fq=type:GAME&fq=playable_on_txt:BEE&rows=5&wt=json"  # (API) eu.json: "Hogwarts Legacy", publisher "WB Games", datasize_readable_txt "23.1 GB"
+    - url: "https://www.nintendo.com/en-gb/Games/Nintendo-Switch-2-games/Hogwarts-Legacy-2797135.html"  # (API) eu.json: "Hogwarts Legacy", publisher "WB Games", datasize_readable_txt "23.1 GB"
       checked_at: "2026-10-14"
       fields: ["size", "distributor"]
   verified_at: "2026-10-14"
@@ -4899,7 +4899,7 @@
   evidence: "press_report"  # (leída) meisakugame: "ホグワーツ・レガシー | Key | 24GB"
   source_url: "https://meisakugame.garyoutensei.com/data/switch2packagekey.html"
   updates:
-    - url: "https://search.nintendo.jp/nintendo_soft/search.json?q=%E3%83%9B%E3%82%B0%E3%83%AF%E3%83%BC%E3%83%84&limit=40"  # (API) search.nintendo.jp: "ホグワーツ・レガシー Hogwarts Legacy", icode AAFQA, sform BEE_DOWNLOADABLE, maker "WB Games", sdate "2025.6.5", pprice 8778
+    - url: "https://store-jp.nintendo.com/item/software/D70010000095416"  # (API) search.nintendo.jp: "ホグワーツ・レガシー Hogwarts Legacy", icode AAFQA, sform BEE_DOWNLOADABLE, maker "WB Games", sdate "2025.6.5", pprice 8778
       checked_at: "2026-10-14"
       fields: ["release_date"]
   verified_at: "2026-10-14"
@@ -5056,7 +5056,7 @@
   evidence: "press_report"  # (leída) Nintendo Life ficha: "Physical Release | Game-Key Card"
   source_url: "https://www.nintendolife.com/games/nintendo-switch-2/hot-wheels-infinite-rush"
   updates:
-    - url: "https://searching.nintendo-europe.com/en/select?q=hot%20wheels&fq=type:GAME&fq=playable_on_txt:BEE&rows=5&wt=json"  # (API) eu.json: "HOT WHEELS™ Infinite Rush", publisher "Milestone", datasize_readable_txt "12.7 GB"
+    - url: "https://www.nintendo.com/en-gb/Games/Nintendo-Switch-2-games/HOT-WHEELS-Infinite-Rush-3150480.html"  # (API) eu.json: "HOT WHEELS™ Infinite Rush", publisher "Milestone", datasize_readable_txt "12.7 GB"
       checked_at: "2026-10-14"
       fields: ["size", "distributor"]
   verified_at: "2026-10-14"
@@ -5142,7 +5142,7 @@
   evidence: "press_report"  # (leída) meisakugame: "ヒューマン フォール フラット SW2 Edition | 12兼"
   source_url: "https://meisakugame.garyoutensei.com/data/switch2packagekey.html"
   updates:
-    - url: "https://search.nintendo.jp/nintendo_soft/search.json?q=%E3%83%92%E3%83%A5%E3%83%BC%E3%83%9E%E3%83%B3&limit=40"  # (API) search.nintendo.jp: "ヒューマン フォール フラット Nintendo Switch 2 Edition", icode AFJWB, sform BEE_CARD, maker "テヨンジャパン", sdate "2026.12.3", pprice 4950 (la digital, BEE_DL, del 2026.10.1)
+    - url: "https://store-jp.nintendo.com/item/software/D70010000122929"  # (API) search.nintendo.jp: "ヒューマン フォール フラット Nintendo Switch 2 Edition", icode AFJWB, sform BEE_CARD, maker "テヨンジャパン", sdate "2026.12.3", pprice 4950 (la digital, BEE_DL, del 2026.10.1)
       checked_at: "2026-10-14"
       fields: ["release_date"]
   verified_at: "2026-10-14"
@@ -5199,7 +5199,7 @@
   evidence: "press_report"  # (leída) Nintendo Everything: "will be sold as a game-key card on Nintendo Switch 2... This means there will not be a true physical release in any part of the world"
   source_url: "https://nintendoeverything.com/hyrule-warriors-age-of-calamity-definitive-edition-is-a-game-key-card-on-nintendo-switch-2/"
   updates:
-    - url: "https://searching.nintendo-europe.com/en/select?q=age%20of%20calamity&fq=type:GAME&fq=playable_on_txt:BEE&rows=5&wt=json"  # (API) eu.json: "Hyrule Warriors: Age of Calamity – Definitive Edition", publisher "Nintendo"
+    - url: "https://www.nintendo.com/en-gb/Games/Nintendo-Switch-2-games/Hyrule-Warriors-Age-of-Calamity-Definitive-Edition-3188822.html"  # (API) eu.json: "Hyrule Warriors: Age of Calamity – Definitive Edition", publisher "Nintendo"
       checked_at: "2026-10-14"
       fields: ["distributor"]
   verified_at: "2026-09-17"
@@ -5259,7 +5259,7 @@
   evidence: "press_report"  # (leída) Nintendo Insider: "Nintendo has confirmed that the physical editions of its games 'will feature the full game on the cartridge.'" (lista que incluye "Hyrule Warriors: Age of Imprisonment")
   source_url: "https://www.nintendo-insider.com/every-physical-nintendo-switch-2-game-complete-on-cartridge/"
   updates:
-    - url: "https://searching.nintendo-europe.com/en/select?q=Hyrule%20Warriors&fq=type:GAME&fq=playable_on_txt:BEE&rows=5&wt=json"  # (API) Nintendo EU Solr: "Hyrule Warriors: Age of Imprisonment", publisher "Nintendo"
+    - url: "https://www.nintendo.com/en-gb/Games/Nintendo-Switch-2-games/Hyrule-Warriors-Age-of-Imprisonment-2789659.html"  # (API) Nintendo EU Solr: "Hyrule Warriors: Age of Imprisonment", publisher "Nintendo"
       checked_at: "2026-10-16"
       fields: ["distributor"]
   verified_at: "2026-09-17"
@@ -5346,7 +5346,7 @@
   evidence: "press_report"  # (leída) Nintendo Life ficha: "Physical Release | Standard Game Card"
   source_url: "https://www.nintendolife.com/games/nintendo-switch-2/indiana-jones-and-the-great-circle"
   updates:
-    - url: "https://searching.nintendo-europe.com/en/select?q=indiana%20jones&fq=type:GAME&fq=playable_on_txt:BEE&rows=5&wt=json"  # (API) eu.json: "Indiana Jones and the Great Circle™", publisher "Bethesda"
+    - url: "https://www.nintendo.com/en-gb/Games/Nintendo-Switch-2-games/Indiana-Jones-and-the-Great-Circle--3016547.html"  # (API) eu.json: "Indiana Jones and the Great Circle™", publisher "Bethesda"
       checked_at: "2026-10-14"
       fields: ["distributor"]
   verified_at: "2026-10-14"
@@ -5365,7 +5365,7 @@
   evidence: "press_report"  # (leída) meisakugame: "インディ・ジョーンズ/大いなる円環 | 2専"
   source_url: "https://meisakugame.garyoutensei.com/data/switch2packagekey.html"
   updates:
-    - url: "https://search.nintendo.jp/nintendo_soft/search.json?q=%E3%82%A4%E3%83%B3%E3%83%87%E3%82%A3&limit=40"  # (API) search.nintendo.jp: "インディ・ジョーンズ/大いなる円環™", sform BEE_DOWNLOADABLE, maker "ベセスダ・ソフトワークス", sdate "2026.5.12"
+    - url: "https://store-jp.nintendo.com/item/software/D70010000098814"  # (API) search.nintendo.jp: "インディ・ジョーンズ/大いなる円環™", sform BEE_DOWNLOADABLE, maker "ベセスダ・ソフトワークス", sdate "2026.5.12"
       checked_at: "2026-10-14"
       fields: ["release_date"]
   verified_at: "2026-10-14"
@@ -5465,7 +5465,7 @@
   evidence: "press_report"  # (leída) fila de la tabla: "Kirby Air Riders (Switch 2) | 20th Nov 2025 / Nintendo / HAL Laboratory"
   source_url: "https://www.nintendolife.com/guides/every-nintendo-switch-2-physical-release-with-the-full-game-on-the-cart"
   updates:
-    - url: "https://searching.nintendo-europe.com/en/select?q=Kirby%20Air%20Riders&fq=type:GAME&fq=playable_on_txt:BEE&rows=5&wt=json"  # (API) Nintendo EU Solr: "Kirby Air Riders", publisher "Nintendo"
+    - url: "https://www.nintendo.com/en-gb/Games/Nintendo-Switch-2-games/Kirby-Air-Riders-2785805.html"  # (API) Nintendo EU Solr: "Kirby Air Riders", publisher "Nintendo"
       checked_at: "2026-10-16"
       fields: ["distributor"]
   verified_at: "2026-09-17"
@@ -5507,7 +5507,7 @@
   evidence: "press_report"  # (leída) fila de la tabla de Nintendo Life
   source_url: "https://www.nintendolife.com/guides/every-nintendo-switch-2-physical-release-with-the-full-game-on-the-cart"
   updates:
-    - url: "https://searching.nintendo-europe.com/en/select?q=Forgotten%20Land&fq=type:GAME&fq=playable_on_txt:BEE&rows=5&wt=json"  # (API) Nintendo EU Solr: "Kirby and the Forgotten Land – Nintendo Switch 2 Edition + Star-Crossed World", publisher "Nintendo"
+    - url: "https://www.nintendo.com/en-gb/Games/Nintendo-Switch-2-Edition/Kirby-and-the-Forgotten-Land-Nintendo-Switch-2-Edition-Star-Crossed-World-2787773.html"  # (API) Nintendo EU Solr: "Kirby and the Forgotten Land – Nintendo Switch 2 Edition + Star-Crossed World", publisher "Nintendo"
       checked_at: "2026-10-16"
       fields: ["distributor"]
   verified_at: "2026-09-17"
@@ -5736,7 +5736,7 @@
   evidence: "press_report"  # (leída) Nintendo Life ficha: "Little Nightmares Enhanced Edition Complete Edition | Physical Release | Game-Key Card | Release Date | Nintendo Switch 2 | 10th O..."
   source_url: "https://www.nintendolife.com/games/nintendo-switch-2/little-nightmares-enhanced-edition"
   updates:
-    - url: "https://searching.nintendo-europe.com/en/select?q=little%20nightmares&fq=type:GAME&fq=playable_on_txt:BEE&rows=5&wt=json"  # (API) eu.json: "Little Nightmares Enhanced Edition - Complete Edition", datasize_readable_txt "4.5 GB"
+    - url: "https://www.nintendo.com/en-gb/Games/Nintendo-Switch-2-games/Little-Nightmares-Enhanced-Edition-Complete-Edition-2935560.html"  # (API) eu.json: "Little Nightmares Enhanced Edition - Complete Edition", datasize_readable_txt "4.5 GB"
       checked_at: "2026-10-14"
       fields: ["size"]
   verified_at: "2026-09-17"
@@ -5777,7 +5777,7 @@
   evidence: "press_report"  # (leída) Nintendo Life ficha: "Madden NFL 2026 | ... | Physical Release | Game-Key Card | Release Date | Nintendo Switch 2 | 14th A..."
   source_url: "https://www.nintendolife.com/games/nintendo-switch-2/ea-sports-madden-nfl-26"
   updates:
-    - url: "https://searching.nintendo-europe.com/en/select?q=madden&fq=type:GAME&fq=playable_on_txt:BEE&rows=5&wt=json"  # (API) eu.json: "EA SPORTS™ Madden NFL 26", datasize_readable_txt "57.7 GB"
+    - url: "https://www.nintendo.com/en-gb/Games/Nintendo-Switch-2-games/EA-SPORTS-Madden-NFL-26-2807738.html"  # (API) eu.json: "EA SPORTS™ Madden NFL 26", datasize_readable_txt "57.7 GB"
       checked_at: "2026-10-14"
       fields: ["size"]
   verified_at: "2026-09-17"
@@ -5817,7 +5817,7 @@
   evidence: "press_report"  # (leída) Nintendo Life ficha: "... | Physical Release | Game-Key Card | Release Date | Nintendo Switch 2 | 13th A..."
   source_url: "https://www.nintendolife.com/games/nintendo-switch-2/ea-sports-madden-nfl-27"
   updates:
-    - url: "https://searching.nintendo-europe.com/en/select?q=madden&fq=type:GAME&fq=playable_on_txt:BEE&rows=5&wt=json"  # (API) eu.json: "EA SPORTS™ Madden NFL 27", datasize_readable_txt "57.0 GB"
+    - url: "https://www.nintendo.com/en-gb/Games/Nintendo-Switch-2-games/EA-SPORTS-Madden-NFL-27-3092727.html"  # (API) eu.json: "EA SPORTS™ Madden NFL 27", datasize_readable_txt "57.0 GB"
       checked_at: "2026-10-14"
       fields: ["size"]
   verified_at: "2026-09-17"
@@ -5875,7 +5875,7 @@
   evidence: "press_report"  # (leída) meisakugame: "魔女ガミ－The Witch of Luludidea－ | 2専"
   source_url: "https://meisakugame.garyoutensei.com/data/switch2packagekey.html"
   updates:
-    - url: "https://search.nintendo.jp/nintendo_soft/search.json?q=%E3%83%9E%E3%82%B8%E3%83%A7%E3%82%AC%E3%83%9F&limit=40"  # (API) search.nintendo.jp: "魔女ガミ－The Witch of Luludidea－", icode AAWZA, sform BEE_DOWNLOADABLE, maker "インティ・クリエイツ", sdate "2025.10.30", pprice 9240
+    - url: "https://store-jp.nintendo.com/item/software/D70010000097798"  # (API) search.nintendo.jp: "魔女ガミ－The Witch of Luludidea－", icode AAWZA, sform BEE_DOWNLOADABLE, maker "インティ・クリエイツ", sdate "2025.10.30", pprice 9240
       checked_at: "2026-10-14"
       fields: ["release_date"]
   verified_at: "2026-10-14"
@@ -5913,7 +5913,7 @@
   evidence: "press_report"  # (leída) Nintendo Life: "Physical Release | Standard Game Card"
   source_url: "https://www.nintendolife.com/games/nintendo-switch-2/mario-tennis-fever"
   updates:
-    - url: "https://searching.nintendo-europe.com/en/select?q=Mario%20Tennis%20Fever&fq=type:GAME&fq=playable_on_txt:BEE&rows=5&wt=json"  # (API) Nintendo EU Solr: "Mario Tennis Fever", publisher "Nintendo"
+    - url: "https://www.nintendo.com/en-gb/Games/Nintendo-Switch-2-games/Mario-Tennis-Fever-2915160.html"  # (API) Nintendo EU Solr: "Mario Tennis Fever", publisher "Nintendo"
       checked_at: "2026-10-16"
       fields: ["distributor"]
   verified_at: "2026-09-17"
@@ -6147,7 +6147,7 @@
   evidence: "unconfirmed"
   source_url: null
   updates:
-    - url: "https://www.nintendo.com/kr/api/search?k=%EB%A9%94%ED%8A%B8%EB%A1%9C%EC%9D%B4%EB%93%9C&directory=software&size=48"  # (API) Nintendo Corea: "메트로이드 래버너스", category ["패키지 버전","다운로드 버전"], publisher "한국닌텐도", releaseDatePackage "2027-01-28T00:00:00Z"
+    - url: "https://store.nintendo.co.kr/70010000135073"  # (API) Nintendo Corea: "메트로이드 래버너스", category ["패키지 버전","다운로드 버전"], publisher "한국닌텐도", releaseDatePackage "2027-01-28T00:00:00Z"
       checked_at: "2026-10-16"
       fields: ["distributor", "release_date"]
   verified_at: "2026-09-18"
@@ -6166,7 +6166,7 @@
   evidence: "retailer_listing"  # (listado) Play-Asia: "Metroid Ravenous (Multi-Language) Game Cart for Nintendo Switch 2"
   source_url: "https://www.play-asia.com/en/metroid-ravenous-multi-language/13/70kfhd"
   updates:
-    - url: "https://www.nintendo.com/hk/api/search?k=%E5%AF%86%E7%89%B9%E7%BE%85%E5%BE%B7&directory=software&size=30"  # (API) Nintendo HK: "密特羅德 絕境嗜生", category ["盒裝版","下載版"], publisher "Nintendo"
+    - url: "https://ec.nintendo.com/HK/zh/titles/70010000135074"  # (API) Nintendo HK: "密特羅德 絕境嗜生", category ["盒裝版","下載版"], publisher "Nintendo"
       checked_at: "2026-10-16"
       fields: ["distributor"]
   verified_at: "2026-09-24"
@@ -6188,7 +6188,7 @@
   evidence: "retailer_listing"  # (listado) Play-Asia: "Metroid Ravenous [Special Edition] (Multi-Language) Game Cart (Cover - Asian) for Nintendo Switch 2"
   source_url: "https://www.play-asia.com/en/metroid-ravenous-special-edition-multi-language/13/70kfi9"
   updates:
-    - url: "https://www.nintendo.com/hk/api/search?k=%E5%AF%86%E7%89%B9%E7%BE%85%E5%BE%B7&directory=software&size=30"  # (API) Nintendo HK: "密特羅德 絕境嗜生", category ["盒裝版","下載版"], publisher "Nintendo"
+    - url: "https://ec.nintendo.com/HK/zh/titles/70010000135074"  # (API) Nintendo HK: "密特羅德 絕境嗜生", category ["盒裝版","下載版"], publisher "Nintendo"
       checked_at: "2026-10-16"
       fields: ["distributor"]
   verified_at: "2026-09-18"
@@ -6323,7 +6323,7 @@
   evidence: "press_report"  # (leída) Nintendo Life, lista "Every Nintendo Switch 2 Physical Release With The Full Game On The Cart"
   source_url: "https://www.nintendolife.com/guides/every-nintendo-switch-2-physical-release-with-the-full-game-on-the-cart"
   updates:
-    - url: "https://searching.nintendo-europe.com/en/select?q=mio&fq=type:GAME&fq=playable_on_txt:BEE&rows=5&wt=json"  # (API) eu.json: "MIO: Memories in Orbit", publisher "Focus Entertainment"
+    - url: "https://www.nintendo.com/en-gb/Games/Nintendo-Switch-2-games/MIO-Memories-in-Orbit-2993758.html"  # (API) eu.json: "MIO: Memories in Orbit", publisher "Focus Entertainment"
       checked_at: "2026-10-14"
       fields: ["distributor"]
   verified_at: "2026-09-18"
@@ -6472,7 +6472,7 @@
   evidence: "press_report"  # (leída) Nintendo Life: "Physical Release | Game-Key Card | ... 13th Mar 2026 — $69.99 | ... — £54.99"
   source_url: "https://www.nintendolife.com/games/nintendo-switch-2/monster-hunter-stories-3-twisted-reflection"
   updates:
-    - url: "https://searching.nintendo-europe.com/en/select?q=Monster%20Hunter%20Stories%203&fq=type:GAME&fq=playable_on_txt:BEE&rows=5&wt=json"  # (API) Nintendo EU Solr: "Monster Hunter Stories 3: Twisted Reflection", publisher "CAPCOM", datasize_readable_txt "27.7 GB"
+    - url: "https://www.nintendo.com/en-gb/Games/Nintendo-Switch-2-games/Monster-Hunter-Stories-3-Twisted-Reflection-2951637.html"  # (API) Nintendo EU Solr: "Monster Hunter Stories 3: Twisted Reflection", publisher "CAPCOM", datasize_readable_txt "27.7 GB"
       checked_at: "2026-10-16"
       fields: ["distributor", "size"]
   verified_at: "2026-09-18"
@@ -6546,7 +6546,7 @@
   evidence: "unconfirmed"  # (API) Nintendo Corea: "몬스터헌터 스토리즈 3 엇갈린 운명 (Monster Hunter Stories 3: Twisted Reflection)", 패키지 버전; sin fuente de formato
   source_url: null
   updates:
-    - url: "https://www.nintendo.com/kr/api/search?k=%EB%AA%AC%EC%8A%A4%ED%84%B0%20%ED%97%8C%ED%84%B0&directory=software&size=48"  # (API) Nintendo Corea: publisher "CAPCOM", 패키지 버전
+    - url: "https://store.nintendo.co.kr/70010000097759"  # (API) Nintendo Corea: publisher "CAPCOM", 패키지 버전
       checked_at: "2026-10-16"
       fields: ["distributor"]
   verified_at: "2026-10-16"
@@ -6602,7 +6602,7 @@
   evidence: "press_report"  # (leída) meisakugame: "モンスターハンターワイルズ デラックスエディション | Key | 40GB"
   source_url: "https://meisakugame.garyoutensei.com/data/switch2packagekey.html"
   updates:
-    - url: "https://search.nintendo.jp/nintendo_soft/search.json?q=%E3%83%A2%E3%83%B3%E3%82%B9%E3%82%BF%E3%83%BC%E3%83%8F%E3%83%B3%E3%82%BF%E3%83%BC%E3%83%AF%E3%82%A4%E3%83%AB%E3%82%BA&limit=40"  # (API) search.nintendo.jp: "モンスターハンターワイルズ", icode AA6YA, sform BEE_DOWNLOADABLE, maker "カプコン", sdate "2026.12.4"
+    - url: "https://store-jp.nintendo.com/item/software/D70010000102604"  # (API) search.nintendo.jp: "モンスターハンターワイルズ", icode AA6YA, sform BEE_DOWNLOADABLE, maker "カプコン", sdate "2026.12.4"
       checked_at: "2026-10-16"
       fields: ["release_date"]
   verified_at: "2026-09-24"
@@ -6856,7 +6856,7 @@
   evidence: "press_report"  # (leída) Nintendo Life: "Physical Release | Game-Key Card | Release Date | Nintendo Switch 2 | 4th Sep 2026 — £54.99 | 4th Sep 2026 — $59.99"
   source_url: "https://www.nintendolife.com/games/nintendo-switch-2/my-hero-academia-alls-justice"
   updates:
-    - url: "https://searching.nintendo-europe.com/en/select?q=MY%20HERO%20ACADEMIA&fq=type:GAME&fq=playable_on_txt:BEE&rows=5&wt=json"  # (API) Nintendo EU Solr: "MY HERO ACADEMIA: All’s Justice", publisher "Bandai Namco Entertainment", datasize_readable_txt "16.1 GB"
+    - url: "https://www.nintendo.com/en-gb/Games/Nintendo-Switch-2-games/MY-HERO-ACADEMIA-All-s-Justice-3124951.html"  # (API) Nintendo EU Solr: "MY HERO ACADEMIA: All’s Justice", publisher "Bandai Namco Entertainment", datasize_readable_txt "16.1 GB"
       checked_at: "2026-10-16"
       fields: ["distributor", "size"]
   verified_at: "2026-09-18"
@@ -6926,7 +6926,7 @@
   evidence: "unconfirmed"  # (API) Nintendo Corea: "나의 히어로 아카데미아 올즈 저스티스", 패키지 버전; sin fuente de formato
   source_url: null
   updates:
-    - url: "https://www.nintendo.com/kr/api/search?k=%ED%9E%88%EC%96%B4%EB%A1%9C%20%EC%95%84%EC%B9%B4%EB%8D%B0%EB%AF%B8%EC%95%84&directory=software&size=48"  # (API) Nintendo Corea: publisher "Bandai Namco Entertainment", 패키지 버전
+    - url: "https://store.nintendo.co.kr/70010000103759"  # (API) Nintendo Corea: publisher "Bandai Namco Entertainment", 패키지 버전
       checked_at: "2026-10-16"
       fields: ["distributor"]
   verified_at: "2026-10-16"
@@ -6948,7 +6948,7 @@
   evidence: "press_report"  # (leída) Nintendo Life: "Physical Release | Game-Key Card | Release Date | Nintendo Switch 2 | 5th Sep 2025 — $69.99 | 5th Sep 2025 — £69.99"
   source_url: "https://www.nintendolife.com/games/nintendo-switch-2/nba-2k26"
   updates:
-    - url: "https://searching.nintendo-europe.com/en/select?q=NBA%202K26&fq=type:GAME&fq=playable_on_txt:BEE&rows=5&wt=json"  # (API) Nintendo EU Solr: "NBA 2K26", publisher "2K", datasize_readable_txt "71.2 GB"
+    - url: "https://www.nintendo.com/en-gb/Games/Nintendo-Switch-2-games/NBA-2K26-2910946.html"  # (API) Nintendo EU Solr: "NBA 2K26", publisher "2K", datasize_readable_txt "71.2 GB"
       checked_at: "2026-10-16"
       fields: ["distributor", "size"]
   verified_at: "2026-09-18"
@@ -6987,7 +6987,7 @@
   evidence: "press_report"  # (leída) meisakugame: "NBA 2K26 | Key | 75GB"
   source_url: "https://meisakugame.garyoutensei.com/data/switch2packagekey.html"
   updates:
-    - url: "https://search.nintendo.jp/nintendo_soft/search.json?q=NBA%202K26&limit=40"  # (API) search.nintendo.jp: "NBA 2K26", icode AANZA, sform BEE_DOWNLOADABLE, maker "2K", sdate "2025.9.5", pprice 8800
+    - url: "https://store-jp.nintendo.com/item/software/D70010000101228"  # (API) search.nintendo.jp: "NBA 2K26", icode AANZA, sform BEE_DOWNLOADABLE, maker "2K", sdate "2025.9.5", pprice 8800
       checked_at: "2026-10-16"
       fields: ["release_date"]
   verified_at: "2026-10-16"
@@ -7024,7 +7024,7 @@
   evidence: "press_report"  # (leída) Nintendo Life: "Physical Release | Game-Key Card | Release Date | Nintendo Switch 2 | 4th Sep 2026 — £69.99 | 4th Sep 2026 — $69.99"
   source_url: "https://www.nintendolife.com/games/nintendo-switch-2/nba-2k27"
   updates:
-    - url: "https://searching.nintendo-europe.com/en/select?q=NBA%202K27&fq=type:GAME&fq=playable_on_txt:BEE&rows=5&wt=json"  # (API) Nintendo EU Solr: "NBA 2K27", publisher "2K", datasize_readable_txt "81.0 GB"
+    - url: "https://www.nintendo.com/en-gb/Games/Nintendo-Switch-2-games/NBA-2K27-3143988.html"  # (API) Nintendo EU Solr: "NBA 2K27", publisher "2K", datasize_readable_txt "81.0 GB"
       checked_at: "2026-10-16"
       fields: ["distributor", "size"]
   verified_at: "2026-09-18"
@@ -7063,7 +7063,7 @@
   evidence: "press_report"  # (leída) meisakugame: "NBA 2K27 | Key | 85GB"
   source_url: "https://meisakugame.garyoutensei.com/data/switch2packagekey.html"
   updates:
-    - url: "https://search.nintendo.jp/nintendo_soft/search.json?q=NBA%202K27&limit=40"  # (API) search.nintendo.jp: "『NBA 2K27』", icode ABV2A, sform BEE_DOWNLOADABLE, maker "2K", sdate "2026.9.4", pprice 9460
+    - url: "https://store-jp.nintendo.com/item/software/D70010000116955"  # (API) search.nintendo.jp: "『NBA 2K27』", icode ABV2A, sform BEE_DOWNLOADABLE, maker "2K", sdate "2026.9.4", pprice 9460
       checked_at: "2026-10-16"
       fields: ["release_date"]
   verified_at: "2026-10-16"
@@ -7115,7 +7115,7 @@
   evidence: "retailer_listing"  # (leída) achatmoinscher: "Nom du produit | MotoGP 26 • Jeu Nintendo Switch 2 | ... Plateforme | Nintendo Switch 2 | Restriction territoriale | Code de téléchargement utilisable uniquement avec la version européenne ... Support du produit | Download | ... Version | Code dans la boîte"; "Date de sortie marché | 29 Avril 2026"
   source_url: "https://www.achatmoinscher.com/comparateur-de-prix-Jeux-video-Nintendo-Switch/motogp-26-code-in-a-box-nintendo-switch-2.html"
   updates:
-    - url: "https://searching.nintendo-europe.com/en/select?q=MotoGP&fq=type:GAME&fq=playable_on_txt:BEE&rows=5&wt=json"  # (API) Nintendo EU Solr: "MotoGP™26", datasize_readable_txt "20.4 GB"
+    - url: "https://www.nintendo.com/en-gb/Games/Nintendo-Switch-2-games/MotoGP-26-3064712.html"  # (API) Nintendo EU Solr: "MotoGP™26", datasize_readable_txt "20.4 GB"
       checked_at: "2026-10-16"
       fields: ["size"]
   verified_at: "2026-10-16"
@@ -7172,7 +7172,7 @@
   evidence: "press_report"  # (leída) nintendolife.com, guía de game-key cards: "Nicktoons & The Dice of Destiny (Switch 2) | 5th Dec 2025 / GameMill Entertainment / Fair Play Labs"
   source_url: "https://www.nintendolife.com/guides/every-nintendo-switch-2-game-key-card-release"
   updates:
-    - url: "https://searching.nintendo-europe.com/en/select?q=Nicktoons&fq=type:GAME&fq=playable_on_txt:BEE&rows=5&wt=json"  # (API) Nintendo EU Solr: "Nicktoons & The Dice of Destiny", publisher "Game Mill", datasize_readable_txt "5.9 GB"
+    - url: "https://www.nintendo.com/en-gb/Games/Nintendo-Switch-2-games/Nicktoons-The-Dice-of-Destiny-2960027.html"  # (API) Nintendo EU Solr: "Nicktoons & The Dice of Destiny", publisher "Game Mill", datasize_readable_txt "5.9 GB"
       checked_at: "2026-10-16"
       fields: ["distributor", "size"]
   verified_at: "2026-09-24"
@@ -7428,7 +7428,7 @@
   evidence: "official"  # (leída) spike-chunsoft.com: "Nintendo Switch 2 physical version is available as a Game-Key Card." — "Available Now in North America and Europe"
   source_url: "https://www.spike-chunsoft.com/news/ai_sleep_availablenow/"
   updates:
-    - url: "https://searching.nintendo-europe.com/en/select?q=Kaname%20Date&fq=type:GAME&fq=playable_on_txt:BEE&rows=5&wt=json"  # (API) Nintendo EU Solr: "No Sleep For Kaname Date - From AI: THE SOMNIUM FILES", publisher "Spike Chunsoft US", datasize_readable_txt "8.7 GB"
+    - url: "https://www.nintendo.com/en-gb/Games/Nintendo-Switch-2-games/No-Sleep-For-Kaname-Date-From-AI-THE-SOMNIUM-FILES-2850423.html"  # (API) Nintendo EU Solr: "No Sleep For Kaname Date - From AI: THE SOMNIUM FILES", publisher "Spike Chunsoft US", datasize_readable_txt "8.7 GB"
       checked_at: "2026-10-16"
       fields: ["distributor", "size"]
   verified_at: "2026-09-18"
@@ -7581,7 +7581,7 @@
   evidence: "press_report"  # (leída) rpgsite.net: "The physical releases will be Game-Key Cards" (precio dado "in the UK" y "The US prices are $59.99 each")
   source_url: "https://www.rpgsite.net/news/20903-octopath-traveler-switch-2-port-release-date-1-2-physical-digital"
   updates:
-    - url: "https://searching.nintendo-europe.com/en/select?q=Octopath%20Traveler&fq=type:GAME&fq=playable_on_txt:BEE&rows=5&wt=json"  # (API) Nintendo EU Solr: "Octopath Traveler™", publisher "SQUARE ENIX", datasize_readable_txt "3.1 GB"
+    - url: "https://www.nintendo.com/en-gb/Games/Nintendo-Switch-2-games/Octopath-Traveler--3139372.html"  # (API) Nintendo EU Solr: "Octopath Traveler™", publisher "SQUARE ENIX", datasize_readable_txt "3.1 GB"
       checked_at: "2026-10-16"
       fields: ["distributor", "size"]
   verified_at: "2026-09-18"
@@ -7642,7 +7642,7 @@
   evidence: "press_report"  # (leída) nintendolife.com: "Octopath 0 Is A Game-Key Card On Switch 2"
   source_url: "https://www.nintendolife.com/news/2025/07/octopath-0-is-a-game-key-card-on-switch-2-and-square-enix-has-no-plans-for-a-switch-1-upgrade-option"
   updates:
-    - url: "https://searching.nintendo-europe.com/en/select?q=OCTOPATH%20TRAVELER%200&fq=type:GAME&fq=playable_on_txt:BEE&rows=5&wt=json"  # (API) Nintendo EU Solr: "OCTOPATH TRAVELER 0", publisher "SQUARE ENIX", datasize_readable_txt "5.2 GB"
+    - url: "https://www.nintendo.com/en-gb/Games/Nintendo-Switch-2-games/OCTOPATH-TRAVELER-0-2914713.html"  # (API) Nintendo EU Solr: "OCTOPATH TRAVELER 0", publisher "SQUARE ENIX", datasize_readable_txt "5.2 GB"
       checked_at: "2026-10-16"
       fields: ["distributor", "size"]
   verified_at: "2026-09-18"
@@ -7715,7 +7715,7 @@
   evidence: "press_report"  # (leída) rpgsite.net: "The physical releases will be Game-Key Cards" (precio dado "in the UK" y "The US prices are $59.99 each")
   source_url: "https://www.rpgsite.net/news/20903-octopath-traveler-switch-2-port-release-date-1-2-physical-digital"
   updates:
-    - url: "https://searching.nintendo-europe.com/en/select?q=OCTOPATH%20TRAVELER%20II&fq=type:GAME&fq=playable_on_txt:BEE&rows=5&wt=json"  # (API) Nintendo EU Solr: "OCTOPATH TRAVELER II", publisher "SQUARE ENIX", datasize_readable_txt "6.6 GB"
+    - url: "https://www.nintendo.com/en-gb/Games/Nintendo-Switch-2-games/OCTOPATH-TRAVELER-II-3139249.html"  # (API) Nintendo EU Solr: "OCTOPATH TRAVELER II", publisher "SQUARE ENIX", datasize_readable_txt "6.6 GB"
       checked_at: "2026-10-16"
       fields: ["distributor", "size"]
   verified_at: "2026-09-18"
@@ -7757,7 +7757,7 @@
   evidence: "press_report"  # (leída) nintendolife.com: "Physical Release | Game-Key Card"
   source_url: "https://www.nintendolife.com/games/nintendo-switch-2/onimusha_way_of_the_sword"
   updates:
-    - url: "https://searching.nintendo-europe.com/en/select?q=Onimusha&fq=type:GAME&fq=playable_on_txt:BEE&rows=5&wt=json"  # (API) Nintendo EU Solr: "Onimusha: Way of the Sword", publisher "CAPCOM", datasize_readable_txt "32.0 GB"
+    - url: "https://www.nintendo.com/en-gb/Games/Nintendo-Switch-2-games/Onimusha-Way-of-the-Sword-3109216.html"  # (API) Nintendo EU Solr: "Onimusha: Way of the Sword", publisher "CAPCOM", datasize_readable_txt "32.0 GB"
       checked_at: "2026-10-16"
       fields: ["distributor", "size"]
   verified_at: "2026-09-18"
@@ -7934,7 +7934,7 @@
   evidence: "press_report"  # (leída) nintendocentral.com: "confirming a full physical release on cartridge"
   source_url: "https://nintendocentral.com/nintendo-switch-2-exclusive-orbitals-confirms-full-physical-cartridge-release-amid-rising-concern-over-digital-only-gaming-future/"
   updates:
-    - url: "https://searching.nintendo-europe.com/en/select?q=Orbitals&fq=type:GAME&fq=playable_on_txt:BEE&rows=5&wt=json"  # (API) Nintendo EU Solr: "Orbitals", publisher "Kepler Interactive"
+    - url: "https://www.nintendo.com/en-gb/Games/Nintendo-Switch-2-games/Orbitals-3017490.html"  # (API) Nintendo EU Solr: "Orbitals", publisher "Kepler Interactive"
       checked_at: "2026-10-16"
       fields: ["distributor"]
   verified_at: "2026-09-18"
@@ -7973,7 +7973,7 @@
   evidence: "press_report"  # (leída) meisakugame: "オービタルズ | 2専 | -"
   source_url: "https://meisakugame.garyoutensei.com/data/switch2packagekey.html"
   updates:
-    - url: "https://search.nintendo.jp/nintendo_soft/search.json?q=Orbitals&limit=40"  # (API) search.nintendo.jp: "オービタルズ Orbitals", icode AAYYA, sform BEE_DOWNLOADABLE, maker "Kepler Interactive", sdate "2026.9.3", pprice 6980
+    - url: "https://store-jp.nintendo.com/item/software/D70010000098975"  # (API) search.nintendo.jp: "オービタルズ Orbitals", icode AAYYA, sform BEE_DOWNLOADABLE, maker "Kepler Interactive", sdate "2026.9.3", pprice 6980
       checked_at: "2026-10-16"
       fields: ["release_date"]
   verified_at: "2026-10-16"
@@ -7992,7 +7992,7 @@
   evidence: "unconfirmed"  # (API) Nintendo Corea: "오비탈스 Orbitals", category ["패키지 버전","다운로드 버전"], publisher "Kepler Interactive"; sin fuente de formato (Danawa sin resultado)
   source_url: null
   updates:
-    - url: "https://www.nintendo.com/kr/api/search?k=%EC%98%A4%EB%B9%84%ED%83%88&directory=software&size=48"  # (API) Nintendo Corea: "오비탈스 Orbitals", publisher "Kepler Interactive", 패키지 버전
+    - url: "https://store.nintendo.co.kr/70010000098976"  # (API) Nintendo Corea: "오비탈스 Orbitals", publisher "Kepler Interactive", 패키지 버전
       checked_at: "2026-10-16"
       fields: ["distributor"]
   verified_at: "2026-10-16"
@@ -8182,7 +8182,7 @@
   evidence: "unconfirmed"  # (API) search.nintendo.jp: pprice 8800 (hay パッケージ版); sin fila en meisakugame ni frase de formato en la prensa japonesa (4Gamer, appbank, animeanime)
   source_url: null
   updates:
-    - url: "https://search.nintendo.jp/nintendo_soft/search.json?q=PGA%E3%83%84%E3%82%A2%E3%83%BC%202K25&limit=40"  # (API) search.nintendo.jp: "『ゴルフ PGAツアー 2K25』", icode ABCHA, sform BEE_DL, maker "2K", sdate "2026.2.6", pprice 8800
+    - url: "https://store-jp.nintendo.com/item/software/D70010000105579"  # (API) search.nintendo.jp: "『ゴルフ PGAツアー 2K25』", icode ABCHA, sform BEE_DL, maker "2K", sdate "2026.2.6", pprice 8800
       checked_at: "2026-10-16"
       fields: ["distributor"]
   verified_at: "2026-10-16"
@@ -8201,7 +8201,7 @@
   evidence: "unconfirmed"  # (API) Nintendo Corea: "PGA TOUR 2K25", category ["패키지 버전","다운로드 버전"]; Danawa sin resultado
   source_url: null
   updates:
-    - url: "https://www.nintendo.com/kr/api/search?k=PGA&directory=software&size=48"  # (API) Nintendo Corea: "PGA TOUR 2K25", publisher "2K", releaseDatePackage "2026-02-06T00:00:00Z"
+    - url: "https://store.nintendo.co.kr/70010000105581"  # (API) Nintendo Corea: "PGA TOUR 2K25", publisher "2K", releaseDatePackage "2026-02-06T00:00:00Z"
       checked_at: "2026-10-16"
       fields: ["distributor", "release_date"]
   verified_at: "2026-10-16"
@@ -8515,7 +8515,7 @@
   evidence: "press_report"  # (leída) meisakugame: "みんなでポイっと！プリニーすごろく | Key |"
   source_url: "https://meisakugame.garyoutensei.com/data/switch2packagekey.html"
   updates:
-    - url: "https://search.nintendo.jp/nintendo_soft/search.json?q=%E3%83%97%E3%83%AA%E3%83%8B%E3%83%BC%E3%81%99%E3%81%94%E3%82%8D%E3%81%8F&limit=40"  # (API) search.nintendo.jp: "みんなでポイっと！プリニーすごろく", icode AB8WA, sform BEE_DOWNLOADABLE, maker "日本一ソフトウェア", sdate "2026.11.12", pprice 7678
+    - url: "https://store-jp.nintendo.com/item/software/D70010000123165"  # (API) search.nintendo.jp: "みんなでポイっと！プリニーすごろく", icode AB8WA, sform BEE_DOWNLOADABLE, maker "日本一ソフトウェア", sdate "2026.11.12", pprice 7678
       checked_at: "2026-10-16"
       fields: ["release_date"]
   verified_at: "2026-10-16"
@@ -8534,7 +8534,7 @@
   evidence: "unconfirmed"  # (API) Nintendo Corea: "다 함께 즐기자! 프리니 보드 배틀", category ["패키지 버전","다운로드 버전","체험판"]; Danawa sin resultado
   source_url: null
   updates:
-    - url: "https://www.nintendo.com/kr/api/search?k=%ED%94%84%EB%A6%AC%EB%8B%88&directory=software&size=48"  # (API) Nintendo Corea: "다 함께 즐기자! 프리니 보드 배틀", publisher "Clouded Leopard Entertainment", 패키지 버전
+    - url: "https://store.nintendo.co.kr/70010000127822"  # (API) Nintendo Corea: "다 함께 즐기자! 프리니 보드 배틀", publisher "Clouded Leopard Entertainment", 패키지 버전
       checked_at: "2026-10-16"
       fields: ["distributor"]
   verified_at: "2026-10-16"
@@ -8603,7 +8603,7 @@
   evidence: "press_report"  # (leída) meisakugame: "レイマン レジェンド リトールド | Key | 25GB"
   source_url: "https://meisakugame.garyoutensei.com/data/switch2packagekey.html"
   updates:
-    - url: "https://search.nintendo.jp/nintendo_soft/search.json?q=%E3%83%AC%E3%82%A4%E3%83%9E%E3%83%B3&limit=40"  # (API) search.nintendo.jp: "レイマン レジェンド リトールド", icode ABLMA, sform BEE_DOWNLOADABLE, maker "ユービーアイソフト", sdate "2026.12.3"
+    - url: "https://store-jp.nintendo.com/item/software/D70010000111544"  # (API) search.nintendo.jp: "レイマン レジェンド リトールド", icode ABLMA, sform BEE_DOWNLOADABLE, maker "ユービーアイソフト", sdate "2026.12.3"
       checked_at: "2026-10-16"
       fields: ["release_date"]
   verified_at: "2026-10-16"
@@ -8656,7 +8656,7 @@
   evidence: "press_report"  # (leída) nintendolife.com, guía de game-key cards: "Remothered: Red Nun's Legacy (Switch 2) | 27th Oct 2026 / Maximum Entertainment / Stormind Games"
   source_url: "https://www.nintendolife.com/guides/every-nintendo-switch-2-game-key-card-release"
   updates:
-    - url: "https://searching.nintendo-europe.com/en/select?q=Remothered&fq=type:GAME&fq=playable_on_txt:BEE&rows=5&wt=json"  # (API) Nintendo EU Solr: "Remothered: Red Nun's Legacy", datasize_readable_txt "10.1 GB"
+    - url: "https://www.nintendo.com/en-gb/Games/Nintendo-Switch-2-games/Remothered-Red-Nun-s-Legacy-3202733.html"  # (API) Nintendo EU Solr: "Remothered: Red Nun's Legacy", datasize_readable_txt "10.1 GB"
       checked_at: "2026-10-16"
       fields: ["size"]
     - url: "https://nintendoeverything.com/remothered-red-nuns-legacy-gets-nintendo-switch-2-release-date-new-trailer/"  # (leída) Nintendo Everything, actualización del 20-10-2026: "The game has been delayed on Nintendo Switch 2 to December 3. By doing so, the team is “aligning the digital and physical releases and giving us more time for final polish.”"
@@ -8761,7 +8761,7 @@
   evidence: "press_report"  # (leída) meisakugame: "バイオハザード レクイエム | Key | 30GB"
   source_url: "https://meisakugame.garyoutensei.com/data/switch2packagekey.html"
   updates:
-    - url: "https://search.nintendo.jp/nintendo_soft/search.json?q=BIOHAZARD%20requiem&limit=40"  # (API) search.nintendo.jp: "BIOHAZARD requiem", icode AA2PA, sform BEE_DOWNLOADABLE, maker "カプコン", sdate "2026.2.27", pprice 8990
+    - url: "https://store-jp.nintendo.com/item/software/D70010000099978"  # (API) search.nintendo.jp: "BIOHAZARD requiem", icode AA2PA, sform BEE_DOWNLOADABLE, maker "カプコン", sdate "2026.2.27", pprice 8990
       checked_at: "2026-10-16"
       fields: ["release_date"]
   verified_at: "2026-10-16"
@@ -9136,7 +9136,7 @@
   evidence: "retailer_listing"  # (leída) achatmoinscher: "Nom du produit | Sid Meier's Civilization VII - Nintendo Switch 2 Edition • Jeu Nintendo Switch 2 | ... Plateforme | Nintendo Switch 2 | Restriction territoriale | Code de téléchargement utilisable uniquement avec la version européenne ... Support du produit | Download | ... Version | Code dans la boîte"; "Code EAN | 5026555072069"
   source_url: "https://www.achatmoinscher.com/comparateur-de-prix-Jeux-video-Nintendo-Switch/civilization-vii-code-in-a-box-nintendo-switch-2.html"
   updates:
-    - url: "https://searching.nintendo-europe.com/en/select?q=Civilization&fq=type:GAME&fq=playable_on_txt:BEE&rows=5&wt=json"  # (API) Nintendo EU Solr: "Sid Meier’s Civilization® VII – Nintendo Switch 2 Edition", datasize_readable_txt "22.6 GB"
+    - url: "https://www.nintendo.com/en-gb/Games/Nintendo-Switch-2-Edition/Sid-Meier-s-Civilization-VII-Nintendo-Switch-2-Edition-2799402.html"  # (API) Nintendo EU Solr: "Sid Meier’s Civilization® VII – Nintendo Switch 2 Edition", datasize_readable_txt "22.6 GB"
       checked_at: "2026-10-16"
       fields: ["size"]
   verified_at: "2026-10-16"
@@ -9155,7 +9155,7 @@
   evidence: "unconfirmed"  # (API) search.nintendo.jp: pprice 8800 (hay パッケージ版); sin fila en meisakugame ni frase de formato
   source_url: null
   updates:
-    - url: "https://search.nintendo.jp/nintendo_soft/search.json?q=%E3%82%B7%E3%83%B4%E3%82%A3%E3%83%A9%E3%82%A4%E3%82%BC%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3&limit=40"  # (API) search.nintendo.jp: "Sid Meier's Civilization® VII (『シドマイヤーズ シヴィライゼーション® VII』) Nintendo Switch 2 Edition", icode A4QXA, sform BEE_DL, maker "2K", sdate "2025.6.5", pprice 8800
+    - url: "https://store-jp.nintendo.com/item/software/D70010000096650"  # (API) search.nintendo.jp: "Sid Meier's Civilization® VII (『シドマイヤーズ シヴィライゼーション® VII』) Nintendo Switch 2 Edition", icode A4QXA, sform BEE_DL, maker "2K", sdate "2025.6.5", pprice 8800
       checked_at: "2026-10-16"
       fields: ["distributor"]
   verified_at: "2026-10-16"
@@ -9174,7 +9174,7 @@
   evidence: "unconfirmed"  # (API) Nintendo Corea: "Sid Meier's Civilization® VII – Nintendo Switch 2 Edition (시드 마이어의 문명® VII – Nintendo Switch 2 에디션)", category ["패키지 버전","다운로드 버전"]; Danawa sin resultado
   source_url: null
   updates:
-    - url: "https://www.nintendo.com/kr/api/search?k=%EB%AC%B8%EB%AA%85&directory=software&size=48"  # (API) Nintendo Corea: publisher "Take Two Interactive UK Limited", 패키지 버전
+    - url: "https://store.nintendo.co.kr/70010000097161"  # (API) Nintendo Corea: publisher "Take Two Interactive UK Limited", 패키지 버전
       checked_at: "2026-10-16"
       fields: ["distributor"]
   verified_at: "2026-10-16"
@@ -9319,7 +9319,7 @@
   evidence: "press_report"  # (leída) meisakugame: "スター・ウォーズ 無法者たち ゴールドエディション | Key | 25GB"
   source_url: "https://meisakugame.garyoutensei.com/data/switch2packagekey.html"
   updates:
-    - url: "https://search.nintendo.jp/nintendo_soft/search.json?q=%E7%84%A1%E6%B3%95%E8%80%85%E3%81%9F%E3%81%A1&limit=40"  # (API) search.nintendo.jp: "『スター・ウォーズ 無法者たち』ゴールドエディション", icode AAHFA, sform BEE_DOWNLOADABLE, maker "ユービーアイソフト", sdate "2025.9.4", pprice 7150
+    - url: "https://store-jp.nintendo.com/item/software/D70010000095789"  # (API) search.nintendo.jp: "『スター・ウォーズ 無法者たち』ゴールドエディション", icode AAHFA, sform BEE_DOWNLOADABLE, maker "ユービーアイソフト", sdate "2025.9.4", pprice 7150
       checked_at: "2026-10-16"
       fields: ["release_date"]
   verified_at: "2026-10-16"
@@ -9532,7 +9532,7 @@
   evidence: "press_report"  # (leída) meisakugame: "幻想水滸伝 I&II HDリマスター for SW2 | Key | 12GB"
   source_url: "https://meisakugame.garyoutensei.com/data/switch2packagekey.html"
   updates:
-    - url: "https://search.nintendo.jp/nintendo_soft/search.json?q=%E5%B9%BB%E6%83%B3%E6%B0%B4%E6%BB%B8%E4%BC%9D&limit=40"  # (API) search.nintendo.jp: "幻想水滸伝 I&II HDリマスター for Nintendo Switch 2 門の紋章戦争 / デュナン統一戦争", icode AAFRA, sform BEE_DOWNLOADABLE, maker "KONAMI", sdate "2025.6.5", pprice 5500
+    - url: "https://store-jp.nintendo.com/item/software/D70010000095287"  # (API) search.nintendo.jp: "幻想水滸伝 I&II HDリマスター for Nintendo Switch 2 門の紋章戦争 / デュナン統一戦争", icode AAFRA, sform BEE_DOWNLOADABLE, maker "KONAMI", sdate "2025.6.5", pprice 5500
       checked_at: "2026-10-16"
       fields: ["release_date"]
   verified_at: "2026-10-16"
@@ -9553,7 +9553,7 @@
   evidence: "press_report"  # (leída) nintendolife.com, guía de game-key cards: "Tales of Eternia Remastered (Switch 2) | 16th Oct 2026 / Bandai Namco"
   source_url: "https://www.nintendolife.com/guides/every-nintendo-switch-2-game-key-card-release"
   updates:
-    - url: "https://searching.nintendo-europe.com/en/select?q=Tales%20of%20Eternia&fq=type:GAME&fq=playable_on_txt:BEE&rows=5&wt=json"  # (API) Nintendo EU Solr: "Tales of Eternia Remastered", datasize_readable_txt "7.0 GB"
+    - url: "https://www.nintendo.com/en-gb/Games/Nintendo-Switch-2-games/Tales-of-Eternia-Remastered-3155275.html"  # (API) Nintendo EU Solr: "Tales of Eternia Remastered", datasize_readable_txt "7.0 GB"
       checked_at: "2026-10-16"
       fields: ["size"]
   verified_at: "2026-09-19"
@@ -9748,7 +9748,7 @@
   evidence: "press_report"  # (leída) nintendolife.com, guía de game-key cards: "Tormented Souls 2 (Switch 2) | 15th Oct 2026 / PQube"
   source_url: "https://www.nintendolife.com/guides/every-nintendo-switch-2-game-key-card-release"
   updates:
-    - url: "https://searching.nintendo-europe.com/en/select?q=Tormented%20Souls&fq=type:GAME&fq=playable_on_txt:BEE&rows=5&wt=json"  # (API) Nintendo EU Solr: "Tormented Souls 2", datasize_readable_txt "24.6 GB"
+    - url: "https://www.nintendo.com/en-gb/Games/Nintendo-Switch-2-games/Tormented-Souls-2-3149354.html"  # (API) Nintendo EU Solr: "Tormented Souls 2", datasize_readable_txt "24.6 GB"
       checked_at: "2026-10-16"
       fields: ["size"]
   verified_at: "2026-09-19"
@@ -9955,7 +9955,7 @@
   evidence: "press_report"  # (leída) nintendolife.com, guía de cartuchos completos: "Zelda: Tears of the Kingdom - Nintendo Switch 2 Edition (Switch 2) | 5th Jun 2025 / Nintendo"
   source_url: "https://www.nintendolife.com/guides/every-nintendo-switch-2-physical-release-with-the-full-game-on-the-cart"
   updates:
-    - url: "https://searching.nintendo-europe.com/en/select?q=tears%20of%20the%20kingdom&fq=type:GAME&fq=playable_on_txt:BEE&rows=5&wt=json"  # (API) eu.json: "The Legend of Zelda: Tears of the Kingdom – Nintendo Switch 2 Edition", publisher "Nintendo", dates_released_dts 2025-06-05
+    - url: "https://www.nintendo.com/en-gb/Games/Nintendo-Switch-2-Edition/The-Legend-of-Zelda-Tears-of-the-Kingdom-Nintendo-Switch-2-Edition-2787249.html"  # (API) eu.json: "The Legend of Zelda: Tears of the Kingdom – Nintendo Switch 2 Edition", publisher "Nintendo", dates_released_dts 2025-06-05
       checked_at: "2026-10-14"
       fields: ["release_date", "distributor"]
   verified_at: "2026-10-14"
@@ -10199,7 +10199,7 @@
     - url: "https://vandal.elespanol.com/noticia-amp/1350789398/skyrim-y-fallout-4-ya-estan-disponibles-en-edicion-de-codigo-con-caja-para-nintendo-switch-2/"  # (leída) Vandal: "The Fallout 4 Anniversary Edition and The Elder Scrolls V: Skyrim Anniversary Edition arrive on Nintendo Switch 2 in a physical code-in-box edition. Available now! ... Bethesda Game Studios (@BethesdaStudios) April 28, 2026"
       checked_at: "2026-10-16"
       fields: ["release_date"]
-    - url: "https://searching.nintendo-europe.com/en/select?q=Skyrim&fq=type:GAME&fq=playable_on_txt:BEE&rows=5&wt=json"  # (API) Nintendo EU Solr: "The Elder Scrolls V: Skyrim Anniversary Edition", datasize_readable_txt "53.2 GB"
+    - url: "https://www.nintendo.com/en-gb/Games/Nintendo-Switch-2-games/The-Elder-Scrolls-V-Skyrim-Anniversary-Edition-2983914.html"  # (API) Nintendo EU Solr: "The Elder Scrolls V: Skyrim Anniversary Edition", datasize_readable_txt "53.2 GB"
       checked_at: "2026-10-16"
       fields: ["size"]
   verified_at: "2026-09-19"
@@ -10258,7 +10258,7 @@
   evidence: "press_report"  # (leída) Nintendo Life: "Physical Release | Code In Box | Release Date | Nintendo Switch 2 | 11th Jul 2025 — $69.99 | 11th Jul 2025 — £59.99"
   source_url: "https://www.nintendolife.com/games/nintendo-switch-2/tony-hawks-pro-skater-3-plus-4"
   updates:
-    - url: "https://searching.nintendo-europe.com/en/select?q=Tony%20Hawk&fq=type:GAME&fq=playable_on_txt:BEE&rows=5&wt=json"  # (API) Nintendo EU Solr: "Tony Hawk's™ Pro Skater™ 3 + 4", publisher "Activision"
+    - url: "https://www.nintendo.com/en-gb/Games/Nintendo-Switch-2-games/Tony-Hawk-s-Pro-Skater-3-4-2797120.html"  # (API) Nintendo EU Solr: "Tony Hawk's™ Pro Skater™ 3 + 4", publisher "Activision"
       checked_at: "2026-10-16"
       fields: ["distributor"]
   verified_at: "2026-10-16"
@@ -10300,7 +10300,7 @@
   evidence: "press_report"  # (leída) Nintendo Life: "Physical Release | Code In Box | Release Date | Nintendo Switch 2 | 23rd Jul 2025 — $69.99 | 23rd Jul 2025 — £59.99"
   source_url: "https://www.nintendolife.com/games/nintendo-switch-2/wwe-2k25"
   updates:
-    - url: "https://searching.nintendo-europe.com/en/select?q=WWE%202K25&fq=type:GAME&fq=playable_on_txt:BEE&rows=5&wt=json"  # (API) Nintendo EU Solr: "WWE 2K25 Standard Edition", publisher "2K", datasize_readable_txt "77.3 GB"
+    - url: "https://www.nintendo.com/en-gb/Games/Nintendo-Switch-2-games/WWE-2K25-Standard-Edition-2864726.html"  # (API) Nintendo EU Solr: "WWE 2K25 Standard Edition", publisher "2K", datasize_readable_txt "77.3 GB"
       checked_at: "2026-10-16"
       fields: ["distributor", "size"]
   verified_at: "2026-10-16"
@@ -10361,7 +10361,7 @@
   evidence: "press_report"  # (leída) Nintendo Life: "Physical Release | Game-Key Card | Release Date | Nintendo Switch 2 | 31st Jul 2025 — 7,800 | 20th Feb 2026 — $69.99 | 20th Feb 2026 — £62.99"
   source_url: "https://www.nintendolife.com/games/nintendo-switch-2/ys-x-proud-nordics"
   updates:
-    - url: "https://searching.nintendo-europe.com/en/select?q=Ys%20X&fq=type:GAME&fq=playable_on_txt:BEE&rows=5&wt=json"  # (API) Nintendo EU Solr: "Ys X: Proud Nordics", publisher "NIS America", datasize_readable_txt "9.1 GB"
+    - url: "https://www.nintendo.com/en-gb/Games/Nintendo-Switch-2-games/Ys-X-Proud-Nordics-2997922.html"  # (API) Nintendo EU Solr: "Ys X: Proud Nordics", publisher "NIS America", datasize_readable_txt "9.1 GB"
       checked_at: "2026-10-16"
       fields: ["distributor", "size"]
   verified_at: "2026-10-16"
@@ -10380,7 +10380,7 @@
   evidence: "press_report"  # (leída) meisakugame: "イースX -Proud NORDICS- | Key | 9GB"
   source_url: "https://meisakugame.garyoutensei.com/data/switch2packagekey.html"
   updates:
-    - url: "https://search.nintendo.jp/nintendo_soft/search.json?q=%E3%82%A4%E3%83%BC%E3%82%B9X&limit=40"  # (API) search.nintendo.jp: "イースX -Proud NORDICS-", icode AAT7A, sform BEE_DOWNLOADABLE, maker "日本ファルコム", sdate "2025.7.31", pprice 8580
+    - url: "https://store-jp.nintendo.com/item/software/D70010000096643"  # (API) search.nintendo.jp: "イースX -Proud NORDICS-", icode AAT7A, sform BEE_DOWNLOADABLE, maker "日本ファルコム", sdate "2025.7.31", pprice 8580
       checked_at: "2026-10-16"
       fields: ["release_date"]
   verified_at: "2026-10-16"
@@ -10399,7 +10399,7 @@
   evidence: "retailer_listing"  # (leída) Danawa: "이스 X -프라우드 노딕스- 무삭제판 SWITCH2, 패키지키카드", "제조사 : 팔콤"
   source_url: "https://prod.danawa.com/info/?pcode=95283167"
   updates:
-    - url: "https://www.nintendo.com/kr/api/search?k=%EC%9D%B4%EC%8A%A4%20X&directory=software&size=48"  # (API) Nintendo Corea: "이스 X -프라우드 노딕스- 무삭제판", publisher "Clouded Leopard Entertainment", 패키지 버전
+    - url: "https://store.nintendo.co.kr/70010000098994"  # (API) Nintendo Corea: "이스 X -프라우드 노딕스- 무삭제판", publisher "Clouded Leopard Entertainment", 패키지 버전
       checked_at: "2026-10-16"
       fields: ["distributor"]
   verified_at: "2026-10-16"
@@ -10499,7 +10499,7 @@
     - url: "https://nintendoeverything.com/nintendo-pre-order-updates-october-11-2026/"  # (listado) Nintendo Everything, "UK | Switch 2": "Yu-Gi-Oh! Tag Force GX – February 16"
       checked_at: "2026-10-16"
       fields: ["release_date"]
-    - url: "https://searching.nintendo-europe.com/en/select?q=Yu-Gi-Oh&fq=type:GAME&fq=playable_on_txt:BEE&rows=5&wt=json"  # (API) Nintendo EU Solr: "Yu-Gi-Oh! TAG FORCE GX", publisher "KONAMI"
+    - url: "https://www.nintendo.com/en-gb/Games/Nintendo-Switch-2-games/Yu-Gi-Oh-TAG-FORCE-GX-3184806.html"  # (API) Nintendo EU Solr: "Yu-Gi-Oh! TAG FORCE GX", publisher "KONAMI"
       checked_at: "2026-10-16"
       fields: ["distributor"]
   verified_at: "2026-10-16"
@@ -10518,7 +10518,7 @@
   evidence: "press_report"  # (leída) meisakugame: "遊戯王 TAG FORCE GX | Key | 9GB"
   source_url: "https://meisakugame.garyoutensei.com/data/switch2packagekey.html"
   updates:
-    - url: "https://search.nintendo.jp/nintendo_soft/search.json?q=TAG%20FORCE&limit=40"  # (API) search.nintendo.jp: "遊戯王 TAG FORCE GX", icode AB3SA, sform BEE_DOWNLOADABLE, maker "KONAMI", sdate "2027.2.16", pprice 4950
+    - url: "https://store-jp.nintendo.com/item/software/D70010000120389"  # (API) search.nintendo.jp: "遊戯王 TAG FORCE GX", icode AB3SA, sform BEE_DOWNLOADABLE, maker "KONAMI", sdate "2027.2.16", pprice 4950
       checked_at: "2026-10-16"
       fields: ["release_date"]
   verified_at: "2026-10-16"
@@ -10570,7 +10570,7 @@
   evidence: "press_report"  # (leída) guía de game-key cards de Nintendo Life: "Epic Mickey: Rebrushed (Switch 2) | 6th Oct 2026 / THQ Nordic"
   source_url: "https://www.nintendolife.com/guides/every-nintendo-switch-2-game-key-card-release"
   updates:
-    - url: "https://searching.nintendo-europe.com/en/select?q=Epic%20Mickey&fq=type:GAME&fq=playable_on_txt:BEE&rows=5&wt=json"  # (API) Nintendo EU Solr: "Disney Epic Mickey: Rebrushed", datasize_readable_txt "14.3 GB"
+    - url: "https://www.nintendo.com/en-gb/Games/Nintendo-Switch-2-games/Disney-Epic-Mickey-Rebrushed-3169971.html"  # (API) Nintendo EU Solr: "Disney Epic Mickey: Rebrushed", datasize_readable_txt "14.3 GB"
       checked_at: "2026-10-16"
       fields: ["size"]
   verified_at: "2026-09-19"
@@ -10625,7 +10625,7 @@
   evidence: "press_report"  # (leída) meisakugame: "ファイアーエムブレム 万紫千紅 | 2専 | -"
   source_url: "https://meisakugame.garyoutensei.com/data/switch2packagekey.html"
   updates:
-    - url: "https://search.nintendo.jp/nintendo_soft/search.json?q=%E3%83%95%E3%82%A1%E3%82%A4%E3%82%A2%E3%83%BC%E3%82%A8%E3%83%A0%E3%83%96%E3%83%AC%E3%83%A0%20%E4%B8%87%E7%B4%AB%E5%8D%83%E7%B4%85&limit=40"  # (API) search.nintendo.jp: "ファイアーエムブレム 万紫千紅 (ばんしせんこう)", icode AACSA, sform BEE_DOWNLOADABLE, maker "任天堂", sdate "2026.9.17", pprice 9980
+    - url: "https://www.nintendo.com/jp/games/switch2/aacsa/index.html"  # (API) search.nintendo.jp: "ファイアーエムブレム 万紫千紅 (ばんしせんこう)", icode AACSA, sform BEE_DOWNLOADABLE, maker "任天堂", sdate "2026.9.17", pprice 9980
       checked_at: "2026-10-16"
       fields: ["release_date"]
   verified_at: "2026-10-16"
@@ -10659,7 +10659,7 @@
   evidence: "unconfirmed"  # (leída) toyorgame: "NS2 Fire Emblem: Fortune's Weave (NC16)", variante "(Asia) Standard Edition", sin marca de formato; Play-Asia sin resultado en el buscador
   source_url: null
   updates:
-    - url: "https://www.nintendo.com/hk/api/search?k=Fire%20Emblem&directory=software&size=20"  # (API) Nintendo HK: "Fire Emblem: Fortune's Weave", category ["盒裝版","下載版"], publisher "Nintendo", releaseDatePackage "2026-09-17T00:00:00Z"
+    - url: "https://www.nintendo.com/hk/games/switch2/aacsa/index.html"  # (API) Nintendo HK: "Fire Emblem: Fortune's Weave", category ["盒裝版","下載版"], publisher "Nintendo", releaseDatePackage "2026-09-17T00:00:00Z"
       checked_at: "2026-10-16"
       fields: ["distributor", "release_date"]
   verified_at: "2026-10-16"
@@ -10745,7 +10745,7 @@
   evidence: "retailer_listing"  # (leída) shop-justforgames.com, "Let's Sing 2027 Switch 2": "SUPPORT Game-Key Card"
   source_url: "https://www.shop-justforgames.com/products/lets-sing-2027-switch-2"
   updates:
-    - url: "https://searching.nintendo-europe.com/en/select?q=Let%27s%20Sing%202027&fq=type:GAME&fq=playable_on_txt:BEE&rows=5&wt=json"  # (API) Nintendo EU Solr: "Let's Sing 2027", publisher "THQ Nordic"
+    - url: "https://www.nintendo.com/en-gb/Games/Nintendo-Switch-2-games/Let-s-Sing-2027-3171841.html"  # (API) Nintendo EU Solr: "Let's Sing 2027", publisher "THQ Nordic"
       checked_at: "2026-10-16"
       fields: ["distributor"]
   verified_at: "2026-09-19"
@@ -10803,7 +10803,7 @@
     - url: "https://www.nintendolife.com/games/nintendo-switch-2/lets-sing-abba"  # (leída) Nintendo Life: "Physical Release | Game-Key Card | Release Date | Nintendo Switch 2 | 3rd Nov 2026 — £34.99"
       checked_at: "2026-10-16"
       fields: ["release_date"]
-    - url: "https://searching.nintendo-europe.com/en/select?q=ABBA&fq=type:GAME&fq=playable_on_txt:BEE&rows=5&wt=json"  # (API) Nintendo EU Solr: "Let´s Sing ABBA", publisher "THQ Nordic"
+    - url: "https://www.nintendo.com/en-gb/Games/Nintendo-Switch-2-games/Let-s-Sing-ABBA-3171854.html"  # (API) Nintendo EU Solr: "Let´s Sing ABBA", publisher "THQ Nordic"
       checked_at: "2026-10-16"
       fields: ["distributor"]
   verified_at: "2026-09-19"
@@ -10894,7 +10894,7 @@
   evidence: "retailer_listing"  # (leída) musicalparadise.com (tienda en €): "LITTLE NIGHTMARES II – ENHANCED EDITION (Game Key Card) (SWITCH 2)"
   source_url: "https://musicalparadise.com/product/little-nightmares-ii-enhanced-edition-game-key-card-switch-2/"
   updates:
-    - url: "https://searching.nintendo-europe.com/en/select?q=Little%20Nightmares%20II&fq=type:GAME&fq=playable_on_txt:BEE&rows=5&wt=json"  # (API) Nintendo EU Solr: "Little Nightmares II Enhanced Edition", datasize_readable_txt "4.4 GB"
+    - url: "https://www.nintendo.com/en-gb/Games/Nintendo-Switch-2-games/Little-Nightmares-II-Enhanced-Edition-3110082.html"  # (API) Nintendo EU Solr: "Little Nightmares II Enhanced Edition", datasize_readable_txt "4.4 GB"
       checked_at: "2026-10-16"
       fields: ["size"]
   verified_at: "2026-09-24"
@@ -10958,7 +10958,7 @@
   evidence: "unconfirmed"  # (API) Nintendo Corea: "페르소나4 리바이벌 (Persona 4 Revival)", 패키지 버전; Danawa solo tiene la caja de PS5
   source_url: null
   updates:
-    - url: "https://www.nintendo.com/kr/api/search?k=%ED%8E%98%EB%A5%B4%EC%86%8C%EB%82%984&directory=software&size=48"  # (API) Nintendo Corea: "페르소나4 리바이벌 (Persona 4 Revival)", publisher "ATLUS", releaseDatePackage "2027-05-20T00:00:00Z"
+    - url: "https://www.nintendo.com/kr/search?k=%ED%8E%98%EB%A5%B4%EC%86%8C%EB%82%984+%EB%A6%AC%EB%B0%94%EC%9D%B4%EB%B2%8C+%28Persona+4+Revival%29"  # (API) Nintendo Corea: "페르소나4 리바이벌 (Persona 4 Revival)", publisher "ATLUS", releaseDatePackage "2027-05-20T00:00:00Z"
       checked_at: "2026-10-16"
       fields: ["distributor", "release_date"]
   verified_at: "2026-10-16"
@@ -11045,7 +11045,7 @@
   evidence: "unconfirmed"  # (API) Nintendo Corea: "피크민 4 Nintendo Switch 2 Edition + 누구나 도전! 계획력 테스트", 패키지 버전; Danawa sin resultado
   source_url: null
   updates:
-    - url: "https://www.nintendo.com/kr/api/search?k=%ED%94%BC%ED%81%AC%EB%AF%BC&directory=software&size=48"  # (API) Nintendo Corea: publisher "한국닌텐도", releaseDatePackage "2026-11-12T00:00:00Z"
+    - url: "https://www.nintendo.com/kr/games/switch2/ampyc/"  # (API) Nintendo Corea: publisher "한국닌텐도", releaseDatePackage "2026-11-12T00:00:00Z"
       checked_at: "2026-10-16"
       fields: ["distributor", "release_date"]
   verified_at: "2026-10-16"
@@ -11135,7 +11135,7 @@
   evidence: "press_report"  # (leída) meisakugame: "REANIMAL | Key | 25GB"
   source_url: "https://meisakugame.garyoutensei.com/data/switch2packagekey.html"
   updates:
-    - url: "https://search.nintendo.jp/nintendo_soft/search.json?q=REANIMAL&limit=40"  # (API) search.nintendo.jp: "REANIMAL（リアニマル）", icode AAH5B, sform BEE_DOWNLOADABLE, maker "THQ Nordic ジャパン", sdate "2026.2.13", pprice 5720
+    - url: "https://store-jp.nintendo.com/item/software/D70010000101809"  # (API) search.nintendo.jp: "REANIMAL（リアニマル）", icode AAH5B, sform BEE_DOWNLOADABLE, maker "THQ Nordic ジャパン", sdate "2026.2.13", pprice 5720
       checked_at: "2026-10-16"
       fields: ["release_date"]
   verified_at: "2026-10-16"
@@ -11411,7 +11411,7 @@
   evidence: "unconfirmed"  # (API) search.nintendo.jp: pprice 6980 (hay パッケージ版); sin fila en meisakugame
   source_url: null
   updates:
-    - url: "https://search.nintendo.jp/nintendo_soft/search.json?q=RUSHING%20BEAT&limit=40"  # (API) search.nintendo.jp: "RUSHING BEAT X: Return Of Brawl Brothers", icode AAXUA, sform BEE_DOWNLOADABLE, maker "シティコネクション", sdate "2026.3.19", pprice 6980
+    - url: "https://store-jp.nintendo.com/item/software/D70010000098648"  # (API) search.nintendo.jp: "RUSHING BEAT X: Return Of Brawl Brothers", icode AAXUA, sform BEE_DOWNLOADABLE, maker "シティコネクション", sdate "2026.3.19", pprice 6980
       checked_at: "2026-10-16"
       fields: ["distributor", "release_date"]
   verified_at: "2026-10-16"
@@ -11431,7 +11431,7 @@
   evidence: "unconfirmed"  # (API) Nintendo Corea: "러싱 비트 X: 리턴 오브 브롤 브라더스 (RUSHING BEAT X: Return Of Brawl Brothers)", 패키지 버전; sin fuente de formato
   source_url: null
   updates:
-    - url: "https://www.nintendo.com/kr/api/search?k=RUSHING&directory=software&size=48"  # (API) Nintendo Corea: publisher "H2 INTERACTIVE", 패키지 버전
+    - url: "https://store.nintendo.co.kr/70010000107353"  # (API) Nintendo Corea: publisher "H2 INTERACTIVE", 패키지 버전
       checked_at: "2026-10-16"
       fields: ["distributor"]
   verified_at: "2026-10-16"
@@ -11739,7 +11739,7 @@
   evidence: "unconfirmed"  # (listado) ShopTo: "Star Trek Voyager: Across The Unknown Deluxe Edition - Switch 2"; sin frase de formato
   source_url: null
   updates:
-    - url: "https://searching.nintendo-europe.com/en/select?q=Star%20Trek&fq=type:GAME&fq=playable_on_txt:BEE&rows=5&wt=json"  # (API) Nintendo EU Solr: "Star Trek: Voyager - Across the Unknown", publisher "Daedalic Entertainment"
+    - url: "https://www.nintendo.com/en-gb/Games/Nintendo-Switch-2-games/Star-Trek-Voyager-Across-the-Unknown-3002557.html"  # (API) Nintendo EU Solr: "Star Trek: Voyager - Across the Unknown", publisher "Daedalic Entertainment"
       checked_at: "2026-10-16"
       fields: ["distributor"]
   verified_at: "2026-09-23"
@@ -11762,7 +11762,7 @@
   evidence: "press_report"  # (leída) RPG Site, "Every Nintendo Switch 2 RPG Physical Release Complete on Cartridge – No Game Key Cards or Codes Needed" (14-09-2026, sin nota de región): "Nintendo's upcoming The Legend of Zelda: Ocarina of Time remake is getting a proper physical release with a special Texture Foil cover."
   source_url: "https://www.rpgsite.net/feature/17453-nintendo-switch-2-rpg-physical-release-cartridge-no-game-key-card-list"
   updates:
-    - url: "https://searching.nintendo-europe.com/en/select?q=ocarina%20of%20time&fq=type:GAME&fq=playable_on_txt:BEE&rows=5&wt=json"  # (API) eu.json: "The Legend of Zelda: Ocarina of Time", publisher "Nintendo", dates_released_dts 2026-11-05
+    - url: "https://www.nintendo.com/en-gb/Games/Nintendo-Switch-2-games/The-Legend-of-Zelda-Ocarina-of-Time-3115664.html"  # (API) eu.json: "The Legend of Zelda: Ocarina of Time", publisher "Nintendo", dates_released_dts 2026-11-05
       checked_at: "2026-10-14"
       fields: ["release_date", "distributor"]
   verified_at: "2026-10-14"
@@ -11800,7 +11800,7 @@
   evidence: "press_report"  # (leída) meisakugame, 【任天堂】: "ゼルダの伝説 時のオカリナ | 2専 | -"
   source_url: "https://meisakugame.garyoutensei.com/data/switch2packagekey.html"
   updates:
-    - url: "https://search.nintendo.jp/nintendo_soft/search.json?q=%E6%99%82%E3%81%AE%E3%82%AA%E3%82%AB%E3%83%AA%E3%83%8A&limit=40"  # (API) search.nintendo.jp: "ゼルダの伝説 時のオカリナ", icode AA9JA, sdate "2026.11.5", maker "任天堂"
+    - url: "https://www.nintendo.com/jp/games/switch2/aa9ja/index.html"  # (API) search.nintendo.jp: "ゼルダの伝説 時のオカリナ", icode AA9JA, sdate "2026.11.5", maker "任天堂"
       checked_at: "2026-10-14"
       fields: ["release_date", "distributor"]
   verified_at: "2026-10-14"
@@ -11838,7 +11838,7 @@
   evidence: "unconfirmed"
   source_url: null
   updates:
-    - url: "https://www.nintendo.com/kr/api/search?k=%EC%98%A4%EC%B9%B4%EB%A6%AC%EB%82%98&directory=software&size=48"  # (API) Nintendo Corea: "젤다의 전설 시간의 오카리나", hardwareCategory "Nintendo Switch 2", category ["패키지 버전", "다운로드 버전"], releaseDatePackage 2026-11-05, publisher "한국닌텐도"
+    - url: "https://www.nintendo.com/kr/games/switch2/aa9ja/"  # (API) Nintendo Corea: "젤다의 전설 시간의 오카리나", hardwareCategory "Nintendo Switch 2", category ["패키지 버전", "다운로드 버전"], releaseDatePackage 2026-11-05, publisher "한국닌텐도"
       checked_at: "2026-10-14"
       fields: ["release_date", "distributor"]
   verified_at: "2026-10-14"
@@ -11948,7 +11948,7 @@
   evidence: "retailer_listing"  # (leída) The Game Collection: "Two Point Hospital: Full Health Collection - Game Key Card (Switch 2)", "£34.95"
   source_url: "https://www.thegamecollection.net/products/two-point-hospital-full-health-collection-game-key-card-switch-2"
   updates:
-    - url: "https://searching.nintendo-europe.com/en/select?q=Two%20Point%20Hospital&fq=type:GAME&fq=playable_on_txt:BEE&rows=5&wt=json"  # (API) Nintendo EU Solr: "Two Point Hospital: Full Health Collection", publisher "SEGA", datasize_readable_txt "5.6 GB"
+    - url: "https://www.nintendo.com/en-gb/Games/Nintendo-Switch-2-games/Two-Point-Hospital-Full-Health-Collection-3189080.html"  # (API) Nintendo EU Solr: "Two Point Hospital: Full Health Collection", publisher "SEGA", datasize_readable_txt "5.6 GB"
       checked_at: "2026-10-16"
       fields: ["distributor", "size"]
     - url: "https://nintendoeverything.com/nintendo-pre-order-updates-october-11-2026/"  # (listado) Nintendo Everything, "UK | Switch 2": "Two Point Hospital: Full Health Collection – November 6"
@@ -12049,7 +12049,7 @@
     - url: "https://nintendoeverything.com/nintendo-pre-order-updates-october-11-2026/"  # (listado) Nintendo Everything, "UK | Switch 2": "Toy Story: Retro Roundup + Toy Story 3 Complete Edition Double Pack – October 15"
       checked_at: "2026-10-16"
       fields: ["release_date"]
-    - url: "https://searching.nintendo-europe.com/en/select?q=Toy%20Story&fq=type:GAME&fq=playable_on_txt:BEE&rows=5&wt=json"  # (API) Nintendo EU Solr: "Disney/Pixar Toy Story: Retro Roundup! + Toy Story 3 Complete Edition Double Pack", publisher "Atari"
+    - url: "https://www.nintendo.com/en-gb/Games/Nintendo-Switch-2-games/Disney-Pixar-Toy-Story-Retro-Roundup-Toy-Story-3-Complete-Edition-Double-Pack-3178966.html"  # (API) Nintendo EU Solr: "Disney/Pixar Toy Story: Retro Roundup! + Toy Story 3 Complete Edition Double Pack", publisher "Atari"
       checked_at: "2026-10-16"
       fields: ["distributor"]
   verified_at: "2026-10-16"
@@ -12189,7 +12189,7 @@
   evidence: "retailer_listing"  # (listado) Wayland Games: "Warrior Cats: Clans of the Forest Feral Edition (Game Key Card) Nintendo Switch 2 Switch 2 Trailmark Games"
   source_url: "https://www.waylandgames.co.uk/warrior-cats-clans-of-the-forest-feral-edition-game-key-card-ns2-s2keadtrl54029"
   updates:
-    - url: "https://searching.nintendo-europe.com/en/select?q=Warrior%20Cats&fq=type:GAME&fq=playable_on_txt:BEE&rows=5&wt=json"  # (API) Nintendo EU Solr: "Warrior Cats: Clans of the Forest", publisher "Trailmark Games", datasize_readable_txt "2.8 GB"
+    - url: "https://www.nintendo.com/en-gb/Games/Nintendo-Switch-2-games/Warrior-Cats-Clans-of-the-Forest-3186554.html"  # (API) Nintendo EU Solr: "Warrior Cats: Clans of the Forest", publisher "Trailmark Games", datasize_readable_txt "2.8 GB"
       checked_at: "2026-10-16"
       fields: ["distributor", "size"]
     - url: "https://www.nintendolife.com/guides/every-nintendo-switch-2-game-key-card-release"  # (leída) guía de game-key cards de Nintendo Life: "Warrior Cats: Clans of the Forest (Switch 2) | 23rd Oct 2026 / Trailmark Games / Bamtang Games"
@@ -12252,7 +12252,7 @@
   evidence: "press_report"  # (leída) meisakugame: "【コンパイルハート】 | 形式 | 容量 | 超新時空ゲイム ネプテューヌ∞ | 2専 | - | Villion:Code | 2専"; (listado) play-asia.com: "Villion: Code [Special Edition] Game Cart for Nintendo Switch 2"
   source_url: "https://meisakugame.garyoutensei.com/data/switch2packagekey.html"
   updates:
-    - url: "https://search.nintendo.jp/nintendo_soft/search.json?q=Villion&limit=40"  # (API) search.nintendo.jp: "Villion:Code", icode ABESA, sform BEE_DOWNLOADABLE, maker "アイディアファクトリー", sdate "2026.6.25", pprice 9680
+    - url: "https://store-jp.nintendo.com/item/software/D70010000106567"  # (API) search.nintendo.jp: "Villion:Code", icode ABESA, sform BEE_DOWNLOADABLE, maker "アイディアファクトリー", sdate "2026.6.25", pprice 9680
       checked_at: "2026-10-16"
       fields: ["release_date"]
   verified_at: "2026-09-24"
@@ -12518,7 +12518,7 @@
   evidence: "unconfirmed"  # (API) Nintendo Corea: "드래곤 퀘스트 몬스터즈 4 메마른 나라의 비앙카와 플로라", category ["패키지 버전","다운로드 버전","체험판"]; Danawa sin resultado
   source_url: null
   updates:
-    - url: "https://www.nintendo.com/kr/api/search?k=%EB%93%9C%EB%9E%98%EA%B3%A4%20%ED%80%98%EC%8A%A4%ED%8A%B8%20%EB%AA%AC%EC%8A%A4%ED%84%B0%EC%A6%88&directory=software&size=48"  # (API) Nintendo Corea: publisher "Square Enix", releaseDatePackage "2026-12-03T00:00:00Z"
+    - url: "https://www.nintendo.com/kr/search?k=%EB%93%9C%EB%9E%98%EA%B3%A4+%ED%80%98%EC%8A%A4%ED%8A%B8+%EB%AA%AC%EC%8A%A4%ED%84%B0%EC%A6%88+4+%EB%A9%94%EB%A7%88%EB%A5%B8+%EB%82%98%EB%9D%BC%EC%9D%98+%EB%B9%84%EC%95%99%EC%B9%B4%EC%99%80+%ED%94%8C%EB%A1%9C%EB%9D%BC"  # (API) Nintendo Corea: publisher "Square Enix", releaseDatePackage "2026-12-03T00:00:00Z"
       checked_at: "2026-10-16"
       fields: ["distributor", "release_date"]
   verified_at: "2026-10-16"
@@ -12713,7 +12713,7 @@
   evidence: "unconfirmed"  # (API) Nintendo Corea: "로맨싱 사가 3 데스티니스 유나이티드", 패키지 버전; sin fuente de formato
   source_url: null
   updates:
-    - url: "https://www.nintendo.com/kr/api/search?k=%EB%A1%9C%EB%A7%A8%EC%8B%B1&directory=software&size=48"  # (API) Nintendo Corea: publisher "Square Enix", 패키지 버전, releaseDatePackage "2027-02-16T00:00:00Z"
+    - url: "https://www.nintendo.com/kr/search?k=%EB%A1%9C%EB%A7%A8%EC%8B%B1+%EC%82%AC%EA%B0%80+3+%EB%8D%B0%EC%8A%A4%ED%8B%B0%EB%8B%88%EC%8A%A4+%EC%9C%A0%EB%82%98%EC%9D%B4%ED%8B%B0%EB%93%9C"  # (API) Nintendo Corea: publisher "Square Enix", 패키지 버전, releaseDatePackage "2027-02-16T00:00:00Z"
       checked_at: "2026-10-16"
       fields: ["distributor", "release_date"]
   verified_at: "2026-10-16"
@@ -13823,7 +13823,7 @@
   evidence: "retailer_listing"  # (listado) Play-Asia: "Kirby Air Riders (Multi-Language) Game Cart (Cover - Asian) for Nintendo Switch 2"; (leída) toyorgame.com.sg: "NS2 Kirby Air Riders", variante "(Asia) Standard Edition"
   source_url: "https://www.play-asia.com/en/kirby-air-riders-multi-language/13/70igwz"
   updates:
-    - url: "https://www.nintendo.com/hk/api/search?k=%E5%8D%A1%E6%AF%94&directory=software&size=30"  # (API) Nintendo HK: "卡比的馭天飛行者", category ["盒裝版","下載版"], publisher "Nintendo"
+    - url: "https://www.nintendo.com/hk/games/switch2/aaaba/index.html"  # (API) Nintendo HK: "卡比的馭天飛行者", category ["盒裝版","下載版"], publisher "Nintendo"
       checked_at: "2026-10-16"
       fields: ["distributor"]
   verified_at: "2026-09-24"
@@ -13873,7 +13873,7 @@
   evidence: "retailer_listing"  # (listado) Play-Asia: "Kirby and the Forgotten Land: Nintendo Switch 2 Edition + Star-Crossed World (Multi-Language) Game Cart for Nintendo Switch 2"; (leída) toyorgame.com.sg, variante "(Asia) Standard Edition"
   source_url: "https://www.play-asia.com/kirby-and-the-forgotten-land-nintendo-switch-2-edition-star-cro/13/70igd5"
   updates:
-    - url: "https://www.nintendo.com/hk/api/search?k=%E5%8D%A1%E6%AF%94&directory=software&size=30"  # (API) Nintendo HK: "星之卡比 探索發現 Nintendo Switch 2 Edition + 星耀世界", category ["盒裝版","下載版"], publisher "Nintendo"
+    - url: "https://www.nintendo.com/hk/games/switch2/arzga/index.html"  # (API) Nintendo HK: "星之卡比 探索發現 Nintendo Switch 2 Edition + 星耀世界", category ["盒裝版","下載版"], publisher "Nintendo"
       checked_at: "2026-10-16"
       fields: ["distributor"]
   verified_at: "2026-09-24"
@@ -13923,7 +13923,7 @@
   evidence: "retailer_listing"  # (listado) Play-Asia: "Mario Tennis Fever (Multi-Language) Game Cart für Nintendo Switch 2"; (leída) toyorgame.com.sg: "NS2 Mario Tennis Fever", variante "(Asia) Standard Edition"
   source_url: "https://www.play-asia.com/de/mario-tennis-fever-multi-language/13/70j1d9"
   updates:
-    - url: "https://www.nintendo.com/hk/api/search?k=%E7%91%AA%E5%88%A9%E6%AD%90%E7%B6%B2%E7%90%83&directory=software&size=30"  # (API) Nintendo HK: "瑪利歐網球 狂熱", category ["盒裝版","下載版"], publisher "Nintendo"
+    - url: "https://ec.nintendo.com/HK/zh/titles/70010000105872"  # (API) Nintendo HK: "瑪利歐網球 狂熱", category ["盒裝版","下載版"], publisher "Nintendo"
       checked_at: "2026-10-16"
       fields: ["distributor"]
   verified_at: "2026-09-24"
@@ -14034,7 +14034,7 @@
   evidence: "retailer_listing"  # (leída) toyorgame.com.sg: "NS2 Pokémon Pokopia (Game-Key Card)", variante "(Asia) Standard Edition"
   source_url: "https://toyorgame.com.sg/products/ns2-pokemon-pokopia"
   updates:
-    - url: "https://www.nintendo.com/hk/api/search?k=Pokopia&directory=software&size=30"  # (API) Nintendo HK: "Pokémon Pokopia", category ["盒裝版","下載版"], publisher "Nintendo"
+    - url: "https://www.pocoapokemon.jp/tc/"  # (API) Nintendo HK: "Pokémon Pokopia", category ["盒裝版","下載版"], publisher "Nintendo"
       checked_at: "2026-10-16"
       fields: ["distributor"]
   verified_at: "2026-09-24"
@@ -14084,7 +14084,7 @@
   evidence: "retailer_listing"  # (listado) Play-Asia: "Splatoon Raiders (Multi-Language) Game Cart (Cover - Asian) for Nintendo Switch 2"
   source_url: "https://www.play-asia.com/en/splatoon-raiders-multi-language/13/70iqlf"
   updates:
-    - url: "https://www.nintendo.com/hk/api/search?k=Splatoon&directory=software&size=30"  # (API) Nintendo HK: "Splatoon Raiders (斯普拉遁 塗擊隊)", category ["盒裝版","下載版"], publisher "Nintendo"
+    - url: "https://www.nintendo.com/hk/games/switch2/aadla/index.html"  # (API) Nintendo HK: "Splatoon Raiders (斯普拉遁 塗擊隊)", category ["盒裝版","下載版"], publisher "Nintendo"
       checked_at: "2026-10-16"
       fields: ["distributor"]
   verified_at: "2026-09-24"
@@ -14156,7 +14156,7 @@
   evidence: "retailer_listing"  # (listado) Play-Asia: "Star Fox (Multi-Language) Game Cart for Nintendo Switch 2"
   source_url: "https://www.play-asia.com/en/star-fox-multi-language/13/70jx6r"
   updates:
-    - url: "https://www.nintendo.com/hk/api/search?k=Star%20Fox&directory=software&size=30"  # (API) Nintendo HK: "Star Fox (星際火狐)", category ["盒裝版","下載版"], publisher "Nintendo"
+    - url: "https://www.nintendo.com/hk/games/switch2/abgwa/index.html"  # (API) Nintendo HK: "Star Fox (星際火狐)", category ["盒裝版","下載版"], publisher "Nintendo"
       checked_at: "2026-10-16"
       fields: ["distributor"]
   verified_at: "2026-09-24"
@@ -14228,7 +14228,7 @@
   evidence: "retailer_listing"  # (listado) Play-Asia: "Super Mario Bros. Wonder Nintendo Switch 2 Edition + Meetup in Bellabel Park (Multi-Language) Game Cart for Nintendo Switch 2"
   source_url: "https://www.play-asia.com/en/super-mario-bros-wonder-nintendo-switch-2-edition-meetup-in-bel/13/70j1db"
   updates:
-    - url: "https://www.nintendo.com/hk/api/search?k=%E9%A9%9A%E5%A5%87&directory=software&size=30"  # (API) Nintendo HK: "超級瑪利歐兄弟 驚奇 Nintendo Switch 2 Edition + 同遊鈴鈴公園", category ["盒裝版","下載版"], publisher "Nintendo"
+    - url: "https://www.nintendo.com/hk/games/switch2/aqmxa/index.html"  # (API) Nintendo HK: "超級瑪利歐兄弟 驚奇 Nintendo Switch 2 Edition + 同遊鈴鈴公園", category ["盒裝版","下載版"], publisher "Nintendo"
       checked_at: "2026-10-16"
       fields: ["distributor"]
   verified_at: "2026-09-24"
@@ -14300,7 +14300,7 @@
   evidence: "retailer_listing"  # (listado) Play-Asia: "Super Mario Party Jamboree Nintendo Switch 2 Edition ＋ Jamboree TV (Multi-Language) Game Cart for Nintendo Switch 2"
   source_url: "https://www.play-asia.com/super-mario-party-jamboree-nintendo-switch-2-edition-jamboree-t/13/70igc3"
   updates:
-    - url: "https://www.nintendo.com/hk/api/search?k=%E8%B6%85%E7%B4%9A%E7%91%AA%E5%88%A9%E6%AD%90%E6%B4%BE%E5%B0%8D&directory=software&size=30"  # (API) Nintendo HK: "超級瑪利歐派對 空前盛會 Nintendo Switch 2 Edition + 空前盛會TV", category ["盒裝版","下載版"], publisher "Nintendo"
+    - url: "https://ec.nintendo.com/HK/zh/titles/70010000096828"  # (API) Nintendo HK: "超級瑪利歐派對 空前盛會 Nintendo Switch 2 Edition + 空前盛會TV", category ["盒裝版","下載版"], publisher "Nintendo"
       checked_at: "2026-10-16"
       fields: ["distributor"]
   verified_at: "2026-09-24"
@@ -14372,7 +14372,7 @@
   evidence: "retailer_listing"  # (listado) Play-Asia: "The Legend of Zelda: Breath of the Wild for Nintendo Switch 2 Edition (Multi-Language) Game Cart for Nintendo Switch 2"
   source_url: "https://www.play-asia.com/the-legend-of-zelda-breath-of-the-wild-for-nintendo-switch-2-edi/13/70igcr"
   updates:
-    - url: "https://www.nintendo.com/hk/api/search?k=%E6%9B%A0%E9%87%8E%E4%B9%8B%E6%81%AF&directory=software&size=30"  # (API) Nintendo HK: "薩爾達傳說 曠野之息 Nintendo Switch 2 Edition", category ["盒裝版","下載版"], publisher "Nintendo", releaseDatePackage "2025-06-05T00:00:00Z"
+    - url: "https://www.nintendo.com/hk/switch/zelda_botw/edition/index.html"  # (API) Nintendo HK: "薩爾達傳說 曠野之息 Nintendo Switch 2 Edition", category ["盒裝版","下載版"], publisher "Nintendo", releaseDatePackage "2025-06-05T00:00:00Z"
       checked_at: "2026-10-16"
       fields: ["distributor", "release_date"]
   verified_at: "2026-09-24"
@@ -14412,7 +14412,7 @@
   evidence: "press_report"  # (leída) meisakugame, 【任天堂】: "ゼルダの伝説 ティアーズ オブ ザ キングダム | SW2 Edition | 12兼"
   source_url: "https://meisakugame.garyoutensei.com/data/switch2packagekey.html"
   updates:
-    - url: "https://search.nintendo.jp/nintendo_soft/search.json?q=%E3%83%86%E3%82%A3%E3%82%A2%E3%83%BC%E3%82%BA&limit=40"  # (API) search.nintendo.jp: "ゼルダの伝説 ティアーズ オブ ザ キングダム Nintendo Switch 2 Edition", icode AXN7A, sdate "2025.6.5", maker "任天堂"
+    - url: "https://www.nintendo.com/jp/games/zelda/totk/edition/index.html"  # (API) search.nintendo.jp: "ゼルダの伝説 ティアーズ オブ ザ キングダム Nintendo Switch 2 Edition", icode AXN7A, sdate "2025.6.5", maker "任天堂"
       checked_at: "2026-10-14"
       fields: ["release_date", "distributor"]
   verified_at: "2026-10-14"
@@ -14431,7 +14431,7 @@
   evidence: "retailer_listing"  # (listado) Play-Asia: "The Legend of Zelda: Tears of the Kingdom for Nintendo Switch 2 Edition (Multi-Language) Game Cart for Nintendo Switch 2"; (leída) toyorgame.com.sg, variante "(Asia) Standard Edition"
   source_url: "https://www.play-asia.com/the-legend-of-zelda-tears-of-the-kingdom-for-nintendo-switch-2-e/13/70igd1"
   updates:
-    - url: "https://www.nintendo.com/hk/api/search?k=%E7%8E%8B%E5%9C%8B%E4%B9%8B%E6%B7%9A&directory=software&size=48"  # (API) Nintendo HK: "薩爾達傳說 王國之淚 Nintendo Switch 2 Edition", category ["盒裝版", "下載版"], releaseDatePackage 2025-06-05, publisher "Nintendo"
+    - url: "https://www.nintendo.com/hk/zelda/totk/edition/index.html"  # (API) Nintendo HK: "薩爾達傳說 王國之淚 Nintendo Switch 2 Edition", category ["盒裝版", "下載版"], releaseDatePackage 2025-06-05, publisher "Nintendo"
       checked_at: "2026-10-14"
       fields: ["release_date", "distributor"]
   verified_at: "2026-09-24"
@@ -14496,7 +14496,7 @@
   evidence: "retailer_listing"  # (listado) Play-Asia: "Yoshi and The Mysterious Book (Multi-Language) Game Cart for Nintendo Switch 2"; (leída) toyorgame.com.sg: "NS2 Yoshi and the Mysterious Book", variante "(Asia) Standard Edition"
   source_url: "https://www.play-asia.com/en/yoshi-and-the-mysterious-book-multi-language/13/70j1dh"
   updates:
-    - url: "https://www.nintendo.com/hk/api/search?k=%E8%80%80%E8%A5%BF&directory=software&size=30"  # (API) Nintendo HK: "耀西與不可思議的圖鑑", category ["盒裝版","下載版"], publisher "Nintendo"
+    - url: "https://www.nintendo.com/hk/games/switch2/aakga/"  # (API) Nintendo HK: "耀西與不可思議的圖鑑", category ["盒裝版","下載版"], publisher "Nintendo"
       checked_at: "2026-10-16"
       fields: ["distributor"]
   verified_at: "2026-09-24"
@@ -14603,7 +14603,7 @@
   evidence: "press_report"  # (leída) Nintendo Life: "Physical Release | Game-Key Card | Release Date | Nintendo Switch 2 | 28th Aug 2026 — $79.99 | 28th Aug 2026 — £64.99"
   source_url: "https://www.nintendolife.com/games/nintendo-switch-2/elden-ring-tarnished-edition"
   updates:
-    - url: "https://searching.nintendo-europe.com/en/select?q=ELDEN%20RING&fq=type:GAME&fq=playable_on_txt:BEE&rows=5&wt=json"  # (API) Nintendo EU Solr: "ELDEN RING Tarnished Edition", publisher "Bandai Namco Entertainment", datasize_readable_txt "41.0 GB"
+    - url: "https://www.nintendo.com/en-gb/Games/Nintendo-Switch-2-games/ELDEN-RING-Tarnished-Edition-2791969.html"  # (API) Nintendo EU Solr: "ELDEN RING Tarnished Edition", publisher "Bandai Namco Entertainment", datasize_readable_txt "41.0 GB"
       checked_at: "2026-10-16"
       fields: ["distributor", "size"]
   verified_at: "2026-10-16"
@@ -14905,7 +14905,7 @@
   evidence: "press_report"  # (leída) Nintendo Life ficha: "Physical Release | Game-Key Card | Release Date | Nintendo Switch 2 | 5th Jun 2025 — $39.99 | 5th Jun 2025 — £33.99"
   source_url: "https://www.nintendolife.com/games/nintendo-switch-2/bravely-default-flying-fairy-hd-remaster"
   updates:
-    - url: "https://searching.nintendo-europe.com/en/select?q=Bravely%20Default&fq=type:GAME&fq=playable_on_txt:BEE&rows=5&wt=json"  # (API) Nintendo EU Solr: "BRAVELY DEFAULT FLYING FAIRY HD Remaster", datasize_readable_txt "9.3 GB"
+    - url: "https://www.nintendo.com/en-gb/Games/Nintendo-Switch-2-games/BRAVELY-DEFAULT-FLYING-FAIRY-HD-Remaster-2789461.html"  # (API) Nintendo EU Solr: "BRAVELY DEFAULT FLYING FAIRY HD Remaster", datasize_readable_txt "9.3 GB"
       checked_at: "2026-10-16"
       fields: ["size"]
   verified_at: "2026-09-24"
@@ -14996,7 +14996,7 @@
   evidence: "retailer_listing"  # (listado) gameline.ph: "Nintendo Switch 2 Snoopy & the Great Mystery Club Deluxe Edition - Game Key Card (EU)"
   source_url: "https://gameline.ph/products/nintendo-switch-2-snoopy-the-great-mystery-club-deluxe-edition-game-key-card-eu"
   updates:
-    - url: "https://searching.nintendo-europe.com/en/select?q=Snoopy&fq=type:GAME&fq=playable_on_txt:BEE&rows=5&wt=json"  # (API) Nintendo EU Solr: "Snoopy & The Great Mystery Club", publisher "Game Mill", datasize_readable_txt "2.4 GB"
+    - url: "https://www.nintendo.com/en-gb/Games/Nintendo-Switch-2-games/Snoopy-The-Great-Mystery-Club-3009480.html"  # (API) Nintendo EU Solr: "Snoopy & The Great Mystery Club", publisher "Game Mill", datasize_readable_txt "2.4 GB"
       checked_at: "2026-10-16"
       fields: ["distributor", "size"]
   verified_at: "2026-09-24"
@@ -15059,7 +15059,7 @@
   evidence: "press_report"  # (leída) rdr2.org: "the Switch 2 physical edition of Red Dead Redemption is a code-in-box release. The box art includes the text “Download Code Only” with a secondary line confirming “Cartridge Not Included.”" (copia vendida en Vinted, Reino Unido); TGC (tienda UK): "Red Dead Redemption [Code In A Box] (Switch 2)"
   source_url: "https://www.rdr2.org/news/someone-sold-a-physical-red-dead-redemption-switch-2-copy-two-weeks-early/"
   updates:
-    - url: "https://searching.nintendo-europe.com/en/select?q=Red%20Dead%20Redemption&fq=type:GAME&fq=playable_on_txt:BEE&rows=5&wt=json"  # (API) Nintendo EU Solr: "Red Dead Redemption: Nintendo Switch 2 Edition", publisher "ROCKSTAR GAMES"
+    - url: "https://www.nintendo.com/en-gb/Games/Nintendo-Switch-2-Edition/Red-Dead-Redemption-Nintendo-Switch-2-Edition-2977386.html"  # (API) Nintendo EU Solr: "Red Dead Redemption: Nintendo Switch 2 Edition", publisher "ROCKSTAR GAMES"
       checked_at: "2026-10-16"
       fields: ["distributor"]
   verified_at: "2026-09-24"
@@ -16242,7 +16242,7 @@
   evidence: "press_report"  # (leída) meisakugame: "【U&I エンターテイメントジャパン】 | 形式 | 容量 | ソーラーパンク：天空の島 | 2専 | -"
   source_url: "https://meisakugame.garyoutensei.com/data/switch2packagekey.html"
   updates:
-    - url: "https://search.nintendo.jp/nintendo_soft/search.json?q=Solarpunk&limit=40"  # (API) search.nintendo.jp: "Solarpunk ソーラーパンク：天空の島", icode ABW9A, sform BEE_CARD, sdate "2026.10.1", pprice 4378
+    - url: "https://store-jp.nintendo.com/item/software/D70010000118062"  # (API) search.nintendo.jp: "Solarpunk ソーラーパンク：天空の島", icode ABW9A, sform BEE_CARD, sdate "2026.10.1", pprice 4378
       checked_at: "2026-10-13"
       fields: ["release_date"]
   verified_at: "2026-10-13"
@@ -16379,7 +16379,7 @@
   evidence: "unconfirmed"
   source_url: null
   updates:
-    - url: "https://search.nintendo.jp/nintendo_soft/search.json?q=Spyro&limit=40"  # (API) search.nintendo.jp: "Spyro™: A Realm Beyond", icode ACHPA, sform BEE_DOWNLOADABLE, maker "Activision", sdate "2027"
+    - url: "https://store-jp.nintendo.com/item/software/D70010000128121"  # (API) search.nintendo.jp: "Spyro™: A Realm Beyond", icode ACHPA, sform BEE_DOWNLOADABLE, maker "Activision", sdate "2027"
       checked_at: "2026-10-13"
       fields: ["distributor"]
   verified_at: "2026-10-13"
@@ -16431,7 +16431,7 @@
   evidence: "unconfirmed"
   source_url: null
   updates:
-    - url: "https://search.nintendo.jp/nintendo_soft/search.json?q=Duskbloods&limit=40"  # (API) search.nintendo.jp: "The Duskbloods", icode AAKPA, sform BEE_DOWNLOADABLE, maker "フロム・ソフトウェア", sdate "2026"
+    - url: "https://store-jp.nintendo.com/item/software/D70010000096715"  # (API) search.nintendo.jp: "The Duskbloods", icode AAKPA, sform BEE_DOWNLOADABLE, maker "フロム・ソフトウェア", sdate "2026"
       checked_at: "2026-10-13"
       fields: ["distributor"]
   verified_at: "2026-10-13"
@@ -16487,7 +16487,7 @@
   evidence: "press_report"  # (leída) meisakugame, cabecera de Koei Tecmo: "薬屋のひとりごと ～偽りの皇弟～ | Key"; Inven Global: "the Switch 2 version is sold only as a Game-Key Card"
   source_url: "https://meisakugame.garyoutensei.com/data/switch2packagekey.html"
   updates:
-    - url: "https://search.nintendo.jp/nintendo_soft/search.json?q=%E8%96%AC%E5%B1%8B%E3%81%AE%E3%81%B2%E3%81%A8%E3%82%8A%E3%81%94%E3%81%A8&limit=40"  # (API) search.nintendo.jp: "薬屋のひとりごと ～偽りの皇弟～", sform BEE_DOWNLOADABLE, maker "コーエーテクモゲームス", sdate "2027.初頭"
+    - url: "https://www.nintendo.com/jp/search/index.html?q=%E8%96%AC%E5%B1%8B%E3%81%AE%E3%81%B2%E3%81%A8%E3%82%8A%E3%81%94%E3%81%A8+%EF%BD%9E%E5%81%BD%E3%82%8A%E3%81%AE%E7%9A%87%E5%BC%9F%EF%BD%9E"  # (API) search.nintendo.jp: "薬屋のひとりごと ～偽りの皇弟～", sform BEE_DOWNLOADABLE, maker "コーエーテクモゲームス", sdate "2027.初頭"
       checked_at: "2026-10-13"
       fields: ["distributor"]
   verified_at: "2026-10-28"
@@ -16587,7 +16587,7 @@
   evidence: "unconfirmed"
   source_url: null
   updates:
-    - url: "https://search.nintendo.jp/nintendo_soft/search.json?q=Xenoblade%20Genesis&limit=40"  # (API) search.nintendo.jp: "Xenoblade Genesis（ゼノブレイド ジェネシス）", icode AB4FA, sform BEE_DOWNLOADABLE, maker "任天堂", sdate "2027"
+    - url: "https://www.nintendo.com/jp/games/switch2/ab4fa/index.html"  # (API) search.nintendo.jp: "Xenoblade Genesis（ゼノブレイド ジェネシス）", icode AB4FA, sform BEE_DOWNLOADABLE, maker "任天堂", sdate "2027"
       checked_at: "2026-10-13"
       fields: ["distributor"]
   verified_at: "2026-10-13"

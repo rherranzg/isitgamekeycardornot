@@ -95,7 +95,7 @@
   merged_into: "yakuza-kiwami-3-dark-ties"
 - igdb_id: 418328
   name: "Akiba Lost: Digital Deluxe Edition"
-  reason: "Edición de Akiba Lost sin caja propia (https://search.nintendo.jp/nintendo_soft/search.json?q=AKIBA%20LOST&limit=30)"
+  reason: "Edición de Akiba Lost sin caja propia (https://store-jp.nintendo.com/item/software/D70070000039859)"
   former_title_id: "akiba-lost-digital-deluxe-edition"
   merged_into: "akiba-lost"
 - igdb_id: 412376
@@ -235,7 +235,7 @@
   merged_into: "madden-nfl-27"
 - igdb_id: 331820
   name: "Metaphor: ReFantazio - Atlus 35th Digital Anniversary Edition"
-  reason: "Edición de Metaphor: ReFantazio sin caja propia (https://search.nintendo.jp/nintendo_soft/search.json?q=%E3%83%A1%E3%82%BF%E3%83%95%E3%82%A1%E3%83%BC&limit=50)"
+  reason: "Edición de Metaphor: ReFantazio sin caja propia (https://store-jp.nintendo.com/item/software/D70070000038516)"
   former_title_id: "metaphor-refantazio-atlus-35th-digital-anniversary-edition"
   merged_into: "metaphor-refantazio"
 - igdb_id: 384949
@@ -350,12 +350,12 @@
   merged_into: "steins-gate-re-boot"
 - igdb_id: 395685
   name: "The Adventures of Elliot: The Millennium Tales - Digital Deluxe Edition"
-  reason: "Edición de The Adventures of Elliot: The Millennium Tales sin caja propia (https://search.nintendo.jp/nintendo_soft/search.json?q=%E3%82%A8%E3%83%AA%E3%82%AA%E3%83%83%E3%83%88&limit=50)"
+  reason: "Edición de The Adventures of Elliot: The Millennium Tales sin caja propia (https://store-jp.nintendo.com/item/software/D70070000033131)"
   former_title_id: "the-adventures-of-elliot-the-millennium-tales-digital-deluxe-edition"
   merged_into: "the-adventures-of-elliot-the-millennium-tales"
 - igdb_id: 341402
   name: "The Elder Scrolls IV: Oblivion Remastered - Deluxe Edition"
-  reason: "Edición de The Elder Scrolls IV: Oblivion Remastered sin caja propia (https://search.nintendo.jp/nintendo_soft/search.json?q=Oblivion&limit=50)"
+  reason: "Edición de The Elder Scrolls IV: Oblivion Remastered sin caja propia (https://store-jp.nintendo.com/item/software/D70070000038017)"
   former_title_id: "the-elder-scrolls-iv-oblivion-remastered-deluxe-edition"
   merged_into: "the-elder-scrolls-iv-oblivion-remastered"
 - igdb_id: 418337
@@ -365,7 +365,7 @@
   merged_into: "tomb-raider-legacy-of-atlantis"
 - igdb_id: 418331
   name: "Touhou Koumakyou: New Classic - The Embodiment of Scarlet Devil: Deluxe Edition"
-  reason: "Edición de Touhou Koumakyou: New Classic - The Embodiment of Scarlet Devil sin caja propia (https://search.nintendo.jp/nintendo_soft/search.json?q=%E6%9D%B1%E6%96%B9&limit=50)"
+  reason: "Edición de Touhou Koumakyou: New Classic - The Embodiment of Scarlet Devil sin caja propia (https://store-jp.nintendo.com/item/software/D70070000040065)"
   former_title_id: "touhou-koumakyou-new-classic-the-embodiment-of-scarlet-devil-deluxe-edition"
   merged_into: "touhou-koumakyou-new-classic-the-embodiment-of-scarlet-devil"
 - igdb_id: 324779
