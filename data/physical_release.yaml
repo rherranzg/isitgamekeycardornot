@@ -1875,11 +1875,6 @@
   evidence: "unconfirmed"  # búsqueda web: solo eShop, ningún listado físico
   source_url: null
   checked_at: "2026-10-09"
-- title_id: "montabi"
-  has_physical_release: false
-  evidence: "unconfirmed"  # búsqueda web: solo eShop, ningún listado físico; (leída) Nintendo Store CA: "Version | Nintendo Switch 2 | Edition | Digital"
-  source_url: null
-  checked_at: "2026-10-09"
 
 # Tanda del 2026-10-09: regiones sin caja (region) de títulos con caja en otras regiones.
 # JP: (API) search.nintendo.jp con pprice: null en un juego ya lanzado, y el juego no está en la lista de
@@ -2110,7 +2105,7 @@
   has_physical_release: false
   evidence: "press_report"  # (leída) Nintendo Everything: "The fast-paced roguelite bullet heaven title is hitting Nintendo Switch 2 and Switch on November 10, 2026." ... "The game will be sold digitally for $7.99 with a 10 percent launch and pre-order discount."
   source_url: "https://nintendoeverything.com/warhammer-survivors-sets-nintendo-switch-2-and-switch-release-date-new-trailer/"
-  checked_at: "2026-10-13"
+  checked_at: "2026-11-10"
 - title_id: "pardon-my-french-toast"
   has_physical_release: false
   evidence: "press_report"  # (leída) Nintendo Insider: "Pardon My French Toast will be released digitally on the Nintendo eShop for Nintendo Switch 2 and Nintendo Switch worldwide on 29 October 2026."
@@ -2318,7 +2313,7 @@
   has_physical_release: false
   evidence: "press_report"  # (leída) Nintendo Insider: "Sonic Pico Park will be released digitally on the Nintendo eShop for Nintendo Switch 2 and Nintendo Switch worldwide on 12 November 2026."
   source_url: "https://www.nintendo-insider.com/2d-puzzler-sonic-pico-park-out-this-november/"
-  checked_at: "2026-10-13"
+  checked_at: "2026-11-10"
 - title_id: "stage-fright"
   has_physical_release: false
   evidence: "press_report"  # (leída) Nintendo Insider: "Stage Fright will be released digitally on the Nintendo eShop for Nintendo Switch 2 and Nintendo Switch worldwide in 2027."
@@ -2946,7 +2941,7 @@
   has_physical_release: false
   evidence: "press_report"
   source_url: "https://news.denfaminicogamer.jp/news/2605132e"
-  checked_at: "2026-11-02"
+  checked_at: "2026-11-10"
 - title_id: "the-spectrum-retreat-redux"
   has_physical_release: false
   evidence: "official"  # (leída) ficha oficial de Nintendo: "The Spectrum Retreat: Redux | Version | Nintendo Switch 2 | Edition | Digital"
@@ -2959,3 +2954,38 @@
   evidence: "official"
   source_url: "https://store-jp.nintendo.com/item/software/D70010000122448"
   checked_at: "2026-11-03"
+
+# Novedades del 03-11 al 10-11-2026.
+# (leída) https://www.rpgsite.net/news/21685-hyperspace-neptunia-unlimited-launches-in-2027-for-ps5-ps4-switch-2-switch: "it will be released physically on PS5, PS4, and Switch 2 in North America while the physical release in Europe will be just on PS5."
+- title_id: "hyperdimension-neptunia-unlimited"
+  has_physical_release: false
+  region: "EU"
+  evidence: "official"
+  source_url: "https://www.rpgsite.net/news/21685-hyperspace-neptunia-unlimited-launches-in-2027-for-ps5-ps4-switch-2-switch"
+  checked_at: "2026-11-10"
+# (leída) Nintendo Insider: "RACCOIN: Chaos Max Edition will be released digitally on the Nintendo eShop for Nintendo Switch 2 worldwide on 10 November 2026."; (leída) ficha oficial de Nintendo US: "RACCOIN: Chaos Max Edition | Version | Nintendo Switch 2 | Edition | Digital"; (API) search.nintendo.jp: "RACCOIN: Chaos Max Edition", icode ABU6A, sdate "2026.11.10", sform BEE_DL, pprice: null; sin fila en meisakugame.
+- title_id: "raccoin-coin-pusher-roguelike"
+  has_physical_release: false
+  evidence: "press_report"
+  source_url: "https://www.nintendo-insider.com/trigger-wild-combos-in-raccoin-chaos-max-edition-on-nintendo-switch-2/"
+  checked_at: "2026-11-10"
+# (leída) Nintendo Insider: "Tanuki: Pon’s Summer will be released digitally on the Nintendo eShop for Nintendo Switch 2 and Nintendo Switch worldwide on 10 November 2026."; (leída) ficha oficial de Nintendo US: "TANUKI: Pon's Summer | Version | Nintendo Switch 2 | Edition | Digital"; (API) search.nintendo.jp: "TANUKI: Pon's Summer - タヌキ：ポンの夏", icode ACXEA, sdate "2026.11.10", sform BEE_DL, pprice: null; sin fila en meisakugame.
+- title_id: "tanuki-pon-s-summer"
+  has_physical_release: false
+  evidence: "press_report"
+  source_url: "https://www.nintendo-insider.com/stylishly-deliver-mail-in-tanuki-pons-summer-on-nintendo-switch-2/"
+  checked_at: "2026-11-10"
+# (leída) ficha oficial de Nintendo: "Castlebound | Version | Nintendo Switch 2 | Edition | Digital"; ningún distribuidor con caja anunciada.
+- title_id: "castlebound"
+  has_physical_release: false
+  region: "NA"
+  evidence: "official"
+  source_url: "https://www.nintendo.com/us/store/products/castlebound-switch-2/"
+  checked_at: "2026-11-10"
+# (leída) ficha oficial de Nintendo: "Moomin: Midsummer Madness | Version | Nintendo Switch 2 | Edition | Digital"; la caja de Shochiku es solo japonesa.
+- title_id: "moomin-midsummer-madness"
+  has_physical_release: false
+  region: "NA"
+  evidence: "official"
+  source_url: "https://www.nintendo.com/us/store/products/moomin-midsummer-madness-switch-2/"
+  checked_at: "2026-11-10"

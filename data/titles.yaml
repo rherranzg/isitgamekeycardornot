@@ -681,7 +681,7 @@
   publisher: Koei Tecmo
   release_date: '2027-02-25'
   status: pending
-  last_checked_at: '2026-10-14T10:48:31+02:00'
+  last_checked_at: '2026-11-10T20:46:09+01:00'
 - title_id: atelier-ryza-2-lost-legends-the-secret-fairy-dx
   igdb_id: 359425
   name: 'Atelier Ryza 2: Lost Legends & the Secret Fairy DX'
@@ -1116,7 +1116,7 @@
     fields:
     - release_date
   status: pending
-  last_checked_at: '2026-10-28T10:35:53+01:00'
+  last_checked_at: '2026-11-10T20:46:09+01:00'
 - title_id: cats-away
   igdb_id: 352180
   name: Cats Away
@@ -2615,7 +2615,7 @@
   publisher: Idea Factory
   release_date: '2026-08-27'
   status: pending
-  last_checked_at: '2026-10-16T14:50:16+02:00'
+  last_checked_at: '2026-11-10T20:46:09+01:00'
 - title_id: hyrule-warriors-age-of-calamity-definitive-edition
   igdb_id: 417167
   name: 'Hyrule Warriors: Age of Calamity - Definitive Edition'
@@ -3168,7 +3168,7 @@
   publisher: Atlus / Sega
   release_date: '2026-11-12'
   status: pending
-  last_checked_at: '2026-10-16T14:50:16+02:00'
+  last_checked_at: '2026-11-10T20:46:09+01:00'
 - title_id: metroid-ravenous
   igdb_id: 408719
   name: Metroid Ravenous
@@ -3294,7 +3294,7 @@
   publisher: Akupara Games
   release_date: '2026-08-06'
   status: pending
-  last_checked_at: '2026-10-09'
+  last_checked_at: '2026-11-10T20:46:09+01:00'
 - title_id: moomin-midsummer-madness
   igdb_id: 404859
   name: Moomin Midsummer Madness
@@ -3306,7 +3306,7 @@
     fields:
     - release_date
   status: pending
-  last_checked_at: '2026-10-09'
+  last_checked_at: '2026-11-10T20:46:09+01:00'
 - title_id: moonlight-peaks
   igdb_id: 237123
   name: Moonlight Peaks
@@ -3346,9 +3346,14 @@
   igdb_id: 339137
   name: Mouse Work
   publisher: Nitrome
-  release_date: null
+  release_date: '2026-12-07'
+  updates:
+  - url: https://www.gematsu.com/2026/11/mouse-work-launches-december-7
+    checked_at: '2026-11-10'
+    fields:
+    - release_date
   status: pending
-  last_checked_at: '2026-10-13T19:38:52+02:00'
+  last_checked_at: '2026-11-10T20:46:09+01:00'
 - title_id: mouse-p-i-for-hire
   igdb_id: 249324
   name: 'Mouse: P.I. For Hire'
@@ -3802,7 +3807,7 @@
   publisher: Nintendo
   release_date: '2026-11-12'
   status: pending
-  last_checked_at: '2026-10-16T14:02:28+02:00'
+  last_checked_at: '2026-11-10T20:46:09+01:00'
 - title_id: pikuniku-2
   igdb_id: 405455
   name: Pikuniku 2
@@ -3942,7 +3947,7 @@
   publisher: NIS America, Inc.
   release_date: '2026-11-11'
   status: pending
-  last_checked_at: '2026-10-16T13:30:44+02:00'
+  last_checked_at: '2026-11-10T20:46:09+01:00'
 - title_id: pritto-prisoner
   igdb_id: 358539
   name: Pritto Prisoner
@@ -4018,8 +4023,8 @@
   name: 'Raccoin: Coin Pusher Roguelike'
   publisher: Playstack
   release_date: '2026-11-10'
-  status: pending
-  last_checked_at: '2026-10-13T19:55:42+02:00'
+  status: completed
+  last_checked_at: '2026-11-10T20:46:09+01:00'
 - title_id: raidou-remastered-the-mystery-of-the-soulless-army
   igdb_id: 337024
   name: 'Raidou Remastered: The Mystery of the Soulless Army'
@@ -4038,9 +4043,14 @@
   igdb_id: 208417
   name: Ravenswatch
   publisher: Nacon
-  release_date: 2026-Q4
+  release_date: '2026-12-10'
+  updates:
+  - url: https://www.gonintendo.com/contents/67088-ravenswatch-heading-to-switch-2-physically-digitally-in-dec-2026-free-update
+    checked_at: '2026-11-10'
+    fields:
+    - release_date
   status: pending
-  last_checked_at: '2026-10-09'
+  last_checked_at: '2026-11-10T20:46:09+01:00'
 - title_id: rayman-legends-retold
   igdb_id: 404044
   name: Rayman Legends Retold
@@ -4465,7 +4475,7 @@
   publisher: null
   release_date: '2026-11-12'
   status: completed
-  last_checked_at: '2026-10-13T20:35:08+02:00'
+  last_checked_at: '2026-11-10T20:46:09+01:00'
 - title_id: sonic-racing-crossworlds
   igdb_id: 325608
   name: 'Sonic Racing: CrossWorlds'
@@ -5224,9 +5234,14 @@
   igdb_id: 405156
   name: 'Thief: The Dark Project Remastered'
   publisher: Atari
-  release_date: 2026-Q4
+  release_date: '2026-12-03'
+  updates:
+  - url: https://www.nintendo.com/us/store/products/thief-the-dark-project-remastered-nintendo-switch-2-edition-switch-2/
+    checked_at: '2026-11-10'
+    fields:
+    - release_date
   status: pending
-  last_checked_at: '2026-10-13T20:35:08+02:00'
+  last_checked_at: '2026-11-10T20:46:09+01:00'
 - title_id: tianji-shadow-of-the-ancients
   igdb_id: 416886
   name: 'Tianji: Shadow of the Ancients'
@@ -5268,7 +5283,7 @@
   publisher: Amazon Games
   release_date: '2027-02-12'
   status: pending
-  last_checked_at: '2026-10-09'
+  last_checked_at: '2026-11-10T20:46:09+01:00'
 - title_id: tomba-2-the-evil-swine-return-special-edition
   igdb_id: 377890
   name: 'Tomba! 2: The Evil Swine Return Special Edition'
@@ -5374,7 +5389,7 @@
   publisher: Sega
   release_date: '2026-09-16'
   status: pending
-  last_checked_at: '2026-10-16T14:36:45+02:00'
+  last_checked_at: '2026-11-10T20:46:09+01:00'
 - title_id: two-point-museum
   igdb_id: 313595
   name: Two Point Museum
@@ -5528,7 +5543,7 @@
   publisher: Auroch Digital
   release_date: '2026-11-10'
   status: completed
-  last_checked_at: '2026-10-13T18:32:20+02:00'
+  last_checked_at: '2026-11-10T20:46:09+01:00'
 - title_id: warota-i-live-next-to-the-demon-king-s-castle-lol
   igdb_id: 399887
   name: 'Warota: I Live Next to The Demon King''s Castle LOL'
@@ -6327,9 +6342,14 @@
   igdb_id: 224629
   name: Lost and Found Co.
   publisher: Bit Egg
-  release_date: 2027-Q1
+  release_date: '2026-11-10'
+  updates:
+  - url: https://www.nintendo-insider.com/recover-belongings-in-lost-and-found-co-on-nintendo-switch-2/
+    checked_at: '2026-11-10'
+    fields:
+    - release_date
   status: pending
-  last_checked_at: '2026-11-02T17:59:49+01:00'
+  last_checked_at: '2026-11-10T20:46:09+01:00'
 - title_id: middle-earth-the-shadow-bundle
   igdb_id: 188059
   name: 'Middle-earth: The Shadow Bundle'
@@ -6453,14 +6473,14 @@
   publisher: null
   release_date: '2026-11-10'
   status: completed
-  last_checked_at: '2026-11-02T17:59:49+01:00'
+  last_checked_at: '2026-11-10T20:46:09+01:00'
 - title_id: tanuki-pon-s-summer
   igdb_id: 317817
   name: 'Tanuki: Pon''s Summer'
   publisher: Critical Reflex
   release_date: '2026-11-10'
-  status: pending
-  last_checked_at: '2026-11-02T17:59:49+01:00'
+  status: completed
+  last_checked_at: '2026-11-10T20:46:09+01:00'
 - title_id: tenjutsu
   igdb_id: 305039
   name: Tenjutsu

@@ -6055,7 +6055,7 @@
     - url: "https://www.nintendo.com/us/store/products/metaphor-refantazio-switch-2/"  # (API) Algolia NA: "Metaphor: ReFantazio", softwarePublisher "SEGA"
       checked_at: "2026-10-16"
       fields: ["distributor"]
-  verified_at: "2026-09-17"
+  verified_at: "2026-11-10"
 - sku_id: "na-metaphor-refantazio-deluxe"
   title_id: "metaphor-refantazio"
   region: "NA"
@@ -6074,7 +6074,7 @@
     - url: "https://www.nintendo.com/us/store/products/metaphor-refantazio-switch-2/"  # (API) Algolia NA: "Metaphor: ReFantazio", softwarePublisher "SEGA"
       checked_at: "2026-10-16"
       fields: ["distributor"]
-  verified_at: "2026-09-17"
+  verified_at: "2026-11-10"
 
 # ---------------------------------------------------------------------------------------------------------
 # Tanda "me...mon...": Metroid Ravenous, Mewgenics, Minecraft, Minecraft Dungeons II, Minishoot' Adventures,
@@ -6623,7 +6623,7 @@
   source_url: "https://toyorgame.com.sg/products/ns2-monster-hunter-wilds-game-key-card-deluxe-edition-double-pack"
   verified_at: "2026-10-16"
 
-# Moomin: Midsummer Madness (publisher sin confirmar en IGDB): físico anunciado para Switch/Switch 2 sin
+# Moomin: Midsummer Madness (Shochiku en Japón): físico anunciado para Switch/Switch 2 sin
 # detalle de formato en la nota de GoNintendo. VideoGamesPlus.ca lista una versión JPN import como Game-Key
 # Card; la fecha de lanzamiento en Japón la da Saiga NAK. La caja es solo japonesa (Shochiku; Collectors-Junkies:
 # "in Japan [...] für die Nintendo Switch und Switch 2 (Game-Key Card)"); en NA solo hay ficha digital en la tienda de
@@ -6633,7 +6633,7 @@
   region: "JP"
   edition: "standard"
   edition_name: null
-  distributor: null
+  distributor: "Shochiku"  # (leída) Collectors-Junkies: "Shochiku bringt im November dieses Jahres in Japan ... als Limited Edition und Standard Variante"
   release_date: "2026-11-12"  # (leída) Saiga NAK: "'Moomin: Summer Festival in Moominvalley' Set for Release on November 12! Pre-orders Now Open for Physical Editions on Nintendo Switch and Nintendo Switch 2"
   format: "game_key_card"
   cart_size_gb: null
@@ -6642,6 +6642,10 @@
   ean: null
   evidence: "retailer_listing"  # (listado) VideoGamesPlus.ca: "Moomin: Midsummer Madness [Standard] (JPN Import - Multi-Language) [Game-Key Card] - Nintendo Switch 2 (PRE-ORDER)"
   source_url: "https://videogamesplus.ca/products/moomin-midsummer-madness-standard-jpn-import-multi-language-game-key-card-nintendo-switch-2-pre-order"
+  updates:
+    - url: "https://collectors-junkies.com/moomin-midsummer-madness-limited-edition-standard-variante-ab-november-2026/"  # (leída) "als Limited Edition und Standard Variante für die Nintendo Switch und Switch 2 (Game-Key Card) heraus"; (leída) meisakugame, cabecera "【松竹ゲームズ】": "ムーミン：ムーミン谷の夏まつり | Key"
+      checked_at: "2026-11-10"
+      fields: ["distributor"]
   verified_at: "2026-09-18"
 - sku_id: "jp-moomin-midsummer-madness-collectors"
   title_id: "moomin-midsummer-madness"
@@ -6657,7 +6661,7 @@
   ean: null
   evidence: "press_report"  # (leída) Collectors-Junkies: "als Limited Edition und Standard Variante für die Nintendo Switch und Switch 2 (Game-Key Card)"
   source_url: "https://collectors-junkies.com/moomin-midsummer-madness-limited-edition-standard-variante-ab-november-2026/"
-  verified_at: "2026-09-24"
+  verified_at: "2026-11-10"
 
 # Moonlight Peaks (Little Chicken / XSEED / Marvelous Europe): en Japón sale en cartucho completo (AUTOMATON-
 # style press report de Nintendo Everything); en Europa hay físico pero sin confirmar el tipo de tarjeta; en
@@ -8496,10 +8500,10 @@
   source_url: "https://www.play-asia.com/en/prinny-party-going-overboard/13/70k7gb"
   updates:
     - url: "https://www.gematsu.com/2026/09/prinny-party-going-overboard-launches-november-11-in-the-west"  # (leída) Gematsu: "As previously announced, the game will launch on November 12 in Japan and Asia, where the game will be available both physically and digitally."
-      checked_at: "2026-10-16"
+      checked_at: "2026-11-10"
       fields: ["release_date"]
   verified_at: "2026-09-19"
-# Completado del 16-10-2026: caja JP en key card (meisakugame); caja KR (API de Nintendo Corea) sin formato.
+# Completado del 16-10-2026: caja JP en key card (meisakugame); caja KR en key card (Danawa, desde el 10-11-2026).
 - sku_id: "jp-prinny-party-going-overboard-standard"
   title_id: "prinny-party-going-overboard"
   region: "JP"
@@ -8518,26 +8522,26 @@
     - url: "https://store-jp.nintendo.com/item/software/D70010000123165"  # (API) search.nintendo.jp: "みんなでポイっと！プリニーすごろく", icode AB8WA, sform BEE_DOWNLOADABLE, maker "日本一ソフトウェア", sdate "2026.11.12", pprice 7678
       checked_at: "2026-10-16"
       fields: ["release_date"]
-  verified_at: "2026-10-16"
+  verified_at: "2026-11-10"
 - sku_id: "kr-prinny-party-going-overboard-standard"
   title_id: "prinny-party-going-overboard"
   region: "KR"
   edition: "standard"
   edition_name: null
   distributor: "Clouded Leopard Entertainment"
-  release_date: null
-  format: "unknown"
+  release_date: "2026-11-12"  # (leída) Danawa: "출시일: 2026.11.12."
+  format: "game_key_card"
   cart_size_gb: null
   download_size_gb: null
   includes_download_code: null
   ean: null
-  evidence: "unconfirmed"  # (API) Nintendo Corea: "다 함께 즐기자! 프리니 보드 배틀", category ["패키지 버전","다운로드 버전","체험판"]; Danawa sin resultado
-  source_url: null
+  evidence: "retailer_listing"  # (leída) Danawa: "다 함께 즐기자! 프리니 보드 배틀 SWITCH2, 패키지키카드", "제조사 : 니폰이치 소프트웨어" (caja coreana, sin "[해외]"); (API) Nintendo Corea: "다 함께 즐기자! 프리니 보드 배틀", category ["패키지 버전","다운로드 버전","체험판"]
+  source_url: "https://prod.danawa.com/info/?pcode=124744809"
   updates:
     - url: "https://store.nintendo.co.kr/70010000127822"  # (API) Nintendo Corea: "다 함께 즐기자! 프리니 보드 배틀", publisher "Clouded Leopard Entertainment", 패키지 버전
       checked_at: "2026-10-16"
       fields: ["distributor"]
-  verified_at: "2026-10-16"
+  verified_at: "2026-11-10"
 
 # RAIDOU Remastered: game-key card en EU (guía de Nintendo Life).
 - sku_id: "eu-raidou-remastered-the-mystery-of-the-soulless-army-standard"
@@ -8798,14 +8802,15 @@
   source_url: "https://prod.danawa.com/info/?pcode=102757709"
   verified_at: "2026-10-16"
 
-# Ravenswatch: cartucho completo en EU (guía de Nintendo Life); aún no ha salido.
+# Ravenswatch: cartucho completo en EU (guía de Nintendo Life); aún no ha salido. La caja se retrasó del
+# 19-11-2026 al 10-12-2026 (anuncio de Nacon del 10-11-2026); en Norteamérica sale el 18-12-2026, sin caja confirmada allí.
 - sku_id: "eu-ravenswatch-standard"
   title_id: "ravenswatch"
   region: "EU"
   edition: "standard"
   edition_name: null
   distributor: "Nacon"  # (leída) nintendolife.com: "19th Nov 2026 / Nacon / Passtech Games"
-  release_date: "2026-11-19"
+  release_date: "2026-12-10"
   format: "full_cart"
   cart_size_gb: null
   download_size_gb: null
@@ -8813,6 +8818,10 @@
   ean: null
   evidence: "press_report"  # (leída) nintendolife.com, guía de cartuchos completos: "Ravenswatch: Nintendo Switch 2 Edition (Switch 2) | 19th Nov 2026 / Nacon / Passtech Games"
   source_url: "https://www.nintendolife.com/guides/every-nintendo-switch-2-physical-release-with-the-full-game-on-the-cart"
+  updates:
+    - url: "https://www.gonintendo.com/contents/67088-ravenswatch-heading-to-switch-2-physically-digitally-in-dec-2026-free-update"  # (leída) retraso respecto al 19-11-2026: "Scheduled for December 18 in North America and December 10 in the rest of the world" ... "The physical edition of Ravenswatch on Nintendo Switch™2 will include the game cartridge"
+      checked_at: "2026-11-10"
+      fields: ["release_date"]
   verified_at: "2026-09-19"
 
 # Ratatan: cartucho completo en EU y NA según Final Weapon (edición física anunciada por Game Source Entertainment).
@@ -10998,7 +11007,7 @@
   ean: null
   evidence: "official"  # (leída) Nintendo UK: "If the physical or virtual game card is inserted into a Nintendo Switch console, you can play the Nintendo Switch version of the game"
   source_url: "https://www.nintendo.com/en-gb/Games/Nintendo-Switch-2-Edition/Pikmin-4-Nintendo-Switch-2-Edition-Dandori-Academy-3188744.html"
-  verified_at: "2026-09-22"
+  verified_at: "2026-11-10"
 - sku_id: "na-pikmin-4-nintendo-switch-2-edition-dandori-academy-standard"
   title_id: "pikmin-4-nintendo-switch-2-edition-dandori-academy"
   region: "NA"
@@ -11977,21 +11986,25 @@
       checked_at: "2026-10-16"
       fields: ["release_date"]
   verified_at: "2026-09-23"
-# Completado del 16-10-2026: caja JP en key card (meisakugame), sin fecha.
+# Completado del 16-10-2026: caja JP en key card (meisakugame); su fecha (06-11-2026) salió en la API JP el 10-11-2026.
 - sku_id: "jp-two-point-hospital-standard"
   title_id: "two-point-hospital"
   region: "JP"
   edition: "standard"
   edition_name: null
   distributor: "SEGA"  # (leída) meisakugame, cabecera "【セガ】"
-  release_date: null
+  release_date: "2026-11-06"
   format: "game_key_card"
   cart_size_gb: null
   download_size_gb: 7
   includes_download_code: null
   ean: null
-  evidence: "press_report"  # (leída) meisakugame: "ツーポイントホスピタル：ハートフルコレクション | Key | 7GB"; (API) search.nintendo.jp: icode ACB3A, sform BEE_DL, sdate "2026.9.16", pprice: null (sin fecha de la caja)
+  evidence: "press_report"  # (leída) meisakugame: "ツーポイントホスピタル：ハートフルコレクション | Key | 7GB"
   source_url: "https://meisakugame.garyoutensei.com/data/switch2packagekey.html"
+  updates:
+    - url: "https://store-jp.nintendo.com/item/software/D70010000125002"  # (API) search.nintendo.jp: "ツーポイントホスピタル：ハートフルコレクション", id 70010000125002-2, sform BEE_CARD, sdate "2026.11.6", pprice 4888, maker "セガ"
+      checked_at: "2026-11-10"
+      fields: ["release_date"]
   verified_at: "2026-10-16"
 - sku_id: "asia-two-point-hospital-standard"
   title_id: "two-point-hospital"
@@ -13169,7 +13182,7 @@
   ean: null
   evidence: "retailer_listing"  # (leída) Danawa: "메타포: 리판타지오 SWITCH2, 패키지키카드"
   source_url: "https://prod.danawa.com/info/?pcode=123963211"
-  verified_at: "2026-09-24"
+  verified_at: "2026-11-10"
 # Digimon Story Time Stranger: game-key card en JP y KR.
 - sku_id: "jp-digimon-story-time-stranger-standard"
   title_id: "digimon-story-time-stranger"
@@ -17052,3 +17065,104 @@
   evidence: "retailer_listing"  # (leída) VideoGamesPlus.ca: "Middle Earth: The Shadow Bundle [Game-Key Card] - Nintendo Switch 2 (PRE-ORDER)", "$89.99 CAD"
   source_url: "https://videogamesplus.ca/products/middle-earth-the-shadow-bundle-game-ey-card-nintendo-switch-2-pre-order"
   verified_at: "2026-11-02"
+
+# Novedades del 03-11 al 10-11-2026: cajas nuevas de Montabi (Nejcraft), Thief: The Dark Project Remastered (guía de
+# Nintendo Life), Hyperspace Neptunia: Unlimited en Norteamérica (Idea Factory International), el Premium Box de Atelier
+# Karia (NIS America) y la caja japonesa de Tomb Raider: Legacy of Atlantis (PLAION).
+# Montabi: caja de Nejcraft, editora checa ((leída) https://www.gamespress.com/Montabi-the-Creature-Collect-Deckbuilder-is-Going-Physical-on-Nintendo:
+# "Pilsen, Czech Republic – November 6, 2026 ... Czech indie publisher Nejcraft is teaming up with developer Mankibo and
+# digital publisher Akupara Games to bring the game to Nintendo Switch™ 2 on a physical cartridge" y "Physical pre-orders
+# are now open exclusively through the Nejcraft Store"), vendida en su tienda en euros ((leída)
+# https://store.nejcraft.com/products/montabi-switch2: "Official Physical Edition | Worldwide Shipping | Preorder |
+# Montabi (Nintendo Switch 2) | Est. shipping Q1 2027" ... "€55.00"). Envío en el primer trimestre de 2027, sin día.
+- sku_id: "eu-montabi-standard"
+  title_id: "montabi"
+  region: "EU"
+  edition: "standard"
+  edition_name: null
+  distributor: "Nejcraft"  # (leída) Nintendo Everything: "Nejcraft has announced a physical release for Montabi on Nintendo Switch 2"
+  release_date: null  # (leída) Nintendo Everything: "Copies should ship in Q1 2027."
+  format: "full_cart"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) Nintendo Everything: "This is the full game on the cartridge. In other words, you don’t have to be concerned about it being a game-key card. | Note that only a standard version is planned."
+  source_url: "https://nintendoeverything.com/montabi-reveals-nintendo-switch-2-physical-release/"
+  verified_at: "2026-11-10"
+
+# Thief: The Dark Project Remastered (Atari): cartucho completo según la guía de Nintendo Life (EU); sale el 03-12-2026.
+- sku_id: "eu-thief-the-dark-project-remastered-standard"
+  title_id: "thief-the-dark-project-remastered"
+  region: "EU"
+  edition: "standard"
+  edition_name: null
+  distributor: "Atari"  # (leída) nintendolife.com: "3rd Dec 2026 / Atari / Eidos Montreal"
+  release_date: "2026-12-03"  # (leída) nintendolife.com: "3rd Dec 2026"
+  format: "full_cart"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) nintendolife.com, guía de cartuchos completos: "Thief: The Dark Project Remastered - Nintendo Switch 2 Edition (Switch 2) | 3rd Dec 2026 / Atari / Eidos Montreal"
+  source_url: "https://www.nintendolife.com/guides/every-nintendo-switch-2-physical-release-with-the-full-game-on-the-cart"
+  verified_at: "2026-11-10"
+
+# Hyperspace Neptunia: Unlimited (Idea Factory International) en Occidente: caja de Switch 2 solo en Norteamérica, con el
+# juego entero en la tarjeta; en Europa la caja es solo de PS5 (physical_release.yaml). Sale en 2027, sin fecha.
+# (leída) https://www.rpgsite.net/news/21685-hyperspace-neptunia-unlimited-launches-in-2027-for-ps5-ps4-switch-2-switch:
+# "it will be released physically on PS5, PS4, and Switch 2 in North America while the physical release in Europe will be just on PS5."
+- sku_id: "na-hyperdimension-neptunia-unlimited-standard"
+  title_id: "hyperdimension-neptunia-unlimited"
+  region: "NA"
+  edition: "standard"
+  edition_name: null
+  distributor: "Idea Factory International"  # (leída) Gematsu: "Idea Factory International will release Compile Heart-developed Hyperspace Neptunia: Unlimited ... in 2027 in the west"
+  release_date: null  # (leída) Gematsu: "in 2027 in the west", sin día
+  format: "full_cart"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "official"  # (leída) Gematsu, nota de Idea Factory International: "The physical edition will be available for PlayStation 5, PlayStation 4, Switch 2 (full game on card)."
+  source_url: "https://gematsu.com/2026/11/hyperspace-neptunia-unlimited-coming-west-in-2027-for-ps5-switch-2-ps4-switch-and-pc"
+  verified_at: "2026-11-10"
+
+# Atelier Karia: Premium Box de la tienda de NIS America (anunciado en septiembre), con la caja estándar en game-key card.
+- sku_id: "na-atelier-karia-the-night-kingdom-the-guide-of-memories-collectors"
+  title_id: "atelier-karia-the-night-kingdom-the-guide-of-memories"
+  region: "NA"
+  edition: "collectors"
+  edition_name: "Premium Box"  # (leída) RPGamer: "the limited Premium Box edition is now available to pre-order from NIS America’s online store for $114.99" (art book, CD, nueve pósteres y un traje DLC)
+  distributor: "NIS America"  # (leída) RPGamer: "from NIS America’s online store"
+  release_date: "2027-02-25"  # (leída) RPGamer: "will release on February 25, 2027"
+  format: "game_key_card"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null  # (leída) RPGamer: "“Pioneering Team’s Head Chef” costume DLC", sin decir si va en código
+  ean: null
+  evidence: "press_report"  # (leída) RPGamer: "Atelier Karia: The Night Kingdom & the Guide of Memories standard physical edition for PlayStation 5, Xbox Series X | S, or Nintendo Switch 2 (Game-Key Card)"
+  source_url: "https://rpgamer.com/2026/09/atelier-karia-the-night-kingdom-the-guide-of-memories-releasing-in-february/"
+  verified_at: "2026-11-10"
+
+# Tomb Raider: Legacy of Atlantis en Japón: caja de PLAION en key card. La API JP separó el 10-11-2026 la caja
+# (BEE_CARD, 12-02-2027) de la descarga (BEE_DL, 13-02-2027).
+- sku_id: "jp-tomb-raider-legacy-of-atlantis-standard"
+  title_id: "tomb-raider-legacy-of-atlantis"
+  region: "JP"
+  edition: "standard"
+  edition_name: null
+  distributor: "PLAION"  # (leída) meisakugame, cabecera "【PLAION】"
+  release_date: "2027-02-12"
+  format: "game_key_card"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) meisakugame: "【PLAION】 | 形式 | 容量 | SnowRunner | Key | 50GB | 天地創造 | 2専 | - | トゥームレイダー：レガシー・オブ・アトランティス | Key | 60GB"
+  source_url: "https://meisakugame.garyoutensei.com/data/switch2packagekey.html"
+  updates:
+    - url: "https://store-jp.nintendo.com/item/software/D70010000120172"  # (API) search.nintendo.jp: "トゥームレイダー：レガシー・オブ・アトランティス", id 70010000120172-2, sform BEE_CARD, sdate "2027.2.12", pprice 8250, maker "Amazon Games"
+      checked_at: "2026-11-10"
+      fields: ["release_date"]
+  verified_at: "2026-11-10"
