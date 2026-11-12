@@ -5,9 +5,10 @@ it is only recorded when a public source says it.
 
 ## Reporting an error or missing data
 
-Use the [correction form](https://github.com/rherranzg/isitgamekeycardornot/issues/new?template=correction.yml).
-It asks for the game, the region, the format and a link to the source, plus the exact sentence that states
-the format.
+Use the [correction form](https://github.com/rherranzg/isitgamekeycardornot/issues/new?template=correction.yml),
+or the "Spotted a mistake?" link under each game on the site, which fills in the game for you. It asks what is
+wrong (format, box release date, a missing edition, region or game...), the region, the right value and the
+source: a link plus the exact sentence that states it, or a photo of the box dragged into the form.
 
 Good sources, roughly from strongest to weakest:
 
@@ -22,10 +23,12 @@ Forum posts and comments can point to a source, but they aren't sources themselv
 
 1. Edit `data/skus.yaml` (or `data/physical_release.yaml` for a game with no boxed edition), following the
    format documented at the top of the file. Write every key, using `null` for anything unknown.
-2. Above the entry, add a comment that quotes the source, e.g.:
+2. Above the entry, add a comment that quotes the source, tagged `(leída)` when you opened and read the page,
+   e.g.:
 
    ```yaml
-   # Nintendo Life: "the physical game will be fully loaded on a 64GB Switch 2 cartridge" (nintendolife.com/...).
+   # (leída) Nintendo Life: "the physical game will be fully loaded on a 64GB Switch 2 cartridge"
+   # (https://www.nintendolife.com/news/...).
    ```
 
 3. Validate and regenerate the site:

@@ -1,4 +1,5 @@
 from datetime import date
+from urllib.parse import parse_qs, urlsplit
 
 import pytest
 
@@ -20,6 +21,7 @@ from switch2db.site import (
     NO_SKUS_FILTER_VALUE,
     build_box_releases,
     build_release_date_text,
+    build_report_url,
     build_search_text,
     build_sku_view,
     build_title_views,
@@ -185,6 +187,21 @@ def test_build_title_views_includes_titles_without_skus(title: Title) -> None:
 
     assert views[0].skus == []
     assert views[0].has_divergence is False
+
+
+def test_build_report_url_fills_in_the_game_and_its_site_anchor(title: Title) -> None:
+    url = urlsplit(build_report_url(title))
+
+    assert url.path == "/rherranzg/isitgamekeycardornot/issues/new"
+    assert parse_qs(url.query) == {
+        "template": ["correction.yml"],
+        "title": ["[Correction] Example Game"],
+        "game": ["Example Game (https://isitgamekeycardornot.com/#example-game)"],
+    }
+
+
+def test_build_title_views_carries_the_report_url(title: Title) -> None:
+    assert build_title_views([title], [], [])[0].report_url == build_report_url(title)
 
 
 def test_build_title_views_sorts_by_name_case_insensitive() -> None:

@@ -89,6 +89,7 @@ UI_STRINGS: dict[str, dict[str, str]] = {
     "footer_repo": {"es": "Código y datos en GitHub", "en": "Code and data on GitHub"},
     "footer_license": {"es": "Datos bajo licencia ODbL 1.0", "en": "Data licensed under ODbL 1.0"},
     "footer_report": {"es": "Reportar una corrección", "en": "Report a correction"},
+    "title_report": {"es": "¿Ves un error? Propón una corrección", "en": "Spotted a mistake? Suggest a fix"},
     "footer_accuracy": {
         "es": "Cada dato enlaza la fuente en la que se basa. Puede haber errores: "
         "compruébalo antes de comprar.",

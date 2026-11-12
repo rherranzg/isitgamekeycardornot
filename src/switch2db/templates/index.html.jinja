@@ -424,6 +424,14 @@
     .format-unknown { background: var(--unknown-bg); color: var(--unknown-text); }
     .source-link { color: inherit; }
     .update-link { display: block; font-size: 0.85em; }
+    /* Enlace al formulario de corrección con el juego ya rellenado */
+    .report-link {
+      display: block;
+      margin-top: 8px;
+      text-align: right;
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
     .title-badges .update-link { align-self: center; font-size: 0.78rem; white-space: nowrap; }
     footer {
       margin-top: 32px;
@@ -623,6 +631,7 @@
         {% else %}
         <p class="no-data">{{ i18n(t.no_data) }}</p>
         {% endif %}
+        <a class="report-link" href="{{ title.report_url }}" target="_blank" rel="noopener noreferrer">{{ i18n(t.title_report) }}</a>
       </div>
       {% endfor %}
     </div>

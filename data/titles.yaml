@@ -73,15 +73,15 @@
   name: 'Hitman World of Assassination: Signature Edition'
   publisher: IO Interactive
   release_date: '2025-06-05'
-  status: refresh
-  last_checked_at: '2026-10-13T23:00:26+02:00'
+  status: pending
+  last_checked_at: '2026-11-12T13:00:11+01:00'
 - title_id: split-fiction
   igdb_id: 325594
   name: Split Fiction
   publisher: Electronic Arts
   release_date: '2025-06-05'
-  status: refresh
-  last_checked_at: '2026-10-13T23:00:26+02:00'
+  status: pending
+  last_checked_at: '2026-11-12T13:00:11+01:00'
 - title_id: kingdom-come-deliverance-ii
   igdb_id: 298526
   name: 'Kingdom Come: Deliverance II'
@@ -135,9 +135,14 @@
   igdb_id: 340723
   name: AFL 26
   publisher: Nacon
-  release_date: '2026-04-07'
-  status: refresh
-  last_checked_at: '2026-10-13T23:00:26+02:00'
+  release_date: '2026-03-31'
+  updates:
+  - url: https://www.nintendo.com/en-gb/Games/Nintendo-Switch-2-games/AFL-26-3063623.html
+    checked_at: '2026-11-12'
+    fields:
+    - release_date
+  status: pending
+  last_checked_at: '2026-11-12T13:00:11+01:00'
 - title_id: after-the-wane
   igdb_id: 387356
   name: After the Wane
@@ -996,7 +1001,7 @@
   status: pending
   last_checked_at: '2026-10-21T19:10:00+02:00'
 - title_id: brotato-nintendo-switch-2-edition
-  igdb_id: 378791
+  igdb_id: 199116
   name: 'Brotato: Nintendo Switch 2 Edition'
   publisher: null
   release_date: '2025-11-20'
@@ -2356,7 +2361,7 @@
   igdb_id: 325850
   name: Golf With Your Friends 2
   publisher: Team17
-  release_date: 2026-Q4
+  release_date: '2027'
   status: pending
   last_checked_at: '2026-10-14T17:36:42+02:00'
 - title_id: goodnight-universe
@@ -3320,7 +3325,7 @@
   publisher: 11 bit studios
   release_date: '2026-09-02'
   status: pending
-  last_checked_at: '2026-09-27'
+  last_checked_at: '2026-11-12T13:00:11+01:00'
 - title_id: moros-protocol
   igdb_id: 199668
   name: Moros Protocol
@@ -3340,8 +3345,8 @@
   name: MotoGP 26
   publisher: Milestone S.r.l.
   release_date: '2026-04-29'
-  status: refresh
-  last_checked_at: '2026-10-16T13:30:44+02:00'
+  status: pending
+  last_checked_at: '2026-11-12T13:00:11+01:00'
 - title_id: mouse-work
   igdb_id: 339137
   name: Mouse Work
@@ -4103,8 +4108,8 @@
     checked_at: '2026-10-20'
     fields:
     - release_date
-  status: refresh
-  last_checked_at: '2026-10-20T18:45:31+02:00'
+  status: pending
+  last_checked_at: '2026-11-12T13:00:11+01:00'
 - title_id: resident-evil-2
   igdb_id: 19686
   name: Resident Evil 2
@@ -5203,7 +5208,7 @@
   status: pending
   last_checked_at: '2026-10-09'
 - title_id: the-witcher-3-wild-hunt-remastered
-  igdb_id: 1942
+  igdb_id: 415005
   name: 'The Witcher 3: Wild Hunt Remastered'
   publisher: CD Projekt RED
   release_date: '2026-09-29'
@@ -6396,7 +6401,7 @@
   igdb_id: 382522
   name: Pratfall
   publisher: Daedalic Entertainment / Quad Head
-  release_date: null
+  release_date: '2027'
   status: pending
   last_checked_at: '2026-11-02T17:59:49+01:00'
 - title_id: r-e-p-o
@@ -6516,3 +6521,127 @@
   release_date: 2027-Q1
   status: pending
   last_checked_at: '2026-11-02T17:59:49+01:00'
+- title_id: a-little-to-the-left
+  igdb_id: 152180
+  name: A Little to the Left
+  publisher: Secret Mode
+  release_date: '2026-11-09'
+  status: completed
+  last_checked_at: '2026-11-12T12:50:48+01:00'
+- title_id: algorithm-prescription
+  igdb_id: 393977
+  name: Algorithm Prescription
+  publisher: Shochiku
+  release_date: '2028'
+  updates:
+  - url: https://automaton-media.com/articles/newsjp/20261107-478030/
+    checked_at: '2026-11-12'
+    fields:
+    - release_date
+  status: pending
+  last_checked_at: '2026-11-12T12:50:48+01:00'
+- title_id: arcade-archives-2-elevator-action
+  igdb_id: 428001
+  name: 'Arcade Archives 2: Elevator Action'
+  publisher: Hamster Corporation
+  release_date: '2026-11-05'
+  status: completed
+  last_checked_at: '2026-11-12T12:50:48+01:00'
+- title_id: arcade-archives-2-exzisus
+  igdb_id: 428006
+  name: 'Arcade Archives 2: Exzisus'
+  publisher: Hamster Corporation
+  release_date: '2026-11-05'
+  status: completed
+  last_checked_at: '2026-11-12T12:50:48+01:00'
+- title_id: arcade-archives-2-rezon
+  igdb_id: 429337
+  name: 'Arcade Archives 2: Rezon'
+  publisher: Hamster Corporation
+  release_date: '2026-11-12'
+  status: pending
+  last_checked_at: '2026-11-12T12:50:48+01:00'
+- title_id: arcade-archives-2-shot-rider
+  igdb_id: 429336
+  name: 'Arcade Archives 2: Shot Rider'
+  publisher: Hamster Corporation
+  release_date: '2026-11-12'
+  status: pending
+  last_checked_at: '2026-11-12T12:50:48+01:00'
+- title_id: descenders
+  igdb_id: 52200
+  name: Descenders
+  publisher: No More Robots / Noodlecake Studios
+  release_date: null
+  status: pending
+  last_checked_at: '2026-11-12T12:50:48+01:00'
+- title_id: echoes-a-transmissions-story
+  igdb_id: 213412
+  name: 'Echoes: A Transmissions Story'
+  publisher: Super Rare Originals
+  release_date: null
+  status: pending
+  last_checked_at: '2026-11-12T12:50:48+01:00'
+- title_id: high-on-life
+  igdb_id: 204618
+  name: High on Life
+  publisher: Squanch Games
+  release_date: '2025-08-28'
+  status: pending
+  last_checked_at: '2026-11-12T12:50:48+01:00'
+- title_id: just-dance-decades-of-hits
+  igdb_id: 409690
+  name: 'Just Dance: Decades of Hits'
+  publisher: Ubisoft Entertainment
+  release_date: null
+  status: pending
+  last_checked_at: '2026-11-12T12:50:48+01:00'
+- title_id: nocturnal-2
+  igdb_id: 310336
+  name: Nocturnal 2
+  publisher: null
+  release_date: null
+  status: pending
+  last_checked_at: '2026-11-12T12:50:48+01:00'
+- title_id: petit-planet
+  igdb_id: 370095
+  name: Petit Planet
+  publisher: HoYoverse / Cognosphere
+  release_date: '2027'
+  status: pending
+  last_checked_at: '2026-11-12T12:50:48+01:00'
+- title_id: shrek-2-remastered
+  igdb_id: 424208
+  name: Shrek 2 Remastered
+  publisher: Aspyr Media
+  release_date: '2026-11-10'
+  status: completed
+  last_checked_at: '2026-11-12T12:50:48+01:00'
+- title_id: silly-polly-beast
+  igdb_id: 157379
+  name: Silly Polly Beast
+  publisher: Top Hat Studios
+  release_date: null
+  status: pending
+  last_checked_at: '2026-11-12T12:50:48+01:00'
+- title_id: thank-you-for-your-application
+  igdb_id: 312791
+  name: Thank You For Your Application
+  publisher: IceLemonTeaStudio / No More Robots
+  release_date: null
+  status: pending
+  last_checked_at: '2026-11-12T12:50:48+01:00'
+- title_id: the-outlast-trials
+  igdb_id: 127165
+  name: The Outlast Trials
+  publisher: Red Barrels
+  release_date: '2026-10-27'
+  status: pending
+  last_checked_at: '2026-11-12T12:50:48+01:00'
+- title_id: warhammer-40-000-boltgun-2
+  igdb_id: 344669
+  name: 'Warhammer 40,000: Boltgun 2'
+  publisher: Devolver Digital / Big Fan Games
+  release_date: '2026-11-19'
+  status: pending
+  last_checked_at: '2026-11-12T12:50:48+01:00'

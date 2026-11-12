@@ -1,6 +1,7 @@
 from collections import defaultdict
 from collections.abc import Sequence
 from datetime import date
+from urllib.parse import urlencode
 
 from pydantic import BaseModel
 
@@ -53,6 +54,7 @@ RECENT_RELEASE_DAYS = 30
 REPO_URL = "https://github.com/rherranzg/isitgamekeycardornot"
 DATA_LICENSE_URL = f"{REPO_URL}/blob/main/data/LICENSE"
 REPORT_ISSUE_URL = f"{REPO_URL}/issues/new?template=correction.yml"
+SITE_URL = "https://isitgamekeycardornot.com/"
 IGDB_URL = "https://www.igdb.com"
 
 FORMAT_CSS_CLASSES: dict[Format, str] = {
@@ -120,6 +122,7 @@ class TitleView(BaseModel):
     has_divergence: bool
     no_box: NoBoxView | None
     former_title_ids: list[str]
+    report_url: str
 
 
 class FormatBadgeView(BaseModel):
@@ -273,6 +276,15 @@ def group_merged_titles(excluded: Sequence[ExcludedTitle]) -> dict[str, list[Exc
     return dict(groups)
 
 
+def build_report_url(title: Title) -> str:
+    """Link to the correction form with the game and its site anchor already filled in: GitHub issue
+    forms take each field's id as a query parameter."""
+    query = urlencode(
+        {"title": f"[Correction] {title.name}", "game": f"{title.name} ({SITE_URL}#{title.title_id})"}
+    )
+    return f"{REPORT_ISSUE_URL}&{query}"
+
+
 def build_title_view(
     title: Title,
     skus_by_title: dict[str, list[Sku]],
@@ -298,6 +310,7 @@ def build_title_view(
         has_divergence=title.title_id in diverging_title_ids,
         no_box=build_no_box_view(release) if release is not None and not title_skus else None,
         former_title_ids=sorted(str(entry.former_title_id) for entry in merged),
+        report_url=build_report_url(title),
     )
 
 

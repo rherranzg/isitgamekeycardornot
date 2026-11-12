@@ -88,6 +88,21 @@ def test_main_writes_the_disclaimers_and_attribution_in_the_footer(
     assert "issues/new?template=correction.yml" in html
 
 
+def test_main_links_each_game_to_the_correction_form_filled_in(
+    docs_dir: Path, write_yaml: WriteYaml, title_row: dict[str, object], sku_row: dict[str, object]
+) -> None:
+    write_yaml("titles.yaml", [title_row])
+    write_yaml("skus.yaml", [sku_row])
+    write_yaml("physical_release.yaml", [])
+
+    main()
+
+    html = (docs_dir / "index.html").read_text(encoding="utf-8")
+    assert 'class="report-link"' in html
+    assert "template=correction.yml&amp;title=%5BCorrection%5D+Example+Game" in html
+    assert "isitgamekeycardornot.com%2F%23example-game" in html
+
+
 def test_main_returns_one_without_writing_when_data_is_invalid(
     docs_dir: Path, write_yaml: WriteYaml, title_row: dict[str, object], sku_row: dict[str, object]
 ) -> None:

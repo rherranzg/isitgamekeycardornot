@@ -4,27 +4,36 @@ An open database of the physical format of Nintendo Switch 2 games, region by re
 
 **Browse it: https://isitgamekeycardornot.com/**
 
-For every boxed release it records which of these you get:
+## Why it matters
 
-| Format | What is in the box |
+Many Switch 2 boxes do not hold the game. A **Game-Key Card** is a cartridge that only works as a key: the game
+has to be downloaded first, which needs an internet connection and free storage, and the card must be inserted
+to play. The same game can come as a full cartridge in one region and as a Game-Key Card in another, or change
+between its standard and special editions.
+
+This site tells you, box by box, what you actually get, and links the source that says so.
+
+## What is in the box
+
+| Format | What you get |
 |---|---|
 | **Full cartridge** | The whole game is on the cartridge. |
 | **Game-Key Card** | The cartridge is a key: the game is downloaded, and the card must be inserted to play. |
 | **Code in box** | A download code, with no game card. |
-| **Unknown** | Someone looked but found no source yet. |
-| **No physical edition** | No boxed release was found. "Digital only" is shown only when a source says so. |
 
-The same game can have different formats in different regions or editions, so each regional box (a "SKU") is
-listed separately.
+Two more values describe how much is known, not a format:
+
+- **Unknown**: the box exists, but no source stating its format has been found yet.
+- **No physical edition**: no boxed release was found. "Digital only" is shown only when a source says so.
+
+Each regional box is listed separately, as a **SKU** (one region and edition of a game).
 
 ## Where the data comes from
 
 Every SKU links to the **public source** it is based on: a Nintendo or publisher page, a press article, a
-retailer listing or a photo of the box. The site shows what kind of source each one is. In `data/skus.yaml`,
-the comment above each entry quotes the exact sentence that backs it, marked `(leída)` (the page was read),
-`(listado)` (only the title of a retailer's search result was visible) or `(API)`.
+retailer listing or a photo of the box. The site shows which kind of source each one is.
 
-If there is no source, the field is left empty (`null`) or the format is shown as unknown. Nothing is guessed.
+If there is no source, the value is left empty or the format is shown as unknown. Nothing is guessed.
 
 Game names, publishers and release dates come from [IGDB](https://www.igdb.com).
 
@@ -34,25 +43,88 @@ wrong. Check before you buy, and if you find an error, please report it.
 ## Report a correction
 
 Open an issue with the
-[correction form](https://github.com/rherranzg/isitgamekeycardornot/issues/new?template=correction.yml). The
-one thing it needs is a **link to a source** that states the format. Pull requests that edit the data directly
-are welcome too: see [CONTRIBUTING.md](CONTRIBUTING.md).
+[correction form](https://github.com/rherranzg/isitgamekeycardornot/issues/new?template=correction.yml), or
+from the "Spotted a mistake?" link under each game on the site, which fills in the game for you. The one thing
+it needs is a **source**: a link to a page that states it, or a photo of the box.
+
+A game is missing? Use the same form. For a question, open a
+[regular issue](https://github.com/rherranzg/isitgamekeycardornot/issues/new).
+
+Pull requests that edit the data directly are welcome too: see [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## Using the data
 
-The data is plain YAML in [`data/`](data/):
+The data is plain YAML in [`data/`](data/). Each file can be downloaded directly from
+`https://raw.githubusercontent.com/rherranzg/isitgamekeycardornot/main/data/<file>.yaml`.
 
-- `titles.yaml` — every known Switch 2 game (`title_id`, `igdb_id`, `name`, `publisher`, `release_date`).
-- `skus.yaml` — one entry per region and edition: format, distributor, release date, cartridge or download
-  size, barcode, evidence type and source URL.
-- `physical_release.yaml` — games checked for a boxed edition that has not turned up, with their source when
-  there is one.
-- `covers.yaml` — the European box front of each standard SKU that has one, stored as
-  `docs/covers/<sku_id>.webp`, with the page it comes from.
-- `excluded_titles.yaml` — IGDB entries deliberately not listed (editions covered by their base game, games
-  only sold inside a compilation...).
+| File | What it holds |
+|---|---|
+| `titles.yaml` | Every known Switch 2 game: `title_id`, `igdb_id`, `name`, `publisher`, `release_date` (first Switch 2 release, digital or boxed). |
+| `skus.yaml` | One entry per region and edition of a game (fields below). |
+| `physical_release.yaml` | Games checked for a boxed edition that has not turned up, worldwide or in one region, with their source when there is one. |
+| `covers.yaml` | The European box front of each standard SKU that has one, stored as `docs/covers/<sku_id>.webp`, with the page it comes from. |
+| `excluded_titles.yaml` | IGDB entries deliberately not listed (editions covered by their base game, games only sold inside a compilation...). |
 
-Each file documents its fields at the top. Each game on the site can be linked with `#<title_id>`.
+### SKU fields
+
+| Field | Values |
+|---|---|
+| `sku_id` | `<region>-<title_id>-<edition>`, lowercase, e.g. `eu-mario-kart-world-standard`. |
+| `title_id` | The game in `titles.yaml`. |
+| `region` | `EU`, `NA`, `JP`, `KR` or `ASIA` (Hong Kong, Taiwan and Southeast Asia). |
+| `edition` | `standard`, `deluxe` (extra content, SteelBook...) or `collectors` (Collector's, Limited, Premium, a box with goodies). |
+| `edition_name` | The commercial name ("Gold Edition"); `null` for the standard edition. |
+| `format` | `full_cart`, `game_key_card`, `code_in_box` or `unknown`. |
+| `distributor` | Who sells the box in that market. |
+| `release_date` | Release date of the box in that market. |
+| `cart_size_gb` | Cartridge capacity, for full cartridges. |
+| `download_size_gb` | Approximate download needed, for Game-Key Cards and codes in box. |
+| `includes_download_code` | `true` if the box also carries a code (DLC, season pass...). |
+| `ean` | EAN-13 or UPC-A barcode, as a string. |
+| `evidence` | Kind of source: `official`, `box_photo`, `press_report`, `retailer_listing` or `unconfirmed`. |
+| `source_url` | The source that backs the format; `null` when the format is `unknown`. |
+| `updates` | Later sources that changed the SKU (a delay, a format change...), oldest first, each with `url`, `checked_at` and `fields`. |
+| `verified_at` | When the source was last checked. |
+
+Every key is always present; an unknown value is `null`. A fictitious example:
+
+```yaml
+- sku_id: "eu-example-game-standard"
+  title_id: "example-game"
+  region: "EU"
+  edition: "standard"
+  edition_name: null
+  distributor: "Example Distributor"
+  release_date: "2026-03-12"
+  format: "game_key_card"
+  cart_size_gb: null
+  download_size_gb: 12.5
+  includes_download_code: false
+  ean: "0045496123456"
+  evidence: "official"
+  source_url: "https://example.com/..."
+  verified_at: "2026-09-13"
+```
+
+For example, to list the Game-Key Cards sold in Europe (with [PyYAML](https://pypi.org/project/PyYAML/)):
+
+```python
+import urllib.request
+
+import yaml
+
+URL = "https://raw.githubusercontent.com/rherranzg/isitgamekeycardornot/main/data/skus.yaml"
+skus = yaml.safe_load(urllib.request.urlopen(URL))
+print([s["sku_id"] for s in skus if s["region"] == "EU" and s["format"] == "game_key_card"])
+```
+
+The comment above each entry quotes the exact sentence of the source that backs it, tagged by how the source
+was read: `(leída)` (the page was opened and read), `(listado)` (only the title of a search or retailer
+result was visible) or `(API)` (a store's data feed). These comments are written in Spanish; the quotes keep the
+language of their source.
+
+Each game on the site can be linked with `https://isitgamekeycardornot.com/#<title_id>`. A `title_id` never
+changes once published; when two games are merged, the old link still leads to the merged one.
 
 ## License
 
@@ -65,120 +137,6 @@ Each file documents its fields at the top. Each game on the site can be linked w
 Nintendo, Nintendo Switch 2 and Game-Key Card are trademarks of Nintendo. This is an independent project, not
 affiliated with or endorsed by Nintendo.
 
----
-
 ## For maintainers
 
-The working flow, from a new game to the site, is in [`WORKFLOW.md`](WORKFLOW.md) ([Spanish version](WORKFLOW.es.md)).
-
-### Setup
-
-```bash
-uv sync
-```
-
-IGDB (Twitch) credentials are only needed for `download_igdb_catalog`, the single entry point to IGDB. Copy
-`.env.example` to `.env` and fill in `TWITCH_CLIENT_ID` / `TWITCH_CLIENT_SECRET`. No other script needs
-credentials; only `fetch_quote`, `news_candidates`, `check_store_dates` and `download_covers` use the network. `data/igdb_catalog.yaml`, the local IGDB dump that `add_titles` draws from,
-is git-ignored.
-
-### Sources and statuses
-
-Every SKU with a known format carries a `source_url` that was opened and says what the SKU claims. A SKU
-researched without finding a source has `source_url: null` and `format: unknown`: the site shows it as
-unknown format, and it waits for a deeper search.
-
-`source_url` is the original source that backs the format. When a later source updates the SKU (a delay, a
-new date, a format change), it goes in `updates`, oldest first, with the kind of update in `fields`
-(`release_date`, `format`, `edition`, `distributor`, `size`, or `other` for a kind that has no value yet) and
-the date it was read. The site links each one next to the source, newest first, named by its kind ("Date
-update"; just "Update" for `other`). `source_url` only changes if it stops backing the format. Nothing shown on
-the site changes without its link: any value that comes from a source other than `source_url` (a date that was
-`null`, a distributor) has its source in `updates` too.
-
-A title's `release_date` comes from IGDB. When it is written by hand (IGDB has none, or a wrong one), its source
-goes in the title's own `updates` in `titles.yaml`, the site links it next to the date, and `add_titles` keeps
-that date instead of IGDB's.
-
-```yaml
-  source_url: "https://www.nintendolife.com/guides/..."
-  updates:
-    - url: "https://www.fangamer.com/products/..."  # (read) "will not ship until November 10, 2026"
-      checked_at: "2026-10-09"
-      fields: ["release_date"]
-```
-
-Titles carry `new` (from the IGDB catalog, nothing researched: research every region), `refresh` (research
-every region again; the data already there is only a starting point to check, and what is found replaces
-it), `pending` (the data already there is trusted: research only what is missing) or `completed` (every region
-answered, by a sourced SKU or a sourced "no box in this region", with every field that applies filled in, or
-a sourced "no physical edition": nothing left to search for; `validate_data` checks it). The site publishes every title whatever its status; a title with no SKUs shows an empty table.
-
-If `name`, `publisher` or `igdb_id` turn out wrong, fix them by hand in `titles.yaml`. A title's `title_id` is
-frozen once a SKU points at it: it is part of every `sku_id` and the site's `#<title_id>` anchor. When a
-published title is merged into another, move it to `excluded_titles.yaml` with `former_title_id` and
-`merged_into`, and the site keeps its old anchor.
-
-### Editions
-
-An edition (Deluxe, Gold, Collector's...; IGDB links it to its game with `version_parent`) is not a title: its
-box is a SKU of the base game, with `edition: collectors` when it is called Collector's, Limited, Premium or
-Special or is a box with goodies, and `deluxe` otherwise (extra content, SteelBook, sleeve...). Its commercial
-name goes in `edition_name`. Digital-only editions are not cataloged. The exception is a game that Switch 2 only
-sells as that edition (ELDEN RING Tarnished Edition, Cyberpunk 2077: Ultimate Edition): then the edition is the
-title and the base game goes to `excluded_titles.yaml`.
-
-### Commands
-
-```bash
-uv run python -m scripts.next_work [--limit 10]     # what is left to research (offline)
-uv run python -m scripts.next_work --upcoming 10    # next 10 titles to come out (offline)
-uv run python -m scripts.next_work --upcoming 10 --skip-checked-days 7   # minus those checked in the last 7 days
-uv run --env-file .env python -m scripts.download_igdb_catalog   # refresh the IGDB catalog (network)
-uv run python -m scripts.add_titles --count 10      # add the next games from the catalog (or --all)
-uv run python -m scripts.add_titles --dates-only    # only refresh release dates
-uv run python -m scripts.fetch_quote <url-or-file> '<regex>' [--context 120] [--max 5] [--raw]
-uv run python -m scripts.news_candidates --days 7    # Switch 2 box and date news of the last days (network)
-uv run python -m scripts.check_store_dates --days 7 [--save]   # Nintendo EU/NA/JP store dates (network)
-uv run python -m scripts.download_covers [--titles ID ...] [--random N] [--refresh]   # EU box fronts (network)
-uv run python -m scripts.validate_data              # schema, integrity and fill-rate report
-uv run python -m scripts.build_site                 # regenerate docs/index.html
-```
-
-`add_titles` takes `name`, `publisher` and `release_date` from the catalog and never touches an existing
-title's `status`. `release_date` is the Switch 2 release with whatever precision IGDB knows (`2026-08-20`,
-`2026-08`, `2026-Q3`, `2026` or `null`), refreshed on every run unless it is already an exact day in the past.
-When IGDB has no Switch 2 date, it can be written by hand from a checked source (Nintendo's own store data, the
-publisher or the press); a refresh never replaces it with IGDB's `null`, only with a date.
-
-`fetch_quote` downloads a page, identifying itself with the project's User-Agent (or reads a local file), strips
-scripts and tags, and prints only the fragments that match: the literal quote a SKU comment needs. A site that
-answers 403 is not retried by other means.
-
-`news_candidates` reads the RSS feeds of several news sites (paging back where the feed allows it) and lists the
-Switch 2 news items of the window that talk about a box or a release date, matched to `titles.yaml` by name. It
-also says how far back each feed reached, so the gaps can be covered by searching. `check_store_dates` downloads
-the Switch 2 games of the Nintendo EU, NA and JP stores and lists what changed since the last snapshot saved with
-`--save` (new products, new dates, a JP game that now lists a boxed version) and the title and SKU dates that no
-longer agree with the EU and NA stores. The snapshot, `data/nintendo_store_catalog.yaml`, is git-ignored. Neither
-script writes the data files: they point at what to check.
-
-`download_covers` looks for the European box of each standard EU SKU without a cover on MediaMarkt Spain: it
-takes the first Switch 2 product whose name, without platform, format or genre, is exactly the game's (so a
-special edition or another game of the series is not taken), rejects it if its barcode differs from the SKU's,
-and keeps the image only if it has the red Nintendo Switch 2 header across its top (another platform's box or
-promotional art does not). It stores a 300 px wide WebP in `docs/covers/<sku_id>.webp` and its source in
-`data/covers.yaml`; `--refresh` downloads again the ones already there. It stops at the first network error and
-keeps what it got. `validate_data` checks that every image has its entry and every entry its image.
-
-GitHub Pages serves `docs/` from `main`, so publishing means committing the regenerated `docs/` with the data.
-
-### Before considering a change done
-
-```bash
-uv run pytest
-uv run ruff check .
-uv run ruff format --check .
-uv run ty check
-uv run python -m scripts.validate_data
-```
+Setup, the research workflow, data rules and every command are in [`WORKFLOW.md`](WORKFLOW.md).

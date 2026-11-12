@@ -1,13 +1,15 @@
-# Juegos del catálogo de IGDB (igdb_catalog.yaml) que no se catalogan aquí. add_titles se los salta y
-# validate_data falla si alguno sigue en titles.yaml. Se escribe a mano.
-# Validar con: uv run python -m scripts.validate_data
+# Games of the IGDB catalog (igdb_catalog.yaml) that are not cataloged here. add_titles skips them and
+# validate_data fails if one is still in titles.yaml. Written by hand.
+# Validate with: uv run python -m scripts.validate_data
 #
-# Formato (ejemplo ficticio, no es un dato real):
-# - igdb_id: 12345                  # id del juego en IGDB
-#   name: "Example Game"            # nombre según IGDB, solo para leer el fichero
-#   reason: "..."                   # por qué no se cataloga
+# Format (fictitious example, not real data):
+# - igdb_id: 12345                  # game id on IGDB
+#   name: "Example Game"            # name on IGDB, only to make the file readable
+#   reason: "..."                   # why it is not cataloged
+#   former_title_id: null           # its title_id, if it was published before being merged
+#   merged_into: null               # the title that covers it now (both or neither with former_title_id)
 #
-# Juegos que solo se venden en caja dentro de una recopilación: la caja y sus SKUs van en la recopilación.
+# Games only sold in a box inside a compilation: the box and its SKUs go in the compilation.
 - igdb_id: 368182
   name: "Yakuza Kiwami 3"
   reason: "Solo en caja dentro de Yakuza Kiwami 3 & Dark Ties (yakuza-kiwami-3-dark-ties): una sola caja en EU, NA, JP y KR"
@@ -446,3 +448,9 @@
   reason: "En Switch 2 solo tiene caja dentro de Middle-earth: The Shadow Bundle (middle-earth-the-shadow-bundle), con Shadow of Mordor (VideoGamesPlus.ca: \"Middle Earth: The Shadow Bundle [Game-Key Card] - Nintendo Switch 2\"); suelto se vende solo en digital como Definitive Edition (02-11-2026)"
   former_title_id: "middle-earth-shadow-of-war"
   merged_into: "middle-earth-the-shadow-bundle"
+- igdb_id: 1942
+  name: "The Witcher 3: Wild Hunt"
+  reason: "Ficha del juego original; la versión de Switch 2 es The Witcher 3: Wild Hunt Remastered (415005, the-witcher-3-wild-hunt-remastered). IGDB las fusionó en el catálogo del 20-10-2026 y las volvió a separar en el del 12-11-2026, y las dos llevan la fecha de Switch 2 (29-09-2026)"
+- igdb_id: 211316
+  name: "Let's Sing ABBA"
+  reason: "Ficha del Let's Sing ABBA de 2021; la versión de Switch 2 es Let's Sing Presents: Abba (412641, let-s-sing-presents-abba), que ya tiene sus SKUs. IGDB le añadió la plataforma de Switch 2 en el catálogo del 12-11-2026 con la misma fecha (03-11-2026)"

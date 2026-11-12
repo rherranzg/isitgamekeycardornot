@@ -1,18 +1,33 @@
 name: Correction or new data
-description: Report a wrong format, or add a region, edition or game, with a source that backs it.
+description: Report a wrong format, date or edition, or add a region or a game, with a source that backs it.
 title: "[Correction] <game> — <region>"
+labels: ["correction"]
 body:
   - type: markdown
     attributes:
       value: |
         Every entry in this database is backed by a public source. A change without a source can't be merged,
-        however likely it seems, so please link one: a publisher or Nintendo page, a press article, a
-        retailer listing or a photo of the box.
+        however likely it seems, so please add one: a publisher or Nintendo page, a press article, a retailer
+        listing or a photo of the box (the back or the spine usually says whether it is a Game-Key Card).
   - type: input
     id: game
     attributes:
       label: Game
       description: Name as shown on the site, or its link (`...#title-id`).
+    validations:
+      required: true
+  - type: dropdown
+    id: problem
+    attributes:
+      label: What is wrong?
+      options:
+        - Format
+        - Box release date
+        - Missing edition
+        - Missing region
+        - Distributor or size
+        - Missing game
+        - Other (explain below)
     validations:
       required: true
   - type: dropdown
@@ -38,29 +53,33 @@ body:
     id: format
     attributes:
       label: Correct format
+      description: Only if the format is wrong or missing.
       options:
         - Full cartridge
         - Game-Key Card
         - Code in box
         - No physical edition
         - Other (explain below)
-    validations:
-      required: true
   - type: input
+    id: correct_value
+    attributes:
+      label: Correct data
+      description: For anything other than the format, the right value (date, distributor, size, edition name...).
+      placeholder: e.g. 2026-03-12
+  - type: textarea
     id: source
     attributes:
-      label: Source URL
-      description: The page that says it. Required.
-      placeholder: https://
+      label: Source
+      description: |
+        The link to the page that says it, or a photo of the box: drag the image here (front, back or spine).
     validations:
       required: true
   - type: textarea
     id: quote
     attributes:
       label: Quote
-      description: The exact sentence from the source that states the format, in its original language.
-    validations:
-      required: true
+      description: >-
+        The exact sentence from the source that states it, in its original language. Not needed for a photo.
   - type: textarea
     id: notes
     attributes:
