@@ -3221,12 +3221,16 @@
   release_date: "2026-12-01"
   format: "game_key_card"
   cart_size_gb: null
-  download_size_gb: null
+  download_size_gb: 9.6
   includes_download_code: null
   ean: null
   evidence: "press_report"
   source_url: "https://www.nintendolife.com/games/nintendo-switch-2/dragon-quest-monsters-the-withered-world"
-  verified_at: "2026-09-17"
+  updates:
+    - url: "https://www.nintendo.com/en-gb/Games/Nintendo-Switch-2-games/DRAGON-QUEST-MONSTERS-The-Withered-World-3187785.html"  # (API) Solr EU: "DRAGON QUEST MONSTERS: The Withered World", datasize_readable_txt ["9.6 GB"] (el 16-10-2026 daba "90.0 MB", el del aviso de reserva)
+      checked_at: "2026-11-16"
+      fields: ["size"]
+  verified_at: "2026-11-16"
 - sku_id: "na-dragon-quest-monsters-the-withered-world-standard"
   title_id: "dragon-quest-monsters-the-withered-world"
   region: "NA"
@@ -3241,7 +3245,7 @@
   ean: null
   evidence: "press_report"
   source_url: "https://www.nintendolife.com/games/nintendo-switch-2/dragon-quest-monsters-the-withered-world"
-  verified_at: "2026-09-17"
+  verified_at: "2026-11-16"
 # Dragon Quest VII Reimagined: Nintendo Life (leída) "Physical Release | Game-Key Card".
 - sku_id: "eu-dragon-quest-vii-reimagined-standard"
   title_id: "dragon-quest-vii-reimagined"
@@ -4704,22 +4708,55 @@
   source_url: "https://nintendoeverything.com/list-of-all-nintendo-switch-2-games-with-a-game-key-card-release/"
   verified_at: "2026-09-17"
 
-# Hela: Of Mice & Magic: aparece en la lista de game-key cards de Nintendo Everything.
-- sku_id: "na-hela-of-mice-magic-standard"
+# Hela: Of Mice & Magic: en Occidente la caja es solo la Harmony Edition (Knights Peak con Microids, "EU and US"),
+# game-key card, el 01-12-2026 como la versión digital.
+- sku_id: "na-hela-of-mice-magic-collectors"
   title_id: "hela-of-mice-magic"
   region: "NA"
-  edition: "standard"
-  edition_name: null
+  edition: "collectors"
+  edition_name: "Harmony Edition"
   distributor: "Knights Peak"
-  release_date: null
+  release_date: "2026-12-01"
   format: "game_key_card"
   cart_size_gb: null
   download_size_gb: null
   includes_download_code: null
   ean: null
-  evidence: "press_report"  # (listado) aparece en la lista de Nintendo Everything de game-key cards
+  evidence: "press_report"  # (leída) https://nintendoeverything.com/list-of-all-nintendo-switch-2-games-with-a-game-key-card-release/: "Every Nintendo Switch 2 game with a game-key card release | ... | Hela | Hell is Us | ..."
   source_url: "https://nintendoeverything.com/list-of-all-nintendo-switch-2-games-with-a-game-key-card-release/"
-  verified_at: "2026-09-17"
+  updates:
+    - url: "https://nintendoeverything.com/hela-of-mice-magic-to-receive-nintendo-switch-2-retail-release/"  # (leída) 13-08-2026: "will receive a physical release for Nintendo Switch 2, but it will be a game-key card. | Called the Harmony Edition, the collector’s edition will include a physical copy of the game, a digital download of the soundtrack, a 48-page softcover artbook"
+      checked_at: "2026-11-16"
+      fields: ["edition"]
+    - url: "https://www.gamedeveloper.com/press-release/hela-of-mice-magic-is-set-to-enchant-retail-stores"  # (leída) nota de prensa del 13-08-2026: "Knights Peak, a division of MY.GAMES, is teaming up with Microids to proudly announce the Harmony Edition ... which will be available through chosen retailers in key regions including EU and US. The game will be released in physical stores exclusively as the feature-packed Harmony Edition"
+      checked_at: "2026-11-16"
+      fields: ["distributor"]
+    - url: "https://www.impulsegamer.com/?p=277380"  # (leída) nota de prensa del 10-09-2026: "released digitally and as the feature-packed and limited Harmony Edition exclusive to physical stores, on December 1st, 2026 for Nintendo Switch™ 2"
+      checked_at: "2026-11-16"
+      fields: ["release_date"]
+  verified_at: "2026-11-16"
+- sku_id: "eu-hela-of-mice-magic-collectors"
+  title_id: "hela-of-mice-magic"
+  region: "EU"
+  edition: "collectors"
+  edition_name: "Harmony Edition"
+  distributor: "Knights Peak"
+  release_date: "2026-12-01"
+  format: "game_key_card"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) Nintendo Everything, 13-08-2026: "Hela: of Mice & Magic will receive a physical release for Nintendo Switch 2, but it will be a game-key card. | Called the Harmony Edition, the collector’s edition will include a physical copy of the game"
+  source_url: "https://nintendoeverything.com/hela-of-mice-magic-to-receive-nintendo-switch-2-retail-release/"
+  updates:
+    - url: "https://www.gamedeveloper.com/press-release/hela-of-mice-magic-is-set-to-enchant-retail-stores"  # (leída) nota de prensa del 13-08-2026: "Knights Peak, a division of MY.GAMES, is teaming up with Microids to proudly announce the Harmony Edition ... which will be available through chosen retailers in key regions including EU and US. The game will be released in physical stores exclusively as the feature-packed Harmony Edition"
+      checked_at: "2026-11-16"
+      fields: ["distributor"]
+    - url: "https://www.impulsegamer.com/?p=277380"  # (leída) nota de prensa del 10-09-2026: "released digitally and as the feature-packed and limited Harmony Edition exclusive to physical stores, on December 1st, 2026 for Nintendo Switch™ 2"
+      checked_at: "2026-11-16"
+      fields: ["release_date"]
+  verified_at: "2026-11-16"
 # Hela en JP: game-key card (meisakugame), de Shochiku Games.
 - sku_id: "jp-hela-of-mice-magic-standard"
   title_id: "hela-of-mice-magic"
@@ -4727,7 +4764,7 @@
   edition: "standard"
   edition_name: null
   distributor: "Shochiku Games"  # (leída) meisakugame, cabecera "【松竹ゲームズ】"
-  release_date: null  # (API) search.nintendo.jp: "Hela", sdate "2026", sin día
+  release_date: "2026-12-01"
   format: "game_key_card"
   cart_size_gb: null
   download_size_gb: 8
@@ -4735,7 +4772,11 @@
   ean: null
   evidence: "press_report"  # (leída) meisakugame: "Hela：ちいさなねずみと魔法の森 | Key | 8GB"
   source_url: "https://meisakugame.garyoutensei.com/data/switch2packagekey.html"
-  verified_at: "2026-10-14"
+  updates:
+    - url: "https://www.inside-games.jp/release/prtimes/20260928/309406.html"  # (leída) nota de PR TIMES de 松竹ゲームズ, 28-09-2026: "2026年12月1日（火）の発売に向けて、全国のゲーム取扱店やオンラインショップにて、PlayStation 5およびNintendo Switch 2のパッケージ版の予約を受付中です。"; (API) search.nintendo.jp: "Hela：ちいさなねずみと魔法の森", BEE_DOWNLOADABLE, sdate 2026.12.1, pprice 4400
+      checked_at: "2026-11-16"
+      fields: ["release_date"]
+  verified_at: "2026-11-16"
 
 # Hell is Us: aparece en la lista de game-key cards de Nintendo Everything.
 - sku_id: "na-hell-is-us-standard"
@@ -8636,7 +8677,7 @@
   source_url: "https://www.nintendolife.com/guides/every-nintendo-switch-2-game-key-card-release"
   verified_at: "2026-09-19"
 
-# Rayman Legends Retold: game-key card (incluye Rayman Origins Enhanced); sin fecha fiable en NA (Ubisoft habló de 1 oct, Nintendo EU de 3 dic).
+# Rayman Legends Retold: game-key card en EU, NA, JP y ASIA (incluye Rayman Origins Enhanced); sale el 03-12-2026.
 - sku_id: "eu-rayman-legends-retold-standard"
   title_id: "rayman-legends-retold"
   region: "EU"
@@ -8651,22 +8692,22 @@
   ean: null
   evidence: "press_report"  # (leída) nintendolife.com ficha: "Physical Release | Game-Key Card | Release Date | Nintendo Switch 2 | 3rd Dec 2026"
   source_url: "https://www.nintendolife.com/games/nintendo-switch-2/rayman-legends-retold"
-  verified_at: "2026-09-19"
+  verified_at: "2026-11-16"
 - sku_id: "na-rayman-legends-retold-standard"
   title_id: "rayman-legends-retold"
   region: "NA"
   edition: "standard"
   edition_name: null
   distributor: "Ubisoft"
-  release_date: "2026-12-03"  # (API) Algolia NA: releaseDate 2026-12-03
+  release_date: "2026-12-03"  # (leída) nintendolife.com, guía de game-key cards: "3rd Dec 2026"
   format: "game_key_card"
   cart_size_gb: null
   download_size_gb: null
   includes_download_code: null
   ean: null
-  evidence: "press_report"  # (listado) mynintendonews.com: "Rayman Legends Retold is Game-Key Card & includes Rayman Origins Enhanced"
-  source_url: "https://mynintendonews.com/2026/06/02/rayman-legends-retold-is-game-key-card-includes-rayman-origins-enhanced/"
-  verified_at: "2026-09-19"
+  evidence: "press_report"  # (leída) nintendolife.com, guía de game-key cards: "Rayman Legends Retold (Switch 2) | 3rd Dec 2026 / Ubisoft / Ubisoft Montpellier"
+  source_url: "https://www.nintendolife.com/guides/every-nintendo-switch-2-game-key-card-release"
+  verified_at: "2026-11-16"
 # Completado del 16-10-2026: caja JP (meisakugame) y ASIA (toyorgame, variante "(Asia)") en key card.
 - sku_id: "jp-rayman-legends-retold-standard"
   title_id: "rayman-legends-retold"
@@ -8686,7 +8727,7 @@
     - url: "https://store-jp.nintendo.com/item/software/D70010000111544"  # (API) search.nintendo.jp: "レイマン レジェンド リトールド", icode ABLMA, sform BEE_DOWNLOADABLE, maker "ユービーアイソフト", sdate "2026.12.3"
       checked_at: "2026-10-16"
       fields: ["release_date"]
-  verified_at: "2026-10-16"
+  verified_at: "2026-11-16"
 - sku_id: "asia-rayman-legends-retold-standard"
   title_id: "rayman-legends-retold"
   region: "ASIA"
@@ -8701,7 +8742,7 @@
   ean: null
   evidence: "retailer_listing"  # (leída) toyorgame: "NS2 Rayman Legends Retold (Game-Key Card)", variante "(Asia) Standard Edition / Deposit"
   source_url: "https://toyorgame.com.sg/products/ns2-rayman-legends-retold-game-key-card"
-  verified_at: "2026-10-16"
+  verified_at: "2026-11-16"
 
 # Reanimal: game-key card en EU (guía de Nintendo Life).
 - sku_id: "eu-reanimal-standard"
@@ -9194,7 +9235,7 @@
   edition: "standard"
   edition_name: null
   distributor: "Square Enix"
-  release_date: "2027-02-16"
+  release_date: "2027-02-04"  # (leída) videogamesplus.ca: "RELEASE DATE: FEBRUARY 4, 2027"
   format: "game_key_card"
   cart_size_gb: null
   download_size_gb: null
@@ -9206,7 +9247,7 @@
     - url: "https://www.nintendo.com/us/store/products/romancing-saga-3-destinies-united-switch-2/"  # (API) Algolia NA: "Romancing SaGa 3: Destinies United", softwarePublisher "SQUARE ENIX"
       checked_at: "2026-10-16"
       fields: ["distributor"]
-  verified_at: "2026-09-19"
+  verified_at: "2026-11-16"
 
 # Civilization VII: code-in-box en NA (titular de GameSpot, `listado`).
 - sku_id: "na-sid-meier-s-civilization-vii-standard"
@@ -12609,7 +12650,7 @@
   ean: null
   evidence: "official"  # (leída) Square Enix e-STORE: "※本作のパッケージ版は「キーカード」での販売となります。"
   source_url: "https://store.jp.square-enix.com/item/POT_P_ABLCA.html"
-  verified_at: "2026-09-24"
+  verified_at: "2026-11-16"
 # Completado del 16-10-2026: caja KR (API de Nintendo Corea) sin formato.
 - sku_id: "kr-dragon-quest-monsters-the-withered-world-standard"
   title_id: "dragon-quest-monsters-the-withered-world"
@@ -12776,7 +12817,7 @@
   edition: "standard"
   edition_name: null
   distributor: "Square Enix"  # (API) maker "スクウェア・エニックス"
-  release_date: "2027-02-16"  # (leída) e-STORE: "発売日 | 2027年02月16日"
+  release_date: "2027-02-04"  # (leída) e-STORE: "発売日 | 2027年02月04日", "『ロマンシング サガ3 デスティニーユナイテッド』の発売日変更についてのお知らせ（2026/11/12 16:00）"
   format: "game_key_card"
   cart_size_gb: null
   download_size_gb: 18  # (leída) e-STORE: "18GB以上の空き容量*が必要です"
@@ -12784,7 +12825,7 @@
   ean: null
   evidence: "official"  # (leída) Square Enix e-STORE: "※本作のパッケージ版は「キーカード」での販売となります。"
   source_url: "https://store.jp.square-enix.com/item/POT_P_ABQPA.html"
-  verified_at: "2026-09-24"
+  verified_at: "2026-11-16"
 # Completado del 16-10-2026: caja EU en reserva en la tienda de Square Enix, sin formato.
 - sku_id: "eu-romancing-saga-3-destinies-united-standard"
   title_id: "romancing-saga-3-destinies-united"
@@ -12792,7 +12833,7 @@
   edition: "standard"
   edition_name: null
   distributor: "Square Enix"
-  release_date: "2027-02-16"
+  release_date: "2027-02-04"
   format: "unknown"
   cart_size_gb: null
   download_size_gb: null
@@ -12801,10 +12842,10 @@
   evidence: "unconfirmed"  # (leída) tienda de Square Enix EU: "Platform: * --> Select Options Nintendo Switch 2 PS5 Nintendo Switch | Edition: * --> Select Options Standard"; la descripción no dice el formato
   source_url: null
   updates:
-    - url: "https://eu.store.square-enix-games.com/romancing-saga-3-destinies-united"  # (leída) tienda de Square Enix EU: "Platform: ... Nintendo Switch 2 ... | PRE-ORDER", "Release date: 16th Feb 2027", "© SQUARE ENIX"
-      checked_at: "2026-10-16"
+    - url: "https://eu.store.square-enix-games.com/romancing-saga-3-destinies-united"  # (leída) tienda de Square Enix EU: "Platform: ... Nintendo Switch 2 ... | PRE-ORDER", "Release date: 4th Feb 2027", "© SQUARE ENIX"
+      checked_at: "2026-11-16"
       fields: ["distributor", "release_date"]
-  verified_at: "2026-10-16"
+  verified_at: "2026-11-16"
 # Completado del 16-10-2026: caja KR (API de Nintendo Corea) sin formato.
 - sku_id: "kr-romancing-saga-3-destinies-united-standard"
   title_id: "romancing-saga-3-destinies-united"
@@ -16400,7 +16441,7 @@
   edition: "standard"
   edition_name: null
   distributor: null
-  release_date: null
+  release_date: "2027-03-04"
   format: "unknown"
   cart_size_gb: null
   download_size_gb: null
@@ -16408,6 +16449,10 @@
   ean: null
   evidence: "unconfirmed"
   source_url: null
+  updates:
+    - url: "https://nintendoeverything.com/nintendo-pre-order-updates-november-15-2026/"  # (listado) reservas de Reino Unido de la semana del 15-11-2026, Switch 2: "Wo Long 2 (new) – March 4"
+      checked_at: "2026-11-16"
+      fields: ["release_date"]
   verified_at: "2026-10-13"
 - sku_id: "na-wo-long-2-wings-of-ember-standard"
   title_id: "wo-long-2-wings-of-ember"
@@ -16415,7 +16460,7 @@
   edition: "standard"
   edition_name: null
   distributor: null
-  release_date: null
+  release_date: "2027-03-04"
   format: "unknown"
   cart_size_gb: null
   download_size_gb: null
@@ -16423,6 +16468,10 @@
   ean: null
   evidence: "unconfirmed"
   source_url: null
+  updates:
+    - url: "https://nintendoeverything.com/nintendo-pre-order-updates-november-15-2026/"  # (listado) reservas de EE. UU. de la semana del 15-11-2026, Switch 2: "Wo Long 2: Wings of Ember – March 4 – Amazon"
+      checked_at: "2026-11-16"
+      fields: ["release_date"]
   verified_at: "2026-10-13"
 - sku_id: "jp-wo-long-2-wings-of-ember-standard"
   title_id: "wo-long-2-wings-of-ember"
@@ -16552,7 +16601,7 @@
   edition: "standard"
   edition_name: null
   distributor: null
-  release_date: null
+  release_date: "2027-03-18"
   format: "game_key_card"
   cart_size_gb: null
   download_size_gb: null
@@ -16560,6 +16609,10 @@
   ean: null
   evidence: "press_report"  # (leída) Inven Global, 21-10-2026: "Physical copies are planned for Switch 2 and PS5, though the Switch 2 version is sold only as a Game-Key Card."
   source_url: "https://www.invenglobal.com/articles/27498/the-apothecary-diaries-the-false-imperial-brother-launches-march-18th-2027"
+  updates:
+    - url: "https://nintendoeverything.com/nintendo-pre-order-updates-november-15-2026/"  # (listado) reservas de Reino Unido de la semana del 15-11-2026, Switch 2: "The Apothecary Diaries: The False Imperial Brother (new) – March 18"
+      checked_at: "2026-11-16"
+      fields: ["release_date"]
   verified_at: "2026-10-28"
 - sku_id: "na-the-apothecary-diaries-the-false-imperial-brother-standard"
   title_id: "the-apothecary-diaries-the-false-imperial-brother"
@@ -17001,7 +17054,7 @@
   region: "NA"
   edition: "standard"
   edition_name: null
-  distributor: null
+  distributor: "PQube"
   release_date: "2027-04-21"
   format: "game_key_card"
   cart_size_gb: null
@@ -17014,7 +17067,34 @@
     - url: "https://nintendoeverything.com/nintendo-pre-order-updates-october-25-2026/"  # (listado) reservas de EE. UU. de la semana del 25-10-2026, Switch 2: "Kitaria Fables 2 (new) – April 21 – Amazon , Best Buy"
       checked_at: "2026-10-28"
       fields: ["release_date"]
+    - url: "https://www.gamespress.com/KITARIA-FABLES-2-RECEIVES-A-PHYSICAL-RELEASE-ON-NINTENDO-SWITCH-2-AND-"  # (leída) nota de prensa del 16-10-2026: "PQube and developers Secret Level Studios and Twin Hearts announced that Kitaria Fables 2 will release physically on Nintendo Switch™ 2 and PlayStation® 5!"
+      checked_at: "2026-11-16"
+      fields: ["distributor"]
   verified_at: "2026-10-28"
+# Kitaria Fables 2: caja europea de PQube como game-key card (lista de Nintendo Everything, sin región), en reserva en
+# Reino Unido desde la semana del 15-11-2026.
+- sku_id: "eu-kitaria-fables-2-standard"
+  title_id: "kitaria-fables-2"
+  region: "EU"
+  edition: "standard"
+  edition_name: null
+  distributor: "PQube"
+  release_date: "2027-04-21"
+  format: "game_key_card"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) https://nintendoeverything.com/list-of-all-nintendo-switch-2-games-with-a-game-key-card-release/: "Every Nintendo Switch 2 game with a game-key card release | ... | Kitaria Fables 2 | ..." (sin región)
+  source_url: "https://nintendoeverything.com/list-of-all-nintendo-switch-2-games-with-a-game-key-card-release/"
+  updates:
+    - url: "https://www.gamespress.com/KITARIA-FABLES-2-RECEIVES-A-PHYSICAL-RELEASE-ON-NINTENDO-SWITCH-2-AND-"  # (leída) nota de prensa del 16-10-2026: "PQube and developers Secret Level Studios and Twin Hearts announced that Kitaria Fables 2 will release physically on Nintendo Switch™ 2 and PlayStation® 5!"
+      checked_at: "2026-11-16"
+      fields: ["distributor"]
+    - url: "https://nintendoeverything.com/nintendo-pre-order-updates-november-15-2026/"  # (listado) reservas de Reino Unido de la semana del 15-11-2026, Switch 2: "Kitaria Fables 2 (new) – April 21"
+      checked_at: "2026-11-16"
+      fields: ["release_date"]
+  verified_at: "2026-11-16"
 - sku_id: "jp-hello-kitty-party-land-standard"
   title_id: "hello-kitty-party-land"
   region: "JP"
@@ -17160,6 +17240,31 @@
   evidence: "retailer_listing"  # (leída) VideoGamesPlus.ca: "Middle Earth: The Shadow Bundle [Game-Key Card] - Nintendo Switch 2 (PRE-ORDER)", "$89.99 CAD"
   source_url: "https://videogamesplus.ca/products/middle-earth-the-shadow-bundle-game-ey-card-nintendo-switch-2-pre-order"
   verified_at: "2026-11-02"
+
+# Middle-earth: The Shadow Bundle: caja europea de PLAION como game-key card (lista de Nintendo Everything, sin región),
+# en reserva en Reino Unido desde la semana del 15-11-2026.
+- sku_id: "eu-middle-earth-the-shadow-bundle-standard"
+  title_id: "middle-earth-the-shadow-bundle"
+  region: "EU"
+  edition: "standard"
+  edition_name: null
+  distributor: "PLAION"
+  release_date: "2027-03-25"
+  format: "game_key_card"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "press_report"  # (leída) https://nintendoeverything.com/list-of-all-nintendo-switch-2-games-with-a-game-key-card-release/: "Every Nintendo Switch 2 game with a game-key card release | ... | Middle Earth: The Shadow Bundle | ..." (sin región)
+  source_url: "https://nintendoeverything.com/list-of-all-nintendo-switch-2-games-with-a-game-key-card-release/"
+  updates:
+    - url: "https://mediamarkt.pl/pl/product/_gra-nintendo-switch-2-plaion-middle-earth-the-shadow-bundle-1508403.html"  # (leída) MediaMarkt PL: "Zamów przed premierą | ... | PLAION | Numer produktu: 1508403 | Gra Nintendo Switch 2 PLAION Middle-earth: The Shadow Bundle"
+      checked_at: "2026-11-16"
+      fields: ["distributor"]
+    - url: "https://nintendoeverything.com/nintendo-pre-order-updates-november-15-2026/"  # (listado) reservas de Reino Unido de la semana del 15-11-2026, Switch 2: "Middle Earth: The Shadow Bundle (new) – March 25"
+      checked_at: "2026-11-16"
+      fields: ["release_date"]
+  verified_at: "2026-11-16"
 
 # Novedades del 03-11 al 10-11-2026: cajas nuevas de Montabi (Nejcraft), Thief: The Dark Project Remastered (guía de
 # Nintendo Life), Hyperspace Neptunia: Unlimited en Norteamérica (Idea Factory International), el Premium Box de Atelier
@@ -17314,3 +17419,26 @@
       checked_at: "2026-11-12"
       fields: ["distributor"]
   verified_at: "2026-11-12"
+
+# Shikhondo: Blue Pieta (CFK): caja japonesa (API JP, パッケージ版 con precio) sin fuente de formato; no está en
+# meisakugame (16-11-2026). Gematsu (12-11-2026) anuncia además "A physical edition will be available via Play-Asia", sin
+# plataforma ni región.
+- sku_id: "jp-shikhondo-blue-pieta-standard"
+  title_id: "shikhondo-blue-pieta"
+  region: "JP"
+  edition: "standard"
+  edition_name: null
+  distributor: "CFK"
+  release_date: "2026-12-10"
+  format: "unknown"
+  cart_size_gb: null
+  download_size_gb: null
+  includes_download_code: null
+  ean: null
+  evidence: "unconfirmed"
+  source_url: null
+  updates:
+    - url: "https://store-jp.nintendo.com/item/software/D70010000130000"  # (API) search.nintendo.jp: "食魂徒：Blue Pieta", sform BEE_DOWNLOADABLE, sdate 2026.12.10, pprice 6980, maker "シーエフケー"
+      checked_at: "2026-11-16"
+      fields: ["distributor", "release_date"]
+  verified_at: "2026-11-16"

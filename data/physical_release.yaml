@@ -2194,7 +2194,7 @@
   region: "NA"
   evidence: "official"  # (leída) tienda de Nintendo US: "Marupoyo: The Round Chick's Adventure | Version | Nintendo Switch 2 | Edition | Digital"
   source_url: "https://www.nintendo.com/us/store/products/marupoyo-the-round-chicks-adventure-switch-2/"
-  checked_at: "2026-10-13"
+  checked_at: "2026-11-16"
 - title_id: "mina-the-hollower"
   has_physical_release: false
   region: "JP"
@@ -2975,6 +2975,12 @@
   evidence: "press_report"
   source_url: "https://www.nintendo-insider.com/stylishly-deliver-mail-in-tanuki-pons-summer-on-nintendo-switch-2/"
   checked_at: "2026-11-10"
+# (leída) Nintendo Insider: "Spirit Crossing will be released digitally on the Nintendo eShop as a console exclusive for Nintendo Switch 2 and Nintendo Switch worldwide on 16 November 2026."; (leída) ficha oficial de Nintendo US: "Spirit Crossing | Version | Nintendo Switch 2 | Edition | Digital"; la ficha de Nintendo Life no trae "Physical Release"; sin ficha en search.nintendo.jp ni fila en meisakugame.
+- title_id: "spirit-crossing"
+  has_physical_release: false
+  evidence: "press_report"
+  source_url: "https://www.nintendo-insider.com/restore-the-world-in-spirit-crossing-on-nintendo-switch-2/"
+  checked_at: "2026-11-16"
 # (leída) ficha oficial de Nintendo: "Castlebound | Version | Nintendo Switch 2 | Edition | Digital"; ningún distribuidor con caja anunciada.
 - title_id: "castlebound"
   has_physical_release: false
@@ -3025,3 +3031,9 @@
   evidence: "unconfirmed"  # (leída) https://www.gematsu.com/2026/10/the-outlast-trials-now-available-for-switch-2: "Red Barrels has released a Switch 2 version of cooperative survival horror game The Outlast Trials via Nintendo eShop for $39.99." (salida sin anuncio previo); la ficha de Nintendo US llega sin texto; sin ficha en search.nintendo.jp ni listado físico en la búsqueda web
   source_url: null
   checked_at: "2026-11-12"
+# (leída) Nintendo Insider: "Eriksholm: The Stolen Dream will be released digitally on the Nintendo eShop for Nintendo Switch 2 worldwide on 3 December 2026."; la nota de prensa del anuncio (Gamespress, 09-09-2026) no habla de caja; la única caja anunciada es la de PS5 (Perp Games); sin ficha en search.nintendo.jp ni fila en meisakugame; la ficha de Nintendo US aún no existe (404).
+- title_id: "eriksholm-the-stolen-dream"
+  has_physical_release: false
+  evidence: "press_report"
+  source_url: "https://www.nintendo-insider.com/uncover-the-truth-in-eriksholm-the-stolen-dream-on-nintendo-switch-2/"
+  checked_at: "2026-11-16"
